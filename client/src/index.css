@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  /* Font Family */
+  --font-sans: "Nunito", ui-sans-serif, system-ui, sans-serif;
+
+  /* Backgrounds & Surfaces (Midnight Slate Dark Theme) */
+  --color-dh-bg: #0f172a;         /* Deep slate background */
+  --color-dh-surface: #1e293b;    /* Slightly lighter surface */
+  --color-dh-card: #293548;       /* Card background */
+  --color-dh-black: #0b1120;      /* Deepest slate for quizup-style match screen */
+
+  /* Primary UI Colors */
+  --color-dh-accent: #00e676;     /* Vibrant Green */
+  --color-dh-accent-dark: #00b35c; 
+  --color-dh-accent-light: #69ffb4; 
+  
+  --color-dh-blue: #1cb0f6;       /* Bright Sky Blue */
+  --color-dh-blue-dark: #1899d6;  
+  
+  --color-dh-yellow: #ffc800;     /* Sun Yellow */
+  --color-dh-yellow-dark: #e6a700;
+  
+  --color-dh-red: #ff4b4b;        /* Strawberry Red */
+  --color-dh-red-dark: #cc3b3b;   
+  
+  --color-dh-purple: #ce82ff;
+  --color-dh-secondary: #ff9600;
+  --color-dh-orange: #ff9600;
+  --color-dh-green: #58cc02;
+
+  /* Text Colors */
+  --color-dh-text: #f1f5f9;       /* Soft white text */
+  --color-dh-text-muted: #94a3b8; /* Muted slate text */
+  --color-dh-muted: #94a3b8;      
+
+  /* Structural Borders */
+  --color-dh-border: #334155;     /* Slate border */
+  --color-dh-border-dark: #475569;
+
+  /* Custom Soft Shadows */
+  --shadow-dh-soft: 0 4px 0 0 rgba(0, 0, 0, 0.5); 
+  --shadow-dh-accent: 0 4px 0 0 var(--color-dh-accent-dark);
+  --shadow-dh-blue: 0 4px 0 0 var(--color-dh-blue-dark);
+  --shadow-quiz-red: 0 0 15px rgba(255, 75, 75, 0.4);
+  --shadow-quiz-green: 0 0 15px rgba(0, 230, 118, 0.4);
+
+  /* Custom Animations */
+  --animate-bounce-subtle: bounce-subtle 1.5s ease-in-out infinite;
+  --animate-pulse-fast: pulse-fast 0.8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-slide-up: slide-up 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-pop-in: pop-in 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-lightning-strike: lightning 0.5s ease-out forwards;
+  --animate-vibration: vibrate 0.1s linear 5;
+  --animate-castle-build: castle-build 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+
+  /* Keyframes */
+  @keyframes bounce-subtle {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+  }
+
+  @keyframes pulse-fast {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(0.95); }
+  }
+
+  @keyframes slide-up {
+    0% { transform: translateY(20px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+
+  @keyframes pop-in {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+
+  @keyframes lightning {
+    0% { opacity: 0; transform: scale(0) rotate(-15deg); }
+    20% { opacity: 1; transform: scale(1.2) rotate(10deg); filter: brightness(2); }
+    40% { opacity: 0; transform: scale(1) rotate(-5deg); }
+    60% { opacity: 1; transform: scale(1.1) rotate(5deg); filter: brightness(1.5); }
+    100% { opacity: 0; transform: scale(1.5) rotate(0deg); }
+  }
+
+  @keyframes vibrate {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-3px); }
+    50% { transform: translateX(0); }
+    75% { transform: translateX(3px); }
+    100% { transform: translateX(0); }
+  }
+
+  @keyframes castle-build {
+    0% { transform: scale(0) translateY(10px); opacity: 0; }
+    70% { transform: scale(1.2) translateY(-2px); opacity: 1; }
+    100% { transform: scale(1) translateY(0); opacity: 1; }
+  }
+}
+
+/* Base resets & utilities */
+body {
+  background-color: var(--color-dh-bg);
+  color: var(--color-dh-text);
+  font-family: var(--font-sans);
+}
+
+.text-dh-text { color: var(--color-dh-text); }
+.text-dh-text-muted { color: var(--color-dh-text-muted); }
+.bg-dh-bg { background-color: var(--color-dh-bg); }
+.bg-dh-surface { background-color: var(--color-dh-surface); }
+.bg-dh-card { background-color: var(--color-dh-card); }
+.border-dh-border { border-color: var(--color-dh-border); }
+
+/* Confetti celebration pieces */
+.confetti-piece {
+  position: absolute;
+  top: -5vh;
+  border-radius: 2px;
+  animation-name: confetti-fall;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes confetti-fall {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(115vh) rotate(720deg); opacity: 0.7; }
+}
+
+/* Frosted-glass surface for the bottom nav */
+.glass-surface {
+  background-color: rgba(15, 23, 42, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Streak lightning screen flash */
+.animate-screen-flash {
+  animation: screen-flash 0.5s ease-out forwards;
+}
+@keyframes screen-flash {
+  0% { opacity: 0; }
+  15% { opacity: 0.55; }
+  30% { opacity: 0; }
+  45% { opacity: 0.3; }
+  100% { opacity: 0; }
+}
+
+/* Rematch accepted clash animations */
+.animate-clash-left {
+  animation: clash-left 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.animate-clash-right {
+  animation: clash-right 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+@keyframes clash-left {
+  0% { transform: translateX(-80px); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+@keyframes clash-right {
+  0% { transform: translateX(80px); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+.animate-arena-fill {
+  animation: arena-fill 2s linear forwards;
+}
+@keyframes arena-fill {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+.animate-pop-in {
+  animation: pop-in 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Hide scrollbar for clean app feel */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}

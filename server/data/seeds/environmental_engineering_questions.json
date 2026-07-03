@@ -1,0 +1,2827 @@
+[
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "1",
+        "question_text": "Assertion A: The consumption of water increases with increase in the distribution pressure.\nReason R: Higher distribution pressure causes more loss and waste of water.\nSelect your answer according to the coding system given below",
+        "options": {
+            "a": "Both A and R are true and R is the correct explanation of A.",
+            "b": "Both A and R are true but R is not the correct explanation of A.",
+            "c": "A is true but R is false.",
+            "d": "A is false but R is true."
+        },
+        "correct_answer": "a",
+        "solution": "As the pressure increases in distribution system more loss and waste of water occurs which results in increases the consumption of water",
+        "has_diagram": false,
+        "page_index": 2
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "2",
+        "question_text": "The per capita consumption of a locality is affected by\ni) Climatic conditions\nii) Quality of water\niii) Distribution pressure\nThe correct answer is",
+        "options": {
+            "a": "Only (i)",
+            "b": "Both (i) and (ii)",
+            "c": "Both (i) and (iii)",
+            "d": "All (i), (ii) and (iii)"
+        },
+        "correct_answer": "d",
+        "solution": "The per capita consumption of a locality is affected by:\n- Size of the city\n- Climatic conditions\n- Types of gentry and habits of people (population)\n- Industrial and commercial activities\n- Quality of water supplies\n- Pressure in the distribution system\n- Development of sewerage facilities\n- System of supply\n- Cost of water\n- Policy of metering and method of charging",
+        "has_diagram": false,
+        "page_index": 2
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "3",
+        "question_text": "Which of the following causes a decrease in Per capita consumption?",
+        "options": {
+            "a": "Use of metering system",
+            "b": "Good quality of water",
+            "c": "Better standard of living of the people",
+            "d": "Hotter climate"
+        },
+        "correct_answer": "a",
+        "solution": "Metering system of water supply causes a decrease in Per capita consumption.",
+        "has_diagram": false,
+        "page_index": 2
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "4",
+        "question_text": "The hourly variation factor is usually taken is",
+        "options": {
+            "a": "1.5",
+            "b": "1.8",
+            "c": "2.0",
+            "d": "2.7"
+        },
+        "correct_answer": "a",
+        "solution": "The hourly variation factor is usually taken is 1.5.\n- The daily variation factor is usually taken as 1.8\n- The monthly variation factor is usually taken as 1.4",
+        "has_diagram": false,
+        "page_index": 2
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "5",
+        "question_text": "If the average daily consumption of a city is 100,000 $m^3$, the maximum daily consumption on peak hourly demand will be",
+        "options": {
+            "a": "100000 $m^3$",
+            "b": "150000 $m^3$",
+            "c": "180000 $m^3$",
+            "d": "270000 $m^3$"
+        },
+        "correct_answer": "d",
+        "solution": "The maximum daily consumption on peak hourly demand will be = $2.7 \\times \\text{Average daily demand} = 2.7 \\times 100,000 = 270000\\text{ }m^3$",
+        "has_diagram": false,
+        "page_index": 3
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "6",
+        "question_text": "The distribution mains are designed for",
+        "options": {
+            "a": "Maximum daily demand",
+            "b": "Maximum hourly demand",
+            "c": "Average daily demand",
+            "d": "Maximum hourly demand on maximum day"
+        },
+        "correct_answer": "d",
+        "solution": "The distribution mains should be designed for maximum hourly draft of maximum day or coincident draft with fire whichever is more.",
+        "has_diagram": false,
+        "page_index": 3
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "7",
+        "question_text": "As compared to geometrical increase method of forecasting population, arithmetical increase method gives",
+        "options": {
+            "a": "Lesser value",
+            "b": "Higher value",
+            "c": "Same value",
+            "d": "Accurate value"
+        },
+        "correct_answer": "a",
+        "solution": "As compared to geometrical increase method of forecasting population, arithmetical increase method gives lesser value.",
+        "has_diagram": false,
+        "page_index": 3
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "8",
+        "question_text": "The population of a town in three consecutive years are 5000, 7000 and 8400 respectively. The population of the town in the fourth consecutive year according to geometrical increase method is",
+        "options": {
+            "a": "9500",
+            "b": "9800",
+            "c": "10100",
+            "d": "10920"
+        },
+        "correct_answer": "d",
+        "solution": "Arithmetic Mean = $(0.4 + 0.2) / 2 = 0.3$\nPopulation at fourth consecutive year = $8400 \\times (1 + 0.3) = 10920$\nOr by geometric mean:\nGeometrical mean = $\\sqrt{0.4 \\times 0.2} = 0.2828 = 28.28\\%$\nPopulation in fourth year is = $8400 \\times (1 + 0.2828) = 10775.878$\nSo, the option d should be best choice",
+        "has_diagram": false,
+        "page_index": 3
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "9",
+        "question_text": "The suitable method of forecasting population for a young and rapidly increasing city is",
+        "options": {
+            "a": "Arithmetical increase method",
+            "b": "Geometrical increase method",
+            "c": "Incremental increase method",
+            "d": "Graphical method"
+        },
+        "correct_answer": "b",
+        "solution": "Arithmetic method = for well-developed city\nGeometrical method = for a young and rapidly increasing city\nIncremental Increase method = used when type of city not known",
+        "has_diagram": false,
+        "page_index": 3
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "10",
+        "question_text": "The depression of water table in a well due to pumping will be maximum",
+        "options": {
+            "a": "At a distance R from the well",
+            "b": "Close to the well",
+            "c": "At a distance R/2 from the well",
+            "d": "None of the above"
+        },
+        "correct_answer": "b",
+        "solution": "When the well is pumped the water level in the well is lowered, by lowering this water level a gradient occurs between the water in the surrounding aquifer and the water in the well because water flows from high head to low head, this gradient produces a flow from the surrounding aquifer into the well as the water flow into the well the water level in aquifer around the well is decreased.",
+        "has_diagram": true,
+        "diagram_bbox": [
+            610,
+            70,
+            810,
+            450
+        ],
+        "page_index": 4,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1783104387/ocr_diagrams/pvt96poxibur6omwxdnx.png"
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "11",
+        "question_text": "The devices which are installed for drawing water from the sources are called",
+        "options": {
+            "a": "Aquifers",
+            "b": "Aquiclude",
+            "c": "Filters",
+            "d": "Intakes"
+        },
+        "correct_answer": "d",
+        "solution": "Intakes are the devices which are installed for drawing water from the sources.",
+        "has_diagram": true,
+        "diagram_bbox": [
+            210,
+            520,
+            340,
+            920
+        ],
+        "page_index": 4,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1783104389/ocr_diagrams/g6wkxoea9xbb6kzo1s1o.png"
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "12",
+        "question_text": "Select the correct relationship between porosity (N), specific yield (y) and specific retention (R)",
+        "options": {
+            "a": "N = y + R",
+            "b": "y = N + R",
+            "c": "R = N + y",
+            "d": "R > (N + y)"
+        },
+        "correct_answer": "a",
+        "solution": "Relationship between porosity (N), specific yield (y) and specific retention (R)\nPorosity = Specific yield + Specific retention\ni.e N = y + R",
+        "has_diagram": false,
+        "page_index": 4
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "13",
+        "question_text": "The type of valve, which is provided on the suction pipe in a tube-well, is",
+        "options": {
+            "a": "Air relief valve",
+            "b": "Reflux valve",
+            "c": "Pressure relief valve",
+            "d": "Sluice valve"
+        },
+        "correct_answer": "b",
+        "solution": "Reflux valve/Check valve/Non-Returning valve\n- Used for unidirectional flow.\n- Provided on the suction pipe in a tube well.\n- Automatic device.",
+        "has_diagram": false,
+        "page_index": 4
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "14",
+        "question_text": "The maximum discharge of a tube-well is about",
+        "options": {
+            "a": "5 litres/sec",
+            "b": "50 litres/sec",
+            "c": "500 litres/sec",
+            "d": "1000 litres/sec"
+        },
+        "correct_answer": "b",
+        "solution": "The maximum discharge of a tube-well is about 50 litres/sec.",
+        "has_diagram": false,
+        "page_index": 5
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "15",
+        "question_text": "As compared to shallow-wells, deep wells have",
+        "options": {
+            "a": "More depth",
+            "b": "Less depth",
+            "c": "More discharge",
+            "d": "Less discharge"
+        },
+        "correct_answer": "c",
+        "solution": "As compared to shallow-wells, deep wells have more discharge.",
+        "has_diagram": false,
+        "page_index": 5
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "16",
+        "question_text": "Ground water is usually free from",
+        "options": {
+            "a": "Suspended impurities",
+            "b": "Dissolved impurities",
+            "c": "Both suspended and dissolved impurities",
+            "d": "None of the above"
+        },
+        "correct_answer": "a",
+        "solution": "Ground water is usually free from suspended impurities due to natural filtration property of soil.",
+        "has_diagram": false,
+        "page_index": 6
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "17",
+        "question_text": "The polluted water is one which",
+        "options": {
+            "a": "Contains pathogenic bacteria",
+            "b": "Consists of undesirable substances rendering it unfit for drinking and domestic use",
+            "c": "Is safe and suitable for drinking and domestic use",
+            "d": "Is contaminated"
+        },
+        "correct_answer": "b",
+        "solution": "The polluted water is one which consists of undesirable substances rendering it unfit for drinking and domestic use.",
+        "has_diagram": false,
+        "page_index": 6
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "18",
+        "question_text": "Which of the following is not a water borne disease?",
+        "options": {
+            "a": "Dysentery",
+            "b": "Cholera",
+            "c": "Typhoid",
+            "d": "Maleria"
+        },
+        "correct_answer": "d",
+        "solution": "Dysentery, Cholera and Typhoid are water borne disease.\nMalaria is caused by Plasmodium parasites. The parasites are spread to people through the bites of infected female Anopheles mosquitoes",
+        "has_diagram": false,
+        "page_index": 6
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "19",
+        "question_text": "The most common cause of acidity in water is",
+        "options": {
+            "a": "Carbon dioxide",
+            "b": "Oxygen",
+            "c": "Hydrogen",
+            "d": "Nitrogen"
+        },
+        "correct_answer": "a",
+        "solution": "The most common cause of acidity in water is carbon dioxide present in atmosphere.",
+        "has_diagram": false,
+        "page_index": 6
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "20",
+        "question_text": "The phenolic compounds in public water supply should not be more than",
+        "options": {
+            "a": "0.1 ppm",
+            "b": "0.01 ppm",
+            "c": "0.001 ppm",
+            "d": "0.0001 ppm"
+        },
+        "correct_answer": "c",
+        "solution": "The phenolic compounds in public water supply should not be more than 0.001 ppm",
+        "has_diagram": false,
+        "page_index": 6
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "21",
+        "question_text": "The maximum permissible limit for flouride in drinking water is",
+        "options": {
+            "a": "0.1 mg/litre",
+            "b": "1.5 mg/litre",
+            "c": "5 mg/litre",
+            "d": "10 mg/litre"
+        },
+        "correct_answer": "b",
+        "solution": "Fluorides content exceeding 1.5 mg/l - cause mottling of teeth and fluorosis.\n- Fluorides content lower concentrations lesser than 1 mg/l - cause dental cavities (tooth decay due to cavity formation).",
+        "has_diagram": false,
+        "page_index": 6
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "22",
+        "question_text": "Standard EDTA (ethylene diamine tetra acetic acid) solution is used to determine the",
+        "options": {
+            "a": "Hardness in water",
+            "b": "Turbidity in water",
+            "c": "Dissolved oxygen in water",
+            "d": "Residual chlorine in water"
+        },
+        "correct_answer": "a",
+        "solution": "Hardness of water is determined by standard EDTA solution\n- Indicator used in determination of hardness is EBT (Eriochrome black T)",
+        "has_diagram": false,
+        "page_index": 6
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "23",
+        "question_text": "If the coliform bacteria is present in a sample of water, then the coliform test to be conducted is\n(i) Presumptive coliform test\n(ii) Continued coliform test\n(iii) Completed coliform test\nThe correct answer is",
+        "options": {
+            "a": "Only (i)",
+            "b": "Both (i) and (ii)",
+            "c": "Both (i) and (iii)",
+            "d": "All (i), (ii) and (iii)"
+        },
+        "correct_answer": "d",
+        "solution": "If the coliform bacteria is present in a sample of water, then the coliform test to be conducted is\n- Presumptive coliform test\n- Continued coliform test\n- Completed coliform test",
+        "has_diagram": false,
+        "page_index": 7
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "24",
+        "question_text": "Alkalinity in water is expressed as milligrams per litre in terms of equivalent of",
+        "options": {
+            "a": "Calcium carbonate",
+            "b": "Magnesium carbonate",
+            "c": "Sodium carbonate",
+            "d": "Calcium hydroxide"
+        },
+        "correct_answer": "a",
+        "solution": "Alkalinity in water is expressed as milligrams per litre in terms of equivalent of CaCO3",
+        "has_diagram": false,
+        "page_index": 7
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "25",
+        "question_text": "The product of $H^+$ ions and $OH^-$ ions in a stronger alkali is",
+        "options": {
+            "a": "0",
+            "b": "1",
+            "c": "10^{-1}",
+            "d": "10^{-14}"
+        },
+        "correct_answer": "d",
+        "solution": "In every situation the product of $H^+$ ions and $OH^-$ ions is always $10^{-14}$ at $25^\\circ\\text{C}$ temperature.",
+        "has_diagram": false,
+        "page_index": 7
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "26",
+        "question_text": "Which of the following values of pH represents a stronger acid?",
+        "options": {
+            "a": "2",
+            "b": "5",
+            "c": "7",
+            "d": "10"
+        },
+        "correct_answer": "a",
+        "solution": "PH value = 7 neutral\nPH < 7 = acidic nature\nPH > 7 = alkaline nature",
+        "has_diagram": false,
+        "page_index": 7
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "27",
+        "question_text": "Turbidity is measured on",
+        "options": {
+            "a": "Standard silica scale",
+            "b": "Standard cobalt scale",
+            "c": "Standard platinum scale",
+            "d": "Platinum cobalt scale"
+        },
+        "correct_answer": "a",
+        "solution": "Turbidity is measured on Standard silica scale.",
+        "has_diagram": false,
+        "page_index": 7
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "28",
+        "question_text": "On standard silica scale, the turbidity in drinking water should be limited to",
+        "options": {
+            "a": "10 ppm",
+            "b": "20 ppm",
+            "c": "30 ppm",
+            "d": "50 ppm"
+        },
+        "correct_answer": "a",
+        "solution": "",
+        "has_diagram": false,
+        "page_index": 7
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "29",
+        "question_text": "Residual chlorine in water is determined by",
+        "options": {
+            "a": "Starch iodide method",
+            "b": "Orthotolidine method",
+            "c": "Both (a) and (b)",
+            "d": "None of the above"
+        },
+        "correct_answer": "c",
+        "solution": "Methods to determine residual chlorine are-\n- Orthotolidine test\n- Arsenide Orthotolidine test\n- DPD test\n- Starch iodide test",
+        "has_diagram": false,
+        "page_index": 8
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "30",
+        "question_text": "Orthotolidine test is used for determination of",
+        "options": {
+            "a": "Dissolved oxygen",
+            "b": "Residual chlorine",
+            "c": "Biochemical oxygen demand",
+            "d": "Dose of coagulant"
+        },
+        "correct_answer": "b",
+        "solution": "Orthotolidine test is used for determination of residual chlorine.",
+        "has_diagram": false,
+        "page_index": 8
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "31",
+        "question_text": "If the total hardness of water is greater than its total alkalinity, the carbonate hardness will be equal to",
+        "options": {
+            "a": "Total alkalinity",
+            "b": "Total hardness",
+            "c": "Total hardness - total alkalinity",
+            "d": "Non carbonate hardness"
+        },
+        "correct_answer": "a",
+        "solution": "Carbonate hardness = Minimum of both (Total hardness, Total alkalinity)\nNon-Carbonate hardness = Total hardness - Total alkalinity\nSo if Total hardness > Total alkalinity than Carbonate hardness = Total alkalinity",
+        "has_diagram": false,
+        "page_index": 8
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "32",
+        "question_text": "The amount of residual chlorine left in public water supply for safety against pathogenic bacteria is about",
+        "options": {
+            "a": "0.01 to 0.05 ppm",
+            "b": "0.05 to 0.5 ppm",
+            "c": "0.5 to 1.0 ppm",
+            "d": "1.0 to 5.0 ppm"
+        },
+        "correct_answer": "b",
+        "solution": "For Pathogenic bacteria the range varies between 0.2 to 1 mg/l.\nFor Protection against viral infection minimum free residual chlorine is 0.5 mg/l.",
+        "has_diagram": false,
+        "page_index": 8
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "33",
+        "question_text": "The dissolved oxygen level in natural unpolluted waters at normal temperature is found to be of the order of",
+        "options": {
+            "a": "1 mg/litre",
+            "b": "10 mg/litre",
+            "c": "100 mg/litre",
+            "d": "1000 mg/litre"
+        },
+        "correct_answer": "b",
+        "solution": "The dissolved oxygen level in natural unpolluted waters at normal temperature is 10 mg/litre.",
+        "has_diagram": false,
+        "page_index": 9
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "34",
+        "question_text": "The velocity of flow of water in a sedimentation tank is about",
+        "options": {
+            "a": "5 to 10 cm/sec.",
+            "b": "15 to 30 cm/sec.",
+            "c": "15 to 30 cm/minute",
+            "d": "15 to 30 cm/hour"
+        },
+        "correct_answer": "c",
+        "solution": "The velocity of flow of water in a sedimentation tank is about 15 to 30 cm/minute.",
+        "has_diagram": false,
+        "page_index": 9
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "35",
+        "question_text": "The length of rectangular sedimentation tank should not be more than",
+        "options": {
+            "a": "B",
+            "b": "2B",
+            "c": "4B",
+            "d": "8B"
+        },
+        "correct_answer": "c",
+        "solution": "The length of rectangular sedimentation tank should not be more than 4B. Where B is the width of the tank.",
+        "has_diagram": false,
+        "page_index": 9
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "36",
+        "question_text": "The overflow rate for plain sedimentation tanks is about",
+        "options": {
+            "a": "500 to 750 litres/hour/$m^2$",
+            "b": "1000 to 1250 litres/hour/$m^2$",
+            "c": "1250 to 1500 litres/hour/$m^2$",
+            "d": "1500 to 2000 litres/hour/$m^2$"
+        },
+        "correct_answer": "a",
+        "solution": "Overflow rate for plain sedimentation = 12000 - 18000 lit/day/$m^2$ or 500 - 750 litres/hour/$m^2$.\n- Overflow rate for sedimentation with coagulation = 24000 - 30000 lit/day/$m^2$ or 1000 - 1250 litres/hour/$m^2$",
+        "has_diagram": false,
+        "page_index": 9
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "37",
+        "question_text": "Percentage of bacterial load that can be removed from water by the process of plain sedimentation is about",
+        "options": {
+            "a": "10 to 25",
+            "b": "50",
+            "c": "75",
+            "d": "100"
+        },
+        "correct_answer": "c",
+        "solution": "It is estimated that plain sedimentation tank can remove about 60% of suspended matter and about 75% of bacterial load from water.",
+        "has_diagram": false,
+        "page_index": 9
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "38",
+        "question_text": "The settling velocity of a particle in a sedimentation tank depends on",
+        "options": {
+            "a": "Depth of tank",
+            "b": "Surface area of tank",
+            "c": "Both depth and surface area of tank",
+            "d": "None of the above"
+        },
+        "correct_answer": "b",
+        "solution": "The settling velocity of a particle in a sedimentation tank depends on surface area of tank.\n- Sedimentation is a physical water treatment process in which gravity is used to remove suspended solids from water.",
+        "has_diagram": true,
+        "diagram_bbox": [
+            770,
+            550,
+            895,
+            935
+        ],
+        "page_index": 9,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1783104389/ocr_diagrams/aykpmxtgjepckblujne0.png"
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "39",
+        "question_text": "The settling velocity of a particle in a sedimentation tank increases if",
+        "options": {
+            "a": "Particle size is decreased",
+            "b": "The surface area of tank is increased",
+            "c": "The depth of tank is decreased",
+            "d": "None of the above"
+        },
+        "correct_answer": "d",
+        "solution": "As per stokes law $V_s = \\frac{g(\\rho_p - \\rho)D_p^2}{18\\mu}$. So denser and larger particles have high settling velocity.\n- Settling velocity = $Q / (B \\times L)$ ($B \\times L$ = Surface area)\n- Settling velocity is independent of depth",
+        "has_diagram": false,
+        "page_index": 10
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "40",
+        "question_text": "For a given discharge, the efficiency of sedimentation tank can be increased by",
+        "options": {
+            "a": "Increasing the depth of tank",
+            "b": "Decreasing the depth of tank",
+            "c": "Increasing the surface area of tank",
+            "d": "Decreasing the surface area of tank"
+        },
+        "correct_answer": "c",
+        "solution": "Efficiency = $\\frac{\\text{Settling velocity of particle}}{\\text{Surface overflow rate}}$\nSurface overflow rate = $\\frac{\\text{Flow rate}}{\\text{Surface area of tank}}$\nSo Efficiency $\\propto$ Surface area of tank",
+        "has_diagram": false,
+        "page_index": 10
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "41",
+        "question_text": "The amount of coagulant needed for coagulation of water increases with\n(i) Increase in turbidity of water\n(ii) Decrease in turbidity of water\n(iii) Increase in temperature of water\n(iv) Decrease in temperature of water\nThe correct answer is",
+        "options": {
+            "a": "(i) and (ii)",
+            "b": "(i) and (iv)",
+            "c": "(ii) and (iii)",
+            "d": "(ii) and (iv)"
+        },
+        "correct_answer": "b",
+        "solution": "As the turbidity of water Increases the amount of coagulant is also increases.\nDecrease in temperature of water affects viscosity of water which results in increase of coagulant dose.",
+        "has_diagram": false,
+        "page_index": 10
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "42",
+        "question_text": "The detention period and overflow rate respectively for plain sedimentation as compared to sedimentation with coagulation are generally",
+        "options": {
+            "a": "Less and more",
+            "b": "Less and less",
+            "c": "More and less",
+            "d": "More and more"
+        },
+        "correct_answer": "c",
+        "solution": "Plain sedimentation: Detention period = 4-8 hours, Overflow rate = 500-750 litres/hour/$m^2$\nSedimentation with coagulation: Detention period = 2-4 hours, Overflow rate = 1000-1250 litres/hour/$m^2$",
+        "has_diagram": false,
+        "page_index": 10
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "43",
+        "question_text": "Alum as a coagulant is found to be an effective when pH range of water is",
+        "options": {
+            "a": "2 to 4",
+            "b": "4 to 6",
+            "c": "6 to 8",
+            "d": "8 to 10"
+        },
+        "correct_answer": "c",
+        "solution": "Alum is effective when pH of water is between 6.5-8.5. Its dose depends on turbidity, color, taste, pH and temperature of water.",
+        "has_diagram": false,
+        "page_index": 10
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "44",
+        "question_text": "The detention period in coagulation tanks is usually kept as",
+        "options": {
+            "a": "1 to 2 minutes",
+            "b": "30 to 45 minutes",
+            "c": "2 to 6 hours",
+            "d": "2 to 6 days"
+        },
+        "correct_answer": "c",
+        "solution": "Detention period:\n- for plain sedimentation = 4 to 8 hour\n- for sedimentation with coagulant = 3 to 4 hour",
+        "has_diagram": false,
+        "page_index": 11
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "45",
+        "question_text": "The alum, when added as a coagulant in water",
+        "options": {
+            "a": "Does not require alkalinity in water for flocculation",
+            "b": "Does not affect pH value of water",
+            "c": "Increases pH value of water",
+            "d": "Decreases pH value of water"
+        },
+        "correct_answer": "d",
+        "solution": "When alum added as coagulant:\n- It decreases ph of water\n- It causes permanent hardness",
+        "has_diagram": false,
+        "page_index": 11
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "46",
+        "question_text": "The chemical most commonly used to increase speed of sedimentation of sewage is",
+        "options": {
+            "a": "Sulphuric acid",
+            "b": "Copper sulphate",
+            "c": "Lime",
+            "d": "Sodium permanganate"
+        },
+        "correct_answer": "c",
+        "solution": "The chemical most commonly used to increase speed of sedimentation of sewage is lime.",
+        "has_diagram": false,
+        "page_index": 11
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "47",
+        "question_text": "In water treatment, rapid gravity filters are adopted to remove",
+        "options": {
+            "a": "Dissolved organic substances",
+            "b": "Dissolved solids and dissolved gases",
+            "c": "Floating solids and dissolved inorganic solids",
+            "d": "Bacteria and colloidal solids"
+        },
+        "correct_answer": "d",
+        "solution": "In water treatment, rapid gravity filters are adopted to remove bacteria and colloidal solids.",
+        "has_diagram": false,
+        "page_index": 11
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "48",
+        "question_text": "The rate of filtration in slow sand filters in million litres per day per hectare is about",
+        "options": {
+            "a": "50 to 60",
+            "b": "100 to 150",
+            "c": "500 to 600",
+            "d": "1400 to 1500"
+        },
+        "correct_answer": "a",
+        "solution": "The rate of filtration in slow sand filters in million litres per day per hectare is about 50 - 60.",
+        "has_diagram": false,
+        "page_index": 11
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "49",
+        "question_text": "The effective size of sand particles used in slow sand filters is",
+        "options": {
+            "a": "0.25 to 0.35 mm",
+            "b": "0.35 to 0.60 mm",
+            "c": "0.60 to 1.00 mm",
+            "d": "1.00 to 1.80 mm"
+        },
+        "correct_answer": "a",
+        "solution": "Sand used in slow sand filters should have an effective size of 0.15 - 0.35 mm and a uniformity coefficient of 1.5 - 3, however < 2 is desirable.",
+        "has_diagram": false,
+        "page_index": 11
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "50",
+        "question_text": "As compared to rapid sand filters, slow sand filters give\ni) Slower filtration rate\nii) Higher filtration rate\niii) Lesser efficiency in removal of bacteria\niv) Higher efficiency in removal of bacteria\nThe correct answer is",
+        "options": {
+            "a": "(i) and (ii)",
+            "b": "(ii) and (iii)",
+            "c": "(i) and (iv)",
+            "d": "(ii) and (iv)"
+        },
+        "correct_answer": "c",
+        "solution": "Slow sand filter has a slower filtration rate (100 - 200 LPH/$m^2$) compared to rapid sand filter (3000 - 6000 LPH/$m^2$), but has higher efficiency in bacteria removal (98 - 99%) compared to rapid sand filter (80 - 90%).",
+        "has_diagram": false,
+        "page_index": 12
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "51",
+        "question_text": "Assertion A: Slow sand filters are more efficient in removal of bacteria than rapid sand filters.\nReason R: The sand used in slow sand filters is finer than that in rapid sand filters.\nSelect your answer based on the coding system given below:",
+        "options": {
+            "a": "Both A and R true and R is the correct explanation of A.",
+            "b": "Both A and R are true but R is not the correct explanation of A.",
+            "c": "A is true but R is false.",
+            "d": "A is false but R is true."
+        },
+        "correct_answer": "a",
+        "solution": "Bacteria removal efficiency:\nSlow sand filter - 98 to 99%\nRapid sand filter - 80 to 90%\nEffective size (mm):\nSlow sand filter - 0.25 to 0.35\nRapid sand filter - 0.35 to 0.6",
+        "has_diagram": false,
+        "page_index": 12
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "52",
+        "question_text": "Air binding phenomena in rapid sand filters occur due to",
+        "options": {
+            "a": "Excessive negative head",
+            "b": "Mud ball formation",
+            "c": "Higher turbidity in the effluent",
+            "d": "Low temperature"
+        },
+        "correct_answer": "a",
+        "solution": "Air binding phenomena in rapid sand filters occur due to More Negative head (>1.2m)",
+        "has_diagram": false,
+        "page_index": 12
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "53",
+        "question_text": "The percentage of filtered water, which is used for Washing in rapid sand filters, is about",
+        "options": {
+            "a": "0.2 to 0.4",
+            "b": "0.4 to 1.0",
+            "c": "2 to 4",
+            "d": "5 to 7"
+        },
+        "correct_answer": "c",
+        "solution": "The filtered water used for Washing in rapid sand filters, is about 2 to 4%",
+        "has_diagram": false,
+        "page_index": 12
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "54",
+        "question_text": "Period of cleaning of slow sand filters is about",
+        "options": {
+            "a": "24 - 48 hour",
+            "b": "10 - 12 days",
+            "c": "2 - 3 month",
+            "d": "1 - 2 year"
+        },
+        "correct_answer": "c",
+        "solution": "Period of cleaning for:\nSlow sand filters: 2 to 3 months\nRapid sand filter: 24 to 48 hours",
+        "has_diagram": false,
+        "page_index": 12
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "55",
+        "question_text": "The rate of filtration of pressure filters is",
+        "options": {
+            "a": "Less than that of slow sand filters",
+            "b": "In between the filtration rate of slow sand filters and rapid sand filters",
+            "c": "Greater than that of rapid sand filters",
+            "d": "Equal to that of slow sand filters"
+        },
+        "correct_answer": "c",
+        "solution": "",
+        "has_diagram": false,
+        "page_index": 12
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "56",
+        "question_text": "Double filtration is used",
+        "options": {
+            "a": "To increase the filtration capacity of slow sand filters",
+            "b": "To increase the filtration capacity of rapid sand filters",
+            "c": "For isolated buildings like swimming pools, hotels etc.",
+            "d": "All of the above"
+        },
+        "correct_answer": "a",
+        "solution": "Sol(a). The water is allowed to pass through two or more slow sand filters arranged one after the other thus increasing filtration capacity of slow sand filter.",
+        "has_diagram": false,
+        "page_index": 1
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "57",
+        "question_text": "Cleaning is done by\n(i) Scraping and removal in slow sand filters\n(ii) Back washing in slow sand filters\n(iii) Scraping and removal in rapid sand filters\n(iv) Back washing in rapid sand filters\n\nThe correct answer is",
+        "options": {
+            "a": "(i) and (ii)",
+            "b": "(ii) and (iii)",
+            "c": "(i) and (iv)",
+            "d": "(ii) and (iv)"
+        },
+        "correct_answer": "c",
+        "solution": "Sol(c). In slow sand filter cleaning is done by scraping and removal of the top 2-3 cm of sand, which is washed and returned to the filter.\nIn rapid sand filter cleaning is done by backwashing. backwashing consists of reversing the flow of water through the filter causing water to travel from the bottom of the filter to the top.",
+        "has_diagram": false,
+        "page_index": 1
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "58",
+        "question_text": "Disinfection of water results in",
+        "options": {
+            "a": "Removal of turbidity",
+            "b": "Removal of hardness",
+            "c": "Killing of disease bacteria",
+            "d": "Complete sterilisation"
+        },
+        "correct_answer": "c",
+        "solution": "Sol (c). Disinfection effectively kills a large variety of microbial waterborne pathogens.\nChlorine is widely credited with virtually eliminating outbreaks of water borne disease in the United States and other developed countries.",
+        "has_diagram": false,
+        "page_index": 1
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "59",
+        "question_text": "The disinfection efficiency of chlorine increases by\n(i) Decreasing the time of contact\n(ii) Decreasing the temperature of water\n(iii) Increasing the temperature of water.\n\nThe correct answer is",
+        "options": {
+            "a": "Only (i)",
+            "b": "Both (i) and (ii)",
+            "c": "Both (i) and (iii)",
+            "d": "Only (iii)"
+        },
+        "correct_answer": "d",
+        "solution": "Sol(d). The disinfection efficiency of chlorine increases by Increasing the temperature of water.\nThe cause. In general, chemical processes are slowed down due to a decrease in temperature. As a rule of thumb, the reaction rate halves each $10^\\circ\\text{C}$ of temperature decrease. Yet as shown in the table with chemical disinfectants there is a great difference in behaviour upon temperature decrease.",
+        "has_diagram": false,
+        "page_index": 1
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "60",
+        "question_text": "Chlorine demand of water is equal to",
+        "options": {
+            "a": "Applied chlorine",
+            "b": "Residual chlorine",
+            "c": "Sum of applied and residual chlorine",
+            "d": "Difference of applied and residual chlorine"
+        },
+        "correct_answer": "d",
+        "solution": "Sol(d). Chlorine demand is the difference between the amount of chlorine added to water or wastewater and the amount of residual chlorine remaining after a given contact time.\nChlorine demand may change with dosage, time, temperature, pH, and nature and amount of the impurities in the water.",
+        "has_diagram": true,
+        "diagram_bbox": [
+            330,
+            100,
+            470,
+            470
+        ],
+        "page_index": 2,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1783104580/ocr_diagrams/avsd4lqpntcaypohwizv.png"
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "61",
+        "question_text": "The process in which the chlorination is done beyond the break point is known as",
+        "options": {
+            "a": "Perchlorinating",
+            "b": "Post chlorination",
+            "c": "Super chlorination",
+            "d": "Break point chlorination"
+        },
+        "correct_answer": "c",
+        "solution": "Sol(c). Process in which the chlorination is done beyond the break point is known as Super chlorination.\nSuper chlorination, also known as hyperchlorination, temporarily increases the free chlorine residual in a water distribution system. A high free chlorine residual (i.e. above 5 mg/L) is effective against most bacteria and can be used in hot, warm and cold-water distribution systems,",
+        "has_diagram": false,
+        "page_index": 2
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "62",
+        "question_text": "The percentage of chlorine in fresh bleaching powder is about",
+        "options": {
+            "a": "10 to 15",
+            "b": "20 to 25",
+            "c": "30 to 35",
+            "d": "40 to 50"
+        },
+        "correct_answer": "c",
+        "solution": "Sol(c). Chlorine in fresh bleaching powder is about 30 to 35%",
+        "has_diagram": false,
+        "page_index": 2
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "63",
+        "question_text": "The treatment of water with bleaching powder is known as",
+        "options": {
+            "a": "Perchlorinating",
+            "b": "Super chlorination",
+            "c": "Dichlorination",
+            "d": "Hypo chlorination"
+        },
+        "correct_answer": "d",
+        "solution": "Sol(d). The treatment of water with bleaching powder is known as Hypo chlorination",
+        "has_diagram": false,
+        "page_index": 2
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "64",
+        "question_text": "The suitable method for disinfection of swimming pool water is",
+        "options": {
+            "a": "Ultra violet rays treatment",
+            "b": "Lime treatment",
+            "c": "By using potassium permanganate",
+            "d": "Chlorination"
+        },
+        "correct_answer": "a",
+        "solution": "Sol(a). The suitable method for disinfection of swimming pool water is Ultra violet ray's treatment.",
+        "has_diagram": false,
+        "page_index": 2
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "65",
+        "question_text": "Which of the following chemical compounds can be used for dichlorination of water?",
+        "options": {
+            "a": "Carbon dioxide",
+            "b": "Bleaching powder",
+            "c": "Sulphur dioxide",
+            "d": "Chloramines"
+        },
+        "correct_answer": "c",
+        "solution": "Sol(c). Dichlorination is the process of removing residual chlorine from disinfected wastewater prior to discharge into the environment.\nSulfur dioxide is most commonly used for dichlorination and is the major focus of this fact sheet.",
+        "has_diagram": false,
+        "page_index": 2
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "66",
+        "question_text": "In chlorination, with the rise in temperature of water, death rate of bacteria",
+        "options": {
+            "a": "Increases",
+            "b": "Decreases",
+            "c": "Remains unaffected",
+            "d": "None of the above"
+        },
+        "correct_answer": "a",
+        "solution": "Sol(a). As we know that\nDisinfection efficiency $\\propto$ Temperature\nThat means as temperature increases death rate is also increases",
+        "has_diagram": false,
+        "page_index": 3
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "67",
+        "question_text": "As compared to higher pH values, the contact period required for efficient chlorination at lower pH values is",
+        "options": {
+            "a": "Smaller",
+            "b": "Larger",
+            "c": "Same",
+            "d": "None of the above"
+        },
+        "correct_answer": "a",
+        "solution": "Sol(a). Contact period required for efficient chlorination at lower pH values is smaller as compared to higher pH values.",
+        "has_diagram": false,
+        "page_index": 3
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "68",
+        "question_text": "Disinfection efficiency is",
+        "options": {
+            "a": "Reduced at higher pH value of water",
+            "b": "Unaffected by pH value of water",
+            "c": "Increased at higher pH value of water",
+            "d": "Highest at pH value equal to 7"
+        },
+        "correct_answer": "a",
+        "solution": "Sol(a). Disinfection efficiency is Reduced at higher pH value of water because HOCL ion which is more effective in killing pathogenic bacteria is not effective at higher ph value as much as at lower ph value.",
+        "has_diagram": false,
+        "page_index": 3
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "69",
+        "question_text": "In lime-soda process",
+        "options": {
+            "a": "Only carbonate hardness is removed",
+            "b": "Only non-carbonate hardness is removed",
+            "c": "Lime reduces the carbonate hardness and soda-ash removes the non-carbonate hardness",
+            "d": "Lime reduces the non-carbonate hardness and soda-ash removes the carbonate hardness"
+        },
+        "correct_answer": "c",
+        "solution": "Sol(c). In lime-soda process Lime reduces the carbonate hardness and soda-ash removes the non-carbonate hardness",
+        "has_diagram": false,
+        "page_index": 3
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "70",
+        "question_text": "The major disadvantage of lime soda process of water softening is that",
+        "options": {
+            "a": "It is unsuitable for turbid and acidic water",
+            "b": "Huge amount of precipitate is formed which creates a disposal problem",
+            "c": "The effluent cannot be reduced to zero hardness",
+            "d": "It is unsuitable for softening the water of excessive hardness"
+        },
+        "correct_answer": "b",
+        "solution": "Sol(b). The major disadvantage of lime soda process of water softening is that huge amount of precipitate is formed which creates a disposal problem.",
+        "has_diagram": false,
+        "page_index": 3
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "71",
+        "question_text": "Which of the following compounds is widely used for algae control?",
+        "options": {
+            "a": "Sodium sulphate",
+            "b": "Copper sulphate",
+            "c": "Sodium chloride",
+            "d": "Calcium chloride"
+        },
+        "correct_answer": "b",
+        "solution": "Sol(b). Copper sulphate is widely used for algae control.",
+        "has_diagram": false,
+        "page_index": 3
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "72",
+        "question_text": "Activated carbon is used for",
+        "options": {
+            "a": "Disinfection",
+            "b": "Removing hardness",
+            "c": "Removing odours",
+            "d": "Removing corrosiveness"
+        },
+        "correct_answer": "c",
+        "solution": "Sol(c). Application of activated carbon\n- Gas purification\n- Water purification\n- Waste water treatment",
+        "has_diagram": false,
+        "page_index": 4
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "73",
+        "question_text": "As compared to cast iron pipes, steel pipes are",
+        "options": {
+            "a": "Heavier",
+            "b": "Stronger",
+            "c": "Costlier",
+            "d": "Less susceptible to corrosion"
+        },
+        "correct_answer": "b",
+        "solution": "Sol(b). Steel pipes are stronger as compared to cast iron pipes\n- Cast iron pipes was historically used as a pressure pipe for transmission of water, gas and sewage, and as a water drainage pipe.",
+        "has_diagram": false,
+        "page_index": 4
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "74",
+        "question_text": "The suitable layout of a distribution system for irregularly growing town is",
+        "options": {
+            "a": "Dead end system",
+            "b": "Grid iron system",
+            "c": "Radial system",
+            "d": "Ring system"
+        },
+        "correct_answer": "a",
+        "solution": "Sol(a).",
+        "has_diagram": false,
+        "page_index": 4
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "75",
+        "question_text": "The layout of distribution system in which water flows towards the outer periphery is",
+        "options": {
+            "a": "Ring system",
+            "b": "Dead end system",
+            "c": "Radial system",
+            "d": "Grid iron system"
+        },
+        "correct_answer": "c",
+        "solution": "Sol(c). In Radial system water flows towards the outer periphery.",
+        "has_diagram": true,
+        "diagram_bbox": [
+            550,
+            560,
+            735,
+            785
+        ],
+        "page_index": 4,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1783104581/ocr_diagrams/ppmj5cqif7zfoswlaqk1.png"
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "76",
+        "question_text": "The suitable layout of distribution system for a city with roads of rectangular pattern is",
+        "options": {
+            "a": "Grid iron system",
+            "b": "Dead end system",
+            "c": "Ring system",
+            "d": "Radial system"
+        },
+        "correct_answer": "a",
+        "solution": "Sol(a). The suitable layout of distribution system for a city with roads of rectangular pattern is Grid iron system.",
+        "has_diagram": true,
+        "diagram_bbox": [
+            310,
+            100,
+            505,
+            335
+        ],
+        "page_index": 5,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1783104582/ocr_diagrams/q5ms0vpxpjh06c0hmubm.png"
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "77",
+        "question_text": "The commonly used material for water supply pipes, which has the properties of being strong, not easily corroded and long life but is heavy and brittle is",
+        "options": {
+            "a": "Steel",
+            "b": "Cast iron",
+            "c": "Copper",
+            "d": "Reinforced cement concrete"
+        },
+        "correct_answer": "b",
+        "solution": "Sol(b). Cast iron used for water supply pipes, which has the properties of being strong, not easily corroded and long life but is heavy and brittle.",
+        "has_diagram": false,
+        "page_index": 5
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "78",
+        "question_text": "Hardy cross method of analysis of distribution system\n(i) Involves successive trials\n(ii) Takes economic aspects into account\n(iii) Is time consuming\n\nThe correct answer is",
+        "options": {
+            "a": "only (i)",
+            "b": "(i) and (ii)",
+            "c": "(i) and (iii)",
+            "d": "all are correct"
+        },
+        "correct_answer": "c",
+        "solution": "Sol(c). Hardy cross method of analysis of distribution system involves\n- Successive trials\n- Is time consuming",
+        "has_diagram": false,
+        "page_index": 5
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "79",
+        "question_text": "The method of analysis of distribution system in which the domestic supply is neglected and fire demand is considered is",
+        "options": {
+            "a": "Circle method",
+            "b": "Equivalent pipe method",
+            "c": "Electrical analysis method",
+            "d": "Hardy cross method"
+        },
+        "correct_answer": "a",
+        "solution": "Sol(a). Circle method of analysis of distribution system in which the domestic supply is neglected and fire demand is considered.\n- Ring system or circular system in which the main pipe line is provided around the city or area i.e., peripherally. From this main line, the branch lines are projected perpendicularly and they are also connected with each other.",
+        "has_diagram": false,
+        "page_index": 5
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "80",
+        "question_text": "Which of the following methods of analysis of water distribution, system is most suitable for long and narrow pipe system?",
+        "options": {
+            "a": "Circle method",
+            "b": "Equivalent pipe method",
+            "c": "Hardy cross method",
+            "d": "Electrical analysis method"
+        },
+        "correct_answer": "b",
+        "solution": "Sol(b). Equivalent pipe methods of analysis of water distribution system is most suitable for long and narrow pipe system.",
+        "has_diagram": false,
+        "page_index": 5
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "81",
+        "question_text": "The type of valve which is provided to control the flow of water in the distribution system at street comers and where the pipe lines intersect is",
+        "options": {
+            "a": "Check valve",
+            "b": "Sluice valve",
+            "c": "Safety valve",
+            "d": "Scour valve"
+        },
+        "correct_answer": "b",
+        "solution": "Sol(b). Sluice valve is provided to control the flow of water in the distribution system at street comers and where the pipe lines intersect.",
+        "has_diagram": true,
+        "diagram_bbox": [
+            350,
+            75,
+            570,
+            485
+        ],
+        "page_index": 6,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1783104584/ocr_diagrams/exx1coyslkqzyyie5zgo.png"
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "82",
+        "question_text": "The type of valve which allows water to flow in one direction but prevents its flow in the reverse direction is",
+        "options": {
+            "a": "Reflux valve",
+            "b": "Sluice valve",
+            "c": "Air relief valve",
+            "d": "Pressure relief valve"
+        },
+        "correct_answer": "a",
+        "solution": "Sol(a). Reflux valve is commonly known as Check valve and Non-Return Valve (NRV). Water tends to flow from higher pressure to lower pressure.",
+        "has_diagram": false,
+        "page_index": 6
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "83",
+        "question_text": "Scour valves are provided",
+        "options": {
+            "a": "At street comers to control the flow of water",
+            "b": "At every depression and dead ends to drain out the waste water that may collect there",
+            "c": "At the foot of rising main along the slope to prevent back running of water",
+            "d": "At every summit of rising mains"
+        },
+        "correct_answer": "b",
+        "solution": "Sol(b). Scour valves are located at low points or between valved sections of the pipeline. Their function is to allow periodic flushing of the lines to remove sediment and to allow the line to be drained for maintenance and repair work.",
+        "has_diagram": true,
+        "diagram_bbox": [
+            370,
+            525,
+            475,
+            910
+        ],
+        "page_index": 6,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1783104585/ocr_diagrams/ikxt60wxk4x78nfgmqr9.png"
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "84",
+        "question_text": "A sewer that receives the discharge of a number of house sewers is called",
+        "options": {
+            "a": "house sewer",
+            "b": "Lateral sewer",
+            "c": "Intercepting sewer",
+            "d": "Submain sewer"
+        },
+        "correct_answer": "b",
+        "solution": "Sol(b). The building, or house, sewer is the smallest pipe in a wastewater collection system. Lateral sewer is the Piping that receives discharge from house sewers.",
+        "has_diagram": true,
+        "diagram_bbox": [
+            730,
+            525,
+            895,
+            910
+        ],
+        "page_index": 6,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1783104586/ocr_diagrams/ctxn6hylrmiyrdwpfgvk.png"
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "85",
+        "question_text": "A pipe conveying sewage from plumbing system of a single building to common sewer or point of immediate disposal is called",
+        "options": {
+            "a": "House sewer",
+            "b": "Lateral sewer",
+            "c": "Main sewer",
+            "d": "Submain sewer"
+        },
+        "correct_answer": "a",
+        "solution": "Sol(a). House sewer is a prolongation of a house drain extending from a few feet outside a foundation to a connection with a public sewer in the street or alley also called building sewer",
+        "has_diagram": false,
+        "page_index": 7
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "86",
+        "question_text": "For a country like India, where rainfall is mainly confined to one season, the suitable sewerage system will be",
+        "options": {
+            "a": "Separate system",
+            "b": "Combined system",
+            "c": "Partially combined system",
+            "d": "Partially separate system"
+        },
+        "correct_answer": "a",
+        "solution": "Sol(a). Separate system is suitable sewerage system for a country like India, where rainfall is mainly confined to one season.",
+        "has_diagram": false,
+        "page_index": 7
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "87",
+        "question_text": "Average rate of water consumption per head per day as per Indian Standard is",
+        "options": {
+            "a": "100 litres",
+            "b": "135 litres",
+            "c": "165 litres",
+            "d": "200 litres"
+        },
+        "correct_answer": "b",
+        "solution": "Sol(b). BIS Standard IS:1172-1993 explains water consumption practices and norms for various uses. Also as reported in some other places, it is considered that the specific water consumption in India is around 145 lit per person per day.",
+        "has_diagram": false,
+        "page_index": 7
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "88",
+        "question_text": "Sewerage system is usually designed for",
+        "options": {
+            "a": "10 years",
+            "b": "25 years",
+            "c": "50 years",
+            "d": "75 years"
+        },
+        "correct_answer": "b",
+        "solution": "Sol(b). Sewerage system is usually designed for 25 years.",
+        "has_diagram": false,
+        "page_index": 7
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "89",
+        "question_text": "Which of the following sewers is preferred for combined system of sewage?",
+        "options": {
+            "a": "Circular sewer",
+            "b": "Egg shaped sewer",
+            "c": "Rectangular sewer",
+            "d": "None of the above"
+        },
+        "correct_answer": "b",
+        "solution": "Sol(b). Egg shaped sewer is preferred for combined system of sewage.\n- The main advantage of an egg-shaped sewer is that for small flows the depth is greater and the velocity is somewhat higher than in a circular sewer of equivalent capacity. Thus, egg-shaped sewers have better self-cleansing property at small flows as compared to circular sewers.",
+        "has_diagram": true,
+        "diagram_bbox": [
+            530,
+            625,
+            700,
+            895
+        ],
+        "page_index": 7,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1783104587/ocr_diagrams/ylmukwow2fra8jpng9va.png"
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "90",
+        "question_text": "The suitable system of sanitation for area of distributed rainfall throughout the year with less intensity is",
+        "options": {
+            "a": "Separate system",
+            "b": "Combined system",
+            "c": "Partially separate system",
+            "d": "Partially combined system"
+        },
+        "correct_answer": "b",
+        "solution": "Sol(b). Combined system is suitable system of sanitation for area of distributed rainfall throughout the year with less intensity.",
+        "has_diagram": false,
+        "page_index": 7
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "91",
+        "question_text": "The water carriage system of collection of waste product",
+        "options": {
+            "a": "Is cheaper in initial cost than dry conservancy system",
+            "b": "Requires treatment before disposal",
+            "c": "Creates hygenic problem",
+            "d": "All of the above"
+        },
+        "correct_answer": "b",
+        "solution": "Sol(b). The water carriage system of collection of waste product requires treatment before disposal.\n- In this system water is used as a medium to carry wastes to the point of final disposal. The quantity of water is so high (99.9%) that wastes becomes liquid which is carried by the sewers.",
+        "has_diagram": false,
+        "page_index": 8
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "92",
+        "question_text": "If the time of concentration is 9 minutes, then the intensity of rainfall according to British Ministry of Health formula Will be",
+        "options": {
+            "a": "4 mm/hr",
+            "b": "10 mm/hr",
+            "c": "20 mm/hr",
+            "d": "40 mm/hr"
+        },
+        "correct_answer": "d",
+        "solution": "Sol(d). Since time of concentration is between 5 and 20 minutes.\nHence intensity of rainfall = $\\frac{760}{t+10} = \\frac{760}{9+10} = 40$ mm/hr.\nNote - Some literature suggests intensity of rainfall for time of concentration between 5 to 20 mins\n$\\frac{750}{t+10}$",
+        "has_diagram": false,
+        "page_index": 8
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "93",
+        "question_text": "The time of concentration is defined as",
+        "options": {
+            "a": "The time taken by rainfall water to run from most distant point of water shed to the inlet of sewer",
+            "b": "The time required for flow of water in sewer to the point under consideration",
+            "c": "Sum of (a) and (b)",
+            "d": "Difference of (a) and (b)"
+        },
+        "correct_answer": "c",
+        "solution": "Sol(c). The time of concentration is defined as the period after which the entire catchment area will start contributing to the runoff.\n- Time of concentration ($T_c$) is the time required for runoff to travel from the hydraulically most distant point in the watershed to the outlet.\n- The time of concentration is equal to sum of inlet time and time of travel In sewers,\n- Inlet time = The time taken by rainfall water to run from most distant point of water shed to the inlet of sewer.\n- Time of travel = The time required for flow of water in sewer to the point under consideration.",
+        "has_diagram": false,
+        "page_index": 8
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "94",
+        "question_text": "The specific gravity of sewage is",
+        "options": {
+            "a": "Much greater than 1",
+            "b": "Slightly less than 1",
+            "c": "Equal to 1",
+            "d": "Slightly greater than 1"
+        },
+        "correct_answer": "d",
+        "solution": "Sol(d). The specific gravity of sewage is slightly greater than 1.",
+        "has_diagram": false,
+        "page_index": 8
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "95",
+        "question_text": "The self-cleansing velocity for all sewers in India is usually",
+        "options": {
+            "a": "Less than 1.0 m/sec",
+            "b": "1.0 m/sec to 1.2 m/sec",
+            "c": "1.5 m/sec to 2.0 m/sec",
+            "d": "3.0 m/sec to 3.5 m/sec"
+        },
+        "correct_answer": "b",
+        "solution": "Sol(b). The self-cleansing velocity for all sewers in India is usually 1.0 m/sec to 1.2 m/sec",
+        "has_diagram": false,
+        "page_index": 8
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "96",
+        "question_text": "The slope of sewer shall be",
+        "options": {
+            "a": "Given in the direction of natural slope of ground",
+            "b": "Given in the direction opposite to natural slope of ground",
+            "c": "Zero",
+            "d": "Steeper than 1 in 20"
+        },
+        "correct_answer": "a",
+        "solution": "Sol(a). The slope of sewer shall be given in the direction of natural slope of ground.",
+        "has_diagram": false,
+        "page_index": 9
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "97",
+        "question_text": "The design discharge for the separate sewer system shall be taken as",
+        "options": {
+            "a": "Equal to dry weather flow (DWF)",
+            "b": "2 x DWF",
+            "c": "3 x DWF",
+            "d": "6 x DWF"
+        },
+        "correct_answer": "d",
+        "solution": "Sol(d). The design discharge for the separate sewer system shall be taken as 6 x DWF.",
+        "has_diagram": false,
+        "page_index": 9
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "98",
+        "question_text": "The design discharge for the combined sewer system shall be taken as",
+        "options": {
+            "a": "Equal to rainfall",
+            "b": "Rainfall + DWF",
+            "c": "Rainfall + 2 DWF",
+            "d": "Rainfall + 6 DWF"
+        },
+        "correct_answer": "c",
+        "solution": "Sol(c). The rain run-off i.e. drainage discharge, which is produced during monsoon season is generally very high, say 20 to 25 times that of the sewage discharge, called dry weather flow (DWF).\n- The design discharge for the combined sewerage system shall be taken as = Rainfall + 2 DWF (Dry Weather Flow)",
+        "has_diagram": false,
+        "page_index": 9
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "99",
+        "question_text": "The minimum and maximum diameters of sewers shall preferably be",
+        "options": {
+            "a": "15 cm and 100 cm",
+            "b": "15 cm and 300 cm",
+            "c": "30 cm and 450 cm",
+            "d": "60 cm and 300 cm"
+        },
+        "correct_answer": "b",
+        "solution": "Sol(b). The minimum diameter for plain and rolling terrain sewers generally adopted in the design may be 150 mm and for hilly area it is taken 100 mm.\n- The maximum diameter of sewers is adopted in design as 300 cm.",
+        "has_diagram": false,
+        "page_index": 9
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "100",
+        "question_text": "The main disadvantage of cement concrete sewers",
+        "options": {
+            "a": "Less strength",
+            "b": "Difficulty in construction",
+            "c": "Difficulty in transportation due to heavy weight",
+            "d": "Less life"
+        },
+        "correct_answer": "c",
+        "solution": "Sol(c). The main disadvantage of cement concrete sewers is difficulty in transportation due to heavy weight.",
+        "has_diagram": false,
+        "page_index": 9
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "101",
+        "question_text": "Most suitable section of sewer in separate sewage system is",
+        "options": {
+            "a": "Rectangular section",
+            "b": "Circular section",
+            "c": "Standard form of egg-shaped sewer",
+            "d": "Modified egg-shaped section"
+        },
+        "correct_answer": "b",
+        "solution": "Sol(b). For seperate system circular section is preferred.\n- For Combined System egg Shaped, because lower portion of egg shaped sewer is used in low discharge and upper large section used in high discharge condition.",
+        "has_diagram": false,
+        "page_index": 9
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "102",
+        "question_text": "An egg-shaped section of sewer",
+        "options": {
+            "a": "Is economical than circular section",
+            "b": "Provides self-cleansing velocity at low discharges",
+            "c": "Is more stable than circular section",
+            "d": "Is easy to construct"
+        },
+        "correct_answer": "b",
+        "solution": "Sol(b). An egg-shaped section of sewer provides self-cleansing velocity at low discharges.",
+        "has_diagram": false,
+        "page_index": 10
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "103",
+        "question_text": "The velocity of flow does not depend on",
+        "options": {
+            "a": "Grade of sewer",
+            "b": "Length of sewer",
+            "c": "Hydraulic mean depth of sewer",
+            "d": "Roughness of sewer"
+        },
+        "correct_answer": "b",
+        "solution": "Sol(b). The velocity of flow depends on\n- Grade of sewer\n- Hydraulic mean depth of sewer\n- Roughness of sewer",
+        "has_diagram": false,
+        "page_index": 10
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "104",
+        "question_text": "The hydraulic mean depth (HMD) for an egg-shaped sewer flowing two-third full is",
+        "options": {
+            "a": "Equal to HMD when flowing full",
+            "b": "Less than HMD when flowing full",
+            "c": "Greater than HMD when flowing full",
+            "d": "None of the above"
+        },
+        "correct_answer": "c",
+        "solution": "Sol(c). The hydraulic mean depth (HMD) for an egg-shaped sewer flowing two-third full is greater than HMD when flowing full.",
+        "has_diagram": false,
+        "page_index": 10
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "105",
+        "question_text": "The effect of increasing diameter of sewer on the self-cleansing velocity is",
+        "options": {
+            "a": "To decrease it",
+            "b": "To increase it",
+            "c": "Fluctuating",
+            "d": "Nil"
+        },
+        "correct_answer": "b",
+        "solution": "Sol(b). Self-cleansing velocity\n$V_s = \\frac{1}{n} r^{\\frac{1}{6}} \\sqrt{k d' (G - 1)}$\nfor circular pipes running full, $r = \\frac{D}{4}$\n$V_s \\propto \\left(\\frac{D}{4}\\right)^{\\frac{1}{6}}$\nAssuming all parameters constant\nWhere n = manning's roughness coefficient\nr = hydraulic mean radius\nd' = grain particle size\nG = specific gravity\n- The effect of increasing the diameter of sewer on the self-cleansing velocity is to increase it.",
+        "has_diagram": false,
+        "page_index": 10
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "106",
+        "question_text": "The most commonly used sewer under culverts is",
+        "options": {
+            "a": "Circular brick sewer",
+            "b": "Circular cast iron sewer",
+            "c": "Semi-elliptical sewer",
+            "d": "Horse-shoe type sewer"
+        },
+        "correct_answer": "a",
+        "solution": "Sol(a). The most commonly used sewer under culverts is circular brick sewer.",
+        "has_diagram": false,
+        "page_index": 10
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "107",
+        "question_text": "The type of sewer which is suitable for both combined and separate system is",
+        "options": {
+            "a": "Circular sewer",
+            "b": "Egg shaped sewer",
+            "c": "Horse-shoe type sewer",
+            "d": "Semi-elliptical sewer"
+        },
+        "correct_answer": "b",
+        "solution": "Sol(b). Egg shaped sewer is suitable for both combined and separate system.",
+        "has_diagram": false,
+        "page_index": 10
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "108",
+        "question_text": "The characteristics of fresh and septic sewage respectively are",
+        "options": {
+            "a": "Acidic and alkaline",
+            "b": "Alkaline and acidic",
+            "c": "Both acidic",
+            "d": "Both alkaline"
+        },
+        "correct_answer": "b",
+        "solution": "Sol(b). Characteristics of fresh sewage is alkaline.\n- Characteristics of septic sewage is acidic.",
+        "has_diagram": false,
+        "page_index": 11
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "109",
+        "question_text": "The pathogens can be killed by",
+        "options": {
+            "a": "Nitrification",
+            "b": "Chlorination",
+            "c": "Oxidation",
+            "d": "None of the above"
+        },
+        "correct_answer": "b",
+        "solution": "Sol(b). The process of killing pathogenic bacteria is known as disinfection and chlorination is one of the methods of disinfection.",
+        "has_diagram": false,
+        "page_index": 11
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "110",
+        "question_text": "Which of the following retards the self-purification of stream?",
+        "options": {
+            "a": "Higher temperature",
+            "b": "Sunlight",
+            "c": "Satisfying oxygen demand",
+            "d": "None of the above"
+        },
+        "correct_answer": "d",
+        "solution": "Sol(d). Higher temperature, sunlight and satisfying oxygen demand are helps in self-purification process.",
+        "has_diagram": false,
+        "page_index": 11
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "111",
+        "question_text": "Sewage treatment units are normally designed for",
+        "options": {
+            "a": "5 - 10 years",
+            "b": "15 - 20 years",
+            "c": "30 - 40 years",
+            "d": "40-50 years"
+        },
+        "correct_answer": "b",
+        "solution": "Sol(b). Sewage treatment units are normally designed for 15 - 20 years.",
+        "has_diagram": false,
+        "page_index": 11
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "112",
+        "question_text": "Settling velocity does not depend on",
+        "options": {
+            "a": "Specific gravity of solid particles",
+            "b": "Size of particles",
+            "c": "Depth of tank",
+            "d": "Temperature of liquid"
+        },
+        "correct_answer": "c",
+        "solution": "Sol(c). Settling velocity is given by where\n$v = \\frac{(\\rho_s - \\rho_f) g D^2}{18 \\mu}$\n$v$ = terminal velocity\n$\\rho_s$ = density of solids\n$\\rho_f$ = density of fluid\ng = acceleration due to gravity\nD = diameter of the particle\n$\\mu$ = viscosity of fluid\n- From above formula we can say that settling velocity does not depend on depth of tank.",
+        "has_diagram": false,
+        "page_index": 11
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "113",
+        "question_text": "Standard BOD is measured at",
+        "options": {
+            "a": "20°C - 1 day",
+            "b": "25°C – 3day",
+            "c": "20°C - 5 day",
+            "d": "30°C – 5 day"
+        },
+        "correct_answer": "c",
+        "solution": "Sol(c). Standard BOD is measured at 20°C - 5 day.",
+        "has_diagram": false,
+        "page_index": 11
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "114",
+        "question_text": "The correct relation between theoretical' oxygen demand (ThOD), Biochemical oxygen demand (BOD) and Chemical oxygen demand (COD) is given by",
+        "options": {
+            "a": "ThOD > BOD > COD",
+            "b": "ThOD > COD > BOD",
+            "c": "BOD > COD > ThOD",
+            "d": "COD > BOD > ThOD"
+        },
+        "correct_answer": "b",
+        "solution": "Sol(b). The correct relation between ThOD, BOD and COD is ThOD > COD > BOD\n- Theoretical oxygen demand (ThOD) is the calculated amount of oxygen required to oxidize a compound to its final oxidation products.\n- COD or Chemical Oxygen Demand is the total measurement of all chemicals (organics & in-organics) in the water / waste water.\n- BOD is a measure of, the amount of oxygen that require for the bacteria to degrade the organic components present in water / waste water.",
+        "has_diagram": false,
+        "page_index": 11
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "115",
+        "question_text": "Select the correct statement.",
+        "options": {
+            "a": "5 day BOD is the ultimate BOD.",
+            "b": "5 day BOD is greater than 4 day BOD keeping other conditions same.",
+            "c": "5 day BOD is less than 4 day BOD keeping other conditions same.",
+            "d": "BOD does not depend on time."
+        },
+        "correct_answer": "c",
+        "solution": "Sol(c). In 5-day, BOD, micro-organisms have more time to consume O2 and hence dissolved oxygen demanded will be less after 5days whereas in 4day BOD micro-organisms have less time to consume O2 to decompose organic matter and after 4day dissolved oxygen demanded will be more to decompose organic matter.so BOD 5 is less than BOD 4.",
+        "has_diagram": false,
+        "page_index": 12
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "116",
+        "question_text": "If Biochemical oxygen demand (BOD) of a town is 20000 kg/day and BOD per capita per day is 0.05 kg, then population equivalent of town is",
+        "options": {
+            "a": "1000",
+            "b": "4000",
+            "c": "100000",
+            "d": "400000"
+        },
+        "correct_answer": "d",
+        "solution": "Sol(d). Population equivalent = $\\frac{\\text{BOD of town } (\\frac{\\text{kg}}{\\text{d}})}{\\text{BOD of per capita } (\\frac{\\text{kg}}{\\text{d} \\cdot \\text{person}})} = \\frac{20000}{0.05} = 400000$",
+        "has_diagram": false,
+        "page_index": 12
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "117",
+        "question_text": "The rate of BOD exerted at any time is",
+        "options": {
+            "a": "Directly proportional to BOD satisfied",
+            "b": "Directly proportional to BOD remaining",
+            "c": "Inversely proportional to BOD satisfied",
+            "d": "Inversely proportional to BOD remaining"
+        },
+        "correct_answer": "b",
+        "solution": "Sol(b). The rate of BOD exerted at any time is directly proportional to BOD remaining.\nBOD is given by -\n$L_t = L_0 e^{-k_1 t}$\nwhere, $L_0$: Ultimate BOD, mg/L\n$L_t$: BOD remaining at any time, mg/L\n$k_1$: 1st order reaction rate constant, 1/d\nt: time, d\nBut $L_0 = L_t + Y$\n$\\therefore Y = L_0(1 - e^{-k_1 t})$\nwhere, Y: BOD Exerted at that time",
+        "has_diagram": false,
+        "page_index": 12
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "118",
+        "question_text": "The ratio of 5 day BOD to ultimate BOD is about",
+        "options": {
+            "a": "1/3",
+            "b": "2/3",
+            "c": "3/4",
+            "d": "1.0"
+        },
+        "correct_answer": "b",
+        "solution": "Sol(b). The ratio of 5 day BOD to ultimate BOD is about 2/3.",
+        "has_diagram": false,
+        "page_index": 12
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "120",
+        "question_text": "The minimum dissolved oxygen which should always be present in water in order to save the aquatic life is",
+        "options": {
+            "a": "1 ppm",
+            "b": "4 ppm",
+            "c": "10 ppm",
+            "d": "40 ppm"
+        },
+        "correct_answer": "b",
+        "solution": "The minimum dissolved oxygen which should always be present in water in order to save the aquatic life is 4 ppm.",
+        "has_diagram": false,
+        "page_index": 1
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "121",
+        "question_text": "The relative stability of a sewage sample, whose dissolved oxygen is same as the total oxygen required to satisfy BOD, is",
+        "options": {
+            "a": "1",
+            "b": "100",
+            "c": "Infinite",
+            "d": "Zero"
+        },
+        "correct_answer": "b",
+        "solution": "Relative stability of a sewage sample, whose dissolved oxygen is same as the total oxygen required to satisfy BOD, is 100.",
+        "has_diagram": false,
+        "page_index": 1
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "122",
+        "question_text": "Dissolved oxygen in streams is",
+        "options": {
+            "a": "Maximum at noon",
+            "b": "Minimum at noon",
+            "c": "Maximum at midnight",
+            "d": "Same throughout the day"
+        },
+        "correct_answer": "a",
+        "solution": "At noon, rate of photosynthesis is high and hence the amount of oxygen produced exceeds the amount required for respiration. Therefore, the dissolved oxygen in streams is maximum at noon.",
+        "has_diagram": true,
+        "diagram_bbox": [
+            215,
+            550,
+            355,
+            935
+        ],
+        "page_index": 1,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1783106607/ocr_diagrams/ejzhqjiwn2jokxepo56y.png"
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "123",
+        "question_text": "Facultative bacteria are able to work in",
+        "options": {
+            "a": "Presence of oxygen only",
+            "b": "Absence of oxygen only",
+            "c": "Presence as well as in absence of oxygen",
+            "d": "Presence of water"
+        },
+        "correct_answer": "c",
+        "solution": "Facultative bacteria are able to work in presence as well as in absence of oxygen.",
+        "has_diagram": false,
+        "page_index": 1
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "124",
+        "question_text": "The means of access for inspection and cleaning of sewer line is known as",
+        "options": {
+            "a": "Inlet",
+            "b": "Manhole",
+            "c": "Drop manhole",
+            "d": "Catch basin"
+        },
+        "correct_answer": "b",
+        "solution": "The main purpose of a manhole is: To perform inspection, cleaning, and removal of any obstruction present in the sewage line.",
+        "has_diagram": false,
+        "page_index": 1
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "125",
+        "question_text": "Sewerage system is designed for",
+        "options": {
+            "a": "Maximum flow only",
+            "b": "Minimum flow only",
+            "c": "Average flow only",
+            "d": "Maximum and minimum flow"
+        },
+        "correct_answer": "d",
+        "solution": "The conventional sewers shall be designed for a minimum sewage flow of 100 litres per capita per day or higher as the case may be.",
+        "has_diagram": false,
+        "page_index": 2
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "126",
+        "question_text": "Sewage treatment units are designed for",
+        "options": {
+            "a": "Maximum flow only",
+            "b": "Minimum flow only",
+            "c": "Average flow only",
+            "d": "Maximum and minimum flow"
+        },
+        "correct_answer": "c",
+        "solution": "Sewage treatment units are designed for Average flow only.",
+        "has_diagram": false,
+        "page_index": 2
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "127",
+        "question_text": "Laying of sewers is usually done with the help of",
+        "options": {
+            "a": "A theodolite",
+            "b": "A compass",
+            "c": "Sight rails and boning rods",
+            "d": "A plane table"
+        },
+        "correct_answer": "c",
+        "solution": "Laying of sewers is usually done by reference line method and by sight rail and boning Rod method.",
+        "has_diagram": false,
+        "page_index": 2
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "128",
+        "question_text": "Corrosion in concrete sewers is caused by",
+        "options": {
+            "a": "Septic conditions",
+            "b": "Dissolved oxygen",
+            "c": "Chlorine",
+            "d": "Nitrogen"
+        },
+        "correct_answer": "a",
+        "solution": "Corrosion in concrete sewers is mainly caused by Hydrogen sulphide gas which is formed due to anaerobic decomposition of sewage (septic conditions).",
+        "has_diagram": false,
+        "page_index": 2
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "129",
+        "question_text": "If the sewage contains grease and fatty oils, these are removed in",
+        "options": {
+            "a": "Grit chambers",
+            "b": "Detritus tanks",
+            "c": "Skimming tanks",
+            "d": "Sedimentation tanks"
+        },
+        "correct_answer": "c",
+        "solution": "If the sewage contains grease and fatty oils, these are removed in Skimming tanks.",
+        "has_diagram": true,
+        "diagram_bbox": [
+            435,
+            520,
+            525,
+            935
+        ],
+        "page_index": 2,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1783106608/ocr_diagrams/jlwmccw3h9korgalfio5.png"
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "130",
+        "question_text": "Generally, the detention period for grit chambers is kept as",
+        "options": {
+            "a": "1 minute",
+            "b": "5 minutes",
+            "c": "2 - 4 hours",
+            "d": "12 hours"
+        },
+        "correct_answer": "a",
+        "solution": "Generally, the detention period for grit chambers is kept as 1 minute.",
+        "has_diagram": false,
+        "page_index": 2
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "131",
+        "question_text": "Which of the following unit works in anaerobic conditions?",
+        "options": {
+            "a": "Sludge digestion tank",
+            "b": "Sedimentation tank",
+            "c": "Activated sludge treatment",
+            "d": "Trickling filters"
+        },
+        "correct_answer": "a",
+        "solution": "The conditions in sludge digestion tank is kept anaerobic.",
+        "has_diagram": false,
+        "page_index": 2
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "132",
+        "question_text": "Septic tank is a\ni) Settling tank\nii) Digestion tank\niii) Aeration tank\n\nThe correct answer is",
+        "options": {
+            "a": "Only (i)",
+            "b": "(i) and (ii)",
+            "c": "(i) and (iii)",
+            "d": "only (iii)"
+        },
+        "correct_answer": "b",
+        "solution": "Septic tank usually made of concrete or fiberglass is a small sewage treatment which mainly collects the waste generated by the domestic household. Septic tank works like both settling and digestion tank.",
+        "has_diagram": true,
+        "diagram_bbox": [
+            560,
+            105,
+            730,
+            515
+        ],
+        "page_index": 3,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1783106609/ocr_diagrams/r0tkiaqvbiqnaiwkxjal.png"
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "133",
+        "question_text": "The maximum efficiency of BOD removal is achieved in",
+        "options": {
+            "a": "Oxidation pond",
+            "b": "Oxidation ditch",
+            "c": "Aerated lagoons",
+            "d": "Trickling filters"
+        },
+        "correct_answer": "b",
+        "solution": "The maximum efficiency of the BOD removal is obtained in oxidation ditch.",
+        "has_diagram": false,
+        "page_index": 3
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "134",
+        "question_text": "The working conditions in imhoff tanks are",
+        "options": {
+            "a": "Aerobic only",
+            "b": "Anaerobic only",
+            "c": "Aerobic in lower compartment and anaerobic in upper compartment",
+            "d": "Anaerobic in lower compartment and aerobic in upper compartment"
+        },
+        "correct_answer": "d",
+        "solution": "The working conditions in imhoff tanks are anaerobic in lower compartment and aerobic in upper compartment.",
+        "has_diagram": true,
+        "diagram_bbox": [
+            360,
+            560,
+            515,
+            935
+        ],
+        "page_index": 3,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1783106610/ocr_diagrams/eirpgws0xyzgoepz3ywf.png"
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "135",
+        "question_text": "In facultative stabilization pond, the sewage is treated by",
+        "options": {
+            "a": "Aerobic bacteria only",
+            "b": "Algae only",
+            "c": "Dual action of aerobic bacteria and anaerobic bacteria",
+            "d": "Sedimentation"
+        },
+        "correct_answer": "c",
+        "solution": "In facultative stabilization pond, the sewage is treated by dual action of aerobic bacteria and anaerobic bacteria.",
+        "has_diagram": false,
+        "page_index": 3
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "136",
+        "question_text": "The detention period for oxidation ponds is usually kept as",
+        "options": {
+            "a": "4 - 8 hours",
+            "b": "24 hours",
+            "c": "10 to 15 days",
+            "d": "3 months"
+        },
+        "correct_answer": "c",
+        "solution": "The detention period for oxidation ponds is usually kept as 10 to 15 days.",
+        "has_diagram": false,
+        "page_index": 3
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "137",
+        "question_text": "Composting and lagooning are the methods of",
+        "options": {
+            "a": "Sludge digestion",
+            "b": "Sludge disposal",
+            "c": "Sedimentation",
+            "d": "Filtration"
+        },
+        "correct_answer": "b",
+        "solution": "Composting and lagooning are the methods of sludge disposal.",
+        "has_diagram": false,
+        "page_index": 4
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "138",
+        "question_text": "The main disadvantage of oxidation pond is that",
+        "options": {
+            "a": "Large area is required for construction",
+            "b": "Maintenance and operation cost are high",
+            "c": "BOD removal is very low",
+            "d": "None of the above"
+        },
+        "correct_answer": "a",
+        "solution": "The main disadvantage of oxidation pond is that Large area is required for construction.",
+        "has_diagram": false,
+        "page_index": 4
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "139",
+        "question_text": "For satisfactory working of a sludge digestion unit, the pH range of digested sludge should be maintained as",
+        "options": {
+            "a": "4.5 to 6.0",
+            "b": "6.5 to 8.0",
+            "c": "8.5 to 10.0",
+            "d": "10.5 to 12.0"
+        },
+        "correct_answer": "b",
+        "solution": "For satisfactory working of a sludge digestion unit, the pH range of digested sludge should be maintained as 6.5 to 8.0.",
+        "has_diagram": false,
+        "page_index": 4
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "140",
+        "question_text": "Sludge volume index is defined as the ratio of",
+        "options": {
+            "a": "Percentage of sludge by volume to percentage of suspended solids by weight",
+            "b": "Percentage of sludge by volume to percentage of total solids by weight",
+            "c": "Percentage of suspended solids by weight to percentage of sludge by volume",
+            "d": "Percentage of total solids by weight to percentage of sludge by volume"
+        },
+        "correct_answer": "a",
+        "solution": "Sludge volume index is defined as the ratio of percentage of sludge by volume to percentage of suspended solids by weight.",
+        "has_diagram": false,
+        "page_index": 4
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "141",
+        "question_text": "For normal sludge, the value of sludge index for Indian conditions is",
+        "options": {
+            "a": "0 to 50",
+            "b": "50 to 150",
+            "c": "150 to 350",
+            "d": "350 to 500"
+        },
+        "correct_answer": "b",
+        "solution": "For normal sludge, the value of sludge index for Indian conditions is 50 to 150.",
+        "has_diagram": false,
+        "page_index": 4
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "142",
+        "question_text": "When there is no recirculation of sewage, then recirculation factor is",
+        "options": {
+            "a": "0",
+            "b": "1",
+            "c": "Infinity",
+            "d": "None of the above"
+        },
+        "correct_answer": "b",
+        "solution": "Recirculation factor $F = \\frac{1+R}{(1+0.1R)^2}$ where $R = \\frac{Q_R}{Q_0} \\rightarrow$ if $Q_R = 0$, then $F = 1$.",
+        "has_diagram": false,
+        "page_index": 4
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "143",
+        "question_text": "For the same solid content, if the quantity of sludge with moisture content of 98% is X, then the quantity of sludge with moisture content of 96% will be",
+        "options": {
+            "a": "X/4",
+            "b": "X/2",
+            "c": "X",
+            "d": "2X"
+        },
+        "correct_answer": "b",
+        "solution": "$V(100-p) = V_1(100-P_1)$ where $V$ = volume of sludge of moisture content $p$ (in %), $V_1$ = Volume of sludge at moisture content $p_1$ (in %). $X(100-98) = V_1(100-96) \\Rightarrow V_1 = \\frac{X}{2}$.",
+        "has_diagram": false,
+        "page_index": 4
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "144",
+        "question_text": "A pipe which is installed in the house drainage to preserve the water seal of traps is called",
+        "options": {
+            "a": "Vent pipe",
+            "b": "Antisiphonage pipe",
+            "c": "Waste pipe",
+            "d": "Soil pipe"
+        },
+        "correct_answer": "b",
+        "solution": "A pipe which is installed in the house drainage to preserve the water seal of traps is called antisiphonage pipe.",
+        "has_diagram": true,
+        "diagram_bbox": [
+            535,
+            105,
+            745,
+            475
+        ],
+        "page_index": 5,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1783106611/ocr_diagrams/dlhejbhjb2buebbzvm51.png"
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "145",
+        "question_text": "In the two-pipe system of house plumbing, the pipes required are",
+        "options": {
+            "a": "One soil pipe, one waste pipe and one vent pipe",
+            "b": "One soil pipe, two waste pipes and one vent pipe",
+            "c": "One soil pipe, one waste pipe and two vent pipes",
+            "d": "Two soil pipes, one waste pipe and one vent pipe"
+        },
+        "correct_answer": "c",
+        "solution": "Two pipe system - separate soil pipe and waste pipe or sullage pipe + ventilation pipe.",
+        "has_diagram": true,
+        "diagram_bbox": [
+            220,
+            550,
+            465,
+            920
+        ],
+        "page_index": 5,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1783106611/ocr_diagrams/xxneavhct0voi13ww3vp.png"
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "146",
+        "question_text": "The pipe which is used to carry the discharge from sanitary fittings like bathrooms, kitchens etc. is called",
+        "options": {
+            "a": "Waste pipe",
+            "b": "Soil pipe",
+            "c": "Vent pipe",
+            "d": "Antisiphonage pipe"
+        },
+        "correct_answer": "a",
+        "solution": "The pipe which is used to carry the discharge from sanitary fittings like bathrooms, kitchens etc. is called waste pipe.",
+        "has_diagram": false,
+        "page_index": 5
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "147",
+        "question_text": "The gas from sludge digestion tank is mainly composed of",
+        "options": {
+            "a": "Nitrogen",
+            "b": "Carbon dioxide",
+            "c": "Hydrogen sulphide",
+            "d": "Methane"
+        },
+        "correct_answer": "d",
+        "solution": "The gas from sludge digestion tank is mainly composed of methane.",
+        "has_diagram": false,
+        "page_index": 5
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "148",
+        "question_text": "Most of the bacteria in sewage are",
+        "options": {
+            "a": "Parasitic",
+            "b": "Saprophytic",
+            "c": "Pathogenic",
+            "d": "Anaerobic"
+        },
+        "correct_answer": "b",
+        "solution": "Bacteria from sewage are pathogenic, non-pathogenic, saprophytes autotrophic, heterotrophic, saprophytes etc. Saprophytic bacteria, which help to break down waste into inorganic and organic by-products. These bacteria are harmless and play a critical role in the treatment of sewage.",
+        "has_diagram": false,
+        "page_index": 6
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "149",
+        "question_text": "The process of lagooning is primarily a means of",
+        "options": {
+            "a": "Reducing the excessive flow in sewers",
+            "b": "Disposing of sludge",
+            "c": "Increasing the capacity of storage reservoirs",
+            "d": "Increasing flow of sewage through Imhoff tanks"
+        },
+        "correct_answer": "b",
+        "solution": "The process of lagooning is primarily a means of disposing of sludge.",
+        "has_diagram": false,
+        "page_index": 6
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "150",
+        "question_text": "The biochemical treatment of sewage effluents is essentially a process of",
+        "options": {
+            "a": "Oxidation",
+            "b": "Dehydration",
+            "c": "Reduction",
+            "d": "Alkalinization"
+        },
+        "correct_answer": "a",
+        "solution": "The biochemical treatment of sewage effluents is essentially a process of Oxidation.",
+        "has_diagram": false,
+        "page_index": 6
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "151",
+        "question_text": "To divert excessive flow from combined sewers, the most commonly used weir is a",
+        "options": {
+            "a": "Cipoletti weir",
+            "b": "Broadcrested weir",
+            "c": "Leaping weir",
+            "d": "Submerged weir"
+        },
+        "correct_answer": "c",
+        "solution": "Leaping weir - The normal storm flow is diverted into the intercepting sewer and the excess flow leaps over the combined sewer to flow into the nearby stream.",
+        "has_diagram": true,
+        "diagram_bbox": [
+            315,
+            535,
+            490,
+            905
+        ],
+        "page_index": 6,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1783106612/ocr_diagrams/vlsxqmry4id3l35a8bmt.png"
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "152",
+        "question_text": "Chlorine is used in the treatment of sewage to",
+        "options": {
+            "a": "Helps in grease separation",
+            "b": "Aids in flocculation",
+            "c": "Increase the biochemical oxygen demand",
+            "d": "Cause bulking of activated sludge"
+        },
+        "correct_answer": "a",
+        "solution": "Chlorine is used as a disinfectant in sewage treatment plants. Sewage is treated to remove all the chemical and biological hazards, making it safe to release into water bodies. Chlorine also oxidises a large number of organic molecules such as lipids and proteins and also helps in grease separation.",
+        "has_diagram": false,
+        "page_index": 6
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "153",
+        "question_text": "In the design of grit chambers",
+        "options": {
+            "a": "Baffles are essential",
+            "b": "Temperature is an important factor",
+            "c": "The detention period should be at least 30 minutes",
+            "d": "The maximum velocity of flow is 30 cm per second"
+        },
+        "correct_answer": "d",
+        "solution": "In the design of grit chambers horizontal velocity of flow of 15 to 30 cm/sec is used at peak flows.",
+        "has_diagram": false,
+        "page_index": 7
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "154",
+        "question_text": "Match List I with List II and select the correct answer using the codes given below the lists.\n\nList I\nA. Acidity\nB. Alum\nC. Cyclone\nD. Skimming tank\n\nList II\n1. Particulate matter\n2. Oils and greases\n3. Flocculation\n4. Carbon dioxide\n\nCodes:",
+        "options": {
+            "a": "A-4, B-3, C-1, D-2",
+            "b": "A-1, B-3, C-4, D-2",
+            "c": "A-1, B-2, C-4, D-3",
+            "d": "A-4, B-2, C-1, D-3"
+        },
+        "correct_answer": "a",
+        "solution": "Carbon dioxide causes acidity in water. Particulate matter is removed by cyclone precipitator. Oils and greases are removed in skimming tank. Alum is used as coagulant in flocculation process.",
+        "has_diagram": false,
+        "page_index": 7
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "155",
+        "question_text": "If the diameter of the main pipe is taken less than economic diameter then\n1. head loss will be high\n2. cost of pipe will be less\n3. cost of pumping will be less\nOf these statements",
+        "options": {
+            "a": "Only 1 is correct",
+            "b": "1 and 2 are correct",
+            "c": "1 and 3 are correct",
+            "d": "1, 2 and 3 are correct"
+        },
+        "correct_answer": "b",
+        "solution": "If the diameter of the main pipe is taken less than economic diameter then Head loss will be high, Cost of pipe will be less, Cost of pumping will be high.",
+        "has_diagram": false,
+        "page_index": 7
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "156",
+        "question_text": "Incrustation of the tubewell pipes may result in",
+        "options": {
+            "a": "discharge of highly corrosive acid water",
+            "b": "discharge of highly alkaline water",
+            "c": "reduced discharge from tube-well",
+            "d": "excessive discharge of sand with water"
+        },
+        "correct_answer": "c",
+        "solution": "The deposition of alkali salts on the inside walls of the pipe is called incrustation. It reduces the effective diameter of the well pipe and hence reduces the discharge of the tubewell.",
+        "has_diagram": false,
+        "page_index": 7
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "157",
+        "question_text": "The maximum velocity occurs in an egg shaped sewer when the ratio of depth of flow to vertical diameter is",
+        "options": {
+            "a": "0.33",
+            "b": "0.50",
+            "c": "0.81",
+            "d": "0.95"
+        },
+        "correct_answer": "c",
+        "solution": "The maximum velocity occurs in an egg shaped sewer when the ratio of depth of flow to vertical diameter is 0.81.",
+        "has_diagram": false,
+        "page_index": 8
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "158",
+        "question_text": "Shrouding is provided in",
+        "options": {
+            "a": "slotted pipe tubewell",
+            "b": "cavity type tubewell",
+            "c": "strainer type tubewell",
+            "d": "none of above"
+        },
+        "correct_answer": "a",
+        "solution": "Shrouding is the stones or aggregates provided around the slotted pipe at the bottom of the pipe.",
+        "has_diagram": true,
+        "diagram_bbox": [
+            495,
+            70,
+            695,
+            475
+        ],
+        "page_index": 8,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1783106613/ocr_diagrams/trrmmojpgqfm7q5rin76.png"
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "159",
+        "question_text": "If in a test conducted for determining relative stability, the period of incubation at $20^\\circ\\text{C}$ is t days, the relative stability in % is given by",
+        "options": {
+            "a": "$100[1-(0.794)^t]$",
+            "b": "$100[1-(0.630)^t]$",
+            "c": "$100[1-(0.694)^t]$",
+            "d": "$100[1-(0.730)^t]$"
+        },
+        "correct_answer": "a",
+        "solution": "Relative stability when temperature is $20^\\circ\\text{C}$ is $S = 100(1-0.794)^{t_{20}}$.",
+        "has_diagram": false,
+        "page_index": 8
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "160",
+        "question_text": "Ozone layer in the upper atmosphere is getting destroyed owing to its reaction with",
+        "options": {
+            "a": "carbon dioxide",
+            "b": "hydrogen peroxide",
+            "c": "oxides of nitrogen",
+            "d": "chlorofluorocarbons"
+        },
+        "correct_answer": "d",
+        "solution": "Ozone layer is formed in the stratosphere of the atmosphere by the action of UV rays on the oxygen molecules. However, the ozone depleting pollutants like chlorofluorocarbons reach the stratosphere and break when exposed to the UV rays.",
+        "has_diagram": false,
+        "page_index": 8
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "161",
+        "question_text": "The intensification of green house effect is attributed to the increased level of",
+        "options": {
+            "a": "carbon dioxide",
+            "b": "carbon monoxide",
+            "c": "chlorofluorocarbons",
+            "d": "sulphur dioxides"
+        },
+        "correct_answer": "a",
+        "solution": "Greenhouse effect is a naturally occurring phenomenon, it is possible that the effect could be intensified by the emission of greenhouse gases into the atmosphere as the result of human activity. From the beginning of the Industrial Revolution through the end of the 20th century, the amount of carbon dioxide in the atmosphere increased by roughly 30 percent and the amount of methane more than doubled.",
+        "has_diagram": false,
+        "page_index": 8
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "162",
+        "question_text": "Electrostatic precipitators are used as pollution control device for the separation of",
+        "options": {
+            "a": "$\\text{SO}_2$",
+            "b": "$\\text{NO}_x$",
+            "c": "hydrocarbon",
+            "d": "particulate matter"
+        },
+        "correct_answer": "d",
+        "solution": "Electrostatic precipitators are used for air pollution control, particularly for removing particles from waste gases at industrial facilities and power-generating stations.",
+        "has_diagram": true,
+        "diagram_bbox": [
+            365,
+            105,
+            635,
+            510
+        ],
+        "page_index": 9,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1783106614/ocr_diagrams/dzvvcvhlutpwmb3iu31r.png"
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "163",
+        "question_text": "Select the secondary air pollutants among the following:",
+        "options": {
+            "a": "ozone and carbon monoxide",
+            "b": "peroxy-acyl-nitrate (PAN) and ozone",
+            "c": "peroxy-acyl-nitrate (PAN) and carbon monoxide",
+            "d": "carbon monoxide and sulphur dioxide"
+        },
+        "correct_answer": "b",
+        "solution": "Different types of secondary pollutants include: Ozone ($\\text{O}_3$), Sulfuric acid and nitric acid (component of acid rain), Particulate matter, Nitrogen dioxide ($\\text{NO}_2$), Peroxyacyl nitrates (PANs) and more.",
+        "has_diagram": false,
+        "page_index": 9
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "164",
+        "question_text": "The primary pollutant caused by incomplete combustion of organic matter is",
+        "options": {
+            "a": "ozone",
+            "b": "carbon monoxide",
+            "c": "sulphur dioxide",
+            "d": "none of the above"
+        },
+        "correct_answer": "b",
+        "solution": "The primary pollutant caused by incomplete combustion of organic matter is carbon monoxide.",
+        "has_diagram": false,
+        "page_index": 9
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "165",
+        "question_text": "Select the primary air pollutants among the following :",
+        "options": {
+            "a": "sulphur dioxide and nitrogen oxides",
+            "b": "ozone and carbon monoxide",
+            "c": "sulphur dioxide and ozone",
+            "d": "nitrogen oxide and ozone"
+        },
+        "correct_answer": "a",
+        "solution": "Sulphur dioxide and nitrogen oxides are the primary pollutants, ozone is secondary pollutant.",
+        "has_diagram": false,
+        "page_index": 9
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "166",
+        "question_text": "The specified standard under US Ambient Air Quality standards for $\\text{SO}_2$, $\\text{NO}_2$ and $\\text{CO}$ respectively are",
+        "options": {
+            "a": "$50\\ \\mu\\text{g/m}^3$, $4\\ \\mu\\text{g/m}^3$, $40\\ \\mu\\text{g/m}^3$",
+            "b": "$40\\ \\mu\\text{g/m}^3$, $50\\ \\mu\\text{g/m}^3$, $10\\ \\mu\\text{g/m}^3$",
+            "c": "$50\\ \\mu\\text{g/m}^3$, $40\\ \\mu\\text{g/m}^3$, $4\\ \\mu\\text{g/m}^3$",
+            "d": "$40\\ \\mu\\text{g/m}^3$, $50\\ \\mu\\text{g/m}^3$, $4\\ \\mu\\text{g/m}^3$"
+        },
+        "correct_answer": "a",
+        "solution": "US National Ambient air quality standards are provided in the table.",
+        "has_diagram": false,
+        "page_index": 9
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "167",
+        "question_text": "The spray tower can be used to control",
+        "options": {
+            "a": "gaseous pollutants only",
+            "b": "particulate pollutants only",
+            "c": "both (a) and (b)",
+            "d": "none of above"
+        },
+        "correct_answer": "c",
+        "solution": "Spray towers are inexpensive control devices primarily used for gas conditioning (cooling or humidifying) or for first-stage particle or gas removal.",
+        "has_diagram": false,
+        "page_index": 10
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "168",
+        "question_text": "The specified standard for $\\text{SO}_2$ under US Ambient Air Quality standards is $80\\ \\mu\\text{g/m}^3$. This is approximately equivalent to",
+        "options": {
+            "a": "0.03 ppm",
+            "b": "0.05 ppm",
+            "c": "0.08 ppm",
+            "d": "8 ppm"
+        },
+        "correct_answer": "a",
+        "solution": "$1\\text{ ppm} = \\frac{MP}{RT}\\ \\mu\\text{g/m}^3$. For $\\text{SO}_2$, $M = 64\\text{ g/mol}$. $80\\ \\mu\\text{g/m}^3 \\approx 0.03\\text{ ppm}$.",
+        "has_diagram": false,
+        "page_index": 10
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "169",
+        "question_text": "The depletion of ozone in the outer atmosphere may result in increased",
+        "options": {
+            "a": "heart attack cases",
+            "b": "skin cancer cases",
+            "c": "asthma cases",
+            "d": "none of above"
+        },
+        "correct_answer": "b",
+        "solution": "The depletion of ozone in the outer atmosphere may result in increased skin cancer cases.",
+        "has_diagram": false,
+        "page_index": 10
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "170",
+        "question_text": "The rain is generally termed as acidic, if ph value of rain water falls below",
+        "options": {
+            "a": "3",
+            "b": "5",
+            "c": "7",
+            "d": "8"
+        },
+        "correct_answer": "b",
+        "solution": "The rain is generally termed as acidic, if ph value of rain water falls below 5.",
+        "has_diagram": false,
+        "page_index": 11
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "171",
+        "question_text": "The acid rains are caused by the following pollutants:",
+        "options": {
+            "a": "$\\text{SO}_2$ and $\\text{O}_3$",
+            "b": "$\\text{SO}_2$ and $\\text{NO}_x$",
+            "c": "$\\text{NO}_x$ and $\\text{O}_3$",
+            "d": "$\\text{CO}$ and $\\text{SO}_2$"
+        },
+        "correct_answer": "b",
+        "solution": "The acid rains are caused by the $\\text{SO}_2$ and $\\text{NO}_x$ pollutants.",
+        "has_diagram": false,
+        "page_index": 11
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "172",
+        "question_text": "To express sound levels in decibels, sound pressure levels are usually adopted on a reference scale of",
+        "options": {
+            "a": "$10\\ \\mu\\text{Pa}$",
+            "b": "$20\\ \\mu\\text{Pa}$",
+            "c": "$50\\ \\mu\\text{Pa}$",
+            "d": "$100\\ \\mu\\text{Pa}$"
+        },
+        "correct_answer": "b",
+        "solution": "Out of the three terms given above, sound pressure level on reference scale $20\\ \\mu\\text{Pa}$ is usually adopted to express sound levels in decibels.",
+        "has_diagram": false,
+        "page_index": 11
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "173",
+        "question_text": "As per National Ambient Air Quality standards, maximum permissible concentration of $\\text{NO}_2$ (24 hr. average) in ambient air in residential area is:",
+        "options": {
+            "a": "$100\\ \\mu\\text{g/m}^3$",
+            "b": "$80\\ \\mu\\text{g/m}^3$",
+            "c": "$60\\ \\mu\\text{g/m}^3$",
+            "d": "$40\\ \\mu\\text{g/m}^3$"
+        },
+        "correct_answer": "b",
+        "solution": "As per national Ambient air quality standards maximum permissible concentration of $\\text{NO}_2$ (24 hr. average) in ambient air in residential area is $80\\ \\mu\\text{g/m}^3$.",
+        "has_diagram": false,
+        "page_index": 11
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "174",
+        "question_text": "The height of chimney required for effective disposal of $27\\text{ kg/hr}$ of $\\text{SO}_2$ emission is",
+        "options": {
+            "a": "42 m",
+            "b": "30 m",
+            "c": "222 m",
+            "d": "81 m"
+        },
+        "correct_answer": "a",
+        "solution": "As per CPCB, the stack height $H = 14 \\times Q^{\\frac{1}{3}}\\text{ m}$ where Q is $\\text{SO}_2$ emissions in kg/hr. So, $H = 14 \\times 27^{\\frac{1}{3}} = 42\\text{ m}$.",
+        "has_diagram": false,
+        "page_index": 11
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "175",
+        "question_text": "If the actual height of a stack is 150 m and plume height is 8 m, then the effective height of the stack is",
+        "options": {
+            "a": "150m",
+            "b": "142m",
+            "c": "158m",
+            "d": "166m"
+        },
+        "correct_answer": "c",
+        "solution": "Effective Stack Height $H = h + \\Delta H$ Where: H = Effective stack height (m), h = height of physical stack (m), $\\Delta H$ = plume rise (m). So, $H = 150 + 8 = 158\\text{ m}$.",
+        "has_diagram": false,
+        "page_index": 11
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "176",
+        "question_text": "When the Adiabatic Lapse Rate (ALR) is more than Environmental Lapse Rate (ELR), then the ELR can be called as",
+        "options": {
+            "a": "super adiabatic lapse rate",
+            "b": "sub adiabatic lapse rate",
+            "c": "dry adiabatic lapse rate",
+            "d": "wet adiabatic lapse rate"
+        },
+        "correct_answer": "b",
+        "solution": "When ELR < ALR than it is known as sub adiabatic lapse rate and the plume which is formed in this condition is coning plume.",
+        "has_diagram": false,
+        "page_index": 11
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "177",
+        "question_text": "When Environmental Lapse Rate (ELR) is more than Adiabatic Lapse Rate (ALR), then the environment is said to be",
+        "options": {
+            "a": "stable",
+            "b": "unstable",
+            "c": "neutral",
+            "d": "none of above"
+        },
+        "correct_answer": "b",
+        "solution": "If ELR > ALR than it is known as super adiabatic lapse rate and the environment is said to be highly unstable.",
+        "has_diagram": true,
+        "diagram_bbox": [
+            45,
+            65,
+            665,
+            455
+        ],
+        "page_index": 12,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1783106615/ocr_diagrams/odhijdygscyo75wmy1tn.png"
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "178",
+        "question_text": "Temporary hardness in water is caused by the presence of",
+        "options": {
+            "a": "bicarbonate of Ca and Mg",
+            "b": "sulphates of Ca and Mg",
+            "c": "chlorides of Ca and Mg",
+            "d": "nitrates of Ca and Mg"
+        },
+        "correct_answer": "a",
+        "solution": "Temporary hardness in water is caused by the presence of bicarbonate of Ca and Mg.",
+        "has_diagram": false,
+        "page_index": 12
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "179",
+        "question_text": "Blue baby disease (methemoglobinemia) in children is caused by the presence of excess",
+        "options": {
+            "a": "chlorides",
+            "b": "nitrates",
+            "c": "fluorides",
+            "d": "lead"
+        },
+        "correct_answer": "b",
+        "solution": "Blue baby disease (methemoglobinemia) in children is caused by the presence of excess nitrates.",
+        "has_diagram": false,
+        "page_index": 12
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "180",
+        "question_text": "Two samples of water A and B have pH values of 4.4 and 6.4 respectively. How many times more acidic sample A is than sample B?",
+        "options": {
+            "a": "0",
+            "b": "50",
+            "c": "100",
+            "d": "200"
+        },
+        "correct_answer": "c",
+        "solution": "For sample A:\n$\\text{pH} = -\\log[\\text{H}^+] \\Rightarrow 4.4 = -\\log[\\text{H}^+] \\Rightarrow [\\text{H}^+] = 10^{-4.4}\\text{ mol/lit}$\n\nFor sample B:\n$\\text{pH} = -\\log[\\text{H}^+] \\Rightarrow 6.4 = -\\log[\\text{H}^+] \\Rightarrow [\\text{H}^+] = 10^{-6.4}\\text{ mol/lit}$\n\n$\\frac{[\\text{H}^+]\\text{ of A}}{[\\text{H}^+]\\text{ of B}} = \\frac{10^{-4.4}}{10^{-6.4}} = 100$\n\nSo, sample A is 100 times more acidic than sample B.",
+        "has_diagram": false,
+        "page_index": 12
+    }
+]

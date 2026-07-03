@@ -1,0 +1,3504 @@
+[
+    {
+        "subject": "Highway Engineering",
+        "question_number": "1.",
+        "question_text": "Nagpur road plan formulae were prepared by assuming",
+        "options": {
+            "a": "(a) rectangular or block road pattern",
+            "b": "(b) radial or star and block road pattern",
+            "c": "(c) radial or star and circular road pattern",
+            "d": "(d) radial or star and grid road pattern"
+        },
+        "correct_answer": "d",
+        "solution": "Sol.(d) Nagpur road plan: (i) They recommended the construction of star and grid pattern of roads throughout the country. (ii) Density of 16km of road length per 100 km$^2$ area.",
+        "has_diagram": true,
+        "diagram_bbox": [
+            360,
+            145,
+            495,
+            400
+        ],
+        "page_index": 1,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1782933029/ocr_diagrams/vsoubta4ba43erutia4l.png"
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "2.",
+        "question_text": "Select the correct statement:",
+        "options": {
+            "a": "(a) Nagpur road plan formulae take into account the towns with very large population.",
+            "b": "(b) Nagpur road plan has a target road length of 32 km per 100 square km.",
+            "c": "(c) Second 20-year plan has provided 1600 km of expressways out of the proposed National highway.",
+            "d": "(d) Second 20-year plan allowed deduction of length of railway track in the area while calculating the length of roads."
+        },
+        "correct_answer": "c",
+        "solution": "Sol. (c) Second 20-year plan (Bombay road plan) has provided 1600 km of expressways out of the proposed national highway.",
+        "has_diagram": false,
+        "page_index": 1
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "3.",
+        "question_text": "The sequence of four stages of survey in a highway alignment is",
+        "options": {
+            "a": "(a) Reconnaissance, map study, preliminary survey and detailed survey",
+            "b": "(b) Map study, preliminary survey, reconnaissance and detailed survey.",
+            "c": "(c) Map study, reconnaissance, preliminary survey and detailed survey.",
+            "d": "(d) Preliminary survey, map study, reconnaissance and detailed survey."
+        },
+        "correct_answer": "c",
+        "solution": "Sol. (c) The sequence of four stages of survey- (1) Map study (2) Reconnaissance survey (3) Preliminary survey (4) Detailed survey",
+        "has_diagram": false,
+        "page_index": 1
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "4.",
+        "question_text": "The shape of the camber, best suited for cement concrete pavements, is",
+        "options": {
+            "a": "(a) Straight line",
+            "b": "(b) Parabolic",
+            "c": "(c) Elliptical",
+            "d": "(d) Combination of straight and parabolic"
+        },
+        "correct_answer": "a",
+        "solution": "Sol. (a) For cement concrete pavement straight line camber is provided, while parabolic and elliptic shape are preferred by fast moving vehicles because they require frequent crossing of crown line during over taking operation.",
+        "has_diagram": false,
+        "page_index": 1
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "5.",
+        "question_text": "For water bound macadam road in localities of heavy rainfall, the recommended value of camber is",
+        "options": {
+            "a": "(a) 1 in 30",
+            "b": "(b) 1 in 36",
+            "c": "(c) 1 in 48",
+            "d": "(d) 1 in 60"
+        },
+        "correct_answer": "b",
+        "solution": "Sol. (b) Camber as per IRC: [Table with Area, Heavy rainfall, Light rainfall values for different pavement types]",
+        "has_diagram": true,
+        "diagram_bbox": [
+            70,
+            120,
+            260,
+            470
+        ],
+        "page_index": 2,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1782933030/ocr_diagrams/c3fmhvmjntpknrvgb15x.png"
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "6.",
+        "question_text": "The stopping sight distance depends upon",
+        "options": {
+            "a": "(a) Total reaction time of driver",
+            "b": "(b) Speed of vehicle",
+            "c": "(c) Efficiency of brakes",
+            "d": "(d) All of the above"
+        },
+        "correct_answer": "d",
+        "solution": "Sol. (d) Stopping sight distance is the minimum sight distance available on road on any spot having sufficient length to enable driver to stop vehicle travelling without collision with any obstruction. It depends upon- (a) total reaction time of driver (b) speed of vehicle (c) efficiency of brakes.",
+        "has_diagram": false,
+        "page_index": 2
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "7.",
+        "question_text": "When the path travelled along the road surface is more than the circumferential movement of the wheels due to rotation, then it results in",
+        "options": {
+            "a": "(a) Slipping",
+            "b": "(b) Skidding",
+            "c": "(c) Turning",
+            "d": "(d) Revolving"
+        },
+        "correct_answer": "b",
+        "solution": "Sol. (b) Skidding:- It occurs during brake. R.M<T.M->It occurs when the path travelled along the road surface is more than the circumferential movement of the wheels due to rotation. Slipping:- It occurs during acceleration. (R.M>T.M) -> It occurs when the path travelled along The road surface is less than the circumferential movement of the wheels due to rotation. Where R.M = rotational movement T.M = Translational movement Revolving :- to move in a circular or curving course or orbit. Turning :- a place where a road branches off from another.",
+        "has_diagram": false,
+        "page_index": 2
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "8.",
+        "question_text": "Coefficient of friction is less when the pavement surface is",
+        "options": {
+            "a": "(a) Rough",
+            "b": "(b) Dry",
+            "c": "(c) Smooth and dry",
+            "d": "(d) Smooth and wet"
+        },
+        "correct_answer": "d",
+        "solution": "Sol. (d) Coefficient of friction is less when the pavement surface is smooth and wet. Because (1) Due to smooth surface, less contact area will be available so less friction will develop. (2) Due to wet condition, more lubricant area occur that is why less friction will occur on wet condition.",
+        "has_diagram": false,
+        "page_index": 3
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "9.",
+        "question_text": "The shoulder provided along the road edge should be",
+        "options": {
+            "a": "(a) Rougher than the traffic lanes",
+            "b": "(b) Smoother than the traffic lanes",
+            "c": "(c) Of the same colour as that of the pavement",
+            "d": "(d) Of very low road bearing capacity"
+        },
+        "correct_answer": "a",
+        "solution": "Sol. (a) The shoulder provided along the road edge should be rougher than the traffic lanes so that users do not use it as regular traffic lane. The shoulder is provided for emergency point of like breakdown of vehicle, emergency overtaking, ambulance etc.",
+        "has_diagram": false,
+        "page_index": 3
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "10.",
+        "question_text": "Camber in the road is provided for",
+        "options": {
+            "a": "(a) Effective drainage",
+            "b": "(b) Counteracting the centrifugal force",
+            "c": "(c) Having proper sight distance",
+            "d": "(d) None of the above"
+        },
+        "correct_answer": "a",
+        "solution": "Sol. (a) Camber is the cross slope provided to road by elevating the centre line in order to allow the surface drainage from road surface to drainage system. So camber is provided for effective drainage.",
+        "has_diagram": false,
+        "page_index": 3
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "11.",
+        "question_text": "Compared to a level surface, on a descending gradient the stopping sight distance is",
+        "options": {
+            "a": "(a) Less",
+            "b": "(b) More",
+            "c": "(c) Same",
+            "d": "(d) Dependent on the speed"
+        },
+        "correct_answer": "b",
+        "solution": "Sol. (b) SSD = $0.278 V. t_R + \\frac{V^2}{254(f-1.\\%)}$ Where, V = kmph $T_R$ = sec SSD = m For descending gradient, SSD = $0.278 V. t_R + \\frac{V^2}{254(f-S\\%)}$ When descending gradient increases then SSD will increase. So as compared to a level surface, on a descending gradient the stopping sight distance is more.",
+        "has_diagram": false,
+        "page_index": 3
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "12.",
+        "question_text": "On a single lane road with two way traffic, the minimum stopping sight distance is equal to",
+        "options": {
+            "a": "(a) stopping distance",
+            "b": "(b) two times the stopping distance",
+            "c": "(c) half the stopping distance",
+            "d": "(d) three times the stopping distance"
+        },
+        "correct_answer": "b",
+        "solution": "Sol. (b) (i) Stopping sight distance for one-way traffic with single lane = SSD (ii) Stopping sight distance for two-way traffic with single lane = $2 \\times SSD = 2 \\times SSD$ (iii) Stopping sight distance for two -way traffic with a two lane = SSD Here for two-way traffic with a single lane road, Minimum stopping sight distance = $2 \\times SSD$",
+        "has_diagram": false,
+        "page_index": 3
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "13.",
+        "question_text": "The desirable length of overtaking zone as per IRC recommendation is equal to",
+        "options": {
+            "a": "(a) Overtaking sight distance",
+            "b": "(b) Two times the overtaking sight distance",
+            "c": "(c) Three times the overtaking sight distance",
+            "d": "(d) Five times the overtaking sight distance"
+        },
+        "correct_answer": "d",
+        "solution": "Sol. (d) ->The desirable length of overtaking zones is kept five times the overtaking sight distances. ->The minimum length of overtaking zone = 3 (OSD) -> The maximum length of overtaking zone = 5 (OSD)",
+        "has_diagram": true,
+        "diagram_bbox": [
+            600,
+            100,
+            800,
+            470
+        ],
+        "page_index": 4,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1782933030/ocr_diagrams/zfyeoy9fe6tuvfkexv24.png"
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "14.",
+        "question_text": "Stopping sight distance is always",
+        "options": {
+            "a": "(a) Less than overtaking sight distance",
+            "b": "(b) Equal to overtaking sight distance",
+            "c": "(c) More than overtaking sight distance",
+            "d": "(d) None of the above"
+        },
+        "correct_answer": "a",
+        "solution": "Sol. (a) Stopping sight distance (SSD) is the minimum sight distance available on a highway at any spot having sufficient length to enable the driver to stop a vehicle travelling at design speed, safely without collision with any other obstruction.",
+        "has_diagram": false,
+        "page_index": 4
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "15.",
+        "question_text": "Reaction time of a driver",
+        "options": {
+            "a": "(a) Increases with increase in speed",
+            "b": "(b) Decreases with increase in speed",
+            "c": "(c) Is same for all speeds",
+            "d": "(d) None of the above"
+        },
+        "correct_answer": "b",
+        "solution": "Sol. (b) According to PIEV theory reaction time depends on several factors such as physical and psychological characteristics of driver, type of the problem involved, environmental condition and temporary factors( e.g motive of trip, travel speed, fatigue, consumption of alcohol etc).",
+        "has_diagram": false,
+        "page_index": 4
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "16.",
+        "question_text": "If the stopping distance is 60 metres. Then the minimum stopping sight distance for two lane, two way traffic is",
+        "options": {
+            "a": "(a) 30m",
+            "b": "(b) 60m",
+            "c": "(c) 120m",
+            "d": "(d) 180m"
+        },
+        "correct_answer": "b",
+        "solution": "Sol. (b) The minimum stopping sight distance for two lane, two way traffic is = SSD = 60m",
+        "has_diagram": false,
+        "page_index": 4
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "17.",
+        "question_text": "The ruling design speed on a National Highway in plain terrain as per IRC recommendations is",
+        "options": {
+            "a": "(a) 60 kmph",
+            "b": "(b) 80 kmph",
+            "c": "(c) 100 kmph",
+            "d": "(d) 120 kmph"
+        },
+        "correct_answer": "d",
+        "solution": "Sol. (d) The ruling design speed on a national highway in plain terrain as per IRC recommendations is 100 kmph. [Table with N.H & S.H, M.D.R, O.D.R and Plain, Rolling, Mountain, Steep terrain values]",
+        "has_diagram": true,
+        "diagram_bbox": [
+            150,
+            100,
+            330,
+            470
+        ],
+        "page_index": 4,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1782933031/ocr_diagrams/az3hrwd4joo6qtzmavgx.png"
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "18.",
+        "question_text": "The terrain may be classified as rolling terrain if the cross slope land is",
+        "options": {
+            "a": "(a) Upto 10%",
+            "b": "(b) Between 10% and 25%",
+            "c": "(c) Between 25% and 60%",
+            "d": "(d) More than 60%"
+        },
+        "correct_answer": "b",
+        "solution": "Sol. (b) [Table with Topography and Cross slope values]",
+        "has_diagram": true,
+        "diagram_bbox": [
+            490,
+            70,
+            650,
+            430
+        ],
+        "page_index": 5,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1782933032/ocr_diagrams/b63ty6jqphlnurifmvzu.png"
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "19.",
+        "question_text": "If b is the wheel track of a vehicle and h is the height of centre of gravity above road surface, then to avoid overturning and lateral skidding on a horizontal curve, the centrifugal ratio should always be",
+        "options": {
+            "a": "(a) Less than b/2h and greater than coefficient of lateral friction",
+            "b": "(b) Less than b/2h and also less than coefficient of lateral friction",
+            "c": "(c) Greater than b/2h and less than coefficient of lateral friction",
+            "d": "(d) Greater than b/2h and also greater than coefficient of lateral friction"
+        },
+        "correct_answer": "b",
+        "solution": "Sol. (b) Inside of curve [Diagram] Overturning moment = Ph Restoring moment = $W (\\frac{b}{2})$ Case –(1) for no overturning $\\frac{P}{W} = \\text{centrifugal ratio} \\le \\frac{b}{2h}$ $\\frac{P}{W} \\le \\frac{b}{2h}$ ... (1) Case – (ii) For no lateral skidding $P \\le F_W$ $\\frac{P}{W} \\le F$ ... (2) F = lateral coefficient of friction So, to avoid overturning and lateral skidding on horizontal curve, $\\frac{P}{W} \\le \\frac{b}{2h}$ and also $\\le F$",
+        "has_diagram": true,
+        "diagram_bbox": [
+            190,
+            520,
+            400,
+            890
+        ],
+        "page_index": 5,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1782933033/ocr_diagrams/pbi6owanqxtshjl4srmc.png"
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "20.",
+        "question_text": "As per IRC recommendations, the maximum limit of superelevation for mixed traffic in plain terrain is",
+        "options": {
+            "a": "",
+            "b": "",
+            "c": "",
+            "d": ""
+        },
+        "correct_answer": "",
+        "solution": "",
+        "has_diagram": false,
+        "page_index": 5
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "22.",
+        "question_text": "For design of superelevation for mixed traffic conditions, the speed is reduced by",
+        "options": {
+            "a": "(a) 15%",
+            "b": "(b) 20%",
+            "c": "(c) 25%",
+            "d": "(d) 75%"
+        },
+        "correct_answer": "d",
+        "solution": "Sol. (d) Design of super-elevation for mixed traffic condition is a complex problem because different vehicle move with different speeds. So for practical condition IRC recommends that super elevation should be provided to fully counteract the centrifugal force due to 75% of design speed by neglecting the lateral friction. It means the speed is reduced by 25%.",
+        "has_diagram": false,
+        "page_index": 6
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "23.",
+        "question_text": "On a horizontal curve if the pavement is kept horizontal across the alignment, then the pressure on the outer wheels will be",
+        "options": {
+            "a": "(a) More than the pressure on inner wheels",
+            "b": "(b) Less than the pressure on inner wheels",
+            "c": "(c) Equal to the pressure on inner wheels",
+            "d": "(d) Zero"
+        },
+        "correct_answer": "a",
+        "solution": "Sol. (a) On a horizontal curve if the pavement is kept horizontal across the alignment then chances of overturning will take place. And this condition the pressure on the outer wheels will be more than the pressure on inner wheels. Overturning can be avoided by providing super-elevation.",
+        "has_diagram": false,
+        "page_index": 6
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "24.",
+        "question_text": "The equilibrium super-elevation required to counteract the centrifugal force fully is given by",
+        "options": {
+            "a": "(a) $\\frac{V^2}{27.5R}$",
+            "b": "(b) $\\frac{V^2}{75}$",
+            "c": "(c) $\\frac{(0.75V)^2}{127R}$",
+            "d": "(d) $\\frac{V^2}{127R}$"
+        },
+        "correct_answer": "d",
+        "solution": "Sol. (d) For equilibrium super-elevation (f=0) $e+f = \\frac{V^2}{gR}$ $f = \\text{lateral coefficient of friction}$ Or $e = \\frac{V^2}{127R}$ (where V = KMPH R = m) In this case pressure at outer and inner tyre is same. This particular super-elevation is called equilibrium super-elevation.",
+        "has_diagram": false,
+        "page_index": 6
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "25.",
+        "question_text": "For a constant value of coefficient of lateral friction, the value of required super-elevation increases with",
+        "options": {
+            "a": "(a) Increase in both speed and radius of curve",
+            "b": "(b) Decrease in both speed and radius of curve",
+            "c": "(c) Increase in speed and with decrease in radius of curve",
+            "d": "(d) Decrease in speed and with increase in radius of curve"
+        },
+        "correct_answer": "c",
+        "solution": "Sol.(c) $e+f = \\frac{V^2}{127R}$ Let 'f' is constant, then the value of required super-elevation increases with increase in speed and with decrease in radius of curve.",
+        "has_diagram": false,
+        "page_index": 6
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "26.",
+        "question_text": "To calculate the minimum value of ruling radius of horizontal curves in plains, the design speed is given by",
+        "options": {
+            "a": "(a) 8 kmph",
+            "b": "(b) 12 kmph",
+            "c": "(c) 16 kmph",
+            "d": "(d) 20 kmph"
+        },
+        "correct_answer": "c",
+        "solution": "Sol. (c) To calculate the minimum value of ruling radius of horizontal curves in plains, the design speed is given by 16 KMPH.",
+        "has_diagram": false,
+        "page_index": 7
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "27.",
+        "question_text": "The absolute minimum radius of curve for safe operation for a speed of 110 kmph is",
+        "options": {
+            "a": "(a) 110 m",
+            "b": "(b) 220 m",
+            "c": "(c) 440 m",
+            "d": "(d) 577 m"
+        },
+        "correct_answer": "d",
+        "solution": "Sol. (d) The absolute minimum radius where, $e_{max} = 0.07, F = 0.15$ $V = 110 \\text{ KMPH}$ $R = \\frac{V^2}{127(e_{max} + F)}$",
+        "has_diagram": false,
+        "page_index": 7
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "28.",
+        "question_text": "The attainment of superelevation by rotation of pavement about the inner edge of the pavement",
+        "options": {
+            "a": "(a) Is preferable in steep terrain",
+            "b": "(b) results in balancing the earthwork",
+            "c": "(c) Avoids the drainage problem in flat terrain",
+            "d": "(d) Does not change the vertical alignment of road"
+        },
+        "correct_answer": "c",
+        "solution": "Sol. (c) The attainment of superelevation by rotation of pavement (A) about the inner edge of the pavement is more preferable in the very flat terrain to avoid the drainage problem. -> In this method, filling is required. -> In this method, vertical profile of the center line is elevated.",
+        "has_diagram": false,
+        "page_index": 7
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "29.",
+        "question_text": "Select the correct statement.",
+        "options": {
+            "a": "(a) Psychological extra widening depends on the number of traffic lanes.",
+            "b": "(b) Mechanical extra widening depends on the speed of vehicle.",
+            "c": "(c) Psychological extra widening depends on the length of wheel base.",
+            "d": "(d) Psychological extra widening depends on the speed of vehicle."
+        },
+        "correct_answer": "d",
+        "solution": "Sol. (d) (1) Psychological widening $W_P = \\frac{V}{9.5\\sqrt{R}}$ Where l is the length of wheel base of vehicle in metres. Sol. (d) The mechanical extra Widening $(W_E) = \\frac{nl^2}{2R}$ Given width of pavement = 10.5 One lane width = 3.5 So, Number of lane = 3h = 3 $W_E = \\frac{3l^2}{2R}$",
+        "has_diagram": false,
+        "page_index": 7
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "30.",
+        "question_text": "In case of hill roads, the extra widening is generally provided",
+        "options": {
+            "a": "(a) Equally on inner and outer sides of the curve",
+            "b": "(b) Fully on the inner side of the curve",
+            "c": "(c) Fully on the outer side of the curve",
+            "d": "(d) One-fourth on inner side and three-fourth on outer side of the curve"
+        },
+        "correct_answer": "b",
+        "solution": "Sol. (b) In case of hill roads, the extra widening is generally provided fully on the inner side of the curve.",
+        "has_diagram": true,
+        "diagram_bbox": [
+            420,
+            100,
+            630,
+            470
+        ],
+        "page_index": 8,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1782933034/ocr_diagrams/tbyyxd5au13da4arz9hg.png"
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "31.",
+        "question_text": "The mechanical extra widening required for 10.5m wide pavement on a horizontal curve of radius R metre is given by",
+        "options": {
+            "a": "(a) $\\frac{l^2}{2R}$",
+            "b": "(b) $\\frac{2l^2}{R}$",
+            "c": "(c) $\\frac{l^2}{R}$",
+            "d": "(d) $\\frac{3l^2}{2R}$"
+        },
+        "correct_answer": "d",
+        "solution": "The mechanical extra widening is given by $W_E = \\frac{nl^2}{2R}$. For a 10.5m wide pavement, assuming a lane width of 3.5m, the number of lanes $n = \\frac{10.5}{3.5} = 3$. Therefore, $W_E = \\frac{3l^2}{2R}$.",
+        "has_diagram": false,
+        "page_index": 8
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "32.",
+        "question_text": "The transition curve used in the horizontal alignment of highways as per IRC recommendations is",
+        "options": {
+            "a": "(a) Spiral",
+            "b": "(b) Lemniscate",
+            "c": "(c) Cubic parabola",
+            "d": "(d) Any of the above"
+        },
+        "correct_answer": "a",
+        "solution": "Sol. (a) As per IRC, the transition curve used in the horizontal alignment of highways is spiral.",
+        "has_diagram": false,
+        "page_index": 8
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "33.",
+        "question_text": "For design, that length of transition curve should be taken which is",
+        "options": {
+            "a": "(a) Based on allowable rate of change of centrifugal acceleration",
+            "b": "(b) Based on rate of change of superelevation",
+            "c": "(c) Higher of (a) and (b)",
+            "d": "(d) Smaller of (a) and (b)"
+        },
+        "correct_answer": "c",
+        "solution": "Sol. (c) Length of transition curve is designed on the basis of maximum of following '3' criteria - (1) As per rate of change of centrifugal acceleration (2) As per rate of introduction of super-elevation. (3) As per IRC, minimum length or transition curve",
+        "has_diagram": false,
+        "page_index": 8
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "34.",
+        "question_text": "The maximum design gradient for vertical profile of a road is",
+        "options": {
+            "a": "(a) Ruling gradient",
+            "b": "(b) Limiting gradient",
+            "c": "(c) Exceptional gradient",
+            "d": "(d) Minimum gradient"
+        },
+        "correct_answer": "a",
+        "solution": "Sol. (a) The order of gradient Exceptional gradient > Limiting gradient > Ruling gradient > minimum gradient But for designing purpose, the maximum design gradient for vertical profile of a road is ruling gradient.Ruling gradient is comfortable gradient and it depends upon design speed and topography.",
+        "has_diagram": false,
+        "page_index": 9
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "35.",
+        "question_text": "The percentage compensation in gradient for ruling gradient of 4% and horizontal curve of radius 760 m is",
+        "options": {
+            "a": "(a) 0.1%",
+            "b": "(b) 1%",
+            "c": "(c) 10%",
+            "d": "(d) no compensation"
+        },
+        "correct_answer": "d",
+        "solution": "Sol. (d) As per IRC, (1) Grade compensation is not required for a gradient flatter than 4% (2) Compensated gradient should not be less than 4% Because ruling gradient is 4% so there is no grade compensation is required. -> Grade compensation = $Min^m$ of \\{ $(30+R)/R \\%, 75/R \\%$ \\} R = Radius of curve -> Compensated gradient = gradient – grade compensation",
+        "has_diagram": false,
+        "page_index": 9
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "36.",
+        "question_text": "If ruling gradient is 1 in 20 and there is also a horizontal curve of radius 76 m, then the compensated grade should be",
+        "options": {
+            "a": "(a) 3%",
+            "b": "(b) 4%",
+            "c": "(c) 5%",
+            "d": "(d) 6%"
+        },
+        "correct_answer": "b",
+        "solution": "Sol. (b) Given, ruling gradient = 1 in 20 = 5% > 4% * radius = 76M The grade compensation = Minimum of \\{ $\\frac{(30+R)}{R} \\%, \\frac{75}{R} \\%$ \\} = Minimum \\{ $\\frac{(30+76)}{76} \\%, \\frac{75}{76} \\%$ \\} = Minimum \\{ $1.39 \\%, 0.986 \\%$ \\} G.C = 0.98% The compensated gradient = Gradient – Grade Compensation = 5% – 0.98% = 4.02% $\\approx$ 4%",
+        "has_diagram": false,
+        "page_index": 9
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "37.",
+        "question_text": "The camber of road should be approximately equal to",
+        "options": {
+            "a": "(a) Longitudinal gradient",
+            "b": "(b) Two times the longitudinal gradient",
+            "c": "(c) Three time the longitudinal gradient",
+            "d": "(d) Half the longitudinal gradient"
+        },
+        "correct_answer": "d",
+        "solution": "Sol. (d) The camber of road should be approximately equal to half the longitudinal gradient i.e. G = 2C or C = $\\frac{G}{2}$ Where G = longitudinal gradient C = camber",
+        "has_diagram": false,
+        "page_index": 9
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "38.",
+        "question_text": "Which of the following shapes is preferred in a valley curve ?",
+        "options": {
+            "a": "(a) Simple parabola",
+            "b": "(b) Cubic parabola",
+            "c": "(c) Spiral",
+            "d": "(d) Lemniscates"
+        },
+        "correct_answer": "b",
+        "solution": "Sol. (b) For valley curve $\\rightarrow$ Cubic parabola For horizontal curve $\\rightarrow$ Circular arc For horizontal transition curve $\\rightarrow$ Spiral(Clothoid)",
+        "has_diagram": false,
+        "page_index": 9
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "39.",
+        "question_text": "In case of summit curves, the deviation angle will be maximum when",
+        "options": {
+            "a": "(a) An ascending gradient meets with another ascending gradient",
+            "b": "(b) An ascending gradient meets with a descending gradient",
+            "c": "(c) A descending gradient meets with another descending gradient",
+            "d": "(d) An ascending gradient with a level surface"
+        },
+        "correct_answer": "b",
+        "solution": "Sol. (b) In case of summit curve, the deviation angle will be maximum when an ascending gradient meets with a descending gradient. N = Deviation angle = $n_1 - (-n_2) = n_1 + n_2$",
+        "has_diagram": true,
+        "diagram_bbox": [
+            500,
+            100,
+            780,
+            470
+        ],
+        "page_index": 10,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1782933034/ocr_diagrams/h2d0xxfjckmsufvmzptv.png"
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "40.",
+        "question_text": "The value of ruling gradient in plains as per IRC recommendation is",
+        "options": {
+            "a": "(a) 1 in 12",
+            "b": "(b) 1 in 15",
+            "c": "(c) 1 in 20",
+            "d": "(d) 1 in 30"
+        },
+        "correct_answer": "d",
+        "solution": "Sol. (d) As per IRC, the recommendation is given in table below: [Table with Terrain, R.G, L.G, E.G values]",
+        "has_diagram": true,
+        "diagram_bbox": [
+            150,
+            520,
+            300,
+            890
+        ],
+        "page_index": 10,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1782933035/ocr_diagrams/mvpsix8p4y65mn3tjsug.png"
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "41.",
+        "question_text": "If the design speed is V kmph and deviation angle is N radians, then the total length of a valley curve in metres is given by the expression",
+        "options": {
+            "a": "(a) $0.38 N V^{3/2}$",
+            "b": "(b) $0.38(NV)^{1/2}$",
+            "c": "(c) $3.8 N V^{1/2}$",
+            "d": "(d) $3.8 (NV)^{1/2}$"
+        },
+        "correct_answer": "b",
+        "solution": "Sol. (b) Length of valley curve $L_V = 2 \\sqrt{\\frac{NV^2}{C=0.6 M/sec^3}}$ For cubic parabola $L_V = 2 \\sqrt{\\frac{N(0.278V)^2}{0.6}}$ $L_V = 0.378 (NV)^{1/2}$ where V = KMPH",
+        "has_diagram": false,
+        "page_index": 10
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "42.",
+        "question_text": "If an ascending gradient of 1 in 50 meets a descending gradient of 1 in 50, the length of summit curve for a stopping sight distance of 80 m will be",
+        "options": {
+            "a": "(a) Zero",
+            "b": "(b) 64 m",
+            "c": "(c) 80 m",
+            "d": "(d) 60 m"
+        },
+        "correct_answer": "d",
+        "solution": "Sol. (d) An ascending gradient is 1 in 50 Descending gradient = 1 in 50 $n_1 = 2\\%$ $n_2 = -2\\%$ $|Deviation \\text{ angle } (N)| = n_1 - n_2 = 2 - (-2) = 4\\%$ SSD = 80 m So, length of summit curve $(L) = \\frac{NS^2}{4.4}$ $L = \\frac{(4)(80)^2}{4.4} = 58.18 \\text{ 60m}$",
+        "has_diagram": false,
+        "page_index": 11
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "43.",
+        "question_text": "Highway facilities are designed for",
+        "options": {
+            "a": "(a) Annual average hourly volume",
+            "b": "(b) Annual average daily traffic",
+            "c": "(c) Thirtieth highest hourly volume",
+            "d": "(d) Peak hourly volume of the year"
+        },
+        "correct_answer": "c",
+        "solution": "Sol. (c) Highway facilities are designed for $30^{th}$ highest hourly volume because as per IRC, $30^{th}$ highest hourly volume is considered as design hourly volume. It is the hourly volume that will be exceeded only 29 times in a year. Which is considered economical for design.",
+        "has_diagram": false,
+        "page_index": 11
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "44.",
+        "question_text": "Enoscope is used to find",
+        "options": {
+            "a": "(a) Average speed",
+            "b": "(b) Spot speed",
+            "c": "(c) Space – mean speed",
+            "d": "(d) Time – mean speed"
+        },
+        "correct_answer": "b",
+        "solution": "Sol. (b) Spot speed is measured by (1) Enoscope (2) Pressure contact tube (3) Loop detector",
+        "has_diagram": true,
+        "diagram_bbox": [
+            270,
+            520,
+            450,
+            890
+        ],
+        "page_index": 11,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1782933036/ocr_diagrams/mgfbhemoxau5bo2rylm6.png"
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "45.",
+        "question_text": "For highway geometric design purposes the speed used is",
+        "options": {
+            "a": "(a) $15^{th}$ percentile",
+            "b": "(b) $50^{th}$ percentile",
+            "c": "(c) $85^{th}$ percentile",
+            "d": "(d) $98^{th}$ percentile"
+        },
+        "correct_answer": "d",
+        "solution": "Sol. (d) $98^{th}$ percentile speed:- This speed is considered as design speed for geometric design. (2) $85^{th}$ percentile speed:- It is the upper safe limit for the vehicle movement. (3) $15^{th}$ percentile speed:- It is the lower safe limit to avoid congestion.",
+        "has_diagram": false,
+        "page_index": 11
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "46.",
+        "question_text": "Select the correct statement.",
+        "options": {
+            "a": "(a) Traffic volume should always be more than traffic capacity.",
+            "b": "(b) Traffic capacity should always be more than traffic volume.",
+            "c": "(c) Spot speed is the average speed of a vehicle at a specified section.",
+            "d": "(d) $85^{th}$ percentile speed is more than $98^{th}$ percentile speed."
+        },
+        "correct_answer": "b",
+        "solution": "Sol. (b) Traffic capacity is the ability of a roadway to accommodate traffic volume. Traffic capacity is always greater than or equal to traffic volume.",
+        "has_diagram": false,
+        "page_index": 11
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "47.",
+        "question_text": "Length of a vehicle effects",
+        "options": {
+            "a": "(a) Width of traffic lanes",
+            "b": "(b) Extra width of pavement and minimum turning radius",
+            "c": "(c) Width of shoulders and parking facilities",
+            "d": "(d) Clearance to be provided under structures such as over bridges, under bridges etc."
+        },
+        "correct_answer": "b",
+        "solution": "Sol. (b) Length of vehicle affects turning radius, extra widening parking design. -> Width of vehicle affects lane width, shoulder width and parking design. ->Height of vehicle affect height of utility, height of bridges etc.",
+        "has_diagram": false,
+        "page_index": 12
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "48.",
+        "question_text": "The maximum width of a vehicle as recommended by IRC is",
+        "options": {
+            "a": "(a) 1.85 m",
+            "b": "(b) 2.44 m",
+            "c": "(c) 3.81 m",
+            "d": "(d) 4.72 m"
+        },
+        "correct_answer": "b",
+        "solution": "Sol. (b) The maximum width of a vehicle as recommended by IRC is 2.44 m.",
+        "has_diagram": false,
+        "page_index": 12
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "49.",
+        "question_text": "Desire lines are plotted in",
+        "options": {
+            "a": "(a) Traffic volume studies",
+            "b": "(b) Speed studies",
+            "c": "(c) Accident studies",
+            "d": "(d) Origin and destination studies"
+        },
+        "correct_answer": "d",
+        "solution": "Sol. (d) Desire lines are plotted in origin and destination studies. -> Desire line are straight line connecting origin to destination. -> Thickness of desire line is directly proportional to number of trips in both direction.",
+        "has_diagram": false,
+        "page_index": 12
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "50.",
+        "question_text": "Which of the following methods is preferred for collecting origin and destination data for a small area like a mass business centre or a large intersection ?",
+        "options": {
+            "a": "(a) Road side interview method",
+            "b": "(b) License plate method",
+            "c": "(c) Return postcard method",
+            "d": "(d) Home interview method"
+        },
+        "correct_answer": "b",
+        "solution": "Sol. (b) License plate Method:- This method is advantageous, is the area considered is small. (2) Road side interview:- The main disadvantage of this method is that the vehicles are stopped for interview and there is delay to the vehicular movement. (3) Return post card method:- This method is suitable where the traffic is heavy. (4) Home interview method:- The problem of stopping vehicle and consequent difficulties are avoided altogether additional data including socio-economic and other details may be collected so as to be useful for force casting traffic and transportation growth.",
+        "has_diagram": false,
+        "page_index": 12
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "51.",
+        "question_text": "The traffic manoeuvre shown in Fig 4.1 represents",
+        "options": {
+            "a": "",
+            "b": "",
+            "c": "",
+            "d": ""
+        },
+        "correct_answer": "",
+        "solution": "",
+        "has_diagram": true,
+        "diagram_bbox": [
+            760,
+            590,
+            850,
+            920
+        ],
+        "page_index": 12,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1782933037/ocr_diagrams/y0e0nrx9sduyfy12rqn6.png"
+    },
+    {
+        "subject": "Traffic Engineering",
+        "question_number": "51",
+        "question_text": "The traffic manoeuvre shown in Fig 4.1 represents Weaving operation",
+        "options": {
+            "a": "Diverging",
+            "b": "Merging",
+            "c": "Crossing",
+            "d": "Weaving"
+        },
+        "correct_answer": "d",
+        "solution": "The traffic manoeuvre shown in Fig 4.1 represents Weaving operation",
+        "has_diagram": true,
+        "diagram_bbox": [
+            197,
+            90,
+            355,
+            460
+        ],
+        "page_index": 1,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1782933145/ocr_diagrams/fqiu1pdvsfqlzpyskwty.png"
+    },
+    {
+        "subject": "Traffic Engineering",
+        "question_number": "52",
+        "question_text": "The effect of grade on safe overtaking sight distance is",
+        "options": {
+            "a": "To increase it on descending grade and to decrease it on ascending grades",
+            "b": "To decrease it on descending grades and to increase it on ascending grades",
+            "c": "To increase it on both descending and ascending grades",
+            "d": "To decrease it on both descending and ascending grades"
+        },
+        "correct_answer": "a",
+        "solution": "The effect of grade on safe overtaking sight distance is to increase it on descending grade and to decrease it on ascending grades.",
+        "has_diagram": false,
+        "page_index": 1
+    },
+    {
+        "subject": "Traffic Engineering",
+        "question_number": "53",
+        "question_text": "With increase in speed of the traffic stream, the minimum spacing of vehicles",
+        "options": {
+            "a": "Increases",
+            "b": "Decreases",
+            "c": "First decrease and then increases after reaching a minimum value at optimum speed",
+            "d": "First increases and then decreases after reaching a maximum value at optimum speed"
+        },
+        "correct_answer": "c",
+        "solution": "With increase in speed of the traffic stream, the minimum spacing of vehicles first decrease and then increases after reaching a minimum value at optimum speed.",
+        "has_diagram": false,
+        "page_index": 1
+    },
+    {
+        "subject": "Traffic Engineering",
+        "question_number": "54",
+        "question_text": "Traffic volume is equal to",
+        "options": {
+            "a": "Traffic density $\\times$ traffic stream",
+            "b": "traffic density / traffic speed",
+            "c": "traffic speed / traffic density",
+            "d": "none of the above"
+        },
+        "correct_answer": "a",
+        "solution": "Traffic volume(q) = traffic density $\\times$ traffic (V) speed",
+        "has_diagram": false,
+        "page_index": 1
+    },
+    {
+        "subject": "Traffic Engineering",
+        "question_number": "55",
+        "question_text": "Which of the following is known as design capacity?",
+        "options": {
+            "a": "Basic capacity",
+            "b": "Theoretical capacity",
+            "c": "Possible capacity",
+            "d": "Practical capacity"
+        },
+        "correct_answer": "d",
+        "solution": "Basic capacity is the maximum number of vehicles (PCU) that can pass a given point on a lane or roadway during one hour under the most nearly ideal roadway and traffic conditions which can possibly be attained. Possible Capacity is the maximum number of vehicles which can pass a given point on a lane or highway during one hour under the prevailing roadway and traffic conditions. Practical capacity is the maximum number of vehicles that can pass a given point in a lane or roadway during one hour, when traffic density is not so great as to cause unreasonable delay, hazard or restriction to the driver's freedom to manoeuvre under prevailing roadway and traffic conditions. Practical capacity is also known as design capacity.",
+        "has_diagram": false,
+        "page_index": 1
+    },
+    {
+        "subject": "Traffic Engineering",
+        "question_number": "56",
+        "question_text": "If the average centre to centre spacing of vehicles is 20 metres, then the basic capacity of a traffic lane at a speed of 50 kmph is",
+        "options": {
+            "a": "2500 vehicles per day",
+            "b": "2000 vehicles per hour",
+            "c": "2500 vehicles per hour",
+            "d": "1000 vehicles per hour"
+        },
+        "correct_answer": "c",
+        "solution": "$Q = KV = (\\frac{1000}{S}) \\times V$ Where $\\delta =$ space headway $= 20m$ $Q = \\frac{1000}{20} \\times 50 = 2500$ vehicle per hour",
+        "has_diagram": false,
+        "page_index": 2
+    },
+    {
+        "subject": "Traffic Engineering",
+        "question_number": "57",
+        "question_text": "With increase in speed of the traffic stream, the maximum capacity of the lane",
+        "options": {
+            "a": "Increases",
+            "b": "Decreases",
+            "c": "First increases and then decreases after reaching a maximum value at optimum speed",
+            "d": "It means 'the maximum capacity of the lane first increases and then decreases after reaching a maximum value at optimum speed."
+        },
+        "correct_answer": "c",
+        "solution": "It means 'the maximum capacity of the lane first increases and then decreases after reaching a maximum value at optimum speed.",
+        "has_diagram": false,
+        "page_index": 2
+    },
+    {
+        "subject": "Traffic Engineering",
+        "question_number": "58",
+        "question_text": "Equivalent factor of passenger car unit (PCU) for a passenger car as IRC is",
+        "options": {
+            "a": "1.0",
+            "b": "2.0",
+            "c": "0.5",
+            "d": "10"
+        },
+        "correct_answer": "a",
+        "solution": "Standard (PCU) value: Car = 1, Bus/Truck = 3, Motor Cycle = 0.5, Cycle Rickshaw = 1.5, Horse drawn vehicle = 4, Small Bullock cart = 6, Large Bullock cart = 8.",
+        "has_diagram": true,
+        "diagram_bbox": [
+            580,
+            570,
+            875,
+            905
+        ],
+        "page_index": 2,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1782933146/ocr_diagrams/yskskrzjczsr4idwctkc.png"
+    },
+    {
+        "subject": "Traffic Engineering",
+        "question_number": "59",
+        "question_text": "If the stopping distance and average length of a vehicle are 18 m and 6 m respectively, then the theoretical maximum capacity of a traffic lane at a speed of 10 m/sec is",
+        "options": {
+            "a": "1500 vehicles per hour",
+            "b": "2000 vehicles per hour",
+            "c": "2500 vehicles per hour",
+            "d": "3000 vehicles per hour"
+        },
+        "correct_answer": "a",
+        "solution": "The theoretical maximum capacity (q) = $K \\times V$ Where $K = \\frac{1000}{S}$ And = space headway ($\\delta$) = SSD + l $\\delta = 18 + 6 = 24m$, SSD = 18M, l = 6M $V = 10$ m/sec $= 10 \\times \\frac{18}{5}$ kmph $= 36$ kmph $q = (\\frac{1000}{24}) (36) = 1500$ vehicles per hour",
+        "has_diagram": false,
+        "page_index": 3
+    },
+    {
+        "subject": "Traffic Engineering",
+        "question_number": "60",
+        "question_text": "Scientific planning of transportation system and mass transit facilities in cities should be based on",
+        "options": {
+            "a": "Spot speed data",
+            "b": "Origin and destination data",
+            "c": "Traffic volume data",
+            "d": "Accident data"
+        },
+        "correct_answer": "b",
+        "solution": "Origin and destination studies:- This study is generally carried out (1) Scientific planning of transportation system and to mass transit facilities in a cities. (2) To locate intermediate stops of public transport. (3) To locate expressway or major routes along the desires lines.",
+        "has_diagram": false,
+        "page_index": 3
+    },
+    {
+        "subject": "Traffic Engineering",
+        "question_number": "61",
+        "question_text": "The diagram which shows all important physical conditions of an accident location like roadway limits, bridges, trees and all details of roadway conditions is known as",
+        "options": {
+            "a": "Pie chart",
+            "b": "Spot maps",
+            "c": "Condition diagram",
+            "d": "Collision diagram"
+        },
+        "correct_answer": "c",
+        "solution": "The condition diagram is the diagram which shows all important physical conditions of an accident location like roadway limits, bridges, trees and all details of roadway conditions.",
+        "has_diagram": false,
+        "page_index": 3
+    },
+    {
+        "subject": "Traffic Engineering",
+        "question_number": "62",
+        "question_text": "When the speed of traffic flow becomes zero, then",
+        "options": {
+            "a": "Traffic density attains maximum value whereas traffic volume becomes zero",
+            "b": "Traffic density and traffic volume both attain maximum value",
+            "c": "Traffic density and traffic volume both become zero",
+            "d": "Traffic density becomes zero whereas traffic volume attains maximum value"
+        },
+        "correct_answer": "a",
+        "solution": "Because $q = kv$ $q = k v_{sf} (1 - \\frac{k}{k_j})$ When $k = k_j$ then $q = 0$ It means traffic density attains maximum value whereas traffic volume becomes zero.",
+        "has_diagram": false,
+        "page_index": 3
+    },
+    {
+        "subject": "Traffic Engineering",
+        "question_number": "63",
+        "question_text": "On a right angled road intersection with two way traffic, the total number of conflict points is",
+        "options": {
+            "a": "6",
+            "b": "11",
+            "c": "18",
+            "d": "24"
+        },
+        "correct_answer": "d",
+        "solution": "Type of traffic | No of conflict points ---|--- (i) Both the roads two way | 24 (ii) one road one way | 11 (iii) Bothe the roads one way | 6 For two way traffic = 24",
+        "has_diagram": true,
+        "diagram_bbox": [
+            250,
+            90,
+            430,
+            430
+        ],
+        "page_index": 4,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1782933147/ocr_diagrams/fbqfnhkidgdl2cdaetfs.png"
+    },
+    {
+        "subject": "Traffic Engineering",
+        "question_number": "64",
+        "question_text": "Total background colour of the informatory sign board is",
+        "options": {
+            "a": "Red",
+            "b": "Yellow",
+            "c": "Green",
+            "d": "White"
+        },
+        "correct_answer": "b",
+        "solution": "The background colour of the informatory sign board is yellow.",
+        "has_diagram": false,
+        "page_index": 4
+    },
+    {
+        "subject": "Traffic Engineering",
+        "question_number": "65",
+        "question_text": "Which of the following is indicated by a warning sign?",
+        "options": {
+            "a": "Level crossing",
+            "b": "No parking",
+            "c": "End of speed limit",
+            "d": "Overtaking prohibited"
+        },
+        "correct_answer": "a",
+        "solution": "Level crossing is indicated by a warning sign.",
+        "has_diagram": false,
+        "page_index": 4
+    },
+    {
+        "subject": "Traffic Engineering",
+        "question_number": "66",
+        "question_text": "\"Dead slow\" is a",
+        "options": {
+            "a": "Regulatory sign",
+            "b": "Warning sign",
+            "c": "Informatory sign",
+            "d": "None of the above"
+        },
+        "correct_answer": "a",
+        "solution": "\"Dead Slow\" is a regulatory sign",
+        "has_diagram": true,
+        "diagram_bbox": [
+            320,
+            620,
+            450,
+            750
+        ],
+        "page_index": 4,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1782933148/ocr_diagrams/zd1qyvnbnuzfeqprwzbp.png"
+    },
+    {
+        "subject": "Traffic Engineering",
+        "question_number": "67",
+        "question_text": "The most efficient traffic signal system is",
+        "options": {
+            "a": "Simultaneous system",
+            "b": "Alternate system",
+            "c": "Flexible progressive system",
+            "d": "Simple progressive system"
+        },
+        "correct_answer": "c",
+        "solution": "Flexible progressive system is the most efficient traffic signal system.",
+        "has_diagram": false,
+        "page_index": 4
+    },
+    {
+        "subject": "Traffic Engineering",
+        "question_number": "68",
+        "question_text": "The provision of traffic signals at intersections",
+        "options": {
+            "a": "Reduces right angled and rear end collisions",
+            "b": "Increases right angled and rear end collisions",
+            "c": "Reduces right angled collisions but may increases rear end collisions",
+            "d": "Reduces rear end collisions but may increases right angled collisions"
+        },
+        "correct_answer": "c",
+        "solution": "The provision of traffic signals at intersections reduces right angled collisions but may increased rear end collisions.",
+        "has_diagram": false,
+        "page_index": 4
+    },
+    {
+        "subject": "Traffic Engineering",
+        "question_number": "69",
+        "question_text": "Select the incorrect statement.",
+        "options": {
+            "a": "Stop or red time of signal is the sum of go and clearance intervals for the cross flow.",
+            "b": "Go or green time of a signal is the sum of stop and clearance intervals for the cross flow.",
+            "c": "Clearance time is generally 3 to 5 seconds.",
+            "d": "The cycle length is normally 40 to 60 seconds for two phase signals."
+        },
+        "correct_answer": "b",
+        "solution": "Green time of a signal is the sum of red time and amber time.",
+        "has_diagram": false,
+        "page_index": 5
+    },
+    {
+        "subject": "Traffic Engineering",
+        "question_number": "70",
+        "question_text": "Centre line markings are used",
+        "options": {
+            "a": "To designate traffic lanes",
+            "b": "In roadways meant for two way traffic",
+            "c": "To indicate that overtaking is not permitted",
+            "d": "To designate proper lateral placement of vehicles before turning to different directions"
+        },
+        "correct_answer": "b",
+        "solution": "Centre line markings are used in roadways meant for two way traffic.",
+        "has_diagram": false,
+        "page_index": 5
+    },
+    {
+        "subject": "Traffic Engineering",
+        "question_number": "71",
+        "question_text": "The particular places where pedestrians are to cross the pavement marking known as",
+        "options": {
+            "a": "Stop line",
+            "b": "Turn markings",
+            "c": "Crosswalk lines",
+            "d": "Lane lines"
+        },
+        "correct_answer": "c",
+        "solution": "Entry to the rotary is never made straight, small curvature is always introduced to force fully reduce the speed of vehicle. For comfortable exit of vehicle, the exit curvature increases. $R_{exit} = (1.5 - 2) R_{entry}$",
+        "has_diagram": false,
+        "page_index": 5
+    },
+    {
+        "subject": "Traffic Engineering",
+        "question_number": "72",
+        "question_text": "Which of the following shows skewed and staggered from of intersection?",
+        "options": {
+            "a": "Diagram A",
+            "b": "Diagram B",
+            "c": "Diagram C",
+            "d": "Diagram D"
+        },
+        "correct_answer": "d",
+        "solution": "Cross walk lines where pedestrians are to cross the pavement are properly marked by the pavement marking.",
+        "has_diagram": true,
+        "diagram_bbox": [
+            120,
+            570,
+            500,
+            900
+        ],
+        "page_index": 5,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1782933149/ocr_diagrams/iq4fwlnmetk99e8h36bb.png"
+    },
+    {
+        "subject": "Traffic Engineering",
+        "question_number": "73",
+        "question_text": "The entrance and exit curves of a rotary have",
+        "options": {
+            "a": "Equal radii and equal widths of pavement",
+            "b": "Equal radii but pavement width is more at entrance than at exit curve",
+            "c": "Equal pavement widths but radius is more at entrance curve than at exit curve",
+            "d": "Different radii and different widths of pavement"
+        },
+        "correct_answer": "d",
+        "solution": "Entry to the rotary is never made straight, small curvature is always introduced to force fully reduce the speed of vehicle. For comfortable exit of vehicle, the exit curvature increases. $R_{exit} = (1.5 - 2) R_{entry}$",
+        "has_diagram": false,
+        "page_index": 5
+    },
+    {
+        "subject": "Traffic Engineering",
+        "question_number": "74",
+        "question_text": "When two equally important roads cross roughly at right angles, the suitable shape of central island is",
+        "options": {
+            "a": "Circular",
+            "b": "Elliptical",
+            "c": "Tangent",
+            "d": "Turbine"
+        },
+        "correct_answer": "a",
+        "solution": "When two equally important roads cross roughly at right angles, the suitable shape of central island is circular",
+        "has_diagram": false,
+        "page_index": 6
+    },
+    {
+        "subject": "Traffic Engineering",
+        "question_number": "75",
+        "question_text": "The maximum number of vehicles beyond which the rotary may not function efficiently is",
+        "options": {
+            "a": "500 vehicles per hour",
+            "b": "500 vehicles per day",
+            "c": "5000 vehicles per hour",
+            "d": "5000 vehicles per day"
+        },
+        "correct_answer": "c",
+        "solution": "The maximum traffic which a rotary can efficiently handle is 3000 veh/hr and minimum 500 veh/hr entering from all legs.",
+        "has_diagram": false,
+        "page_index": 6
+    },
+    {
+        "subject": "Traffic Engineering",
+        "question_number": "76",
+        "question_text": "A traffic rotary is justified where",
+        "options": {
+            "a": "Number of intersecting roads is between 4 and 7",
+            "b": "Space is limited and costly",
+            "c": "When traffic volume is less than 500 vehicles per hour",
+            "d": "When traffic volume is more than 5000 vehicles per hour"
+        },
+        "correct_answer": "a",
+        "solution": "A traffic rotary is justified where number of intersecting roads is between 4 and 7.",
+        "has_diagram": false,
+        "page_index": 6
+    },
+    {
+        "subject": "Traffic Engineering",
+        "question_number": "77",
+        "question_text": "When a number of roads are meeting at a point and only one of the roads is important, then the suitable shape of rotary is",
+        "options": {
+            "a": "Circular",
+            "b": "Tangent",
+            "c": "Elliptical",
+            "d": "Turbine"
+        },
+        "correct_answer": "b",
+        "solution": "Tangent shape of rotary is suitable when a number of roads are meeting at a point and only one of the roads is important.",
+        "has_diagram": false,
+        "page_index": 6
+    },
+    {
+        "subject": "Traffic Engineering",
+        "question_number": "78",
+        "question_text": "Maximum number of vehicles can be parked with",
+        "options": {
+            "a": "Parallel parking",
+            "b": "$30^\\circ$ angle parking",
+            "c": "$45^\\circ$ angle parking",
+            "d": "$90^\\circ$ angle parking"
+        },
+        "correct_answer": "d",
+        "solution": "Maximum number of vehicles can be parked with $90^\\circ$ angle parking.",
+        "has_diagram": false,
+        "page_index": 6
+    },
+    {
+        "subject": "Traffic Engineering",
+        "question_number": "79",
+        "question_text": "When the width of kerb parking space and width of street are limited, generally preferred parking system is",
+        "options": {
+            "a": "Parallel parking",
+            "b": "$45^\\circ$ angle parking",
+            "c": "$65^\\circ$ angle parking",
+            "d": "$90^\\circ$ angle parking"
+        },
+        "correct_answer": "a",
+        "solution": "When the width of kerb parking space and width of street are limited, generally preferred parking system is parallel parking.",
+        "has_diagram": false,
+        "page_index": 6
+    },
+    {
+        "subject": "Traffic Engineering",
+        "question_number": "80",
+        "question_text": "As per IRC recommendations, the average level of illumination on important roads carrying fast traffic is",
+        "options": {
+            "a": "10 lux",
+            "b": "15 lux",
+            "c": "20 lux",
+            "d": "30 lux"
+        },
+        "correct_answer": "d",
+        "solution": "As per IRC recommendations, the average level of illumination on important roads carrying fast traffic is 30 lux.",
+        "has_diagram": false,
+        "page_index": 6
+    },
+    {
+        "subject": "Traffic Engineering",
+        "question_number": "81",
+        "question_text": "The most economical lighting layout which is suitable for narrow roads is",
+        "options": {
+            "a": "Single side lighting",
+            "b": "Staggered system",
+            "c": "Central lighting system",
+            "d": "None of the above"
+        },
+        "correct_answer": "a",
+        "solution": "Single side lighting is the most economical lighting layout for narrow roads.",
+        "has_diagram": true,
+        "diagram_bbox": [
+            310,
+            80,
+            430,
+            460
+        ],
+        "page_index": 7,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1782933150/ocr_diagrams/kyov7yjtenkggkupeal6.png"
+    },
+    {
+        "subject": "Traffic Engineering",
+        "question_number": "82",
+        "question_text": "The direct interchange ramp involves",
+        "options": {
+            "a": "Diverging to the right side and merging from left",
+            "b": "Diverging to the left side and merging from right",
+            "c": "Diverging to the right side and merging from right",
+            "d": "Diverging to the left side and merging from left"
+        },
+        "correct_answer": "d",
+        "solution": "The interchange ramps at grade separation can be provided in three different types and they are (1) Direct interchange:- The vehicle is diverged into the right side and merged from the right (2) Semi-direct interchange:- The vehicle is diverged to its left side and merged from right. (3) Indirect interchange:- The vehicle is diverged to its left and merged from left.",
+        "has_diagram": false,
+        "page_index": 7
+    },
+    {
+        "subject": "Pavement Materials",
+        "question_number": "83",
+        "question_text": "In soils having same values of plasticity index, if liquid limit is increased, then",
+        "options": {
+            "a": "Compressibility and permeability decrease ad dry strength increases",
+            "b": "Compressibility, permeability and dry strength decrease",
+            "c": "Compressibility, permeability and dry strength increase",
+            "d": "Compressibility and permeability increase and dry strength decreases"
+        },
+        "correct_answer": "d",
+        "solution": "When comparing the properties of two soils with equal values of the plasticity index, it is found that as the liquid limit increases, the dry strength and toughness decreases, where as compressibility and permeability increases.",
+        "has_diagram": false,
+        "page_index": 7
+    },
+    {
+        "subject": "Pavement Materials",
+        "question_number": "84",
+        "question_text": "Which of the following tests measures the toughness of road aggregates?",
+        "options": {
+            "a": "Crushing strength test",
+            "b": "Abrasion test",
+            "c": "Impact test",
+            "d": "Shape test"
+        },
+        "correct_answer": "c",
+        "solution": "Impact test is performed for toughness of road aggregate. Abrasion test is performed for resistance to wear. Crushing test is done for checking the strength.",
+        "has_diagram": false,
+        "page_index": 7
+    },
+    {
+        "subject": "Pavement Materials",
+        "question_number": "85",
+        "question_text": "Los Angeles testing machine is used to conduct",
+        "options": {
+            "a": "Abrasion test",
+            "b": "Impact test",
+            "c": "Attrition test",
+            "d": "Crushing strength test"
+        },
+        "correct_answer": "a",
+        "solution": "Abrasion test",
+        "has_diagram": false,
+        "page_index": 7
+    },
+    {
+        "subject": "Pavement Materials",
+        "question_number": "86",
+        "question_text": "If in a Dorry abrasion test the loss in weight is 21 gms, then the coefficient of hardness is",
+        "options": {
+            "a": "9.5",
+            "b": "13",
+            "c": "17",
+            "d": "21"
+        },
+        "correct_answer": "c",
+        "solution": "Coefficient of hardness $= 20 - \\frac{\\text{loss of weight in gm}}{3}$ $= 20 - \\frac{21}{3} = 13$",
+        "has_diagram": false,
+        "page_index": 8
+    },
+    {
+        "subject": "Pavement Materials",
+        "question_number": "87",
+        "question_text": "In CBR test the value of CBR is calculated at",
+        "options": {
+            "a": "2.5 mm penetration only",
+            "b": "5.0 mm penetration only",
+            "c": "7.5 mm penetration only",
+            "d": "both 2.5 mm and 5.0 mm penetrations"
+        },
+        "correct_answer": "d",
+        "solution": "In CBR test the values of CBR is calculated at both 2.5 mm and 5.0 mm penetrations.",
+        "has_diagram": false,
+        "page_index": 8
+    },
+    {
+        "subject": "Pavement Materials",
+        "question_number": "88",
+        "question_text": "If aggregate impact value is 20 to 30 percent, then it is classified as",
+        "options": {
+            "a": "Exceptionally strong",
+            "b": "Strong",
+            "c": "Satisfactory for road surfacing",
+            "d": "Unsuitable for road surfacing"
+        },
+        "correct_answer": "c",
+        "solution": "Aggregate Impact Value (AIV) | Classification ---|--- < 10% | Exceptionally strong 10-20% | Strong 20-30% | Satisfactory for road surfacing >35% | Weak for road surfacing",
+        "has_diagram": true,
+        "diagram_bbox": [
+            50,
+            530,
+            240,
+            900
+        ],
+        "page_index": 8,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1782933151/ocr_diagrams/jcjazpbwkccfommjpigc.png"
+    },
+    {
+        "subject": "Pavement Materials",
+        "question_number": "89",
+        "question_text": "The maximum allowable Los Angeles abrasion value for high quality surface course is",
+        "options": {
+            "a": "10%",
+            "b": "20%",
+            "c": "30%",
+            "d": "45%"
+        },
+        "correct_answer": "c",
+        "solution": "For surface course abrasion value should not exceed 30%. For base course, it should be less than 50%.",
+        "has_diagram": false,
+        "page_index": 8
+    },
+    {
+        "subject": "Pavement Materials",
+        "question_number": "90",
+        "question_text": "Percentage of free carbon in bitumen is",
+        "options": {
+            "a": "More than that in tar",
+            "b": "Less than that in tar",
+            "c": "Equal to that in tar",
+            "d": "None of the above"
+        },
+        "correct_answer": "b",
+        "solution": "The percentage of free carbon in bitumen is less than that is tar.",
+        "has_diagram": false,
+        "page_index": 8
+    },
+    {
+        "subject": "Pavement Materials",
+        "question_number": "91",
+        "question_text": "The ductility value of bitumen for suitability in road construction should not be less than",
+        "options": {
+            "a": "30 cm",
+            "b": "40 cm",
+            "c": "50 cm",
+            "d": "60 cm"
+        },
+        "correct_answer": "c",
+        "solution": "The ductility value of bitumen for suitability in road construction should not be less than 50 cm.",
+        "has_diagram": false,
+        "page_index": 8
+    },
+    {
+        "subject": "Pavement Materials",
+        "question_number": "92",
+        "question_text": "The maximum limit of water absorption for aggregate suitable for road construction is",
+        "options": {
+            "a": "0.4%",
+            "b": "0.6%",
+            "c": "0.8%",
+            "d": "1.0%"
+        },
+        "correct_answer": "b",
+        "solution": "The maximum limit of water absorption for aggregate suitable for road construction is = 0.6%.",
+        "has_diagram": false,
+        "page_index": 9
+    },
+    {
+        "subject": "Pavement Materials",
+        "question_number": "93",
+        "question_text": "Which of the following represents hardest grade of bitumen?",
+        "options": {
+            "a": "30/40",
+            "b": "60/70",
+            "c": "80/100",
+            "d": "100/120"
+        },
+        "correct_answer": "a",
+        "solution": "30/40 grade of bitumen means 3-4 mm penetration value on penetration test. 60/70 grade means 6-7 mm penetration value. 80/100 grade means 8-10 mm penetration value. 100/120 grade means 10-12 mm penetration value. Here 30/40 grade of bitumen represents hardest grade of bitumen because having least penetration value.",
+        "has_diagram": false,
+        "page_index": 9
+    },
+    {
+        "subject": "Pavement Materials",
+        "question_number": "94",
+        "question_text": "Penetration test on bitumen is used for determining its",
+        "options": {
+            "a": "Grade",
+            "b": "Viscosity",
+            "c": "Ductility",
+            "d": "Temperature Susceptibility"
+        },
+        "correct_answer": "a",
+        "solution": "Penetration test on bitumen is used for determining its grade.",
+        "has_diagram": false,
+        "page_index": 9
+    },
+    {
+        "subject": "Pavement Materials",
+        "question_number": "95",
+        "question_text": "Bitumen of grade 80/100 means",
+        "options": {
+            "a": "Its penetration value is 8 mm",
+            "b": "Its penetration value is 10 mm",
+            "c": "Its penetration value is 8 to 10 mm",
+            "d": "Its penetration value is 8 to 10 cm"
+        },
+        "correct_answer": "c",
+        "solution": "Bitumen of grade 80/100 means its penetration value is 8 to 10mm.",
+        "has_diagram": false,
+        "page_index": 9
+    },
+    {
+        "subject": "Pavement Materials",
+        "question_number": "96",
+        "question_text": "RC-2, MC-2 and SC-2 correspond to",
+        "options": {
+            "a": "Same viscosity",
+            "b": "Viscosity in increasing order from RC-2 to SC-2",
+            "c": "Viscosity in decreasing order from RC-2 to SC-2",
+            "d": "None of the above"
+        },
+        "correct_answer": "a",
+        "solution": "RC-2, MC-2 and SC-2 having same viscosity.",
+        "has_diagram": false,
+        "page_index": 9
+    },
+    {
+        "subject": "Pavement Materials",
+        "question_number": "97",
+        "question_text": "The recommended grade of tar for grouting purpose is",
+        "options": {
+            "a": "RT - 1",
+            "b": "RT - 2",
+            "c": "RT - 3",
+            "d": "RT - 5"
+        },
+        "correct_answer": "d",
+        "solution": "The uses of different grade of tar RT-1: For surface painting under exceptionally cold weather conditions and on hill roads. RT-2: Standard surface painting under normal Indian climatic condition. RT-3: Surface painting renewal coats, premixing chips for top course. RT-4: used for premixing tar macadam in base course RT-5: used for grouting purposes.",
+        "has_diagram": false,
+        "page_index": 10
+    },
+    {
+        "subject": "Pavement Materials",
+        "question_number": "98",
+        "question_text": "Softening point of bitumen to be used for road construction at a place where maximum temperature is $40^\\circ C$ should be",
+        "options": {
+            "a": "Less than $40^\\circ C$",
+            "b": "Greater than $40^\\circ C$",
+            "c": "Equal to $40^\\circ C$",
+            "d": "None of the above"
+        },
+        "correct_answer": "b",
+        "solution": "Softening point of bitumen to be used for road construction at a place where maximum temperature is $40^\\circ C$ should be greater than $40^\\circ C$. Softening point is usually determined by ring and ball test. Hard grade-bitumen higher softening point. Soft grade bitumen having lower softening soft grade bitumen having lower softening point.",
+        "has_diagram": false,
+        "page_index": 10
+    },
+    {
+        "subject": "Pavement Materials",
+        "question_number": "99",
+        "question_text": "For rapid curing cutbacks, the oil used is",
+        "options": {
+            "a": "Gasoline",
+            "b": "Kerosene oil",
+            "c": "Light diesel",
+            "d": "Heavy diesel"
+        },
+        "correct_answer": "a",
+        "solution": "Type of cutbacks | Oil used ---|--- Rapid curing (RC) | Naphthna or gasoline Medium curing (MC) | Kerosene or light diesel oil slow curing (SC) | Blending with high boiling point gas oil or furnace oils.",
+        "has_diagram": true,
+        "diagram_bbox": [
+            150,
+            540,
+            310,
+            900
+        ],
+        "page_index": 10,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1782933152/ocr_diagrams/alydaafslmllziebdnh3.png"
+    },
+    {
+        "subject": "Pavement Materials",
+        "question_number": "100",
+        "question_text": "The method of design of flexible pavement as recommended by IRC is",
+        "options": {
+            "a": "Group index method",
+            "b": "CBR method",
+            "c": "Westerguard method",
+            "d": "Benkelman beam method"
+        },
+        "correct_answer": "b",
+        "solution": "By IRC, for flexible pavement, CBR method is recommended.",
+        "has_diagram": false,
+        "page_index": 10
+    },
+    {
+        "subject": "Pavement Materials",
+        "question_number": "101",
+        "question_text": "The group index for a soil, whose liquid limit is 40 percent, plasticity index is 10 percent and percentage passing 75 micron IS sieve is 35, is",
+        "options": {
+            "a": "0",
+            "b": "3",
+            "c": "5",
+            "d": "7"
+        },
+        "correct_answer": "d",
+        "solution": "Given data, $W_L = 40\\%$ $I_p = 10\\%$ $%$ passing 75H IS sieve $(P) = 35$ $GI Value = 0.2a + 0.005ac + 0.01bd$",
+        "has_diagram": false,
+        "page_index": 10
+    },
+    {
+        "subject": "Pavement Materials",
+        "question_number": "102",
+        "question_text": "Bottom most layer of pavement is known as",
+        "options": {
+            "a": "Wearing course",
+            "b": "Base course",
+            "c": "Sub-base course",
+            "d": "Subgrade"
+        },
+        "correct_answer": "d",
+        "solution": "Bottom most layer of pavement is known as sub-grade.",
+        "has_diagram": true,
+        "diagram_bbox": [
+            500,
+            100,
+            680,
+            440
+        ],
+        "page_index": 11,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1782933153/ocr_diagrams/zmdzxtviv0mctlfog2dq.png"
+    },
+    {
+        "subject": "Pavement Materials",
+        "question_number": "103",
+        "question_text": "Flexible pavement distribute the wheel load",
+        "options": {
+            "a": "Directly to subgrade",
+            "b": "Through structural action",
+            "c": "Through a set of layers to the subgrade",
+            "d": "None of the above"
+        },
+        "correct_answer": "c",
+        "solution": "In flexible pavements, wheel loads are transferred by grain-to-grain contact of the aggregate through the granular structure. The flexible pavement, having less flexural strength, acts like a flexible sheet (e.g. bituminous road). On the contrary, in rigid pavements, wheel loads are transferred to sub-grade soil by flexural strength of the pavement and the pavement acts like a rigid plate (e.g. cement concrete roads). In addition to these, composite pavements are also available. A thin layer of flexible pavement over rigid pavement is an ideal pavement with most desirable characteristics. However, such pavements are rarely used in new construction because of high cost and complex analysis required.",
+        "has_diagram": false,
+        "page_index": 11
+    },
+    {
+        "subject": "Pavement Materials",
+        "question_number": "104",
+        "question_text": "The number of repetitions, which the pavement thickness designed for a given wheel load should be able to support during the life of pavement is",
+        "options": {
+            "a": "1000",
+            "b": "10000",
+            "c": "100000",
+            "d": "1000000"
+        },
+        "correct_answer": "d",
+        "solution": "The number of repetitions, which the pavement thickness designed for a given wheel load should be able to support during the life of a pavement is 1000000.",
+        "has_diagram": false,
+        "page_index": 11
+    },
+    {
+        "subject": "Pavement Materials",
+        "question_number": "105",
+        "question_text": "Group index method of design of flexible pavement is",
+        "options": {
+            "a": "A theoretical method",
+            "b": "An empirical method based on physical properties of subgrade soil",
+            "c": "An empirical method based on strength characteristics of subgrade soil",
+            "d": "A semi empirical method"
+        },
+        "correct_answer": "b",
+        "solution": "Group index method of design of flexible pavement is an empirical method based on physical properties of subgrade soil. Because higher the GI value, poor the soil, hence higher thickness of pavement required.",
+        "has_diagram": false,
+        "page_index": 11
+    },
+    {
+        "subject": "Pavement Materials",
+        "question_number": "106",
+        "question_text": "Select the correct statement.",
+        "options": {
+            "a": "More the value of group index, less thickness of pavement will be required.",
+            "b": "More the value of CBR, greater thickness of pavement will be required.",
+            "c": "Minimum and maximum values of group index can be 0 and 20 respectively.",
+            "d": "All of the above"
+        },
+        "correct_answer": "c",
+        "solution": "The correct statement, (1) More the value of GI, poor the soil, hence more thickness of pavement required. (2) More the value of CBR, less thickness of pavement will be required. (3) Minimum and maximum values of group index can be 0 and 20 respectively.",
+        "has_diagram": false,
+        "page_index": 12
+    },
+    {
+        "subject": "Pavement Materials",
+        "question_number": "107",
+        "question_text": "If the group index value of subgrade is between 5 and 9, then the subgrade is treated as",
+        "options": {
+            "a": "Good",
+            "b": "Fair",
+            "c": "Poor",
+            "d": "Very poor"
+        },
+        "correct_answer": "b",
+        "solution": "Sr. No. | Value of GI | Soil conditions ---|---|--- (1) | 0 | Excellent (2) | 1 | Good (3) | 2 to 4 | Fair For GI value between 5 and 9, the subgrade is treated as poor.",
+        "has_diagram": true,
+        "diagram_bbox": [
+            750,
+            90,
+            850,
+            440
+        ],
+        "page_index": 12,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1782933155/ocr_diagrams/gnnobgldk54ikladddtg.png"
+    },
+    {
+        "subject": "Pavement Materials",
+        "question_number": "108",
+        "question_text": "Tyre pressure influences the",
+        "options": {
+            "a": "Total depth of pavement",
+            "b": "Quality of surface course",
+            "c": "Both of the above",
+            "d": "None of the above"
+        },
+        "correct_answer": "c",
+        "solution": "Tyre pressure influences the quality of surface course.",
+        "has_diagram": false,
+        "page_index": 12
+    },
+    {
+        "subject": "Pavement Materials",
+        "question_number": "109",
+        "question_text": "Rigidity factor for a tyre pressure greater than $7 \\text{ kg/cm}^2$ is",
+        "options": {
+            "a": "Equal to 1",
+            "b": "Less than 1",
+            "c": "Greater than 1",
+            "d": "Zero"
+        },
+        "correct_answer": "b",
+        "solution": "Rigidity Factor (R.F) = $\\frac{\\text{contact pressure}}{\\text{tyre pressure}}$ (a) R.F = 1, for tyre pressure of $7 \\text{ kg/cm}^2$ (b) R.F > 1, for low tyre pressure $< 7 \\text{ kg/cm}^2$ (c) R.F < 1, for high tyre pressure $> 7 \\text{ kg/cm}^2$ So, for a tyre pressure greater than $7 \\text{ kg/cm}^2$ R.F is less than 1",
+        "has_diagram": false,
+        "page_index": 12
+    },
+    {
+        "subject": "Pavement Materials",
+        "question_number": "110",
+        "question_text": "In a dual wheel assembly if P is equal to each wheel load, S is centre to centre distance of dual wheels and D is the distance between walls of wheels, than",
+        "options": {
+            "a": "Each wheel load acts independently upto a depth d",
+            "b": "Total stress due to the dual wheels at any depth greater than 2 S is",
+            "c": "Each wheel load acts independently upto a depth d",
+            "d": "Each wheel load acts independently upto a depth d"
+        },
+        "correct_answer": "a",
+        "solution": "Each wheel load acts independently upto a depth d",
+        "has_diagram": false,
+        "page_index": 12
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "113",
+        "question_text": "Critical load position in a rigid pavement design is taken as",
+        "options": {
+            "a": "Interior loading",
+            "b": "Edge loading",
+            "c": "Corner loading",
+            "d": "Interior, edge and corner loading"
+        },
+        "correct_answer": "d",
+        "solution": "The critical load position in a rigid pavement design is taken as interior, edge and corner loading.",
+        "has_diagram": false,
+        "page_index": 1
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "114",
+        "question_text": "If the radius of wheel load distribution is 30 cm, then the equivalent radius of resisting section is",
+        "options": {
+            "a": "($\\sqrt{1.6 \\times (30)^2 + 15^2} - 0.675 \\times 15$)cm",
+            "b": "($\\sqrt{1.6 \\times (30)^2 + 15^2} + 0.675 \\times 15$)cm",
+            "c": "30 cm",
+            "d": "none of the above"
+        },
+        "correct_answer": "c",
+        "solution": "Given, a = radius of wheel load distribution = 30 cm, h = slab thickness = 15 cm. The equivalent radius of resisting section (b) = $\\sqrt{1.6 a^2 + h^2} - 0.675h$, if a < 1.724h otherwise a. Here, $\\frac{a}{h} = \\frac{30}{15} = 2 > 1.724$. So, equivalent radius of resisting section (b) = a = 30 cm.",
+        "has_diagram": false,
+        "page_index": 1
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "115",
+        "question_text": "The critical combination of stresses for corner region in cement concrete roads is",
+        "options": {
+            "a": "Load stress + warping stress - frictional stress",
+            "b": "Load stress + warping stress + frictional stress",
+            "c": "Load stress + warping",
+            "d": "Load stress + frictional stress"
+        },
+        "correct_answer": "c",
+        "solution": "The critical combination of stresses of corner region in cement concrete roads is = load stress + warping stress. Here Frictional stress does not consider, Because for corner region, the critical condition occurs at top of roads. We know that frictional stresses are induced in bottom fibre due to contact with soil.",
+        "has_diagram": false,
+        "page_index": 2
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "116",
+        "question_text": "Tie bars in cement concrete pavements are at",
+        "options": {
+            "a": "Expansion joints",
+            "b": "Contraction joints",
+            "c": "Warping joints",
+            "d": "Longitudinal joints"
+        },
+        "correct_answer": "d",
+        "solution": "Tie bars in cement concrete pavement are provided at longitudinal joints.",
+        "has_diagram": false,
+        "page_index": 2
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "117",
+        "question_text": "The maximum spacing of contraction joints in rigid pavements is",
+        "options": {
+            "a": "2.5 m",
+            "b": "3.5 m",
+            "c": "4.5 m",
+            "d": "5.5 m"
+        },
+        "correct_answer": "c",
+        "solution": "The maximum spacing of contraction joints in rigid pavements is 4.5m because As per IRC spacing (L) > 4.5M",
+        "has_diagram": false,
+        "page_index": 2
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "118",
+        "question_text": "The maximum thickness of expansion joint in rigid pavements is",
+        "options": {
+            "a": "0",
+            "b": "25 mm",
+            "c": "50 mm",
+            "d": "100 mm"
+        },
+        "correct_answer": "b",
+        "solution": "As per IRC, Width of expansion joint > 2.5 cm = 25mm",
+        "has_diagram": false,
+        "page_index": 2
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "119",
+        "question_text": "The function of an expansion joint in rigid pavements is to",
+        "options": {
+            "a": "Relieve warping stresses",
+            "b": "Relieve shrinkage stresses",
+            "c": "Resist stresses due to expansion",
+            "d": "Allow free expansion"
+        },
+        "correct_answer": "d",
+        "solution": "The function of an expansion join in rigid pavement is to allow free expansion.",
+        "has_diagram": false,
+        "page_index": 2
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "120",
+        "question_text": "A traffic survey revealed the present average daily traffic of commercial vehicles as 1000. The annual rate of growth of traffic is found to be 8 percent. The pavement construction is to be completed in three after the last traffic count. Then the number of vehicles for design of rigid pavements will be taken as",
+        "options": {
+            "a": "1000(1.08)^13",
+            "b": "1000(1.08)^23",
+            "c": "1000(0.92)^13",
+            "d": "1000(1.08)^3"
+        },
+        "correct_answer": "d",
+        "solution": "The number of vehicles for design of rigid pavement will be taken as = 1000(1+0.08)^3 = 1000(1.08)^3",
+        "has_diagram": false,
+        "page_index": 2
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "121",
+        "question_text": "The fundamental factor in the selection of pavement type is",
+        "options": {
+            "a": "Climatic condition",
+            "b": "Type and intensity of traffic",
+            "c": "Subgrade soil and drainage condition",
+            "d": "Availability of funds for the construction project"
+        },
+        "correct_answer": "b",
+        "solution": "The fundamental factor in the selection of pavement type is the type and intensity of traffic.",
+        "has_diagram": false,
+        "page_index": 3
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "122",
+        "question_text": "Most suitable material for highway embankments is",
+        "options": {
+            "a": "Granular soil",
+            "b": "Organic soil",
+            "c": "Silts",
+            "d": "Clays"
+        },
+        "correct_answer": "a",
+        "solution": "Granular soil is most suitable material for highway embankments.",
+        "has_diagram": false,
+        "page_index": 3
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "123",
+        "question_text": "Maximum daily traffic capacity of bituminous pavements is",
+        "options": {
+            "a": "500 tonnes per day",
+            "b": "1000 tonnes per day",
+            "c": "1500 tonnes per day",
+            "d": "2000 tonnes per day"
+        },
+        "correct_answer": "c",
+        "solution": "Maximum daily traffic capacity of bituminous pavements is 1500 tonnes per day.",
+        "has_diagram": false,
+        "page_index": 3
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "124",
+        "question_text": "The most suitable equipment for compacting clayey soils is a",
+        "options": {
+            "a": "Smooth wheeled roller",
+            "b": "Pneumatic tyred roller",
+            "c": "Sheep foot roller",
+            "d": "Vibrator"
+        },
+        "correct_answer": "c",
+        "solution": "Sheep foot roller -> compacting clayey soil",
+        "has_diagram": false,
+        "page_index": 3
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "125",
+        "question_text": "The aggregates required for one kilometre length of water bound macadam road per metre width and 10 mm thickness is",
+        "options": {
+            "a": "8 cubic metre",
+            "b": "10 cubic metre",
+            "c": "12 cubic metre",
+            "d": "15 cubic metre"
+        },
+        "correct_answer": "c",
+        "solution": "Given, Length = 1 km = 1000m, Width = 1 m, Thickness = 10 mm = 0.01m, volume = 1000 * 1 * 0.01 = 10m^3. Note: -20% volume increase due to stone dust. So, Total volume of aggregate required = 10 + 10 * (20/100) = 12 m^3",
+        "has_diagram": false,
+        "page_index": 3
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "126",
+        "question_text": "The camber of shoulders in water bound macadam road is",
+        "options": {
+            "a": "Equal to the cross slope of pavement",
+            "b": "Less than the cross slope of pavement",
+            "c": "Greater than the cross slope of pavement",
+            "d": "Zero"
+        },
+        "correct_answer": "a",
+        "solution": "The Camber of shoulders in water bound macadam roads is equal to the cross slope of pavement.",
+        "has_diagram": false,
+        "page_index": 3
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "127",
+        "question_text": "The binder normally used in flexible pavement construction is",
+        "options": {
+            "a": "Cement",
+            "b": "Lime",
+            "c": "Bitumen",
+            "d": "None of the above"
+        },
+        "correct_answer": "c",
+        "solution": "The bitumen binder is normally used in flexible pavement construction.",
+        "has_diagram": false,
+        "page_index": 4
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "128",
+        "question_text": "In highway construction, rolling starts from",
+        "options": {
+            "a": "Sides and proceed to centre",
+            "b": "Centre and proceed to side",
+            "c": "One side and proceed to other side",
+            "d": "Any of the above"
+        },
+        "correct_answer": "a",
+        "solution": "In highway construction, rolling starts from sides and proceed to centre.",
+        "has_diagram": false,
+        "page_index": 4
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "129",
+        "question_text": "For the construction of water bound macadam roads, the correct sequence of operations after spreading coarse aggregates is",
+        "options": {
+            "a": "Dry rolling, wet rolling, application of screening and application of filler",
+            "b": "Dry rolling, application of filler, wet rolling and application of screening",
+            "c": "Dry rolling, application of screening, wet rolling and application of filler",
+            "d": "Dry rolling, application of screening, application of filler and wet rolling"
+        },
+        "correct_answer": "c",
+        "solution": "Following steps in WBM roads: (1) Preparation of foundation for receiving the WBM course (2) Provision of lateral confinement (3) Spreading of coarse aggregate (4) Dry rolling (5) Application of screening (6) Wet rolling (7) Application of filler (8) Setting and drying",
+        "has_diagram": false,
+        "page_index": 4
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "130",
+        "question_text": "In the penetration macadam construction, the bitumen is",
+        "options": {
+            "a": "Sprayed after the aggregates are spread and compacted",
+            "b": "Premixed with aggregates and then spread",
+            "c": "Sprayed before the aggregates are spread and compacted",
+            "d": "None of the above"
+        },
+        "correct_answer": "a",
+        "solution": "In the penetration macadam construction (or) grouted macadam, the coarse aggregate are first spread and compacted well in dry state and after that hot bituminous binder of relatively high viscosity is sprayed in fairly large quantity at the top.",
+        "has_diagram": false,
+        "page_index": 4
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "131",
+        "question_text": "When the bituminous surfacing is done on already existing black top road or over existing cement concrete road, the type of treatment to be given is",
+        "options": {
+            "a": "Seal coat",
+            "b": "Tack coat",
+            "c": "Prime coat",
+            "d": "Spray of emulsion"
+        },
+        "correct_answer": "b",
+        "solution": "Bituminous tack coat is the application of bituminous material over an existing pavement surface which is relatively impervious like an existing bituminous surface or cement concrete pavement or a pervious surface like the WBM which has already been treated by a prime coat.",
+        "has_diagram": false,
+        "page_index": 4
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "132",
+        "question_text": "Which of the following premix method is used for base course?",
+        "options": {
+            "a": "Bituminous carpet",
+            "b": "Mastic asphalt",
+            "c": "Sheet asphalt",
+            "d": "Bituminous bound macadam"
+        },
+        "correct_answer": "d",
+        "solution": "Bituminous macadam base course is considered to be much superior than other types of base course such as water bound macadam with respect to load dispersion characteristic and durability. So, bituminous bound macadam is used for base course.",
+        "has_diagram": false,
+        "page_index": 5
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "133",
+        "question_text": "Select the correct statement.",
+        "options": {
+            "a": "Quantity of blinder required for tack coat is less than that required for prime coat.",
+            "b": "Prime coat treatment is given for plugging the voids in water bound macadam during bituminous road construction.",
+            "c": "Seal coat is the final coat over certain pervious bituminous pavements.",
+            "d": "A bitumen primer is a high viscosity cutback."
+        },
+        "correct_answer": "d",
+        "solution": "The correct statement is - A bitumen primer is a high viscosity cutback.",
+        "has_diagram": false,
+        "page_index": 5
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "134",
+        "question_text": "The suitable surfacing material for a bridge deck slab is",
+        "options": {
+            "a": "Sheet asphalt",
+            "b": "Bituminous carpet",
+            "c": "Mastic asphalt",
+            "d": "Rolled asphalt"
+        },
+        "correct_answer": "c",
+        "solution": "The mastic asphalt is a suitable surfacing material for bridge deck slabs. Mastic Asphalt: It is a mixture of bitumen, fine aggregate and filler in suitable proportions which yield voidless and impermeable mass. Mastic asphalt can absorbs vibrations and has a property of self healing of cracks without bleeding.",
+        "has_diagram": false,
+        "page_index": 5
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "135",
+        "question_text": "Which of the following is considered to be the highest quality construction in the group of black top pavements?",
+        "options": {
+            "a": "Mastic asphalt",
+            "b": "Sheet asphalt",
+            "c": "Bituminous carpet",
+            "d": "Bituminous concrete"
+        },
+        "correct_answer": "d",
+        "solution": "Bituminous concrete is a dense grades premixed bituminous mix which is well compacted to form a high quality pavement surface course. So the bituminous concrete is the highest quality construction in the group of black top pavements.",
+        "has_diagram": false,
+        "page_index": 5
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "136",
+        "question_text": "The thickness of bituminous carpet varies from",
+        "options": {
+            "a": "20 to 25 mm",
+            "b": "50 to 75 mm",
+            "c": "75 to 100 mm",
+            "d": "100 to 120 mm"
+        },
+        "correct_answer": "a",
+        "solution": "The thickness of bituminous carpet varies from 20 to 25 mm.",
+        "has_diagram": false,
+        "page_index": 5
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "137",
+        "question_text": "Which of the following represents carpet of sand-bitumen mix without coarse aggregates?",
+        "options": {
+            "a": "Mastic asphalt",
+            "b": "Sheet asphalt",
+            "c": "Bituminous carpet",
+            "d": "Bituminous concrete"
+        },
+        "correct_answer": "b",
+        "solution": "Sheet asphalt is dense sand- bitumen premix without coarse aggregates.",
+        "has_diagram": false,
+        "page_index": 6
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "138",
+        "question_text": "In highway construction on super-elevated curves, the rolling shall proceed from",
+        "options": {
+            "a": "Sides toward the centre",
+            "b": "Centre toward the sides",
+            "c": "Lower edge towards the upper edge",
+            "d": "Upper edge towards the lower edge"
+        },
+        "correct_answer": "c",
+        "solution": "In highway construction on super-elevated curves, the rolling shall proceed from lower edge towards the upper edge.",
+        "has_diagram": false,
+        "page_index": 6
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "139",
+        "question_text": "Expansion joints in cement concrete pavements are provided at an interval of",
+        "options": {
+            "a": "10 m",
+            "b": "15 m",
+            "c": "18 m to 21 m",
+            "d": "25 m to 30 m"
+        },
+        "correct_answer": "c",
+        "solution": "Expansion joints in cement concrete pavements are provided at an interval of 18 m to 21 m.",
+        "has_diagram": false,
+        "page_index": 6
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "140",
+        "question_text": "Select the incorrect statement.",
+        "options": {
+            "a": "Contraction joints are spaced closer than expansion joints",
+            "b": "longitudinal joints are provided in cement concrete road to prevent longitudinal cracking",
+            "c": "dowel bars are provided in longitudinal joints",
+            "d": "warping joints are provided to relieve stresses induced due to warping"
+        },
+        "correct_answer": "c",
+        "solution": "The correct statement are: (1) contraction joints are closer than expansion joints (2) Longitudinal joints are provided in cement concrete roads to prevent longitudinal cracking. (3) Dowel bars are provided in transverse joints. (4) Warping joints are provided to relieve stresses induced due to warping.",
+        "has_diagram": false,
+        "page_index": 6
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "141",
+        "question_text": "A hill road is one which passes through a terrain with a cross slope of",
+        "options": {
+            "a": "0 to 10%",
+            "b": "10 to 25%",
+            "c": "25 to 60%",
+            "d": "None of the above"
+        },
+        "correct_answer": "c",
+        "solution": "For hill road, slope is 25 - 60%",
+        "has_diagram": false,
+        "page_index": 6
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "142",
+        "question_text": "Fig. shows a longitudinal section AB of a hill road. the resisting length L1 is given by",
+        "options": {
+            "a": "Lr = L0 + h/f",
+            "b": "Lr = L1 + h/f",
+            "c": "Lr = L0 - h/f",
+            "d": "Lr = L0 + L1 - h/f"
+        },
+        "correct_answer": "b",
+        "solution": "The resisting length is obtained by adding to the actual length of the route, the product of the ineffective rise and fall and the reciprocal of the coefficient of friction between the vehicle tyres and the pavement surface i.e. Here, Lr = L1 + h/f. The resisting length of a road is its effective length taking into account the total work done against the resistance.",
+        "has_diagram": true,
+        "diagram_bbox": [
+            765,
+            580,
+            875,
+            870
+        ],
+        "page_index": 6,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1782938093/ocr_diagrams/ndhcyhrzpg66hsdzwf2y.png"
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "143",
+        "question_text": "In hill roads if several alternate alignments are survey which fulfill the geometric standards, then the preferred alignment is the one which has resisting length as",
+        "options": {
+            "a": "Maximum",
+            "b": "Minimum",
+            "c": "Very near to average resisting length of all the alignments",
+            "d": "Zero"
+        },
+        "correct_answer": "b",
+        "solution": "In hill roads if several alternate alignments are surveyed which fulfill the geometric standards, then the preferred alignment is the one which has resisting length as minimum.",
+        "has_diagram": false,
+        "page_index": 7
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "144",
+        "question_text": "The camber for hill roads in case of bituminous surfacing is adopted as",
+        "options": {
+            "a": "2%",
+            "b": "2.5%",
+            "c": "3%",
+            "d": "4%"
+        },
+        "correct_answer": "b",
+        "solution": "The camber for hill roads in case of bituminous surfacing = 2.5%",
+        "has_diagram": false,
+        "page_index": 7
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "145",
+        "question_text": "The super-elevation to be provided in horizontal curves of radius R in hill roads is given by",
+        "options": {
+            "a": "V^2 / 127R",
+            "b": "V^2 / 17.5R",
+            "c": "V^2 / 225R",
+            "d": "(V+8)^2 / 127R"
+        },
+        "correct_answer": "c",
+        "solution": "In hill roads, for horizontal curves of radius R, Superelevation (e) = V^2 / 225R",
+        "has_diagram": false,
+        "page_index": 7
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "146",
+        "question_text": "The minimum design speed for hairpin bends in hill roads is taken as",
+        "options": {
+            "a": "20 kmph",
+            "b": "30 kmph",
+            "c": "40 kmph",
+            "d": "50 kmph"
+        },
+        "correct_answer": "a",
+        "solution": "The minimum design speed for hairpin bends in hill roads is taken as 20 kmph.",
+        "has_diagram": false,
+        "page_index": 7
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "147",
+        "question_text": "The drain which is provided parallel to roadway to intercept and divert the water from hill slopes is known as",
+        "options": {
+            "a": "Sloping drain",
+            "b": "Catchwater drain",
+            "c": "Side drain",
+            "d": "Cross drain"
+        },
+        "correct_answer": "b",
+        "solution": "Catch water drain: The drain which is provided parallel to roadway to intercept and divert the water from hill slopes.",
+        "has_diagram": false,
+        "page_index": 8
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "148",
+        "question_text": "The walls which are necessary on the hill side of roadway where earth has to be retained from slipping is known as",
+        "options": {
+            "a": "Retaining wall",
+            "b": "Breast wall",
+            "c": "Parapet wall",
+            "d": "None of the above"
+        },
+        "correct_answer": "b",
+        "solution": "Breast wall: Breast wall are constructed on the hill side of roadway where earth had to be retained from slipping.",
+        "has_diagram": false,
+        "page_index": 8
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "149",
+        "question_text": "In the roads the side drains are provided",
+        "options": {
+            "a": "Only on the hill side of road",
+            "b": "Only on the opposite side of hill",
+            "c": "On both sides of road",
+            "d": "None of the above"
+        },
+        "correct_answer": "a",
+        "solution": "In hill roads the side drains are provided only on the hill side of road.",
+        "has_diagram": false,
+        "page_index": 8
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "150",
+        "question_text": "Select the incorrect statement.",
+        "options": {
+            "a": "Emulsion is used for stabilizing desert sand.",
+            "b": "Soil lime stabilization is very effective for stabilization back cotton soils.",
+            "c": "Soil lime stabilization is quite effective in warm regions.",
+            "d": "Soil cement stabilization is quite durable for surface course."
+        },
+        "correct_answer": "d",
+        "solution": "The correct statement are: (a) Emulsion is used for stabilizing desert sand. (b) Soil lime stabilization is very effective for stabilizing black cotton soils. (c) Soil lime stabilization is quite effective in warm regions. (d) In soil cement stabilization, The addition of cement to a soil, which acts as a binding agent and produces a weak from of concrete called soil cement.",
+        "has_diagram": false,
+        "page_index": 8
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "151",
+        "question_text": "For sandy soils the most common method of stabilization is",
+        "options": {
+            "a": "Soil cement stabilization",
+            "b": "Mechanical stabilization",
+            "c": "Soil lime stabilization",
+            "d": "Soil bitumen stabilization"
+        },
+        "correct_answer": "d",
+        "solution": "Soil bitumen stabilization: Used to stabilize sub-grade or bases of roads built on granular deposits like sand and gravels. Soil lime stabilization: Used for clayey soils. Mechanical stabilization: Extensively used for roads. So, for sandy soils the most common method of stabilization is soil bitumen stabilization.",
+        "has_diagram": false,
+        "page_index": 8
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "152",
+        "question_text": "In which one of the following types of bituminous construction is proportioning of materials determined from laboratory tests?",
+        "options": {
+            "a": "Grouted macadam",
+            "b": "Premix carpet",
+            "c": "Bituminous or asphalt concrete",
+            "d": "Bituminous macadam"
+        },
+        "correct_answer": "c",
+        "solution": "Asphalt concrete is about 95% sand, stone and gravel. The remaining 5% contains an asphalt binder and emulsion. The asphalt binder is the bituminous product that is mixed in an emulsion that suspends the binder and keeps it from coagulating too soon. Soap is part of this emulsion. The mixture is heated up, as is the aggregate, and mixed together with the aggregate to cover the aggregate. This mixture is then placed on the ground and compacted.",
+        "has_diagram": false,
+        "page_index": 9
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "153",
+        "question_text": "A road camber is given in Fig. For designing this camber, the equation to be used is",
+        "options": {
+            "a": "y = x^2 / 60",
+            "b": "y = x^2 / 120",
+            "c": "y = x^2 / 210",
+            "d": "y = x^2 / 225"
+        },
+        "correct_answer": "d",
+        "solution": "y = 2x^2 / nW. Here, n = 60, w = 7.5 m. So, by using the above data, y = 2x^2 / (60 * 7.5) = x^2 / 225",
+        "has_diagram": true,
+        "diagram_bbox": [
+            470,
+            180,
+            580,
+            420
+        ],
+        "page_index": 9,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1782938095/ocr_diagrams/wwhk4oqrydc3h4afcdrn.png"
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "154",
+        "question_text": "Which one of the following is associated with \"Limiting Gradient\" on highways?",
+        "options": {
+            "a": "Requirement of maximum tractive effort for a short distance",
+            "b": "Requirement of minimum tractive effort on the whole gradient",
+            "c": "Efficient drainage conditions",
+            "d": "Alignment design in general"
+        },
+        "correct_answer": "a",
+        "solution": "The gradient steeper than the ruling gradient, which may be used for a limited Road length, is called limiting gradient or maximum gradient. It is used where the topography of place compels adopting a steeper gradient than the ruling gradient to minimize the cost of road construction.",
+        "has_diagram": false,
+        "page_index": 9
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "155",
+        "question_text": "While aligning a hill road with a ruling gradient of 1 in 20, a horizontal curve of radius 80 m is encountered. the compensated gradient on the curve will be",
+        "options": {
+            "a": "1 in 15",
+            "b": "1 in 17",
+            "c": "1 in 25",
+            "d": "1 in 27"
+        },
+        "correct_answer": "c",
+        "solution": "Grade compensation = (30+R)/R. Subjected to maximum of 75/R but grade compensation is usually not provided for gradients flatter than 4%. Hence upper limit of grade compensation is the value which reduces the gradient to 4%.",
+        "has_diagram": false,
+        "page_index": 9
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "156",
+        "question_text": "While designing the super elevation of a highway, its maximum value is fixed considering the need to",
+        "options": {
+            "a": "Avoid toppling of slow moving vehicles in mixed traffic flow",
+            "b": "Avoid transverse skidding",
+            "c": "Provide drainage",
+            "d": "Counteract centrifugal force due to 75% of design speed."
+        },
+        "correct_answer": "a",
+        "solution": "While designing the super elevation of a highway, its maximum value is fixed considering the need to avoid toppling of slow moving vehicles in mixed traffic flow.",
+        "has_diagram": false,
+        "page_index": 9
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "157",
+        "question_text": "In the Group Index method of flexible pavement design, which one of the following factors decides the thickness of base and surface course?",
+        "options": {
+            "a": "Percentage of sub-grade soil passing 75 micron sieve",
+            "b": "Type of surface and base course materials",
+            "c": "Daily volume of commercial vehicles",
+            "d": "Percentage of liquid limit of subgrade soil"
+        },
+        "correct_answer": "c",
+        "solution": "From the below chart for given group index of soil subgrade and traffic volume value select appropriate thick curve value of \"combined thickness of surface, base and sub-base line\" which will give the total thickness of pavement.",
+        "has_diagram": true,
+        "diagram_bbox": [
+            600,
+            180,
+            750,
+            450
+        ],
+        "page_index": 10,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1782938096/ocr_diagrams/bx0rjkt5i7k6bagbigvp.png"
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "158",
+        "question_text": "In a bituminous pavement, alligator cracking is mainly due to",
+        "options": {
+            "a": "Inadequate wearing course",
+            "b": "Inadequate thickness of sub-base course of pavement",
+            "c": "Use of excessive bituminous material",
+            "d": "Fatigue arising from repeated stress applications"
+        },
+        "correct_answer": "d",
+        "solution": "Crocodile cracking, also called alligator cracking and perhaps misleadingly fatigue cracking, is a common type of distress in asphalt pavement. The following is more closely related to fatigue cracking which is characterized by interconnecting or interlaced cracking in the asphalt layer resembling the hide of a crocodile.",
+        "has_diagram": false,
+        "page_index": 10
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "159",
+        "question_text": "The main function of prime coat is to",
+        "options": {
+            "a": "Provide bond between old and new surfacing",
+            "b": "Improve riding quality of pavement",
+            "c": "Provide bond between the existing base and surfacing of new construction",
+            "d": "Control dust nuisance"
+        },
+        "correct_answer": "c",
+        "solution": "The principal function of prime coat in bituminous pavement is to protect the subgrade from moisture and weathering. Since the presence of moisture affects the strength of subgrade, the prevention of water entry during construction is essential to avoid the failure of the pavement.",
+        "has_diagram": false,
+        "page_index": 10
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "160",
+        "question_text": "The design of horizontal transition curve length for highways should take into account",
+        "options": {
+            "a": "Three factors namely, allowable values of rate of change of centrifugal acceleration and super-elevation and the minimum length formula given by the IRC",
+            "b": "Two factors, namely, comfort and rate of change of super-elevation",
+            "c": "Two factors, namely, rate of change of super-elevation and minimum length formula given by the IRC",
+            "d": "Only one factor, namely, the rate of change of centrifugal acceleration"
+        },
+        "correct_answer": "a",
+        "solution": "Transition curve is a curve in plan which is provided to change the horizontal alignment from straight to circular curve gradually means the radius of transition curve varies between infinity to R or R to infinity.",
+        "has_diagram": false,
+        "page_index": 11
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "161",
+        "question_text": "The radius of a horizontal curve is 100 metres. The design speed is 50 kmph and the design coefficient of lateral friction is 0.15. What would be the rate of super-elevation if full lateral friction is considered?",
+        "options": {
+            "a": "1 in 21.2",
+            "b": "1 in 15.8",
+            "c": "1 in 25.0",
+            "d": "1 in 32.6"
+        },
+        "correct_answer": "a",
+        "solution": "e + f = V^2 / 127 R. e + 0.15 = 50^2 / (127 * 100). e = 1 in 21.2",
+        "has_diagram": false,
+        "page_index": 11
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "162",
+        "question_text": "In the design of highways, expansion and contraction joint should respectively be provided at",
+        "options": {
+            "a": "50 m and 32 m",
+            "b": "50 m and 10 m",
+            "c": "25 m and 10 m",
+            "d": "25 m and 32 m"
+        },
+        "correct_answer": "b",
+        "solution": "Spacing of the expansion joints: The spacing of the expansion joint can be determined as below: e = co-efficient of thermal expansion * Ls * (t2-t1). Spacing of the contraction joints: The contraction of the concrete is opposed by the frictional force between the sub-grade and the concrete.",
+        "has_diagram": false,
+        "page_index": 11
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "163",
+        "question_text": "Match List I with List II and select the correct answer using the codes given below the Lists:",
+        "options": {
+            "a": "3 2 4 1",
+            "b": "3 1 4 2",
+            "c": "2 3 1 4",
+            "d": "4 2 3 1"
+        },
+        "correct_answer": "b",
+        "solution": "A-3, B-1, C-4, D-2",
+        "has_diagram": false,
+        "page_index": 11
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "164",
+        "question_text": "Reflection cracking is observed in",
+        "options": {
+            "a": "Flexible pavement",
+            "b": "Rigid pavement",
+            "c": "Bituminous overlay over cement concrete surface",
+            "d": "Rigid overlay over flexible pavement"
+        },
+        "correct_answer": "c",
+        "solution": "A reflection cracking is a type of failure in asphalt pavement, one of the most popular road surface types. Asphalt pavement is impacted by traffic and thermal loading. Due to loading, cracks can appear on pavement surface that can reduce the Pavement Condition Index(PCI) dramatically.",
+        "has_diagram": false,
+        "page_index": 12
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "165",
+        "question_text": "Psychological widening on road curves is given by (symbols have the usual meaning)",
+        "options": {
+            "a": "nL^2 / 2R",
+            "b": "0.1 V / sqrt(R)",
+            "c": "0.1 nV / sqrt(R)",
+            "d": "0.1 V / sqrt(R) + nL^2 / 2R"
+        },
+        "correct_answer": "b",
+        "solution": "Psychological widening on road curves is given by : 0.1 V / sqrt(R)",
+        "has_diagram": false,
+        "page_index": 12
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "166",
+        "question_text": "Which one of the following items of hill road construction does not help in the prevention of landslides in the monsoon season?",
+        "options": {
+            "a": "Retaining walls",
+            "b": "Catch water drains",
+            "c": "Breast walls",
+            "d": "Hair-pin bends"
+        },
+        "correct_answer": "d",
+        "solution": "A hairpin curve is a curve with a very tight radius that turns approximately 180 degrees. Its name comes from the appearance of a hairpin. Hairpin curves are used when the terrain is very steep.",
+        "has_diagram": false,
+        "page_index": 12
+    },
+    {
+        "subject": "Highway Engineering",
+        "question_number": "167",
+        "question_text": "In the Los angles abrasion test on aggregate, if the speed of the drum is increased to 50 rpm, then the abrasion value will",
+        "options": {
+            "a": "Increase",
+            "b": "Decrease"
+        },
+        "correct_answer": "a",
+        "solution": "",
+        "has_diagram": false,
+        "page_index": 12
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "111",
+        "question_text": "Main drawback of CBR method is that it",
+        "options": {
+            "a": "Does not consider the strength characteristics of subgrade soil",
+            "b": "Is a complex method",
+            "c": "Gives the total thickness which remains the same irrespective of the quality of materials used in the component layers",
+            "d": "Does not give the thickness of individual layers"
+        },
+        "correct_answer": "c",
+        "solution": "The main drawback of CBR method is that it gives the total thickness which remains the same irrespective of the quality of materials used in the component layers.",
+        "has_diagram": false,
+        "page_index": 1
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "112",
+        "question_text": "Radius of relative stiffness in cm is given by",
+        "options": {
+            "a": "$\\left[\\frac{Eh^3}{12(1-\\mu)K}\\right]^{1/4}$",
+            "b": "$\\left[\\frac{Eh^3}{12(1-\\mu^2)}\\right]^{1/4}$",
+            "c": "$\\left[\\frac{Eh^3}{12(1-\\mu^2)K}\\right]^{1/3}$",
+            "d": "$\\left[\\frac{Eh^3}{12(1-\\mu^2)K}\\right]^{1/4}$"
+        },
+        "correct_answer": "d",
+        "solution": "Given, $E = $ modulus of elasticity of cement concrete, $kg/cm^2$, $\\mu = $ Poisson's ratio for concrete, $h = $ slab thickness, cm, $K = $ subgrade modulus, $kg/cm^3$. Radius of relative stiffness $l = \\left[\\frac{Eh^3}{12K(1-\\mu^2)}\\right]^{1/4}$.",
+        "has_diagram": false,
+        "page_index": 1
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "113",
+        "question_text": "Critical load position in a rigid pavement design is taken as",
+        "options": {
+            "a": "Interior loading",
+            "b": "Edge loading",
+            "c": "Corner loading",
+            "d": "Interior, edge and corner loading"
+        },
+        "correct_answer": "d",
+        "solution": "The critical load position in a rigid pavement design is taken as interior, edge and corner loading.",
+        "has_diagram": false,
+        "page_index": 1
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "114",
+        "question_text": "If the radius of wheel load distribution is 30 cm, then the equivalent radius of resisting section is",
+        "options": {
+            "a": "$(\\sqrt{1.6 \\times (30)^2 + 15^2} - 0.675 \\times 15) \\text{cm}$",
+            "b": "$(\\sqrt{1.6 \\times (30)^2 + 15^2} + 0.675 \\times 15) \\text{cm}$",
+            "c": "30 cm",
+            "d": "none of the above"
+        },
+        "correct_answer": "c",
+        "solution": "Given, $a = $ radius of wheel load distribution $= 30$ cm, $h = $ slab thickness $= 15$ cm. The equivalent radius of resisting section $(b)$ is $b = \\left\\{\\sqrt{1.6 a^2 + h^2} - 0.675h\\right\\}$ if $a < 1.724h$ otherwise $b = a$. Here $\\frac{a}{h} = \\frac{30}{15} = 2 > 1.724$. So, $b = a = 30$ cm.",
+        "has_diagram": false,
+        "page_index": 1
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "115",
+        "question_text": "The critical combination of stresses for corner region in cement concrete roads is",
+        "options": {
+            "a": "Load stress + warping stress - frictional stress",
+            "b": "Load stress + warping stress + frictional stress",
+            "c": "Load stress + warping",
+            "d": "Load stress + frictional stress"
+        },
+        "correct_answer": "c",
+        "solution": "The critical combination of stresses of corner region in cement concrete roads is = load stress + warping stress. Frictional stress does not consider for corner region, as the critical condition occurs at the top of roads, and frictional stresses are induced in the bottom fibre due to contact with soil.",
+        "has_diagram": false,
+        "page_index": 2
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "116",
+        "question_text": "Tie bars in cement concrete pavements are at",
+        "options": {
+            "a": "Expansion joints",
+            "b": "Contraction joints",
+            "c": "Warping joints",
+            "d": "Longitudinal joints"
+        },
+        "correct_answer": "d",
+        "solution": "Tie bars in cement concrete pavement are provided at longitudinal joints.",
+        "has_diagram": false,
+        "page_index": 2
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "117",
+        "question_text": "The maximum spacing of contraction joints in rigid pavements is",
+        "options": {
+            "a": "2.5 m",
+            "b": "3.5 m",
+            "c": "4.5 m",
+            "d": "5.5 m"
+        },
+        "correct_answer": "c",
+        "solution": "The maximum spacing of contraction joints in rigid pavements is 4.5 m as per IRC spacing guidelines.",
+        "has_diagram": false,
+        "page_index": 2
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "118",
+        "question_text": "The maximum thickness of expansion joint in rigid pavements is",
+        "options": {
+            "a": "0",
+            "b": "25 mm",
+            "c": "50 mm",
+            "d": "100 mm"
+        },
+        "correct_answer": "b",
+        "solution": "As per IRC, the width of expansion joint should not exceed 2.5 cm, which is 25 mm.",
+        "has_diagram": false,
+        "page_index": 2
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "119",
+        "question_text": "The function of an expansion joint in rigid pavements is to",
+        "options": {
+            "a": "Relieve warping stresses",
+            "b": "Relieve shrinkage stresses",
+            "c": "Resist stresses due to expansion",
+            "d": "Allow free expansion"
+        },
+        "correct_answer": "d",
+        "solution": "The function of an expansion joint in rigid pavement is to allow free expansion.",
+        "has_diagram": false,
+        "page_index": 2
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "120",
+        "question_text": "A traffic survey revealed the present average daily traffic of commercial vehicles as 1000. The annual rate of growth of traffic is found to be 8 percent. The pavement construction is to be completed in three after the last traffic count. Then the number of vehicles for design of rigid pavements will be taken as",
+        "options": {
+            "a": "$(1000(1.08))^{13}$",
+            "b": "$(1000(1.08))^{23}$",
+            "c": "$(1000(0.92))^{13}$",
+            "d": "$(1000(1.08))^{3}$"
+        },
+        "correct_answer": "b",
+        "solution": "Given: Present average daily traffic = 1000, Annual rate of growth = 8% = 0.08, Pavement construction completion time = 3 years. For rigid pavements, the design life is typically 20 years. Therefore, the total number of years for traffic growth calculation is $3 + 20 = 23$ years. The number of vehicles for design of rigid pavements will be $1000 \\times (1+0.08)^{23}$.",
+        "has_diagram": false,
+        "page_index": 2
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "121",
+        "question_text": "The fundamental factor in the selection of pavement type is",
+        "options": {
+            "a": "Climatic condition",
+            "b": "Type and intensity of traffic",
+            "c": "Subgrade soil and drainage condition",
+            "d": "Availability of funds for the construction project"
+        },
+        "correct_answer": "b",
+        "solution": "The fundamental factor in the selection of pavement type is the type and intensity of traffic.",
+        "has_diagram": false,
+        "page_index": 3
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "122",
+        "question_text": "Most suitable material for highway embankments is",
+        "options": {
+            "a": "Granular soil",
+            "b": "Organic soil",
+            "c": "Silts",
+            "d": "Clays"
+        },
+        "correct_answer": "a",
+        "solution": "Granular soil is most suitable material for highway embankments.",
+        "has_diagram": false,
+        "page_index": 3
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "123",
+        "question_text": "Maximum daily traffic capacity of bituminous pavements is",
+        "options": {
+            "a": "500 tonnes per day",
+            "b": "1000 tonnes per day",
+            "c": "1500 tonnes per day",
+            "d": "2000 tonnes per day"
+        },
+        "correct_answer": "c",
+        "solution": "Maximum daily traffic capacity of bituminous pavement is 1500 tonnes per day.",
+        "has_diagram": false,
+        "page_index": 3
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "124",
+        "question_text": "The most suitable equipment for compacting clayey soils is a",
+        "options": {
+            "a": "Smooth wheeled roller",
+            "b": "Pneumatic tyred roller",
+            "c": "Sheep foot roller",
+            "d": "Vibrator"
+        },
+        "correct_answer": "c",
+        "solution": "Sheep foot roller is most suitable for compacting clayey soils. Smooth wheeled rollers are for crushing rock, gravel, sand. Pneumatic tyred rollers are for sand, gravel, silty, gravel, clayey soil (not uniformly graded soil). Vibratory rollers are for compacting sand.",
+        "has_diagram": false,
+        "page_index": 3
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "125",
+        "question_text": "The aggregates required for one kilometre length of water bound macadam road per metre width and for 10 mm thickness is",
+        "options": {
+            "a": "8 cubic metre",
+            "b": "10 cubic metre",
+            "c": "12 cubic metre",
+            "d": "15 cubic metre"
+        },
+        "correct_answer": "c",
+        "solution": "Given: Length = 1 km = 1000 m, Width = 1 m, Thickness = 10 mm = 0.01 m. Volume = $1000 \\times 1 \\times 0.01 = 10 \\text{ m}^3$. Considering a 20% volume increase due to stone dust, the total value of aggregate required = $10 + (10 \\times \\frac{20}{100}) = 10 + 2 = 12 \\text{ m}^3$.",
+        "has_diagram": false,
+        "page_index": 3
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "126",
+        "question_text": "The camber of shoulders in water bound macadam road is",
+        "options": {
+            "a": "Equal to the cross slope of pavement",
+            "b": "Less than the cross slope of pavement",
+            "c": "Greater than the cross slope of pavement",
+            "d": "Zero"
+        },
+        "correct_answer": "c",
+        "solution": "The camber of shoulders in water bound macadam roads is generally kept greater than the cross slope of the pavement to ensure efficient drainage of water from the shoulders.",
+        "has_diagram": false,
+        "page_index": 3
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "127",
+        "question_text": "The binder normally used in flexible pavement construction is",
+        "options": {
+            "a": "Cement",
+            "b": "Lime",
+            "c": "Bitumen",
+            "d": "None of the above"
+        },
+        "correct_answer": "c",
+        "solution": "The bitumen binder is normally used in flexible pavement construction.",
+        "has_diagram": false,
+        "page_index": 4
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "128",
+        "question_text": "In highway construction, rolling starts from",
+        "options": {
+            "a": "Sides and proceed to centre",
+            "b": "Centre and proceed to side",
+            "c": "One side and proceed to other side",
+            "d": "Any of the above"
+        },
+        "correct_answer": "a",
+        "solution": "In highway construction, rolling starts from sides and proceeds to the centre.",
+        "has_diagram": false,
+        "page_index": 4
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "129",
+        "question_text": "For the construction of water bound macadam roads, the correct sequence of operations after spreading coarse aggregates is",
+        "options": {
+            "a": "Dry rolling, wet rolling, application of screening and application of filler",
+            "b": "Dry rolling, application of filler, wet rolling and application of screening",
+            "c": "Dry rolling, application of screening, wet rolling and application of filler",
+            "d": "Dry rolling, application of screening, application of filler and wet rolling"
+        },
+        "correct_answer": "c",
+        "solution": "The correct sequence of operations after spreading coarse aggregates for water bound macadam roads is: Dry rolling, Application of screening, Wet rolling, Application of filler, Setting and drying.",
+        "has_diagram": false,
+        "page_index": 4
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "130",
+        "question_text": "In the penetration macadam construction, the bitumen is",
+        "options": {
+            "a": "Sprayed after the aggregates are spread and compacted",
+            "b": "Premixed with aggregates and then spread",
+            "c": "Sprayed before the aggregates are spread and compacted",
+            "d": "None of the above"
+        },
+        "correct_answer": "a",
+        "solution": "In the penetration macadam construction, the coarse aggregates are first spread and compacted, and then hot bituminous binder is sprayed on top.",
+        "has_diagram": false,
+        "page_index": 4
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "131",
+        "question_text": "When the bituminous surfacing is done on already existing black top road or over existing cement concrete road, the type of treatment to be given is",
+        "options": {
+            "a": "Seal coat",
+            "b": "Tack coat",
+            "c": "Prime coat",
+            "d": "Spray of emulsion"
+        },
+        "correct_answer": "b",
+        "solution": "A bituminous tack coat is the application of bituminous material over an existing pavement surface which is relatively impervious, such as an existing bituminous surface or cement concrete pavement, or a pervious surface already treated by a prime coat.",
+        "has_diagram": false,
+        "page_index": 4
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "132",
+        "question_text": "Which of the following premix method is used for base course ?",
+        "options": {
+            "a": "Bituminous carpet",
+            "b": "Mastic asphalt",
+            "c": "Sheet asphalt",
+            "d": "Bituminous bound macadam"
+        },
+        "correct_answer": "d",
+        "solution": "Bituminous macadam base course is considered superior to other base course types due to its load dispersion characteristics and durability, making it suitable for base courses.",
+        "has_diagram": false,
+        "page_index": 5
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "133",
+        "question_text": "Select the correct statement.",
+        "options": {
+            "a": "Quantity of binder required for tack coat is less than that required for prime coat.",
+            "b": "Prime coat treatment is given for plugging the voids in water bound macadam during bituminous road construction.",
+            "c": "Seal coat is the final coat over certain pervious bituminous pavements.",
+            "d": "A bitumen primer is a high viscosity cutback."
+        },
+        "correct_answer": "b",
+        "solution": "Prime coat treatment is applied to plug the voids in water bound macadam during bituminous road construction, improving adhesion and waterproofing. A bitumen primer is typically a low viscosity cutback, not high viscosity.",
+        "has_diagram": false,
+        "page_index": 5
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "134",
+        "question_text": "The suitable surfacing material for a bridge deck slab is",
+        "options": {
+            "a": "Sheet asphalt",
+            "b": "Bituminous carpet",
+            "c": "Mastic asphalt",
+            "d": "Rolled asphalt"
+        },
+        "correct_answer": "c",
+        "solution": "Mastic asphalt is a suitable surfacing material for bridge deck slabs because it is a voidless, impermeable mixture of bitumen, fine aggregate, and filler. It can absorb vibrations and has self-healing properties for cracks.",
+        "has_diagram": false,
+        "page_index": 5
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "135",
+        "question_text": "Which of the following is considered to be the highest quality construction in the group of black top pavements ?",
+        "options": {
+            "a": "Mastic asphalt",
+            "b": "Sheet asphalt",
+            "c": "Bituminous carpet",
+            "d": "Bituminous concrete"
+        },
+        "correct_answer": "d",
+        "solution": "Bituminous concrete is a dense-graded, premixed bituminous mix that, when well compacted, forms a high-quality pavement surface course, making it the highest quality construction among black top pavements.",
+        "has_diagram": false,
+        "page_index": 5
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "136",
+        "question_text": "The thickness of bituminous carpet varies from",
+        "options": {
+            "a": "20 to 25 mm",
+            "b": "50 to 75 mm",
+            "c": "75 to 100 mm",
+            "d": "100 to 120 mm"
+        },
+        "correct_answer": "a",
+        "solution": "The thickness of bituminous carpet typically varies from 20 to 25 mm.",
+        "has_diagram": false,
+        "page_index": 5
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "137",
+        "question_text": "Which of the following represents carpet of sand-bitumen mix without coarse aggregates ?",
+        "options": {
+            "a": "Mastic asphalt",
+            "b": "Sheet asphalt",
+            "c": "Bituminous carpet",
+            "d": "Bituminous concrete"
+        },
+        "correct_answer": "b",
+        "solution": "Sheet asphalt is a dense sand-bitumen premix that does not contain coarse aggregates.",
+        "has_diagram": false,
+        "page_index": 6
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "138",
+        "question_text": "In highway construction on super-elevated curves, the rolling shall proceed from",
+        "options": {
+            "a": "Sides toward the centre",
+            "b": "Centre toward the sides",
+            "c": "Lower edge towards the upper edge",
+            "d": "Upper edge towards the lower edge"
+        },
+        "correct_answer": "c",
+        "solution": "In highway construction on super-elevated curves, rolling should proceed from the lower edge towards the upper edge.",
+        "has_diagram": false,
+        "page_index": 6
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "139",
+        "question_text": "Expansion joints in cement concrete pavements are provided at an interval of",
+        "options": {
+            "a": "10 m",
+            "b": "15 m",
+            "c": "18 m to 21 m",
+            "d": "25 m to 30 m"
+        },
+        "correct_answer": "c",
+        "solution": "Expansion joints in cement concrete pavements are typically provided at intervals ranging from 18 m to 21 m.",
+        "has_diagram": false,
+        "page_index": 6
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "140",
+        "question_text": "Select the incorrect statement.",
+        "options": {
+            "a": "Contraction joints are spaced closer than expansion joints",
+            "b": "longitudinal joints are provided in cement concrete road to prevent longitudinal cracking",
+            "c": "dowel bars are provided in longitudinal joints",
+            "d": "warping joints are provided to relieve stresses induced due to warping"
+        },
+        "correct_answer": "c",
+        "solution": "Dowel bars are typically provided in transverse joints to transfer load across the joint while allowing for expansion and contraction. Longitudinal joints use tie bars. Therefore, the statement that dowel bars are provided in longitudinal joints is incorrect.",
+        "has_diagram": false,
+        "page_index": 6
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "141",
+        "question_text": "A hill road is one which passes through a terrain with a cross slope of",
+        "options": {
+            "a": "0 to 10%",
+            "b": "10 to 25%",
+            "c": "25 to 60%",
+            "d": "None of the above"
+        },
+        "correct_answer": "c",
+        "solution": "According to topography classification, a hill road passes through a terrain with a cross slope of 25% to 60%.",
+        "has_diagram": true,
+        "diagram_bbox": [
+            736,
+            616,
+            879,
+            825
+        ],
+        "page_index": 6,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1782938673/ocr_diagrams/on0ryc3jylxxylqgrrgt.png"
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "142",
+        "question_text": "In hill roads if several alternate alignments are survey which fulfill the geometric standards, then the preferred alignment is the one which has resisting length as",
+        "options": {
+            "a": "Maximum",
+            "b": "Minimum",
+            "c": "Very near to average resisting length of all the alignments",
+            "d": "Zero"
+        },
+        "correct_answer": "b",
+        "solution": "In hill roads, among several alternate alignments that are surveyed and fulfill the geometric standards, the preferred alignment is the one with the minimum resisting length.",
+        "has_diagram": false,
+        "page_index": 7
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "144",
+        "question_text": "The camber for hill roads in case of bituminous surfacing is adopted as",
+        "options": {
+            "a": "2%",
+            "b": "2.5%",
+            "c": "3%",
+            "d": "4%"
+        },
+        "correct_answer": "b",
+        "solution": "For hill roads, the camber for thin bituminous surfacing is adopted as 2.5%.",
+        "has_diagram": false,
+        "page_index": 7
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "145",
+        "question_text": "The super-elevation to be provided in horizontal curves of radius R in hill roads is given by",
+        "options": {
+            "a": "$\\frac{V^2}{127R}$",
+            "b": "$\\frac{V^2}{17.5R}$",
+            "c": "$\\frac{V^2}{225R}$",
+            "d": "$\\frac{(V+a)^2}{127R}$"
+        },
+        "correct_answer": "c",
+        "solution": "In hill roads, the super-elevation $(e)$ to be provided in horizontal curves of radius R is given by the formula $e = \\frac{V^2}{225R}$.",
+        "has_diagram": false,
+        "page_index": 7
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "146",
+        "question_text": "The minimum design speed for hairpin bends in hill roads is taken as",
+        "options": {
+            "a": "20 kmph",
+            "b": "30 kmph",
+            "c": "40 kmph",
+            "d": "50 kmph"
+        },
+        "correct_answer": "a",
+        "solution": "The minimum design speed for hairpin bends in hill roads is taken as 20 kmph.",
+        "has_diagram": false,
+        "page_index": 7
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "147",
+        "question_text": "The drain which is provided parallel to roadway to intercept and divert the water from hill slopes is known as",
+        "options": {
+            "a": "Sloping drain",
+            "b": "Catchwater drain",
+            "c": "Side drain",
+            "d": "Cross drain"
+        },
+        "correct_answer": "b",
+        "solution": "A catchwater drain is provided parallel to the roadway to intercept and divert water flowing from hill slopes.",
+        "has_diagram": false,
+        "page_index": 8
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "148",
+        "question_text": "The walls which are necessary on the hill side of roadway where earth has to be retained from slipping is known as",
+        "options": {
+            "a": "Retaining wall",
+            "b": "Breast wall",
+            "c": "Parapet wall",
+            "d": "None of the above"
+        },
+        "correct_answer": "b",
+        "solution": "Breast walls are constructed on the hillside of a roadway to retain earth from slipping. Retaining walls are on the valley side, and parapet walls are barriers on edges.",
+        "has_diagram": false,
+        "page_index": 8
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "149",
+        "question_text": "In the roads the side drains are provided",
+        "options": {
+            "a": "Only on the hill side of road",
+            "b": "Only on the opposite side of hill",
+            "c": "On both sides of road",
+            "d": "None of the above"
+        },
+        "correct_answer": "a",
+        "solution": "In hill roads, side drains are provided only on the hillside of the road to manage runoff.",
+        "has_diagram": false,
+        "page_index": 8
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "150",
+        "question_text": "Select the incorrect statement.",
+        "options": {
+            "a": "Emulsion is used for stabilizing desert sand.",
+            "b": "Soil lime stabilization is very effective for stabilization back cotton soils.",
+            "c": "Soil lime stabilization is quite effective in warm regions.",
+            "d": "Soil cement stabilization is quite durable for surface course."
+        },
+        "correct_answer": "d",
+        "solution": "Soil cement stabilization is generally used for base or subbase courses due to its brittle nature and susceptibility to cracking, making it less suitable as a durable surface course. The other statements are generally considered correct: emulsion for desert sand stabilization, and lime stabilization for black cotton soils and in warm regions.",
+        "has_diagram": false,
+        "page_index": 8
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "151",
+        "question_text": "For sandy soils the most common method of stabilization is",
+        "options": {
+            "a": "Soil cement stabilization",
+            "b": "Mechanical stabilization",
+            "c": "Soil lime stabilization",
+            "d": "Soil bitumen stabilization"
+        },
+        "correct_answer": "d",
+        "solution": "For sandy soils, the most common method of stabilization is soil bitumen stabilization, which is effective for granular deposits. Mechanical stabilization and soil lime stabilization are typically used for clayey soils, while soil cement stabilization is also used for a range of soils but bitumen is particularly effective for sandy soils.",
+        "has_diagram": false,
+        "page_index": 8
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "152",
+        "question_text": "In which one of the following types of bituminous construction is proportioning of materials determined from laboratory tests ?",
+        "options": {
+            "a": "Bituminous macadam",
+            "b": "Bituminous concrete",
+            "c": "Sheet asphalt",
+            "d": "Mastic asphalt"
+        },
+        "correct_answer": "b",
+        "solution": "In bituminous concrete construction, the proportioning of materials (aggregates and bitumen) is precisely determined through laboratory tests to achieve specific mix properties and performance.",
+        "has_diagram": false,
+        "page_index": 8
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "153",
+        "question_text": "A road camber is given in Fig.",
+        "options": {
+            "a": "$(y - \\frac{x^2}{60})$",
+            "b": "$(y - \\frac{x^2}{120})$",
+            "c": "$(y = \\frac{x^2}{210})$",
+            "d": "$(y = \\frac{x^2}{225})$"
+        },
+        "correct_answer": "d",
+        "solution": "The equation for road camber is given by $y = \\frac{2x^2}{nW}$. Given $n=60$ and $W=7.5$ m. Substituting these values, $y = \\frac{2x^2}{60 \\times 7.5} = \\frac{2x^2}{450} = \\frac{x^2}{225}$.",
+        "has_diagram": true,
+        "diagram_bbox": [
+            396,
+            149,
+            574,
+            490
+        ],
+        "page_index": 9,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1782938674/ocr_diagrams/kmjjy6kik9rgcqr29r6u.png"
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "154",
+        "question_text": "Which one of the following is associated with \"Limiting Gradient\" on highways?",
+        "options": {
+            "a": "Requirement of maximum tractive effort for a short distance",
+            "b": "Requirement of minimum tractive effort on the whole gradient",
+            "c": "Efficient drainage conditions",
+            "d": "Alignment design in general"
+        },
+        "correct_answer": "a",
+        "solution": "Limiting gradient, also known as maximum gradient, is a steeper gradient than the ruling gradient, used for limited road lengths where topography necessitates it to minimize construction costs. It is associated with the requirement of maximum tractive effort for a short distance.",
+        "has_diagram": false,
+        "page_index": 9
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "155",
+        "question_text": "While aligning a hill road with a ruling gradient of 1 in 20, a horizontal curve of radius 80 m is encountered. The compensated gradient on the curve will be",
+        "options": {
+            "a": "1 in 15",
+            "b": "1 in 17",
+            "c": "1 in 25",
+            "d": "1 in 27"
+        },
+        "correct_answer": "d",
+        "solution": "Ruling gradient = 1 in 20 = 5%. Radius of horizontal curve R = 80 m. Grade compensation (GC) is calculated using the formula $GC = \\frac{30+R}{R}$ for $R \\ge 50$ m. So, $GC = \\frac{30+80}{80} = \\frac{110}{80} = 1.375\\%$. The maximum grade compensation is limited to 4%. Since $1.375\\% < 4\\%$, we use $1.375\\%$. Compensated gradient = Ruling gradient - GC = $5\\% - 1.375\\% = 3.625\\%$. To express this as 1 in N, $N = \\frac{1}{0.03625} \\approx 27.58$. Therefore, the compensated gradient is approximately 1 in 27.",
+        "has_diagram": false,
+        "page_index": 9
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "156",
+        "question_text": "While designing the super elevation of a highway, its maximum value is fixed considering the need to",
+        "options": {
+            "a": "Avoid toppling of slow moving vehicles in mixed traffic flow",
+            "b": "Avoid transverse skidding",
+            "c": "Provide drainage",
+            "d": "Avoid excessive speed"
+        },
+        "correct_answer": "a",
+        "solution": "The maximum value of super-elevation on a highway is fixed primarily to prevent slow-moving vehicles from toppling inwards, particularly in mixed traffic flow where vehicles travel at varying speeds.",
+        "has_diagram": false,
+        "page_index": 9
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "157",
+        "question_text": "In the Group Index method of flexible pavement design, which one of the following factors decides the thickness of base and surface course?",
+        "options": {
+            "a": "Percentage of sub-grade soil passing 75 micron sieve",
+            "b": "Type of surface and base course materials",
+            "c": "Daily volume of commercial vehicles",
+            "d": "Percentage of liquid limit of subgrade soil"
+        },
+        "correct_answer": "b",
+        "solution": "In the Group Index method, the total thickness of the flexible pavement is determined based on the Group Index of the subgrade soil and the traffic volume. However, the specific thicknesses of the base and surface courses are decided by the type and properties of the materials chosen for these layers, as different materials have different structural coefficients and load-bearing capacities.",
+        "has_diagram": true,
+        "diagram_bbox": [
+            577,
+            93,
+            770,
+            490
+        ],
+        "page_index": 10,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1782938676/ocr_diagrams/vintq9c29gyzfob6ztxi.png"
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "158",
+        "question_text": "In a bituminous pavement, alligator cracking is mainly due to",
+        "options": {
+            "a": "Inadequate wearing course",
+            "b": "Inadequate thickness of sub-base course of pavement",
+            "c": "Use of excessive bituminous material",
+            "d": "Fatigue arising from repeated stress applications"
+        },
+        "correct_answer": "d",
+        "solution": "Alligator cracking, also known as fatigue cracking or crocodile cracking, is a common distress in asphalt pavements primarily caused by fatigue arising from repeated stress applications (traffic loading). It is characterized by interconnected cracks and can be exacerbated by factors like sub-base failure, poor drainage, or repeated over-loadings.",
+        "has_diagram": false,
+        "page_index": 10
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "159",
+        "question_text": "The main function of prime coat is to",
+        "options": {
+            "a": "Provide bond between old and new surfacing",
+            "b": "Improve riding quality of pavement",
+            "c": "Provide bond between the existing base and surfacing of new construction",
+            "d": "Control dust nuisance"
+        },
+        "correct_answer": "c",
+        "solution": "The main function of a prime coat is to penetrate the existing granular base or subgrade, bind loose particles, harden the surface, and provide a strong adhesive bond between the existing base and the new bituminous surfacing layer, while also protecting the subgrade from moisture and weathering.",
+        "has_diagram": false,
+        "page_index": 10
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "160",
+        "question_text": "The design of horizontal transition curve length for highways should take into account",
+        "options": {
+            "a": "Three factors namely, allowable values of rate of change of centrifugal acceleration and super-elevation and the minimum length formula given by the IRC",
+            "b": "Two factors, namely, comfort and rate of change of super-elevation",
+            "c": "Two factors, namely, rate of change of super-elevation and minimum length formula given by the IRC",
+            "d": "Only one factor, namely, the rate of change of centrifugal acceleration"
+        },
+        "correct_answer": "a",
+        "solution": "The design of horizontal transition curve length for highways should take into account three primary factors: the allowable rate of change of centrifugal acceleration, the rate of change of super-elevation, and the minimum length formula specified by the IRC (Indian Roads Congress).",
+        "has_diagram": false,
+        "page_index": 11
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "161",
+        "question_text": "The radius of a horizontal curve is 100 metres. The design speed is 50 kmph and the design coefficient of lateral friction is 0.15. What would be the rate of super-elevation if full lateral friction is considered?",
+        "options": {
+            "a": "1 in 21.2",
+            "b": "1 in 15.8",
+            "c": "1 in 25.0",
+            "d": "1 in 32.6"
+        },
+        "correct_answer": "a",
+        "solution": "Given: Radius R = 100 m, Design speed V = 50 kmph, Coefficient of lateral friction f = 0.15. The formula for super-elevation (e) is $e + f = \\frac{V^2}{127R}$. Substituting the values: $e + 0.15 = \\frac{50^2}{127 \\times 100}$. $e + 0.15 = \\frac{2500}{12700} \\approx 0.19685$. $e = 0.19685 - 0.15 = 0.04685$. To express this as 1 in N, $N = \\frac{1}{0.04685} \\approx 21.34$. This is closest to 1 in 21.2.",
+        "has_diagram": false,
+        "page_index": 11
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "162",
+        "question_text": "In the design of highways, expansion and contraction joint should respectively be provided at",
+        "options": {
+            "a": "50 m and 32 m",
+            "b": "50 m and 10 m",
+            "c": "25 m and 10 m",
+            "d": "25 m and 32 m"
+        },
+        "correct_answer": "b",
+        "solution": "According to the provided solution, expansion joints should be provided at 50 m and contraction joints at 10 m. (Note: Standard IRC values for expansion joints are typically 18-21m and for contraction joints are 3.5-4.5m, so these values might refer to a specific context or older code.)",
+        "has_diagram": false,
+        "page_index": 11
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "163",
+        "question_text": "Match List I with List II and select the correct answer using the codes given below the lists: List I: A. Penetration test, B. Marshal test, C. Ring and ball test, D. Benkelman beam test List II: 1. Design of bituminous concrete mix, 2. Overlay design, 3. Gradation of asphalt cement, 4. Determination of softening point",
+        "options": {
+            "a": "(a) 3 (b) 2 (c) 4 (d) 1",
+            "b": "(a) 3 (b) 1 (c) 4 (d) 2",
+            "c": "(a) 2 (b) 3 (c) 1 (d) 4",
+            "d": "(a) 4 (b) 2 (c) 3 (d) 1"
+        },
+        "correct_answer": "b",
+        "solution": "Matching the tests with their purposes: A. Penetration test is for Gradation of asphalt cement (3). B. Marshal test is for Design of bituminous concrete mix (1). C. Ring and ball test is for Determination of softening point (4). D. Benkelman beam test is for Overlay design (2). This corresponds to option (b).",
+        "has_diagram": false,
+        "page_index": 11
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "164",
+        "question_text": "Reflection cracking is observed in",
+        "options": {
+            "a": "Flexible pavement",
+            "b": "Rigid pavement",
+            "c": "Bituminous overlay over cement concrete surface",
+            "d": "Rigid overlay over flexible pavement"
+        },
+        "correct_answer": "c",
+        "solution": "Reflection cracking is a type of failure observed in asphalt pavements, particularly when a bituminous overlay is placed over an existing cracked cement concrete surface or an old asphalt pavement. The cracks from the underlying layer propagate through the new overlay due to stress concentrations from traffic and thermal movements.",
+        "has_diagram": false,
+        "page_index": 12
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "165",
+        "question_text": "Psychological widening on road curves is given by (symbols have the usual meaning)",
+        "options": {
+            "a": "$\\frac{0.1V}{R}$",
+            "b": "$\\frac{V}{R}$",
+            "c": "$\\frac{0.1NV}{\\sqrt{R}}$",
+            "d": "$\\frac{0.1V}{\\sqrt{R}} + \\frac{nL^2}{2R}$"
+        },
+        "correct_answer": "c",
+        "solution": "Psychological widening on road curves is given by the formula $\\frac{0.1NV}{\\sqrt{R}}$, where N is the number of lanes. If N is considered as 1, then it is $\\frac{0.1V}{\\sqrt{R}}$.",
+        "has_diagram": false,
+        "page_index": 12
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "166",
+        "question_text": "Which one of the following items of hill road construction does not help in the prevention of landslides in the monsoon season?",
+        "options": {
+            "a": "Retaining walls",
+            "b": "Catch water drains",
+            "c": "Breast walls",
+            "d": "Hair-pin bends"
+        },
+        "correct_answer": "d",
+        "solution": "Retaining walls, catch water drains, and breast walls are all measures used in hill road construction to prevent landslides by stabilizing slopes and managing water runoff. Hairpin bends, however, are a geometric design feature used to overcome steep gradients in mountainous terrain and do not directly contribute to landslide prevention.",
+        "has_diagram": false,
+        "page_index": 12
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "167",
+        "question_text": "In the Los angles abrasion test on aggregate, if the speed of the drum is increased to 50 rpm, then the abrasion value will",
+        "options": {
+            "a": "Increase",
+            "b": "Decrease",
+            "c": "Remain unchanged",
+            "d": "Become zero"
+        },
+        "correct_answer": "a",
+        "solution": "In the Los Angeles abrasion test, increasing the speed of the drum to 50 rpm (from the standard 30-33 rpm) would increase the impact and abrasive forces on the aggregate. This would lead to a greater loss of material, resulting in an increased abrasion value.",
+        "has_diagram": false,
+        "page_index": 12
+    }
+]

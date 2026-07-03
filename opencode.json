@@ -1,0 +1,12 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "anthropic": {
+      "options": {
+        "apiKey": "sk-ai-v1-ad58398e19c94bae5ab35df8715720969f6bea600705cfb53b03de1d8afb83c1",
+        "baseURL": "https://zenmux.ai/api/anthropic"
+      }
+    }
+  },
+  "model": "anthropic/claude-fable-5-free"
+}

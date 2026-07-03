@@ -1,0 +1,3513 @@
+[
+    {
+        "subject": "Building Materials",
+        "question_number": "1",
+        "question_text": "Gypsum is a",
+        "options": {
+            "a": "mechanically formed sedimentary rock",
+            "b": "Igneous rock",
+            "c": "chemically precipitated sedimentary rock",
+            "d": "metamorphic rock"
+        },
+        "correct_answer": "c",
+        "solution": "Gypsum is a chemically precipitated sedimentary rock. Chemical sedimentary rocks form by precipitation of minerals from water. Precipitation is when dissolved materials come out of water.",
+        "has_diagram": false,
+        "page_index": 1
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "2",
+        "question_text": "Which of the following sedimentary rocks changes, into quartzite by metamorphic action?",
+        "options": {
+            "a": "sand stone",
+            "b": "lime stone",
+            "c": "shale",
+            "d": "gypsum"
+        },
+        "correct_answer": "a",
+        "solution": "Example of transformation of Rock:\nOriginal rock -> Metamorphic rock\nSandstone -> Quartzite",
+        "has_diagram": false,
+        "page_index": 1
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "3",
+        "question_text": "Which of the following represents a metamorphic rock?\n(i) slate\n(ii) shale\n(iii) quartzite\n\nThe correct answer is",
+        "options": {
+            "a": "Only (iii)",
+            "b": "both (i) and (iii)",
+            "c": "both (ii) and (iii)",
+            "d": "All (i) (ii) and (iii)."
+        },
+        "correct_answer": "b",
+        "solution": "Slate and quartzite represents a metamorphic rock.",
+        "has_diagram": false,
+        "page_index": 1
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "4",
+        "question_text": "Quartzite is a",
+        "options": {
+            "a": "silicious rook",
+            "b": "Argillaceous rock",
+            "c": "calcareous rock",
+            "d": "aqueous rock"
+        },
+        "correct_answer": "a",
+        "solution": "For detail solution Refer $3^{\\text{rd}}$ question.",
+        "has_diagram": false,
+        "page_index": 2
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "5",
+        "question_text": "Which of the following is a mineral?",
+        "options": {
+            "a": "basalt",
+            "b": "granite",
+            "c": "quartz",
+            "d": "syenite"
+        },
+        "correct_answer": "c",
+        "solution": "Quartz is a hard, crystalline mineral composed of silicon and oxygen atoms. The atoms are linked in a continuous framework of $\\text{SiO}_4$ silicon oxygen tetrahedra with each oxygen being shared between two tetrahedra, giving an overall chemical formula of $\\text{SiO}_2$.",
+        "has_diagram": false,
+        "page_index": 2
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "6",
+        "question_text": "Slate is formed by metamorphic action on",
+        "options": {
+            "a": "shale",
+            "b": "lime stone",
+            "c": "sand stone",
+            "d": "granite"
+        },
+        "correct_answer": "a",
+        "solution": "Slate is formed by Shale.",
+        "has_diagram": false,
+        "page_index": 2
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "7",
+        "question_text": "Sandstone is a\n(i) sedimentary rock\n(ii) aqueous rock\n(iii) silicious rock\n\nThe correct answer is",
+        "options": {
+            "a": "only (i)",
+            "b": "both (i) and (ii)",
+            "c": "both (i) and (iii)",
+            "d": "all (i), (ii) and (iii)"
+        },
+        "correct_answer": "d",
+        "solution": "For detail solution Refer $3^{\\text{rd}}$ question.",
+        "has_diagram": false,
+        "page_index": 2
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "8",
+        "question_text": "Which of the following is a rock?",
+        "options": {
+            "a": "quartz",
+            "b": "mica",
+            "c": "gypsum",
+            "d": "none of the above"
+        },
+        "correct_answer": "c",
+        "solution": "Gypsum is a rock and quartz and mica are mineral.",
+        "has_diagram": false,
+        "page_index": 3
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "9",
+        "question_text": "Based on the following rocks and minerals, select the correct statement.\nquartz, shale, basalt, granite, marble, gypsum mica",
+        "options": {
+            "a": "basalt and marble are the only metamorphic rocks",
+            "b": "there is no sedimentary rock",
+            "c": "granite is the only igneous rock",
+            "d": "quartz and mica are minerals"
+        },
+        "correct_answer": "d",
+        "solution": "For detail solution Refer $3^{\\text{rd}}$ question.",
+        "has_diagram": false,
+        "page_index": 3
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "10",
+        "question_text": "A heavy stone is suitable for",
+        "options": {
+            "a": "arches",
+            "b": "rubble masonry",
+            "c": "roads",
+            "d": "retaining walls"
+        },
+        "correct_answer": "d",
+        "solution": "Heavy stone is most suitable for the retaining walls to resist pressure of surcharge of fill material.",
+        "has_diagram": false,
+        "page_index": 3
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "11",
+        "question_text": "The stone suitable for rubble masonry should be",
+        "options": {
+            "a": "hard",
+            "b": "tough",
+            "c": "heavy",
+            "d": "light"
+        },
+        "correct_answer": "a",
+        "solution": "The stone suitable for rubble masonry should be hard to prevent sliding of stone.",
+        "has_diagram": false,
+        "page_index": 3
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "12",
+        "question_text": "Which of the following metamorphic rocks has the most weather resisting characteristics?",
+        "options": {
+            "a": "marble",
+            "b": "quartzite",
+            "c": "slate",
+            "d": "lime stone"
+        },
+        "correct_answer": "b",
+        "solution": "Quartzite is the metamorphic rocks and it has the most weather resisting characteristics",
+        "has_diagram": false,
+        "page_index": 4
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "13",
+        "question_text": "A good building stone should not absorb water more than",
+        "options": {
+            "a": "5%",
+            "b": "10%",
+            "c": "15%",
+            "d": "20%"
+        },
+        "correct_answer": "a",
+        "solution": "Water absorption should not be greater than 5%.",
+        "has_diagram": false,
+        "page_index": 4
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "14",
+        "question_text": "Which of the following has more fire resisting characteristics?",
+        "options": {
+            "a": "marble",
+            "b": "lime stone",
+            "c": "compact sand stone",
+            "d": "granite"
+        },
+        "correct_answer": "c",
+        "solution": "Compact sand stone has more fire resisting characteristics and also weather resistance.",
+        "has_diagram": false,
+        "page_index": 5
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "15",
+        "question_text": "Jumper is a tool used for",
+        "options": {
+            "a": "testing of stones",
+            "b": "quarrying of stones",
+            "c": "dressing of stones",
+            "d": "none of the above"
+        },
+        "correct_answer": "b",
+        "solution": "Jumper is a tool used for quarrying of stones.",
+        "has_diagram": true,
+        "diagram_bbox": [
+            35,
+            510,
+            340,
+            910
+        ],
+        "page_index": 5,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1783097230/ocr_diagrams/ecsnz6zars7blxyy426p.png"
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "16",
+        "question_text": "The important test to be conducted on a stone used in docks and harbours is",
+        "options": {
+            "a": "hardness test",
+            "b": "workability test",
+            "c": "weight test",
+            "d": "toughness test"
+        },
+        "correct_answer": "c",
+        "solution": "Weight is important factor for docks and harbours.",
+        "has_diagram": false,
+        "page_index": 5
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "17",
+        "question_text": "The predominant constituent which is responsible for strength in granite is",
+        "options": {
+            "a": "quartz",
+            "b": "felspar",
+            "c": "mica",
+            "d": "none of the above"
+        },
+        "correct_answer": "a",
+        "solution": "The most common intrusive rock in Earth's continental crust, granite is familiar as a mottled pink, white, gray, and black ornamental stone. It is coarse- to medium-grained. Its three main minerals are feldspar, quartz, and mica, which occur as silvery muscovite or dark biotite or both. Of these minerals, feldspar predominates, and quartz usually accounts for more than 10 percent.",
+        "has_diagram": false,
+        "page_index": 5
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "18",
+        "question_text": "Granite is not suitable for ordinary building purpose because",
+        "options": {
+            "a": "it cannot be polished",
+            "b": "it is not a fire proof material",
+            "c": "it is costly",
+            "d": "it has less crushing strength"
+        },
+        "correct_answer": "c",
+        "solution": "Granite is costly so it is not used in ordinary buildings.",
+        "has_diagram": false,
+        "page_index": 6
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "19",
+        "question_text": "Which of the following stone is best suited for construction of piers and abutments a railway bridge?",
+        "options": {
+            "a": "granite",
+            "b": "sandstone",
+            "c": "limestone",
+            "d": "quartzite"
+        },
+        "correct_answer": "a",
+        "solution": "Granite is best suited for construction of piers and abutments a railway bridge because high strength and durability.",
+        "has_diagram": false,
+        "page_index": 6
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "20",
+        "question_text": "The preparation of surface of stone to obtain plain edges or to obtain stones of required size and shape is known as",
+        "options": {
+            "a": "quarrying of stones",
+            "b": "blasting of stones",
+            "c": "seasoning of stones",
+            "d": "dressing of stones"
+        },
+        "correct_answer": "d",
+        "solution": "Dressing of Stone: A quarried stone has rough surfaces, which are dressed to obtain a definite and regular shape.",
+        "has_diagram": false,
+        "page_index": 6
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "21",
+        "question_text": "Crushing strength of a good building stone should be more than",
+        "options": {
+            "a": "50 MPa",
+            "b": "100 MPa",
+            "c": "150 MPa",
+            "d": "200 MPa"
+        },
+        "correct_answer": "b",
+        "solution": "Good stone has compressive strength greater than 100 MPa.",
+        "has_diagram": false,
+        "page_index": 6
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "22",
+        "question_text": "Specific gravity for most of the building stones lies between",
+        "options": {
+            "a": "1.5 to 2.0",
+            "b": "2.0 to 2.5",
+            "c": "2.5 to 3.0",
+            "d": "3.0 to 3.5"
+        },
+        "correct_answer": "c",
+        "solution": "Specific gravity of good building stone is about 2.5 to 2.7.",
+        "has_diagram": false,
+        "page_index": 6
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "23",
+        "question_text": "Spalling hammer is used for",
+        "options": {
+            "a": "driving wooden headed chisels",
+            "b": "rough dressing of stones",
+            "c": "carving of stones",
+            "d": "none of these"
+        },
+        "correct_answer": "b",
+        "solution": "Spalling hammer is a large hammer usually with a flat face and straight peen for breaking and rough-dressing stone.",
+        "has_diagram": true,
+        "diagram_bbox": [
+            205,
+            75,
+            405,
+            468
+        ],
+        "page_index": 7,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1783097231/ocr_diagrams/em4anmu54kaqoxpmufim.png"
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "24",
+        "question_text": "Cross cut saw is used for",
+        "options": {
+            "a": "cutting soft stones",
+            "b": "cutting hard stones",
+            "c": "cutting large blocks of stones",
+            "d": "dressing stones"
+        },
+        "correct_answer": "b",
+        "solution": "Cross cut saw is used for cutting hard stones.",
+        "has_diagram": false,
+        "page_index": 7
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "25",
+        "question_text": "Sapwood consists of",
+        "options": {
+            "a": "inner most annular rings around the pith",
+            "b": "portion of timber between heart wood and cambium layer",
+            "c": "thin layers below the bark",
+            "d": "thin fibre which extends from the pith outwards and holds the annular rings together"
+        },
+        "correct_answer": "b",
+        "solution": "Sapwood is the portion of timber between heart wood and cambium layer.",
+        "has_diagram": true,
+        "diagram_bbox": [
+            50,
+            540,
+            245,
+            910
+        ],
+        "page_index": 7,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1783097232/ocr_diagrams/s8yebius29ifobjcsxl0.png"
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "26",
+        "question_text": "Which of the following trees yields hard wood",
+        "options": {
+            "a": "deodar",
+            "b": "chir",
+            "c": "sheeshum",
+            "d": "pine"
+        },
+        "correct_answer": "c",
+        "solution": "Teak, sheesham, sal, rosewood, Oak, Alnus etc are hard wood.",
+        "has_diagram": false,
+        "page_index": 7
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "27",
+        "question_text": "The radial splits which are wider on the outside of the log and narrower towards the pith are known as",
+        "options": {
+            "a": "heart shakes",
+            "b": "cup shakes",
+            "c": "star shakes",
+            "d": "rind galls"
+        },
+        "correct_answer": "c",
+        "solution": "Star shakes are radial splits or cracks wide at circumference and diminishing towards the centre of the tree.",
+        "has_diagram": false,
+        "page_index": 8
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "28",
+        "question_text": "In which of the following pairs both trees yield soft wood?",
+        "options": {
+            "a": "deodar and shishum",
+            "b": "chir and sal",
+            "c": "sal and teak",
+            "d": "chir and deodar"
+        },
+        "correct_answer": "d",
+        "solution": "Chir, fir, Pine, larch, Cedar and cypress etc are Soft wood.",
+        "has_diagram": false,
+        "page_index": 10
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "29",
+        "question_text": "Which of the following timbers is suitable for making sports goods?",
+        "options": {
+            "a": "mulberry",
+            "b": "mahogany",
+            "c": "sal",
+            "d": "deodar"
+        },
+        "correct_answer": "a",
+        "solution": "mulberry: It is strong, tough and elastic. It takes up a clean finish. It can be well seasoned. It turned and carved easily. It is used for baskets and sports good like hockey stick, tennis rackets, cricket bats etc.",
+        "has_diagram": false,
+        "page_index": 10
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "30",
+        "question_text": "Assertion A: Sheeshum is used for decorative woodwork.\nReason R: Sheeshum can be polished to an excellent finish.\n\nSelect your answer according to the coding system given below:",
+        "options": {
+            "a": "Both A and R are true and R is the correct explanation of A",
+            "b": "Both A and R are true but R is not the correct explanation of A",
+            "c": "A is true but R is false",
+            "d": "A is false but R is true"
+        },
+        "correct_answer": "a",
+        "solution": "",
+        "has_diagram": false,
+        "page_index": 11
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "31",
+        "question_text": "The disease of dry rot in timber is caused",
+        "options": {
+            "a": "lack of ventilation",
+            "b": "alternate wet and dry conditions",
+            "c": "complete submergence in water",
+            "d": "none of the above"
+        },
+        "correct_answer": "a",
+        "solution": "It is caused by the lack of ventilation.",
+        "has_diagram": false,
+        "page_index": 11
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "32",
+        "question_text": "Plywood has the advantage of",
+        "options": {
+            "a": "greater tensile strength in longer direction",
+            "b": "greater tensile strength in shorter direction",
+            "c": "same tensile strength in all directions",
+            "d": "none of the above"
+        },
+        "correct_answer": "c",
+        "solution": "Plywoods: Plywoods are boards, which are prepared from thin layers of wood or veneers which are placed at $90^\\circ$ to each other. Three or more veneers in odd number are pressed using adhesives. Good strength and dimensional Stability in both lateral and longitudinal directions.",
+        "has_diagram": true,
+        "diagram_bbox": [
+            35,
+            530,
+            155,
+            905
+        ],
+        "page_index": 11,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1783097233/ocr_diagrams/khx9du5ffhosppkjnrox.png"
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "33",
+        "question_text": "The strength of timber is maximum?",
+        "options": {
+            "a": "parallel to grains",
+            "b": "45° to grains",
+            "c": "perpendicular to grains",
+            "d": "same in all directions"
+        },
+        "correct_answer": "a",
+        "solution": "Strength of timber is maximum parallel to grain and minimum perpendicular to grain.",
+        "has_diagram": false,
+        "page_index": 12
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "34",
+        "question_text": "The moisture content in a well-seasoned timber is",
+        "options": {
+            "a": "4% to 6%",
+            "b": "10% to 12%",
+            "c": "15% to 20%",
+            "d": "100%"
+        },
+        "correct_answer": "b",
+        "solution": "Moisture content in well-seasoned timber is 10 to 12 %.",
+        "has_diagram": false,
+        "page_index": 12
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "35",
+        "question_text": "The trunk of tree left after cutting all the branches is known as",
+        "options": {
+            "a": "log",
+            "b": "batten",
+            "c": "plank",
+            "d": "baulk"
+        },
+        "correct_answer": "a",
+        "solution": "The trunk of tree left after cutting all the branches is known as log.",
+        "has_diagram": false,
+        "page_index": 12
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "36",
+        "question_text": "The age of a tree can be known by examining",
+        "options": {
+            "a": "cambium layer",
+            "b": "annular rings",
+            "c": "medullary rays",
+            "d": "heart wood"
+        },
+        "correct_answer": "b",
+        "solution": "The age of trees can be predicted by counting of annul rings.",
+        "has_diagram": false,
+        "page_index": 12
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "37",
+        "question_text": "Plywood is made by bonding together thin layers of wood in such a way that the angle between grains of any layer to grains of adjacent layers is",
+        "options": {
+            "a": "0°",
+            "b": "30°",
+            "c": "45°",
+            "d": "90°"
+        },
+        "correct_answer": "d",
+        "solution": "Plywoods are boards, which are prepared from thin layers of wood or veneers which are placed at $90^\\circ$ to each other.",
+        "has_diagram": false,
+        "page_index": 12
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "38",
+        "question_text": "The plywood",
+        "options": {
+            "a": "has good strength along the panel only",
+            "b": "can be spilt in the plane of the panel",
+            "c": "has greater impact resistance to blows than ordinary wood",
+            "d": "cannot be bent more easily than ordinary wood of same thickness"
+        },
+        "correct_answer": "c",
+        "solution": "",
+        "has_diagram": false,
+        "page_index": 12
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "39",
+        "question_text": "The practical limit of moisture content achieved in air drying of timber is",
+        "options": {
+            "a": "5%",
+            "b": "15%",
+            "c": "25%",
+            "d": "35%"
+        },
+        "correct_answer": "b",
+        "solution": "The practical limit of moisture content achieved in air drying of timber is 15%.",
+        "has_diagram": false,
+        "page_index": 1
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "40",
+        "question_text": "First class timber has an average life of",
+        "options": {
+            "a": "less than one year",
+            "b": "1 to 5 years",
+            "c": "5 to 10 years",
+            "d": "more than 10 years"
+        },
+        "correct_answer": "d",
+        "solution": "First class timber has an average life of about 120 months.",
+        "has_diagram": false,
+        "page_index": 2
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "41",
+        "question_text": "A first-class brick when immersed in cold water for 24 hours should not absorb water more than (11)",
+        "options": {
+            "a": "15%",
+            "b": "20%",
+            "c": "22%",
+            "d": "25%"
+        },
+        "correct_answer": "b",
+        "solution": "Clay bricks are classified as first class, second class, third class and fourth class based on their physical and mechanical properties. First class brick: Water absorption should be 20% of its dry weight when immersed in cold water for 24 hours.",
+        "has_diagram": false,
+        "page_index": 3
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "42",
+        "question_text": "Crushing strength of a first-class brick should not be less than",
+        "options": {
+            "a": "$3.5\\text{ N/mm}^2$",
+            "b": "$7.0\\text{ N/mm}^2$",
+            "c": "$10.5\\text{ N/mm}^2$",
+            "d": "$14.0\\text{ N/mm}^2$"
+        },
+        "correct_answer": "c",
+        "solution": "The crushing strength of the first-class brick should not be less than $10\\text{ N/mm}^2$.",
+        "has_diagram": false,
+        "page_index": 3
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "43",
+        "question_text": "The main function of alumina in brick earth is",
+        "options": {
+            "a": "to impart plasticity",
+            "b": "to make the brick durable",
+            "c": "to prevent shrinkage",
+            "d": "to make the brick impermeable"
+        },
+        "correct_answer": "a",
+        "solution": "The main function of alumina in brick earth is to impart plasticity.",
+        "has_diagram": false,
+        "page_index": 3
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "44",
+        "question_text": "The percentage of alumina in a good brick earth lies between",
+        "options": {
+            "a": "5 to 10%",
+            "b": "20 to 30%",
+            "c": "50 to 60%",
+            "d": "70 to 80%"
+        },
+        "correct_answer": "b",
+        "solution": "Refer 43rd question for detail solution.",
+        "has_diagram": false,
+        "page_index": 4
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "45",
+        "question_text": "Excess of alumina in brick earth makes the brick",
+        "options": {
+            "a": "Impermeable",
+            "b": "brittle and weak",
+            "c": "to lose cohesion",
+            "d": "to crack and warp on drying"
+        },
+        "correct_answer": "d",
+        "solution": "Alumina is present in excess of the specified quantity, it produces cracks and warp in brick on drying.",
+        "has_diagram": false,
+        "page_index": 4
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "46",
+        "question_text": "The nominal size of the modular brick is",
+        "options": {
+            "a": "$190\\text{ mm} \\times 90\\text{ mm} \\times 80\\text{ mm}$",
+            "b": "$190\\text{ mm} \\times 90\\text{ mm} \\times 90\\text{ mm}$",
+            "c": "$200\\text{ mm} \\times 100\\text{ mm} \\times 100\\text{ mm}$",
+            "d": "$200\\text{ mm} \\times 200\\text{ mm} \\times 100\\text{ mm}$"
+        },
+        "correct_answer": "c",
+        "solution": "Nominal size of standard modular brick = $20 \\times 10 \\times 10\\text{ (cm)}$",
+        "has_diagram": false,
+        "page_index": 4
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "47",
+        "question_text": "Percentage of silica in a good brick earth lies between",
+        "options": {
+            "a": "5 to 10%",
+            "b": "20 to 30%",
+            "c": "50 to 60%",
+            "d": "70 to 80%"
+        },
+        "correct_answer": "c",
+        "solution": "Refer 43rd question for detail solution.",
+        "has_diagram": false,
+        "page_index": 5
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "48",
+        "question_text": "Excess of silica in brick earth results in",
+        "options": {
+            "a": "cracking and warping of bricks",
+            "b": "loss of cohesion",
+            "c": "enhancing the impermeability of bricks",
+            "d": "none of the above"
+        },
+        "correct_answer": "b",
+        "solution": "Refer 43rd question for detail solution.",
+        "has_diagram": false,
+        "page_index": 5
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "49",
+        "question_text": "Which of the following ingredients of the brick earth enables the brick to retain its shape?",
+        "options": {
+            "a": "alumina",
+            "b": "silica",
+            "c": "Iron",
+            "d": "magnesia"
+        },
+        "correct_answer": "b",
+        "solution": "Refer 43rd question for detail solution.",
+        "has_diagram": false,
+        "page_index": 5
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "50",
+        "question_text": "Which of the following pairs gives correct combination of the useful and harmful constituents respectively, of a good brick earth?",
+        "options": {
+            "a": "lime stone and alumina",
+            "b": "silica and alkalies",
+            "c": "alumina and iron",
+            "d": "alkalies and magnesium"
+        },
+        "correct_answer": "b",
+        "solution": "Silica: It enables the brick to retain its shape and imparts durability, prevents shrinkage and warping so its useful constituents of brick earth. Alkalies are the harmful constituents of brick.",
+        "has_diagram": false,
+        "page_index": 5
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "51",
+        "question_text": "The process of mixing clay, water and other ingredients to make brick is known as",
+        "options": {
+            "a": "kneading",
+            "b": "moulding",
+            "c": "Pugging",
+            "d": "drying"
+        },
+        "correct_answer": "a",
+        "solution": "The process of mixing clay, water and other ingredients to make brick is known as Kneading.",
+        "has_diagram": false,
+        "page_index": 6
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "52",
+        "question_text": "Advantage of a clamp compared to a kiln for burning bricks is that",
+        "options": {
+            "a": "it takes less time for burning",
+            "b": "it gives more output of first-class bricks",
+            "c": "It has less initial cost",
+            "d": "it is suitable when bricks are required in large numbers"
+        },
+        "correct_answer": "c",
+        "solution": "Clamp has less initial cost.",
+        "has_diagram": false,
+        "page_index": 10
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "53",
+        "question_text": "The internal size of mould used in brick preparation is",
+        "options": {
+            "a": "equal to the size of a fully burnt brick",
+            "b": "smaller than the size of a fully burnt brick",
+            "c": "greater than the size of a fully burnt brick",
+            "d": "none of the above"
+        },
+        "correct_answer": "c",
+        "solution": "The internal size of mould used in brick preparation is greater than the size of a fully copy burnt brick.",
+        "has_diagram": false,
+        "page_index": 11
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "54",
+        "question_text": "Pug mill is used for",
+        "options": {
+            "a": "preparation of clay",
+            "b": "moulding of clay",
+            "c": "drying of bricks",
+            "d": "burning of bricks"
+        },
+        "correct_answer": "a",
+        "solution": "Tempering is usually done in pug mill.",
+        "has_diagram": false,
+        "page_index": 11
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "55",
+        "question_text": "Which of the following bricks are used for lining of furnaces?",
+        "options": {
+            "a": "overburnt bricks",
+            "b": "underburnt bricks",
+            "c": "refractory bricks",
+            "d": "first class bricks"
+        },
+        "correct_answer": "c",
+        "solution": "Refactory brick are used for high temperature in cline, clamp and furnaces.",
+        "has_diagram": false,
+        "page_index": 11
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "56",
+        "question_text": "The frog of the brick in a brick masonry is generally kept on",
+        "options": {
+            "a": "bottom face",
+            "b": "top face",
+            "c": "shorter side",
+            "d": "longer side"
+        },
+        "correct_answer": "b",
+        "solution": "The frog of the brick in a brick masonry is generally kept on top face.",
+        "has_diagram": false,
+        "page_index": 11
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "57",
+        "question_text": "Number of bricks required for one cubic metre of brick masonry is",
+        "options": {
+            "a": "400",
+            "b": "450",
+            "c": "500",
+            "d": "550"
+        },
+        "correct_answer": "c",
+        "solution": "Number of bricks required for one cubic metre of brick masonry is 500.",
+        "has_diagram": false,
+        "page_index": 12
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "58",
+        "question_text": "Glazing is used to make earthen ware",
+        "options": {
+            "a": "hard",
+            "b": "Soft",
+            "c": "porous",
+            "d": "impervious"
+        },
+        "correct_answer": "d",
+        "solution": "Glazing is used to make earthenware impervious.",
+        "has_diagram": false,
+        "page_index": 12
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "59",
+        "question_text": "Quick lime is",
+        "options": {
+            "a": "calcium carbonate",
+            "b": "calcium oxide",
+            "c": "calcium hydroxide",
+            "d": "none of the above"
+        },
+        "correct_answer": "b",
+        "solution": "Quick lime is calcium oxide.",
+        "has_diagram": false,
+        "page_index": 12
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "60",
+        "question_text": "Quick lime is\n(i) slow in setting\n(ii) rapid in slacking\n(iii) good in strength\nThe correct answer is",
+        "options": {
+            "a": "only (i)",
+            "b": "only (ii)",
+            "c": "both (i) and (ii)",
+            "d": "both (ii) and (iii)"
+        },
+        "correct_answer": "c",
+        "solution": "Sol.(c)\nNOTE: Refer 59th question.",
+        "has_diagram": false,
+        "page_index": 2
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "61",
+        "question_text": "Assertion A: Pure lime takes a long time to develop adequate strength.\nReason R: Pure lime has slow hardening characteristics.\nSelect your answer according to the coding system given below",
+        "options": {
+            "a": "Both A and R are true and R is correct explanation of A.",
+            "b": "Both A and R are true and R is not a correct explanation of A.",
+            "c": "A is true but R is false.",
+            "d": "A is false but R is true"
+        },
+        "correct_answer": "a",
+        "solution": "Sol.(a)\nNOTE : Refer 59th question .",
+        "has_diagram": false,
+        "page_index": 3
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "62",
+        "question_text": "Hydraulic lime is obtained by",
+        "options": {
+            "a": "burning of lime stone",
+            "b": "burning of kankar",
+            "c": "adding water to quick lime",
+            "d": "calcination of pure clay"
+        },
+        "correct_answer": "b",
+        "solution": "Sol.(b)\nNOTE : Refer 59th question .",
+        "has_diagram": false,
+        "page_index": 3
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "63",
+        "question_text": "The main constituent which imparts hydraulicity to hydraulic lime is",
+        "options": {
+            "a": "calcium oxide",
+            "b": "silica",
+            "c": "clay",
+            "d": "water"
+        },
+        "correct_answer": "c",
+        "solution": "Sol.(c) The main constituent which imparts hydraulicity to hydraulic lime is clay.\nNOTE: Refer 59th question for detail solution.",
+        "has_diagram": false,
+        "page_index": 3
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "64",
+        "question_text": "Study the following statements\n(i) Hydraulic lime is suitable for white washing.\n(ii) Fat lime is suitable for white washing.\n(iii) Hydraulic lime is suitable for making mortar.\n(iv) Fat lime is suitable for making mortar.\nThe correct answer is",
+        "options": {
+            "a": "(i) and (iv)",
+            "b": "(ii) and (iii)",
+            "c": "(i) and (ii)",
+            "d": "(iii) and (iv)"
+        },
+        "correct_answer": "b",
+        "solution": "Sol.(b)",
+        "has_diagram": false,
+        "page_index": 3
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "65",
+        "question_text": "The main ingredients of Portland cement are",
+        "options": {
+            "a": "lime and silica",
+            "b": "lime and alumina",
+            "c": "silica and alumina",
+            "d": "lime and iron"
+        },
+        "correct_answer": "a",
+        "solution": "Sol.(a) The main ingredients of Portland cement are lime and silica.\nOrdinary Portland Cement(OPC): It is a cementing material and may be defined as a product obtained by finely pulverizing clinker produced by calcining to incipient fusion.\nOPC contains two basic ingredients, namely argillaceous and calcareous. In argillaceous materials, clay predominates and in calcareous materials, calcium carbonate predominates.\nConsistency of OPC cement is about 20 to 30 %\nGood ordinary cement contains following ingredients.\n1. Lime ($CaO$) = 60-65 %\n2. silica ($SiO_2$) = 17-25%\n3. Alumina ($Al_2O_3$) = 3-8 %\n4. Iron Oxide ($Fe_2O_3$) = 0.5-6%\n5. Magnesia ($MgO$) = 0.5-4 %\n6. Sulphur = 1%\n7. Alkalies:\n$N_2O + K_2O$ = 0.5-1.3%\n$TiO_2$ = 0.1-0.4%\n$P_2O_5$ = 0.1-0.2%",
+        "has_diagram": false,
+        "page_index": 3
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "66",
+        "question_text": "The constituent of cement which is responsible for all the undesirable properties of cement is",
+        "options": {
+            "a": "dicalcium silicate",
+            "b": "tricalcium silicate",
+            "c": "tricalcium aluminate",
+            "d": "tetra calcium alumino ferrite"
+        },
+        "correct_answer": "c",
+        "solution": "Sol.(c) The constituent of cement which is responsible for all the undesirable properties of cement is tricalcium aluminate.\nThe compounds formed in the burning process have the properties of setting and hardening in the presence of water. They are known as Bogue compounds.\nLe-Chatelier and Tornebohm have referred these compounds as Alite ($C_3S$), Belite ($C_2S$), Celite ($C_3A$) and Felite ($C_4AF$).\nTricalcium silicate ($3CaO \\cdot SiO_2$): This is also known as Alite.\nIt is supposed to be the best cementing material and is well burnt cement. It is about 25-50% (normally about 40 per cent) of cement.\nThe hydrolysis of $C_3S$ is mainly responsible for 7 day strength and hardness.\nRapid hardening cement has more then 50% of $C_3S$ contant.\nDicalcium silicate ($2CaO \\cdot SiO_2$): This is also known as Belite.\nIt is about 25-40% (normally about 32 per cent) of cement. It hydrates and hardens slowly and takes long time to add to the strength (after a year or more).\nIt imparts resistance to chemical attack and sulphate attack.\nTricalcium Aluminate ($3CaO \\cdot Al_2O_3$): It is also known as Celite.\nIt is about 5-11% (normally about 10.5 per cent) of cement. It rapidly reacts with water and is responsible for flash set of finely grounded clinker.\nThe rapidity of action is regulated by the addition of 2 to 3 % of the gypsum at the time of grinding cement.\nTricalcium aluminate is responsible for the initial set, high heat of hydration and has greater tendency to volume changes causing cracking.\nIt is responsible for all the undesirable properties of cement.\nTetracalcium alumino ferrite ($4CaO \\cdot Al_2O_3 \\cdot Fe_2O_3$): It is also known as Felite.\nIt is about 8-14% (normally about 9 per cent) of cement.",
+        "has_diagram": false,
+        "page_index": 4
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "67",
+        "question_text": "Le Chatelier's device is used for determining the",
+        "options": {
+            "a": "setting time of cement.",
+            "b": "soundness of cement",
+            "c": "tensile strength of cement",
+            "d": "compressive strength of cement"
+        },
+        "correct_answer": "b",
+        "solution": "Sol.(b) Le-Chatelier's device is used for determining the soundness of cement.\nTypes of test for the cement :\nConsistency Test: This is a test to estimate the quantity of mixing water to form a paste of normal consistency.\nSoundness test:\n(i) This test is ensured by limiting the quantities of free lime and magnesia which slake slowly causing change in volume of cement.\n(ii) It is a very important test to assure the quality of cement since an unsound cement produces cracks, distortion and disintegration, ultimately leading to failure.\n(iii) Soundness of cement may be tested by Le-Chatelier method or by autoclave method.\nLe-Chatelier method: In this test 100 g cement with 0.78 times the water required to give a paste of standard consistency is taken.\nThis test is used to ensured by limiting the quantities of free lime.\nFor OPC, RHC, LHC and PPC it is limited to 10 mm, where as for HAC and SSC it should not exceed 5 mm.",
+        "has_diagram": true,
+        "diagram_bbox": [
+            475,
+            520,
+            705,
+            900
+        ],
+        "page_index": 5,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1783097363/ocr_diagrams/rbasgdmoutzurs4ptko0.png"
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "68",
+        "question_text": "The main constituent of cement which is responsible for initial setting of cement is",
+        "options": {
+            "a": "dicalcium silicate",
+            "b": "tricalcium silicate",
+            "c": "tricalcium aluminate",
+            "d": "all of the above"
+        },
+        "correct_answer": "c",
+        "solution": "Sol.(c) tricalcium aluminate is responsible for initial setting of cement.",
+        "has_diagram": false,
+        "page_index": 6
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "69",
+        "question_text": "The initial setting time for ordinary Portland cement as per IS specifications. Should not be less than",
+        "options": {
+            "a": "10 minutes",
+            "b": "30 minutes",
+            "c": "60 minutes",
+            "d": "600 minutes"
+        },
+        "correct_answer": "b",
+        "solution": "Sol.(b) The initial setting time for ordinary Portland cement as per IS specifications should not be less than 30 minutes.\nNOTE : Refer 65th question for detail solution",
+        "has_diagram": false,
+        "page_index": 6
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "70",
+        "question_text": "As per IS specifications, the maximum final setting time for ordinary Portland cement should be",
+        "options": {
+            "a": "30 minutes",
+            "b": "1 hour",
+            "c": "6 hours",
+            "d": "10 hours"
+        },
+        "correct_answer": "d",
+        "solution": "Sol.(d) Final setting of OPC is 10 hours.\nNOTE : Refer 65th question for detail solution",
+        "has_diagram": false,
+        "page_index": 6
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "71",
+        "question_text": "For testing compressive strength of cement, the size of cube used is",
+        "options": {
+            "a": "50 mm",
+            "b": "70.6 mm",
+            "c": "100 mm",
+            "d": "150 mm"
+        },
+        "correct_answer": "b",
+        "solution": "Sol.(b) The test specimens are 70.6 mm cubes having face area of about 5000 sq. mm.\nNOTE : Refer 67th question for detail solution",
+        "has_diagram": false,
+        "page_index": 6
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "72",
+        "question_text": "The normal consistency of ordinary Portland cement is about",
+        "options": {
+            "a": "10 %",
+            "b": "20%",
+            "c": "30 %",
+            "d": "40%"
+        },
+        "correct_answer": "c",
+        "solution": "Sol.(c) The normal consistency of ordinary Portland cement is about 30 %",
+        "has_diagram": false,
+        "page_index": 6
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "73",
+        "question_text": "Early attainment of strength in rapid hardening cement is mainly due to",
+        "options": {
+            "a": "gypsum",
+            "b": "finer grinding",
+            "c": "tricalcium silicate",
+            "d": "tricalcium aluminate"
+        },
+        "correct_answer": "b",
+        "solution": "Sol.(b) Early attainment of strength in rapid hardening cement is mainly due to finer grinding.",
+        "has_diagram": false,
+        "page_index": 6
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "74",
+        "question_text": "After storage, the strength of cement",
+        "options": {
+            "a": "decreases",
+            "b": "increases",
+            "c": "remains same",
+            "d": "may increase or decrease"
+        },
+        "correct_answer": "a",
+        "solution": "Sol.(a) Due to storage, hydration of cement may start due to presence of moisture or Dampness thus strength of cement decreases for further use.",
+        "has_diagram": false,
+        "page_index": 6
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "75",
+        "question_text": "According to IS specifications, the compressive strength of ordinary Portland cement after three days should not be less than",
+        "options": {
+            "a": "7 MPa",
+            "b": "11.5 MPa",
+            "c": "16 MPa",
+            "d": "21 MPa"
+        },
+        "correct_answer": "c",
+        "solution": "Sol.(c)\nCompressive Strength (MPa) table:\nTime/Grade | 33 | 43 | 53\n72 ± 1 hr | 16 | 23 | 27\n168 ± 2 hr | 22 | 33 | 37\n672 ± 4 hr | 33 | 43 | 53",
+        "has_diagram": false,
+        "page_index": 7
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "76",
+        "question_text": "Addition of pozzolana to ordinary Portland cement increases",
+        "options": {
+            "a": "bleeding",
+            "b": "shrinkage",
+            "c": "permeability",
+            "d": "heat of hydration"
+        },
+        "correct_answer": "b",
+        "solution": "Sol.(b) Pozzolona reacts with additional Lime ($Ca(OH)_2$) formed in hydration of cement thus reduce the volume of mix and increase shrinkage.",
+        "has_diagram": false,
+        "page_index": 7
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "77",
+        "question_text": "Gypsum consists of",
+        "options": {
+            "a": "$H_2S$ and $CO_2$",
+            "b": "$CaSO_4$ and $H_2O$",
+            "c": "Lime and $H_2O$",
+            "d": "$CO_2$ and calcium"
+        },
+        "correct_answer": "b",
+        "solution": "sol.(b) Gypsum ($CaSO_4 \\cdot 2H_2O$) consist of $CaSO_4$ and $H_2O$.\nGypsum: There are two commercial varieties of crude gypsum, rock gypsum and gypsum or gypsite used for the manufacture of gypsum binding material.\nThese substances consist principally of a hydrous sulphate of lime ($CaSO_4 \\cdot 2H_2O$) with varying percentages of silica, carbonate of lime, carbonate of magnesia, and iron oxide.\nBuilding gypsum is an air-setting binder composed mainly of semihydrate gypsum and obtained by processing gypsum at temperatures $150^\\circ\\text{C}-160^\\circ\\text{C}$.",
+        "has_diagram": false,
+        "page_index": 7
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "78",
+        "question_text": "For testing compressive and tensile strength of cement, the cement mortar is made by mixing cement and standard sand in the proportions of",
+        "options": {
+            "a": "1 : 2",
+            "b": "1 : 3",
+            "c": "1 : 4",
+            "d": "1 : 6"
+        },
+        "correct_answer": "b",
+        "solution": "Sol.(b) For testing compressive and tensile strength of cement, the cement mortar is made by mixing cement and standard sand in the proportions of 1 : 3 .",
+        "has_diagram": false,
+        "page_index": 7
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "79",
+        "question_text": "The slump recommended for mass concrete is about",
+        "options": {
+            "a": "25 mm to 50 mm",
+            "b": "50 mm to 100 mm",
+            "c": "100 mm to 125 mm",
+            "d": "125 mm to 150 mm"
+        },
+        "correct_answer": "a",
+        "solution": "Sol.(a) The slump recommended for mass concrete is low (25 mm to 50 mm)",
+        "has_diagram": false,
+        "page_index": 7
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "80",
+        "question_text": "With increase in moisture content, the bulking of sand",
+        "options": {
+            "a": "increases",
+            "b": "decreases",
+            "c": "first increases to a certain maximum value and then decreases",
+            "d": "first decreases to a certain minimum value and then increases"
+        },
+        "correct_answer": "c",
+        "solution": "Sol.(c) Bulking: The increase in the volume of a given mass of fine aggregate caused by the presence of water is known as bulking.\n- The water forms a film over the fine aggregate particles, exerts force of surface tension and pushes them apart increasing the volume.\n- The extent of bulking depends upon the percentage of moisture present in the sand and its fineness.\n- With ordinary sand bulking varies from 15-30 percent. It increases with moisture content up to a certain point (4-6%), reaches maximum and then it starts decreasing.",
+        "has_diagram": true,
+        "diagram_bbox": [
+            35,
+            570,
+            295,
+            970
+        ],
+        "page_index": 8,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1783097363/ocr_diagrams/webgjmjvjrlvb50jwmm7.png"
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "81",
+        "question_text": "Which of the following cements is suitable for use in massive concrete structures such as large dams?",
+        "options": {
+            "a": "ordinary Portland cement",
+            "b": "low heat cement",
+            "c": "rapid hardening cement",
+            "d": "sulphate resisting cement"
+        },
+        "correct_answer": "b",
+        "solution": "Sol.(b) Low heat cement(IS-12600): To limit the heat of hydration of low heat Portland cement (LHC), the tricalcium aluminate component in cement is minimised and a high percentage of dicalcium silicate and tetracalcium alumino ferrite is added.\nInitial setting time = 60 minutes\nFinal setting time = 600 minutes\nIt is most suitable for large mass concrete works such as dams, large raft foundations, etc.",
+        "has_diagram": false,
+        "page_index": 8
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "82",
+        "question_text": "Proper amount of entrained air in concrete results in\n(i) better workability\n(ii) better resistance freezing and thawing\n(iii) lesser workability\n(iv) less resistance to freezing and thawing\nThe correct answer is",
+        "options": {
+            "a": "(i) and (ii)",
+            "b": "(i) and (iv)",
+            "c": "(ii) and (iii)",
+            "d": "(iii) and (iv)"
+        },
+        "correct_answer": "a",
+        "solution": "Sol.(a)\nNOTE: Refer 81st question for detail solution.",
+        "has_diagram": false,
+        "page_index": 10
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "83",
+        "question_text": "The most common admixture which is used to accelerate the initial setting of concrete is",
+        "options": {
+            "a": "gypsum",
+            "b": "calcium chloride",
+            "c": "calcium carbonate",
+            "d": "none of the above"
+        },
+        "correct_answer": "b",
+        "solution": "Sol.(b) Accelerators are used to accelerate the initial setting of concrete such as calcium chloride .\nAdmixtures: Admixtures are the materials other than the three basic ingredients of cement concrete, cement, aggregate and water added to the concrete mix before or during mixing to improve certain of its properties in fresh or hardened state.\nThe properties commonly modified are rate of hydration or setting time, workability, dispersion and air entrainment.\nAdmixtures may be classified as:\n(i) Accelerators: They normally reduce the setting time, accelerate the rate of hydration of cement and consequently the rate of gain of strength.\nThe examples of accelerators are alkali carbonates aluminates and silates, aluminium chloride, calcium chloride, sodium chloride, sodium and potassium hydroxides, calcium formate, formaldehyde, para formaldehyde, etc.",
+        "has_diagram": false,
+        "page_index": 10
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "84",
+        "question_text": "The maximum quantity of calcium chloride used as an accelerator in cement percentage by weight of cement is",
+        "options": {
+            "a": "1",
+            "b": "2",
+            "c": "3",
+            "d": "4"
+        },
+        "correct_answer": "b",
+        "solution": "Sol.(b) The maximum quantity of calcium chloride used as an accelerator in cement percentage by weight of cement is 2 % .",
+        "has_diagram": false,
+        "page_index": 11
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "85",
+        "question_text": "The basic purpose of a retarder in concrete is",
+        "options": {
+            "a": "to increase the initial setting time of cement paste in concrete",
+            "b": "to decrease the initial setting time of cement paste in concrete",
+            "c": "to render the concrete more water tight",
+            "d": "To improve the workability of concrete mix"
+        },
+        "correct_answer": "a",
+        "solution": "Sol.(a)\nNOTE: Refer 83rd question for detail solution .",
+        "has_diagram": false,
+        "page_index": 11
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "86",
+        "question_text": "Which of the following cements contains maximum percentage of dicalcium silicate?",
+        "options": {
+            "a": "ordinary Portland cement",
+            "b": "low heat cement",
+            "c": "rapid hardening cement",
+            "d": "sulphate resisting cement"
+        },
+        "correct_answer": "b",
+        "solution": "Sol.(b)\nNOTE: Refer 81st question for detail solution .",
+        "has_diagram": false,
+        "page_index": 11
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "87",
+        "question_text": "The most commonly used retarder in cement is",
+        "options": {
+            "a": "gypsum",
+            "b": "calcium chloride",
+            "c": "calcium carbonate",
+            "d": "none of the above"
+        },
+        "correct_answer": "a",
+        "solution": "Sol.(a) The most commonly used retarder increment is gypsum.\nNOTE: Refer 77th question for detail solution .",
+        "has_diagram": false,
+        "page_index": 12
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "88",
+        "question_text": "Three basic raw materials which are needed in large quantities for production of steel are",
+        "options": {
+            "a": "iron ore, coal and sulphur",
+            "b": "iron ore, carbon and sulphur",
+            "c": "iron ore, coal and lime stone",
+            "d": "iron ore, carbon and lime stone"
+        },
+        "correct_answer": "c",
+        "solution": "Sol.(c) Three basic raw materials which are needed in large quantities for production of steel are iron ore, coal and lime stone.",
+        "has_diagram": false,
+        "page_index": 12
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "89",
+        "question_text": "Compared to mild steel, cast iron has\n(i) high compressive strength\n(ii) high tensile strength\n(iii) low compressive strength\n(iv) low tensile strength\nThe correct answer is",
+        "options": {
+            "a": "(i) and (ii)",
+            "b": "(ii) and (iii)",
+            "c": "(iii) and (iv)",
+            "d": "(i) and (iv)"
+        },
+        "correct_answer": "d",
+        "solution": "Sol.(d) Cast iron is brittle material and the brittle material has high compressive strength and low tensile strength.",
+        "has_diagram": false,
+        "page_index": 12
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "90",
+        "question_text": "Which of the following gradients exerts maximum influence on properties of steel?",
+        "options": {
+            "a": "iron",
+            "b": "carbon",
+            "c": "manganese",
+            "d": "sulphur"
+        },
+        "correct_answer": "b",
+        "solution": "Sol.(b) Carbon exerts maximum influence on properties of steel.",
+        "has_diagram": false,
+        "page_index": 12
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "91",
+        "question_text": "Which of the following is the purest form of iron?",
+        "options": {
+            "a": "cast iron",
+            "b": "wrought iron",
+            "c": "mild steel",
+            "d": "high carbon steel"
+        },
+        "correct_answer": "b",
+        "solution": "Sol.(b) wrought iron is the purest form of iron.\nIron: Iron is by for the most important of the metals used in engineering construction.\nIt is available in abundance, but does not occur freely in nature. The ores of iron are classed according to the iron mineral which is predominant.\nThe iron content of the main ores are as follows:\nMagnetite ($Fe_3O_4$) — 70-75%,\nHaematite ($Fe_2O_3$) — 70%,\nLimonite ($2Fe_2O_3 \\cdot 3H_2O$) — 60%, it is hydrated haematite\nIron pyrite ($FeS_2$) — 47%\nSiderite ($FeCO_3$) — 40%",
+        "has_diagram": false,
+        "page_index": 12
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "92",
+        "question_text": "The ultimate tensile strength of structural mild steel is about",
+        "options": {
+            "a": "$160\\text{ N/mm}^2$",
+            "b": "$260\\text{ N/mm}^2$",
+            "c": "$420\\text{ N/mm}^2$",
+            "d": "$520\\text{ N/mm}^2$"
+        },
+        "correct_answer": "c",
+        "solution": "The ultimate tensile strength of structural mild steel is about $420\\text{ N/mm}^2$. Minimum Ultimate tensile strength is $410\\text{ N/mm}^2$ as per IS 432 (Part 1)-1982.",
+        "has_diagram": false,
+        "page_index": 1
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "93",
+        "question_text": "Percentage of carbon content in mild steel is",
+        "options": {
+            "a": "less than 0.25",
+            "b": "between 0.25 and 0.7",
+            "c": "between 0.7 and 1.5",
+            "d": "greater than 1.5"
+        },
+        "correct_answer": "a",
+        "solution": "carbon content is given below for different steels: Dead Mild Steel (<0.15), Mild Steel (0.15-0.30), Medium Carbon Steel (0.30-0.80), High Carbon Steel (0.8-1.5), Hard Steel (>1).",
+        "has_diagram": true,
+        "diagram_bbox": [
+            38,
+            548,
+            230,
+            908
+        ],
+        "page_index": 1,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1783097443/ocr_diagrams/limxa2ant1qejagmccjz.png"
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "94",
+        "question_text": "Which of the following stresses is used for identifying the quality of structural steel?",
+        "options": {
+            "a": "ultimate stress",
+            "b": "yield stress",
+            "c": "proof stress",
+            "d": "none of the above"
+        },
+        "correct_answer": "b",
+        "solution": "Yield stresses is used for identifying the quality of structural steel.",
+        "has_diagram": false,
+        "page_index": 1
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "95",
+        "question_text": "The ratio of the thickness of web to that of flange of steel rolled stricture beams and channels is",
+        "options": {
+            "a": "less than 1",
+            "b": "equal to 1",
+            "c": "greater than 1",
+            "d": "less than 1 in beams but greater than 1 channel is"
+        },
+        "correct_answer": "a",
+        "solution": "The ratio of the thickness of web to that of flange of steel rolled stricture beams and channels is less than 1.",
+        "has_diagram": false,
+        "page_index": 1
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "96",
+        "question_text": "Paints with white lead base are suitable for painting of",
+        "options": {
+            "a": "wood work",
+            "b": "iron work",
+            "c": "both wood work and iron work",
+            "d": "none of the above"
+        },
+        "correct_answer": "a",
+        "solution": "Paints with white lead base are suitable for painting of wood work because it does not check rusting of iron.",
+        "has_diagram": false,
+        "page_index": 1
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "97",
+        "question_text": "Assertion A: Paints with white lead base are not recommended for painting of iron works.\nReason R: Paints with white lead base do not check rusting of iron.\nSelect your answer according to the coding system given below:",
+        "options": {
+            "a": "Both A and R are true and, R.is the correct explanation of A.",
+            "b": "Both A and R are true but R is not the correct explanation of A",
+            "c": "A is true but R is false",
+            "d": "A is false but R is true"
+        },
+        "correct_answer": "a",
+        "solution": "Paints with white lead base are not recommended for painting of iron works because they do not check rusting of iron.",
+        "has_diagram": false,
+        "page_index": 2
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "98",
+        "question_text": "The amount of water used for one kg of distemper is",
+        "options": {
+            "a": "0.2 litre",
+            "b": "0.4 litre",
+            "c": "0.6 litre",
+            "d": "0.8 litre"
+        },
+        "correct_answer": "c",
+        "solution": "The amount of water used for one kg of distemper is 0.6 litre.",
+        "has_diagram": false,
+        "page_index": 2
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "99",
+        "question_text": "The vehicle used in case of enamel painis usually",
+        "options": {
+            "a": "linseed oil",
+            "b": "water",
+            "c": "varnish",
+            "d": "none of the above"
+        },
+        "correct_answer": "c",
+        "solution": "Varnish is used as a vehicle in enamel paints.",
+        "has_diagram": false,
+        "page_index": 2
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "100",
+        "question_text": "Assertion A: Normally turpentine oil is recommended as thinner for indoor painting.\nReason R: Turpentine oil is costlier than other thinners.\nSelect your answer according to the coding system given below:",
+        "options": {
+            "a": "Both A and R are true and R is the correct explanation of A.",
+            "b": "Both A and R are true but R is not the correct explanation of A.",
+            "c": "A is true but R is false,",
+            "d": "A is false but R is true."
+        },
+        "correct_answer": "b",
+        "solution": "Both statements are individually correct.",
+        "has_diagram": false,
+        "page_index": 2
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "101",
+        "question_text": "In brick masonry the bond produced by laying alternate headers and stretchers in each course is known as",
+        "options": {
+            "a": "English bond",
+            "b": "double flemish bond.",
+            "c": "zig-zag bond",
+            "d": "single flemish bond"
+        },
+        "correct_answer": "b",
+        "solution": "In brick masonry the bond produced by laying alternate headers and stretchers in each course is known as double flemish bond.",
+        "has_diagram": false,
+        "page_index": 2
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "102",
+        "question_text": "The stretcher bond in brick masonry can be used only when the thickness of wall is",
+        "options": {
+            "a": "90 mm",
+            "b": "180 mm",
+            "c": "190 mm",
+            "d": "280 mm"
+        },
+        "correct_answer": "a",
+        "solution": "Stretcher bond can be used only for half-brick thick walls, which is 90 mm.",
+        "has_diagram": false,
+        "page_index": 2
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "103",
+        "question_text": "The pressure acting on the stones in stone masonry construction should be",
+        "options": {
+            "a": "along the direction of bedding planes",
+            "b": "at $45^\\circ$ to the direction of bedding planes",
+            "c": "at $60^\\circ$ to the direction of bedding planes",
+            "d": "perpendicular to the direction of bedding planes"
+        },
+        "correct_answer": "d",
+        "solution": "The pressure acting on the stones in stone masonry construction should be perpendicular to the direction of bedding planes.",
+        "has_diagram": false,
+        "page_index": 2
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "104",
+        "question_text": "Which of the following should be used for hearting of thicker walls?",
+        "options": {
+            "a": "headers",
+            "b": "stretchers",
+            "c": "brick bats",
+            "d": "queen closer"
+        },
+        "correct_answer": "a",
+        "solution": "Header should be used for hearting of thicker walls.",
+        "has_diagram": false,
+        "page_index": 3
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "105",
+        "question_text": "A queen closer is a",
+        "options": {
+            "a": "A brick laid with its length parallel to the face or direction of wall",
+            "b": "brick laid with its breadth parallel to the face or direction of wall",
+            "c": "brick having the same length and depth as the other bricks but half the breadth",
+            "d": "brick with half the width at one end and full width at the other"
+        },
+        "correct_answer": "c",
+        "solution": "A queen closer is a brick having the same length and depth as the other bricks but half the breadth.",
+        "has_diagram": true,
+        "diagram_bbox": [
+            48,
+            584,
+            830,
+            838
+        ],
+        "page_index": 3,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1783097443/ocr_diagrams/mgbr30lemeeaatlqvpwg.png"
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "106",
+        "question_text": "Minimum thickness of wall where single flemish bond can be used is",
+        "options": {
+            "a": "half brick thick",
+            "b": "one brick thick",
+            "c": "one and a half bricks thick",
+            "d": "two bricks thick"
+        },
+        "correct_answer": "c",
+        "solution": "Minimum thickness of wall where single flemish bond can be used is one and a half bricks thick.",
+        "has_diagram": true,
+        "diagram_bbox": [
+            240,
+            524,
+            712,
+            968
+        ],
+        "page_index": 4,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1783097444/ocr_diagrams/c4asgwllb9n6vb0svail.png"
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "107",
+        "question_text": "The most important tool in brick laying for lifting and spreading mortar and for forming joints is",
+        "options": {
+            "a": "trowel",
+            "b": "square",
+            "c": "bolster",
+            "d": "scutch"
+        },
+        "correct_answer": "a",
+        "solution": "The most important tool in brick laying for lifting and spreading mortar and for forming joints is trowel.",
+        "has_diagram": false,
+        "page_index": 6
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "108",
+        "question_text": "Expansion Joints in masonry walls are provided in wall lengths greater than",
+        "options": {
+            "a": "10 m",
+            "b": "20 m",
+            "c": "30 m",
+            "d": "40 m"
+        },
+        "correct_answer": "c",
+        "solution": "As per IS 9414:1968 (table no 2) Expansion Joints in masonry walls are provided in wall lengths greater than 30 m.",
+        "has_diagram": false,
+        "page_index": 6
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "109",
+        "question_text": "The type of bond provided in brick masonry for carrying heavy loads is",
+        "options": {
+            "a": "single flemish bond",
+            "b": "double flemish bond",
+            "c": "English bond",
+            "d": "zigzag bond"
+        },
+        "correct_answer": "c",
+        "solution": "English bond provided in brick masonry for carrying heavy loads.",
+        "has_diagram": false,
+        "page_index": 6
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "110",
+        "question_text": "A mortar joint in masonry which is normal to the face of wall is known as",
+        "options": {
+            "a": "bed joint",
+            "b": "wall joint",
+            "c": "cross joint",
+            "d": "bonded joint"
+        },
+        "correct_answer": "c",
+        "solution": "A mortar joint in masonry which is normal to the face of wall is known as cross joint.",
+        "has_diagram": false,
+        "page_index": 6
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "111",
+        "question_text": "The slenderness ratio for masonry walls should not be more than",
+        "options": {
+            "a": "10",
+            "b": "20",
+            "c": "30",
+            "d": "40"
+        },
+        "correct_answer": "b",
+        "solution": "As per IS code 1905-1987 (Table 7), the maximum slenderness ratio is 20.",
+        "has_diagram": false,
+        "page_index": 6
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "112",
+        "question_text": "The proportions of lime and sand in the mortar normally used in brick construction are",
+        "options": {
+            "a": "1 : 2",
+            "b": "1 : 4",
+            "c": "1 : 6",
+            "d": "1 : 8"
+        },
+        "correct_answer": "a",
+        "solution": "The proportions of lime and sand in the mortar normally used in brick constriction are 1:2.",
+        "has_diagram": false,
+        "page_index": 7
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "113",
+        "question_text": "Number of vertical joints in a stretcher course is x times the number of joints in the header course, where x is equal to",
+        "options": {
+            "a": "1/2",
+            "b": "1",
+            "c": "2",
+            "d": "1/4"
+        },
+        "correct_answer": "a",
+        "solution": "The number of vertical joints in a stretcher course is half (1/2) times the number of joints in the header course.",
+        "has_diagram": false,
+        "page_index": 7
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "114",
+        "question_text": "As compared to stretcher course, the thickness of joints in header course should be",
+        "options": {
+            "a": "less",
+            "b": "more",
+            "c": "equal",
+            "d": "equal or more"
+        },
+        "correct_answer": "a",
+        "solution": "As compared to stretcher course, the thickness of joints in header course should be less.",
+        "has_diagram": false,
+        "page_index": 7
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "115",
+        "question_text": "As compared to English bond, double flemish bond is",
+        "options": {
+            "a": "stronger",
+            "b": "more compact",
+            "c": "costly",
+            "d": "none of the above"
+        },
+        "correct_answer": "d",
+        "solution": "Double flemish bond is less strong, less costly, and has a better appearance compared to English bond.",
+        "has_diagram": false,
+        "page_index": 7
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "116",
+        "question_text": "Single flemish bond consists of",
+        "options": {
+            "a": "double flemish bond facing and English bond backing in each course",
+            "b": "English bond facing and double flemish bond backing in each course",
+            "c": "stretcher bond facing and double flemish bond backing in each course",
+            "d": "double flemish bond facing and header bond backing in each course"
+        },
+        "correct_answer": "a",
+        "solution": "Single flemish bond consists of double flemish bond facing and English bond backing in each course.",
+        "has_diagram": false,
+        "page_index": 7
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "117",
+        "question_text": "The differential settlement in case of foundations on sandy soils should not exceed",
+        "options": {
+            "a": "25 mm",
+            "b": "40 mm",
+            "c": "65 mm",
+            "d": "100 mm"
+        },
+        "correct_answer": "a",
+        "solution": "The permissible differential settlement for isolated footing on sand is 25 mm.",
+        "has_diagram": false,
+        "page_index": 7
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "118",
+        "question_text": "In case of foundations on black cotton soils, the most suitable method to increase the bearing capacity of soils is to",
+        "options": {
+            "a": "increase the depth of foundation",
+            "b": "drain the soil",
+            "c": "compact the soil",
+            "d": "replace the poor soil"
+        },
+        "correct_answer": "d",
+        "solution": "In case of foundations on black cotton soils, the most suitable method to increase the bearing capacity of soils is to replace the poor soil.",
+        "has_diagram": false,
+        "page_index": 7
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "119",
+        "question_text": "The type of footing which is used to transmit heavy loads through steel columns is",
+        "options": {
+            "a": "raft foundation",
+            "b": "grillage foundation",
+            "c": "well foundation",
+            "d": "isolated footing"
+        },
+        "correct_answer": "b",
+        "solution": "A foundation consisting of one, two or more layers of beams (typically steel) superimposed on a concrete layer to disperse the load over a large area is a grillage foundation.",
+        "has_diagram": true,
+        "diagram_bbox": [
+            44,
+            532,
+            492,
+            914
+        ],
+        "page_index": 8,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1783097445/ocr_diagrams/vqiyyf4iwqlkmhaaz7hl.png"
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "120",
+        "question_text": "The maximum total settlement for isolated foundations on clayey soils should be limited to",
+        "options": {
+            "a": "25 mm",
+            "b": "40 mm",
+            "c": "65 mm",
+            "d": "100 mm"
+        },
+        "correct_answer": "c",
+        "solution": "The maximum total settlement for isolated foundations on clayey soils should be limited to 65 mm.",
+        "has_diagram": false,
+        "page_index": 8
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "121",
+        "question_text": "The type of pile which is driven at an inclination to resist inclined forces is known as",
+        "options": {
+            "a": "friction pile",
+            "b": "sheet pile",
+            "c": "batter pile",
+            "d": "anchor pile"
+        },
+        "correct_answer": "c",
+        "solution": "It is type of pile provided when vertical pile can not resist horizontal load effectively. It may be grouped with vertical pile to increase its lateral capacity.",
+        "has_diagram": false,
+        "page_index": 8
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "122",
+        "question_text": "The minimum depth of foundation in clayey soils is",
+        "options": {
+            "a": "0.5 m",
+            "b": "0.7 m",
+            "c": "0.9 m",
+            "d": "1.2 m"
+        },
+        "correct_answer": "c",
+        "solution": "The minimum depth of foundation in clayey soils is 0.9 m.",
+        "has_diagram": false,
+        "page_index": 9
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "123",
+        "question_text": "The maximum total settlement for raft foundation on clayey soils should be limited to",
+        "options": {
+            "a": "25 mm",
+            "b": "25 to 40 mm",
+            "c": "40 to 65 mm",
+            "d": "65 to 100 mm"
+        },
+        "correct_answer": "d",
+        "solution": "The maximum total settlement for raft foundation on clayey soils is 65 to 100 mm.",
+        "has_diagram": false,
+        "page_index": 9
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "124",
+        "question_text": "The bearing capacity of a water logged soil can be improved by",
+        "options": {
+            "a": "compacting the soil",
+            "b": "draining the soil",
+            "c": "increasing the depth of foundation",
+            "d": "grouting"
+        },
+        "correct_answer": "b",
+        "solution": "The bearing capacity of a water logged soil can be improved by draining the soil.",
+        "has_diagram": false,
+        "page_index": 9
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "125",
+        "question_text": "The type of flooring suitable for use in churches, theatres, public libraries and other places where noiseless floor covering is desired is",
+        "options": {
+            "a": "cork flooring",
+            "b": "glass flooring",
+            "c": "wooden flooring",
+            "d": "linoleum flooring"
+        },
+        "correct_answer": "a",
+        "solution": "Cork flooring isn't a new concept. These floors have been used in the United States since around the turn of the century. It gives you sound control because it absorbs foot falls and noise.",
+        "has_diagram": false,
+        "page_index": 9
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "126",
+        "question_text": "The vertical distance between the springing line and highest point of the inner curve of an arch is known as",
+        "options": {
+            "a": "intrados",
+            "b": "rise",
+            "c": "spandrel",
+            "d": "extrados"
+        },
+        "correct_answer": "b",
+        "solution": "The vertical distance between the springing line and highest point of the inner curve of an arch is known as rise.",
+        "has_diagram": false,
+        "page_index": 9
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "127",
+        "question_text": "Depth or height of the arch is the",
+        "options": {
+            "a": "perpendicular distance between intrados and extrados",
+            "b": "vertical distance between springing line and intrados",
+            "c": "perpendicular distance between springing line and extrados",
+            "d": "none of the above"
+        },
+        "correct_answer": "a",
+        "solution": "Depth or height of an arch is the perpendicular distance between the intrados of arch to the extrados of arch.",
+        "has_diagram": false,
+        "page_index": 11
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "128",
+        "question_text": "The triangular space formed between the extrados and the horizontal line drawn through the crown of an arch is known as",
+        "options": {
+            "a": "haunch",
+            "b": "spandril",
+            "c": "voussoirs",
+            "d": "skewbacks"
+        },
+        "correct_answer": "b",
+        "solution": "The triangular space formed between the extrados and the horizontal line drawn through the crown of an arch is known as spandril.",
+        "has_diagram": false,
+        "page_index": 11
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "129",
+        "question_text": "The lintels are preferred to arches because",
+        "options": {
+            "a": "arches require more headroom to span the openings like doors, windows etc.",
+            "b": "arches require strong abutments to withstand arch thrust",
+            "c": "arches are difficult in construction",
+            "d": "all of the above"
+        },
+        "correct_answer": "d",
+        "solution": "All of the given reasons make lintels preferred over arches.",
+        "has_diagram": false,
+        "page_index": 11
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "130",
+        "question_text": "In the construction of arches, sand box method is used for",
+        "options": {
+            "a": "centering",
+            "b": "actual laying of arch work",
+            "c": "striking of centring",
+            "d": "none of the above"
+        },
+        "correct_answer": "c",
+        "solution": "In the construction of arches, sand box method is used for striking of centring.",
+        "has_diagram": false,
+        "page_index": 11
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "131",
+        "question_text": "The type of arch generally constructed over a wooden lintel or over a flat arch for the purpose of carrying the load of the wall above is",
+        "options": {
+            "a": "segmental arch",
+            "b": "pointed arch",
+            "c": "relieving arch",
+            "d": "flat arch"
+        },
+        "correct_answer": "c",
+        "solution": "A relieving arch is constructed over a wooden lintel or flat arch to relieve the load of the wall above.",
+        "has_diagram": false,
+        "page_index": 11
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "132",
+        "question_text": "The type of joint commonly used at the junction of 'a principal rafter and tie beam in timber trusses is",
+        "options": {
+            "a": "A mortise and tennon joint",
+            "b": "oblique mortise and tennon joint",
+            "c": "butt joint",
+            "d": "Mitred joint"
+        },
+        "correct_answer": "b",
+        "solution": "The type of joint commonly used at the junction of 'a principal rafter and tie beam in timber trusses is oblique mortise and tennon joint.",
+        "has_diagram": false,
+        "page_index": 12
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "133",
+        "question_text": "The type of roof suitable in plains where rainfall is meagre and temperature is high",
+        "options": {
+            "a": "pitched and sloping roof",
+            "b": "flat roof",
+            "c": "shell roof",
+            "d": "none of the above"
+        },
+        "correct_answer": "b",
+        "solution": "Flat roof is suitable in plains where rainfall is meagre and temperature is high.",
+        "has_diagram": false,
+        "page_index": 12
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "134",
+        "question_text": "Pitched and sloping roofs are suitable for",
+        "options": {
+            "a": "coastal regions",
+            "b": "plain regions",
+            "c": "covering large areas",
+            "d": "all of the above"
+        },
+        "correct_answer": "a",
+        "solution": "Pitched and sloping roofs are suitable for coastal regions because of high rainfall and high wind pressure.",
+        "has_diagram": false,
+        "page_index": 4
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "135",
+        "question_text": "The type of roof which slopes in two directions with a break- in the slope on each side is known as",
+        "options": {
+            "a": "gable roof",
+            "b": "hip roof",
+            "c": "gambrel roof",
+            "d": "mansard roof"
+        },
+        "correct_answer": "c",
+        "solution": "Refer 133rd question for detail solution.",
+        "has_diagram": false,
+        "page_index": 5
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "136",
+        "question_text": "Mansard roof is a roof which slopes in",
+        "options": {
+            "a": "two directions without break in the slope on each side",
+            "b": "two directions with break in the slope on each side",
+            "c": "four directions without break in the slope on each side",
+            "d": "four directions with break in the slope on each side"
+        },
+        "correct_answer": "d",
+        "solution": "Refer 133rd question for detail solution.",
+        "has_diagram": false,
+        "page_index": 5
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "137",
+        "question_text": "The horizontal timber piece provided at the apex of a roof truss which supports the common rafter is called",
+        "options": {
+            "a": "ridge board",
+            "b": "hip rafter",
+            "c": "caves board",
+            "d": "valley rafter"
+        },
+        "correct_answer": "a",
+        "solution": "Ridge board is the horizontal timber piece provided at the apex of a roof truss which supports the common rafter.",
+        "has_diagram": false,
+        "page_index": 5
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "138",
+        "question_text": "The lower edge of the pitched roof, from where the rain water of the roof surface drops down, is known as",
+        "options": {
+            "a": "hip",
+            "b": "gable",
+            "c": "ridge",
+            "d": "eaves"
+        },
+        "correct_answer": "d",
+        "solution": "The various terms used in roof trusses are shown in Figure and are described below. (14) Eaves: The bottom edges of an inclined roof surface or a pitched roof is termed as eaves.",
+        "has_diagram": false,
+        "page_index": 5
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "139",
+        "question_text": "Higher pitch of the roof\n(i) results in stronger roof\n(ii) results in weaker roof\n(iii) requires more covering material\n(iv) requires less covering material\n\nThe correct answer is",
+        "options": {
+            "a": "(i) and (iii)",
+            "b": "(i) and (iv)",
+            "c": "(ii) and (iii)",
+            "d": "(ii) and (iv)"
+        },
+        "correct_answer": "a",
+        "solution": "Higher pitch of the roof results in stronger roof and requires more covering material.",
+        "has_diagram": false,
+        "page_index": 6
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "140",
+        "question_text": "Couple close roof is suitable for maximum span of",
+        "options": {
+            "a": "2.5 m",
+            "b": "3.5 m",
+            "c": "4.5 m",
+            "d": "5.5 m"
+        },
+        "correct_answer": "c",
+        "solution": "Couple close roof is suitable for maximum span of 4.5 m.",
+        "has_diagram": false,
+        "page_index": 6
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "141",
+        "question_text": "In a collar beam roof",
+        "options": {
+            "a": "there is no horizontal tie beam",
+            "b": "there is a horizontal tie at the feet of rafters only",
+            "c": "there is a horizontal tie at almost the middle of rafters only",
+            "d": "there are two horizontal ties, one at the feet and other at the middle of the rafters"
+        },
+        "correct_answer": "c",
+        "solution": "",
+        "has_diagram": false,
+        "page_index": 6
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "142",
+        "question_text": "The function of king post in a king post roof truss is",
+        "options": {
+            "a": "to support the frame work of the roof",
+            "b": "to receive the ends of principal rafter",
+            "c": "to prevent the walls from spreading outward",
+            "d": "to prevent the tie beam from sagging at its centre"
+        },
+        "correct_answer": "d",
+        "solution": "The function of king post in a king post roof truss is to prevent the tie beam from sagging at its centre.",
+        "has_diagram": false,
+        "page_index": 7
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "143",
+        "question_text": "The function of cleats in a roof truss is",
+        "options": {
+            "a": "to support the common rafter",
+            "b": "to support purlins",
+            "c": "to prevent the purlins from tilting",
+            "d": "all of the above"
+        },
+        "correct_answer": "c",
+        "solution": "The function of cleats in a roof truss is to prevent the purlins from tilting.",
+        "has_diagram": false,
+        "page_index": 7
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "144",
+        "question_text": "The term string is used for",
+        "options": {
+            "a": "the underside of a stair",
+            "b": "outer projecting edge of a tread",
+            "c": "a sloping member which supports the steps in a stair",
+            "d": "a vertical member between two treads"
+        },
+        "correct_answer": "c",
+        "solution": "The term string is used for a sloping member which supports the steps in a stair.",
+        "has_diagram": false,
+        "page_index": 7
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "145",
+        "question_text": "The vertical posts placed at the top and bottom ends of a flight supporting the hand rail are known as",
+        "options": {
+            "a": "balusters",
+            "b": "newal posts",
+            "c": "balustrades",
+            "d": "railings"
+        },
+        "correct_answer": "b",
+        "solution": "",
+        "has_diagram": false,
+        "page_index": 7
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "146",
+        "question_text": "The maximum number of steps in a flight should generally be restricted to",
+        "options": {
+            "a": "10",
+            "b": "12",
+            "c": "15",
+            "d": "no limit"
+        },
+        "correct_answer": "b",
+        "solution": "",
+        "has_diagram": false,
+        "page_index": 10
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "147",
+        "question_text": "The number of steps in a flight generally should not be less than",
+        "options": {
+            "a": "2",
+            "b": "3",
+            "c": "5",
+            "d": "no limit"
+        },
+        "correct_answer": "b",
+        "solution": "",
+        "has_diagram": false,
+        "page_index": 10
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "148",
+        "question_text": "Sum of tread and rise must lie between",
+        "options": {
+            "a": "300 to 350 mm",
+            "b": "400 to 450 mm",
+            "c": "500 to 550 mm",
+            "d": "600 to 650 mm"
+        },
+        "correct_answer": "b",
+        "solution": "Sum of tread and rise must lie between $400$ to $450\\text{ mm}$. Riser is $150\\text{ mm}$ (generally) and Tread is $300\\text{ mm}$. Sum of tread and rise = $450$.",
+        "has_diagram": false,
+        "page_index": 10
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "149",
+        "question_text": "Minimum width of landing should be",
+        "options": {
+            "a": "equal to width of stairs",
+            "b": "half the width of stairs",
+            "c": "twice the width of stairs",
+            "d": "one fourth the width of stairs"
+        },
+        "correct_answer": "a",
+        "solution": "Minimum width of landing should be equal to width of stairs.",
+        "has_diagram": false,
+        "page_index": 10
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "150",
+        "question_text": "In any good staircase, the maximum and minimum pitch respectively should be",
+        "options": {
+            "a": "$90^\\circ$ and $0^\\circ$",
+            "b": "$75^\\circ$ and $30^\\circ$",
+            "c": "$60^\\circ$ and $10^\\circ$",
+            "d": "$40^\\circ$ and $25^\\circ$"
+        },
+        "correct_answer": "d",
+        "solution": "In any good staircase, the maximum and minimum pitch respectively should be $45^\\circ$ and $30^\\circ$ (As per Building Construction by Rangwala). Hence most appropriate answer is (d).",
+        "has_diagram": false,
+        "page_index": 10
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "151",
+        "question_text": "The height between two floors is 3.00 m and riser is 150 mm. Assuming two flights between the floors, the number of treads will be",
+        "options": {
+            "a": "18",
+            "b": "19",
+            "c": "20",
+            "d": "21"
+        },
+        "correct_answer": "a",
+        "solution": "Height of flight = $3\\text{ m} = 300\\text{ cm}$.\nHeight of one flight = $300 / 2 = 150\\text{ cm}$.\nNo of treads in one flight = $150 / 15 = 10$, so no of treads in one flight = $10 - 1 = 9$.\nSo total no of tread in one storey = $9 \\times 2 = 18$.",
+        "has_diagram": false,
+        "page_index": 10
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "152",
+        "question_text": "Half turn stairs are the stairs which change their direction through",
+        "options": {
+            "a": "$90^\\circ$",
+            "b": "$180^\\circ$",
+            "c": "$270^\\circ$",
+            "d": "$360^\\circ$"
+        },
+        "correct_answer": "b",
+        "solution": "",
+        "has_diagram": false,
+        "page_index": 10
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "153",
+        "question_text": "Dog-legged stairs are",
+        "options": {
+            "a": "half turn stairs",
+            "b": "quarter turn stairs",
+            "c": "straight stairs",
+            "d": "three quarter turn stairs"
+        },
+        "correct_answer": "a",
+        "solution": "Stairs provide access for the various floors of the building. The stair consists of series of steps(flight) with landings at appropriate intervals. Stairways are made up of individual steps. Each step consists of a tread and a riser. The tread is the flat part that you step on. The riser is the vertical(up and down) part between each tread in the stairway.\nDog legged stair case is the most economical staircase. These stairs are arranged with two adjacent flights running parallel with a mid landing. Where space is less, dog legged staircase is generally provided resulting in economical utilization of available space. In this type of staircase landing is provided corresponding to the level at which the direction of the flight changes.",
+        "has_diagram": true,
+        "diagram_bbox": [
+            55,
+            570,
+            335,
+            850
+        ],
+        "page_index": 1,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1783097587/ocr_diagrams/nirlzm3mtm8y8siypydq.png"
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "154",
+        "question_text": "Nosing is the outer projecting edge of a",
+        "options": {
+            "a": "riser",
+            "b": "tread",
+            "c": "baluster",
+            "d": "landing"
+        },
+        "correct_answer": "b",
+        "solution": "NOTE: Refer 138th question for detail solution.",
+        "has_diagram": false,
+        "page_index": 1
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "155",
+        "question_text": "The lower most horizontal-piece of a shutter is known as",
+        "options": {
+            "a": "style",
+            "b": "transom",
+            "c": "sill",
+            "d": "bottom rail"
+        },
+        "correct_answer": "d",
+        "solution": "The lower most horizontal-piece of a shutter is known as bottom rail.",
+        "has_diagram": false,
+        "page_index": 1
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "156",
+        "question_text": "From the point of view of maximum daylight, the windows in a room should be located on",
+        "options": {
+            "a": "eastern side",
+            "b": "western side",
+            "c": "northern side",
+            "d": "southern side"
+        },
+        "correct_answer": "c",
+        "solution": "From the point of view of maximum daylight, the windows in a room should be located on northern side.",
+        "has_diagram": false,
+        "page_index": 3
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "157",
+        "question_text": "In 10 DS 20, DS refers to",
+        "options": {
+            "a": "double shutter door",
+            "b": "single shutter door",
+            "c": "double shutter window",
+            "d": "single shutter window"
+        },
+        "correct_answer": "b",
+        "solution": "In the size of the door:\nD stands for door\nS stands for single shutter\nT stands for double shutter\nThe number indicates the modular value of the size.\nHence, 10 DS 20 means a 1000 mm wide door with single shutter of height 2000 mm.",
+        "has_diagram": false,
+        "page_index": 4
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "158",
+        "question_text": "The designation of frames of doors, windows and ventilators shows them\n(i) width\n(ii) height\n(iii) type\nThe correct order in which they are shown in the designation of frames is",
+        "options": {
+            "a": "(i), (ii), (iii)",
+            "b": "(i), (iii), (ii)",
+            "c": "(ii), (i), (iii)",
+            "d": "(iii), (i), (ii)"
+        },
+        "correct_answer": "b",
+        "solution": "",
+        "has_diagram": false,
+        "page_index": 4
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "159",
+        "question_text": "The minimum number of hold fasts recommended on each side of a door frame and a window frame respectively are",
+        "options": {
+            "a": "2 and 1",
+            "b": "3 and 2",
+            "c": "2 and 2",
+            "d": "2 and 3"
+        },
+        "correct_answer": "b",
+        "solution": "",
+        "has_diagram": false,
+        "page_index": 4
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "160",
+        "question_text": "The horizontal projections at head and sill of a door frame which are embedded into the side walls for fixing the frame are known as",
+        "options": {
+            "a": "horns",
+            "b": "holdfasts",
+            "c": "jambs",
+            "d": "rebates"
+        },
+        "correct_answer": "a",
+        "solution": "NOTE: Refer 155th question.",
+        "has_diagram": false,
+        "page_index": 4
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "161",
+        "question_text": "The type of window provided on the sloping side of a pitched roof is called",
+        "options": {
+            "a": "dormer window",
+            "b": "gable window",
+            "c": "lantern",
+            "d": "none of the above"
+        },
+        "correct_answer": "a",
+        "solution": "NOTE: Refer 155th question.",
+        "has_diagram": false,
+        "page_index": 4
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "162",
+        "question_text": "As compared to top rail, the bottom and lock rails in a door frame are normally made",
+        "options": {
+            "a": "thinner",
+            "b": "thicker",
+            "c": "wider",
+            "d": "narrower"
+        },
+        "correct_answer": "c",
+        "solution": "As compared to top rail, the bottom and lock rails in a door frame are normally made wider.",
+        "has_diagram": false,
+        "page_index": 4
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "163",
+        "question_text": "The opening left in flat roofs, for lighting purposes is called",
+        "options": {
+            "a": "lantern",
+            "b": "dormer window",
+            "c": "sky light",
+            "d": "gable window"
+        },
+        "correct_answer": "a",
+        "solution": "The opening left in flat roofs, for lighting purposes is called lantern.\nNOTE: Refer 155th question.",
+        "has_diagram": false,
+        "page_index": 4
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "164",
+        "question_text": "The suitable door for entrance in an airconditioned building is a",
+        "options": {
+            "a": "revolving door",
+            "b": "louvered door",
+            "c": "collapsible door",
+            "d": "swinging door"
+        },
+        "correct_answer": "a",
+        "solution": "The suitable door for entrance in an airconditioned building is a revolving door.\nA revolving door typically consists of three or four doors that hang on a central shaft and rotate around a vertical axis within a cylindrical enclosure. Revolving doors are energy efficient as they (acting as an airlock) prevent drafts, thus decreasing the loss of heating or cooling for the building.\nRevolving doors were designed to relieve stack effect pressure in buildings.",
+        "has_diagram": false,
+        "page_index": 4
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "165",
+        "question_text": "Minimum elongation of steel for Fe250 and Fe415 respectively should be",
+        "options": {
+            "a": "14.5% and 14.5%",
+            "b": "14.5% and 23%",
+            "c": "23% and 14.5%",
+            "d": "23% and 23%"
+        },
+        "correct_answer": "c",
+        "solution": "",
+        "has_diagram": false,
+        "page_index": 5
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "166",
+        "question_text": "Match list-I with List-II and select the correct answer using the codes given below the lists:\nList-I\nA. wired glass\nB. fibre glass\nC. Ground glass\nList-II\n1. Used for thermal Insulation\n2. used in out side windows to Resist fire and breakage\n3. used where light is to be admitted but vision is to be obscured",
+        "options": {
+            "a": "A-1, B-2, C-3",
+            "b": "A-2, B-3, C-1",
+            "c": "A-3, B-1, C-2",
+            "d": "A-2, B-1, C-3"
+        },
+        "correct_answer": "d",
+        "solution": "",
+        "has_diagram": false,
+        "page_index": 5
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "167",
+        "question_text": "Select the incorrect statement.",
+        "options": {
+            "a": "Cullet is a broken glass added to the batch prior to melting.",
+            "b": "Glass is unaffected by hydrofluoric acid.",
+            "c": "Lehr is a cooling oven in which completed articles of glassware are slowly cooled at a controlled rate.",
+            "d": "None of the above"
+        },
+        "correct_answer": "b",
+        "solution": "Glass is affected by hydrofluoric acid. Cullet is a broken glass added to the batch prior to melting.",
+        "has_diagram": false,
+        "page_index": 5
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "168",
+        "question_text": "Select the correct statement.",
+        "options": {
+            "a": "Thermo-plastics undergo chemical change in the presence of heat.",
+            "b": "Thermoplastic does not soften on heating.",
+            "c": "both (a) and (b)",
+            "d": "none of the above"
+        },
+        "correct_answer": "d",
+        "solution": "Thermo plastic: These are polymer becomes soft on heating and become hard on cooling.\nThermo Setting: These are plastic which set after heat and pressure and do not change further application of heat and pressure.",
+        "has_diagram": false,
+        "page_index": 5
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "169",
+        "question_text": "Which of the following defect is caused by vaporization of entrapped moisture or solvents in a painted surface?",
+        "options": {
+            "a": "saponification",
+            "b": "blistering",
+            "c": "blooming",
+            "d": "cissing"
+        },
+        "correct_answer": "b",
+        "solution": "NOTE: Refer 145th question.",
+        "has_diagram": false,
+        "page_index": 5
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "170",
+        "question_text": "Extenders are added to the paint body to",
+        "options": {
+            "a": "give colour",
+            "b": "accelerate the process of drying",
+            "c": "reduce the viscosity",
+            "d": "increase the volume"
+        },
+        "correct_answer": "d",
+        "solution": "Extenders increases the volume and reduce the cost of paints. Extenders, when added to a paint, amounts to increase in pigment volume concentration (P.V.C.) and thus decrease the gloss, wash ability, durability, and adhesion. So, if a pigment is costly and its covering power is high, a portion of the pigment may be economically replaced by extenders without sacrificing efficiency in covering power of pigment.",
+        "has_diagram": false,
+        "page_index": 5
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "171",
+        "question_text": "Match list-I with List -II and select the correct answer using the codes given below the lists:\nList-I\nA. Pigment\nB. Drier\nC. Thinner\nD. Extender\nList-II\n1. Turpentine\n2. Iron oxide\n3. Zinc sulfate\n4. Aluminiumsilicate",
+        "options": {
+            "a": "A-3, B-2, C-1, D-4",
+            "b": "A-3, B-2, C-4, D-1",
+            "c": "A-2, B-3, C-1, D-4",
+            "d": "A-2, B-3, C-4, D-1"
+        },
+        "correct_answer": "c",
+        "solution": "Component of paints:\nBase: The base, usually a metallic oxide, is the principal constituent of the paint. It makes the paint film opaque and possesses binding properties which reduce the shrinkage cracks in the film on drying.\nVehicles: Also known as binder, vehicle is an oil to which the base is mixed.\nPigments: These are used to hide the surface imperfections and to impart the desired colour.\nSolvents: These are the oils used to thin the paints, increase the spread, and are also known as thinners.\nDriers: They also known as plasticizers, are chemicals added to paint for specific purposes, e.g., as catalyst (accelerate the drying of the vehicle).",
+        "has_diagram": false,
+        "page_index": 5
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "172",
+        "question_text": "Fibre saturation point of timber is the moisture content in % when",
+        "options": {
+            "a": "it is 12%",
+            "b": "the cell walls are saturated with water and cells cavity contains no water",
+            "c": "the cell walls are dried and cells-cavity contains water",
+            "d": "the cell walls are dried and cells-cavity contains no water"
+        },
+        "correct_answer": "b",
+        "solution": "Fibre saturation point of timber is the moisture content in % when the cell walls are saturated with water and cells cavity contains no water.",
+        "has_diagram": false,
+        "page_index": 7
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "173",
+        "question_text": "Which of the following mortar is most suitable for construction work in water-logged areas?",
+        "options": {
+            "a": "Time mortar",
+            "b": "gauged mortar",
+            "c": "cement mortar",
+            "d": "mud mortar"
+        },
+        "correct_answer": "c",
+        "solution": "Cement mortar is most suitable and stable binding material under drainage condition.",
+        "has_diagram": false,
+        "page_index": 7
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "174",
+        "question_text": "After addition of cement, the gauged mortar should be used within",
+        "options": {
+            "a": "30 minutes",
+            "b": "1-2 hours",
+            "c": "8-10 hours",
+            "d": "24 hours"
+        },
+        "correct_answer": "b",
+        "solution": "After addition of cement, the gauged mortar should be used within 1-2 hours.",
+        "has_diagram": false,
+        "page_index": 7
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "175",
+        "question_text": "Which of the following test is used to determine the rate of wear of stones",
+        "options": {
+            "a": "Crushing test",
+            "b": "abrasion test",
+            "c": "attrition test",
+            "d": "impact test"
+        },
+        "correct_answer": "c",
+        "solution": "This attrition test is conducted to determine the resistance power of stone against the grinding action. This test is mainly conducted to find out the suitability of a particular action. For the attrition test, 5 kg of broken angular pieces of stones is placed in both the cylinders of Deval's attrition testing machine. The cylinders are kept in an inclined position such that their axis makes an angle of 30 degrees with the horizontal. Now, the cylinders are rotated at the rate of 30 r.p.m (Revolution per minute) for 5 Hours. Later on, these pieces are removed from the cylinders and passed through a 1.5 mm sieve. The quantity of stones pieces retained on the sieve is weighed. The Loss of weight of the sample can be calculated. The percentage of wear can be calculated as:\n$$\\text{Percentage of wear} = \\frac{\\text{Loss in weight}}{\\text{Original initial weight}} \\times 100$$",
+        "has_diagram": false,
+        "page_index": 7
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "176",
+        "question_text": "Match list-I with List -II and select the correct answer using the codes given below the lists:\nList-I\nA. Agricultural\nB. Boat\nC. Railway\nD. Musical Instruments\nList-II\n1. Jack implements\n2. Deodar construction\n3. Babul Sleepers\n4. Benteak",
+        "options": {
+            "a": "A-1, B-2, C-3, D-4",
+            "b": "A-3, B-4, C-2, D-1",
+            "c": "A-4, B-3, C-1, D-2",
+            "d": "A-2, B-1, C-4, D-3"
+        },
+        "correct_answer": "b",
+        "solution": "",
+        "has_diagram": false,
+        "page_index": 8
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "177",
+        "question_text": "Which of the following pairs regarding the defects in timber are correctly matched?\n1. Upsets ........................due to over maturity and unventilated storage of wood\n2. Foxiness ....................Due to crushing of fibres running transversely\n3. Star shakes ...................radial splits widest at the circumference and diminishing towards the centre\n4. Heat shakes...................Cracks widest at the centre and diminishing towards the outer circumference\nSelect the correct answer using the codes given below.",
+        "options": {
+            "a": "1 and 2",
+            "b": "3 and 4",
+            "c": "1, 3 and 4",
+            "d": "2 and 4"
+        },
+        "correct_answer": "b",
+        "solution": "Defects in Timber: Defects occurring in timber are grouped into the following divisions:\n(a) Defects due to conversion: Chip mark, Diagonal grain, Torn grain, Wane.\n(b) Defects due to fungi: Blue stain, Brown rot, Dry rot, Heart rot, Sap stain, Wet rot, White rot.\n(c) Defects due to insects: Beetles, Marine borers, Termites.\n(d) Defects due to natural forces: Burls, Callus, Chemical stain, Coarse grain, Dead wood, Druxiness, Foxiness, Knots, Rind galls, Shakes, Twisted fibres, Upsets.",
+        "has_diagram": false,
+        "page_index": 8
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "178",
+        "question_text": "Which of the following pairs regarding explanations and the terminologies pertaining to masonry are correctly matched?\n1. Reveal .................... Projecting stone to serve as support for joist\n2. Throating.................... Groove provided on the underside of projecting elements like sills\n3. Gable ...........................Triangle shaped masonry work provided at the ends of sloped roof\n4. Freeze ...........................Vertical sides of finished openings for doors and windows\nSelect the correct answer using the codes given below.",
+        "options": {
+            "a": "1 and 2",
+            "b": "2 and 3",
+            "c": "3 and 4",
+            "d": "1 and 4"
+        },
+        "correct_answer": "b",
+        "solution": "",
+        "has_diagram": false,
+        "page_index": 10
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "179",
+        "question_text": "What is efflorescence?",
+        "options": {
+            "a": "Formation of white patches on the brick surface due to insoluble salts in the brick clay",
+            "b": "Swelling of brick due to presence of carbonaceous matter and gas",
+            "c": "Deformation of brick due to exposure to rain",
+            "d": "Impurities in the brick clay which show after burning."
+        },
+        "correct_answer": "a",
+        "solution": "Efflorescence: It is the appearance of fluffy white patches on the surface of concrete members. It is caused by poorly washed aggregate, salty water used in making concrete the salts being leaching out to the surface by rain water afterwards. This defect can be controlled to some extent by coating the surface by a water repellent.",
+        "has_diagram": false,
+        "page_index": 10
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "180",
+        "question_text": "Match list I with List II and select the correct answer using the codes given below the lists\nList I (Laboratory Tests)\nA. Vicat apparatus\nB. Le-Chatelier apparatus\nC. Slump test\nD. Fineness modulus\nList II (Property)\n1. Soundness of cement\n2. Initial setting time of cement\n3. Workability of cement Concrete\n4. Relative size of aggregates",
+        "options": {
+            "a": "A-1, B-2, C-3, D-4",
+            "b": "A-1, B-4, C-3, D-2",
+            "c": "A-3, B-4, C-2, D-1",
+            "d": "A-2, B-1, C-3, D-4"
+        },
+        "correct_answer": "d",
+        "solution": "NOTE: Refer 67th question for detail solution.",
+        "has_diagram": false,
+        "page_index": 11
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "181",
+        "question_text": "For a given environment, the most significant factor that influences the total shrinkage of concrete is",
+        "options": {
+            "a": "cement content of mix",
+            "b": "total amount of water added at the time of mixing",
+            "c": "size of the member concreted",
+            "d": "maximum size of the coarse aggregate used"
+        },
+        "correct_answer": "b",
+        "solution": "For a given environment, the most significant factor that influences the total shrinkage of concrete is total amount of water added at the time of mixing.\nShrinkage: Contraction of concrete in the absence of load is known as shrinkage. It may be classified as:\n(a) Plastic shrinkage: Shrinkage of concrete due to absorption of water by aggregates, evaporation of water and bleeding.\n(b) Drying shrinkage: The shrinkage taking place after the concrete has set and hardened.",
+        "has_diagram": false,
+        "page_index": 12
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "182",
+        "question_text": "As a construction material, plywood is preferred to thin planks of timber because of",
+        "options": {
+            "a": "Good strength and dimensional Stability in both lateral and longitudinal directions",
+            "b": "good dimensional stability in both longitudinal and lateral directions",
+            "c": "good strength in both longitudinal and lateral directions",
+            "d": "savings in cost and environmental considerations."
+        },
+        "correct_answer": "a",
+        "solution": "NOTE: Refer 32nd question.",
+        "has_diagram": false,
+        "page_index": 12
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "183",
+        "question_text": "The aggregate crushing value of coarse aggregates which is used for making concrete, which in turn is used for purposes other than wearing surfaces, should not exceed",
+        "options": {
+            "a": "30%",
+            "b": "40%",
+            "c": "45%",
+            "d": "50%"
+        },
+        "correct_answer": "c",
+        "solution": "The aggregate crushing value of coarse aggregates which is used for making concrete, which in turn is used for purposes other than wearing surfaces, should not exceed 45%.",
+        "has_diagram": false,
+        "page_index": 12
+    },
+    {
+        "subject": "Civil Engineering",
+        "question_number": "184",
+        "question_text": "Vanadium steel is normally used in the manufacture of",
+        "options": {
+            "a": "axles and springs",
+            "b": "ball bearings",
+            "c": "magnets",
+            "d": "railway switches and crossings"
+        },
+        "correct_answer": "a",
+        "solution": "Vanadium steel is normally used in the manufacture of axles and springs.",
+        "has_diagram": false,
+        "page_index": 12
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "185",
+        "question_text": "Match list I with List II and select the correct answer using the codes given below the lists:\nList I\nA. Pig iron\nB. Cast iron\nC. Wrought iron\nD. Steel\nList II\n1. L.D. process\n2. Reverberatory furnace\n3. Cupola furnace\n4. Electric reduction Furnace",
+        "options": {
+            "a": "A-2, B-1, C-4, D-3",
+            "b": "A-3, B-1, C-2, D-4",
+            "c": "A-4, B-3, C-2, D-1",
+            "d": "A-3, B-4, C-1, D-2"
+        },
+        "correct_answer": "c",
+        "solution": "The prominent steel-making processes are:\n1. Bessemer process\n2. Cementation process\n3. Crucible process\n4. Open Hearth process\n5. Electric Smelting process\n6. Duplex process\n7. Lintz and Donawitz (L.D.) process",
+        "has_diagram": false,
+        "page_index": 1
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "186",
+        "question_text": "Neoprene is suitable for use in",
+        "options": {
+            "a": "bearings of bridges",
+            "b": "hard duty rubber coatings of floors",
+            "c": "joinery works",
+            "d": "floors of dance halls"
+        },
+        "correct_answer": "a",
+        "solution": "Neoprene is suitable for use in bearings of bridges.",
+        "has_diagram": false,
+        "page_index": 1
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "187",
+        "question_text": "Consider the following statements:\nFor the manufacture of good quality bricks it is essential to\n1. use a reverberatory kiln\n2. blend the soil with clay or sand as deemed appropriate\n3. knead the soil in a ghani\n4. temper the soil in a pug mill\nOf these statements",
+        "options": {
+            "a": "1 and 3 are correct",
+            "b": "2 and 4 are correct",
+            "c": "1, 3, and 4 are correct",
+            "d": "2, 3, and 4 are correct"
+        },
+        "correct_answer": "b",
+        "solution": "Qualities of Good Brick:\n(i) Bricks should be table moulded, well burnt in kilns, copper coloured, free from cracks and with sharp and square edges.\n(ii) Bricks should be uniform shape and should be of standard size.\n(iii) Bricks should give clear ringing sound when struck each other.\n(iv) Bricks when broken should show a bright homogeneous and compact structure free from voids.\n(v) Bricks should not absorb water more than 20 percent by weight for first class bricks and 22 percent by weight for second class bricks, when soaked in cold water for a period of 24 hours.\n(vi) Bricks should be sufficiently hard no impression, should be left on brick surface, when it is scratched with finger nail.\n(vii) Bricks should be low thermal conductivity and they should be sound proof.\n(viii) Bricks should not break when dropped flat on hard ground from a height of about one meter.\n(ix) Bricks, when soaked in water for 24hours, should not show deposits of white salts when allowed to dry in shade.\n(x) No brick should have crushing strength below $55\\text{ kg/cm}^2$",
+        "has_diagram": false,
+        "page_index": 1
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "188",
+        "question_text": "Which one of the following pairs is correctly matched?",
+        "options": {
+            "a": "Sandstone..................igneous rock",
+            "b": "Limestone..................sedimentary rock",
+            "c": "Basalt..................metamorphic rock",
+            "d": "Granite..................argillaceous rock"
+        },
+        "correct_answer": "b",
+        "solution": "Limestone is the sedimentary rock.\nClassification of rock:\n(1) Based on geological formation: This classification is based upon the mode of the formation. On the basis of geological classification, rocks are classified as:\n(a) Igneous Rock: It is also known as primary, unstratified or eruptive rocks are of volcanic origin and are formed as a result of solidification of molten mass lying below or above the earth's surface.",
+        "has_diagram": false,
+        "page_index": 2
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "189",
+        "question_text": "To produce low heat cements, it is necessary to reduce the compound",
+        "options": {
+            "a": "$C_3S$",
+            "b": "$C_2S$",
+            "c": "$C_3A$",
+            "d": "$C_4AF$"
+        },
+        "correct_answer": "c",
+        "solution": "To produce low heat cements, it is necessary to reduce the compound $C_3A$.\nNOTE: Refer 81st question for detail solution.",
+        "has_diagram": false,
+        "page_index": 3
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "190",
+        "question_text": "Match list I with List II and select the correct answers using the codes given below the lists:\nList-I(Terms)\nA. Sap wood\nB. Knot\nC. Shake\nD. Rot\nList-II (Brief definition)\n1. Separation between adjacent layers of tissues\n2. Disintegration caused by fungi\n3. A branch base embedded in timber by natural growth\n4. Outer layers of along of wood",
+        "options": {
+            "a": "A-1, B-2, C-3, D-4",
+            "b": "A-3, B-4, C-2, D-1",
+            "c": "A-1, B-3, C-2, D-4",
+            "d": "A-4, B-3, C-1, D-2"
+        },
+        "correct_answer": "d",
+        "solution": "",
+        "has_diagram": false,
+        "page_index": 3
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "191",
+        "question_text": "Consider the following statements:\nSeasoning of timber results in\n1. increased strength\n2. increased durability\n3. reduced resilience\nOf these statements",
+        "options": {
+            "a": "1,2 and 3 are correct",
+            "b": "1 and 3 are correct",
+            "c": "1 and 2 are correct",
+            "d": "2 and 3 are correct"
+        },
+        "correct_answer": "c",
+        "solution": "Seasoning of timber results in increased strength and increased durability.\nNOTE: Refer 20th question for detail solution.",
+        "has_diagram": false,
+        "page_index": 4
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "192",
+        "question_text": "Timber can be made more fire resistant by",
+        "options": {
+            "a": "dipping and steeping process",
+            "b": "Sir Abel's process",
+            "c": "charring",
+            "d": "hot and cold open tank treatment"
+        },
+        "correct_answer": "b",
+        "solution": "Timber can be make fire resistant by sir Abel's process, application of special chemicals like anti prunes and coal tar.",
+        "has_diagram": false,
+        "page_index": 4
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "193",
+        "question_text": "Consider the following statements:\nAmong the more common varieties of timber, namely, sal, mango and deodar,\n1. sal is the strongest\n2. mango is the least durable\n3. deodar is the lightest\nof these statements",
+        "options": {
+            "a": "1, 2 and 3 are correct",
+            "b": "1 and 2 are correct",
+            "c": "1 and 3 are correct",
+            "d": "2 and 3 are correct"
+        },
+        "correct_answer": "a",
+        "solution": "",
+        "has_diagram": false,
+        "page_index": 4
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "194",
+        "question_text": "The wood preservative \"Creosote\" is derived from",
+        "options": {
+            "a": "wood or coal",
+            "b": "acidic cupric chromate",
+            "c": "A chromated zinc chloride",
+            "d": "pentachlorophenol"
+        },
+        "correct_answer": "a",
+        "solution": "Creosote is tar or coal type wood preservative. It has good termites resistance.",
+        "has_diagram": false,
+        "page_index": 4
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "195",
+        "question_text": "Consider the following statements:\nA good soil for making bricks should contain\n1. about 30% alumina\n2. about 10% lime nodules\n3. a small quantity of iron oxides\n4. about 15% magnesia\nOf these statements",
+        "options": {
+            "a": "1 and 2 are correct",
+            "b": "1 and 3 are correct",
+            "c": "1, 3 and 4 are correct",
+            "d": "2, 3 and 4 are correct"
+        },
+        "correct_answer": "b",
+        "solution": "NOTE: Refer 43rd question for detail solution.",
+        "has_diagram": false,
+        "page_index": 4
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "196",
+        "question_text": "Consider the following statements:\nThe effect of sea water on hardened concrete is to\n1. increase its strength\n2. reduce its strength\n3. retard setting\n4. decrease its durability\nOf these statements",
+        "options": {
+            "a": "1 and 3 are correct",
+            "b": "2 and 3 are correct",
+            "c": "2 and 4 are correct",
+            "d": "1 and 4 are correct"
+        },
+        "correct_answer": "c",
+        "solution": "",
+        "has_diagram": false,
+        "page_index": 4
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "197",
+        "question_text": "Consider the following statements:\nSoft varieties of pig iron are also known as\n1. foundry pig\n2. grey pig\n3. forge pig\n4. mottled pig\nOf these statements",
+        "options": {
+            "a": "1, 2, 3 and 4 are correct",
+            "b": "1 alone is correct",
+            "c": "1 and 2 are correct",
+            "d": "3 and 4 are correct"
+        },
+        "correct_answer": "c",
+        "solution": "Soft varieties of pig iron are also known as foundry pig and grey pig and the rest two varieties of the pig iron are hard pig iron.",
+        "has_diagram": false,
+        "page_index": 4
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "198",
+        "question_text": "Consider the following statements:\nExcess of sulphur in steel results in\n1. red shortness\n2. segregation\n3. cold shortness\nOf these statements",
+        "options": {
+            "a": "1 alone is correct",
+            "b": "2 alone is correct",
+            "c": "2 and 3 are correct",
+            "d": "1 and 2 are correct"
+        },
+        "correct_answer": "a",
+        "solution": "Excess of sulphur in steel results in red shortness.\nThe tendency of steel to form cracks during hot pressure treatment, such as forging, stamping, and rolling, in the temperature range corresponding to red or yellow heat ($850^\\circ\\text{--}1150^\\circ\\text{C}$).",
+        "has_diagram": false,
+        "page_index": 5
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "199",
+        "question_text": "Distemper is used to coat",
+        "options": {
+            "a": "external concrete surfaces",
+            "b": "interior surfaces not exposed to weather",
+            "c": "wood work",
+            "d": "compound walls"
+        },
+        "correct_answer": "b",
+        "solution": "They are most suitable for plastered surfaces as well as white washed surfaces of interior walls.",
+        "has_diagram": false,
+        "page_index": 5
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "200",
+        "question_text": "Putty is made up of",
+        "options": {
+            "a": "white lead and turpentine",
+            "b": "powered chalk and raw linseed oil",
+            "c": "red lead and linseed oil",
+            "d": "zinc oxide and boiled linseed oil"
+        },
+        "correct_answer": "b",
+        "solution": "Putty is made by linseed oil as a vehicle and white powered chalk as a base or body of paint.",
+        "has_diagram": false,
+        "page_index": 5
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "201",
+        "question_text": "The limit of proportionality is applicable more in the case of",
+        "options": {
+            "a": "concrete",
+            "b": "wood",
+            "c": "cast iron",
+            "d": "mild steel"
+        },
+        "correct_answer": "d",
+        "solution": "The limit of proportionality is applicable more in the case of mild steel because of its properties like ductile, durable and homogenous.",
+        "has_diagram": false,
+        "page_index": 5
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "202",
+        "question_text": "The compacting factor test of cement concrete determines its",
+        "options": {
+            "a": "strength",
+            "b": "porosity",
+            "c": "degree of compaction under loads",
+            "d": "workability"
+        },
+        "correct_answer": "d",
+        "solution": "Workability of concrete can be determined by the following tests:\n(i) Compaction Factor Test\n(ii) Slump Test\n(iii) Vee-Bee Consistometer Test\n(iv) Kelly Ball Test",
+        "has_diagram": true,
+        "diagram_bbox": [
+            180,
+            90,
+            800,
+            930
+        ],
+        "page_index": 6,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1783097707/ocr_diagrams/g5ouhzlrce5vstt0ucrz.png"
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "203",
+        "question_text": "The split tensile strength of M15 grade concrete when expressed as a percentage of its compressive strength is",
+        "options": {
+            "a": "10 to 15%",
+            "b": "15 to 20%",
+            "c": "20 to 25%",
+            "d": "25 to 30%"
+        },
+        "correct_answer": "a",
+        "solution": "The split tensile strength of M15 grade concrete when expressed as a percentage of its compressive strength is 10 to 15%.",
+        "has_diagram": true,
+        "diagram_bbox": [
+            680,
+            510,
+            870,
+            880
+        ],
+        "page_index": 7,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1783097708/ocr_diagrams/n4zd9unchmlcaabfpjun.png"
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "204",
+        "question_text": "The approximate ratio between the strength of cement concrete at 7 days and 28 days is",
+        "options": {
+            "a": "3/4",
+            "b": "2/3",
+            "c": "1/2",
+            "d": "1/3"
+        },
+        "correct_answer": "b",
+        "solution": "The approximate ratio between the strength of cement concrete at 7 days and 28 days is 2/3.",
+        "has_diagram": false,
+        "page_index": 8
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "205",
+        "question_text": "According to the relevant I.S code, the weight of the timber is to be reckoned at a moisture content of",
+        "options": {
+            "a": "zero",
+            "b": "4%",
+            "c": "8%",
+            "d": "12%"
+        },
+        "correct_answer": "d",
+        "solution": "According to the relevant I.S code, the weight of the timber is to be reckoned at the moisture content of 12%.",
+        "has_diagram": false,
+        "page_index": 8
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "206",
+        "question_text": "Match List-I (Name of stone) with List-II (Use of stone) and select the correct answer using the codes given below the lists:\nList-I\nA. Granite\nB. Marble\nC. Chalk\nD. Laterite\nList-II\n1. Ornamental work\n2. Ballast\n3. Rough stone work\n4. Manufacture of cement",
+        "options": {
+            "a": "A-3, B-1, C-2, D-4",
+            "b": "A-2, B-3, C-1, D-4",
+            "c": "A-2, B-1, C-4, D-3",
+            "d": "A-1, B-4, C-2, D-3"
+        },
+        "correct_answer": "c",
+        "solution": "",
+        "has_diagram": false,
+        "page_index": 8
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "207",
+        "question_text": "If p is the standard consistency of cement the amount of water used in conducting the initial setting time test on cement is",
+        "options": {
+            "a": "0.65 p",
+            "b": "0.85 p",
+            "c": "0.6 p",
+            "d": "0.8 p"
+        },
+        "correct_answer": "b",
+        "solution": "If p is the standard consistency of cement the amount of water used in conducting the initial setting time test on cement is 0.85 p.",
+        "has_diagram": false,
+        "page_index": 8
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "208",
+        "question_text": "For good bonding in brick masonry",
+        "options": {
+            "a": "all bricks need not be uniform in size",
+            "b": "bats must be used in alternate courses only",
+            "c": "the vertical joints in alternate courses should fall in plumb",
+            "d": "cement mortar used must have surkhi as additive"
+        },
+        "correct_answer": "c",
+        "solution": "For good bonding in brick masonry the vertical joints in alternate courses should fall in plumb.",
+        "has_diagram": false,
+        "page_index": 9
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "209",
+        "question_text": "Match List-I (Metals or Alloys) with List-II (Their common use in Building industry) and select the correct answer using the codes given below the lists:\nList-I\nA. Steel bars\nB. Zinc\nC. Aluminium\nD. Brass castings\nList-II\n1. Water taps\n2. Door Frames\n3. Reinforcement in concrete\n4. Corrugated roof sheet",
+        "options": {
+            "a": "A-3, B-1, C-4, D-2",
+            "b": "A-3, B-2, C-4, D-1",
+            "c": "A-1, B-3, C-4, D-2",
+            "d": "A-3, B-4, C-2, D-1"
+        },
+        "correct_answer": "d",
+        "solution": "",
+        "has_diagram": false,
+        "page_index": 9
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "210",
+        "question_text": "Lime mortar is generally made with",
+        "options": {
+            "a": "quick lime",
+            "b": "fat lime",
+            "c": "hydraulic lime",
+            "d": "white lime"
+        },
+        "correct_answer": "c",
+        "solution": "Lime mortar are mixture of air hardening lime or hydraulic lime, sand and water.",
+        "has_diagram": false,
+        "page_index": 9
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "211",
+        "question_text": "If in a concrete mix the fineness modulus of coarse aggregate is 7.6, the fineness modulus of fine aggregate is 2.8 and the economical value of the fineness modulus of combined aggregate is 6.4, then the proportion of the fine aggregate is",
+        "options": {
+            "a": "25%",
+            "b": "$33\\frac{1}{3}\\%$",
+            "c": "50%",
+            "d": "$66\\frac{2}{3}\\%$"
+        },
+        "correct_answer": "b",
+        "solution": "The proportion of fine aggregate to combined aggregate:\n$= \\frac{P' - P}{P - P''}$\nWhere $P' = 7.6$, $P = 6.4$, $P'' = 2.8$\n$= \\frac{7.6 - 6.4}{6.4 - 2.8} \\times 100 = 33.33\\%$",
+        "has_diagram": false,
+        "page_index": 9
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "212",
+        "question_text": "Match List-I with List-II and select the correct answer:\nList-I\nA. Vicat's needle\nB. Michael's compound lever apparatus\nC. Le Chatelier's apparatus\nD. Turbidimeter\nList-II\n1. Setting time\n2. Specific surface\n3. Tensile strength\n4. Soundness",
+        "options": {
+            "a": "A-1, B-2, C-3, D-4",
+            "b": "A-1, B-3, C-4, D-2",
+            "c": "A-2, B-4, C-3, D-1",
+            "d": "A-3, B-4, C-1, D-2"
+        },
+        "correct_answer": "b",
+        "solution": "NOTE: Refer 67th question for detail solution.",
+        "has_diagram": false,
+        "page_index": 9
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "213",
+        "question_text": "Tensile strength of concrete is measured by",
+        "options": {
+            "a": "direct tension test in the universal testing machine",
+            "b": "applying compressive load along the diameter of the cylinder",
+            "c": "applying third point loading on a prism",
+            "d": "applying tensile load along the diameter of the cylinder"
+        },
+        "correct_answer": "c",
+        "solution": "Flexure tensile strength test is performed to estimate the tensile load at which concrete may crack. The load in this test is applied through two similar rollers mounted at third points.",
+        "has_diagram": false,
+        "page_index": 10
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "214",
+        "question_text": "The approximate ratio of strength of 15 cm x 30 cm concrete cylinder to that of 15 cm cube of the same concrete is",
+        "options": {
+            "a": "1.25",
+            "b": "1.00",
+            "c": "0.85",
+            "d": "0.50"
+        },
+        "correct_answer": "c",
+        "solution": "The approximate ratio of strength of 15 cm x 30 cm concrete cylinder to that of 15 cm cube of the same concrete is 0.80",
+        "has_diagram": false,
+        "page_index": 10
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "215",
+        "question_text": "The coefficient of linear expansion of granite is in the range of that of",
+        "options": {
+            "a": "glass",
+            "b": "mild steel",
+            "c": "high carbon steel",
+            "d": "bamboo"
+        },
+        "correct_answer": "a",
+        "solution": "The coefficient of linear expansion of granite is in the range of that of glass.",
+        "has_diagram": false,
+        "page_index": 10
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "216",
+        "question_text": "The texture of sandstone is",
+        "options": {
+            "a": "Porphyritic",
+            "b": "conglomerate",
+            "c": "vesicular",
+            "d": "granular crystalline"
+        },
+        "correct_answer": "d",
+        "solution": "The texture of sand stone is granular crystalline.",
+        "has_diagram": false,
+        "page_index": 10
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "217",
+        "question_text": "A good brick when immersed in water bath for 24 hours should not absorb more than",
+        "options": {
+            "a": "20% of its dry weight",
+            "b": "30% of its saturated weight",
+            "c": "10% of its dry weight",
+            "d": "20% of its saturated weight"
+        },
+        "correct_answer": "a",
+        "solution": "A good brick when immersed in water bath for 24 hours should not absorb more than 20% of its dry weight.",
+        "has_diagram": false,
+        "page_index": 10
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "218",
+        "question_text": "For complete hydration of cement, the w/c ratio needed is",
+        "options": {
+            "a": "less than 0.25",
+            "b": "more than 0.25 but less than 0.35",
+            "c": "more than 0.35 but less than 0.45",
+            "d": "more than 0.45 but less than 0.60"
+        },
+        "correct_answer": "c",
+        "solution": "In the cement about an average 23% of water by weight of cement is required for complete hydration of Portland cement.\nThis water combines chemically with the cement compounds and is known as bound water. Some quantity of water, about 15 per cent by weight of cement, is required to fill the cement gel pores and is known as gel water.\nTherefore, a total of 38 per cent of water by weight of cement is required to complete the chemical reaction.\nThe water/cement ratio less than 0.38 is very common for high strength concretes. If excess water is present, it will lead to capillary cavities.\nThus for complete hydration of cement the w/c ratio needed is more than 0.35 but less than 0.45.",
+        "has_diagram": false,
+        "page_index": 10
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "219",
+        "question_text": "Match List-I (Type of cement) with List-II (Characteristics) and select the correct answer:\nList-I\nA. Air entraining Portland cement\nB. Low-heat Portland cement\nC. Hydrophobic Portland cement\nD. Rapid hardening Portland cement\nList-II\n1. Suitable for very large structures\n2. Unsuitable for very large masses of concrete\n3. Greater resistance to frost attack\n4. Safe storage under unfavorable conditions of humidity",
+        "options": {
+            "a": "A-4, B-2, C-1, D-3",
+            "b": "A-3, B-4, C-1, D-2",
+            "c": "A-3, B-1, C-4, D-2",
+            "d": "A-4, B-1, C-2, D-3"
+        },
+        "correct_answer": "c",
+        "solution": "NOTE: Refer 81st question for detail solution.",
+        "has_diagram": false,
+        "page_index": 11
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "220",
+        "question_text": "The expansion and shrinkage of plywood's are comparatively very low as",
+        "options": {
+            "a": "they are held in position by adhesives",
+            "b": "they are glued under pressure",
+            "c": "plies are placed at right angles to each other",
+            "d": "they are prepared from veneers"
+        },
+        "correct_answer": "c",
+        "solution": "The expansion and shrinkage of plywood's are comparatively very low as plies are placed at right angles to each other.\nNOTE: Refer 32nd question for detail solution.",
+        "has_diagram": false,
+        "page_index": 11
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "221",
+        "question_text": "Seasoning of timber is required to",
+        "options": {
+            "a": "soften the timber",
+            "b": "harden the timber",
+            "c": "straighten the timber",
+            "d": "remove sap from the timber"
+        },
+        "correct_answer": "d",
+        "solution": "Seasoning of timber is required to remove sap from the timber.\nNOTE: Refer 39th question for detail solution.",
+        "has_diagram": false,
+        "page_index": 11
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "222",
+        "question_text": "Match List-I (Cement mortar for different work) with List-II (Proportion of cement: sand in mortar) and select the correct answer:\nList-I\nA. Normal brick works\nB. Plastering works\nC. Grouting the cavernous rock\nD. Guniting\nList-II\n1. 1:4\n2. 1:3\n3. 1:6\n4. 1:1.5",
+        "options": {
+            "a": "A-1, B-2, C-3, D-4",
+            "b": "A-3, B-1, C-2, D-4",
+            "c": "A-3, B-1, C-4, D-2",
+            "d": "A-4, B-3, C-2, D-1"
+        },
+        "correct_answer": "c",
+        "solution": "",
+        "has_diagram": false,
+        "page_index": 11
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "223",
+        "question_text": "The ratio of Young's modulus of high tensile steel to that of mild steel is about",
+        "options": {
+            "a": "0.5",
+            "b": "1.0",
+            "c": "1.5",
+            "d": "2.0"
+        },
+        "correct_answer": "b",
+        "solution": "The ratio of Young's modulus of all steel is same.",
+        "has_diagram": false,
+        "page_index": 12
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "224",
+        "question_text": "Bureau of Indian Standards classifies bitumen into grades 65/25, 85/40 etc. The first and second numbers respectively refer to",
+        "options": {
+            "a": "Softening point and penetration",
+            "b": "Penetration and Softening point",
+            "c": "Flash point and penetration",
+            "d": "Flash point and Softening point"
+        },
+        "correct_answer": "a",
+        "solution": "The first and second numbers respectively refer to Softening point and penetration.",
+        "has_diagram": false,
+        "page_index": 12
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "225",
+        "question_text": "Polyvinyl chloride (PVC) is a",
+        "options": {
+            "a": "thermosetting material",
+            "b": "thermoplastic material",
+            "c": "elastoplastic material",
+            "d": "rigid plastic material"
+        },
+        "correct_answer": "b",
+        "solution": "Polyvinyl Chloride (PVC) is a high strength thermoplastic material widely used in applications, such as pipes, medical devices, wire and cable insulation. It is the world's third-most widely produced synthetic plastic polymer.",
+        "has_diagram": false,
+        "page_index": 12
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "226",
+        "question_text": "Blast furnace slag has approximately",
+        "options": {
+            "a": "45% calcium oxide and about 35% silica",
+            "b": "50% alumina and 20% calcium oxide",
+            "c": "25% magnesia and 15% silica",
+            "d": "25% calcium sulphate and 15% alumina"
+        },
+        "correct_answer": "a",
+        "solution": "Blast furnace slag has approximately 45% calcium oxide and about 35% silica.",
+        "has_diagram": false,
+        "page_index": 12
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "227",
+        "question_text": "King closers are related to",
+        "options": {
+            "a": "doors and windows",
+            "b": "king posts truss",
+            "c": "queen post truss",
+            "d": "brick masonry"
+        },
+        "correct_answer": "d",
+        "solution": "NOTE: Refer 105th question for detail solution.",
+        "has_diagram": false,
+        "page_index": 12
+    },
+    {
+        "subject": "Building Materials",
+        "question_number": "228",
+        "question_text": "High alumina cement is produced by fusing together a mixture of",
+        "options": {
+            "a": "Limestone and bauxite",
+            "b": "Limestone, bauxite and gypsum",
+            "c": "Limestone, gypsum and clay",
+            "d": "Limestone, gypsum, bauxite, clay and chalk"
+        },
+        "correct_answer": "a",
+        "solution": "This is not a type of Portland cement and is manufactured by fusing 40% bauxite, 40% lime, 15% iron oxide with a little of ferric oxide and silica, magnesia, etc. at a very high temperature.\nGypsum is not use in High alumina cement.",
+        "has_diagram": false,
+        "page_index": 12
+    }
+]
