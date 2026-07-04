@@ -1,13 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Latex from 'react-latex-next';
-
-const formatLatex = (text) => {
-  if (!text) return '';
-  if (typeof text === 'string' && text.includes('\\') && !text.includes('$')) {
-    return `$${text}$`;
-  }
-  return text;
-};
+import { formatLatex } from '../utils/latex';
 
 const QuizEngine = ({ questions, onComplete }) => {
   const [currentIndex, setCurrentIndex] = useState(0);

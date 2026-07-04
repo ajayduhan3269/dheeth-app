@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Latex from 'react-latex-next';
 import { socket } from '../socket';
 import { useAppMode } from '../context/AppModeContext';
+import { formatLatex } from '../utils/latex';
 
 const SUBJECTS = [
   { id: 'Fluid Mechanics', label: 'Fluid Mechanics' },
@@ -253,7 +254,7 @@ const GroupRoom = () => {
           {/* Question */}
           <div className="bg-dh-card rounded-xl p-5 border border-dh-border mb-5">
             <div className="text-base font-semibold text-dh-text">
-              <Latex>{currentQuestion.question}</Latex>
+              <Latex>{formatLatex(currentQuestion.question)}</Latex>
             </div>
             {currentQuestion.diagram && (
               <img src={currentQuestion.diagram} alt="Diagram" className="mt-4 rounded-lg max-w-full" />
@@ -286,7 +287,7 @@ const GroupRoom = () => {
                   <span className={`w-8 h-8 rounded-full flex items-center justify-center font-mono font-bold text-sm ${revealed && optLetter === correctOption ? 'bg-dh-green text-black' : 'bg-dh-border text-dh-text-muted'}`}>
                     {key}
                   </span>
-                  <span className="flex-1"><Latex>{opt}</Latex></span>
+                  <span className="flex-1"><Latex>{formatLatex(opt)}</Latex></span>
                 </button>
               );
             })}
@@ -297,7 +298,7 @@ const GroupRoom = () => {
             <div className="mt-5 p-4 bg-dh-accent/5 border-l-4 border-dh-accent rounded-r-md">
               <h4 className="text-dh-accent-light font-heading font-bold mb-2 text-sm">Explanation:</h4>
               <div className="text-dh-text text-sm">
-                <Latex>{currentQuestion.explanation || 'No explanation available.'}</Latex>
+                <Latex>{formatLatex(currentQuestion.explanation || 'No explanation available.')}</Latex>
               </div>
             </div>
           )}

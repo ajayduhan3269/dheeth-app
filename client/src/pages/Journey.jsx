@@ -8,6 +8,7 @@ import Confetti from '../components/Confetti';
 import AnimatedNumber from '../components/AnimatedNumber';
 import PageSkeleton from '../components/PageSkeleton';
 import { sounds } from '../utils/sound';
+import { formatLatex } from '../utils/latex';
 
 const SUBJECT_META = {
   'Fluid Mechanics': { icon: '🌊', gradient: 'from-cyan-500 to-blue-700' },
@@ -205,7 +206,7 @@ const Journey = () => {
           </div>
           <div className="bg-dh-card rounded-2xl p-5 mb-4 border border-dh-border">
             <div className="text-base font-semibold text-dh-text">
-              <Latex>{q.questionText}</Latex>
+              <Latex>{formatLatex(q.questionText)}</Latex>
             </div>
             {q.hasDiagram && q.diagramUrl && (
               <img src={q.diagramUrl} alt="Diagram" className="mt-3 max-h-36 rounded-lg object-contain bg-dh-surface" />
@@ -234,7 +235,7 @@ const Journey = () => {
                   <span className={`w-8 h-8 rounded-lg flex items-center justify-center font-mono font-bold text-sm ${quizAnswered && optLetter === correctLetter ? 'bg-dh-green text-black' : quizAnswered && optLetter === quizSelected ? 'bg-dh-red text-white' : 'bg-dh-surface text-dh-text-muted'}`}>
                     {key}
                   </span>
-                  <span className="flex-1"><Latex>{opt}</Latex></span>
+                  <span className="flex-1"><Latex>{formatLatex(opt)}</Latex></span>
                 </button>
               );
             })}

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import api from '../api';
 import Latex from 'react-latex-next';
 import { useNavigate } from 'react-router-dom';
+import { formatLatex } from '../utils/latex';
 
 const SavedQuestions = () => {
   const [bookmarks, setBookmarks] = useState([]);
@@ -71,7 +72,7 @@ const SavedQuestions = () => {
                 </div>
 
                 <div className="text-lg font-semibold text-dh-text mb-6">
-                  <Latex>{b.questionText}</Latex>
+                  <Latex>{formatLatex(b.questionText)}</Latex>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -91,7 +92,7 @@ const SavedQuestions = () => {
                           {optLetter}
                         </div>
                         <div className="flex-1 pt-1 overflow-hidden">
-                          <Latex>{opt}</Latex>
+                          <Latex>{formatLatex(opt)}</Latex>
                         </div>
                       </div>
                     );
@@ -101,7 +102,7 @@ const SavedQuestions = () => {
                 {b.explanation && (
                   <div className="mt-6 p-4 bg-dh-accent/5 border-l-4 border-dh-accent rounded-r-lg text-dh-text text-sm">
                     <span className="font-heading font-bold text-dh-accent-light">Explanation: </span> 
-                    <Latex>{b.explanation}</Latex>
+                    <Latex>{formatLatex(b.explanation)}</Latex>
                   </div>
                 )}
                 

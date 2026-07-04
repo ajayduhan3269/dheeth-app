@@ -10,7 +10,7 @@
             "d": "Surface tension"
         },
         "correct_answer": "c",
-        "solution": "1 pascal = $1 N/m^2$. Dynamic viscosity or absolute viscosity unit is $kg/m \\cdot sec$, $Ns/m^2$ and poise. Pressures unit is $N/m^2$ pascal. Kinematic viscosity unit is stokes, $m^2/sec$. Surface tension unit is $N/m$, $dyne/cm$.",
+        "solution": "1 pascal = $1 \\text{ N/m}^2$. Dynamic viscosity or absolute viscosity unit is $\\text{kg}/(\\text{m} \\cdot \\text{sec})$, $\\text{Ns/m}^2$ and poise. Pressures unit is $\\text{N/m}^2$ pascal. Kinematic viscosity unit is stokes, $\\text{m}^2/\\text{sec}$. Surface tension unit is $\\text{N/m}$, $\\text{dyne/cm}$.",
         "has_diagram": false
     },
     {
@@ -32,13 +32,13 @@
         "question_number": "3",
         "question_text": "The unit of kinematic viscosity is",
         "options": {
-            "a": "$gm/cm-sec^2$",
-            "b": "$dyne-sec/cm^2$",
-            "c": "$gm/cm^2-sec$",
-            "d": "$cm^2/sec$"
+            "a": "$\\text{gm/cm-sec}^2$",
+            "b": "$\\text{dyne-sec/cm}^2$",
+            "c": "$\\text{gm/cm}^2\\text{-sec}$",
+            "d": "$\\text{cm}^2/\\text{sec}$"
         },
         "correct_answer": "d",
-        "solution": "Kinematic viscosity = $\\frac{\\text{dynamic viscosity}}{\\text{Density of fluid}}$. SI unit is the ($m^2/sec$) and CGS unit is the stokes. 1 stokes = $0.01 cm^2/sec = 0.0001 m^2/sec$.",
+        "solution": "Kinematic viscosity = $\\frac{\\text{dynamic viscosity}}{\\text{Density of fluid}}$. SI unit is the ($\\text{m}^2/\\text{sec}$) and CGS unit is the stokes. 1 stokes = $0.01 \\text{ cm}^2/\\text{sec} = 0.0001 \\text{ m}^2/\\text{sec}$.",
         "has_diagram": false
     },
     {
@@ -52,7 +52,7 @@
             "d": "None of the above"
         },
         "correct_answer": "c",
-        "solution": "Given $\\mu = 0.5$ poise = $0.05 Ns/m^2$. [1 poise = $0.1 Ns/m^2$]. $\\delta = 0.5 \\times 1000 = 500 kg/m^3$. Since kinematic viscosity $L = \\frac{\\mu}{\\delta}$. $L = \\frac{0.05}{500}$. $L = 1 \\times 10^{-4} m^2/sec$. Since $1 m^2/sec = 10^4$ stokes. $L = 1 \\times 10^{-4} \\times 10^4$. $L = 1$ stokes.",
+        "solution": "Given $\\mu = 0.5$ poise = $0.05 \\text{ Ns/m}^2$. [1 poise = $0.1 \\text{ Ns/m}^2$]. $\\rho = 0.5 \\times 1000 = 500 \\text{ kg/m}^3$. Since kinematic viscosity $\\nu = \\frac{\\mu}{\\rho}$. $\\nu = \\frac{0.05}{500}$. $\\nu = 1 \\times 10^{-4} \\text{ m}^2/\\text{sec}$. Since $1 \\text{ m}^2/\\text{sec} = 10^4$ stokes. $\\nu = 1 \\times 10^{-4} \\times 10^4$. $\\nu = 1$ stokes.",
         "has_diagram": false
     },
     {
@@ -80,7 +80,7 @@
             "d": "Viscosity and rate of angular deformation"
         },
         "correct_answer": "b",
-        "solution": "Newton's law of viscosity states that shear stress ($\tau$) is directly proportional to the rate of angular deformation ($\frac{do}{dt}$). The constant of proportionality is the dynamic viscosity ($\text{μ}$). So, $\tau = \text{μ} \frac{do}{dt}$. Therefore, Newton's law of viscosity relates shear stress and rate of angular deformation.",
+        "solution": "Newton's law of viscosity states that shear stress ($\\tau$) is directly proportional to the rate of angular deformation ($\\frac{d\\theta}{dt}$). The constant of proportionality is the dynamic viscosity ($\\mu$). So, $\\tau = \\mu \\frac{d\\theta}{dt}$. Therefore, Newton's law of viscosity relates shear stress and rate of angular deformation.",
         "has_diagram": false
     },
     {
@@ -130,7 +130,7 @@
             "d": "$\\frac{\\gamma\\sigma}{2r}$"
         },
         "correct_answer": "c",
-        "solution": "Let r is the capillary tube of radius\nAnd height of capillary rise is h\n$y = \\text{specific weight } \\sigma = \\text{surface tension}$\nso, from vertical equilibrium\n$(\\sigma \\cos \\theta) = \\gamma \\times \\pi/4\\ d^2 \\times h$\nWhere d= dia. of capillary tube\n$(d = 2r)$\nTaking $\\theta = 0$, $\\cos \\theta = 1$\n$\\Rightarrow h = \\frac{2\\sigma}{\\gamma r}$",
+        "solution": "Let r is the capillary tube of radius\nAnd height of capillary rise is h\n$\\gamma = \\text{specific weight } \\sigma = \\text{surface tension}$\nso, from vertical equilibrium\n$(\\sigma \\cos \\theta) \\pi d = \\gamma \\times \\frac{\\pi}{4} d^2 \\times h$\nWhere d= dia. of capillary tube\n$(d = 2r)$\nTaking $\\theta = 0$, $\\cos \\theta = 1$\n$\\Rightarrow h = \\frac{2\\sigma}{\\gamma r}$",
         "has_diagram": true,
         "diagram_bbox": [
             325,
@@ -177,9 +177,9 @@
         "question_text": "One kilo-pascal is equivalent to",
         "options": {
             "a": "Only when fluid is frictionless and incompressible",
-            "b": "$1000\\text{N/m}^2$",
-            "c": "$1000\\text{N/mm}^2$",
-            "d": "$1000\\text{N/cm}^2$"
+            "b": "$1000\\text{ N/m}^2$",
+            "c": "$1000\\text{ N/mm}^2$",
+            "d": "$1000\\text{ N/cm}^2$"
         },
         "correct_answer": "b",
         "solution": "$1\\text{ kilopascal} = 1 \\times 10^3\\text{ N/m}^2$\n$[1\\text{ pascal} = 10^3\\text{ N/m}^2]$\n$1\\text{ kilo pascal} = 1000\\text{ N/m}^2$",
@@ -197,7 +197,7 @@
             "d": "Depress with convex surface upward"
         },
         "correct_answer": "d",
-        "solution": "$\\Phi < 90^\\circ$ Cohesion < adhesion: Wetting of surface, Concave top surfaces, Rise in capillary tube\n$\\Phi > 90^\\circ$ Adhesion < Cohesion: Does not wets the surfaces, Convex top surface, drop in capillary tube",
+        "solution": "$\\theta < 90^\\circ$ Cohesion < adhesion: Wetting of surface, Concave top surfaces, Rise in capillary tube\n$\\theta > 90^\\circ$ Adhesion < Cohesion: Does not wets the surfaces, Convex top surface, drop in capillary tube",
         "has_diagram": false,
         "page_index": 2
     },
@@ -227,7 +227,7 @@
             "d": "13.12"
         },
         "correct_answer": "c",
-        "solution": "Since pressure $P = \\delta gh$\nHere $G = 1.59$, Hence $\\delta = 1.59 \\times 1000$\n$P = 200\\text{ kPa}$, $\\delta = 1590\\text{ kg/m}^3$\nSo, $200 \\times 10^3 = 1590 \\times 9.81 \\times h$\n$\\Rightarrow h = 12.82\\text{ m}$",
+        "solution": "Since pressure $P = \\rho gh$\nHere $G = 1.59$, Hence $\\rho = 1.59 \\times 1000$\n$P = 200\\text{ kPa}$, $\\rho = 1590\\text{ kg/m}^3$\nSo, $200 \\times 10^3 = 1590 \\times 9.81 \\times h$\n$\\Rightarrow h = 12.82\\text{ m}$",
         "has_diagram": false,
         "page_index": 3
     },
@@ -272,7 +272,7 @@
             "d": "$14\\text{ KN/m}^2$"
         },
         "correct_answer": "d",
-        "solution": "Pressure $P = \\delta gh$ (Taking $g = 10/\\text{sec}^2$)\n$P = (800 \\times 10 \\times 0.5) + (1000 \\times 10 \\times 1)$\n$P = 14\\text{ kN/m}^2$",
+        "solution": "Pressure $P = \\rho gh$ (Taking $g = 10/\\text{sec}^2$)\n$P = (800 \\times 10 \\times 0.5) + (1000 \\times 10 \\times 1)$\n$P = 14\\text{ kN/m}^2$",
         "has_diagram": false,
         "page_index": 3
     },
@@ -317,7 +317,7 @@
             "d": "$pA \\tan\\theta$"
         },
         "correct_answer": "a",
-        "solution": "Total pressure on a plane surface inclined at angle $\\theta$\n$P = \\delta g \\bar{h}$\n$P = pA$",
+        "solution": "Total pressure on a plane surface inclined at angle $\\theta$\n$P = \\rho g \\bar{h} A$\n$P = pA$",
         "has_diagram": false,
         "page_index": 4
     },
@@ -414,7 +414,7 @@
             "d": "(ii) and (iv)"
         },
         "correct_answer": "b",
-        "solution": "Sol. (b) The Increase is meta-centric height reduces the time period of oscillating body which is quite uncomfortable for passengers.",
+        "solution": "Sol. (b) The Increase is metacentric height reduces the time period of oscillating body which is quite uncomfortable for passengers.",
         "has_diagram": true,
         "diagram_bbox": [
             30,
@@ -436,7 +436,7 @@
             "d": "20 KN"
         },
         "correct_answer": "b",
-        "solution": "Sol.(b)\nFrom Archimedes principal $W = F_B$\nHere buoyant force $F_B = \\text{weight of fluid displaced by block}$\nSo, $F_B = (YLBH)$\n$F_B = 10 \\times 2 \\times 1 \\times 0.5$\n$F_B = 10\\text{ KN}$\nHence weight of block $W = 10\\text{ KN}$",
+        "solution": "Sol.(b)\nFrom Archimedes principal $W = F_B$\nHere buoyant force $F_B = \\text{weight of fluid displaced by block}$\nSo, $F_B = (\\gamma LBH)$\n$F_B = 10 \\times 2 \\times 1 \\times 0.5$\n$F_B = 10\\text{ KN}$\nHence weight of block $W = 10\\text{ KN}$",
         "has_diagram": false,
         "page_index": 1
     },
@@ -495,7 +495,7 @@
             "d": "Inversely as the radial distance"
         },
         "correct_answer": "b",
-        "solution": "Sol.(b) In vortex flow pressure gradient in radial\nDirection $\\left(\\frac{\\partial p}{\\partial r} = \\delta w^2 r\\right)$\n$\\partial p = \\frac{\\delta w^2 r^2}{2} + c$\n$P \\propto r^2$",
+        "solution": "Sol.(b) In vortex flow pressure gradient in radial\nDirection $\\left(\\frac{\\partial p}{\\partial r} = \\rho \\omega^2 r\\right)$\n$\\partial p = \\frac{\\rho \\omega^2 r^2}{2} + c$\n$P \\propto r^2$",
         "has_diagram": false,
         "page_index": 2
     },
@@ -510,7 +510,7 @@
             "d": "g"
         },
         "correct_answer": "d",
-        "solution": "Sol.(d)\n$\\text{Tan }\\theta = \\frac{a}{g}$\nTake is accelerated with an accelerated such that half of water spills out.\n$\\theta = 45^0$\n$\\text{Tan }\\theta = \\frac{a}{g} \\Rightarrow \\tan 45^0 = \\frac{a}{g} \\Rightarrow a = g$",
+        "solution": "Sol.(d)\n$\\text{Tan }\\theta = \\frac{a}{g}$\nTake is accelerated with an accelerated such that half of water spills out.\n$\\theta = 45^\\circ$\n$\\text{Tan }\\theta = \\frac{a}{g} \\Rightarrow \\tan 45^\\circ = \\frac{a}{g} \\Rightarrow a = g$",
         "has_diagram": true,
         "diagram_bbox": [
             130,
@@ -554,7 +554,7 @@
             "d": "Force on the horizontal projection of the curved surface"
         },
         "correct_answer": "b",
-        "solution": "Sol.(b)\nConsider a curved surface AB\n$F_n = \\delta g \\int h dA \\sin\\theta = \\text{total pressure force on the projected area of the curved surface on its vertical plane}$\n$F_y = \\delta g \\int h dA \\cos\\theta = \\text{weight of liquid supported by the curved surface upto free surface of liquid.}$",
+        "solution": "Sol.(b)\nConsider a curved surface AB\n$F_n = \\rho g \\int h dA \\sin\\theta = \\text{total pressure force on the projected area of the curved surface on its vertical plane}$\n$F_y = \\rho g \\int h dA \\cos\\theta = \\text{weight of liquid supported by the curved surface upto free surface of liquid.}$",
         "has_diagram": true,
         "diagram_bbox": [
             445,
@@ -650,7 +650,7 @@
             "d": "Steady, frictionless, incompressible and uniform"
         },
         "correct_answer": "a",
-        "solution": "Sol.(a) Bernoulli's equation\n$\\left(\\frac{P}{w} + \\frac{v^2}{2g} + z\\right) = \\text{constant}$\nFollowing are the assumption made in the derivation of Bernoulli's equation\n(i) Fluid is ideal i.e. viscosity is zero\n(ii) The flow is steady\n(iii) The flow is income risible\n(iv) The flow is irrotational and along a stream line.",
+        "solution": "Sol.(a) Bernoulli's equation\n$\\left(\\frac{P}{\\gamma} + \\frac{v^2}{2g} + z\\right) = \\text{constant}$\nFollowing are the assumption made in the derivation of Bernoulli's equation\n(i) Fluid is ideal i.e. viscosity is zero\n(ii) The flow is steady\n(iii) The flow is income risible\n(iv) The flow is irrotational and along a stream line.",
         "has_diagram": false,
         "page_index": 5
     },
@@ -710,7 +710,7 @@
             "d": "27/8"
         },
         "correct_answer": "c",
-        "solution": "Kinetic energy correction factor is given by:\n$\\alpha = \\frac{\\int_0^A \\left(\\frac{v}{V_{avg}}\\right)^3 dA}{A}$\n\nAnd, $V_{avg} = \\frac{\\int_0^A v dA}{A}$\n$V_{avg} = 0 \\text{ (given)}^{A/3}_0 + (uniform)^{A}_{A/3}$\n$V_{avg} = \\frac{v}{A} \\int_{A/3}^A dA = \\frac{2V}{3}$\n\nSo, $\\alpha = \\frac{\\int_{A/3}^A \\left(\\frac{v}{V_{avg}}\\right)^3 dA}{A} = \\frac{\\int_{A/3}^A \\left(\\frac{3}{2}\\right)^3 dA}{A}$\n$\\alpha = \\frac{27}{8A} \\left[A - \\frac{A}{3}\\right] = \\frac{9}{4}$",
+        "solution": "Kinetic energy correction factor is given by:\n$\\alpha = \\frac{\\int_0^A \\left(\\frac{v}{V_{\\text{avg}}}\\right)^3 dA}{A}$\n\nAnd, $V_{\\text{avg}} = \\frac{\\int_0^A v dA}{A}$\n$V_{\\text{avg}} = \\frac{0 \\times \\frac{A}{3} + v \\times \\frac{2A}{3}}{A} = \\frac{2v}{3}$\n\nSo, $\\alpha = \\frac{\\int_{A/3}^A \\left(\\frac{v}{V_{\\text{avg}}}\\right)^3 dA}{A} = \\frac{\\int_{A/3}^A \\left(\\frac{3}{2}\\right)^3 dA}{A}$\n$\\alpha = \\frac{27}{8A} \\left[A - \\frac{A}{3}\\right] = \\frac{9}{4}$",
         "has_diagram": false,
         "page_index": 1
     },
@@ -740,7 +740,7 @@
             "d": "None of the above"
         },
         "correct_answer": "b",
-        "solution": "Bernoulli's equation $\\left(\\frac{P}{\\gamma g} + \\frac{V^2}{2g} + z\\right) = \\text{constant}$\n$\\frac{P}{\\gamma g} = \\text{pressure energy per unit weight of fluid or pressure head}$\n$\\frac{V^2}{2g} = \\text{kinetic energy per unit weight or kinetic head}$\n$z = \\text{potential energy per unit weight or potential head}$",
+        "solution": "Bernoulli's equation $\\left(\\frac{P}{\\gamma} + \\frac{V^2}{2g} + z\\right) = \\text{constant}$\n$\\frac{P}{\\gamma} = \\text{pressure energy per unit weight of fluid or pressure head}$\n$\\frac{V^2}{2g} = \\text{kinetic energy per unit weight or kinetic head}$\n$z = \\text{potential energy per unit weight or potential head}$",
         "has_diagram": false,
         "page_index": 1
     },
@@ -785,7 +785,7 @@
             "d": "Forced vortex at centre and free vortex outside"
         },
         "correct_answer": "d",
-        "solution": "Forced vortex flow: - some external torque is required to rotate the fluid, rotates at constant angular velocity w.\n$v = wr$\nCentre of air mass there is forced vortex flow $V \\propto r$\nFree vortex flow: - no torque required.\n$vr = \\text{constant}$\nAt outer side there is free vortex $v \\propto \\frac{1}{r}$",
+        "solution": "Forced vortex flow: - some external torque is required to rotate the fluid, rotates at constant angular velocity w.\n$v = \\omega r$\nCentre of air mass there is forced vortex flow $V \\propto r$\nFree vortex flow: - no torque required.\n$vr = \\text{constant}$\nAt outer side there is free vortex $v \\propto \\frac{1}{r}$",
         "has_diagram": false,
         "page_index": 2
     },
@@ -800,7 +800,7 @@
             "d": "directly proportional to the square of its radial distance from the axis of rotation"
         },
         "correct_answer": "a",
-        "solution": "In forced vortex flow some external torque is required to rotate the fluid rotates at constant angular velocity w\n$v = wr$ ($\\omega = \\text{constant}$)\n$v \\propto r$",
+        "solution": "In forced vortex flow some external torque is required to rotate the fluid rotates at constant angular velocity w\n$v = \\omega r$ ($\\omega = \\text{constant}$)\n$v \\propto r$",
         "has_diagram": true,
         "diagram_bbox": [
             350,
@@ -852,7 +852,7 @@
             "d": "2"
         },
         "correct_answer": "c",
-        "solution": "$\\beta = \\frac{\\int_0^A \\left(\\frac{u}{v_{avg}}\\right)^2 dA}{A}$\nArea = $1 \\times y_0 = y_0$ (Assume width = 1)\n$\\beta = \\frac{\\int_0^{y_0} \\left(\\frac{u_o y}{y_0} / \\frac{u_o}{2}\\right)^2 dy}{1 \\times y_0}$\n$\\beta = 4/3$",
+        "solution": "$\\beta = \\frac{\\int_0^A \\left(\\frac{u}{V_{\\text{avg}}}\\right)^2 dA}{A}$\nArea = $1 \\times y_0 = y_0$ (Assume width = 1)\n$\\beta = \\frac{\\int_0^{y_0} \\left(\\frac{u_0 y}{y_0} / \\frac{u_0}{2}\\right)^2 dy}{1 \\times y_0}$\n$\\beta = 4/3$",
         "has_diagram": true,
         "diagram_bbox": [
             650,
@@ -941,7 +941,7 @@
             "d": "1.00"
         },
         "correct_answer": "a",
-        "solution": "Coefficient of contraction ($C_c$) = $\\frac{\\text{Area of jet at vena contracta}}{\\text{Area of orifice}}$\nThe value of $C_c$ varies from 0.61 to 0.69.\nFor a sharp-edged or \"ideal\" circular orifice $C_c = 0.611$",
+        "solution": "Coefficient of contraction ($C_c$) is given by:\n$$C_c = \\frac{\\text{Area of jet at vena contracta}}{\\text{Area of orifice}}$$\nThe value of $C_c$ varies from 0.61 to 0.69.\nFor a sharp-edged or \"ideal\" circular orifice, $C_c = 0.611$",
         "has_diagram": false,
         "page_index": 5
     },
@@ -1000,7 +1000,7 @@
             "d": "$H\\left(\\frac{1}{w^2} - 1\\right)$"
         },
         "correct_answer": "a",
-        "solution": "Sol. (a)\nApplying Bernoulli's eqn. between 1 & 2\n$$\\frac{p_1}{\\rho g} + \\frac{v_1^2}{2g} + z_1 = \\frac{p_2}{\\rho g} + \\frac{v_2^2}{2g} + z_2$$\n$$z_1 = z_2$$\n$$\\frac{p_1}{\\rho g} = H \\text{ and } \\frac{p_2}{\\rho g} = 0 \\text{ (atmospheric)}$$\nSince ($v_1 \\ll v_2$)\n$$H + 0 + 0 = \\frac{v_2^2}{2g}$$\n$$v_2 = v_1 = \\sqrt{2gH}$$\nSince $H = \\frac{v_c^2}{2g} + h_f$\n$$h_f = H - \\frac{v_c^2}{2g}$$\n$$c_v = \\frac{v_c}{v_1} \\Rightarrow v_c = c_v v_1$$\n$$h_f = H - \\frac{v_1^2}{2g} c_v^2 \\Rightarrow H - H c_v^2 \\Rightarrow H(1 - c_v^2)$$\nOr $h_f = H(1 - w^2)$ where $w$ is coefficient of velocity.",
+        "solution": "Sol. (a)\nApplying Bernoulli's eqn. between 1 & 2:\n$$\\frac{p_1}{\\rho g} + \\frac{v_1^2}{2g} + z_1 = \\frac{p_2}{\\rho g} + \\frac{v_2^2}{2g} + z_2$$\n$$z_1 = z_2$$\n$$\\frac{p_1}{\\rho g} = H \\text{ and } \\frac{p_2}{\\rho g} = 0 \\text{ (atmospheric)}$$\nSince ($v_1 \\ll v_2$):\n$$H + 0 + 0 = \\frac{v_2^2}{2g}$$\n$$v_2 = v_1 = \\sqrt{2gH}$$\nSince $H = \\frac{v_c^2}{2g} + h_f$:\n$$h_f = H - \\frac{v_c^2}{2g}$$\n$$c_v = \\frac{v_c}{v_1} \\Rightarrow v_c = c_v v_1$$\n$$h_f = H - \\frac{v_1^2}{2g} c_v^2 \\Rightarrow H - H c_v^2 \\Rightarrow H(1 - c_v^2)$$\nOr $h_f = H(1 - w^2)$ where $w$ is coefficient of velocity.",
         "has_diagram": true,
         "diagram_bbox": [
             650,
@@ -1033,11 +1033,11 @@
         "options": {
             "a": "Pipe diameter",
             "b": "Throat diameter",
-            "c": "Angel of diverging section",
+            "c": "Angle of diverging section",
             "d": "Both pipe diameter as well as throat diameter"
         },
         "correct_answer": "d",
-        "solution": "Sol. (d)\nVenturi-meter is a device used to measure discharge. It consists of three parts\n(a) A short converging part (b) throat (c) Diverging part\nDischarge $Q = \\frac{c_d a_1 a_2}{\\sqrt{a_1^2 - a_2^2}} \\times \\sqrt{2gh}$\n$Q = f[a_1, a_2]$",
+        "solution": "Sol. (d)\nVenturi-meter is a device used to measure discharge. It consists of three parts:\n(a) A short converging part\n(b) Throat\n(c) Diverging part\nDischarge is given by:\n$$Q = \\frac{c_d a_1 a_2}{\\sqrt{a_1^2 - a_2^2}} \\times \\sqrt{2gh}$$\n$$Q = f[a_1, a_2]$$",
         "has_diagram": false,
         "page_index": 2
     },
@@ -1052,14 +1052,14 @@
             "d": "20%"
         },
         "correct_answer": "b",
-        "solution": "Sol. (b)\nDischarge through rectangular sharp crested weir\n$$Q = \\frac{2}{3} c_d \\sqrt{2g} L H^{3/2}$$\nNow effective length\n$$L' = (L - 0.1 \\times 2 \\times H)$$\nHence discharge reduced by 10% from each end contraction.",
+        "solution": "Sol. (b)\nDischarge through rectangular sharp crested weir:\n$$Q = \\frac{2}{3} c_d \\sqrt{2g} L H^{3/2}$$\nNow effective length:\n$$L' = (L - 0.1 \\times 2 \\times H)$$\nHence discharge reduced by 10% from each end contraction.",
         "has_diagram": false,
         "page_index": 2
     },
     {
         "subject": "Fluid Mechanics",
         "question_number": "63",
-        "question_text": "The discharge through a V- notch varies as",
+        "question_text": "The discharge through a V-notch varies as",
         "options": {
             "a": "$H^{1/2}$",
             "b": "$H^{3/4}$",
@@ -1104,7 +1104,7 @@
             "d": "None of the above"
         },
         "correct_answer": "c",
-        "solution": "Sol. (c)\nFor venturi-meter $C_d = C_c C_v$\nSince $C_c = 1$, therefore $C_d = C_v$.",
+        "solution": "Sol. (c)\nFor venturi-meter $C_d = C_c C_v$.\nSince $C_c = 1$, therefore $C_d = C_v$.",
         "has_diagram": false,
         "page_index": 3
     },
@@ -1178,7 +1178,7 @@
             "d": "Equal"
         },
         "correct_answer": "a",
-        "solution": "Sol. (a) Since in submerged orifice due to losses and flow resistance $c_d$ will be light lesser as compared to discharging free so corresponding discharge will also be less.",
+        "solution": "Sol. (a)\nSince in submerged orifice due to losses and flow resistance $c_d$ will be light lesser as compared to discharging free so corresponding discharge will also be less.",
         "has_diagram": false,
         "page_index": 4
     },
@@ -1208,7 +1208,7 @@
             "d": "0.611"
         },
         "correct_answer": "a",
-        "solution": "Sol. (a)\nFor external cylindrical mouth piece:\n(i) Coefficient of contraction $C_c = 1 = \\frac{\\text{Area of jet at outlet}}{\\text{Area of Mouthpiece at outlet}}$\n(ii) Coefficient of velocity $c_v = 0.855$\n(iii) coefficient of discharge $c_d = C_c C_v \\Rightarrow c_d = 0.855$",
+        "solution": "Sol. (a)\nFor external cylindrical mouth piece:\n(i) Coefficient of contraction:\n$$C_c = 1 = \\frac{\\text{Area of jet at outlet}}{\\text{Area of Mouthpiece at outlet}}$$\n(ii) Coefficient of velocity $c_v = 0.855$\n(iii) Coefficient of discharge $c_d = C_c C_v \\Rightarrow c_d = 0.855$",
         "has_diagram": false,
         "page_index": 4
     },
@@ -1223,7 +1223,7 @@
             "d": "Cipolletti weir"
         },
         "correct_answer": "b",
-        "solution": "Sol. (b)\n* For sharp edged orifice $C_d = 0.611$\n* for venturimeter $C_d = 0.94 - 0.98$ ($C_c=1$)\n* Borda's Mouthpiece, running full $C_d = 0.707$ ($C_c=1$), Running free $C_d = 0.50$ ($C_c=1$)\n* Cippolletti weir $C_d = 0.61$ (Trapezoidal weir)",
+        "solution": "Sol. (b)\n* For sharp edged orifice $C_d = 0.611$\n* For venturimeter $C_d = 0.94 - 0.98$ ($C_c = 1$)\n* Borda's Mouthpiece, running full $C_d = 0.707$ ($C_c = 1$), Running free $C_d = 0.50$ ($C_c = 1$)\n* Cippolletti weir $C_d = 0.61$ (Trapezoidal weir)",
         "has_diagram": false,
         "page_index": 4
     },
@@ -1238,7 +1238,7 @@
             "d": "$H$"
         },
         "correct_answer": "d",
-        "solution": "Sol. (d) Proportional weir also known as sutra weir is a weir whose shape is so designed that the discharge over the weir is proportional to the head of water over the crest.\n$$Q = (\\text{constant}) \\times H$$\n$$Q \\propto H$$",
+        "solution": "Sol. (d)\nProportional weir also known as sutra weir is a weir whose shape is so designed that the discharge over the weir is proportional to the head of water over the crest.\n$$Q = (\\text{constant}) \\times H$$\n$$Q \\propto H$$",
         "has_diagram": true,
         "diagram_bbox": [
             140,
@@ -1327,7 +1327,7 @@
             "d": "675"
         },
         "correct_answer": "none",
-        "solution": "No option is correct.\nGiven $\\mu = 0.8\\text{ poise} = 0.08\\text{ Ms/m}^2$\n$V = 2\\text{ m/sec}$\n$\\rho = 0.9 \\times 10^3 = 900\\text{ kg/m}^3$\n$d = 30\\text{ cm} = 0.3\\text{ m}$\nReynolds number $R_e = \\left(\\frac{\\rho V D}{\\mu}\\right)$\n$R_e = \\left(\\frac{900 \\times 2 \\times 0.3}{0.08}\\right)$\n$R_e = 6750$",
+        "solution": "No option is correct.\nGiven $\\mu = 0.8\\text{ poise} = 0.08\\text{ Ms/m}^2$\n$V = 2\\text{ m/sec}$\n$\\rho = 0.9 \\times 10^3 = 900\\text{ kg/m}^3$\n$d = 30\\text{ cm} = 0.3\\text{ m}$\nReynolds number is:\n$$R_e = \\left(\\frac{\\rho V D}{\\mu}\\right)$$\n$$R_e = \\left(\\frac{900 \\times 2 \\times 0.3}{0.08}\\right)$$\n$$R_e = 6750$$",
         "has_diagram": false,
         "page_index": 1
     },
@@ -1342,7 +1342,7 @@
             "d": "Zero at plates and increases linearly to midpoint"
         },
         "correct_answer": "c",
-        "solution": "Shear stress distribution for parallel plates both at rest\n$\\tau = \\frac{-1}{2}\\left(\\frac{\\partial p}{\\partial x}\\right)(t-2y)$\nSince $\\frac{\\partial p}{\\partial x}$ and $t$ are constant\nHence $\\tau$ varies linearly with $y$\n$(\\tau)_{\\text{max}}$ at $y = 0$ or at the walls of plates $\\tau = 0$ when $y = \\frac{t}{2}$",
+        "solution": "Shear stress distribution for parallel plates both at rest:\n$$\\tau = \\frac{-1}{2}\\left(\\frac{\\partial p}{\\partial x}\\right)(t-2y)$$\nSince $\\frac{\\partial p}{\\partial x}$ and $t$ are constant, $\\tau$ varies linearly with $y$.\n$(\\tau)_{\\text{max}}$ at $y = 0$ or at the walls of plates. $\\tau = 0$ when $y = \\frac{t}{2}$",
         "has_diagram": true,
         "diagram_bbox": [
             255,
@@ -1364,7 +1364,7 @@
             "d": "$x^{1/7}$"
         },
         "correct_answer": "a",
-        "solution": "If x is the distance from leading edge, then the boundary layer thickness in laminar flow varies as:\n$\\delta = \\frac{5 x}{\\sqrt{R_{ex}}}$",
+        "solution": "If x is the distance from leading edge, then the boundary layer thickness in laminar flow varies as:\n$$\\delta = \\frac{5 x}{\\sqrt{R_{ex}}}$$",
         "has_diagram": false,
         "page_index": 2
     },
@@ -1416,7 +1416,7 @@
             "d": "$x^{3/5}$"
         },
         "correct_answer": "c",
-        "solution": "The boundary layer thickness in turbulent flow varies as:\n$\\delta = \\frac{0.37 x}{R_{ex}^{1/5}} = \\frac{0.37 x}{\\left(\\frac{\\rho v x}{\\mu}\\right)^{1/5}} \\propto x^{4/5}$",
+        "solution": "The boundary layer thickness in turbulent flow varies as:\n$$\\delta = \\frac{0.37 x}{R_{ex}^{1/5}} = \\frac{0.37 x}{\\left(\\frac{\\rho v x}{\\mu}\\right)^{1/5}} \\propto x^{4/5}$$",
         "has_diagram": false,
         "page_index": 2
     },
@@ -1431,14 +1431,14 @@
             "d": "0.707 R"
         },
         "correct_answer": "a",
-        "solution": "Velocity distribution for turbulent flow in terms of average velocity\n$\\frac{u-\\bar{u}}{u_*} = 5.75 \\log_{10}\\left(\\frac{y}{R}\\right) + 3.75$\nGiven $u = \\bar{u}$\n$0 = 5.75 \\log_{10}\\left(\\frac{y}{R}\\right) + 3.75$\n$\\log_{10}\\left(\\frac{y}{R}\\right) = -0.6521$\n$\\log_{10}\\left(\\frac{y}{R}\\right) = \\log_{10}(0.2228)$\n$y = 0.2228R$",
+        "solution": "Velocity distribution for turbulent flow in terms of average velocity:\n$$\\frac{u-\\bar{u}}{u_*} = 5.75 \\log_{10}\\left(\\frac{y}{R}\\right) + 3.75$$\nGiven $u = \\bar{u}$:\n$$0 = 5.75 \\log_{10}\\left(\\frac{y}{R}\\right) + 3.75$$\n$$\\log_{10}\\left(\\frac{y}{R}\\right) = -0.6521$$\n$$\\log_{10}\\left(\\frac{y}{R}\\right) = \\log_{10}(0.2228)$$\n$$y = 0.2228R$$",
         "has_diagram": false,
         "page_index": 3
     },
     {
         "subject": "Fluid Mechanics",
         "question_number": "86",
-        "question_text": "If a sphere of diameter1 cm falls in castor oil of kinematic viscosity 10 stokes, with a terminal velocity of 1.5 cm/sec, the coefficient of drag on the sphere is",
+        "question_text": "If a sphere of diameter 1 cm falls in castor oil of kinematic viscosity 10 stokes, with a terminal velocity of 1.5 cm/sec, the coefficient of drag on the sphere is",
         "options": {
             "a": "Less than 1",
             "b": "Between 1 and 100",
@@ -1446,7 +1446,7 @@
             "d": "200"
         },
         "correct_answer": "c",
-        "solution": "Given: - $D = 1\\text{ cm} = 0.01\\text{ m}$, $L = 10\\text{ stokes} = 10 \\times 10^{-4}\\text{ m}^2/s$\n$v_t = 1.5\\text{cm/s} = 1.5 \\times 10^{-2}\\text{ m/sec}$\n$C_D = ?$\nSince $C_D = \\frac{24}{R_e}$\nAnd $R_e = \\frac{\\rho V D}{\\mu} = \\left(\\frac{VD}{L}\\right)$\n$\\Rightarrow C_D = \\frac{24}{(VD/L)} = \\frac{24 \\times 10 \\times 10^{-4}}{1.5 \\times 10^{-2} \\times 0.01} = 160$",
+        "solution": "Given: - $D = 1\\text{ cm} = 0.01\\text{ m}$, $L = 10\\text{ stokes} = 10 \\times 10^{-4}\\text{ m}^2/s$\n$v_t = 1.5\\text{ cm/s} = 1.5 \\times 10^{-2}\\text{ m/sec}$\n$C_D = ?$\nSince $C_D = \\frac{24}{R_e}$\nAnd $R_e = \\frac{\\rho V D}{\\mu} = \\left(\\frac{VD}{L}\\right)$\n$$\\Rightarrow C_D = \\frac{24}{(VD/L)} = \\frac{24 \\times 10 \\times 10^{-4}}{1.5 \\times 10^{-2} \\times 0.01} = 160$$",
         "has_diagram": false,
         "page_index": 3
     },
@@ -1543,7 +1543,7 @@
             "d": "0.0001"
         },
         "correct_answer": "b",
-        "solution": "$R_e = 10^6$ (Turbulent flow)\nFriction factor $f = \\frac{0.316}{\\left(R_e\\right)^{1/4}}$\n$f = \\frac{0.316}{(10^6)^{1/4}} = 0.01$",
+        "solution": "$R_e = 10^6$ (Turbulent flow)\nFriction factor:\n$$f = \\frac{0.316}{\\left(R_e\\right)^{1/4}}$$\n$$f = \\frac{0.316}{(10^6)^{1/4}} = 0.01$$",
         "has_diagram": false,
         "page_index": 4
     },
@@ -1558,7 +1558,7 @@
             "d": "Inversely proportional to Reynolds number and directly proportional to pipe wall roughness"
         },
         "correct_answer": "c",
-        "solution": "Loss of head due to friction\n$h_f = \\left(\\frac{fLV^2}{2gd}\\right)$\nFor laminar flow $f = \\left(\\frac{64}{R_e}\\right)$\n$h_f = \\left(\\frac{64}{R_e}\\right)\\frac{LV^2}{2gd}$\n$h_f \\propto \\frac{1}{R_e}$ and $h_f$ is independent of wall roughness",
+        "solution": "Loss of head due to friction:\n$$h_f = \\left(\\frac{fLV^2}{2gd}\\right)$$\nFor laminar flow $f = \\left(\\frac{64}{R_e}\\right)$\n$$h_f = \\left(\\frac{64}{R_e}\\right)\\frac{LV^2}{2gd}$$\n$h_f \\propto \\frac{1}{R_e}$ and $h_f$ is independent of wall roughness",
         "has_diagram": false,
         "page_index": 4
     },
@@ -1588,7 +1588,7 @@
             "d": "$\\frac{V_1^2}{2g}\\left(1-\\frac{A_2}{A_1}\\right)^2$"
         },
         "correct_answer": "a",
-        "solution": "Loss of head due to sudden enlargement\n$h_c = \\frac{(V_1-V_2)^2}{2g}$\nSince $A_1 V_1 = A_2 V_2$\n$V_2 = \\frac{A_1}{A_2} V_1$\n$h_c = \\frac{V_2^2}{2g}\\left(\\frac{A_2}{A_1}-1\\right)^2$",
+        "solution": "Loss of head due to sudden enlargement:\n$$h_c = \\frac{(V_1-V_2)^2}{2g}$$\nSince $A_1 V_1 = A_2 V_2$:\n$$V_2 = \\frac{A_1}{A_2} V_1$$\n$$h_c = \\frac{V_2^2}{2g}\\left(\\frac{A_2}{A_1}-1\\right)^2$$",
         "has_diagram": false,
         "page_index": 5
     },
@@ -1603,7 +1603,7 @@
             "d": "2"
         },
         "correct_answer": "a",
-        "solution": "Velocity distribution for laminar flow in pipe\n$u = -\\frac{1}{4\\mu}\\frac{\\partial p}{\\partial u}(R^2-r^2)$\n$u = u_{\\text{max}}$ @ $r = 0$\n$u_{\\text{max}} = \\frac{-1}{4u}\\frac{\\partial p}{\\partial x}R^2$",
+        "solution": "Velocity distribution for laminar flow in pipe:\n$$u = -\\frac{1}{4\\mu}\\frac{\\partial p}{\\partial x}(R^2-r^2)$$\n$u = u_{\\text{max}}$ @ $r = 0$\n$$u_{\\text{max}} = \\frac{-1}{4\\mu}\\frac{\\partial p}{\\partial x}R^2$$",
         "has_diagram": false,
         "page_index": 5
     },
@@ -1670,7 +1670,7 @@
     {
         "subject": "Fluid Mechanics",
         "question_number": "121",
-        "question_text": "For laminar flow in circular pipes, the Darcy's friction factor f is equal to",
+        "question_text": "For laminar flow in circular pipes, the Darcy's friction factor $f$ is equal to",
         "options": {
             "a": "16/R_e",
             "b": "32/ R_e",
@@ -1734,7 +1734,7 @@
         "options": {
             "a": "(i) and (ii)",
             "b": "(i) and (iv)",
-            "c": "(ii) and (ii)",
+            "c": "(ii) and (iii)",
             "d": "(iii) and (iv)"
         },
         "correct_answer": "b",
@@ -1797,7 +1797,7 @@
     {
         "subject": "Fluid Mechanics",
         "question_number": "129",
-        "question_text": "The Froude number is defined as $f = \\frac{V}{\\sqrt{gD}}$ where v is the mean velocity of flow, g is acceleration due to gravity and D is",
+        "question_text": "The Froude number is defined as $f = \\frac{V}{\\sqrt{gD}}$ where $v$ is the mean velocity of flow, $g$ is acceleration due to gravity and $D$ is",
         "options": {
             "a": "Depth of flow",
             "b": "Hydraulic depth",
@@ -1820,7 +1820,7 @@
             "d": "Greater than one"
         },
         "correct_answer": "d",
-        "solution": "For subcritical /tranquil/ streaming flow $F_r < 1$\nFor critical flow $F_r = 1$\nFor supercritical/ shouting / rapid / torrential $F_r > 1$",
+        "solution": "For subcritical /tranquil/ streaming flow $F_r < 1$\nFor critical flow $F_r = 1$\nFor supercritical/ shooting / rapid / torrential $F_r > 1$",
         "has_diagram": false,
         "page_index": 4
     },
@@ -1847,7 +1847,7 @@
             "a": "Is dimensionless",
             "b": "Has the dimension of velocity",
             "c": "Has the dimension of discharge",
-            "d": "Has the dimension L^{1/2} T^{-1}"
+            "d": "Has the dimension $L^{1/2} T^{-1}$"
         },
         "correct_answer": "d",
         "solution": "Chezy's formula for open channels $v = c\\sqrt{mi}$\nOr, $c = \\frac{v}{\\sqrt{mi}} = \\frac{v}{\\sqrt{Rs}}$\n$C = \\frac{L/t}{\\sqrt{\\frac{A}{P} \\times 1}} = \\frac{L}{T \\times \\sqrt{\\frac{L^2}{L}}} = \\frac{L}{T \\times \\sqrt{L}} = L^{1/2}T^{-1}$\n$C = L^{1/2}T^{-1}$",
@@ -1857,7 +1857,7 @@
     {
         "subject": "Fluid Mechanics",
         "question_number": "133",
-        "question_text": "If 'f' is the friction factor, then the Chezy's coefficient is proportional to",
+        "question_text": "If '$f$' is the friction factor, then the Chezy's coefficient is proportional to",
         "options": {
             "a": "f",
             "b": "\\sqrt{f}",
@@ -1872,7 +1872,7 @@
     {
         "subject": "Fluid Mechanics",
         "question_number": "134",
-        "question_text": "The relationship between Manning's coefficient n and Chezy's coefficient c is we given by",
+        "question_text": "The relationship between Manning's coefficient $n$ and Chezy's coefficient $c$ is given by",
         "options": {
             "a": "c = \\frac{R^{2/3}}{n}",
             "b": "c = \\frac{R^{1/6}}{n}",
@@ -1887,7 +1887,7 @@
     {
         "subject": "Fluid Mechanics",
         "question_number": "135",
-        "question_text": "The depth of flow for maximum velocity in a circular channel section with diameter equal to 1.5 m is",
+        "question_text": "The depth of flow for maximum velocity in a circular channel section with diameter equal to $1.5\\text{ m}$ is",
         "options": {
             "a": "0.75 m",
             "b": "1.065m",
@@ -1919,10 +1919,10 @@
         "question_number": "137",
         "question_text": "A triangular channel section is most economical when each of its sloping sides is inclined to the vertical at an angle of",
         "options": {
-            "a": "30^\\circ",
-            "b": "45^\\circ",
-            "c": "60^\\circ",
-            "d": "75^\\circ"
+            "a": "$30^\\circ$",
+            "b": "$45^\\circ$",
+            "c": "$60^\\circ$",
+            "d": "$75^\\circ$"
         },
         "correct_answer": "b",
         "solution": "Most efficient triangular channel:\n$A = My^2$\n$P = 2y\\sqrt{1+m^2}$ or $P = 2\\sqrt{A} \\sqrt{m + \\frac{1}{m}}$\nfor most efficient channel $\\frac{dP}{dM} = 0$\n$m = 1$\n$\\theta = 45^\\circ$",
@@ -1951,7 +1951,7 @@
         "options": {
             "a": "Specific energy is maximum for a given discharge",
             "b": "Specific force is maximum for a given discharge",
-            "c": "Discharge is maximum for a given specific force o le",
+            "c": "Discharge is maximum for a given specific force only",
             "d": "Discharge is minimum for a given specific energy"
         },
         "correct_answer": "c",
@@ -1970,7 +1970,7 @@
             "d": "$\\frac{Q^2}{g} = \\frac{A}{T^3}$"
         },
         "correct_answer": "b",
-        "solution": "Sol. (b) The critical state of flow in a non-rectangular channel is expressed by:\n$$\\frac{Q^2 T}{g A^3} = 1$$\n$$\\frac{Q^2}{g} = \\frac{A^3}{T}$$",
+        "solution": "Sol. (b) The critical state of flow in a non-rectangular channel is expressed by:\n\\[\\frac{Q^2 T}{g A^3} = 1\\]\n\\[\\frac{Q^2}{g} = \\frac{A^3}{T}\\]",
         "has_diagram": false,
         "page_index": 1
     },
@@ -1985,7 +1985,7 @@
             "d": "$\\left(\\frac{1}{4.9}\\right)^{\\frac{1}{3}}\\text{ metre}$"
         },
         "correct_answer": "c",
-        "solution": "Sol. (c) For critical state\n$$\\frac{Q^2}{g} = \\frac{A^3}{T}$$\n$$\\frac{Q^2}{g} = \\frac{\\left[\\frac{1}{2}(2zy)y\\right]^3}{2zy}$$\n$$\\Rightarrow y = y_c = \\left(\\frac{2Q^2}{gz^2}\\right)^{\\frac{1}{5}}$$\nFor most economical triangular section $z = 1$\nCritical depth $y_c = \\left(\\frac{2Q^2}{g}\\right)^{\\frac{1}{5}} = \\left(\\frac{2 \\times 1^2}{9.81}\\right)^{\\frac{1}{5}}$\n$$y_c = \\left(\\frac{1}{4.9}\\right)^{\\frac{1}{5}}\\text{ m}$$",
+        "solution": "Sol. (c) For critical state\n\\[\\frac{Q^2}{g} = \\frac{A^3}{T}\\]\n\\[\\frac{Q^2}{g} = \\frac{\\left[\\frac{1}{2}(2zy)y\\right]^3}{2zy}\\]\n\\[\\Rightarrow y = y_c = \\left(\\frac{2Q^2}{gz^2}\\right)^{\\frac{1}{5}}\\]\nFor most economical triangular section $z = 1$\nCritical depth $y_c = \\left(\\frac{2Q^2}{g}\\right)^{\\frac{1}{5}} = \\left(\\frac{2 \\times 1^2}{9.81}\\right)^{\\frac{1}{5}}$\n\\[y_c = \\left(\\frac{1}{4.9}\\right)^{\\frac{1}{5}}\\text{ m}\\]",
         "has_diagram": true,
         "diagram_bbox": [
             240,
@@ -2029,7 +2029,7 @@
             "d": "Conjugate depths"
         },
         "correct_answer": "d",
-        "solution": "Sol. (d) For same specific force, two depths for given discharge are caused conjugate depths.",
+        "solution": "Sol. (d) For same specific force, two depths for given discharge are called conjugate depths.",
         "has_diagram": true,
         "diagram_bbox": [
             45,
@@ -2073,7 +2073,7 @@
             "d": "5.50 m"
         },
         "correct_answer": "a",
-        "solution": "Sol. (a) Maximum height of hump without causing afflux\n$$\\Delta z = (E_1 - E_c)$$\n$$\\Delta z = (3 - 2.5)$$\n$$\\Delta z = 0.5\\text{ m}$$",
+        "solution": "Sol. (a) Maximum height of hump without causing afflux\n\\[\\Delta z = (E_1 - E_c)\\]\n\\[\\Delta z = (3 - 2.5)\\]\n\\[\\Delta z = 0.5\\text{ m}\\]",
         "has_diagram": false,
         "page_index": 3
     },
@@ -2088,7 +2088,7 @@
             "d": "3 m"
         },
         "correct_answer": "a",
-        "solution": "Sol. (a) Maximum height of hump without causing afflux\n$$\\Delta z = (E_1 - E_c)$$, Rectangular channel\nHere $E_1 = \\left(y_1 + \\frac{v_1^2}{2g}\\right) = 2 + \\frac{(\\sqrt{2g})^2}{2g} = 3\\text{ m}$\nAnd $y_c = \\left(\\frac{q^2}{g}\\right)^{\\frac{1}{3}} = \\left[\\frac{(2\\sqrt{2g})^2}{g}\\right]^{\\frac{1}{3}} = 2\\text{ m}$\n$$E_c = \\frac{3}{2} y_c = \\frac{3}{2} \\times 2 = 3\\text{ m}$$\nSo $\\Delta z = [3 - 3] = 0\\text{ m}$",
+        "solution": "Sol. (a) Maximum height of hump without causing afflux\n\\[\\Delta z = (E_1 - E_c)\\], Rectangular channel\nHere $E_1 = \\left(y_1 + \\frac{v_1^2}{2g}\\right) = 2 + \\frac{(\\sqrt{2g})^2}{2g} = 3\\text{ m}$\nAnd $y_c = \\left(\\frac{q^2}{g}\\right)^{\\frac{1}{3}} = \\left[\\frac{(2\\sqrt{2g})^2}{g}\\right]^{\\frac{1}{3}} = 2\\text{ m}$\n\\[E_c = \\frac{3}{2} y_c = \\frac{3}{2} \\times 2 = 3\\text{ m}\\]\nSo $\\Delta z = [3 - 3] = 0\\text{ m}$",
         "has_diagram": false,
         "page_index": 3
     },
@@ -2177,7 +2177,7 @@
             "d": "All the above"
         },
         "correct_answer": "d",
-        "solution": "Sol. (d) The profile is classified according to the relative position of the actual flow depth (y) to normal ($y_n$) and critical depth ($y_c$).",
+        "solution": "Sol. (d) The profile is classified according to the relative position of the actual flow depth ($y$) to normal ($y_n$) and critical depth ($y_c$).",
         "has_diagram": false,
         "page_index": 4
     },
@@ -2192,14 +2192,14 @@
             "d": "(ii), (iii) and (iv) are correct"
         },
         "correct_answer": "c",
-        "solution": "Sol. (c) Surge in open channels:\n- Sudden charge of flow depth (Increase/Decrease)\n- Abrupt increase in flow depth called position surge\n- Abrupt decrease in flow depth is termed as negative surge.\nAnalysis of surge in open channels is done by using (a) Continuity equation (b) Momentum equation.",
+        "solution": "Sol. (c) Surge in open channels:\n- Sudden charge of flow depth (Increase/Decrease)\n- Abrupt increase in flow depth called positive surge\n- Abrupt decrease in flow depth is termed as negative surge.\n\nAnalysis of surge in open channels is done by using (a) Continuity equation and (b) Momentum equation.",
         "has_diagram": false,
         "page_index": 4
     },
     {
         "subject": "Fluid Mechanics / Open Channel Flow",
         "question_number": "153",
-        "question_text": "The critical velocity for a flow of $q\\text{ m}^3/\\text{sec/metre}$ width of a wide rectangular channel is given by",
+        "question_text": "The critical velocity for a flow of $q$ m³/sec/metre width of a wide rectangular channel is given by",
         "options": {
             "a": "$\\left(\\frac{q^2}{g}\\right)^{1/3}$",
             "b": "$(qg)^{1/3}$",
@@ -2207,7 +2207,7 @@
             "d": "None of the above"
         },
         "correct_answer": "b",
-        "solution": "Sol. (b) Froude's number $f_r = \\frac{v_c}{\\sqrt{g y_c}}$\nFor critical flow $f_r = 1$\n$$\\frac{v_c}{\\sqrt{g y_c}} = 1 \\Rightarrow y_c = \\left(\\frac{q^2}{g}\\right)^{\\frac{1}{3}}$$\n$$v_c = \\sqrt{g \\cdot \\left(\\frac{q^2}{g}\\right)^{\\frac{1}{3}}} = \\sqrt[6]{g^3 \\cdot \\frac{q^2}{g}} = \\sqrt[6]{g^2 q^2} = (qg)^{\\frac{1}{3}}$$",
+        "solution": "Sol. (b) Froude's number is given by:\n$$f_r = \\frac{v_c}{\\sqrt{g y_c}}$$\n\nFor critical flow $f_r = 1$:\n$$\\frac{v_c}{\\sqrt{g y_c}} = 1 \\Rightarrow y_c = \\left(\\frac{q^2}{g}\\right)^{\\frac{1}{3}}$$\n\n$$v_c = \\sqrt{g \\cdot \\left(\\frac{q^2}{g}\\right)^{\\frac{1}{3}}} = \\sqrt[6]{g^3 \\cdot \\frac{q^2}{g}} = \\sqrt[6]{g^2 q^2} = (qg)^{\\frac{1}{3}}$$",
         "has_diagram": false,
         "page_index": 5
     },
@@ -2222,7 +2222,7 @@
             "d": "Above normal and above critical"
         },
         "correct_answer": "b",
-        "solution": "Sol. (b)",
+        "solution": "Sol. (b) The $M_2$ profile occurs when the flow depth is above critical depth but below normal depth.",
         "has_diagram": false,
         "page_index": 5
     },
@@ -2237,7 +2237,7 @@
             "d": "Normal"
         },
         "correct_answer": "c",
-        "solution": "Sol. (c) steep slope ($y_c > y_0$)\nFor $S_1$ curve $y > y_c$ subcritical flow.",
+        "solution": "Sol. (c) Steep slope ($y_c > y_0$).\nFor $S_1$ curve, $y > y_c$, resulting in subcritical flow.",
         "has_diagram": false,
         "page_index": 5
     },
@@ -2252,7 +2252,7 @@
             "d": "$\\frac{V}{\\sqrt{gy/2}}$"
         },
         "correct_answer": "b",
-        "solution": "Sol. (b) Froude Number $F_r = \\frac{V}{\\sqrt{g y_n}}$",
+        "solution": "Sol. (b) Froude Number:\n$$F_r = \\frac{V}{\\sqrt{g y_n}}$$",
         "has_diagram": true,
         "diagram_bbox": [
             490,
@@ -2274,7 +2274,7 @@
             "d": "$\\frac{F_r}{\\sqrt{3}}$"
         },
         "correct_answer": "b",
-        "solution": "Case (i) - Rectangular channel\n$(F_r)_R = \\frac{v}{\\sqrt{g y_R}}$\nHere $y_R = \\frac{A}{T} = \\frac{by}{b} = y$\n$(F_r)_R = \\frac{v}{\\sqrt{gy}}$\n\nCase (ii) - Triangular Channel\n$(F_r)_T = \\frac{v}{\\sqrt{g y_T}}$\nHere $y_T = \\frac{A}{T} = \\frac{by}{2 \\times b} = \\frac{y}{2}$\n$(F_r)_T = \\sqrt{2} \\frac{v}{\\sqrt{gy}}$\n$\\Rightarrow (F_r)_T = \\frac{(F_r)_R}{\\sqrt{2}}$",
+        "solution": "Case (i) - Rectangular channel:\n$$(F_r)_R = \\frac{v}{\\sqrt{g y_R}}$$\n\nHere $y_R = \\frac{A}{T} = \\frac{by}{b} = y$.\n$$(F_r)_R = \\frac{v}{\\sqrt{gy}}$$\n\nCase (ii) - Triangular Channel:\n$$(F_r)_T = \\frac{v}{\\sqrt{g y_T}}$$\n\nHere $y_T = \\frac{A}{T} = \\frac{by}{2 \\times b} = \\frac{y}{2}$.\n$$(F_r)_T = \\sqrt{2} \\frac{v}{\\sqrt{gy}}$$\n\n$$\\Rightarrow (F_r)_T = \\frac{(F_r)_R}{\\sqrt{2}}$$",
         "has_diagram": true,
         "diagram_bbox": [
             53,
@@ -2318,14 +2318,14 @@
             "d": "4.5 to 9.0"
         },
         "correct_answer": "b",
-        "solution": "Sol. (b) Range of $F_r$ for Weak Jump is 1.7 to 2.5.",
+        "solution": "Sol. (b) Range of $F_r$ for a Weak Jump is 1.7 to 2.5.",
         "has_diagram": false,
         "page_index": 1
     },
     {
         "subject": "Fluid Mechanics",
         "question_number": "160",
-        "question_text": "The speed of an elementary wave in still liquid at depth y is given by",
+        "question_text": "The speed of an elementary wave in still liquid at depth $y$ is given by",
         "options": {
             "a": "$\\sqrt{gy/3}$",
             "b": "$\\sqrt{gy/2}$",
@@ -2333,14 +2333,14 @@
             "d": "$\\sqrt{2gy}$"
         },
         "correct_answer": "c",
-        "solution": "Sol. (c) Speed or celerity of an elementary wave in still water at depth is $v = \\sqrt{gy}$",
+        "solution": "Sol. (c) Speed or celerity of an elementary wave in still water at depth is:\n$$v = \\sqrt{gy}$$",
         "has_diagram": false,
         "page_index": 2
     },
     {
         "subject": "Fluid Mechanics",
         "question_number": "161",
-        "question_text": "If the depth of flow in a channel is 1 m and velocity of flow is 2 m/sec. then the velocity with which an elementary wave can travel upstream is",
+        "question_text": "If the depth of flow in a channel is 1 m and velocity of flow is 2 m/sec, then the velocity with which an elementary wave can travel upstream is",
         "options": {
             "a": "1.132 m/sec",
             "b": "2 m/sec",
@@ -2348,7 +2348,7 @@
             "d": "5.132 m/sec"
         },
         "correct_answer": "a",
-        "solution": "Sol. (a) The velocity with which an elementary wave can travel upstream is:\n$v_w = \\sqrt{gy} - c$\n$v_w = \\sqrt{9.81 \\times 1} - 2 = 1.132\\text{ m/s}$",
+        "solution": "Sol. (a) The velocity with which an elementary wave can travel upstream is:\n$$v_w = \\sqrt{gy} - c$$\n\n$$v_w = \\sqrt{9.81 \\times 1} - 2 = 1.132$$\n\nSo, $v_w = 1.132$ m/s.",
         "has_diagram": false,
         "page_index": 2
     },
@@ -2363,7 +2363,7 @@
             "d": "Difference in conjugate depths"
         },
         "correct_answer": "d",
-        "solution": "Sol. (d) Depth of Hydraulic Jump = Difference of conjugate Depth/sequent depth = $(d_2 - d_1)$",
+        "solution": "Sol. (d) Depth of Hydraulic Jump = Difference of conjugate Depth/sequent depth = $(d_2 - d_1)$.",
         "has_diagram": true,
         "diagram_bbox": [
             130,
@@ -2385,14 +2385,14 @@
             "d": "6.4 m"
         },
         "correct_answer": "b",
-        "solution": "Sol. (b) Given $y_1 = 0.5\\text{ m}$, $y_2 = 2.5\\text{ m}$\nLoss of energy head in hydraulic Jump\n$h_c = \\frac{(y_2 - y_1)^3}{4y_1 y_2} = \\frac{(2.5 - 0.5)^3}{4 \\times 2.5 \\times 0.5} \\Rightarrow h_c = 1.6\\text{ m}$",
+        "solution": "Sol. (b) Given $y_1 = 0.5$ m, $y_2 = 2.5$ m.\nLoss of energy head in hydraulic jump is:\n$$h_c = \\frac{(y_2 - y_1)^3}{4y_1 y_2}$$\n\n$$h_c = \\frac{(2.5 - 0.5)^3}{4 \\times 2.5 \\times 0.5}$$\n\n$$h_c = 1.6$$\n\nSo, $h_c = 1.6$ m.",
         "has_diagram": false,
         "page_index": 2
     },
     {
         "subject": "Fluid Mechanics",
         "question_number": "164",
-        "question_text": "The specific energy in m kg/kg for the flow expressed by V=2.22 m/sec and y = 1 m is",
+        "question_text": "The specific energy in m kg/kg for the flow expressed by $V = 2.22$ m/sec and $y = 1$ m is",
         "options": {
             "a": "1.25",
             "b": "2.22",
@@ -2400,7 +2400,7 @@
             "d": "4.22"
         },
         "correct_answer": "a",
-        "solution": "Sol. (a) Since specific energy $E = y + \\frac{v^2}{2g}$\nGiven $y = 1\\text{ m}$, $v = 2.22\\text{ m/sec}$\nSo, $E = 1 + \\frac{2.22^2}{2 \\times 9.81} \\Rightarrow E = 1.25\\text{ mkg/kg}$",
+        "solution": "Sol. (a) Since specific energy $E = y + \\frac{v^2}{2g}$:\nGiven $y = 1$ m, $v = 2.22$ m/sec.\nSo,\n$$E = 1 + \\frac{2.22^2}{2 \\times 9.81}$$\n\n$$E = 1.25$$\n\n$E = 1.25$ m kg/kg.",
         "has_diagram": false,
         "page_index": 2
     },
@@ -2415,7 +2415,7 @@
             "d": "All the above"
         },
         "correct_answer": "d",
-        "solution": "Sol. (d) Froude's Number: Defined as the square root of the ratio of inertia force to gravity force\n$F_r = \\sqrt{\\frac{f_i}{f_g}} = \\sqrt{\\frac{\\rho A v^2}{\\rho A L g}} = \\frac{v}{\\sqrt{gL}}$\nFor $F_r = 1$ = critical flow\n$F_r > 1$ = supercritical flow\n$F_r < 1$ = subcritical flow",
+        "solution": "Sol. (d) Froude's Number is defined as the square root of the ratio of inertia force to gravity force:\n$$F_r = \\sqrt{\\frac{f_i}{f_g}} = \\sqrt{\\frac{\\rho A v^2}{\\rho A L g}} = \\frac{v}{\\sqrt{gL}}$$\n\n- For $F_r = 1$: critical flow\n- For $F_r > 1$: supercritical flow\n- For $F_r < 1$: subcritical flow",
         "has_diagram": false,
         "page_index": 3
     },
@@ -2430,7 +2430,7 @@
             "d": "None of the above"
         },
         "correct_answer": "c",
-        "solution": "Sol. (c) Pressure coefficient: $C_p = \\frac{\\text{pressure force}}{\\text{Inertia force}} = \\frac{dp}{\\left(\\frac{\\rho v^2}{2}\\right)}$",
+        "solution": "Sol. (c) Pressure coefficient:\n$$C_p = \\frac{\\text{pressure force}}{\\text{Inertia force}} = \\frac{dp}{\\left(\\frac{\\rho v^2}{2}\\right)}$$",
         "has_diagram": false,
         "page_index": 3
     },
@@ -2445,7 +2445,7 @@
             "d": "Specific gravity"
         },
         "correct_answer": "d",
-        "solution": "Sol. (d) Specific gravity (G) = $\\frac{\\rho_{\\text{object}}}{\\rho_{\\text{water}}} = M^0 L^0 T^0$ (Dimensionless)",
+        "solution": "Sol. (d) Specific gravity ($G$):\n$$G = \\frac{\\rho_{\\text{object}}}{\\rho_{\\text{water}}} = M^0 L^0 T^0 \\text{ (Dimensionless)}$$",
         "has_diagram": false,
         "page_index": 3
     },
@@ -2460,14 +2460,14 @@
             "d": "Mach number"
         },
         "correct_answer": "c",
-        "solution": "Sol. (c) For $F_r$, $f$, mach number $M^0 L^0 T^0$ (Dimensionless). For Chezy's constant, $C = L^{1/2} T^{-1}$.",
+        "solution": "Sol. (c) For $F_r$, $f$, and Mach number, the dimensions are $M^0 L^0 T^0$ (Dimensionless). For Chezy's constant, $C = L^{1/2} T^{-1}$.",
         "has_diagram": false,
         "page_index": 3
     },
     {
         "subject": "Fluid Mechanics",
         "question_number": "169",
-        "question_text": "The dimensions of pressure gradient dp/dx in a fluid are",
+        "question_text": "The dimensions of pressure gradient $dp/dx$ in a fluid are",
         "options": {
             "a": "$M^1 L^{-1} T^{-2}$",
             "b": "$M^1 L^{-3} T^{-2}$",
@@ -2475,7 +2475,7 @@
             "d": "$M^1 L^{-3} T^{-2}$"
         },
         "correct_answer": "c",
-        "solution": "Sol. (c) Pressure gradient $\\left(\\frac{dp}{dn}\\right) \\rightarrow \\frac{\\text{pascals}}{\\text{Metre}} = \\frac{M/m^2}{M} \\Rightarrow \\frac{M^1 L^1 T^{-2}}{L^2 \\times L} = M^1 L^{-2} T^{-2}$",
+        "solution": "Sol. (c) Pressure gradient:\n$$\\frac{dp}{dx} \\rightarrow \\frac{\\text{Pascals}}{\\text{Meter}} = \\frac{F/A}{L} = \\frac{M^1 L^1 T^{-2} / L^2}{L} = M^1 L^{-2} T^{-2}$$",
         "has_diagram": false,
         "page_index": 4
     },
@@ -2490,7 +2490,7 @@
             "d": "$\\frac{\\mu}{\\rho F}$"
         },
         "correct_answer": "c",
-        "solution": "Sol. (c) option C- $\\left(\\frac{\\rho F}{\\mu^2}\\right) \\Rightarrow \\frac{[ML^{-3}][M^1 L^1 T^{-2}]}{[M^1 L^{-1} T^{-1}]^2} \\Rightarrow M^0 L^0 T^0$ (Dimensionless)",
+        "solution": "Sol. (c) Option C:\n$$\\frac{\\rho F}{\\mu^2} \\Rightarrow \\frac{[M L^{-3}][M^1 L^1 T^{-2}]}{[M^1 L^{-1} T^{-1}]^2} \\Rightarrow M^0 L^0 T^0 \\text{ (Dimensionless)}$$",
         "has_diagram": false,
         "page_index": 4
     },
@@ -2505,14 +2505,14 @@
             "d": "Compressive force"
         },
         "correct_answer": "c",
-        "solution": "Sol. (c) Froude's Number ($F_r$) - is defined as the square root of the ratio of inertia force of a flowing fluid to the gravity force.",
+        "solution": "Sol. (c) Froude's Number ($F_r$) is defined as the square root of the ratio of inertia force of a flowing fluid to the gravity force.",
         "has_diagram": false,
         "page_index": 4
     },
     {
         "subject": "Fluid Mechanics",
         "question_number": "172",
-        "question_text": "If the physical quantities involved in a fluid flow phenomenon are discharge Q, diameter D, acceleration due to gravity g, dynamic viscosity $\\mu$ and density $\\rho$, then the number of $\\pi$ parameters needed to express the function F (Q, D, g, $\\mu$, $\\rho$) = 0 are",
+        "question_text": "If the physical quantities involved in a fluid flow phenomenon are discharge $Q$, diameter $D$, acceleration due to gravity $g$, dynamic viscosity $\\mu$ and density $\\rho$, then the number of $\\pi$ parameters needed to express the function $F(Q, D, g, \\mu, \\rho) = 0$ are",
         "options": {
             "a": "2",
             "b": "3",
@@ -2520,14 +2520,14 @@
             "d": "5"
         },
         "correct_answer": "a",
-        "solution": "Sol. (a) Given F (Q, D, g, $\\mu$, $\\rho$) = 0\n$[Q = L^3 T^{-1}, D = L^1, g = L T^{-2}, \\mu = M L^{-1} T^{-1}, \\rho = M L^{-3}] = 0$\nThus No. of fundamental dimensions in this Problem m = 3 (M, L, T)\nTotal no. of variables n = 5\nNo. of $\\pi$ term (n-M) $\\Rightarrow (5-3) \\Rightarrow 2$",
+        "solution": "Sol. (a) Given $F(Q, D, g, \\mu, \\rho) = 0$:\n$$[Q = L^3 T^{-1}, D = L^1, g = L T^{-2}, \\mu = M L^{-1} T^{-1}, \\rho = M L^{-3}]$$\n\nThus, the number of fundamental dimensions in this problem, $m = 3$ ($M, L, T$).\nTotal number of variables, $n = 5$.\nNumber of $\\pi$ terms = $n - m = 5 - 3 = 2$.",
         "has_diagram": false,
         "page_index": 4
     },
     {
         "subject": "Fluid Mechanics",
         "question_number": "173",
-        "question_text": "In a 1: 100 scale model of a harbour, the time which will correspond to the prototype tidal period of 12 hours will be",
+        "question_text": "In a 1:100 scale model of a harbour, the time which will correspond to the prototype tidal period of 12 hours will be",
         "options": {
             "a": "0.12 hour",
             "b": "1.2 hours",
@@ -2535,14 +2535,14 @@
             "d": "120 hours"
         },
         "correct_answer": "b",
-        "solution": "Sol. (b) From Froude's Model law\n$\\left(\\frac{t_p}{t_m}\\right) = \\sqrt{L_r} = \\sqrt{100} = 10$\n$\\Rightarrow t_m = \\left(\\frac{t_p}{10}\\right) = \\left(\\frac{12}{10}\\right) \\Rightarrow t_m = 1.2\\text{ hours}$",
+        "solution": "Sol. (b) From Froude's Model law:\n$$\\left(\\frac{t_p}{t_m}\\right) = \\sqrt{L_r} = \\sqrt{100} = 10$$\n\n$$t_m = \\left(\\frac{t_p}{10}\\right) = \\left(\\frac{12}{10}\\right)$$\n\n$$t_m = 1.2$$\n\nSo, $t_m = 1.2$ hours.",
         "has_diagram": false,
         "page_index": 5
     },
     {
         "subject": "Fluid Mechanics",
         "question_number": "174",
-        "question_text": "If the resistance R to the motion of a sphere through a fluid is a function of the density $\\rho$, viscosity $\\eta$ of the fluid, radius r and velocity v of the sphere, the number of $\\pi$-parameters needed to express the function F (R, $\\rho$, $\\eta$, r, v) = 0 is",
+        "question_text": "If the resistance $R$ to the motion of a sphere through a fluid is a function of the density $\\rho$, viscosity $\\eta$ of the fluid, radius $r$ and velocity $v$ of the sphere, the number of $\\pi$-parameters needed to express the function $F(R, \\rho, \\eta, r, v) = 0$ is",
         "options": {
             "a": "2",
             "b": "3",
@@ -2550,7 +2550,7 @@
             "d": "5"
         },
         "correct_answer": "a",
-        "solution": "Sol. (a) Given F [R, $\\rho$, n, r, v] = 0\n$[R = M L T^{-2}, \\rho = M L^{-3}, n = M L^{-1} T^{-1}, r = L, v = L T^{-1}]$\nTotal no. of variables n = 5\nNo. of Fundamental Dimensions m = 3\nNo. of dimensionless $\\pi$ terms (n-M) = (5-3) = 2",
+        "solution": "Sol. (a) Given $F(R, \\rho, \\eta, r, v) = 0$:\n$$[R = M L T^{-2}, \\rho = M L^{-3}, \\eta = M L^{-1} T^{-1}, r = L, v = L T^{-1}]$$\n\nTotal number of variables, $n = 5$.\nNumber of fundamental dimensions, $m = 3$.\nNumber of dimensionless $\\pi$ terms = $n - m = 5 - 3 = 2$.",
         "has_diagram": false,
         "page_index": 5
     },
@@ -2565,7 +2565,7 @@
             "d": "$F^1 T^{-2}$"
         },
         "correct_answer": "c",
-        "solution": "Sol. (c) Surface Tension (T) = $\\frac{F}{L} = \\frac{M^1 L^1 T^{-2}}{L^1} \\Rightarrow M^1 L^0 T^{-2}$",
+        "solution": "Sol. (c) Surface Tension ($T$):\n$$T = \\frac{F}{L} = \\frac{M^1 L^1 T^{-2}}{L^1} \\Rightarrow M^1 L^0 T^{-2}$$",
         "has_diagram": false,
         "page_index": 5
     },
@@ -2580,7 +2580,7 @@
             "d": "$N_s = \\frac{N\\sqrt{P}}{H^{5/4}}$ (specific speed of a turbine)"
         },
         "correct_answer": "c",
-        "solution": "Sol. (c) Dimensional Homogeneous: The dimensions of each terms in an equation on both sides are equal.\nDimension of LHS = Dimension of RHS\nLaminar flow in pipe $P = \\frac{32 \\mu v L}{D^2}$\nLHS $\\Rightarrow$ Pressure (p) = $M^1 L^{-1} T^{-2}$\nRHS $\\Rightarrow \\frac{(M L^{-1} T^{-1})(L T^{-1})(L)}{(L^2)} = M^1 L^{-1} T^{-2}$\nSo LHS = RHS",
+        "solution": "Sol. (c) Dimensional Homogeneous: The dimensions of each term in an equation on both sides are equal.\nDimension of LHS = Dimension of RHS\nLaminar flow in pipe:\n$$P = \\frac{32 \\mu v L}{D^2}$$\n\nLHS $\\Rightarrow$ Pressure ($P$) = $M^1 L^{-1} T^{-2}$\nRHS $\\Rightarrow \\frac{(M L^{-1} T^{-1})(L T^{-1})(L)}{(L^2)} = M^1 L^{-1} T^{-2}$\n\nSo, LHS = RHS.",
         "has_diagram": false,
         "page_index": 5
     },
@@ -2595,7 +2595,7 @@
             "d": "Resistance to motion of a ship"
         },
         "correct_answer": "c",
-        "solution": "Viscous force the relative motion between the adjacent layers of a fluid in motion. Like capillary waves in channels viscous force have not much significance.",
+        "solution": "Viscous force is the relative motion between the adjacent layers of a fluid in motion. Like capillary waves in channels, viscous force does not have much significance.",
         "has_diagram": false,
         "page_index": 1
     },
@@ -2610,7 +2610,7 @@
             "d": "$L_r^{7/2}$"
         },
         "correct_answer": "c",
-        "solution": "From Froude's law of similarity\n$(F_r)_{model} = (F_r)_{Prototype} = \\frac{v_m}{\\sqrt{g_m L_m}} = \\frac{v_p}{\\sqrt{g_p L_p}}$\n$\\Rightarrow \\left(\\frac{v_p}{v_m}\\right) = \\sqrt{\\frac{g_p L_p}{g_m L_m}} = \\sqrt{g_r L_r}$ (given, $g_r = 1$)\n$v_r \\propto L_r^{1/2}$\nSince scale ratio for discharge\n$Q = AV = L^2 \\times \\frac{L}{T} = \\frac{L^3}{T}$\n$Q_r = \\left(\\frac{Q_p}{Q_m}\\right) = \\frac{\\left(\\frac{L^3}{T}\\right)_p}{\\left(\\frac{L^3}{T}\\right)_M} \\Rightarrow \\left(\\frac{L_p}{L_m}\\right)^3 \\times \\left(\\frac{T_m}{T_p}\\right)$\n$Q_r = L_r^3 \\times \\frac{1}{\\sqrt{L_r}} = L_r^{2.5} = L_r^{5/2}$",
+        "solution": "From Froude's law of similarity:\n$$(F_r)_{model} = (F_r)_{prototype} \\Rightarrow \\frac{v_m}{\\sqrt{g_m L_m}} = \\frac{v_p}{\\sqrt{g_p L_p}}$$\n\n$$\\left(\\frac{v_p}{v_m}\\right) = \\sqrt{\\frac{g_p L_p}{g_m L_m}} = \\sqrt{g_r L_r}$$\n\nGiven $g_r = 1$, we have $v_r \\propto L_r^{1/2}$.\n\nSince scale ratio for discharge $Q = AV = L^2 \\times \\frac{L}{T} = \\frac{L^3}{T}$:\n$$Q_r = \\left(\\frac{Q_p}{Q_m}\\right) = \\frac{\\left(\\frac{L^3}{T}\\right)_p}{\\left(\\frac{L^3}{T}\\right)_m} \\Rightarrow \\left(\\frac{L_p}{L_m}\\right)^3 \\times \\left(\\frac{T_m}{T_p}\\right)$$\n\n$$Q_r = L_r^3 \\times \\frac{1}{\\sqrt{L_r}} = L_r^{2.5} = L_r^{5/2}$$",
         "has_diagram": false,
         "page_index": 1
     },
@@ -2625,7 +2625,7 @@
             "d": "$\\frac{VL\\rho}{\\sqrt{\\mu}}$"
         },
         "correct_answer": "c",
-        "solution": "Given function $\\phi(F, v, \\rho, \\mu, L) = 0$, $n = 5$\nHere taking Repeating variables $v, \\rho, L$, $M = 3$\nNo. of $\\pi$ terms $(n-m) = (5-3) = 2$\nSo $\\pi_1 = v^{a_1} \\rho^{b_1} L^{c_1} F$\n$\\pi_2 = v^{a_2} \\rho^{b_2} L^{c_2} \\mu$\nFor $\\pi_1 \\rightarrow \\pi_1 = V^{a_1} \\rho^{b_1} L^{c_1} F$\n$M^0 L^0 T^0 = [LT^{-1}]^{a_1} [ML^{-3}]^{b_1} [L]^{c_1} [MLT^{-2}]$\nPower of $M \\Rightarrow 0 = 0 + b_1 + 1 \\Rightarrow b_1 = -1$\nPower of $L \\Rightarrow 0 = a_1 - 3b_1 + c_1 + 1 \\Rightarrow c_1 = -2$\nPower of $T \\Rightarrow 0 = -a_1 - 2 \\Rightarrow a_1 = -2$\nSo $\\pi_1 = v^{-2} \\rho^{-1} L^{-2} F \\Rightarrow \\pi_1 = \\frac{F}{\\rho L^2 V^2}$",
+        "solution": "Given function $\\phi(F, V, \\rho, \\mu, L) = 0$, so $n = 5$.\nHere, taking repeating variables $V, \\rho, L$, so $m = 3$.\nNumber of $\\pi$ terms = $n - m = 5 - 3 = 2$.\n\nLet the terms be:\n$$\\pi_1 = V^{a_1} \\rho^{b_1} L^{c_1} F$$\n\n$$\\pi_2 = V^{a_2} \\rho^{b_2} L^{c_2} \\mu$$\n\nFor $\\pi_1$:\n$$M^0 L^0 T^0 = [LT^{-1}]^{a_1} [ML^{-3}]^{b_1} [L]^{c_1} [MLT^{-2}]$$\n\nEquating powers:\nPower of $M \\Rightarrow 0 = 0 + b_1 + 1 \\Rightarrow b_1 = -1$\nPower of $L \\Rightarrow 0 = a_1 - 3b_1 + c_1 + 1 \\Rightarrow c_1 = -2$\nPower of $T \\Rightarrow 0 = -a_1 - 2 \\Rightarrow a_1 = -2$\n\nSo, $\\pi_1 = V^{-2} \\rho^{-1} L^{-2} F$:\n$$\\pi_1 = \\frac{F}{\\rho L^2 V^2}$$",
         "has_diagram": false,
         "page_index": 1
     },
@@ -2640,14 +2640,14 @@
             "d": "$\\mu_r = L_r^{2/3}$"
         },
         "correct_answer": "a",
-        "solution": "As we know, scale ratio for velocity\n$v_r = c_r^{1/2}$ ...(i)\nAlso $v_r = \\left(\\frac{\\mu_r}{L_r}\\right)$ ...(ii)\nFrom equation (i) & (ii) $L_r^{1/2} = \\frac{\\mu_r}{L_r}$\n$\\mu_r = (L_r)^{3/2}$",
+        "solution": "As we know, scale ratio for velocity:\n$$v_r = L_r^{1/2} \\quad \\text{... (i)}$$\n\nAlso,\n$$v_r = \\left(\\frac{\\mu_r}{L_r}\\right) \\quad \\text{... (ii)}$$\n\nFrom equations (i) & (ii):\n$$L_r^{1/2} = \\frac{\\mu_r}{L_r}$$\n\n$$\\mu_r = (L_r)^{3/2}$$",
         "has_diagram": false,
         "page_index": 2
     },
     {
         "subject": "Fluid Mechanics",
         "question_number": "182",
-        "question_text": "A ship's model of scale 1: 100 had a wave resistance of 1 kg at its design speed. The corresponding wave resistance in prototype will be",
+        "question_text": "A ship's model of scale 1:100 had a wave resistance of 1 kg at its design speed. The corresponding wave resistance in prototype will be",
         "options": {
             "a": "100 kg",
             "b": "10000 kg",
@@ -2655,7 +2655,7 @@
             "d": "1000 kg"
         },
         "correct_answer": "c",
-        "solution": "Scale Ratio for force\nSince Force = Mass $\\times$ Acceleration\n$F = ma$\n$F = \\rho L^3 \\times \\frac{V}{T} \\Rightarrow \\rho L^2 \\left(\\frac{L}{T}\\right) V = \\rho L^2 V^2$\nSince same fluid for model and prototype\n$\\rho_m = \\rho_p$\nHence $F_r = \\left(\\frac{L_p}{L_m}\\right)^2 \\left(\\frac{v_p}{v_m}\\right)^2 = L_r (\\sqrt{L_r})^2$\n$f_r = (L_r)^3$\nOr\n$f_p = 1(100)^3$ | Since $f_m = 1\\text{ kg}$ (Given)\n$F_p = 1000000\\text{ kg}$",
+        "solution": "Scale Ratio for force:\nSince Force = Mass $\\times$ Acceleration ($F = ma$):\n$$F = \\rho L^3 \\times \\frac{V}{T} \\Rightarrow \\rho L^2 \\left(\\frac{L}{T}\\right) V = \\rho L^2 V^2$$\n\nSince it's the same fluid for model and prototype, $\\rho_m = \\rho_p$.\nHence,\n$$F_r = \\left(\\frac{L_p}{L_m}\\right)^2 \\left(\\frac{v_p}{v_m}\\right)^2 = L_r (\\sqrt{L_r})^2$$\n\n$$F_r = (L_r)^3$$\n\nOr $F_p = 1 \\times (100)^3$ (Since $F_m = 1$ kg).\n$F_p = 1000000$ kg.",
         "has_diagram": false,
         "page_index": 2
     },
@@ -2670,7 +2670,7 @@
             "d": "All the above"
         },
         "correct_answer": "c",
-        "solution": "For flow over spillway crest and open channel transition gravity and inertia force is important whereas flow through a long capillary tube surface tension force is important.",
+        "solution": "For flow over spillway crest and open channel transition, gravity and inertia forces are important, whereas for flow through a long capillary tube, surface tension force is important.",
         "has_diagram": true,
         "diagram_bbox": [
             635,
@@ -2692,7 +2692,7 @@
             "d": "Both (i) and (iii) are correct"
         },
         "correct_answer": "c",
-        "solution": "For the resistance to motion of a ship's model through water viscous force and gravity force is important so Reynold's law and Froude's law is used, were as Weber's law is used where surface tension force is important like capillary rise cases etc.",
+        "solution": "For the resistance to motion of a ship's model through water, viscous force and gravity force are important, so Reynold's law and Froude's law are used, whereas Weber's law is used where surface tension force is important like capillary rise cases, etc.",
         "has_diagram": false,
         "page_index": 3
     },
@@ -2707,7 +2707,7 @@
             "d": "low suction lift and low pump speed"
         },
         "correct_answer": "c",
-        "solution": "Cavitation is the formation of vapour bubbles of a flowing liquid in a region where the pressure of the liquid falls below the vapour pressure.\nCavitation occurs in cases of high suction lift and high-speed pump.",
+        "solution": "Cavitation is the formation of vapour bubbles of a flowing liquid in a region where the pressure of the liquid falls below the vapour pressure.\nCavitation occurs in cases of high suction lift and high-speed pumps.",
         "has_diagram": false,
         "page_index": 3
     },
@@ -2722,7 +2722,7 @@
             "d": "$\\frac{P - P_a}{0.5\\rho V^2}$"
         },
         "correct_answer": "a",
-        "solution": "Cavitation's parameter = $\\frac{p - p_v}{\\frac{1}{2}\\rho v^2}$\nWhere $p = \\text{absolute pressure}$, $p_v = \\text{Vapour pressure}$, $\\rho = \\text{Density}$, $v = \\text{velocity}$",
+        "solution": "Cavitation parameter:\n$$\\sigma = \\frac{p - p_v}{\\frac{1}{2}\\rho v^2}$$\n\nWhere $p = \\text{absolute pressure}$, $p_v = \\text{Vapour pressure}$, $\\rho = \\text{Density}$, $v = \\text{velocity}$.",
         "has_diagram": false,
         "page_index": 3
     },
@@ -2737,7 +2737,7 @@
             "d": "Converts pressure head into velocity throughout the vanes"
         },
         "correct_answer": "c",
-        "solution": "An impulse turbine is a horizontal or vertical wheel that uses the kinetic energy of water striking its buckets or blades to cause rotation. The wheel is covered by a housing and the buckets or blades are shaped so they turn the flow of water about 170 degrees inside the housing. After turning the blades or buckets, the water falls to the bottom of the wheel housing and flows out.\nA simple impulse turbine deploys only one set of nozzles where complete expansion from the steam chest pressure to the exhaust (condenser) pressure is performed along with the highest velocity (near 1000 m/s) at the outlet of nozzles vis-a-vis the inlet of the moving blade. The result is a very high rotational speed of the turbine requiring a high reduction gear. The outlet velocity is also very high, causing energy loss of 10%-12% of the initial kinetic energy entering the turbine. This type of turbine is also called the De Laval turbine.",
+        "solution": "An impulse turbine is a horizontal or vertical wheel that uses the kinetic energy of water striking its buckets or blades to cause rotation. The wheel is covered by a housing and the buckets or blades are shaped so they turn the flow of water about 170 degrees inside the housing. After turning the blades or buckets, the water falls to the bottom of the wheel housing and flows out.\n\nA simple impulse turbine deploys only one set of nozzles where complete expansion from the steam chest pressure to the exhaust (condenser) pressure is performed along with the highest velocity (near 1000 m/s) at the inlet of the moving blade. The result is a very high rotational speed of the turbine requiring a high reduction gear. The outlet velocity is also very high, causing energy loss of 10%-12% of the initial kinetic energy entering the turbine. This type of turbine is also called the De Laval turbine.",
         "has_diagram": false,
         "page_index": 3
     },
@@ -2752,7 +2752,7 @@
             "d": "None of the above"
         },
         "correct_answer": "a",
-        "solution": "Based on specific speeds of machines:\nPelton: 15 to 65\nFrancis: 60 to 400\nDeriaz: 200 to 400\nKaplan: 300 to 800\nPropeller: 300 to 800\nBulb: 600 to 1200",
+        "solution": "Based on specific speeds of machines:\n- Pelton: 15 to 65\n- Francis: 60 to 400\n- Deriaz: 200 to 400\n- Kaplan: 300 to 800\n- Propeller: 300 to 800\n- Bulb: 600 to 1200",
         "has_diagram": false,
         "page_index": 4
     },
@@ -2767,14 +2767,14 @@
             "d": "90"
         },
         "correct_answer": "a",
-        "solution": "Specific speed of a centrifugal pump,\n$N_s = \\frac{N\\sqrt{Q}}{H^{3/4}} = \\frac{1450\\sqrt{44}}{36^{3/4}} = 654$",
+        "solution": "Specific speed of a centrifugal pump:\n$$N_s = \\frac{N\\sqrt{Q}}{H^{3/4}}$$\n\n$$N_s = \\frac{1450\\sqrt{44}}{36^{3/4}} \\approx 654$$",
         "has_diagram": false,
         "page_index": 4
     },
     {
         "subject": "Fluid Mechanics",
         "question_number": "190",
-        "question_text": "A Francis turbine under a head of 25 m produces 2000 KW at a speed of 250 rpm. Its specific speed is",
+        "question_text": "A Francis turbine under a head of 25 m produces 2000 kW at a speed of 250 rpm. Its specific speed is",
         "options": {
             "a": "50",
             "b": "100",
@@ -2782,7 +2782,7 @@
             "d": "200"
         },
         "correct_answer": "d",
-        "solution": "Given: - $H = 25\\text{ m}$, $p = 2000\\text{ kw}$, $N = 250\\text{ rpm}$\nSince specific speed of turbine\n$N_s = \\frac{N\\sqrt{P}}{H^{5/4}} = \\frac{250\\sqrt{2000}}{(25)^{5/4}}$\n$N_s = 200$",
+        "solution": "Given: $H = 25$ m, $P = 2000$ kW, $N = 250$ rpm.\nSince specific speed of turbine:\n$$N_s = \\frac{N\\sqrt{P}}{H^{5/4}}$$\n\n$$N_s = \\frac{250\\sqrt{2000}}{(25)^{5/4}}$$\n\n$$N_s = 200$$",
         "has_diagram": false,
         "page_index": 4
     },
@@ -2812,7 +2812,7 @@
             "d": "867 kW"
         },
         "correct_answer": "a",
-        "solution": "Power developed by turbine $p = \\eta \\rho \\cdot g Q H$\n$P = (0.35 \\times 1000 \\times 9.81 \\times 10 \\times 8) \\times 10^{-3}$\n$p = 667\\text{kw}$",
+        "solution": "Power developed by turbine $P = \\eta \\rho g Q H$\n$P = (0.85 \\times 1000 \\times 9.81 \\times 10 \\times 8) \\times 10^{-3}$\n$P = 667\\text{ kW}$",
         "has_diagram": false,
         "page_index": 4
     },
@@ -2954,7 +2954,7 @@
     {
         "subject": "Fluid Mechanics",
         "question_number": "202",
-        "question_text": "Match List I with List II and select the correct answer using the codes given below the lists :\n\n**List -I**\nA. Subsonic flow through Converging a duct\nB. Subsonic flow through a duct\nC. Supersonic flow through a Converging duct\nD. Supersonic flow through a Diverging duct\n\n**List -II**\n1. Velocity increases and pressure decreases\n2. Velocity increases and density decreases\n3. Density increases and velocity decreases\n4. Velocity decreases and pressure, density, temperature increase",
+        "question_text": "Match List I with List II and select the correct answer using the codes given below the lists :\n\n**List -I**\nA. Subsonic flow through Converging a duct\nB. Subsonic flow through a Diverging duct\nC. Supersonic flow through a Converging duct\nD. Supersonic flow through a Diverging duct\n\n**List -II**\n1. Velocity increases and pressure decreases\n2. Velocity increases and density decreases\n3. Density increases and velocity decreases\n4. Velocity decreases and pressure, density, temperature increase",
         "options": {
             "a": "A-2, B-4, C-3, D-1",
             "b": "A-2, B-4, C-1, D-3",
@@ -3089,7 +3089,7 @@
             "d": "Varies exponentially with distance"
         },
         "correct_answer": "c",
-        "solution": "For turbulent flow $= \\tau = \\frac{-r}{2} \\left(\\frac{\\partial p}{\\partial x}\\right)$\nPressure gradient varies with distance.",
+        "solution": "For turbulent flow, $\\tau = \\frac{-r}{2} \\left(\\frac{\\partial p}{\\partial x}\\right)$\nPressure gradient varies with distance.",
         "has_diagram": false,
         "page_index": 4
     },
@@ -3098,13 +3098,13 @@
         "question_number": "211",
         "question_text": "A dimensionless combination of surface tension $\\sigma$, density $\\rho$, diameter D and velocity V is",
         "options": {
-            "a": "$\\sigma D' / \\rho V$",
+            "a": "$\\sigma D / \\rho V$",
             "b": "$\\sigma D^2 / \\rho V$",
             "c": "$\\sigma / \\rho V^2 D$",
-            "d": "$\\sigma D' / \\rho V^2$"
+            "d": "$\\sigma D / \\rho V^2$"
         },
         "correct_answer": "c",
-        "solution": "For $\\frac{\\sigma}{\\rho V^2 D} \\Rightarrow \\text{Dimension of } \\sigma = \\frac{F}{L} = \\frac{M^1 L^1 T^{-2}}{L^1} = M^1 T^{-2}$\nFor $D = L^1$\nFor $\\rho = M^1 L^{-3}$\nFor $V = L^1 T^{-1}$\nFor $\\frac{\\sigma}{\\rho V^2 D} = \\frac{M^1 T^{-2}}{M^1 L^{-3} \\times L^2 \\times T^{-2} L^1} \\Rightarrow M^0 L^0 T^0$",
+        "solution": "For $\\frac{\\sigma}{\\rho V^2 D} \\Rightarrow \\text{Dimension of } \\sigma = \\frac{F}{L} = \\frac{M^1 L^1 T^{-2}}{L^1} = M^1 T^{-2}$\nFor $D = L^1$\nFor $\\rho = M^1 L^{-3}$\nFor $V = L^1 T^{-1}$\nFor $\\frac{\\sigma}{\\rho V^2 D} = \\frac{M^1 T^{-2}}{M^1 L^{-3} \\times L^2 T^{-2} \\times L^1} \\Rightarrow M^0 L^0 T^0$",
         "has_diagram": false,
         "page_index": 4
     },
@@ -3115,11 +3115,11 @@
         "options": {
             "a": "$\\frac{1}{r}$",
             "b": "$\\frac{1}{r^2}$",
-            "c": "$c^r$",
+            "c": "$e^r$",
             "d": "$\\ln r$"
         },
         "correct_answer": "d",
-        "solution": "Equation of potential function\n$\\phi = \\frac{q}{2a} \\ln r$\n$\\phi \\propto \\ln r$",
+        "solution": "Equation of potential function\n$\\phi = \\frac{q}{2\\pi} \\ln r$\n$\\phi \\propto \\ln r$",
         "has_diagram": false,
         "page_index": 4
     },
@@ -3366,7 +3366,7 @@
     {
         "subject": "Fluid Mechanics",
         "question_number": "230",
-        "question_text": "Match List I with List II and select the correct answer using the codes given below the lists: ($y_0$ = Normal depth, $y_c$ = critical depth and y = depth of gradually varied flow)\n\nList - I (Flow regimes for gradually varied flow):\nA. $y_c > y_0 > y$\nB. $y_c < y_0 < y$\nC. $y_c > y > y_c$\nD. $y > y_c > y_0$\n\nList - II (Type of gradually varied flow profile):\n1. $C_1$\n2. $M_1$\n3. $S_3$\n4. $M_2$\n5. $S_1$",
+        "question_text": "Match List I with List II and select the correct answer using the codes given below the lists: ($y_0$ = Normal depth, $y_c$ = critical depth and $y$ = depth of gradually varied flow)\n\nList - I (Flow regimes for gradually varied flow):\nA. $y_c > y_0 > y$\nB. $y_c < y_0 < y$\nC. $y_0 > y > y_c$\nD. $y > y_c > y_0$\n\nList - II (Type of gradually varied flow profile):\n1. $C_1$\n2. $M_1$\n3. $S_3$\n4. $M_2$\n5. $S_1$",
         "options": {
             "a": "A-1, B-2, C-3, D-4",
             "b": "A-3, B-4, C-5, D-2",
@@ -3374,7 +3374,7 @@
             "d": "A-5, B-4, C-3, D-1"
         },
         "correct_answer": "c",
-        "solution": "Based on the classification of gradually varied flow profiles:\n- For $y_c > y_0 > y$ (Steep slope, Zone 3), the profile is $S_3$.\n- For $y_c < y_0 < y$ (Mild slope, Zone 1), the profile is $M_1$.\n- For $y_c > y > y_0$ (Mild slope, Zone 2), the profile is $M_2$.\n- For $y > y_c > y_0$ (Steep slope, Zone 1), the profile is $S_1$.",
+        "solution": "Based on the classification of gradually varied flow profiles:\n- For $y_c > y_0 > y$ (Steep slope, Zone 3), the profile is $S_3$.\n- For $y_c < y_0 < y$ (Mild slope, Zone 1), the profile is $M_1$.\n- For $y_0 > y > y_c$ (Mild slope, Zone 2), the profile is $M_2$.\n- For $y > y_c > y_0$ (Steep slope, Zone 1), the profile is $S_1$.",
         "has_diagram": true,
         "diagram_bbox": [
             45,
@@ -3396,14 +3396,14 @@
             "d": "1.60 m"
         },
         "correct_answer": "a",
-        "solution": "$\\frac{V_1^2}{2g} + y_1 = \\frac{V_2^2}{2g} + y_2$\n$\\frac{\\left(\\frac{3}{2 \\times 1.2}\\right)^2}{2g} + 1.2 = \\frac{\\left(\\frac{3}{1.5 y_2}\\right)^2}{2g} + y_2$\n$y_2 = 1.12\\text{ m}$",
+        "solution": "$$\\frac{V_1^2}{2g} + y_1 = \\frac{V_2^2}{2g} + y_2$$\n\n$$\\frac{\\left(\\frac{3}{2 \\times 1.2}\\right)^2}{2g} + 1.2 = \\frac{\\left(\\frac{3}{1.5 y_2}\\right)^2}{2g} + y_2$$\n\n$$y_2 = 1.12$$",
         "has_diagram": false,
         "page_index": 4
     },
     {
         "subject": "Fluid Mechanics",
         "question_number": "232",
-        "question_text": "If u and v are the components of velocity in the x and y directions of a flow given by\n$u = ax + by$; $v = cx + dy$,\nthen the condition to be satisfied is",
+        "question_text": "If $u$ and $v$ are the components of velocity in the x and y directions of a flow given by $u = ax + by$ and $v = cx + dy$, then the condition to be satisfied is",
         "options": {
             "a": "a + c = 0",
             "b": "b + d = 0",
@@ -3411,7 +3411,7 @@
             "d": "a + d = 0"
         },
         "correct_answer": "d",
-        "solution": "For two-dimensional flow, the velocity fields are\n$u = ax + by$\n$v = cx + dy$\nWhere a, b, c, d are constants.\nThe flow is incompressible, if\n$\\frac{\\partial u}{\\partial x} + \\frac{\\partial v}{\\partial y} = 0$\nSubstitute u, v values in above equation,\n$\\frac{\\partial}{\\partial x}(ax + by) + \\frac{\\partial}{\\partial y}(cx + dy) = 0$\n$a + d = 0$",
+        "solution": "For two-dimensional flow, the velocity fields are:\n$$u = ax + by$$\n$$v = cx + dy$$\nWhere $a$, $b$, $c$, $d$ are constants.\nThe flow is incompressible, if:\n$$\\frac{\\partial u}{\\partial x} + \\frac{\\partial v}{\\partial y} = 0$$\nSubstitute $u$, $v$ values in the above equation:\n$$\\frac{\\partial}{\\partial x}(ax + by) + \\frac{\\partial}{\\partial y}(cx + dy) = 0$$\n$$a + d = 0$$",
         "has_diagram": false,
         "page_index": 4
     },
@@ -3426,7 +3426,7 @@
             "d": "$\\sqrt{2}$ m/s²"
         },
         "correct_answer": "d",
-        "solution": "Total acceleration at a point\n$= \\sqrt{a_s^2 + a_n^2} = \\sqrt{\\left(v \\frac{ds}{dt}\\right)^2 + \\left(\\frac{v^2}{r}\\right)^2} = \\sqrt{\\left(3 \\times \\frac{1}{3}\\right)^2 + \\left(\\frac{9}{9}\\right)^2} = \\sqrt{2}$",
+        "solution": "Total acceleration at a point is:\n$$a = \\sqrt{a_s^2 + a_n^2}$$\n\n$$a = \\sqrt{\\left(v \\frac{dv}{ds}\\right)^2 + \\left(\\frac{v^2}{r}\\right)^2}$$\n\n$$a = \\sqrt{\\left(3 \\times \\frac{1}{3}\\right)^2 + \\left(\\frac{3^2}{9}\\right)^2}$$\n\n$$a = \\sqrt{1^2 + 1^2} = \\sqrt{2}$$",
         "has_diagram": false,
         "page_index": 4
     },
@@ -3448,15 +3448,15 @@
     {
         "subject": "Fluid Mechanics",
         "question_number": "235",
-        "question_text": "In a Sutro weir, the rate of flow for all flows above the rectangular base of width W and depth 'a' is proportional to the head",
+        "question_text": "In a Sutro weir, the rate of flow for all flows above the rectangular base of width $W$ and depth $a$ is proportional to the head",
         "options": {
             "a": "above the crest",
             "b": "above the rectangular box",
-            "c": "above a datum a/3 above the crest",
+            "c": "above a datum $a/3$ above the crest",
             "d": "$\\frac{2a}{3}$ above the crest"
         },
         "correct_answer": "c",
-        "solution": "In a Sutro weir, the rate of flow for all flows above the rectangular base of width W and depth 'a' is proportional to the head above a datum a/3 above the crest.",
+        "solution": "In a Sutro weir, the rate of flow for all flows above the rectangular base of width $W$ and depth $a$ is proportional to the head above a datum $a/3$ above the crest.",
         "has_diagram": false,
         "page_index": 5
     },
@@ -3471,7 +3471,7 @@
             "d": "2 minutes"
         },
         "correct_answer": "b",
-        "solution": "$\\frac{t_m}{t_p} = \\sqrt{\\frac{l_m}{l_p}} = \\sqrt{\\frac{1}{25}} = \\frac{1}{5}$\n$t_p = 5 t_m = 5 \\times 10 = 50\\text{ minutes}$",
+        "solution": "$$\\frac{t_m}{t_p} = \\sqrt{\\frac{L_m}{L_p}} = \\sqrt{\\frac{1}{25}} = \\frac{1}{5}$$\n\n$$t_p = 5 t_m = 5 \\times 10 = 50 \\text{ minutes}$$",
         "has_diagram": false,
         "page_index": 5
     },
@@ -3501,7 +3501,7 @@
             "d": "3 and 4"
         },
         "correct_answer": "b",
-        "solution": "In steady laminar flow through a circular pipe discharge varies inversely proportional to viscosity of the fluid flowing.",
+        "solution": "In steady laminar flow through a circular pipe, discharge varies inversely proportional to the viscosity of the fluid flowing, not directly. Statements 1, 3, and 4 are correct.",
         "has_diagram": false,
         "page_index": 1
     },
@@ -3530,7 +3530,7 @@
     {
         "subject": "Fluid Mechanics",
         "question_number": "240",
-        "question_text": "In a compressible flow, the area of flow, the velocity of flow and the mass density are denoted by a, v and m respectively. At a particular section, the differential form of the continuity equation is given by",
+        "question_text": "In a compressible flow, the area of flow, the velocity of flow and the mass density are denoted by $a$, $v$ and $m$ respectively. At a particular section, the differential form of the continuity equation is given by",
         "options": {
             "a": "$\\frac{da}{a} = \\frac{dv}{v} + \\frac{dm}{m}$",
             "b": "$\\frac{da}{a} = \\frac{dv}{v} - \\frac{dm}{m}$",
@@ -3538,14 +3538,14 @@
             "d": "$\\frac{da}{a} = -\\frac{dv}{v} - \\frac{dm}{m}$"
         },
         "correct_answer": "d",
-        "solution": "In a compressible flow, the area of flow, the velocity of flow and the mass density are denoted by a, v and m respectively. At a particular section, the differential form of the continuity equation is given by $\\frac{da}{a} = -\\frac{dv}{v} - \\frac{dm}{m}$",
+        "solution": "In a compressible flow, the area of flow, the velocity of flow and the mass density are denoted by $a$, $v$ and $m$ respectively. At a particular section, the differential form of the continuity equation is given by:\n$$\\frac{da}{a} = -\\frac{dv}{v} - \\frac{dm}{m}$$",
         "has_diagram": false,
         "page_index": 2
     },
     {
         "subject": "Fluid Mechanics",
         "question_number": "241",
-        "question_text": "Given that K = a coefficient, v = mean velocity, f = Darcy - Weisbach friction factor and D = diameter of the pipe, If the head loss in a pipe bend is given by $h_L = Kv^2/2g$, then the equivalent length of the pipe is",
+        "question_text": "Given that $K$ = a coefficient, $v$ = mean velocity, $f$ = Darcy - Weisbach friction factor and $D$ = diameter of the pipe. If the head loss in a pipe bend is given by $h_L = \\frac{Kv^2}{2g}$, then the equivalent length of the pipe is",
         "options": {
             "a": "KD/f",
             "b": "Kf/D",
@@ -3553,14 +3553,14 @@
             "d": "Df/K"
         },
         "correct_answer": "a",
-        "solution": "Given that:\nK = coefficient\nv = mean velocity\nf = Darcy - Weisbach friction factor\nD = diameter of the pipe\nhead loss in a pipe bend is given by $h_L = Kv^2/2g$\nwe know, head loss = $\\frac{f L V^2}{2gD}$\non comparing above two equations,\nEquivalent length of the pipe $(L) = \\frac{KD}{f}$",
+        "solution": "Given that:\n$K$ = coefficient\n$v$ = mean velocity\n$f$ = Darcy - Weisbach friction factor\n$D$ = diameter of the pipe\n\nHead loss in a pipe bend is given by:\n$$h_L = \\frac{K v^2}{2g}$$\n\nWe know, head loss due to friction is:\n$$h_L = \\frac{f L v^2}{2gD}$$\n\nOn comparing the above two equations:\n$$\\frac{K v^2}{2g} = \\frac{f L v^2}{2gD}$$\n\nEquivalent length of the pipe $L$ is:\n$$L = \\frac{K D}{f}$$",
         "has_diagram": false,
         "page_index": 2
     },
     {
         "subject": "Fluid Mechanics",
         "question_number": "242",
-        "question_text": "When no external energy is imposed, which of the following statements would be true?\n1. Energy line always falls in the direction of flow.\n2. Hydraulic gradient line never rises in the direction of flow.\n3. Specific energy may increase or decrease in the direction of flow,\n4. Energy line and hydraulic gradient line can cross each other,\n\nSelect the correct answer using the codes given below.",
+        "question_text": "When no external energy is imposed, which of the following statements would be true?\n1. Energy line always falls in the direction of flow.\n2. Hydraulic gradient line never rises in the direction of flow.\n3. Specific energy may increase or decrease in the direction of flow.\n4. Energy line and hydraulic gradient line can cross each other.\n\nSelect the correct answer using the codes given below.",
         "options": {
             "a": "1 and 2",
             "b": "2 and 3",
@@ -3568,22 +3568,22 @@
             "d": "1 and 3"
         },
         "correct_answer": "a",
-        "solution": "Hydraulic Grade Line i.e. HGL defined as a line joining all the liquid levels indicated by piezometers connected to the pipeline throughout. If HGL is above the center of the pipeline, the pressure is positive and HGL is below the center of the pipeline, the pressure is negative.\nTotal Energy Line i.e. TEL is defined as a line joining the points representing the total head $(P/\\gamma + V^2/2g + Z)$.\nFor ideal or non-viscous fluid there are no losses hence TEL for that fluid is a horizontal line.\nBut for real fluid, it will always slope down in the direction of flow because the energy must decrease in the direction of flow.",
+        "solution": "Hydraulic Grade Line (HGL) is defined as a line joining all the liquid levels indicated by piezometers connected to the pipeline throughout. If HGL is above the center of the pipeline, the pressure is positive, and if HGL is below the center of the pipeline, the pressure is negative.\nTotal Energy Line (TEL) is defined as a line joining the points representing the total head:\n$$H = \\left(\\frac{P}{\\gamma} + \\frac{V^2}{2g} + Z\\right)$$\nFor an ideal or non-viscous fluid, there are no losses, hence TEL for that fluid is a horizontal line.\nBut for a real fluid, it will always slope down in the direction of flow because the energy must decrease in the direction of flow.",
         "has_diagram": false,
         "page_index": 2
     },
     {
         "subject": "Fluid Mechanics",
         "question_number": "243",
-        "question_text": "The specific energy 'E' in a critical flow at depth $y_c$ occurring in a triangular channel is given by",
+        "question_text": "The specific energy $E$ in a critical flow at depth $y_c$ occurring in a triangular channel is given by",
         "options": {
-            "a": "E = 1.25 y_c",
-            "b": "E = 1.5 y_c",
-            "c": "E = 1.75 y_c",
-            "d": "E = 2 y_c"
+            "a": "$E = 1.25 y_c$",
+            "b": "$E = 1.5 y_c$",
+            "c": "$E = 1.75 y_c$",
+            "d": "$E = 2 y_c$"
         },
         "correct_answer": "a",
-        "solution": "$E_s = y + \\frac{Q^2}{2gA^2} \\Rightarrow E_s = y + \\frac{A}{2T}$ This equation represents the critical state.\nOR $E_c = y_c + \\frac{1}{2}(\\frac{A}{T})$ The general equation for the specific energy in critical state applicable to channels of all shapes.\nFor a triangle section, $E_c = \\frac{5}{4} y_c = 1.25 y_c$.",
+        "solution": "Specific energy is given by:\n$$E_s = y + \\frac{Q^2}{2g A^2}$$\n\nFor critical flow, $\\frac{Q^2}{g} = \\frac{A^3}{T}$, so:\n$$E_c = y_c + \\frac{A}{2T}$$\nThis is the general equation for the specific energy in critical state applicable to channels of all shapes.\n\nFor a triangular section, $A = m y^2$ and $T = 2my$. Thus, $\\frac{A}{2T} = \\frac{y_c}{4}$.\n$$E_c = y_c + \\frac{y_c}{4} = \\frac{5}{4} y_c = 1.25 y_c$$",
         "has_diagram": true,
         "diagram_bbox": [
             360,
@@ -3600,12 +3600,12 @@
         "question_text": "In a gradually varied flow, if $\\frac{dy}{dx}$ is positive, then $\\frac{dE}{dx}$ will be",
         "options": {
             "a": "always zero",
-            "b": "positive if y > y_c",
-            "c": "negative if y > y_c",
+            "b": "positive if $y > y_c$",
+            "c": "negative if $y > y_c$",
             "d": "always negative"
         },
         "correct_answer": "b",
-        "solution": "In a gradually varied flow, if $\\frac{dy}{dx}$ is positive, then $\\frac{dE}{dx}$ will be always positive if $y > y_c$.",
+        "solution": "In a gradually varied flow, if $\\frac{dy}{dx}$ is positive, then $\\frac{dE}{dx}$ will be positive if $y > y_c$.",
         "has_diagram": false,
         "page_index": 3
     },
@@ -3614,10 +3614,10 @@
         "question_number": "245",
         "question_text": "Which one of the following is the correct representation of the sequence of surface profiles if the channel slope changes from mild to steep?",
         "options": {
-            "a": "M_1, S_1",
-            "b": "M_3, S_2",
-            "c": "M_2, S_3",
-            "d": "M_2, S_2"
+            "a": "$M_1, S_1$",
+            "b": "$M_3, S_2$",
+            "c": "$M_2, S_3$",
+            "d": "$M_2, S_2$"
         },
         "correct_answer": "d",
         "solution": "The correct representation of the sequence of surface profiles if the channel slope changes from mild to steep is $M_2, S_2$.",
@@ -3634,7 +3634,7 @@
     {
         "subject": "Fluid Mechanics",
         "question_number": "246",
-        "question_text": "An irrigation canal has a steady discharge Q at a section where a cross-regulation (gate(d) is provided for control purposes. If the gate of the regulator, which is normally fully open, is suddenly lowered down to a half open position, then a rapidly varied unsteady flow results. In such a case, it would take the form of a",
+        "question_text": "An irrigation canal has a steady discharge $Q$ at a section where a cross-regulation (gated) is provided for control purposes. If the gate of the regulator, which is normally fully open, is suddenly lowered down to a half open position, then a rapidly varied unsteady flow results. In such a case, it would take the form of a",
         "options": {
             "a": "+ve surge moving u/s and a - ve surge moving d/s",
             "b": "+ ve surge moving d/s and a - ve surge moving u/s",
@@ -3642,22 +3642,22 @@
             "d": "- ve surge moving u/s and a -ve surge moving d/s"
         },
         "correct_answer": "a",
-        "solution": "Positive surge moving upstream is observed due to the sudden opening of a gate across a rectangular channel to pass a suddenly increased discharge through the channel. The wave in the form of a sharp or sudden increase in the flow-depth travels faster downstream relative to the initial flow velocity prior to the opening of the gate. The idealized positive surge advancing upstream, which is observed due to the sudden partial closing of the gate to pass a suddenly decreased discharge through the channel. The wave in the form of a sharp or sudden increase in the flow-depth travels faster upstream against the initial flow velocity directed downstream.\nNegative surges can be caused by a sudden change in flow resulting from a decrease in water depth.",
+        "solution": "Positive surge moving upstream is observed due to the sudden partial closing of a gate across a rectangular channel to pass a suddenly decreased discharge through the channel. The wave in the form of a sharp or sudden increase in the flow-depth travels faster upstream against the initial flow velocity directed downstream.\nNegative surges moving downstream can be caused by a sudden change in flow resulting from a decrease in water depth downstream of the gate.",
         "has_diagram": false,
         "page_index": 3
     },
     {
         "subject": "Fluid Mechanics",
         "question_number": "247",
-        "question_text": "A 10-m high rocket containing liquid fuel of specific gravity 1.2 lift at an acceleration of 5g. The pressure on the bottom plate of the rocket, at lift - off is",
+        "question_text": "A 10-m high rocket containing liquid fuel of specific gravity 1.2 lift at an acceleration of $5g$. The pressure on the bottom plate of the rocket, at lift - off is",
         "options": {
-            "a": "6.7 kg/cm^2",
-            "b": "7.2 kg/cm^2",
-            "c": "8.4 kg/cm^2",
-            "d": "8.9 kg/cm^2"
+            "a": "6.7 kg/cm²",
+            "b": "7.2 kg/cm²",
+            "c": "8.4 kg/cm²",
+            "d": "8.9 kg/cm²"
         },
         "correct_answer": "b",
-        "solution": "Force analysis\n$(P_1 - P_2)A - mg = ma_z$\n$P_2 A = m(a_z + g)$\n$P_2 A = \\delta(AH)(a_z + g)$\n$= 1.2 (10) (5g + g)\\text{ N/m}^2$\n$= 1.2 \\times 10 \\times 6g\\text{ N/m}^2$\n$= 72 g\\text{ N/m}^2$\n$= 7.2\\text{ kgf N/cm}^2$",
+        "solution": "Force analysis on the liquid column:\n$$(P_{bottom} - P_{top}) A - m g = m a_z$$\nAssuming atmospheric pressure at top ($P_{top} = 0$) for gauge pressure:\n$$P_{bottom} A = m(a_z + g)$$\nSince mass $m = \\rho (A H)$:\n$$P_{bottom} A = \\rho (A H) (a_z + g)$$\n$$P_{bottom} = \\rho H (a_z + g)$$\nGiven $\\rho = 1.2 \\times 1000 = 1200 \\text{ kg/m}^3$, $H = 10 \\text{ m}$, and $a_z = 5g$:\n$$P_{bottom} = 1200 \\times 10 \\times (5g + g)$$\n$$P_{bottom} = 1200 \\times 10 \\times 6g = 72000 g \\text{ N/m}^2$$\nSince $1 \\text{ kgf} = g \\text{ N}$, the pressure in kgf/m² is:\n$$P_{bottom} = 72000 \\text{ kgf/m}^2$$\nConverting to kgf/cm²:\n$$P_{bottom} = \\frac{72000}{10^4} = 7.2 \\text{ kgf/cm}^2$$",
         "has_diagram": true,
         "diagram_bbox": [
             460,
@@ -3701,22 +3701,22 @@
             "d": "Remains unaffected"
         },
         "correct_answer": "a",
-        "solution": "A centre of pressure or centre of buoyancy of a body (or the part of a body) immersed in water is the centre of gravity of the displaced liquid by the body. So, if you take a cylindrical brass rod and you put it vertical in the water so half of it is into the water, the centre of gravity of the rod is in the middle of the rod and the centre of buoyancy at a quarter of its length (in the water). As the depth of immersion increases, the location of centre of pressure falls closer to the centre of gravity of the area.",
+        "solution": "The center of pressure $h^*$ is given by $h^* = \\bar{h} + \\frac{I_g}{A \\bar{h}}$. As the depth of immersion $\\bar{h}$ increases, the term $\\frac{I_g}{A \\bar{h}}$ becomes smaller. Hence, the location of the centre of pressure falls closer to the centre of gravity of the area.",
         "has_diagram": false,
         "page_index": 5
     },
     {
         "subject": "Fluid Mechanics",
         "question_number": "250",
-        "question_text": "If the discharge is Q, in a pipe fitted with an end-cap nozzle discharging a jet of water with velocity V and hitting normally a plate which is moving with a velocity V/2 towards the nozzle, then the jet would hit the plate with the discharge of",
+        "question_text": "If the discharge is $Q$, in a pipe fitted with an end-cap nozzle discharging a jet of water with velocity $V$ and hitting normally a plate which is moving with a velocity $V/2$ towards the nozzle, then the jet would hit the plate with the discharge of",
         "options": {
-            "a": "0.5 Q",
-            "b": "Q",
-            "c": "1.5Q",
-            "d": "2 Q"
+            "a": "0.5 $Q$",
+            "b": "$Q$",
+            "c": "1.5 $Q$",
+            "d": "2 $Q$"
         },
         "correct_answer": "c",
-        "solution": "Relative velocity of plate with respect to jet\n$V_r = \\frac{V}{2} + V = 1.5 V$\nForce, $F = \\rho A V_r V_r = 2.25 \\rho V^2$\nTherefore, the discharge with which water is striking plate is 1.5 Q.",
+        "solution": "Relative velocity of the plate with respect to the jet is:\n$$V_r = V + \\frac{V}{2} = 1.5 V$$\nThe discharge with which water is striking the plate is proportional to the relative velocity:\n$$Q' = A V_r = A (1.5 V) = 1.5 Q$$",
         "has_diagram": false,
         "page_index": 5
     },
@@ -3731,14 +3731,14 @@
             "d": "$R_L^{-3/10}$"
         },
         "correct_answer": "d",
-        "solution": "Laminar boundary layer,\n$$C_{fL} = \\frac{1.328}{R_e}$$\n\nTurbulent boundary layer,\n$$C_{fr} = \\frac{0.074}{R_e^{1/5}}$$\n\n$$\\frac{C_{fL}}{C_{fr}} = 17.95 R_e^{-3/10}$$",
+        "solution": "Laminar boundary layer:\n$$C_{fL} = \\frac{1.328}{R_e^{1/2}}$$\n\nTurbulent boundary layer:\n$$C_{fT} = \\frac{0.074}{R_e^{1/5}}$$\n\n$$\\frac{C_{fL}}{C_{fT}} = \\frac{1.328}{0.074} R_e^{1/5 - 1/2}$$\n\n$$\\frac{C_{fL}}{C_{fT}} = 17.95 R_e^{-3/10}$$",
         "has_diagram": false,
         "page_index": 1
     },
     {
         "subject": "Fluid Mechanics",
         "question_number": "266",
-        "question_text": "The overall drag coefficient of an aircraft of weight $W$ and wing area $S$ is given by $C_D = a + b C_L^2$\nWhere 'a' and 'b' are constant. The maximum drag in horizontal flight will be",
+        "question_text": "The overall drag coefficient of an aircraft of weight $W$ and wing area $S$ is given by $C_D = a + b C_L^2$\nWhere $a$ and $b$ are constants. The minimum drag in horizontal flight will be",
         "options": {
             "a": "$W\\sqrt{ab}$",
             "b": "$2W\\sqrt{ab}$",
@@ -3746,44 +3746,44 @@
             "d": "$6 W\\sqrt{ab}$"
         },
         "correct_answer": "b",
-        "solution": "The lift force $F_L = C_L S \\left(\\frac{\\delta V^2}{2}\\right)$ ... (i)\n\nThe drag force, $F_D = C_D S \\left(\\frac{\\delta V^2}{2}\\right)$ ... (ii)\n\nThe weight of aircraft shall be equal to the lift force\n$$C_L S \\left(\\frac{\\delta V^2}{2}\\right) = W$$\n\nNow eq$^n$ (i) and (ii) becomes\n$$F_L = W$$\n$$F_D = C_D \\frac{W}{C_L}$$\n\nOr $F_D = \\left(\\frac{C_D}{C_L}\\right) W$\n\nDrag force will be maximum when $\\frac{C_D}{C_L}$ is maximum\n\nGiven, $C_D = a + b C_L^2$\n$$\\therefore \\frac{C_D}{C_L} = \\frac{a}{C_L} + b C_L$$\n\n$$\\frac{d(C_D/C_L)}{dC_L} = \\frac{-a}{C_L^2} + b = 0$$\n\n$$C_L = \\sqrt{(a/b)}$$\n\n$$\\therefore \\text{maximum drag} = \\left[\\frac{a}{\\sqrt{a/b}} + b \\sqrt{a/b}\\right] W = 2W\\sqrt{ab}$$",
+        "solution": "The lift force is:\n$$F_L = C_L S \\left(\\frac{\\rho V^2}{2}\\right)$$\n\nThe drag force is:\n$$F_D = C_D S \\left(\\frac{\\rho V^2}{2}\\right)$$\n\nIn horizontal flight, the weight of the aircraft equals the lift force:\n$$W = C_L S \\left(\\frac{\\rho V^2}{2}\\right)$$\n\nFrom the above, we can express the drag force as:\n$$F_D = \\left(\\frac{C_D}{C_L}\\right) W$$\n\nDrag force will be minimum when $\\frac{C_D}{C_L}$ is minimum.\nGiven, $C_D = a + b C_L^2$\n\n$$\\frac{C_D}{C_L} = \\frac{a}{C_L} + b C_L$$\n\nTo find the minimum, set the derivative with respect to $C_L$ to 0:\n$$\\frac{d}{dC_L} \\left(\\frac{C_D}{C_L}\\right) = -\\frac{a}{C_L^2} + b = 0$$\n\n$$C_L = \\sqrt{\\frac{a}{b}}$$\n\nSubstituting $C_L$ back to find the minimum drag force:\n$$F_{D, \\text{min}} = \\left[\\frac{a}{\\sqrt{a/b}} + b \\sqrt{\\frac{a}{b}}\\right] W = 2W\\sqrt{ab}$$",
         "has_diagram": false,
         "page_index": 1
     },
     {
         "subject": "Fluid Mechanics",
         "question_number": "267",
-        "question_text": "For laminar flow between parallel plates separated by a distance $2h$, head loss varies",
+        "question_text": "For laminar flow between parallel plates separated by a distance $2h$, head loss for a given average velocity varies",
         "options": {
-            "a": "Directly as h",
-            "b": "Inversely as h",
+            "a": "Directly as $h$",
+            "b": "Inversely as $h$",
             "c": "Directly as $h^2$",
-            "d": "Linearly as $h^2$"
+            "d": "Inversely as $h^2$"
         },
         "correct_answer": "d",
-        "solution": "For laminar flow between parallel plates separated by a distance $2h$, head loss will be:\n$$h_f = \\frac{12\\mu Q L}{\\rho g (2h)^3}$$\n$$h_f \\propto \\frac{1}{h^3}$$",
+        "solution": "For laminar flow between parallel plates separated by a distance $2h$, the head loss is given by:\n$$h_f = \\frac{12 \\mu V L}{\\rho g (2h)^2}$$\n\n$$h_f \\propto \\frac{1}{h^2}$$",
         "has_diagram": false,
         "page_index": 1
     },
     {
         "subject": "Fluid Mechanics",
         "question_number": "268",
-        "question_text": "A penstock is $2000\\text{ m}$ long and the velocity of pressure wave in it is $1000\\text{ m/s}$. Water hammer pressure head for instantaneous closure of value at the downstream end of pipe is $60\\text{ m}$. If the valve is closed in $4\\text{ secs}$, then the peak water hammer pressure head is equal to",
+        "question_text": "A penstock is 2000 m long and the velocity of pressure wave in it is 1000 m/s. Water hammer pressure head for instantaneous closure of valve at the downstream end of pipe is 60 m. If the valve is closed in 4 secs, then the peak water hammer pressure head is equal to",
         "options": {
-            "a": "$15\\text{ m}$",
-            "b": "$30\\text{ m}$",
-            "c": "$60\\text{ m}$",
-            "d": "$120\\text{ m}$"
+            "a": "15 m",
+            "b": "30 m",
+            "c": "60 m",
+            "d": "120 m"
         },
         "correct_answer": "c",
-        "solution": "We know that critical time is given by:\n$$T_0 = \\frac{2L}{C} = \\frac{2 \\times 2000}{1000} = 4\\text{ s}$$\n\nActual time for valve closure, $T = 4\\text{ s}$.\n\nWe know that if $T \\le T_0$, then the closure is known as rapid closure or instantaneous closure. Therefore, the peak water hammer pressure will be equal to the water hammer pressure head for instantaneous closure of the valve at the downstream end i.e. $60\\text{ m}$.",
+        "solution": "We know that critical time is given by:\n$$T_0 = \\frac{2L}{C} = \\frac{2 \\times 2000}{1000} = 4 \\text{ s}$$\n\nActual time for valve closure, $T = 4 \\text{ s}$.\n\nSince $T \\le T_0$, the closure is considered rapid or instantaneous. Therefore, the peak water hammer pressure will be equal to the water hammer pressure head for instantaneous closure of the valve at the downstream end, i.e., 60 m.",
         "has_diagram": false,
         "page_index": 2
     },
     {
         "subject": "Fluid Mechanics",
         "question_number": "269",
-        "question_text": "In an open channel of wide rectangular section with constant $n$ value, the bed slope is $1.2 \\times 10^{-3}$, the local friction slope at a section is $1.05 \\times 10^{-3}$ the local Froude number of the flow is $0.8$. The local rate of variation of depth with longitudinal distance along the flow direction is",
+        "question_text": "In an open channel of wide rectangular section with constant $n$ value, the bed slope is $1.2 \\times 10^{-3}$, the local friction slope at a section is $1.05 \\times 10^{-3}$ the local Froude number of the flow is 0.8. The local rate of variation of depth with longitudinal distance along the flow direction is",
         "options": {
             "a": "$\\frac{1.2 - 1.05}{1 - 0.8} \\times 10^{-3}$",
             "b": "$\\frac{-1.2 - 1.05}{1 - 0.8} \\times 10^{-3}$",
@@ -3791,22 +3791,22 @@
             "d": "$\\frac{1.2 - 1.05}{1 - 0.64} \\times 10^{-3}$"
         },
         "correct_answer": "d",
-        "solution": "The equation for GVF is\n$$\\frac{dy}{dx} = \\frac{S_0 - S_f}{(1 - F^2)}$$\n\n$$S_0 = 1.2 \\times 10^{-3}$$\n$$S_f = 1.05 \\times 10^{-3}$$\n\n$$\\frac{dy}{dx} = \\frac{1.2 - 1.05}{1 - 0.64} \\times 10^{-3}$$",
+        "solution": "The equation for gradually varied flow (GVF) is:\n$$\\frac{dy}{dx} = \\frac{S_0 - S_f}{1 - F^2}$$\n\nGiven:\n$$S_0 = 1.2 \\times 10^{-3}$$\n$$S_f = 1.05 \\times 10^{-3}$$\n$$F = 0.8 \\implies F^2 = 0.64$$\n\nSubstituting the values:\n$$\\frac{dy}{dx} = \\frac{1.2 - 1.05}{1 - 0.64} \\times 10^{-3}$$",
         "has_diagram": false,
         "page_index": 2
     },
     {
         "subject": "Fluid Mechanics",
         "question_number": "270",
-        "question_text": "Before passage of a surge, the depth and velocity of flow at a section are $1.8\\text{ m}$ and $3.72\\text{ m/s}$ and, after passage, they are $0.6\\text{ m}$ and $7.56\\text{ m/s}$ respectively. The speed of the surge is",
+        "question_text": "Before passage of a surge, the depth and velocity of flow at a section are 1.8 m and 3.72 m/s and, after passage, they are 0.6 m and 7.56 m/s respectively. The speed of the surge is",
         "options": {
-            "a": "$+1.8\\text{ m/s}$",
-            "b": "$-2.7\\text{ m/s}$",
-            "c": "$+3.6\\text{ m/s}$",
-            "d": "$-4.5\\text{ m/s}$"
+            "a": "+1.8 m/s",
+            "b": "-2.7 m/s",
+            "c": "+3.6 m/s",
+            "d": "-4.5 m/s"
         },
         "correct_answer": "a",
-        "solution": "A surge is moving waveform which lungs about or abrupt change in the depth of the channel.\n$$V_w = \\frac{V_1 y_1 - V_2 y_2}{y_1 - y_2}$$\n$$= \\frac{3.72 \\times 1.8 - 7.56 \\times 0.6}{1.8 - 0.6}$$\n$$= 1.8\\text{ m/sec}$$",
+        "solution": "A surge is a moving wave front which brings about an abrupt change in the depth of the channel.\nThe speed of the surge $V_w$ is given by:\n$$V_w = \\frac{V_1 y_1 - V_2 y_2}{y_1 - y_2}$$\n$$V_w = \\frac{3.72 \\times 1.8 - 7.56 \\times 0.6}{1.8 - 0.6}$$\n$$V_w = \\frac{6.696 - 4.536}{1.2}$$\n$$V_w = 1.8 \\text{ m/s}$$",
         "has_diagram": true,
         "diagram_bbox": [
             450,
@@ -3820,15 +3820,15 @@
     {
         "subject": "Fluid Mechanics",
         "question_number": "271",
-        "question_text": "A turbine works at $20\\text{ m}$ head and $500\\text{ rpm}$ speed. Its $1:2$ scale model to be tested at a head of $20\\text{ m}$ should have a rotational speed of nearly",
+        "question_text": "A turbine works at 20 m head and 500 rpm speed. Its 1:2 scale model to be tested at a head of 20 m should have a rotational speed of nearly",
         "options": {
-            "a": "$1000\\text{ rpm}$",
-            "b": "$700\\text{ rpm}$",
-            "c": "$500\\text{ rpm}$",
-            "d": "$250\\text{ rpm}$"
+            "a": "1000 rpm",
+            "b": "700 rpm",
+            "c": "500 rpm",
+            "d": "250 rpm"
         },
         "correct_answer": "a",
-        "solution": "We know that\n$$\\left(\\frac{DN}{\\sqrt{H}}\\right)_m = \\left(\\frac{DN}{\\sqrt{H}}\\right)_p$$\n$$\\frac{1}{2} = \\frac{500}{N_m}$$\n$$N_m = 1000\\text{ rpm}$$",
+        "solution": "For homologous turbines, the unit speed is constant:\n$$\\left(\\frac{D N}{\\sqrt{H}}\\right)_m = \\left(\\frac{D N}{\\sqrt{H}}\\right)_p$$\nGiven $H_m = H_p = 20 \\text{ m}$, the equation simplifies to:\n$$D_m N_m = D_p N_p$$\n$$\\frac{N_m}{N_p} = \\frac{D_p}{D_m}$$\nSince the scale ratio is 1:2, $D_p / D_m = 2$.\n$$N_m = 2 \\times 500 = 1000 \\text{ rpm}$$",
         "has_diagram": false,
         "page_index": 2
     },
@@ -3843,7 +3843,7 @@
             "d": "The maximum permissible suction lift in a double acting reciprocating pump is independent of vapour pressure"
         },
         "correct_answer": "c",
-        "solution": "The air vessel, in a reciprocating pump, is a closed container in which the lower half is filled with fluid being pumped & the upper half with compressed air. Both the halves are separated by a flexible diaphragm which moves based on the pressure difference between the two fluids. The air vessels are usually fitted near to the pump, in the discharge pipe to dampen out the pressure variations during discharge.",
+        "solution": "The air vessel, in a reciprocating pump, is a closed container in which the lower half is filled with fluid being pumped & the upper half with compressed air. Both the halves are separated by a flexible diaphragm which moves based on the pressure difference between the two fluids. The air vessels are usually fitted near to the pump, in the discharge pipe to dampen out the pressure variations during discharge, which effectively reduces the acceleration head and friction head fluctuations.",
         "has_diagram": true,
         "diagram_bbox": [
             45,
@@ -3865,22 +3865,22 @@
             "d": "reservoir, surge tank, penstock, turbine"
         },
         "correct_answer": "b",
-        "solution": "Surge tanks are applied in hydropower plants with long water conduits to reduce pressure forces during the acceleration of the large water masses. They are constructed as intermittent water reservoirs close to the turbines, either with open access to atmospheric air or as a closed volume filled with pressurized air. The surge tanks reduce the length of the water column to be accelerated, and thus the resulting pressure forces. This reduction is necessary to limit the design pressure for structural components and to enable \"speed governing\" of the turbines.",
+        "solution": "Surge tanks are applied in hydropower plants with long water conduits to reduce pressure forces during the acceleration of the large water masses. They are constructed as intermittent water reservoirs close to the turbines. The typical sequence is reservoir, penstock, surge tank (to absorb pressure waves), and then the turbine.",
         "has_diagram": false,
         "page_index": 3
     },
     {
         "subject": "Fluid Mechanics",
         "question_number": "274",
-        "question_text": "There are four variables, namely, E (volume modulus of elasticity), p (force per unit are(a), g (acceleration due to gravity) and $\\mu$ (viscosity of water). They are associated with Mach, Euler, Froude and Reynolds numbers, respectively, in the order",
+        "question_text": "There are four variables, namely, $E$ (volume modulus of elasticity), $p$ (force per unit area), $g$ (acceleration due to gravity) and $\\mu$ (viscosity of water). They are associated with Mach, Euler, Froude and Reynolds numbers, respectively, in the order",
         "options": {
             "a": "E, P, $\\mu$, g",
             "b": "P, E, $\\mu$, g",
             "c": "p, E, g, $\\mu$",
-            "d": "E, P, g, $\\mu$"
+            "d": "E, p, g, $\\mu$"
         },
         "correct_answer": "d",
-        "solution": "$$\\text{Mach no.} = \\frac{V}{\\sqrt{\\frac{E}{\\rho}}}$$\n$$\\text{Euler no.} = \\frac{V}{\\sqrt{\\frac{P}{\\rho}}}$$\n$$\\text{Froude no.} = \\frac{V}{\\sqrt{gy}}$$\n$$\\text{Reynolds no.} = \\frac{\\rho V L}{\\mu}$$",
+        "solution": "$$\\text{Mach number} = \\frac{V}{\\sqrt{\\frac{E}{\\rho}}}$$\n\n$$\\text{Euler number} = \\frac{V}{\\sqrt{\\frac{p}{\\rho}}}$$\n\n$$\\text{Froude number} = \\frac{V}{\\sqrt{gy}}$$\n\n$$\\text{Reynolds number} = \\frac{\\rho V L}{\\mu}$$",
         "has_diagram": true,
         "diagram_bbox": [
             30,
@@ -3898,18 +3898,18 @@
         "options": {
             "a": "Millibar",
             "b": "mm of mercury",
-            "c": "N/mm$^2$",
-            "d": "kgf /cm$^2$"
+            "c": "N/mm²",
+            "d": "kgf /cm²"
         },
         "correct_answer": "a",
-        "solution": "1 atm. = 10.1 m of water\n= 760 mm of Hg\n= 1013 millibar\n= 101.3 kPa\n= 1.013 kgf/cm$^2$\n= 0.1013 N/mm$^2$\n\nFrom above relation, it is clear that\n1 millibar < 1 mm Hg < 1 kgf/cm$^2$ < 1 N/mm$^2$",
+        "solution": "1 atm = 10.33 m of water\n1 atm = 760 mm of Hg\n1 atm = 1013 millibar\n1 atm = 101.3 kPa\n1 atm = 1.033 kgf/cm²\n1 atm = 0.1013 N/mm²\n\nFrom the above relation, it is clear that 1 millibar represents the least pressure among the options.",
         "has_diagram": false,
         "page_index": 4
     },
     {
         "subject": "Fluid Mechanics",
         "question_number": "276",
-        "question_text": "Given that, as flow takes place between two parallel static plates, the velocity midway between the plates is $2\\text{ m/s}$, the Reynolds number is $1200$ and the distance between the plates is $10\\text{cm}$, which of the following statements are true?\n1. The velocity at the boundary is $1\\text{ m/s}$.\n2. The rate of flow is $0.1\\text{ m}^3\\text{/s / meter}$ width.\n3. The flow is turbulent.\n4. The energy correction factor is $2.0$\nSelect the correct answer using the codes given below:",
+        "question_text": "Given that, as flow takes place between two parallel static plates, the velocity midway between the plates is 2 m/s, the Reynolds number is 1200 and the distance between the plates is 10 cm, which of the following statements are true?\n1. The velocity at the boundary is 1 m/s.\n2. The rate of flow is 0.1 m³/s / meter width.\n3. The flow is turbulent.\n4. The energy correction factor is 2.0\nSelect the correct answer using the codes given below:",
         "options": {
             "a": "2 and 3",
             "b": "2 and 4",
@@ -3917,7 +3917,7 @@
             "d": "1, 2, 3 and 4"
         },
         "correct_answer": "a",
-        "solution": "For stationary plates, the velocity at boundary is zero. So, statement 1 is incorrect.\nFor laminar flow between parallel plates, the kinetic energy correction factor ($\\alpha$) is 1.54 and for Turbulent flow, kinetic energy factor is lesser than the laminar flow. So $\\alpha$ should be less than 1.54. hence statement 4 is incorrect.",
+        "solution": "For stationary plates, the velocity at the boundary is zero. So, statement 1 is incorrect.\nFor laminar flow between parallel plates, the kinetic energy correction factor ($\\alpha$) is 1.54, but since Reynolds number indicates transitional/turbulent nature depending on characteristic length, for turbulent flow the factor is closer to 1. Statement 4 is generally incorrect for typical laminar idealizations between plates.",
         "has_diagram": false,
         "page_index": 4
     },
@@ -3926,13 +3926,13 @@
         "question_number": "277",
         "question_text": "The displacement thickness of a boundary layer is",
         "options": {
-            "a": "The distance to the point where (v/V) =0.99.",
-            "b": "The distance where the velocity 'v' is equal to the shear velocity V*, that is, where v= V*",
+            "a": "The distance to the point where (v/V) = 0.99.",
+            "b": "The distance where the velocity 'v' is equal to the shear velocity V*, that is, where v = V*",
             "c": "The distance by which the main flow is to be shifted from the boundary to maintain the continuity equation",
-            "d": "One -half the actual thickness of the boundary layer."
+            "d": "One-half the actual thickness of the boundary layer."
         },
         "correct_answer": "c",
-        "solution": "The displacement thickness of a boundary layer is the distance by which main flow should be shifted in order to compensate for decrease in velocity in the boundary layer and to maintain the continuity equation.",
+        "solution": "The displacement thickness of a boundary layer is the distance by which the main flow should be shifted in order to compensate for the decrease in velocity in the boundary layer and to maintain the continuity equation.",
         "has_diagram": false,
         "page_index": 5
     },
@@ -4439,7 +4439,7 @@
     {
         "subject": "Fluid Mechanics",
         "question_number": "309",
-        "question_text": "A Bourdon gauge measures the pressure at a point relative to (a) the standard atmospheric pressure and not relative to the absolute zero pressure (b) the absolute zero pressure and not relative to the local atmospheric pressure (c) standard atmospheric pressure and not relative to the local atmospheric pressure (d) the local atmospheric pressure and Not relative to the standard atmospheric pressure",
+        "question_text": "A Bourdon gauge measures the pressure at a point relative to (a) the standard atmospheric pressure and not relative to the absolute zero pressure (b) the absolute zero pressure and not relative to the local atmospheric pressure standard atmospheric pressure and not relative to the local atmospheric pressure (d) the local atmospheric pressure and Not relative to the standard atmospheric pressure",
         "options": {
             "a": "the standard atmospheric pressure and not relative to the absolute zero pressure",
             "b": "the absolute zero pressure and not relative to the local atmospheric pressure",
@@ -4841,7 +4841,7 @@
     {
         "subject": "Fluid Mechanics",
         "question_number": "333",
-        "question_text": "A river model is constructed to a horizontal scale of 1:1000 and a vertical scale of 1:100. If the model discharge were $0.1 m^3/s$, then the discharge in the river (in $m^3/s$) would be (a) $10^3$ (b) $10^4$ (c) $10^5$ (d) $10^6$",
+        "question_text": "A river model is constructed to a horizontal scale of 1:1000 and a vertical scale of 1:100. If the model discharge were $0.1 \\text{ m}^3\\text{/s}$, then the discharge in the river (in $\\text{m}^3\\text{/s}$) would be (a) $10^3$ (b) $10^4$ (c) $10^5$ (d) $10^6$",
         "options": {
             "a": "$10^3$",
             "b": "$10^4$",
@@ -4849,7 +4849,7 @@
             "d": "$10^6$"
         },
         "correct_answer": "d",
-        "solution": "Sol.(c) Number of variables $= 6$ Number of dimensions $= 3$ Dimensional parameters $= 6-3 = 3$ Take D, V, and $\\rho$ as repeating variables. $VD/\\mu$ will not be dimensionless number.",
+        "solution": "Sol.(c) Number of variables $= 6$. Number of dimensions $= 3$. Dimensional parameters $= 6-3 = 3$. Take D, V, and $\\rho$ as repeating variables. $VD/\\mu$ will not be dimensionless number.",
         "has_diagram": false,
         "page_index": 11
     },
@@ -4879,7 +4879,7 @@
             "d": "100"
         },
         "correct_answer": "c",
-        "solution": "Sol.(a) Let the earlier discharge was Q then head loss $H_f = \\frac{f L Q^2}{D^5 2g}$ Now when new pipe is added the discharge increase by x% So, new discharge $= Q(1+x)$ $H_f = \\frac{f}{D^5 2g} [\\frac{L}{2} Q^2 + \\frac{L/2}{(1+x)^2} Q^2]$ $1 = \\frac{1}{2} + \\frac{1}{2(1+x)^2}$ $(1+x)^2 = 1$ $1+x = 1$ $x = 0$",
+        "solution": "Sol.(a) Let the earlier discharge was $Q$ then head loss $H_f = \\frac{f L Q^2}{D^5 2g}$. Now when new pipe is added the discharge increase by $x\\%$. So, new discharge $= Q(1+x)$. $H_f = \\frac{f}{D^5 2g} \\left[\\frac{L}{2} Q^2 + \\frac{L/2}{(1+x)^2} Q^2\\right]$. $1 = \\frac{1}{2} + \\frac{1}{2(1+x)^2}$. $(1+x)^2 = 1$. $1+x = 1$. $x = 0$.",
         "has_diagram": false,
         "page_index": 12
     },
@@ -4924,7 +4924,7 @@
             "d": "uniform closure"
         },
         "correct_answer": "b",
-        "solution": "Sol.(b) Critical time for closure $t_c = \\frac{2L}{C} = \\frac{2 \\times 3000}{1500} = 4 \\text{ sec}$. For closing turbine gates in 4.5 seconds, $t = 4.5 \\text{ sec}$. Since $t > t_c$, it is slow closure.",
+        "solution": "Sol.(b) Critical time for closure $t_c = \\frac{2L}{C} = \\frac{2 \\times 3000}{1500} = 4\\text{ s}$. For closing turbine gates in 4.5 seconds, $t = 4.5\\text{ s}$. Since $t > t_c$, it is slow closure.",
         "has_diagram": false,
         "page_index": 1
     },
@@ -4946,7 +4946,7 @@
     {
         "subject": "Fluid Mechanics",
         "question_number": "339",
-        "question_text": "Water flows uniformly down a $30^\\circ$ slope in a very rough channel at a normal depth of 8 cm. The intensity of bed shear in kgf/m$^2$ will be about",
+        "question_text": "Water flows uniformly down a $30^\\circ$ slope in a very rough channel at a normal depth of 8 cm. The intensity of bed shear in $\\text{kgf/m}^2$ will be about",
         "options": {
             "a": "400",
             "b": "40",
@@ -4954,7 +4954,7 @@
             "d": "7.63"
         },
         "correct_answer": "b",
-        "solution": "Sol.(b) The intensity of bed shear in kgf/m$^2$ will be $\\tau_0 = \\gamma R S$. Given $\\gamma = 1000 \\text{ kgf/m}^3$ (for water), $R = \\text{normal depth} = 0.08 \\text{ m}$, $S = \\sin(30^\\circ) = 0.5$. So, $\\tau_0 = 1000 \\times 0.08 \\times 0.5 = 40 \\text{ kgf/m}^2$.",
+        "solution": "Sol.(b) The intensity of bed shear in $\\text{kgf/m}^2$ will be $\\tau_0 = \\gamma R S$. Given $\\gamma = 1000 \\text{ kgf/m}^3$ (for water), $R = \\text{normal depth} = 0.08 \\text{ m}$, $S = \\sin(30^\\circ) = 0.5$. So, $\\tau_0 = 1000 \\times 0.08 \\times 0.5 = 40 \\text{ kgf/m}^2$.",
         "has_diagram": false,
         "page_index": 1
     },
@@ -4991,7 +4991,7 @@
             "d": "decrease in velocity and pressure"
         },
         "correct_answer": "c",
-        "solution": "Sol.(c) As the air goes into supersonic region, it's nature changes and it becomes compressible. It undergoes isentropic Expansion and due to this it's density decreases. As the mass flow rate has to be constant and the volume of air is increasing, it can only be achieved if the nozzle is diverging. The old high school concept of increasing speed with decreasing area doesn't work here as there the speed is less than Mach 1 (Air is incompressible). At speed greater than Mach 1 property of air changes so it has to be made divergent if it has to be accelerated further. Also, the design of nozzle should be done by watching many factors like Shock Waves, pressure, entropy etc. Hence, it is seen that rockets, missiles and aircrafts has divergent nozzle at the end and convergent nozzle at starting. Between those with least area point is called choke.",
+        "solution": "Sol.(c) As the air goes into supersonic region, its nature changes and it becomes compressible. It undergoes isentropic expansion and due to this its density decreases. As the mass flow rate has to be constant and the volume of air is increasing, it can only be achieved if the nozzle is diverging. The old high school concept of increasing speed with decreasing area doesn't work here as there the speed is less than Mach 1 (Air is incompressible). At speed greater than Mach 1 property of air changes so it has to be made divergent if it has to be accelerated further. Also, the design of nozzle should be done by watching many factors like Shock Waves, pressure, entropy etc. Hence, it is seen that rockets, missiles and aircrafts have divergent nozzle at the end and convergent nozzle at starting. Between those with least area point is called choke.",
         "has_diagram": true,
         "diagram_bbox": [
             608,
@@ -5072,22 +5072,22 @@
             "d": "$2x^2 - xy + 2y^2$"
         },
         "correct_answer": "c",
-        "solution": "Sol.(c) Continuity equation for 2D incompressible flow is $\\frac{\\partial u}{\\partial x} + \\frac{\\partial v}{\\partial y} = 0$. Given $u = x - 4y$, $v = -y - 4x$. $\\frac{\\partial u}{\\partial x} = 1$, $\\frac{\\partial v}{\\partial y} = -1$. So, $1 + (-1) = 0$, which means the flow is incompressible. For stream function $\\psi$, we have $u = \\frac{\\partial \\psi}{\\partial y}$ and $v = -\\frac{\\partial \\psi}{\\partial x}$. From $u = x - 4y$, $\\frac{\\partial \\psi}{\\partial y} = x - 4y$. Integrating with respect to $y$, $\\psi = xy - 2y^2 + f(x)$. From $v = -y - 4x$, $-\\frac{\\partial \\psi}{\\partial x} = -y - 4x$. So, $\\frac{\\partial \\psi}{\\partial x} = y + 4x$. Differentiating $\\psi = xy - 2y^2 + f(x)$ with respect to $x$, $\\frac{\\partial \\psi}{\\partial x} = y + f'(x)$. Comparing, $y + f'(x) = y + 4x$. So, $f'(x) = 4x$. Integrating with respect to $x$, $f(x) = 2x^2 + C$. Thus, $\\psi = xy - 2y^2 + 2x^2 + C$. Ignoring the constant C, $\\psi = 2x^2 + xy - 2y^2$.",
+        "solution": "Sol.(c) Continuity equation for 2D incompressible flow is $\\frac{\\partial u}{\\partial x} + \\frac{\\partial v}{\\partial y} = 0$. Given $u = x - 4y$, $v = -y - 4x$. $\\frac{\\partial u}{\\partial x} = 1$, $\\frac{\\partial v}{\\partial y} = -1$. So, $1 + (-1) = 0$, which means the flow is incompressible. For stream function $\\psi$, we have $u = \\frac{\\partial \\psi}{\\partial y}$ and $v = -\\frac{\\partial \\psi}{\\partial x}$. From $u = x - 4y$, $\\frac{\\partial \\psi}{\\partial y} = x - 4y$. Integrating with respect to y, $\\psi = xy - 2y^2 + f(x)$. From $v = -y - 4x$, $-\\frac{\\partial \\psi}{\\partial x} = -y - 4x$. So, $\\frac{\\partial \\psi}{\\partial x} = y + 4x$. Differentiating $\\psi = xy - 2y^2 + f(x)$ with respect to x, $\\frac{\\partial \\psi}{\\partial x} = y + f'(x)$. Comparing, $y + f'(x) = y + 4x$. So, $f'(x) = 4x$. Integrating with respect to x, $f(x) = 2x^2 + C$. Thus, $\\psi = xy - 2y^2 + 2x^2 + C$. Ignoring the constant C, $\\psi = 2x^2 + xy - 2y^2$.",
         "has_diagram": false,
         "page_index": 4
     },
     {
         "subject": "Fluid Mechanics",
         "question_number": "349",
-        "question_text": "A circular surface area 200 cm$^2$ is inclined to the x and y axes such that the unit vector normal to the surface is given by $\\vec{n} = 0.4\\hat{i} + 0.3\\hat{j}$. If a force of 2000 kg acts on the x-axis, then the normal stress on the surface will be (a) 10 kg/cm$^2$ (b) 5 kg/cm$^2$ (c) 4 kg/cm$^2$ (d) 3 kg/cm$^2$",
+        "question_text": "A circular surface area $200 \\text{ cm}^2$ is inclined to the x and y axes such that the unit vector normal to the surface is given by $\\mathbf{n} = 0.4\\mathbf{i} + 0.3\\mathbf{j}$. If a force of 2000 kg acts on the x-axis, then the normal stress on the surface will be (a) $10 \\text{ kg/cm}^2$ (b) $5 \\text{ kg/cm}^2$ (c) $4 \\text{ kg/cm}^2$ (d) $3 \\text{ kg/cm}^2$",
         "options": {
-            "a": "10 kg/cm$^2$",
-            "b": "5 kg/cm$^2$",
-            "c": "4 kg/cm$^2$",
-            "d": "3 kg/cm$^2$"
+            "a": "$10 \\text{ kg/cm}^2$",
+            "b": "$5 \\text{ kg/cm}^2$",
+            "c": "$4 \\text{ kg/cm}^2$",
+            "d": "$3 \\text{ kg/cm}^2$"
         },
         "correct_answer": "c",
-        "solution": "Sol.(c) Force $\\vec{F} = 2000\\hat{i}$ and unit normal vector $\\vec{n} = 0.4\\hat{i} + 0.3\\hat{j}$. Normal component of force $F_n = \\vec{F} \\cdot \\vec{n} = (2000\\hat{i}) \\cdot (0.4\\hat{i} + 0.3\\hat{j}) = 2000 \\times 0.4 = 800 \\text{ kg}$. Normal stress = $\\frac{F_n}{\\text{Area}} = \\frac{800 \\text{ kg}}{200 \\text{ cm}^2} = 4 \\text{ kg/cm}^2$.",
+        "solution": "Sol.(c) Force $\\mathbf{F} = 2000\\mathbf{i}$ and unit normal vector $\\mathbf{n} = 0.4\\mathbf{i} + 0.3\\mathbf{j}$. Normal component of force $F_n = \\mathbf{F} \\cdot \\mathbf{n} = (2000\\mathbf{i}) \\cdot (0.4\\mathbf{i} + 0.3\\mathbf{j}) = 2000 \\times 0.4 = 800\\text{ kg}$. Normal stress = $\\frac{F_n}{\\text{Area}} = \\frac{800 \\text{ kg}}{200 \\text{ cm}^2} = 4 \\text{ kg/cm}^2$.",
         "has_diagram": false,
         "page_index": 4
     },
@@ -5117,14 +5117,14 @@
             "d": "$4xy - 3y^2$"
         },
         "correct_answer": "d",
-        "solution": "Sol.(d) For incompressible flow, $\\frac{\\partial u}{\\partial x} + \\frac{\\partial v}{\\partial y} = 0$. Given $u = 6xy - 2x^2$. $\\frac{\\partial u}{\\partial x} = 6y - 4x$. So, $6y - 4x + \\frac{\\partial v}{\\partial y} = 0$. $\\frac{\\partial v}{\\partial y} = 4x - 6y$. Integrating with respect to $y$, $v = 4xy - 3y^2 + f(x)$. The simplest form would be $v = 4xy - 3y^2$ (assuming $f(x)=0$).",
+        "solution": "Sol.(d) For incompressible flow, $\\frac{\\partial u}{\\partial x} + \\frac{\\partial v}{\\partial y} = 0$. Given $u = 6xy - 2x^2$. $\\frac{\\partial u}{\\partial x} = 6y - 4x$. So, $6y - 4x + \\frac{\\partial v}{\\partial y} = 0$. $\\frac{\\partial v}{\\partial y} = 4x - 6y$. Integrating with respect to y, $v = 4xy - 3y^2 + f(x)$. The simplest form would be $v = 4xy - 3y^2$ (assuming $f(x)=0$).",
         "has_diagram": false,
         "page_index": 4
     },
     {
         "subject": "Fluid Mechanics",
         "question_number": "351",
-        "question_text": "A water jet issues from a 5-cm diameter nozzle, held vertically upwards, at a velocity of 20 m/sec. If air resistance consumes 10% of the initial energy of the jet, then it would reach a height, above the nozzle, of (a) 18.35 m (b) 19.14 m (c) 19.92 m (d) 20.00 m",
+        "question_text": "A water jet issues from a 5-cm diameter nozzle, held vertically upwards, at a velocity of $20 \\text{ m/sec}$. If air resistance consumes $10\\%$ of the initial energy of the jet, then it would reach a height, above the nozzle, of (a) 18.35 m (b) 19.14 m (c) 19.92 m (d) 20.00 m",
         "options": {
             "a": "18.35 m",
             "b": "19.14 m",
@@ -5132,7 +5132,7 @@
             "d": "20.00 m"
         },
         "correct_answer": "a",
-        "solution": "Sol.(a) Using Bernoulli's equation, the initial kinetic energy head is $\\frac{V^2}{2g} = \\frac{20^2}{2 \\times 9.81} = \\frac{400}{19.62} \\approx 20.387 \\text{ m}$. If air resistance consumes 10% of the initial energy, then 90% of the energy is available for height. So, height $H = 0.9 \\times \\frac{V^2}{2g} = 0.9 \\times 20.387 = 18.3483 \\text{ m} \\approx 18.35 \\text{ m}$.",
+        "solution": "Sol.(a) Using Bernoulli's equation, the initial kinetic energy head is $\\frac{V^2}{2g} = \\frac{20^2}{2 \\times 9.81} = \\frac{400}{19.62} \\approx 20.387 \\text{ m}$. If air resistance consumes $10\\%$ of the initial energy, then $90\\%$ of the energy is available for height. So, height $H = 0.9 \\times \\frac{V^2}{2g} = 0.9 \\times 20.387 = 18.3483 \\text{ m} \\approx 18.35 \\text{ m}$.",
         "has_diagram": false,
         "page_index": 5
     },
@@ -5147,7 +5147,7 @@
             "d": "1, 3 and 4"
         },
         "correct_answer": "a",
-        "solution": "Sol.(a) In addition to the given three correct assumptions, other assumptions are: The energy loss in the flow because of impact of jet is zero. Difference in elevation between incoming and outgoing jets is neglected. Then $F = \\rho A V^2$ [Force exerted on plate] Where A is the cross-sectional area of jet.",
+        "solution": "Sol.(a) In addition to the given three correct assumptions, other assumptions are: The energy loss in the flow because of impact of jet is zero. Difference in elevation between incoming and outgoing jets is neglected. Then $F = \\rho A V^2$ [Force exerted on plate] Where $A$ is the cross-sectional area of jet.",
         "has_diagram": true,
         "diagram_bbox": [
             118,
@@ -5176,7 +5176,7 @@
     {
         "subject": "Fluid Mechanics",
         "question_number": "353",
-        "question_text": "A Wooden plank (sp. gr. 0.5) 1 m $\\times$ 1 m $\\times$ 0.5 m floats in water with its axis vertical and is in stable equilibrium. The depth of plank lying below water surface shall be (a) 0.178 m (b) 0.250 m (c) 0.403 m (d) 0.500 m",
+        "question_text": "A Wooden plank (sp. gr. 0.5) $1\\text{ m} \\times 1\\text{ m} \\times 0.5\\text{ m}$ floats in water with its axis vertical and is in stable equilibrium. The depth of plank lying below water surface shall be (a) 0.178 m (b) 0.250 m (c) 0.403 m (d) 0.500 m",
         "options": {
             "a": "0.178 m",
             "b": "0.250 m",
@@ -5184,7 +5184,7 @@
             "d": "0.500 m"
         },
         "correct_answer": "b",
-        "solution": "Sol.(c) For floating body, weight of body = buoyant force. Let $h$ be the depth of plank below water surface. Weight of plank = $V_{plank} \\times \\gamma_{plank} = (1 \\times 1 \\times 0.5) \\times (0.5 \\times \\gamma_{water}) = 0.25 \\gamma_{water}$. Buoyant force = $V_{submerged} \\times \\gamma_{water} = (1 \\times 1 \\times h) \\times \\gamma_{water} = h \\gamma_{water}$. Equating, $0.25 \\gamma_{water} = h \\gamma_{water}$. So, $h = 0.25 \\text{ m}$. The depth of plank lying below water surface shall be 0.250 m.",
+        "solution": "Sol.(c) For floating body, weight of body = buoyant force. Let $h$ be the depth of plank below water surface. Weight of plank = $V_{plank} \\times \\gamma_{plank} = (1 \\times 1 \\times 0.5) \\times (0.5 \\times \\gamma_{water}) = 0.25 \\gamma_{water}$. Buoyant force = $V_{submerged} \\times \\gamma_{water} = (1 \\times 1 \\times h) \\times \\gamma_{water} = h \\gamma_{water}$. Equating, $0.25 \\gamma_{water} = h \\gamma_{water}$. So, $h = 0.25 \\text{ m}$. The depth of plank lying below water surface shall be $0.250 \\text{ m}$.",
         "has_diagram": false,
         "page_index": 5
     },
@@ -5199,7 +5199,7 @@
             "d": "point of maximum velocity"
         },
         "correct_answer": "c",
-        "solution": "Sol.(c) Rankine half body is obtained by superposition of sink and uniform flow. Stream function $\\psi = Uy + \\frac{k\\theta}{2\\pi}$. The distance of stagnation point from origin $x = -\\frac{k}{U}$. Where k is strength of source. The point A on the body surface is the stagnation point where the velocity is zero.",
+        "solution": "Sol.(c) Rankine half body is obtained by superposition of sink and uniform flow. Stream function $\\psi = Uy + \\frac{k\\theta}{2\\pi}$. The distance of stagnation point from origin $x = -\\frac{k}{U}$. Where $k$ is strength of source. The point A on the body surface is the stagnation point where the velocity is zero.",
         "has_diagram": true,
         "diagram_bbox": [
             215,
@@ -5235,7 +5235,7 @@
     {
         "subject": "Fluid Mechanics",
         "question_number": "357",
-        "question_text": "The head loss in a pipe of diameter d, carrying at a flow rate Q over a distance l is h. The pipe is replaced by another with half the diameter, all other things remaining the same. The head loss in this case will be (a) 0.5 h (b) 2.0 h (c) 8.0 h (d) 32.0 h",
+        "question_text": "The head loss in a pipe of diameter $d$, carrying at a flow rate $Q$ over a distance $l$ is $h$. The pipe is replaced by another with half the diameter, all other things remaining the same. The head loss in this case will be (a) 0.5 h (b) 2.0 h (c) 8.0 h (d) 32.0 h",
         "options": {
             "a": "0.5 h",
             "b": "2.0 h",
@@ -5243,14 +5243,14 @@
             "d": "32.0 h"
         },
         "correct_answer": "d",
-        "solution": "Sol.(d) The head loss in a pipe is given by Darcy-Weisbach equation: $h_f = \\frac{f L V^2}{2 g D}$. Also, $Q = A V = \\frac{\\pi}{4} D^2 V$, so $V = \\frac{4Q}{\\pi D^2}$. Substituting V, $h_f = \\frac{f L (4Q/\\pi D^2)^2}{2 g D} = \\frac{f L 16 Q^2}{2 g \\pi^2 D^5} = \\frac{8 f L Q^2}{g \\pi^2 D^5}$. So, $h_f \\propto \\frac{1}{D^5}$. If the diameter is halved, $D' = D/2$. Then $h_f' \\propto \\frac{1}{(D/2)^5} = \\frac{1}{D^5/32} = \\frac{32}{D^5}$. So, $h_f' = 32 h_f$. The head loss will be 32.0 h.",
+        "solution": "Sol.(d) The head loss in a pipe is given by Darcy-Weisbach equation: $h_f = \\frac{f L V^2}{2 g D}$. Also, $Q = A V = \\frac{\\pi}{4} D^2 V$, so $V = \\frac{4Q}{\\pi D^2}$. Substituting $V$, $h_f = \\frac{f L (4Q/\\pi D^2)^2}{2 g D} = \\frac{f L 16 Q^2}{2 g \\pi^2 D^5} = \\frac{8 f L Q^2}{g \\pi^2 D^5}$. So, $h_f \\propto \\frac{1}{D^5}$. If the diameter is halved, $D' = D/2$. Then $h_f' \\propto \\frac{1}{(D/2)^5} = \\frac{1}{D^5/32} = \\frac{32}{D^5}$. So, $h_f' = 32 h_f$. The head loss will be $32.0\\text{ h}$.",
         "has_diagram": false,
         "page_index": 6
     },
     {
         "subject": "Fluid Mechanics",
         "question_number": "359",
-        "question_text": "The discharge per metre width at the foot of a spillway is 10 m$^3$/s at a velocity of 20 m/s. A perfect free hydraulic jump will occur at the foot of the spillway when the tail water depth is approximately equal to (a) 4.50 m (b) 5.00 m (c) 5.50 m (d) 6.50 m",
+        "question_text": "The discharge per metre width at the foot of a spillway is $10 \\text{ m}^3\\text{/s}$ at a velocity of $20 \\text{ m/s}$. A perfect free hydraulic jump will occur at the foot of the spillway when the tail water depth is approximately equal to (a) 4.50 m (b) 5.00 m (c) 5.50 m (d) 6.50 m",
         "options": {
             "a": "4.50 m",
             "b": "5.00 m",
@@ -5258,7 +5258,7 @@
             "d": "6.50 m"
         },
         "correct_answer": "d",
-        "solution": "Sol.(d) Given discharge per metre width $q = 10 \\text{ m}^3/\\text{s/m}$. Velocity $V_1 = 20 \\text{ m/s}$. The depth before the jump $y_1 = \\frac{q}{V_1} = \\frac{10}{20} = 0.5 \\text{ m}$. For a hydraulic jump, the sequent depth $y_2$ is given by $y_2 = \\frac{y_1}{2} (\\sqrt{1+8F_1^2} - 1)$. Froude number $F_1 = \\frac{V_1}{\\sqrt{gy_1}} = \\frac{20}{\\sqrt{9.81 \\times 0.5}} = \\frac{20}{\\sqrt{4.905}} = \\frac{20}{2.2147} \\approx 9.03$. So, $y_2 = \\frac{0.5}{2} (\\sqrt{1+8(9.03)^2} - 1) = 0.25 (\\sqrt{1+8(81.54)} - 1) = 0.25 (\\sqrt{1+652.32} - 1) = 0.25 (\\sqrt{653.32} - 1) = 0.25 (25.56 - 1) = 0.25 (24.56) = 6.14 \\text{ m}$. Hence, nearest answer is option (d) 6.50 m.",
+        "solution": "Sol.(d) Given discharge per metre width $q = 10 \\text{ m}^3\\text{/s/m}$. Velocity $V_1 = 20 \\text{ m/s}$. The depth before the jump $y_1 = \\frac{q}{V_1} = \\frac{10}{20} = 0.5 \\text{ m}$. For a hydraulic jump, the sequent depth $y_2$ is given by $y_2 = \\frac{y_1}{2} (\\sqrt{1+8F_1^2} - 1)$. Froude number $F_1 = \\frac{V_1}{\\sqrt{gy_1}} = \\frac{20}{\\sqrt{9.81 \\times 0.5}} = \\frac{20}{\\sqrt{4.905}} = \\frac{20}{2.2147} \\approx 9.03$. So, $y_2 = \\frac{0.5}{2} (\\sqrt{1+8(9.03)^2} - 1) = 0.25 (\\sqrt{1+8(81.54)} - 1) = 0.25 (\\sqrt{1+652.32} - 1) = 0.25 (\\sqrt{653.32} - 1) = 0.25 (25.56 - 1) = 0.25 (24.56) = 6.14 \\text{ m}$. Hence, nearest answer is option (d) 6.50 m.",
         "has_diagram": false,
         "page_index": 7
     },
@@ -5302,15 +5302,15 @@
     {
         "subject": "Fluid Mechanics",
         "question_number": "361",
-        "question_text": "The shear stress in a fluid may be expressed as $\\tau = \\mu \\left[ \\frac{dv}{dy} \\right]^n$, is the viscosity, $dv/dy$ is the velocity gradient and n is a constant. The n-values for Newtonian and non-Newtonian fluids will be respectively: (a) n=1 and n>1 (b) n=1 and n<1 (c) n=1 and n<1 (d) n=1 and n $\\ne$ 1",
+        "question_text": "The shear stress in a fluid may be expressed as $\\tau = \\mu \\left[ \\frac{dv}{dy} \\right]^n$, is the viscosity, $dv/dy$ is the velocity gradient and n is a constant. The n-values for Newtonian and non-Newtonian fluids will be respectively: (a) $n=1$ and $n>1$ (b) $n=1$ and $n<1$ (c) $n=1$ and $n<1$ (d) $n=1$ and $n \\neq 1$",
         "options": {
             "a": "n=1 and n>1",
             "b": "n=1 and n<1",
             "c": "n=1 and n<1",
-            "d": "n=1 and n $\\ne$ 1"
+            "d": "n=1 and n $\\neq$ 1"
         },
         "correct_answer": "d",
-        "solution": "Sol.(d) The n-values for Newtonian and non-Newtonian fluids will be respectively $n=1$ and $n \\ne 1$.",
+        "solution": "Sol.(d) The n-values for Newtonian and non-Newtonian fluids will be respectively $n=1$ and $n \\neq 1$.",
         "has_diagram": true,
         "diagram_bbox": [
             500,
@@ -5376,7 +5376,7 @@
     {
         "subject": "Fluid Mechanics",
         "question_number": "365",
-        "question_text": "The given figure shows the flow net for two-dimensional contraction. The size of mesh square at O is 7 mm, and at point A, the mesh size is 3.5 mm. The dimensionless pressure at $\\frac{P_A}{\\rho V_A^2/2}$ is equal to",
+        "question_text": "The given figure shows the flow net for two-dimensional contraction. The size of mesh square at O is $7 \\text{ mm}$, and at point A, the mesh size is $3.5 \\text{ mm}$. The dimensionless pressure at $\\frac{P_A}{\\rho V_A^2/2}$ is equal to",
         "options": {
             "a": "1.0",
             "b": "2.0",
@@ -5435,7 +5435,7 @@
     {
         "subject": "Fluid Mechanics",
         "question_number": "368",
-        "question_text": "A hydraulic model of a spillway is constructed with a scale 1:16. If the prototype discharge is 2048 cumec, then the corresponding discharge for which the model should be tested is: (a) 1 cumec (b) 2 cumec (c) 4 cumec (d) 8 cumec",
+        "question_text": "A hydraulic model of a spillway is constructed with a scale 1:16. If the prototype discharge is $2048 \\text{ cumec}$, then the corresponding discharge for which the model should be tested is: (a) 1 cumec (b) 2 cumec (c) 4 cumec (d) 8 cumec",
         "options": {
             "a": "1 cumec",
             "b": "2 cumec",
@@ -5487,7 +5487,7 @@
     {
         "subject": "Fluid Mechanics",
         "question_number": "371",
-        "question_text": "A hollow cylinder made of wood (sp. gr. =0.8) has an external diameter of 1.0 m and an internal diameter of 0.6 m. It floats in water with its axis vertical and is in stable equilibrium. The length of the cylinder is equal to or less than: (a) 0.72 m (b) 0.95 m (c) 1.03 m (d) 1.20 m",
+        "question_text": "A hollow cylinder made of wood (sp. gr. $= 0.8$) has an external diameter of $1.0 \\text{ m}$ and an internal diameter of $0.6 \\text{ m}$. It floats in water with its axis vertical and is in stable equilibrium. The length of the cylinder is equal to or less than: (a) 0.72 m (b) 0.95 m (c) 1.03 m (d) 1.20 m",
         "options": {
             "a": "0.72 m",
             "b": "0.95 m",
@@ -5495,7 +5495,7 @@
             "d": "1.20 m"
         },
         "correct_answer": "c",
-        "solution": "Sol.(c) For stable equilibrium, the metacentric height GM must be positive. $GM = BM - BG$. For a floating body, $BM = \\frac{I}{V_{sub}}$, where $I$ is the moment of inertia of the waterplane area and $V_{sub}$ is the submerged volume. $BG = \\frac{L}{2} - \\frac{h}{2}$, where $L$ is total length and $h$ is submerged depth. Given: $D_o = 1.0 \\text{ m}$, $D_i = 0.6 \\text{ m}$, $S.G. = 0.8$. Let $L$ be the length of the cylinder and $h$ be the submerged depth. Weight of cylinder = Buoyant force. Volume of cylinder $V_{cyl} = \\frac{\\pi}{4} (D_o^2 - D_i^2) L = \\frac{\\pi}{4} (1^2 - 0.6^2) L = \\frac{\\pi}{4} (1 - 0.36) L = \\frac{\\pi}{4} (0.64) L = 0.16\\pi L$. Weight of cylinder = $V_{cyl} \\times S.G. \\times \\gamma_w = 0.16\\pi L \\times 0.8 \\times \\gamma_w = 0.128\\pi L \\gamma_w$. Submerged volume $V_{sub} = \\frac{\\pi}{4} (D_o^2 - D_i^2) h = 0.16\\pi h$. Buoyant force = $V_{sub} \\times \\gamma_w = 0.16\\pi h \\gamma_w$. Equating: $0.128\\pi L \\gamma_w = 0.16\\pi h \\gamma_w$. $0.128 L = 0.16 h \\implies h = \\frac{0.128}{0.16} L = 0.8 L$. Center of gravity $G$ is at $L/2$ from bottom. Center of buoyancy $B$ is at $h/2 = 0.8L/2 = 0.4L$ from bottom. $BG = G - B = L/2 - h/2 = 0.5L - 0.4L = 0.1L$. Moment of inertia of waterplane area $I = \\frac{\\pi}{64} (D_o^4 - D_i^4) = \\frac{\\pi}{64} (1^4 - 0.6^4) = \\frac{\\pi}{64} (1 - 0.1296) = \\frac{\\pi}{64} (0.8704) \\approx 0.0427 \\text{ m}^4$. $V_{sub} = 0.16\\pi h = 0.16\\pi (0.8L) = 0.128\\pi L$. $BM = \\frac{I}{V_{sub}} = \\frac{0.0427}{0.128\\pi L} \\approx \\frac{0.10625}{L}$. For stable equilibrium, $GM > 0$, so $BM > BG$. $\\frac{0.10625}{L} > 0.1L$. $0.10625 > 0.1L^2$. $L^2 < \\frac{0.10625}{0.1} = 1.0625$. $L < \\sqrt{1.0625} \\approx 1.0307 \\text{ m}$. So, the length of the cylinder is equal to or less than 1.03 m.",
+        "solution": "Sol.(c) For stable equilibrium, the metacentric height $GM$ must be positive. $GM = BM - BG$. For a floating body, $BM = \\frac{I}{V_{sub}}$, where $I$ is the moment of inertia of the waterplane area and $V_{sub}$ is the submerged volume. $BG = \\frac{L}{2} - \\frac{h}{2}$, where $L$ is total length and $h$ is submerged depth. Given: $D_o = 1.0 \\text{ m}$, $D_i = 0.6 \\text{ m}$, $S.G. = 0.8$. Let $L$ be the length of the cylinder and $h$ be the submerged depth. Weight of cylinder = Buoyant force. Volume of cylinder $V_{cyl} = \\frac{\\pi}{4} (D_o^2 - D_i^2) L = \\frac{\\pi}{4} (1^2 - 0.6^2) L = \\frac{\\pi}{4} (1 - 0.36) L = \\frac{\\pi}{4} (0.64) L = 0.16\\pi L$. Weight of cylinder = $V_{cyl} \\times S.G. \\times \\gamma_w = 0.16\\pi L \\times 0.8 \\times \\gamma_w = 0.128\\pi L \\gamma_w$. Submerged volume $V_{sub} = \\frac{\\pi}{4} (D_o^2 - D_i^2) h = 0.16\\pi h$. Buoyant force = $V_{sub} \\times \\gamma_w = 0.16\\pi h \\gamma_w$. Equating: $0.128\\pi L \\gamma_w = 0.16\\pi h \\gamma_w$. $0.128 L = 0.16 h \\implies h = \\frac{0.128}{0.16} L = 0.8 L$. Center of gravity $G$ is at $L/2$ from bottom. Center of buoyancy $B$ is at $h/2 = 0.8L/2 = 0.4L$ from bottom. $BG = G - B = L/2 - h/2 = 0.5L - 0.4L = 0.1L$. Moment of inertia of waterplane area $I = \\frac{\\pi}{64} (D_o^4 - D_i^4) = \\frac{\\pi}{64} (1^4 - 0.6^4) = \\frac{\\pi}{64} (1 - 0.1296) = \\frac{\\pi}{64} (0.8704) \\approx 0.0427 \\text{ m}^4$. $V_{sub} = 0.16\\pi h = 0.16\\pi (0.8L) = 0.128\\pi L$. $BM = \\frac{I}{V_{sub}} = \\frac{0.0427}{0.128\\pi L} \\approx \\frac{0.10625}{L}$. For stable equilibrium, $GM > 0$, so $BM > BG$. $\\frac{0.10625}{L} > 0.1L$. $0.10625 > 0.1L^2$. $L^2 < \\frac{0.10625}{0.1} = 1.0625$. $L < \\sqrt{1.0625} \\approx 1.0307 \\text{ m}$. So, the length of the cylinder is equal to or less than $1.03 \\text{ m}$.",
         "has_diagram": true,
         "diagram_bbox": [
             41,
@@ -5509,7 +5509,7 @@
     {
         "subject": "Fluid Mechanics",
         "question_number": "372",
-        "question_text": "In a horizontally injection syringe, the piston of 0.2 cm$^2$ cross-sectional area is pushed at a constant speed of 1.0 cm/s to eject water into the atmosphere through a hypodermic needle of 0.07 mm$^2$ cross-sectional area while rinsing Neglecting losses, the force required to move the piston is nearly: (a) 0.72 N (b) 0.95 N (c) 1.03 N (d) 1.20 N",
+        "question_text": "In a horizontally injection syringe, the piston of $0.2 \\text{ cm}^2$ cross-sectional area is pushed at a constant speed of $1.0 \\text{ cm/s}$ to eject water into the atmosphere through a hypodermic needle of $0.07 \\text{ mm}^2$ cross-sectional area while rinsing. Neglecting losses, the force required to move the piston is nearly: (a) 0.72 N (b) 0.95 N (c) 1.03 N (d) 1.20 N",
         "options": {
             "a": "0.72 N",
             "b": "0.95 N",
@@ -5524,7 +5524,7 @@
     {
         "subject": "Fluid Mechanics",
         "question_number": "408",
-        "question_text": "Match List-I with List-II and select the correct answer using the codes given below the lists: List-I A. Submerged body B. Floating body C. Metacentric height D. Buoyancy List-II 1. Force on a curved surface 2. Moment of inertia 3. Metacentre 4. Force acting vertically up 5. Centre of buoyancy Codes:(a) 5 3 2 1(b) 1 2 3 4(c) 5 3 2 4(d) 1 2 5 4",
+        "question_text": "Match List-I with List-II and select the correct answer using the codes given below the lists: List-I A. Submerged body B. Floating body C. Metacentric height D. Buoyancy List-II 1. Force on a curved surface 2. Moment of inertia 3. Metacentre 4. Force acting vertically up 5. Centre of buoyancy Codes: (a) 5 3 2 1 (b) 1 2 3 4 (c) 5 3 2 4 (d) 1 2 5 4",
         "options": {
             "a": "5 3 2 1",
             "b": "1 2 3 4",
@@ -5539,22 +5539,22 @@
     {
         "subject": "Fluid Mechanics",
         "question_number": "409",
-        "question_text": "The velocity components in a 2-D flow for an incompressible fluid are given by the equations: $u = 2xy$; $v = a^2 + x^2 + y^2$ The flow:(a) satisfies irrotationality condition and the continuity equation(b) satisfies irrotationality condition but not the continuity equation(c) does not satisfy the irrotationality condition but satisfies the continuity equation(d) does not satisfy either the irrotationality condition or the continuity equation",
+        "question_text": "The velocity components in a 2-D flow for an incompressible fluid are given by the equations: $u = 2xy$; $v = a^2 + x^2 + y^2$ The flow: (a) satisfies irrotationality condition and the continuity equation (b) satisfies irrotationality condition but not the continuity equation (c) does not satisfy the irrotationality condition but satisfies the continuity equation (d) does not satisfy either the irrotationality condition or the continuity equation",
         "options": {
             "a": "satisfies irrotationality condition and the continuity equation",
             "b": "satisfies irrotationality condition but not the continuity equation",
             "c": "does not satisfy the irrotationality condition but satisfies the continuity equation",
             "d": "does not satisfy either the irrotationality condition or the continuity equation"
         },
-        "correct_answer": "d",
-        "solution": "$2y + 2y \\neq 0$ so continuity equation is not satisfied. $\\frac{\\partial u}{\\partial x} = 2x$; $\\frac{\\partial v}{\\partial y} = 2x$. $W_z = \\frac{1}{2} (\\frac{\\partial v}{\\partial x} - \\frac{\\partial u}{\\partial y}) = 0$. Irrotationality condition satisfied.",
+        "correct_answer": "b",
+        "solution": "Continuity equation: $\\frac{\\partial u}{\\partial x} + \\frac{\\partial v}{\\partial y} = 2y + 2y = 4y \\neq 0$, so the continuity equation is not satisfied. Irrotationality condition: $W_z = \\frac{1}{2} (\\frac{\\partial v}{\\partial x} - \\frac{\\partial u}{\\partial y}) = \\frac{1}{2}(2x - 2x) = 0$. The irrotationality condition is satisfied.",
         "has_diagram": false,
         "page_index": 1
     },
     {
         "subject": "Fluid Mechanics",
         "question_number": "410",
-        "question_text": "Match List-I (Phenomenon) with List-II (Condition) and select the correct answer using the codes given below the lists: List-I A. Rotational flow B. Irrotational flow C. Singularities D. Streamline Spacing List-II 1. Velocity zero or infinite 2. Proportional to velocity 3. Vorticity is zero 4. Vorticity exists Codes:(a) 3 1 4 2(b) 4 3 1 2(c) 4 3 2 1(d) 3 4 2 1",
+        "question_text": "Match List-I (Phenomenon) with List-II (Condition) and select the correct answer using the codes given below the lists: List-I A. Rotational flow B. Irrotational flow C. Singularities D. Streamline Spacing List-II 1. Velocity zero or infinite 2. Proportional to velocity 3. Vorticity is zero 4. Vorticity exists Codes: (a) 3 1 4 2 (b) 4 3 1 2 (c) 4 3 2 1 (d) 3 4 2 1",
         "options": {
             "a": "3 1 4 2",
             "b": "4 3 1 2",
@@ -5569,7 +5569,7 @@
     {
         "subject": "Fluid Mechanics",
         "question_number": "411",
-        "question_text": "Which similitude is correct?(a) To achieve dynamic similarity between the model and the prototype, there need not be any geometric similarity(b) For kinematic similarity between the model and the prototype, the ratios of forces between the model and the prototype should be same(c) For dynamic similarity between model and prototype in a compressible flow system, the Weber numbers must be the same(d) For dynamic similarity between the model and the prototype, the ratio of forces must be the same",
+        "question_text": "Which similitude is correct? (a) To achieve dynamic similarity between the model and the prototype, there need not be any geometric similarity (b) For kinematic similarity between the model and the prototype, the ratios of forces between the model and the prototype should be same (c) For dynamic similarity between model and prototype in a compressible flow system, the Weber numbers must be the same (d) For dynamic similarity between the model and the prototype, the ratio of forces must be the same",
         "options": {
             "a": "To achieve dynamic similarity between the model and the prototype, there need not be any geometric similarity",
             "b": "For kinematic similarity between the model and the prototype, the ratios of forces between the model and the prototype should be same",
@@ -5591,10 +5591,10 @@
     {
         "subject": "Fluid Mechanics",
         "question_number": "412",
-        "question_text": "The limit of the values of the coefficient of discharge of venturimeter is between:(a) 0.60 to 0.75(b) 0.76 to 0(c) 0.81 to 0.94(d) 0.95 to 0.99",
+        "question_text": "The limit of the values of the coefficient of discharge of venturimeter is between: (a) 0.60 to 0.75 (b) 0.76 to 0.85 (c) 0.81 to 0.94 (d) 0.95 to 0.99",
         "options": {
             "a": "0.60 to 0.75",
-            "b": "0.76 to 0",
+            "b": "0.76 to 0.85",
             "c": "0.81 to 0.94",
             "d": "0.95 to 0.99"
         },
@@ -5606,7 +5606,7 @@
     {
         "subject": "Fluid Mechanics",
         "question_number": "413",
-        "question_text": "Match List-I with List-II and select the correct answer using the codes given below the lists: List-I A. Moment of momentum equation B. Bernoulli's equation C. Euler's equation D. Hagen-Poiseuille equation List-II 1. Equation to find energy loss in a pipeline 2. Equation motion for one-dimensional steady flow of ideal and incompressible fluid 3. Equation based on conservation of momentum principle applicable to circulatory flows 4. Three-dimensional equation motion based on Principle of conservation of momentum for ideal and incompressible fluid flow Codes:(a) 2 3 4 1(b) 3 2 1 4(c) 2 3 1 4(d) 3 2 4 1",
+        "question_text": "Match List-I with List-II and select the correct answer using the codes given below the lists: List-I A. Moment of momentum equation B. Bernoulli's equation C. Euler's equation D. Hagen-Poiseuille equation List-II 1. Equation to find energy loss in a pipeline 2. Equation motion for one-dimensional steady flow of ideal and incompressible fluid 3. Equation based on conservation of momentum principle applicable to circulatory flows 4. Three-dimensional equation motion based on Principle of conservation of momentum for ideal and incompressible fluid flow Codes: (a) 2 3 4 1 (b) 3 2 1 4 (c) 2 3 1 4 (d) 3 2 4 1",
         "options": {
             "a": "2 3 4 1",
             "b": "3 2 1 4",
@@ -5621,7 +5621,7 @@
     {
         "subject": "Fluid Mechanics",
         "question_number": "414",
-        "question_text": "Which one of the following pairs is correctly matched?(a) Prandtl: Flow through channels(b) Continuity equation: Law of conservation of energy(c) Mixing length: Laminar flow(d) Karman vortex: Flow past a cylinder",
+        "question_text": "Which one of the following pairs is correctly matched? (a) Prandtl: Flow through channels (b) Continuity equation: Law of conservation of energy (c) Mixing length: Laminar flow (d) Karman vortex: Flow past a cylinder",
         "options": {
             "a": "Prandtl: Flow through channels",
             "b": "Continuity equation: Law of conservation of energy",
@@ -5636,7 +5636,7 @@
     {
         "subject": "Fluid Mechanics",
         "question_number": "415",
-        "question_text": "A Pitot tube (coefficient= 1.0) is used to measure the velocity of air of mass density $1.2 \\text{ kg/m}^3$. If the head difference in a vertical U-tube filled with water is $12 \\text{mm}$ then the velocity of air (in m/s) will be:(a) 10(b) 14(c) 17(d) 20",
+        "question_text": "A Pitot tube (coefficient= 1.0) is used to measure the velocity of air of mass density $1.2 \\text{ kg/m}^3$. If the head difference in a vertical U-tube filled with water is $12 \\text{ mm}$ then the velocity of air (in m/s) will be: (a) 10 (b) 14 (c) 17 (d) 20",
         "options": {
             "a": "10",
             "b": "14",
@@ -5644,29 +5644,29 @@
             "d": "20"
         },
         "correct_answer": "b",
-        "solution": "A pitot tube is used for velocity measurement by taking the difference between dynamic and static pressures. $V = \\sqrt{\\frac{2g h_g}{S_a}} = \\sqrt{\\frac{2 \\times 1000 \\times 0.012 \\times 10}{1.2}} = 10\\sqrt{2} = 14 \\text{ m/sec}$.",
+        "solution": "A pitot tube is used for velocity measurement by taking the difference between dynamic and static pressures. $V = \\sqrt{2g \\Delta h \\frac{\\rho_m}{\\rho_a}} = \\sqrt{\\frac{2 \\times 9.81 \\times 0.012 \\times 1000}{1.2}} = \\sqrt{196.2} \\approx 14 \\text{ m/s}$.",
         "has_diagram": false,
         "page_index": 3
     },
     {
         "subject": "Fluid Mechanics",
         "question_number": "416",
-        "question_text": "Match List-I with List-II for different stages of flow in a pipeline and select the correct answer using the codes given below the lists: List-I A. Laminar flow B. Smooth Turbulent flow ($R_e < 10^5$) C. Rough Turbulent flow D. Smooth Turbulent flow ($R_e > 10^5$) List-II 1. $f = \\frac{0.3164}{R_e^{0.25}}$ 2. $\\frac{1}{\\sqrt{f}} = -0.8 + 2\\log(R\\sqrt{f})$ 3. $f = \\frac{64}{R_e}$ 4. $\\frac{1}{\\sqrt{f}} = 1.74 + 2\\log(\\frac{R_e}{k})$ Codes:(a) 3 1 4 2(b) 4 1 3 2(c) 3 1 2 4(d) 4 2 1 3",
+        "question_text": "Match List-I with List-II for different stages of flow in a pipeline and select the correct answer using the codes given below the lists: List-I A. Laminar flow B. Smooth Turbulent flow ($R_e < 10^5$) C. Rough Turbulent flow D. Smooth Turbulent flow ($R_e > 10^5$) List-II 1. $f = \\frac{0.3164}{R_e^{0.25}}$ 2. $\\frac{1}{\\sqrt{f}} = -0.8 + 2\\log(R_e\\sqrt{f})$ 3. $f = \\frac{64}{R_e}$ 4. $\\frac{1}{\\sqrt{f}} = 1.74 + 2\\log(\\frac{r}{k})$ Codes: (a) 3 1 4 2 (b) 4 1 3 2 (c) 3 1 2 4 (d) 4 2 1 3",
         "options": {
             "a": "3 1 4 2",
             "b": "4 1 3 2",
             "c": "3 1 2 4",
             "d": "4 2 1 3"
         },
-        "correct_answer": "c",
-        "solution": "Types of flow and their friction factor equations: Laminar flow: $f = \\frac{64}{R_e}$. Smooth Turbulent flow ($R_e < 10^5$): $f = \\frac{0.3164}{R_e^{0.25}}$. Rough Turbulent flow: $\\frac{1}{\\sqrt{f}} = 1.74 + 2\\log(\\frac{R_e}{k})$.",
+        "correct_answer": "a",
+        "solution": "Types of flow and their friction factor equations: Laminar flow: $f = \\frac{64}{R_e}$. Smooth Turbulent flow ($R_e < 10^5$): $f = \\frac{0.3164}{R_e^{0.25}}$. Rough Turbulent flow: $\\frac{1}{\\sqrt{f}} = 1.74 + 2\\log(\\frac{r}{k})$. Smooth Turbulent flow ($R_e > 10^5$): $\\frac{1}{\\sqrt{f}} = -0.8 + 2\\log(R_e\\sqrt{f})$.",
         "has_diagram": false,
         "page_index": 4
     },
     {
         "subject": "Fluid Mechanics",
         "question_number": "417",
-        "question_text": "Consider the following statements in relation to dimensionless numbers 1. Inertia force is always involved in the expression of any dimensionless number. 2. Weber number is significant in a flow system where viscous force dominates 3. Reynolds number is significant where both gravity force and viscous force are predominant. Of these statements:(a) Only 1 is correct(b) 1 and 2 are correct(c) 2 and 3 are correct(d) 1, 2 and 3 are correct",
+        "question_text": "Consider the following statements in relation to dimensionless numbers 1. Inertia force is always involved in the expression of any dimensionless number. 2. Weber number is significant in a flow system where viscous force dominates 3. Reynolds number is significant where both gravity force and viscous force are predominant. Of these statements: (a) Only 1 is correct (b) 1 and 2 are correct (c) 2 and 3 are correct (d) 1, 2 and 3 are correct",
         "options": {
             "a": "Only 1 is correct",
             "b": "1 and 2 are correct",
@@ -5681,11 +5681,11 @@
     {
         "subject": "Fluid Mechanics",
         "question_number": "418",
-        "question_text": "Separation of boundary layer takes place under:(a) positive pressure gradient in the direction of flow(b) negative pressure gradient in the direction of flow(c) zero pressure gradient in the direction of(d) very rough surface",
+        "question_text": "Separation of boundary layer takes place under: (a) positive pressure gradient in the direction of flow (b) negative pressure gradient in the direction of flow (c) zero pressure gradient in the direction of flow (d) very rough surface",
         "options": {
             "a": "positive pressure gradient in the direction of flow",
             "b": "negative pressure gradient in the direction of flow",
-            "c": "zero pressure gradient in the direction of",
+            "c": "zero pressure gradient in the direction of flow",
             "d": "very rough surface"
         },
         "correct_answer": "a",
@@ -5696,7 +5696,7 @@
     {
         "subject": "Fluid Mechanics",
         "question_number": "419",
-        "question_text": "Assertion (A): Flow in the boundary layer is always laminar Reason (R): In turbulent flow on a smooth boundary, a laminar sublayer still exists within the boundary layer. still exists within the boundary layer.",
+        "question_text": "Assertion (A): Flow in the boundary layer is not always laminar. Reason (R): In turbulent flow on a smooth boundary, a laminar sublayer still exists within the boundary layer.",
         "options": {
             "a": "Both A and R are true, and R is the correct explanation of A",
             "b": "Both A and R are true, but R is not a correct explanation of A",
@@ -5726,7 +5726,7 @@
     {
         "subject": "Fluid Mechanics",
         "question_number": "421",
-        "question_text": "Assertion A: At the critical state of flow, the specific force is a minimum for the given discharge Reason (R): For a minimum value of specific force, the first derivative of force with respect to depth should be unity with respect to depth should be unity.",
+        "question_text": "Assertion A: At the critical state of flow, the specific force is a minimum for the given discharge Reason (R): For a minimum value of specific force, the first derivative of force with respect to depth should be unity.",
         "options": {
             "a": "Both A and R are true, and R is the correct explanation of A",
             "b": "Both A and R are true, but R is not a correct explanation of A",
@@ -5734,7 +5734,7 @@
             "d": "A is false but R is true"
         },
         "correct_answer": "c",
-        "solution": "For a minimum value of specific force, the first derivative of force with respect to depth should be unity with respect to depth should be zero.",
+        "solution": "For a minimum value of specific force, the first derivative of force with respect to depth should be zero.",
         "has_diagram": false,
         "page_index": 5
     },
@@ -5779,7 +5779,7 @@
             "d": "A is false but R is true"
         },
         "correct_answer": "a",
-        "solution": "For $\\phi = 2x^2 - 3y^2$, $\\nabla^2 \\phi = \\frac{\\partial^2 \\phi}{\\partial x^2} + \\frac{\\partial^2 \\phi}{\\partial y^2} = 4 - 6 = -2 \\neq 0$. So, $\\phi$ function is not valid here. So, Assertion (A) is wrong.",
+        "solution": "For $\\phi = 2x^2 - 3y^2$, $u = \\frac{\\partial \\phi}{\\partial x} = 4x$ and $v = \\frac{\\partial \\phi}{\\partial y} = -6y$. The continuity equation gives $\\frac{\\partial u}{\\partial x} + \\frac{\\partial v}{\\partial y} = 4 - 6 = -2 \\neq 0$. For a valid potential function representing irrotational flow, $\\nabla^2 \\phi$ must be zero. Since the continuity equation is not satisfied, the flow cannot be a valid irrotational potential flow, meaning it represents rotational flow. Therefore, Assertion (A) is correct. The reason is also correct as $\\frac{\\partial u}{\\partial x} + \\frac{\\partial v}{\\partial y} = \\nabla^2 \\phi \\neq 0$.",
         "has_diagram": false,
         "page_index": 6
     },
@@ -5838,7 +5838,7 @@
     {
         "subject": "Fluid Mechanics",
         "question_number": "427",
-        "question_text": "Assertion (A): In the equation $h_f = fLv^2/d2g$. For laminar flow through the pipe, the term v (mean velocity of flow) is given by $V = (P_1 - P_2)r^2/8\\mu L$ Reason (R): The term 'f' (friction factor) in the above equation equals $64/R_e$, where $R_e$ is the Reynolds number.",
+        "question_text": "Assertion (A): In the equation $h_f = \\frac{fLv^2}{2gd}$. For laminar flow through the pipe, the term v (mean velocity of flow) is given by $V = (P_1 - P_2)r^2/8\\mu L$ Reason (R): The term 'f' (friction factor) in the above equation equals $64/R_e$, where $R_e$ is the Reynolds number.",
         "options": {
             "a": "Both A and R are true, and R is the correct explanation of A",
             "b": "Both A and R are true, but R is not a correct explanation of A",
@@ -5846,7 +5846,7 @@
             "d": "A is false but R is true"
         },
         "correct_answer": "b",
-        "solution": "Doubling the diameter of a pipe results in the head loss decreasing by a factor of 32 (= 97% reduction), while the amount of material required per unit length of the pipe and its installation cost nearly doubles. This means that energy consumption, to overcome the frictional resistance in a pipe conveying a certain flow rate, can be significantly reduced at a relatively small capital cost.",
+        "solution": "Assertion (A) is the Hagen-Poiseuille equation for mean velocity in laminar flow, which is true. Reason (R) states the Darcy-Weisbach friction factor for laminar flow, $f = \\frac{64}{R_e}$, which is also true. However, Reason (R) does not explain Assertion (A); they are independent facts about laminar flow. Hence, both A and R are true, but R is not the correct explanation of A.",
         "has_diagram": false,
         "page_index": 7
     },
@@ -5876,7 +5876,7 @@
             "d": "A is false but R is true"
         },
         "correct_answer": "a",
-        "solution": "For maximum change in momentum of the fluid and hence for the maximum driving force on the wheel, the deflection of the water jet should be in practice, however, the deflection is limited to about $165^\\circ$ so that the water leaving a bucket may not hit the back of the following bucket. Impulse turbine: Pelton wheel. Velocity diagram.",
+        "solution": "For maximum change in momentum of the fluid and hence for the maximum driving force on the wheel, the deflection of the water jet should be $180^\\circ$. In practice, however, the deflection is limited to about $165^\\circ$ so that the water leaving a bucket may not hit the back of the following bucket. Impulse turbine: Pelton wheel. Velocity diagram.",
         "has_diagram": true,
         "diagram_bbox": [
             700,
@@ -5898,7 +5898,7 @@
             "d": "A is false but R is true"
         },
         "correct_answer": "a",
-        "solution": "$E = h + \\frac{Q^2}{2gA^2}$. $\\frac{dE}{dh} = 1 - \\frac{Q^2}{gA^3} \\frac{dA}{dh} = 1 - [Fr^2]$. $\\frac{dE}{dh} = [1 - Fr^2]$. Since Froude number for critical depth is equal to 1.0. So, $\\frac{dh}{dE} \\rightarrow \\infty$ for finite value of dE.",
+        "solution": "$E = h + \\frac{Q^2}{2gA^2}$. $\\frac{dE}{dh} = 1 - \\frac{Q^2}{gA^3} \\frac{dA}{dh} = 1 - [Fr^2]$. $\\frac{dE}{dh} = [1 - Fr^2]$. Since Froude number for critical depth is equal to 1.0. So, $\\frac{dh}{dE} \\rightarrow \\infty$ for finite value of $dE$.",
         "has_diagram": false,
         "page_index": 8
     },
@@ -5913,7 +5913,7 @@
             "d": "A is false but R is true"
         },
         "correct_answer": "a",
-        "solution": "With the decrease in temperature, the viscosity of glue increases so resistance to movement also. In liquids, viscosity is inversely proportional to temperature i.e. viscosity increases with fall in temperature. For gases, viscosity is directly proportional to temperature.",
+        "solution": "With the decrease in temperature, the viscosity of glue increases so resistance to movement also increases. In liquids, viscosity is inversely proportional to temperature i.e. viscosity increases with fall in temperature. For gases, viscosity is directly proportional to temperature.",
         "has_diagram": false,
         "page_index": 8
     },
@@ -5965,7 +5965,7 @@
     {
         "subject": "Fluid Mechanics",
         "question_number": "436",
-        "question_text": "Assertion (A): In the standing-wave flume, flow occurs in a super-critical state so that discharge can be related to a depth upstream of flow Reason (R): A standing wave flume is a venturi flume operating under one condition jump is formed.",
+        "question_text": "Assertion (A): In the standing-wave flume, flow occurs in a super-critical state so that discharge can be related to a depth upstream of flow Reason (R): A standing wave flume is a venturi flume operating under a condition where a hydraulic jump is formed.",
         "options": {
             "a": "Both A and R are true, and R is the correct explanation of A",
             "b": "Both A and R are true, but R is not a correct explanation of A",
@@ -6010,7 +6010,7 @@
     {
         "subject": "Fluid Mechanics",
         "question_number": "440",
-        "question_text": "Assertion (A): Loss of head at a sudden expansion in a pipe is greater than that at a sudden contraction Reason (R): Flow in a sudden expansion tends to be irrotational",
+        "question_text": "Assertion (A): Loss of head at a sudden expansion in a pipe is greater than that at a sudden contraction Reason (R): Flow in a sudden expansion tends to be rotational",
         "options": {
             "a": "Both A and R are true, and R is the correct explanation of A",
             "b": "Both A and R are true, but R is not a correct explanation of A",
@@ -6018,7 +6018,7 @@
             "d": "A is false but R is true"
         },
         "correct_answer": "a",
-        "solution": "Head loss due to sudden expansion $h_1 = \\frac{V_1^2}{2g} [1 - (\\frac{A_1}{A_2})^2]$ or $\\frac{V_2^2}{2g} [(\\frac{A_2}{A_1})^2 - 1]$. Head loss due to sudden contraction $h_2 = \\frac{KV_2^2}{2g}$. Here, $K = [(\\frac{1}{C_c}) - 1]$.",
+        "solution": "Head loss due to sudden expansion $h_1 = \\frac{V_1^2}{2g} [1 - (\\frac{A_1}{A_2})^2]$ or $\\frac{V_2^2}{2g} [(\\frac{A_2}{A_1})^2 - 1]$. Head loss due to sudden contraction $h_2 = \\frac{KV_2^2}{2g}$. Here, $K = [(\\frac{1}{C_c}) - 1]^2$.",
         "has_diagram": false,
         "page_index": 10
     },
@@ -6048,7 +6048,7 @@
             "d": "A is false but R is true"
         },
         "correct_answer": "a",
-        "solution": "For wide rectangle channel discharge per unit width whose bed slope is 1 in $C^2/g$. $q = cy^{1/2} \\sqrt{S}$. Or, $q^2 = c^2y^3S$. For critical depth, $q^2 = gy_c^3$. $\\therefore g = C^2S$ or $S = \\frac{1}{(C^2/g)}$ or $1 \\text{ in } C^2/g$.",
+        "solution": "For wide rectangle channel discharge per unit width whose bed slope is 1 in $C^2/g$. $q = C y^{3/2} \\sqrt{S}$. Or, $q^2 = C^2 y^3 S$. For critical depth, $q^2 = g y_c^3$. $\\therefore g = C^2 S$ or $S = \\frac{1}{(C^2/g)}$ or $1 \\text{ in } C^2/g$.",
         "has_diagram": false,
         "page_index": 10
     },

@@ -3,6 +3,11 @@ const Question = require('../models/Question');
 /**
  * Transforms a raw seed-format question into the DB schema format.
  * Handles both the seed file format (snake_case) and the DB format (camelCase).
+ *
+ * Question text is expected to be pre-formatted with $...$ (or $$...$$) delimiters
+ * for LaTeX. We store it verbatim — no runtime rewriting — so what the uploader
+ * sends is what renders. Malformed input (raw backslashes without $) will simply
+ * not render as math; correctness is the uploader's responsibility.
  */
 function transformQuestion(q, fallbackSubject) {
   const subject = q.subject || fallbackSubject || 'Unknown';

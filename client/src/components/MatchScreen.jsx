@@ -4,14 +4,7 @@ import Latex from 'react-latex-next';
 import MatchSummary from './MatchSummary';
 import { getAvatarUrl } from '../api';
 import { sounds } from '../utils/sound';
-
-const formatLatex = (text) => {
-  if (!text) return '';
-  if (typeof text === 'string' && text.includes('\\') && !text.includes('$')) {
-    return `$${text}$`;
-  }
-  return text;
-};
+import { formatLatex } from '../utils/latex';
 
 const MatchScreen = ({ matchPayload }) => {
   const [matchPhase, setMatchPhase] = useState('intro');

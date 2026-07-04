@@ -3,14 +3,7 @@ import 'katex/dist/katex.min.css';
 import Latex from 'react-latex-next';
 import { CheckCircle2, XCircle, ArrowLeft, RotateCcw } from 'lucide-react';
 import Confetti from './Confetti';
-
-const formatLatex = (text) => {
-  if (!text) return '';
-  if (typeof text === 'string' && text.includes('\\') && !text.includes('$')) {
-    return `$${text}$`;
-  }
-  return text;
-};
+import { formatLatex } from '../utils/latex';
 
 export default function EndMatchScreen({ questions, playerScore, opponentScore }) {
   const isWinner = playerScore > opponentScore;

@@ -5,15 +5,7 @@ import { socket } from '../socket';
 import api, { getAvatarUrl } from '../api';
 import Confetti from './Confetti';
 import { sounds } from '../utils/sound';
-
-const formatLatex = (text) => {
-  if (!text) return '';
-  if (typeof text === 'string' && text.includes('\\') && !text.includes('$')) {
-    return `$${text}$`;
-  }
-  return text;
-};
-
+import { formatLatex } from '../utils/latex';
 const MatchSummary = ({ summaryData, subject, matchPayload }) => {
   const navigate = useNavigate();
   const [savedQuestions, setSavedQuestions] = useState(new Set());
