@@ -1,6 +1,16 @@
 import React, { useState } from 'react';
 import 'katex/dist/katex.min.css';
 import Latex from 'react-latex-next';
+import { CheckCircle2, XCircle, ArrowLeft, RotateCcw } from 'lucide-react';
+import Confetti from './Confetti';
+
+const formatLatex = (text) => {
+  if (!text) return '';
+  if (typeof text === 'string' && text.includes('\\') && !text.includes('$')) {
+    return `$${text}$`;
+  }
+  return text;
+};
 
 export default function EndMatchScreen({ questions, playerScore, opponentScore }) {
   const isWinner = playerScore > opponentScore;
@@ -23,7 +33,7 @@ export default function EndMatchScreen({ questions, playerScore, opponentScore }
         {questions.map((q, index) => (
           <div key={index} className="bg-dh-card p-6 rounded-lg shadow-lg border border-dh-border">
             <div className="text-lg text-dh-text font-semibold mb-4">
-              <Latex>{`Q${index + 1}: ${q.questionText}`}</Latex>
+              <Latex>{formatLatex(`Q${index + 1}: ${q.questionText}`)}</Latex>
             </div>
 
             {q.hasDiagram && q.diagramUrl && (
@@ -39,7 +49,7 @@ export default function EndMatchScreen({ questions, playerScore, opponentScore }
                   className={`p-3 rounded-md border ${q.correctOption === key ? 'border-dh-green bg-dh-green/10' : 'border-dh-border bg-dh-surface'}`}
                 >
                   <span className="font-mono font-bold uppercase mr-2">{key}:</span>
-                  <Latex>{value}</Latex>
+                  <Latex>{formatLatex(value)}</Latex>
                 </div>
               ))}
             </div>
@@ -47,7 +57,7 @@ export default function EndMatchScreen({ questions, playerScore, opponentScore }
             <div className="mt-4 p-4 bg-dh-accent/5 border-l-4 border-dh-accent rounded-r-md">
               <h4 className="text-dh-accent-light font-heading font-bold mb-2">Explanation:</h4>
               <div className="text-dh-text">
-                <Latex>{q.explanation || 'No explanation available.'}</Latex>
+                <Latex>{formatLatex(q.explanation || 'No explanation available.')}</Latex>
               </div>
             </div>
           </div>

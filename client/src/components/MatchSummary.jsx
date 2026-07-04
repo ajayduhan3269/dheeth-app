@@ -6,6 +6,14 @@ import api, { getAvatarUrl } from '../api';
 import Confetti from './Confetti';
 import { sounds } from '../utils/sound';
 
+const formatLatex = (text) => {
+  if (!text) return '';
+  if (typeof text === 'string' && text.includes('\\') && !text.includes('$')) {
+    return `$${text}$`;
+  }
+  return text;
+};
+
 const MatchSummary = ({ summaryData, subject, matchPayload }) => {
   const navigate = useNavigate();
   const [savedQuestions, setSavedQuestions] = useState(new Set());
@@ -260,7 +268,7 @@ const MatchSummary = ({ summaryData, subject, matchPayload }) => {
                 <div className="flex justify-between items-start gap-4 mb-4">
                   <div className="flex-1 text-base font-semibold text-dh-text">
                     <span className="text-dh-text-muted mr-2">{idx + 1}.</span>
-                    <Latex>{q.questionText}</Latex>
+                    <Latex>{formatLatex(q.questionText)}</Latex>
                   </div>
                   <button 
                     onClick={() => handleSaveQuestion(q)}
@@ -294,7 +302,7 @@ const MatchSummary = ({ summaryData, subject, matchPayload }) => {
                         <div className={`w-8 h-8 rounded-full flex items-center justify-center font-mono font-bold text-sm ${optLetter.toLowerCase() === q.correctOption?.toLowerCase() ? 'bg-dh-green text-black' : 'bg-dh-border text-dh-text-muted'}`}>
                           {key}
                         </div>
-                        <span className="flex-1"><Latex>{opt}</Latex></span>
+                        <span className="flex-1"><Latex>{formatLatex(opt)}</Latex></span>
                       </div>
                     );
                   })}
@@ -318,7 +326,7 @@ const MatchSummary = ({ summaryData, subject, matchPayload }) => {
                 <div className="mt-5 p-4 bg-dh-accent/5 border-l-4 border-dh-accent rounded-r-md">
                   <h4 className="text-dh-accent-light font-heading font-bold mb-2 text-sm">Explanation:</h4>
                   <div className="text-dh-text text-sm">
-                    <Latex>{q.explanation || 'No explanation available.'}</Latex>
+                    <Latex>{formatLatex(q.explanation || 'No explanation available.')}</Latex>
                   </div>
                 </div>
               </div>
