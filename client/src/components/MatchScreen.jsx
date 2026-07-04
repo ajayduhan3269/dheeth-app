@@ -5,12 +5,22 @@ import MatchSummary from './MatchSummary';
 import { getAvatarUrl } from '../api';
 import { sounds } from '../utils/sound';
 
+const formatLatex = (text) => {
+  if (!text) return '';
+  if (typeof text === 'string' && text.includes('\\') && !text.includes('$')) {
+    return `$${text}$`;
+  }
+  return text;
+};
+
 const MatchScreen = ({ matchPayload }) => {
   const [matchPhase, setMatchPhase] = useState('intro');
   const [timeLeft, setTimeLeft] = useState(15);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [playerScore, setPlayerScore] = useState(0);
+  const [playerCorrectCount, setPlayerCorrectCount] = useState(0);
   const [opponentScore, setOpponentScore] = useState(0);
+  const [opponentCorrectCount, setOpponentCorrectCount] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
   const [isMatchOver, setIsMatchOver] = useState(false);
   const [summaryData, setSummaryData] = useState(null);
@@ -42,11 +52,21 @@ const MatchScreen = ({ matchPayload }) => {
       const opp = data.players[matchPayload.opponent.id] || Object.values(data.players).find(p => p.socketId !== socket.id && p.socketId !== matchPayload.player.id);
       if (me) {
         setPlayerScore(me.score);
+        setPlayerCorrectCount(me.correctAnswers || 0);
         const diff = me.score - prevScoreRef.current;
-        if (diff > 0) setScoreDiff({ value: diff, key: Date.now() });
+        if (diff > 0) {
+          const newKey = Date.now();
+          setScoreDiff({ value: diff, key: newKey });
+          setTimeout(() => {
+            setScoreDiff(prev => (prev && prev.key === newKey ? null : prev));
+          }, 1500);
+        }
         prevScoreRef.current = me.score;
       }
-      if (opp) setOpponentScore(opp.score);
+      if (opp) {
+        setOpponentScore(opp.score);
+        setOpponentCorrectCount(opp.correctAnswers || 0);
+      }
     });
 
     socket.on('answer_result', (data) => {
@@ -179,13 +199,13 @@ const MatchScreen = ({ matchPayload }) => {
           <div className="absolute left-0 top-0 bottom-0 w-2 md:w-3 bg-dh-surface z-0">
             <div 
               className="absolute bottom-0 left-0 w-full bg-dh-accent transition-all duration-500 ease-out shadow-[0_0_15px_#00e676]"
-              style={{ height: `${Math.min(100, (playerScore / 2500) * 100)}%` }}
+              style={{ height: `${(playerCorrectCount / totalQuestions) * 100}%` }}
             ></div>
           </div>
           <div className="absolute right-0 top-0 bottom-0 w-2 md:w-3 bg-dh-surface z-0">
             <div 
               className="absolute bottom-0 right-0 w-full bg-dh-red transition-all duration-500 ease-out shadow-[0_0_15px_#ff4b4b]"
-              style={{ height: `${Math.min(100, (opponentScore / 2500) * 100)}%` }}
+              style={{ height: `${(opponentCorrectCount / totalQuestions) * 100}%` }}
             ></div>
           </div>
 
@@ -262,7 +282,7 @@ const MatchScreen = ({ matchPayload }) => {
                 ========================================= */}
             <div className="w-full flex flex-col items-center flex-1 justify-center mb-6">
               <h2 className="text-2xl md:text-4xl font-normal text-center text-white mb-6 leading-tight max-w-2xl px-2">
-                <Latex>{currentQ.questionText}</Latex>
+                <Latex>{formatLatex(currentQ.questionText)}</Latex>
               </h2>
               
               {currentQ.hasDiagram && currentQ.diagramUrl && (
@@ -332,7 +352,7 @@ const MatchScreen = ({ matchPayload }) => {
                       </div>
                     )}
                     
-                    <span className="relative z-10 w-full px-10"><Latex>{value}</Latex></span>
+                    <span className="relative z-10 w-full px-10"><Latex>{formatLatex(value)}</Latex></span>
                   </button>
                 );
               })}

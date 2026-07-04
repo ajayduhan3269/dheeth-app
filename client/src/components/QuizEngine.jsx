@@ -1,4 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import Latex from 'react-latex-next';
+
+const formatLatex = (text) => {
+  if (!text) return '';
+  if (typeof text === 'string' && text.includes('\\') && !text.includes('$')) {
+    return `$${text}$`;
+  }
+  return text;
+};
 
 const QuizEngine = ({ questions, onComplete }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -88,7 +97,7 @@ const QuizEngine = ({ questions, onComplete }) => {
 
       <div className="p-8">
         <h2 className="text-2xl font-heading font-bold text-dh-text mb-8 leading-relaxed">
-          {currentQuestion.questionText}
+          <Latex>{formatLatex(currentQuestion.questionText)}</Latex>
         </h2>
 
         <div className="space-y-4">
@@ -102,7 +111,7 @@ const QuizEngine = ({ questions, onComplete }) => {
                 className={getOptionClasses(letter)}
               >
                 <span className="inline-block w-8 font-mono font-bold mr-2">{letter}.</span>
-                {option}
+                <Latex>{formatLatex(option)}</Latex>
               </button>
             );
           })}
@@ -113,7 +122,7 @@ const QuizEngine = ({ questions, onComplete }) => {
             <div className={`p-4 rounded-xl mb-6 flex items-start gap-4 ${selectedOption === currentQuestion.correctOption ? 'bg-dh-green/10 text-dh-green' : 'bg-dh-accent/5 text-dh-accent-light'}`}>
               <div className="flex-1">
                 <span className="font-heading font-bold block mb-1">Explanation:</span>
-                {currentQuestion.explanation}
+                <Latex>{formatLatex(currentQuestion.explanation)}</Latex>
               </div>
             </div>
             <button
