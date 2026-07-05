@@ -1,7 +1,0 @@
-{
-  "name": "dheeth-app-root",
-  "private": true,
-  "scripts": {
-    "build": "cd client && npm install --legacy-peer-deps && npm run build"
-  }
-}
