@@ -31,7 +31,7 @@ const seedDatabase = async () => {
     for (const file of files) {
       const filePath = path.join(seedsDir, file);
       const fileData = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
-      
+
       const formattedQuestions = fileData.map(q => {
         let baseSubject = q.subject;
         if (file.includes('fluid_mechanics')) baseSubject = 'Fluid Mechanics';
@@ -43,7 +43,7 @@ const seedDatabase = async () => {
 
         let finalTopic = q.topic || 'General';
         if (q.subject && q.subject !== baseSubject) {
-           finalTopic = q.subject;
+          finalTopic = q.subject;
         }
 
         return {

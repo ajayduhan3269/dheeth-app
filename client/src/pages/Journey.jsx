@@ -19,6 +19,7 @@ const SUBJECT_META = {
   'Highway Engineering': { icon: '🛣️', gradient: 'from-slate-500 to-gray-700' },
   'Irrigation Engineering': { icon: '🌾', gradient: 'from-lime-500 to-green-700' },
   'Environmental Engineering': { icon: '🌿', gradient: 'from-teal-500 to-emerald-700' },
+  'Surveying': { icon: '🔭', gradient: 'from-blue-500 to-indigo-700' },
 };
 
 // Winding horizontal offsets for the Duolingo-style path (in px)
@@ -102,7 +103,7 @@ const Journey = () => {
     if (quizAnswered) return;
     setQuizSelected(key);
     setQuizAnswered(true);
-    
+
     const isCorrect = key.toLowerCase() === (quizQuestions[qIndex].correctOption || '').toLowerCase();
     setQuizAnswers(prev => [...prev, {
       questionId: quizQuestions[qIndex]._id,
@@ -206,7 +207,7 @@ const Journey = () => {
           </div>
           <div className="bg-dh-card rounded-2xl p-5 mb-4 border border-dh-border">
             <div className="text-base font-semibold text-dh-text">
-              <Latex>{formatLatex(q.questionText)}</Latex>
+              <Latex strict={true}>{formatLatex(q.questionText)}</Latex>
             </div>
             {q.hasDiagram && q.diagramUrl && (
               <img src={q.diagramUrl} alt="Diagram" className="mt-3 max-h-36 rounded-lg object-contain bg-dh-surface" />
@@ -215,6 +216,10 @@ const Journey = () => {
           <div className="space-y-2.5">
             {Object.entries(q.options).map(([key, opt]) => {
               const optLetter = key.toUpperCase();
+              console.log("[Journey opt debug] key:", key, "opt:", JSON.stringify(opt));
+              for (let i = 0; i < opt.length; i++) {
+                console.log(`  char[${i}]: ${JSON.stringify(opt[i])} code=${opt.charCodeAt(i)}`);
+              }
               let btnClass = 'border-dh-border bg-dh-card text-dh-text hover:border-dh-accent/60';
               if (quizAnswered) {
                 if (optLetter === correctLetter) {
@@ -235,7 +240,7 @@ const Journey = () => {
                   <span className={`w-8 h-8 rounded-lg flex items-center justify-center font-mono font-bold text-sm ${quizAnswered && optLetter === correctLetter ? 'bg-dh-green text-black' : quizAnswered && optLetter === quizSelected ? 'bg-dh-red text-white' : 'bg-dh-surface text-dh-text-muted'}`}>
                     {key}
                   </span>
-                  <span className="flex-1"><Latex>{formatLatex(opt)}</Latex></span>
+                  <span className="flex-1"><Latex strict={true}>{formatLatex(opt)}</Latex></span>
                 </button>
               );
             })}
@@ -323,11 +328,10 @@ const Journey = () => {
                         <span className="text-xs font-heading font-bold text-dh-text-muted">{completed}/{total}</span>
                       </div>
                     </div>
-                    <span className={`text-[10px] font-heading font-black tracking-widest px-2.5 py-1 rounded-lg border-2 ${
-                      label === 'MASTERED'
+                    <span className={`text-[10px] font-heading font-black tracking-widest px-2.5 py-1 rounded-lg border-2 ${label === 'MASTERED'
                         ? 'text-dh-yellow border-dh-yellow/50 bg-dh-yellow/10'
                         : 'text-dh-accent border-dh-accent/40 bg-dh-accent/10'
-                    }`}>
+                      }`}>
                       {label}
                     </span>
                   </div>
@@ -423,11 +427,10 @@ const Journey = () => {
                     </div>
                   )}
                 </div>
-                <span className={`mt-3 px-3 py-1 rounded-full border-2 text-xs font-heading font-bold ${
-                  status === 'locked'
+                <span className={`mt-3 px-3 py-1 rounded-full border-2 text-xs font-heading font-bold ${status === 'locked'
                     ? 'border-dh-border/60 text-dh-muted bg-transparent'
                     : 'border-dh-border text-dh-text bg-dh-card shadow-dh-soft'
-                }`}>
+                  }`}>
                   {node.title}
                 </span>
               </div>
@@ -436,11 +439,10 @@ const Journey = () => {
 
           {/* Trophy finish node */}
           <div className="flex flex-col items-center mt-2">
-            <div className={`flex items-center justify-center w-[76px] h-[76px] rounded-full border-b-8 text-3xl ${
-              allDone
+            <div className={`flex items-center justify-center w-[76px] h-[76px] rounded-full border-b-8 text-3xl ${allDone
                 ? 'bg-dh-yellow border-dh-yellow-dark animate-bounce-subtle'
                 : 'bg-dh-card border-dh-border grayscale opacity-60'
-            }`}>
+              }`}>
               🏆
             </div>
             <span className="mt-3 text-xs font-heading font-black uppercase tracking-widest text-dh-text-muted">

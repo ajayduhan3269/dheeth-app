@@ -2823,5 +2823,2361 @@
         "solution": "For sample A:\n$\\text{pH} = -\\log[\\text{H}^+] \\Rightarrow 4.4 = -\\log[\\text{H}^+] \\Rightarrow [\\text{H}^+] = 10^{-4.4}\\text{ mol/lit}$\n\nFor sample B:\n$\\text{pH} = -\\log[\\text{H}^+] \\Rightarrow 6.4 = -\\log[\\text{H}^+] \\Rightarrow [\\text{H}^+] = 10^{-6.4}\\text{ mol/lit}$\n\n$\\frac{[\\text{H}^+]\\text{ of A}}{[\\text{H}^+]\\text{ of B}} = \\frac{10^{-4.4}}{10^{-6.4}} = 100$\n\nSo, sample A is 100 times more acidic than sample B.",
         "has_diagram": false,
         "page_index": 12
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "182",
+        "question_text": "Figure shows roughly, the daily mass curves of supply to and demand from an elevated service reservoir (ESR).\n\nThe minimum required capacity of the reservoir is given by",
+        "options": {
+            "a": "(A - B)",
+            "b": "(A + B)",
+            "c": "A x B",
+            "d": "Larger of A or B"
+        },
+        "correct_answer": "b",
+        "solution": "The minimum required capacity of the reservoir is given by (A + B).",
+        "has_diagram": true,
+        "diagram_bbox": [
+            195,
+            600,
+            370,
+            910
+        ],
+        "page_index": 1,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1783154805/ocr_diagrams/qfjzxcvlsg7ifthjslj9.png"
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "183",
+        "question_text": "If present in water, chlorination of water does not reduce the",
+        "options": {
+            "a": "ammonia content",
+            "b": "organic matter content",
+            "c": "B.O.D.",
+            "d": "dissolved oxygen content"
+        },
+        "correct_answer": "d",
+        "solution": "If present in water, chlorination of water does not reduce the dissolved oxygen content.",
+        "has_diagram": false,
+        "page_index": 1
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "184",
+        "question_text": "Dechlorination of water is achieved by adding",
+        "options": {
+            "a": "sodium thiosulphate",
+            "b": "sodium sulphate",
+            "c": "sodium hexametaphosphate",
+            "d": "sodium bisulphate"
+        },
+        "correct_answer": "a",
+        "solution": "Dechlorinating agents are:\n- Sodium thiosulphate ($Na_2S_2O_3$)\n- Sodium sulphite ($Na_2SO_3$)\n- Sulphur dioxide ($SO_2$)\n- Activated carbon",
+        "has_diagram": false,
+        "page_index": 2
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "185",
+        "question_text": "The efficiency of a sedimentation tank does not depend upon",
+        "options": {
+            "a": "detention time",
+            "b": "depth of the tank",
+            "c": "length of the tank",
+            "d": "horizontal velocity of water"
+        },
+        "correct_answer": "b",
+        "solution": "Sedimentation efficiency does not depend on the tank depth. If the forward velocity is low enough so that the settled material does not re-suspend from the tank floor, the area is still the main parameter when designing a settling basin or clarifier, taking care that the depth is not too low.",
+        "has_diagram": false,
+        "page_index": 2
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "186",
+        "question_text": "Which of the following treatments remove salinity of water?\n1. Flocculation and sedimentation.\n2. Filtration.\n3. Reverse osmosis.\n4. Electrodialysis.\n\nSelect the correct answer using the codes given below. Codes:",
+        "options": {
+            "a": "1 and 2",
+            "b": "3 and 4",
+            "c": "2 and 3",
+            "d": "1 and 4"
+        },
+        "correct_answer": "b",
+        "solution": "Excessive salinity (seawater or brackish water) can only be reduced by using the reverse osmosis or electrodialysis membrane techniques or by distillation.",
+        "has_diagram": false,
+        "page_index": 2
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "187",
+        "question_text": "A city supply of 15000 cubic metres of water per day is treated with a chlorine dosage of 0.5 ppm. For this purpose, the requirement of bleaching powder with 25% of chlorine would be (per day)",
+        "options": {
+            "a": "300 kg",
+            "b": "75 kg",
+            "c": "30 kg",
+            "d": "7.5 kg"
+        },
+        "correct_answer": "c",
+        "solution": "Chlorine demand = $15000 \\times 10^3 \\times 0.5\\text{ mg} = 7.5 \\times 10^6\\text{ mg} = 7.5\\text{ kg}$.\nBleaching powder has 25% of chlorine, so requirement of bleaching powder = $\\frac{7.5}{0.25} = 30\\text{ kg}$.",
+        "has_diagram": false,
+        "page_index": 2
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "188",
+        "question_text": "The distribution system configuration shown in Fig. is called",
+        "options": {
+            "a": "dead end system",
+            "b": "grid iron system",
+            "c": "radial system",
+            "d": "ring system"
+        },
+        "correct_answer": "b",
+        "solution": "The distribution system configuration shown in Fig. is called grid iron system.",
+        "has_diagram": false,
+        "page_index": 2
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "189",
+        "question_text": "The results of analysis of a sample of water are given below:\nTurbidity: 10 mg/l\nColour: Slightly yellowish\npH: 7.4\nTaste and odour: Inky taste\nTotal dissolved solids: 450 mg/l\nTotal hardness: 200 mg/l\nChlorides: 100 mg/l\nSulphates: 200 mg/l\nFluorides: 0.5 mg/l\nNitrates: 30 mg/l\nCalcium: 75 mg/l\nMagnesium: 20 mg/l\nIron: 3.0 mg/l\n\nFrom the data given above, it can be inferred that the water needs",
+        "options": {
+            "a": "no treatment except disinfection",
+            "b": "treatment for the removal of iron and hardness and disinfection",
+            "c": "treatment for the removal of colour, taste and odour",
+            "d": "treatment for the removal of iron, taste and odour and disinfection"
+        },
+        "correct_answer": "d",
+        "solution": "Iron concentration is more than permissible limit and taste and odour are not in acceptable limits so for these treatments is required and disinfection at last.",
+        "has_diagram": false,
+        "page_index": 3
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "190",
+        "question_text": "Match List I with List II and select the correct answer using the codes given below the lists:\n\nList I:\nA. Cast iron pipe\nB. Asbestos cement pipe\nC. Plain ended pipes\nD. G.I. pipe\n\nList II:\n1. Simplex joint\n2. Spigot and socket joint\n3. Screwed joint subjected to frequent Vibrations\n4. Victaulic joint\n\nCodes:",
+        "options": {
+            "a": "A-1, B-3, C-2, D-4",
+            "b": "A-2, B-1, C-4, D-3",
+            "c": "A-3, B-4, C-2, D-1",
+            "d": "A-4, B-2, C-1, D-3"
+        },
+        "correct_answer": "b",
+        "solution": "Cast iron pipe -> Spigot and socket joint\nAsbestos cement pipe -> Simplex joint\nPlain ended pipes subjected to frequent vibrations -> Victaulic joint\nG.I. pipe -> Screwed joint",
+        "has_diagram": false,
+        "page_index": 3
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "191",
+        "question_text": "The water supply to a house begins with the connection of the service pipe with the municipal water mains. The connection comprises:\n1. Stopcock.\n2. Goose neck.\n3. Ferrule.\n4. Water meter.\n\nThe correct sequence of these connections IS",
+        "options": {
+            "a": "1, 2, 3, 4",
+            "b": "3, 1, 2, 4",
+            "c": "3, 2, 1, 4",
+            "d": "1, 2, 4, 3"
+        },
+        "correct_answer": "c",
+        "solution": "Correct sequence of these connections is 3, 2, 1, 4.",
+        "has_diagram": false,
+        "page_index": 4
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "192",
+        "question_text": "When the coefficient of rugosity is increased from 0.01 to 0.02, the gradient of a pipe of a given diameter to carry the same flow at the same velocity will be",
+        "options": {
+            "a": "increased by 4 times",
+            "b": "increased by 2 times",
+            "c": "decreased by $\\sqrt{2}$ times",
+            "d": "decreased by 4 times"
+        },
+        "correct_answer": "a",
+        "solution": "$Q = A \\times \\frac{1}{n} R^{2/3} S^{1/2}$\nIn the above equation $n \\propto S^{1/2}$.\n$\\left(\\frac{S_2}{S_1}\\right)^{1/2} = \\frac{n_2}{n_1} \\Rightarrow \\frac{S_2}{S_1} = \\left(\\frac{n_2}{n_1}\\right)^2 = 4$",
+        "has_diagram": false,
+        "page_index": 4
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "193",
+        "question_text": "Match List I with List II and select the correct answer using the codes given below the lists:\n\nList I (Pipe material):\nA. Concrete sewer\nB. Stoneware\nC. Cast iron sewer\nD. Steel sewer\n\nList II (Property of material):\n1. Cannot withstand high external load\n2. Corrosion resistance in most natural soils\n3. Resistant to corrosion from most acids\n4. Unsuitable where soil contains excessive sulphates\n\nCodes:",
+        "options": {
+            "a": "A-1, B-2, C-3, D-4",
+            "b": "A-4, B-3, C-2, D-1",
+            "c": "A-4, B-1, C-2, D-3",
+            "d": "A-2, B-1, C-3, D-4"
+        },
+        "correct_answer": "b",
+        "solution": "Concrete sewer -> Unsuitable where soil contains excessive sulphates\nStoneware -> Resistant to corrosion from most acids\nCast iron sewer -> Corrosion resistance in most natural soils\nSteel sewer -> Cannot withstand high external load",
+        "has_diagram": false,
+        "page_index": 4
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "194",
+        "question_text": "Which one of the following statements is true of trickling filter sludge?",
+        "options": {
+            "a": "It has a comparatively low sludge volume index.",
+            "b": "It is more difficult to dewater than activated sludge.",
+            "c": "It has a comparatively low concentration of sludge solids.",
+            "d": "It is bulky."
+        },
+        "correct_answer": "a",
+        "solution": "Trickling filter sludge has a comparatively low sludge volume index.",
+        "has_diagram": false,
+        "page_index": 5
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "195",
+        "question_text": "BOD is preferred to COD as an index of sewage concentration because",
+        "options": {
+            "a": "BOD represents both carbonaceous and nitrogenous organic matter while COD may indicate carbonaceous matter only",
+            "b": "BOD test is easier to perform and gives more reliable results",
+            "c": "BOD relates specifically to putrescible organic matter which is the most objectionable sewage constituent",
+            "d": "COD relates to the impurities which can only be removed by chemical treatment which is expensive"
+        },
+        "correct_answer": "c",
+        "solution": "BOD is preferred to COD as an index of sewage concentration because BOD relates specifically to putrescible organic matter which is the most objectionable sewage constituent.",
+        "has_diagram": false,
+        "page_index": 5
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "196",
+        "question_text": "Match List I with List II and select the correct answer using the codes given below the lists:\n\nList-I (Treatment units):\nA. Grit chamber\nB. Primary sedimentation\nC. Activated sludge\nD. Sludge digestion\n\nList-II (Detention time):\n1. Six hours\n2. Two minutes\n3. Two hours\n4. Twenty days\n\nCodes:",
+        "options": {
+            "a": "A-3, B-1, C-4, D-2",
+            "b": "A-2, B-3, C-1, D-4",
+            "c": "A-2, B-1, C-3, D-4",
+            "d": "A-1, B-2, C-3, D-4"
+        },
+        "correct_answer": "b",
+        "solution": "Grit chamber -> Two minutes\nPrimary sedimentation -> Two hours\nActivated sludge -> Six hours\nSludge digestion -> Twenty days",
+        "has_diagram": false,
+        "page_index": 5
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "197",
+        "question_text": "Under Indian conditions, the average per capita contribution of BOD is",
+        "options": {
+            "a": "10 to 20 gm/d",
+            "b": "20 to 35 gm/d",
+            "c": "35 to 50 gm/d",
+            "d": "50 to 70 gm/d"
+        },
+        "correct_answer": "d",
+        "solution": "Under Indian conditions, the average per capita contribution of BOD is 50 to 70 gm/day.",
+        "has_diagram": false,
+        "page_index": 6
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "198",
+        "question_text": "Sewage sickness relates to",
+        "options": {
+            "a": "toxicity of sewage interfering with response to treatment",
+            "b": "destruction of aquatic flora and fauna due to gross pollution of receiving bodies of water by sewage",
+            "c": "reduction in the waste purifying capacity of the soil",
+            "d": "clogging of pores in soil due to excessive application of sewage to land, obstructing aeration and leading to septic conditions"
+        },
+        "correct_answer": "d",
+        "solution": "Sewage sickness relates to clogging of pores in soil due to excessive application of sewage to land, obstructing aeration and leading to septic conditions.",
+        "has_diagram": false,
+        "page_index": 6
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "199",
+        "question_text": "Match List I with List II and select the correct answer using the codes given below the lists:\n\nList I:\nA. Waste pipe\nB. Soil pipe\nC. Vent pipe\nD. Antisiphonage\n\nList II:\n1. Carries waste water\n2. Carried liquid wastes that do not include human excreta\n3. Preserves that water seal of traps through access to atmospheric air\n4. Carries liquid wastes pipe including human excreta\n5. Provides flow of air to or from a drainage system in order to prevent vacuum pressures and excessive pressure and provides escape for foul gages\n\nCodes:",
+        "options": {
+            "a": "A-2, B-4, C-5, D-3",
+            "b": "A-3, B-5, C-1, D-2",
+            "c": "A-4, B-5, C-1, D-2",
+            "d": "A-1, B-4, C-5, D-3"
+        },
+        "correct_answer": "a",
+        "solution": "Waste pipe carries liquid wastes that do not include human excreta;\nSoil pipe carries liquid wastes including human excreta;\nVent pipe provides flow of air to or from a drainage system in order to prevent vacuum pressures and excessive pressure and provides escape of foul gases.\nAntisiphonage pipe preserves the water seal of traps through access to atmospheric air.",
+        "has_diagram": false,
+        "page_index": 6
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "200",
+        "question_text": "Match List I with List II and select the correct answer using the codes given below the lists:\n\nList I (Cause):\nA. Carbon monoxide\nB. Carbon dioxide\nC. Methane\nD. Sulphur dioxide\n\nList II (Effect):\n1. Acid rain\n2. Explosion\n3. Asphyxiation\n4. Greenhouse effect\n\nCodes:",
+        "options": {
+            "a": "A-2, B-3, C-1, D-4",
+            "b": "A-3, B-4, C-2, D-1",
+            "c": "A-1, B-3, C-4, D-2",
+            "d": "A-4, B-2, C-1, D-3"
+        },
+        "correct_answer": "b",
+        "solution": "Carbon monoxide causes Asphyxiation.\nCarbon dioxide is a major greenhouse gas.\nMethane is explosive gas.\nSulphur dioxide causes acid rain.",
+        "has_diagram": false,
+        "page_index": 7
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "201",
+        "question_text": "Consider the following statements regarding confined aquifers:\n1. The aquifer is bound at top and below by impervious strata.\n2. The pressure of water is greater than atmospheric pressure.\n3. A tube well sunk in such an aquifer starts flowing always by itself.\n4. The aquifer is fully saturated.\n\nOf the above statements",
+        "options": {
+            "a": "1, 2 and 3 are correct",
+            "b": "2, 3 and 4 are correct",
+            "c": "1, 2 and 4 are correct",
+            "d": "1, 3 and 4 are correct"
+        },
+        "correct_answer": "c",
+        "solution": "Confined aquifers are fully saturated, bound at top and below by impervious strata, and the pressure of water is greater than atmospheric pressure.",
+        "has_diagram": true,
+        "diagram_bbox": [
+            135,
+            70,
+            365,
+            485
+        ],
+        "page_index": 8,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1783154806/ocr_diagrams/jghaipnr3tpxfirgaw9j.png"
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "202",
+        "question_text": "Consider the following statements in respect of slow sand filters:\n1. Quality wise they are more efficient than Rapid Sand filters.\n2. They need periodic backwashing.\n3. Their flow rate is much smaller than that of pressure filters.\n\nOf these statements",
+        "options": {
+            "a": "1, 2 and 3 are correct",
+            "b": "1 and 2 are correct",
+            "c": "1 and 3 are correct",
+            "d": "2 and 3 are correct"
+        },
+        "correct_answer": "c",
+        "solution": "Qualitatively, slow sand filters are more efficient than rapid sand filters but their flow rate is much smaller than that of pressure filters.",
+        "has_diagram": false,
+        "page_index": 8
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "203",
+        "question_text": "Type II settling in water treatment is defined as",
+        "options": {
+            "a": "settling of discrete particles in dilute suspensions.",
+            "b": "settling of flocculant particles in dilute suspensions.",
+            "c": "settling of flocculant particles in concentrated suspensions.",
+            "d": "settling of particles in the form of a sludge blanket."
+        },
+        "correct_answer": "b",
+        "solution": "There are mainly 4 types of settling in water treatment:\n- Type 1: Dilute, non-flocculent, free-settling (every particle settles independently).\n- Type 2: Dilute, flocculent (particles can flocculate as they settle).\n- Type 3: Concentrated suspensions, zone settling, hindered settling (sludge thickening).\n- Type 4: Concentrated suspensions, compression (sludge thickening).",
+        "has_diagram": false,
+        "page_index": 8
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "204",
+        "question_text": "Which of the following pairs are correctly matched?\n1. Lime soda process .......... Softening.\n2. Nalgonda technique ......... Fluoride removal.\n3. Aeration .......... Coagulation.\n4. Ozonation ....... Disinfection.\n\nSelect the correct answer using the codes given below:",
+        "options": {
+            "a": "1, 2 and 3",
+            "b": "1, 3 and 4",
+            "c": "1, 2 and 4",
+            "d": "2, 3 and 4"
+        },
+        "correct_answer": "c",
+        "solution": "Lime soda process is a water softening method.\nNalgonda technique is a method of defluoridation.\nOzonation is a disinfection method.",
+        "has_diagram": false,
+        "page_index": 8
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "205",
+        "question_text": "The chlorine demand of a water sample was found to be 0.2 mg/l. The amount of bleaching powder containing 30% available chlorine to be added to treat one litre of such a water sample is:",
+        "options": {
+            "a": "0.67 mg",
+            "b": "0.06 mg",
+            "c": "1.33 mg",
+            "d": "0.14 mg"
+        },
+        "correct_answer": "a",
+        "solution": "Chlorine demand = $0.2 \\times 1 = 0.2\\text{ mg}$.\nBleaching powder containing 30% available chlorine.\nSo, requirement of bleaching powder = $\\frac{0.2}{0.3} = 0.666\\text{ mg} \\cong 0.67\\text{ mg}$.",
+        "has_diagram": false,
+        "page_index": 9
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "206",
+        "question_text": "Consider the following statements:\nIn water supply distribution network, the dead-end system is not favoured because\n1. it is cumbersome in terms of design.\n2. the pressure at the dead-ends becomes undesirably low in the case of additional extensions.\n3. it is difficult to maintain residual chlorine levels at the dead-ends.\n4. at the time of repairs, service connections beyond the point of repair are deprived of water.\n\nOf these statements",
+        "options": {
+            "a": "1, 2 and 3 are correct",
+            "b": "2, 3 and 4 are correct",
+            "c": "1, 3 and 4 are correct",
+            "d": "1, 2 and 4 are correct"
+        },
+        "correct_answer": "b",
+        "solution": "In water supply distribution networks, the dead end system is not favoured because the pressure at the dead-ends becomes undesirably low in case of additional extensions, it is difficult to maintain the residual chlorine level at the dead ends, and at the times of repair the connections beyond the point of repair are deprived of water.",
+        "has_diagram": false,
+        "page_index": 9
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "207",
+        "question_text": "The ideal residual pressure at the farthest consumer's tap in a properly designed water distribution system is in the range of",
+        "options": {
+            "a": "0.016 to 0.020 N/mm$^2$",
+            "b": "0.021 to 0.025 N/mm$^2$",
+            "c": "0.026 to 0.030 N/mm$^2$",
+            "d": "0.031 to 0.035 N/mm$^2$"
+        },
+        "correct_answer": "d",
+        "solution": "The ideal residual pressure at the farthest consumer's tap in a properly designed water distribution system is in the range of 0.031 to 0.035 N/mm$^2$.",
+        "has_diagram": false,
+        "page_index": 9
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "208",
+        "question_text": "Under natural conditions of flow, an unpolluted river would contain",
+        "options": {
+            "a": "more dissolved oxygen in summer than in winter.",
+            "b": "less dissolved oxygen in summer than in winter.",
+            "c": "more or less the same amount of dissolved oxygen in winter and summer.",
+            "d": "the least amount of dissolved oxygen during the Hoods."
+        },
+        "correct_answer": "b",
+        "solution": "Under natural conditions of flow, an unpolluted river would contain less dissolved oxygen in summer than in winter.",
+        "has_diagram": true,
+        "diagram_bbox": [
+            110,
+            70,
+            280,
+            485
+        ],
+        "page_index": 10,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1783154807/ocr_diagrams/xxrvb4bcavcdbdeyjkr0.png"
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "209",
+        "question_text": "Consider the data presented in the following table:\n\nTemperature in °C | BOD reaction rate constant (K)\n20 | 0.01\n30 | 0.02\n10 | 0.005\n\nIn the data presented above, the value of K",
+        "options": {
+            "a": "should have remained constant.",
+            "b": "should have decreased with increase in temperature.",
+            "c": "should have remained the same at 20°C and 30°C.",
+            "d": "has followed the correct trend."
+        },
+        "correct_answer": "d",
+        "solution": "As temperature increases, the BOD rate constant also increases and depends on characteristics of waste, microbial population, and temperature: $k_1 = k_2 \\cdot 1.047^{(T1-T2)}$.",
+        "has_diagram": false,
+        "page_index": 10
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "210",
+        "question_text": "For the combined sewerage system, egg-shaped sewers are preferred because",
+        "options": {
+            "a": "their construction is economical.",
+            "b": "they are structurally more stable.",
+            "c": "their maintenance is easier.",
+            "d": "they offer good flow velocity during the dry-weather-flow condition."
+        },
+        "correct_answer": "d",
+        "solution": "For the combined sewerage system, egg-shaped sewers are preferred because they offer good flow velocity during the dry-weather-flow condition.",
+        "has_diagram": false,
+        "page_index": 10
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "211",
+        "question_text": "Match List I with List II and select the correct answer using the codes given below the lists:\n\nList-I (Terms/Description):\nA. Sludge volume index\nB. Thickening of sludge\nC. Scum removal\nD. Recycling effluent\n\nList II (Treatment operation/process):\n1. setting in primary sedimentation tank\n2. Setting in secondary sedimentation tank\n3. Filtration in trickling filter\n4. Activated sludge process\n\nCodes:",
+        "options": {
+            "a": "A-2, B-4, C-1, D-3",
+            "b": "A-4, B-2, C-3, D-1",
+            "c": "A-2, B-4, C-3, D-1",
+            "d": "A-4, B-2, C-1, D-3"
+        },
+        "correct_answer": "d",
+        "solution": "Sludge Volume Index (SVI) is used to describe the settling characteristics of sludge in the aeration tank in Activated Sludge Process.\nThickening of sludge -> Setting in secondary sedimentation tank\nScum removal -> Setting in primary sedimentation tank\nRecycling effluent -> Filtration in trickling filter",
+        "has_diagram": false,
+        "page_index": 10
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "212",
+        "question_text": "Various unit operations exist in a sewage treatment plant. These would include\n1. screening\n2. grit removal\n3. secondary sedimentation\n4. aeration\n5. primary sedimentation\n\nThe correct sequence of these operations is",
+        "options": {
+            "a": "1, 2, 3, 4, 5",
+            "b": "1, 2, 5, 4, 3",
+            "c": "2, 1, 4, 5, 3",
+            "d": "2, 1, 4, 3, 5"
+        },
+        "correct_answer": "b",
+        "solution": "The correct sequence of various unit operations in a sewage treatment plant is:\n1) screening\n2) grit removal\n3) primary sedimentation\n4) aeration\n5) secondary sedimentation",
+        "has_diagram": false,
+        "page_index": 11
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "213",
+        "question_text": "An aeration basin with a volume of 400 m$^3$ contains mixed liquor with suspended solid concentration of 1000 mg/l. The amount of mixed liquor suspended solids in the tank is",
+        "options": {
+            "a": "500 kg",
+            "b": "250 kg",
+            "c": "600 kg",
+            "d": "400 kg"
+        },
+        "correct_answer": "d",
+        "solution": "Amount of mixed liquor suspended solids = $1000 \\times 400 \\times 1000 = 4 \\times 10^8\\text{ mg} = 400\\text{ kg}$.",
+        "has_diagram": false,
+        "page_index": 11
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "214",
+        "question_text": "The following reactions take place during anaerobic digestion of organics:\n1. methane production\n2. alkaline fermentation\n3. acid fermentation\n4. acid regression\n\nThe correct sequence of these reactions is",
+        "options": {
+            "a": "3, 4, 2, 1",
+            "b": "4, 3, 2, 1",
+            "c": "3, 4, 1, 2",
+            "d": "4, 3, 1, 2"
+        },
+        "correct_answer": "a",
+        "solution": "Stages in anaerobic digestion:\n1. Acid fermentation / Acid production stage\n2. Acid regression\n3. Alkaline fermentation / Methane production",
+        "has_diagram": false,
+        "page_index": 11
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "215",
+        "question_text": "Traps are used in household drainage systems to",
+        "options": {
+            "a": "prevent entry of foul gases in the house",
+            "b": "restrict the flow of water",
+            "c": "provide a partial vacuum",
+            "d": "trap the solid wastes"
+        },
+        "correct_answer": "a",
+        "solution": "Traps are used in household drainage systems to prevent entry of foul gases in the houses.",
+        "has_diagram": true,
+        "diagram_bbox": [
+            315,
+            70,
+            900,
+            470
+        ],
+        "page_index": 12,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1783154808/ocr_diagrams/feexrjoag2jmp92eyrhr.png"
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "216",
+        "question_text": "Coal based thermal power stations pollute the atmosphere by adding",
+        "options": {
+            "a": "NOx and SO$_2$",
+            "b": "NOx, SO$_2$ and SPM",
+            "c": "NOx, SO$_2$, SPM and CO",
+            "d": "NOx, SPM and CO"
+        },
+        "correct_answer": "b",
+        "solution": "The coal-fired power sector is the biggest source of industrial pollution in India. It accounts for 60% of suspended particulate matter (SPM) emissions, 50% of sulphur dioxide ($SO_2$), and 30% of oxides of nitrogen ($NO_x$).",
+        "has_diagram": false,
+        "page_index": 12
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "217",
+        "question_text": "Area method of land filling is most suitable when",
+        "options": {
+            "a": "area is unsuitable for excavation of trenches.",
+            "b": "adequate depth of cover material is available at the site.",
+            "c": "the water table is near the surface.",
+            "d": "natural or artificial depressions exist in the vicinity."
+        },
+        "correct_answer": "b",
+        "solution": "Area method is used when terrain is unsuitable for excavation of cells/trenches. Cover material must be obtained from adjacent sites. It is suitable when the groundwater table is high.",
+        "has_diagram": false,
+        "page_index": 12
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "218",
+        "question_text": "Match List I with List II and select the correct answer using the Codes given below the lists:\n\n**List I (Type of water source)**\nA. Surface water (river of canal)\nB. Water from infiltration gallery\nC. Lake/pond water\nD. Tube well water\n\n**List II (Treatment to be given)**\n1. Aeration, coagulation, sedimentation and disinfection\n2. Disinfection\n3. $CuSO_4$ treatment, coagulation, sedimentation, filtration and disinfection\n4. Coagulation, flocculation, sedimentation, filtration and disinfection",
+        "options": {
+            "a": "A-4, B-1, C-3, D-2",
+            "b": "A-1, B-4, C-3, D-2",
+            "c": "A-1, B-4, C-2, D-3",
+            "d": "A-4, B-1, C-2, D-3"
+        },
+        "correct_answer": "a",
+        "solution": "Surface water (river of canal) require coagulation, flocculation, sedimentation, filtration and disinfection. Water from infiltration gallery require aeration, coagulation, sedimentation and disinfection. Lake/pond water require $CuSO_4$ treatment, coagulation, sedimentation, filtration and disinfection. Tube well water require Disinfection only.",
+        "has_diagram": false,
+        "page_index": 1
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "219",
+        "question_text": "The flow chart of a water treatment plant is shown in Fig. If it is proposed to defluoridate the water using 'Nalgonda treatment', then it should be done",
+        "options": {
+            "a": "by adjusting the dose of lime and alum",
+            "b": "after sedimentation",
+            "c": "after filtration",
+            "d": "before aeration"
+        },
+        "correct_answer": "a",
+        "solution": "Defluoridation using Nalgonda technique uses alum with prior mixing of lime. The added lime helps to ensure adequate alkalinity required for effective hydrolysis of alum so that residual alum does not remain in the treated water.",
+        "has_diagram": true,
+        "diagram_bbox": [
+            265,
+            600,
+            410,
+            950
+        ],
+        "page_index": 1,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1783154904/ocr_diagrams/vavcakt6crznigc9yfhi.png"
+    },
+    {
+        "subject": "Fluid Mechanics",
+        "question_number": "220",
+        "question_text": "Two reservoirs at different levels are connected by two parallel pipes of diameter $2d$ and $d$. The ratio of the flows in the two pipes (large : smaller) is",
+        "options": {
+            "a": "$\\sqrt{2} : 1$",
+            "b": "$2 : 1$",
+            "c": "$4 : 1$",
+            "d": "$4\\sqrt{2} : 1$"
+        },
+        "correct_answer": "d",
+        "solution": "$\\frac{f L Q^2}{12.1 \\times d^5} \\text{ (large)} = \\frac{f L Q^2}{12.1 \\times d^5} \\text{ (small)}$\n\nSo, $\\frac{Q^2}{d^5} \\text{ (large)} = \\frac{Q^2}{d^5} \\text{ (small)}$\n\n$\\frac{Q(\\text{large})}{Q(\\text{small})} = \\sqrt{\\frac{32}{1}} = 4\\sqrt{2} : 1$",
+        "has_diagram": false,
+        "page_index": 1
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "221",
+        "question_text": "If the total hardness and alkalinity of a sample of water are $300\\text{ mg/l}$ and $100\\text{ mg/l}$ ($CaCO_3$ scale) respectively, then its carbonate and non-carbonate hardness (in units of $\\text{mg/l}$) will be respectively",
+        "options": {
+            "a": "100 and 200",
+            "b": "400 and 300",
+            "c": "100 and 400",
+            "d": "400 and zero"
+        },
+        "correct_answer": "a",
+        "solution": "Carbonate hardness = Minimum of both (Total hardness, Total alkalinity)\nSo, Carbonate hardness = $100\\text{ mg/l}$\n\nNon Carbonate hardness = Total hardness - Total alkalinity = $300 - 100 = 200\\text{ mg/l}$",
+        "has_diagram": false,
+        "page_index": 2
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "222",
+        "question_text": "Electrical conductivity (EC) of water and total dissolved solids (TDS) are interrelated. The value of EC will",
+        "options": {
+            "a": "decrease with increase in TDS",
+            "b": "increase with increase in TDS",
+            "c": "decrease initially and then increase with increase in TDS",
+            "d": "increase initially and then decrease with increase in TDS"
+        },
+        "correct_answer": "b",
+        "solution": "TDS measurement is time consuming, it is often estimated from electrical conductivity (EC). It is assumed that dissolved solids are predominantly ionic species of low enough concentration to yield a linear TDS-EC relationship:\n\n$\\text{TDS (mg/L)} = k_e \\times \\text{EC (}\\mu\\text{S/cm)}$\n\nwhere $k_e$ is a constant of proportionality.",
+        "has_diagram": true,
+        "diagram_bbox": [
+            345,
+            515,
+            495,
+            915
+        ],
+        "page_index": 2,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1783154905/ocr_diagrams/hpo4reeevjrbwgbnw0op.png"
+    },
+    {
+        "subject": "Fluid Mechanics",
+        "question_number": "223",
+        "question_text": "When two identical centrifugal pumps are operating in series on a common rising main, then",
+        "options": {
+            "a": "the pressure in the rising main will be nearly doubled, while the discharge will remain the same",
+            "b": "the discharge will be nearly doubled, while the pressure remains the same",
+            "c": "discharge as well as the pressure in the rising main will be doubled",
+            "d": "discharge as well as the pressure in the rising main will increase but not become double"
+        },
+        "correct_answer": "a",
+        "solution": "When two identical centrifugal pumps are operating in series discharge is same and head (pressure) produced is doubled. When two identical centrifugal pumps are operating in parallel discharge is doubled and head produced is same.",
+        "has_diagram": false,
+        "page_index": 2
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "224",
+        "question_text": "In transition of sewers from smaller diameter sewers to larger diameter sewers, the continuity of sewers is maintained at the",
+        "options": {
+            "a": "bottom of the concrete bed of sewers",
+            "b": "inverts of the sewers",
+            "c": "crowns of the sewers",
+            "d": "hydraulic gradients of the sewers"
+        },
+        "correct_answer": "c",
+        "solution": "The continuity of sewers is maintained at the crown of the sewers to avoid back flow.",
+        "has_diagram": true,
+        "diagram_bbox": [
+            430,
+            95,
+            505,
+            505
+        ],
+        "page_index": 3,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1783154906/ocr_diagrams/wjreujvmlnukprd4lpdb.png"
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "225",
+        "question_text": "The slope of a $1.0\\text{ m}$ diameter concrete sewer laid at a slope of 1 in 1000, develops a velocity of $1\\text{ m/s}$, when flowing full. When it is flowing half-full, the velocity of flow through the sewer will be",
+        "options": {
+            "a": "$0.5\\text{ m/s}$",
+            "b": "$1.0\\text{ m/s}$",
+            "c": "$\\sqrt{2}\\text{ m/s}$",
+            "d": "$2.0\\text{ m/s}$"
+        },
+        "correct_answer": "b",
+        "solution": "As per manning equation:\n$V = \\frac{1}{n} R^{2/3} \\sqrt{S}$\n\nHere sewer material, length, slope and hydraulic radius all are same ($\\because R_{\\text{full flow}} = R_{\\text{half flow}}$).\nSo, $V_1 = V_2 = 1\\text{ m/s}$",
+        "has_diagram": false,
+        "page_index": 3
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "226",
+        "question_text": "Match List I with List II and select the correct answer using the codes given below the lists:\n\n**List I (Process)**\nA. Oxidation ditch\nB. Waste stabilization pond\nC. Imhoff tank\nD. Rotating Contactor (RBC)\n\n**List II (Biological agent)**\n1. Facultative bacteria\n2. Anaerobic bacteria\n3. Aerobic bacteria (suspended culture)\n4. Aerobic bacteria Biological (attached culture)",
+        "options": {
+            "a": "A-4, B-1, C-2, D-3",
+            "b": "A-3, B-1, C-2, D-4",
+            "c": "A-1, B-2, C-3, D-4",
+            "d": "A-3, B-4, C-1, D-2"
+        },
+        "correct_answer": "b",
+        "solution": "Oxidation ditch consist of Aerobic bacteria (suspended culture). Waste stabilization pond consist of facultative bacteria. Imhoff tank consist of anaerobic conditions so it requires Anaerobic bacteria. RBC is aerobic attached growth process.",
+        "has_diagram": false,
+        "page_index": 3
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "227",
+        "question_text": "One litre of sewage, when allowed to settle for 30 minutes gives a sludge volume of $27\\text{ cm}^3$. If the dry weight of this sludge is $3.0\\text{ grams}$, then its sludge volume index will be",
+        "options": {
+            "a": "9",
+            "b": "24",
+            "c": "30",
+            "d": "81"
+        },
+        "correct_answer": "a",
+        "solution": "$\\text{SVI} = \\frac{\\text{settled sludge volume (mL)}}{\\text{suspended solids concentration (g)}} \\times \\frac{1000\\text{ mg}}{\\text{gram}}$\n\n$\\text{SVI} = \\frac{27}{3000} \\times 1000 = 9\\text{ ml/g}$ ($\\because 1\\text{ cc} = 1\\text{ ml}$)",
+        "has_diagram": false,
+        "page_index": 4
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "228",
+        "question_text": "An industrial wastewater enters a stream having a BOD concentration of $10\\text{ mg/l}$ and a flow of $20\\text{ m}^3\\text{/s}$. If the flow of wastewater is $1.5\\text{ m}^3\\text{/s}$ and its BOD concentration is $250\\text{ mg/l}$, then the BOD concentration in the stream at a point downstream of the point of confluence of wastewater with the stream will be",
+        "options": {
+            "a": "$2.67\\text{ mg/l}$",
+            "b": "$12.09\\text{ mg/l}$",
+            "c": "$13.00\\text{ mg/l}$",
+            "d": "$26.74\\text{ mg/l}$"
+        },
+        "correct_answer": "d",
+        "solution": "BOD at a point downstream of the point of confluence of wastewater with the stream is given by:\n$L_0 = \\frac{Q_r L_r + Q_w L_w}{Q_r + Q_w}$\n\nwhere,\n$Q_r$ = Flow in River = $20\\text{ m}^3\\text{/s}$\n$Q_w$ = Flow of Wastewater Discharge = $1.5\\text{ m}^3\\text{/s}$\n$L_r$ = Ultimate BOD of river water = $10\\text{ mg/l}$\n$L_w$ = Ultimate BOD of wastewater discharge = $250\\text{ mg/l}$\n\nSo, $L_0 = \\frac{20 \\times 10 + 1.5 \\times 250}{20 + 1.5} = 26.74\\text{ mg/l}$",
+        "has_diagram": true,
+        "diagram_bbox": [
+            45,
+            780,
+            135,
+            910
+        ],
+        "page_index": 4,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1783154907/ocr_diagrams/nztvkjsmkawqikp2l3fa.png"
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "229",
+        "question_text": "A polluted stream undergoes self-purification in four distinct zones:\n1. Zones of clear water\n2. Zone of active decomposition\n3. Zone of degradation\n4. Zone of recovery\n\nThe correct sequence of these zones is",
+        "options": {
+            "a": "3, 4, 2, 1",
+            "b": "2, 3, 4, 1",
+            "c": "2, 4, 3, 1",
+            "d": "3, 2, 4, 1"
+        },
+        "correct_answer": "d",
+        "solution": "Zones of pollution in river stream are:\n- Zone of degradation – DO reduce to up to 40% of saturation value.\n- Zone of active decomposition – DO may fall down to zero.\n- Zone of recovery – DO content rises above 40% of saturation value.\n- Zone of clear water – DO will rise upto its saturation value.",
+        "has_diagram": false,
+        "page_index": 4
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "230",
+        "question_text": "Match List I with List II and select the correct answer using the codes given below the lists:\n\n**List I**\nA. Soil pipe\nB. Intercepting trap\nC. p-trap\nD. Cowl\n\n**List II**\n1. Ventilating pipe\n2. Wash basin\n3. Water closet waste\n4. House drainage",
+        "options": {
+            "a": "A-3, B-4, C-1, D-2",
+            "b": "A-3, B-4, C-2, D-1",
+            "c": "A-4, B-3, C-2, D-1",
+            "d": "A-4, B-3, C-1, D-2"
+        },
+        "correct_answer": "b",
+        "solution": "- Soil pipe – pipes which carry night soil.\n- Intercepting trap - provided in to the Interceptor Manhole (Interceptor Chamber). An Interceptor manhole is provided at the intercept of building sewer and Public sewer. Intercepting trap is provided to prevent the foul gases entering in to the building sewer by providing water seal.\n- P trap - A P-trap consisting of a U-bend with the upper part of its outlet arm bent horizontally. It is the addition of a 90 degree fitting on the outlet side of a U-bend, thereby creating a P-like shape. It can also be referred to as a sink trap due to the fact it is installed under most house sinks.\n- Cowl - Cowl is provide at top portion of ventilating column which consists of a vertical shaft. Cowl allows the escape of sewer gases into the atmosphere.",
+        "has_diagram": false,
+        "page_index": 5
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "231",
+        "question_text": "Match List I with List II and select the correct answer using the codes given below the lists:\n\n**List I (Pollutants)**\nA. CO\nB. $CO_2$\nC. $SO_2$\nD. $NO_x$\n\n**List II (Effect produced)**\n1. Greenhouse effect\n2. Acid rains\n3. Acute toxicity\n4. Ozone liberation at ground level",
+        "options": {
+            "a": "A-3, B-2, C-1, D-4",
+            "b": "A-2, B-3, C-4, D-1",
+            "c": "A-3, B-1, C-2, D-4",
+            "d": "A-4, B-1, C-2, D-3"
+        },
+        "correct_answer": "c",
+        "solution": "- Carbon monoxide (CO) is a colourless, odourless, and tasteless flammable gas that is slightly less dense than air. It is toxic to animals that use haemoglobin as an oxygen carrier.\n- Carbon dioxide ($CO_2$) is the primary greenhouse gas emitted through human activities.\n- Sulphur dioxide is a gas. It is invisible and has a nasty, sharp smell. It reacts easily with other substances to form harmful compounds, such as sulfuric acid, sulphurous acid and sulphate particles. About 99% of the sulphur dioxide in air comes from human sources.\n- The majority of tropospheric ozone formation occurs when nitrogen oxides ($NO_x$), carbon monoxide (CO) and volatile organic compounds (VOCs), react in the atmosphere in the presence of sunlight, specifically the UV spectrum.",
+        "has_diagram": false,
+        "page_index": 5
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "232",
+        "question_text": "The atmosphere extends up to a height of $10,000\\text{ km}$. It is divided into the following four thermal layers:\n1. Mesosphere\n2. Stratosphere\n3. Thermosphere\n4. Troposphere\n\nThe correct sequence of these layers starting from the surface of the earth upwards is",
+        "options": {
+            "a": "2, 4, 1, 3",
+            "b": "4, 2, 1, 3",
+            "c": "4, 2, 3, 1",
+            "d": "2, 4, 3, 1"
+        },
+        "correct_answer": "b",
+        "solution": "The correct sequence of these layers starting from the surface of the earth upwards is Troposphere, Stratosphere, Mesosphere, Thermosphere.",
+        "has_diagram": true,
+        "diagram_bbox": [
+            520,
+            90,
+            750,
+            390
+        ],
+        "page_index": 6,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1783154907/ocr_diagrams/lq4byaptgpucb9rlespg.png"
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "233",
+        "question_text": "Which one of the following solid waste disposal methods is ecologically most acceptable?",
+        "options": {
+            "a": "Sanitary landfill",
+            "b": "Incineration",
+            "c": "Compositing",
+            "d": "Pyrolysis"
+        },
+        "correct_answer": "c",
+        "solution": "Compositing of solid waste is an ecologically acceptable method.",
+        "has_diagram": false,
+        "page_index": 6
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "234",
+        "question_text": "The construction of impounding reservoir, is required when",
+        "options": {
+            "a": "average annual flow in the stream is lower than average demand",
+            "b": "the rate of flow in the stream, in dry season is more than the demand",
+            "c": "the rate of flow in the stream, in dry season is less than the demand",
+            "d": "the rate of flow in the stream is equal to the demand"
+        },
+        "correct_answer": "c",
+        "solution": "An impounding reservoir is a basin constructed in the valley of a stream or river for the purpose of holding stream flow so that the stored water may be used when supply is insufficient.",
+        "has_diagram": false,
+        "page_index": 6
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "235",
+        "question_text": "Which of the following treatments reduce 'salinity of water'?\n1. Flash mixing and sedimentation\n2. Electrodialysis\n3. Reverse osmosis\n4. Freezing\n5. Filtration\n\nSelect the correct answer using the codes given below:",
+        "options": {
+            "a": "1, 2, 3, 4, and 5",
+            "b": "2, 3, and 4",
+            "c": "1, 3, and 5",
+            "d": "1, 2, and 4"
+        },
+        "correct_answer": "b",
+        "solution": "Excessive salinity (seawater or brackish water) can only be reduced by using the reverse osmosis or electrodialysis membrane techniques or by distillation.",
+        "has_diagram": false,
+        "page_index": 6
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "236",
+        "question_text": "The cleaning of slow sand filter is done by",
+        "options": {
+            "a": "reversing the direction of flow of water",
+            "b": "passing air through the filter",
+            "c": "passing a solution of alum and lime through the filter",
+            "d": "scraping off top layers of sand and admitting water"
+        },
+        "correct_answer": "d",
+        "solution": "The cleaning of slow sand filter is done by scraping off top layers of sand and admitting water. The cleaning of rapid sand filter is done by reversing the direction of flow of water or backwashing.",
+        "has_diagram": false,
+        "page_index": 7
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "237",
+        "question_text": "What is the correct sequence of formation of the following compounds during chlorination of water in which ammonia is present?\n1. $NCl_3$\n2. $NH_2Cl$\n3. $NHCl_2$\n\nSelect the correct answer using the codes given below.",
+        "options": {
+            "a": "1, 2, 3",
+            "b": "2, 3, 1",
+            "c": "3, 1, 2",
+            "d": "2, 1, 3"
+        },
+        "correct_answer": "b",
+        "solution": "The products which are occurring during chlorination of water in which ammonia is present are:\n- Hypochlorite ion\n- Hypochlorous acid\n- Monochloramine\n- Dichloramine\n- Nitrogen trichloride\n- Organic compounds containing chloride\n- Chlorine dioxide\n\n$NH_3 + HOCl \\rightarrow NH_2Cl + H_2O$\n$NH_2Cl + HOCl \\rightarrow NHCl_2 + H_2O$\n$NHCl_2 + HOCl \\rightarrow NCl_3 + H_2O$\n\nAnd the correct sequence of occurring above product is $NH_2Cl \\rightarrow NHCl_2 \\rightarrow NCl_3$.",
+        "has_diagram": false,
+        "page_index": 7
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "238",
+        "question_text": "Match List I with List II and select the correct answer using the codes given below the lists:\n\n**List I (Name of impurity in water)**\nA. Fluorides\nB. Manganese\nC. Taste and odour\n\n**List II (Removed by)**\n1. Activated carbon\n2. Activated alumina\n3. Manganese zeolite",
+        "options": {
+            "a": "A-1, B-2, C-3",
+            "b": "A-2, B-3, C-1",
+            "c": "A-2, B-1, C-3",
+            "d": "A-3, B-2, C-1"
+        },
+        "correct_answer": "b",
+        "solution": "- Zeolite method is able to remove 98% of iron and 97% of manganese within an hour.\n- Adding powdered activated carbon to water or using of granular activated carbon (GAC) in the water filter can remove taste and odour.\n- Activated alumina used for defluorination of water which works at specific pH range.",
+        "has_diagram": false,
+        "page_index": 7
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "239",
+        "question_text": "Which one of the following pairs is not correctly matched?",
+        "options": {
+            "a": "Check valve ...... To check water flow in all directions",
+            "b": "Sluice valve ............ To control flow of water through pipe lines",
+            "c": "Air valve ........ To release the accumulated air",
+            "d": "Scour valve .......... To remove silt in a pipe line"
+        },
+        "correct_answer": "a",
+        "solution": "Check valve used to allow Unidirectional flow of water not to check water flow in all directions.\n\n| Sluice valve | Used for isolating |\n| --- | --- |\n| Check valve/Reflux valve | Allows Unidirectional flow of water used for reversal of flow |\n| Air relief valve | Pressure release is water pipes. |\n| Scour valve | Used to remove silt in a pipe line |",
+        "has_diagram": false,
+        "page_index": 8
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "240",
+        "question_text": "Which one of the following would contain water with the maximum amount of turbidity?",
+        "options": {
+            "a": "lakes",
+            "b": "oceans",
+            "c": "rivers",
+            "d": "wells"
+        },
+        "correct_answer": "c",
+        "solution": "Rivers contain water with the maximum amount of turbidity because rivers during monsoon season have high suspended solids concentration in suspension.",
+        "has_diagram": false,
+        "page_index": 8
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "241",
+        "question_text": "The waste stabilization ponds can be",
+        "options": {
+            "a": "aerobic",
+            "b": "anaerobic",
+            "c": "facultative",
+            "d": "any of the above"
+        },
+        "correct_answer": "d",
+        "solution": "Waste or Wastewater Stabilization Ponds (WSPs) are large, man-made water bodies in which blackwater, greywater or faecal sludge are treated by natural occurring processes and the influence of solar light, wind, microorganisms and algae.\n- The ponds can be used individually, or linked in a series for improved treatment. There are three types of ponds, (1) anaerobic, (2) facultative and (3) aerobic (maturation), each with different treatment and design characteristics.",
+        "has_diagram": false,
+        "page_index": 8
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "242",
+        "question_text": "Which of the following pairs is not correctly matched?",
+        "options": {
+            "a": "B.O.D ........... Strength of sewage",
+            "b": "Methane ........... Product of anaerobic decomposition",
+            "c": "C.O.D. ............ Biodegradability of wastewater",
+            "d": "Nitrate ............ Methemoglobinemia"
+        },
+        "correct_answer": "c",
+        "solution": "BOD is the traditional, most widely used test to establish concentration of organic matter in wastewater samples (i.e., relative strength).\n- Anaerobic digestion is widely used as a source of renewable energy. The process produces a biogas, consisting of methane, carbon dioxide, and traces of other 'contaminant' gases.\n- Chemical oxygen demand (COD) is a measure of the capacity of water to consume oxygen during the decomposition of organic matter and the oxidation of inorganic chemicals such as Ammonia and nitrite.\n- Drinking water with high nitrate can cause a potentially fatal disorder called methemoglobinemia.\n- Methemoglobinemia is a condition in which more than one percent of the haemoglobin in red blood cells take the form of methaemoglobin.",
+        "has_diagram": false,
+        "page_index": 8
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "243",
+        "question_text": "The following are the sewage treatment processes:\n1. primary sedimentation\n2. screening\n3. grit removal\n4. secondary sedimentation\n\nWhen only preliminary treatment is to be given for sewage, select the required treatment processes including their correct sequence from the codes given below",
+        "options": {
+            "a": "2, 3",
+            "b": "2, 3, 1, 4",
+            "c": "1, 2, 3, 4",
+            "d": "3, 1, 2, 4"
+        },
+        "correct_answer": "a",
+        "solution": "Preliminary treatment includes Screening, comminution and Grit removal only. Primary Sedimentation is primary treatment, secondary sedimentation is a secondary treatment.",
+        "has_diagram": false,
+        "page_index": 9
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "244",
+        "question_text": "When was the water (Prevention and Control of Pollution) Act enacted by the Indian Parliament?",
+        "options": {
+            "a": "1970",
+            "b": "1974",
+            "c": "1980",
+            "d": "1985"
+        },
+        "correct_answer": "b",
+        "solution": "The Water (Prevention and Control of Pollution) Act, 1974.\n- The Water Prevention and Control of Pollution Act, 1974 (the \"Water Act\") has been enacted to provide for the prevention and control of water pollution and to maintain or restore wholesomeness of water in the country.",
+        "has_diagram": false,
+        "page_index": 9
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "245",
+        "question_text": "The entry of foul-smelling gases into the house coming from the sewers can be prevented by",
+        "options": {
+            "a": "providing water seals for all the fixtures",
+            "b": "providing water seals for all the fixtures and a vent pipe in the plumbing system",
+            "c": "providing sufficient vent pipes in the plumbing system",
+            "d": "exhaust fans"
+        },
+        "correct_answer": "b",
+        "solution": "The entry of foul-smelling gases into the house coming from the sewers can be prevented by providing water seals for all the fixtures and a vent pipe in the plumbing system.",
+        "has_diagram": false,
+        "page_index": 9
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "246",
+        "question_text": "Ringelmann's scale is used to",
+        "options": {
+            "a": "measure CO",
+            "b": "measure $SO_2$",
+            "c": "grade density of smoke",
+            "d": "grade automobile exhaust gas"
+        },
+        "correct_answer": "c",
+        "solution": "The Ringelmann scale is a scale for measuring the apparent density or opacity of smoke.",
+        "has_diagram": false,
+        "page_index": 10
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "247",
+        "question_text": "Eutrophication of water bodies is caused by the",
+        "options": {
+            "a": "discharge of toxic substances",
+            "b": "excessive discharge of nutrients",
+            "c": "excessive discharge of suspended solids",
+            "d": "excessive discharge of chlorides"
+        },
+        "correct_answer": "b",
+        "solution": "Eutrophication of water bodies is caused by the excessive discharge of nutrients.",
+        "has_diagram": false,
+        "page_index": 10
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "248",
+        "question_text": "Non-disposal of solid waste may cause the spread of",
+        "options": {
+            "a": "malaria",
+            "b": "rodents related plague",
+            "c": "typhoid",
+            "d": "dysentery"
+        },
+        "correct_answer": "b",
+        "solution": "Non – disposal of the solid waste may cause the spread of rodent – related plague.",
+        "has_diagram": false,
+        "page_index": 10
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "249",
+        "question_text": "The following steps are involved in making a spigot and socket joint of cast iron pipes used in water supply systems:\n1. Tarred gasket or hemp yarn is wrapped around the spigot.\n2. The spigot end is centred into the socket end of the preceding pipe.\n3. A jointing ring is placed around the barrel and against the face of the socket.\n4. The gasket or hemp yarn is caulked slightly.\n5. Molten pig lead is poured and then caulked.\n\nThe correct sequence of these steps is",
+        "options": {
+            "a": "2, 1, 4, 3, 5",
+            "b": "2, 1, 3, 4, 5",
+            "c": "1, 2, 4, 5, 3",
+            "d": "1, 2, 3, 5, 4"
+        },
+        "correct_answer": "c",
+        "solution": "Steps are involved in making a spigot and socket joint of cast iron pipes used in water supply systems:\n1. Tarred gasket or hemp yarn is wrapped around the spigot.\n2. The spigot end is centred into the socket end of the preceding pipe.\n3. The gasket or hemp yarn is caulked slightly.\n4. Molten pig lead is poured and then caulked.\n5. A jointing ring is placed around the barrel and against the face of the socket.",
+        "has_diagram": false,
+        "page_index": 10
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "250",
+        "question_text": "Match List I (Soil classification of an aquifer) with List II (Values of the range of hydraulic conductivities in metre per day) and select the correct answer using the codes given below the Lists:\n\n**List I**\nA. Fine gravel\nB. Very fine sand\nC. Silt\nD. Pure clay\n\n**List II**\n1. 1 to 10\n2. 0.1 to 0.01\n3. 100 to 1000\n4. $10^{-5}$ to $10^{-6}$",
+        "options": {
+            "a": "A-1, B-3, C-4, D-2",
+            "b": "A-1, B-3, C-2, D-4",
+            "c": "A-3, B-1, C-4, D-2",
+            "d": "A-3, B-1, C-2, D-4"
+        },
+        "correct_answer": "d",
+        "solution": "Hydraulic conductivity, symbolically represented as $K$, is a property of vascular plants, soils and rocks, that describes the ease with which a fluid (usually water) can move through pore spaces or fractures. It depends on the intrinsic permeability of the material, the degree of saturation, and on the density and viscosity of the fluid.\n\nAlso $K = C D^2$\n\nWhere permeability $\\propto$ effective size of particle.",
+        "has_diagram": false,
+        "page_index": 11
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "251",
+        "question_text": "Which of the following statements about Design Period are true?\n1. It is concerned with economy of investments.\n2. It takes into account aspects like life and durability and ease or difficulty of capacity increase of installations.\n3. It considers the frequency of occurrence of extremes of river flow.\n4. It is concerned with estimating future requirements.\n\nSelect the correct answer using the codes given below.",
+        "options": {
+            "a": "1, 2, 3 and 4",
+            "b": "2 and 3",
+            "c": "1, 2 and 4",
+            "d": "1, 3 and 4"
+        },
+        "correct_answer": "c",
+        "solution": "Design Period consider the useful life of any structure further hydrological analysis of design of the structure considers the frequency of occurrence of extremes of river flow.",
+        "has_diagram": false,
+        "page_index": 11
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "252",
+        "question_text": "A river is the source of water for water supply to a town. Its water is very turbid and polluted. The correct sequence of steps for treating the river water would be",
+        "options": {
+            "a": "presedimentation $\\rightarrow$ prechlorination $\\rightarrow$ coagulation $\\rightarrow$ sedimentation $\\rightarrow$ filtration $\\rightarrow$ post-chlorination",
+            "b": "coagulation $\\rightarrow$ sedimentation $\\rightarrow$ post-chlorination",
+            "c": "coagulation $\\rightarrow$ filtration $\\rightarrow$ sedimentation $\\rightarrow$ post-chlorination",
+            "d": "sedimentation $\\rightarrow$ post-chlorination"
+        },
+        "correct_answer": "a",
+        "solution": "Steps for treating the river water:\npresedimentation $\\rightarrow$ prechlorination $\\rightarrow$ coagulation $\\rightarrow$ sedimentation $\\rightarrow$ filtration $\\rightarrow$ post-chlorination",
+        "has_diagram": false,
+        "page_index": 11
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "253",
+        "question_text": "Uniformity coefficient of filter sand is given by",
+        "options": {
+            "a": "$D_{50}/D_5$",
+            "b": "$D_{50}/D_{10}$",
+            "c": "$D_{60}/D_5$",
+            "d": "$D_{60}/D_{10}$"
+        },
+        "correct_answer": "d",
+        "solution": "Uniformity coefficient of filter sand is given by $D_{60}/D_{10}$.",
+        "has_diagram": false,
+        "page_index": 12
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "254",
+        "question_text": "Zero hardness of water is achieved by :",
+        "options": {
+            "a": "using lime soda process",
+            "b": "excess lime treatment",
+            "c": "ion exchange method",
+            "d": "using excess alum dosage"
+        },
+        "correct_answer": "c",
+        "solution": "Water of zero hardness can be obtained from ion exchange method only. It is also called zeolite process or base exchange treatment.",
+        "has_diagram": false,
+        "page_index": 12
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "255",
+        "question_text": "Which of the following statements is/are true in relation to the term 'detention period' in a settling tank?\n1. It may be determined by introducing a dye in the inlet and timing its appearance at the outlet.\n2. Greater the detention period, greater the efficiency of removal of settleable matter.\n3. It is the time taken for any unit of water to pass through the settling basin.\n4. It is usually more than the flow through period.\n\nSelect the correct answer using the codes given below.",
+        "options": {
+            "a": "1, 2, 3 and 4",
+            "b": "2, 3 and 4",
+            "c": "1 and 3",
+            "d": "4 alone"
+        },
+        "correct_answer": "a",
+        "solution": "All options are correct.",
+        "has_diagram": false,
+        "page_index": 12
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "256",
+        "question_text": "Match List I with List II and select the correct answer using the codes given below the lists:\n\n**List I**\nA. Dead-end system\nB. Grid-iron system\nC. Ring system\nD. Radial system\n\n**List II**\n1. Equal pressures multiple flow paths\n2. Both economy and reasonably equal pressure\n3. Economy and simplicity\n4. Zonal distribution",
+        "options": {
+            "a": "A-3, B-2, C-1, D-4",
+            "b": "A-2, B-4, C-1, D-3",
+            "c": "A-3, B-1, C-2, D-4",
+            "d": "A-2, B-1, C-4, D-3"
+        },
+        "correct_answer": "c",
+        "solution": "- Dead-end system is economic and simple.\n- Grid-iron system – laying cost of pipes is more and have equal pressure & have multiple flow paths.",
+        "has_diagram": false,
+        "page_index": 12
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "257",
+        "question_text": "Match List I (Parameters) with List II (Permissible concentration in drinking water) and select the correct answer using the codes given below the Lists:\n\nList I\nA. Hardness\nB. Nitrate concentration\nC. Iron concentration\nD. Fluoride concentration\n\nList II\n1. $0.1\\text{ mg/l}$\n2. $1\\text{ mg/l}$\n3. $200\\text{ mg/l}$\n4. $45\\text{ mg/l}$",
+        "options": {
+            "a": "A-3, B-4, C-2, D-1",
+            "b": "A-3, B-4, C-1, D-2",
+            "c": "A-4, B-3, C-2, D-1",
+            "d": "A-4, B-3, C-1, D-2"
+        },
+        "correct_answer": "b",
+        "solution": "Hardness standard value is $200\\text{ mg/l}$, Nitrate is $45\\text{ mg/l}$, Iron is $0.3\\text{ mg/l}$ (closest to $0.1\\text{ mg/l}$ in options), and Fluoride is $1\\text{ mg/l}$.",
+        "has_diagram": false,
+        "page_index": 1
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "258",
+        "question_text": "Match List I with and select the correct answer using List II the codes given below the Lists:\n\nList I\nA. Absence of fluoride\nB. Excess of lead\nC. Presence of excess nitrates\nD. Absence of iodide\n\nList II\n1. Methemoglobinaemia\n2. Goitre\n3. Dental cavities\n4. Anaemia",
+        "options": {
+            "a": "A-3, B-4, C-2, D-1",
+            "b": "A-2, B-3, C-4, D-1",
+            "c": "A-3, B-4, C-1, D-2",
+            "d": "A-1, B-2, C-4, D-3"
+        },
+        "correct_answer": "c",
+        "solution": "Absence of fluoride causes dental cavities. Excess of lead causes anaemia. Presence of excess nitrate causes Methemoglobinemia or blue baby disease. Absence of iodide causes goitre.",
+        "has_diagram": false,
+        "page_index": 1
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "259",
+        "question_text": "Which of the following determinations are not necessary for raw water from a lake for use as source of supply of water for boiler-feed?\n1. Turbidity\n2. Bacterial count\n3. Iron\n4. Hardness\n\nSelect the correct answer using the codes given below.",
+        "options": {
+            "a": "1, 2 and 3",
+            "b": "1, 2 and 4",
+            "c": "1, 3 and 4",
+            "d": "2, 3 and 4"
+        },
+        "correct_answer": "a",
+        "solution": "Water from a lake for use as source of supply of water for boiler-feed: Turbidity, Bacterial count and Iron determinations are not necessary.",
+        "has_diagram": false,
+        "page_index": 2
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "260",
+        "question_text": "Self-cleansing velocity is",
+        "options": {
+            "a": "the minimum velocity of flow required to maintain a certain amount of solids in the flow",
+            "b": "the maximum velocity of flow required to maintain a certain amount of solids in the flow",
+            "c": "such flow velocity as would be sufficient to flush out any deposited solids in the sewer",
+            "d": "such flow velocity as would be sufficient to ensure that sewage does not remain in the sewer"
+        },
+        "correct_answer": "c",
+        "solution": "Self-cleansing velocity may be defined as the minimum velocity of flow at which the solid particles present in the sewage will be held in suspension and also at which the scour of the deposited particles will take place so that the sewer will be kept clean.",
+        "has_diagram": false,
+        "page_index": 2
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "261",
+        "question_text": "The following steps are involved in laying a sewer in a trench:\n1. Transferring the centre line of the sewer to the bottom of the trench.\n2. Setting sight rails over the trench.\n3. Driving pegs to the level of the invert line of the sewer.\n4. Placing the sewer in the trench.\n\nThe correct sequence of these steps is",
+        "options": {
+            "a": "1, 2, 3, 4",
+            "b": "2, 3, 4, 1",
+            "c": "4, 2, 3, 1",
+            "d": "2, 3, 1, 4"
+        },
+        "correct_answer": "d",
+        "solution": "Steps involved in laying a sewer in a trench:\n- Setting sight rails over the trench\n- Driving pegs to the level of the invert line of the sewer\n- Transferring the centre line of the sewer to the bottom of the trench\n- Placing the sewer in the trench",
+        "has_diagram": false,
+        "page_index": 2
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "262",
+        "question_text": "A grit chamber of dimensions $12.0\\text{ m} \\times 1.50\\text{ m} \\times 0.80\\text{ m}$ liquid depth has a flow of $720\\text{ m}^3/\\text{hr}$. Its surface loading rate and detention time are, respectively,",
+        "options": {
+            "a": "$40000\\text{ m}^3/\\text{hr}/\\text{m}^2$ and $1.2\\text{ minutes}$",
+            "b": "$40000\\text{ lph}/\\text{m}^2$ and $40\\text{ minutes}$",
+            "c": "$40\\text{ m}^3/\\text{hr}/\\text{m}^2$ and $40\\text{ minutes}$",
+            "d": "$40000\\text{ lph}/\\text{m}^2$ and $1.2\\text{ minutes}$"
+        },
+        "correct_answer": "d",
+        "solution": "Surface loading rate = $\\frac{\\text{Discharge or flow of waste water}}{\\text{plan area}} = \\frac{720 \\times 10^3\\text{ l/hr}}{12 \\times 1.5} = 40,000\\text{ l/hr/m}^2$\n\nDetention time = $\\frac{\\text{volume of grit chamber}}{\\text{flow from chamber}} = \\frac{12 \\times 1.5 \\times 0.80}{720} = 0.02\\text{ hr} = 1.2\\text{ minutes}$",
+        "has_diagram": false,
+        "page_index": 2
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "263",
+        "question_text": "Match List I (Impurities to be removed From sewage) with List II (Treatment unit used) and select the correct answer using the codes given below the Lists:\n\nList I\nA. Large floating matter\nB. Suspended inorganic matter\nC. Suspended organic matter\nD. Dissolved organic matter\n\nList II\n1. Trickling filter\n2. Primary clarifier\n3. Grit chamber\n4. Screens",
+        "options": {
+            "a": "A-3, B-4, C-2, D-1",
+            "b": "A-3, B-4, C-1, D-2",
+            "c": "A-4, B-3, C-2, D-1",
+            "d": "A-4, B-3, C-1, D-2"
+        },
+        "correct_answer": "c",
+        "solution": "Large floating matter is removed by Screens. Grit chamber removes Suspended inorganic matter. Primary clarifier is used to remove Suspended organic matter. Dissolved organic matter is removed by trickling filter.",
+        "has_diagram": false,
+        "page_index": 3
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "264",
+        "question_text": "Which of the following are claimed as advantageous in respect of aerobic sludge digestion as compared to anaerobic sludge digestion?\n1. lower BOD concentration in supernatant liquor\n2. production of a sludge with excellent denaturing propensity\n3. greater production of methane\n4. lesser operation cost\n5. lesser capital cost\n\nSelect the correct answer using the codes given below.",
+        "options": {
+            "a": "1, 2 and 4",
+            "b": "2, 3, 4 and 5",
+            "c": "3, 4 and 5",
+            "d": "1, 2 and 5"
+        },
+        "correct_answer": "d",
+        "solution": "Advantages of anaerobic digestion over aerobic digestion are:\n- Low energy consumption especially in hot climate\n- Net producer of methane gas which can be used as fuel\n- 70% less space required\n- Less nutrient requirement\n- Up to 90% less sludge production\n\nAerobic digestion has lower capital cost because of higher loading rate.",
+        "has_diagram": false,
+        "page_index": 3
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "265",
+        "question_text": "The following data pertain to a sewage sample:\nInitial D.O. = $10\\text{ mg/l}$\nFinal D.O. = $2\\text{ mg/l}$\nDilution to 1%\n\nThe BOD of the given sewage sample is",
+        "options": {
+            "a": "$8\\text{ mg/l}$",
+            "b": "$10\\text{ mg/l}$",
+            "c": "$100\\text{ mg/l}$",
+            "d": "$800\\text{ mg/l}$"
+        },
+        "correct_answer": "d",
+        "solution": "$\\text{BOD}_5 = (DO_{\\text{final}} - DO_{\\text{initial}}) \\times \\text{dilution factor} = (10 - 2) \\times 100 = 800\\text{ mg/l}$",
+        "has_diagram": false,
+        "page_index": 4
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "266",
+        "question_text": "Match List-I with List-II the codes given below the Lists:\n\nList I\nA. Sludge disposal\nB. Sludge digestion\nC. Aerobic action\nD. Recirculation\n\nList II\n1. Seeding\n2. Biofilters\n3. Lagging\n4. Contact bed",
+        "options": {
+            "a": "A-3, B-1, C-4, D-2",
+            "b": "A-3, B-1, C-2, D-4",
+            "c": "A-1, B-3, C-2, D-4",
+            "d": "A-1, B-3, C-4, D-2"
+        },
+        "correct_answer": "d",
+        "solution": "In sludge disposal method seed sludge is used for the disposal of sludge (seeding). In sludge digestion, depressed methanogens' activities result in a long lag phase of methane production (lagging). The biological filter, or biofilter, nitrifies bacteria (biofilters/contact bed).",
+        "has_diagram": false,
+        "page_index": 4
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "267",
+        "question_text": "Sewage sickness occurs when",
+        "options": {
+            "a": "sewage contains pathogenic organisms",
+            "b": "sewage enters the water supply system",
+            "c": "sewers get clogged due to accumulation of solids",
+            "d": "voids of soil get clogged due to continuous application of sewage on a piece of land"
+        },
+        "correct_answer": "d",
+        "solution": "Sewage sickness occurs when voids of soil get clogged due to continuous application of sewage on a piece of land.",
+        "has_diagram": false,
+        "page_index": 4
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "268",
+        "question_text": "In the design of storm sewers, \"time of concentration\" is relevant to determine the",
+        "options": {
+            "a": "rainfall intensity",
+            "b": "velocity in the sewer",
+            "c": "time of travel",
+            "d": "area served by the sewer"
+        },
+        "correct_answer": "a",
+        "solution": "Rainfall intensity, $R = \\frac{25.4a}{t_c + b}$, where $t_c$ = time of concentration.",
+        "has_diagram": false,
+        "page_index": 4
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "269",
+        "question_text": "Self-purification of running streams may be due to",
+        "options": {
+            "a": "sedimentation, oxidation and coagulation",
+            "b": "dilution, sedimentation and oxidation",
+            "c": "dilution, sedimentation and coagulation",
+            "d": "dilution, oxidation and coagulation"
+        },
+        "correct_answer": "b",
+        "solution": "The major physical processes involved in self-purification of watercourses are dilution, sedimentation and resuspension, gas transfer, and heat transfer. Gas transfer includes oxidation.",
+        "has_diagram": false,
+        "page_index": 5
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "270",
+        "question_text": "Which of the following waste disposal tasks are achieved by a septic tank with its dispersion trench?\n1. aerobic sludge digestion\n2. settling and anaerobic sludge digestion.\n3. anaerobic sewage stabilisation.\n4. bio-oxidation of effluent.\n\nSelect the correct answer using the codes given below.",
+        "options": {
+            "a": "1 and 3",
+            "b": "3 and 4",
+            "c": "2 and 4",
+            "d": "1 and 4"
+        },
+        "correct_answer": "c",
+        "solution": "A septic tank is an underground chamber where settling and anaerobic processes reduce solids and organics. Septic tanks can be coupled with other onsite wastewater treatment units such as biofilters or aerobic systems involving artificially forced aeration.",
+        "has_diagram": false,
+        "page_index": 5
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "271",
+        "question_text": "Which of the following air pollutants is/are responsible for photochemical smog?\n1. oxides of nitrogen\n2. ozone\n3. unburnt hydrocarbons\n4. carbon monoxide\n\nSelect the correct answer using the codes given below.",
+        "options": {
+            "a": "1 alone",
+            "b": "2, 3 and 4",
+            "c": "1, 3 and 4",
+            "d": "1 and 3"
+        },
+        "correct_answer": "d",
+        "solution": "Nitrogen oxide and unburnt hydrocarbon are the most significant constituents of photochemical smog.",
+        "has_diagram": false,
+        "page_index": 5
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "272",
+        "question_text": "Match List-I (Equipment) with List-II (Pollutants remove(d)) and select the correct answer using the codes given below the Lists:\n\nList I\nA. Electrostatic precipitators\nB. Cyclones\nC. Wet scrubbers\nD. Adsorbers\n\nList II\n1. Coarse particles\n2. Fine dust\n3. Gas\n4. Sulphur-dioxide",
+        "options": {
+            "a": "A-1, B-2, C-3, D-4",
+            "b": "A-2, B-1, C-3, D-4",
+            "c": "A-2, B-1, C-4, D-3",
+            "d": "A-1, B-2, C-4, D-3"
+        },
+        "correct_answer": "b",
+        "solution": "Electrostatic precipitators use electrostatic forces to separate dust particles (fine dust). Cyclones are generally used for collection of medium-sized and coarse particles. A Wet Scrubber operates by introducing the dirty gas stream with a scrubbing liquid (gas). Sulfur Dioxide is removed by Adsorption (Adsorbers).",
+        "has_diagram": false,
+        "page_index": 6
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "273",
+        "question_text": "Which of the following pairs is/are correctly matched?\n1. Eutrophication: Nutrient accumulation leading to ecosystem change occurring in impounded water.\n2. Autotrophism: Utilization, rearrangement and decomposition of complex materials predominate.\n3. Heterotrophism: Predominance of fixation of light energy, use of simple inorganic substances and built-up complex substances.\n\nSelect the correct answer using the codes given below.",
+        "options": {
+            "a": "1, 2 and 3",
+            "b": "1 alone",
+            "c": "2 and 3",
+            "d": "1 and 3"
+        },
+        "correct_answer": "b",
+        "solution": "Autotrophism is the ability to produce organic matter by reducing inorganic matter using an external energy source: light. A heterotroph is an organism that cannot manufacture its own food.",
+        "has_diagram": false,
+        "page_index": 6
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "274",
+        "question_text": "The typical density in kg/cum (in situ) of well compacted municipal solid waste in landfill is in the range of",
+        "options": {
+            "a": "100 to 300",
+            "b": "310 to 500",
+            "c": "550 to 850",
+            "d": "900 to 1100"
+        },
+        "correct_answer": "b",
+        "solution": "The density of well compacted municipal solid waste in landfill is in the range of 310 to 500 kg/m³.",
+        "has_diagram": false,
+        "page_index": 7
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "275",
+        "question_text": "Which of the following materials are used as landfill sealants for the control of gas and leachate movements?\n1. Lime\n2. Sand\n3. Bentonite\n4. Fly ash\n5. Butyl rubber\n\nSelect the correct answer using the codes given below.",
+        "options": {
+            "a": "1, 2 and 3",
+            "b": "4 and 5",
+            "c": "3 and 5",
+            "d": "1, 2 and 4"
+        },
+        "correct_answer": "c",
+        "solution": "The seal material should be more impermeable than the soil, so sand is not correct. Fly ash and lime themselves produce pollutants which dissolve in water, therefore these materials cannot be used as sealant.",
+        "has_diagram": false,
+        "page_index": 7
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "276",
+        "question_text": "Two sources generate noise levels of 90 dB and 94 dB respectively. The cumulative effect of these two noise levels on the human ear is",
+        "options": {
+            "a": "184 dB",
+            "b": "95.5 dB",
+            "c": "94 dB",
+            "d": "92 dB"
+        },
+        "correct_answer": "b",
+        "solution": "$L(eq) = 10 \\times \\log(10^{9.0} + 10^{9.4}) = 95.5\\text{ dB}$",
+        "has_diagram": false,
+        "page_index": 7
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "277",
+        "question_text": "Two identical centrifugal pumps are operated in parallel so as to deliver into a common delivery pipe. Speed for both is also identical. At what total discharge (Q) and total head (H) will the system operate as compared to discharge and head to each of the pumps operated singly?",
+        "options": {
+            "a": "Both total Q and total H would increase, each approximately by 50%.",
+            "b": "Total Q would be approximately doubled, but H would remain the same.",
+            "c": "Total H would be approximately doubled, but Q would remain the same.",
+            "d": "Total H would be doubled, but Q would be approximately halved."
+        },
+        "correct_answer": "b",
+        "solution": "Two identical centrifugal pumps operated in parallel work at the same head, and the discharge is approximately doubled.",
+        "has_diagram": false,
+        "page_index": 7
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "278",
+        "question_text": "Storage of water by impounding is required where",
+        "options": {
+            "a": "plenty of water is available in the stream in all seasons.",
+            "b": "excess of suspended and dissolved matter are present in the water.",
+            "c": "there is a large variation in quantity of the river flow from time to time.",
+            "d": "the flow is uniform throughout the year but is insufficient."
+        },
+        "correct_answer": "c",
+        "solution": "Impounding or Storage Reservoir: A reservoir with gate-controlled outlets wherein surface water may be retained for a considerable period of time and released for use at a time when the normal flow of the stream is insufficient to satisfy requirements.",
+        "has_diagram": false,
+        "page_index": 8
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "279",
+        "question_text": "In a water treatment plant, dissolved iron and manganese can be removed from the water by",
+        "options": {
+            "a": "aeration",
+            "b": "aeration and coagulation",
+            "c": "aeration and flocculation",
+            "d": "aeration and sedimentation"
+        },
+        "correct_answer": "d",
+        "solution": "Iron and manganese can be removed by precipitation followed by separation. Precipitation is achieved by aeration, oxygenation or chemical oxidation, and separation is achieved by filtration or sedimentation.",
+        "has_diagram": false,
+        "page_index": 8
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "280",
+        "question_text": "The various treatment processes in a water treatment plant are listed below:\n1. filtration\n2. chlorination\n3. sedimentation\n4. coagulation\n5. flocculation\n\nThe correct sequence of these processes in water treatment is",
+        "options": {
+            "a": "1, 2, 3, 4, 5",
+            "b": "4, 5, 3, 1, 2",
+            "c": "2, 3, 1, 5, 4",
+            "d": "1, 2, 5, 3, 4"
+        },
+        "correct_answer": "b",
+        "solution": "The correct sequence is Coagulation, Flocculation, Sedimentation, Filtration, and Chlorination.",
+        "has_diagram": false,
+        "page_index": 8
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "281",
+        "question_text": "The effective size (ES) of sand and its uniformity coefficient (UC) are the usually specified parameters for sand filters. In slow sand filters, as compared to rapid sand filters,",
+        "options": {
+            "a": "ES is less but UC is more",
+            "b": "ES is more but UC is less",
+            "c": "Both ES and UC are more",
+            "d": "Both Es and UC are less"
+        },
+        "correct_answer": "a",
+        "solution": "In slow sand filters (SSF), the effective size ranges between 0.2 to 0.4 mm and uniformity coefficient between 1.8 to 2.5 or 3.0. In rapid sand filters (RSF), the effective size ranges between 0.35 to 0.55 and uniformity coefficient between 1.2 to 1.8.",
+        "has_diagram": false,
+        "page_index": 8
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "282",
+        "question_text": "If only ammonia was present in water, the only change in Fig. 6.4 would have been that the curve would",
+        "options": {
+            "a": "be a straight line",
+            "b": "become parallel to Y- axis",
+            "c": "become parallel to X- axis after 'D'",
+            "d": "be passing through the origin"
+        },
+        "correct_answer": "d",
+        "solution": "If ammonia is present, first chloramines are formed, thus there will be no destruction of residual chlorine by reducing compounds (like iron and manganese, which is represented by AB), so the curve will be passing through the origin.",
+        "has_diagram": true,
+        "diagram_bbox": [
+            338,
+            150,
+            475,
+            480
+        ],
+        "page_index": 9,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1783155003/ocr_diagrams/qzxjut3vada6i9ccppz0.png"
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "283",
+        "question_text": "Which one of the following is the purpose of providing a surge tank in a pipeline carrying water?",
+        "options": {
+            "a": "to store water",
+            "b": "to increase the pressure throughout the pipeline",
+            "c": "to store overflowing water",
+            "d": "to protect the pipeline against water hammer"
+        },
+        "correct_answer": "d",
+        "solution": "A surge tank (or surge drum or surge pool) is a standpipe or storage reservoir at the downstream end of a closed aqueduct, feeder, dam, barrage pipe to absorb sudden rises of pressure, as well as to quickly provide extra water during a brief drop in pressure.",
+        "has_diagram": false,
+        "page_index": 9
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "284",
+        "question_text": "Match List I (Water treatment units) with List II (Detention time) and select the correct answer using the codes given below the lists:\n\nList I\nA. Rapid mixing unit\nB. Flocculator\nC. Propeller mixing unit\nD. Sedimentation tank\n\nList II\n1. 2 hours\n2. 10 seconds\n3. 30 seconds\n4. 30 minutes",
+        "options": {
+            "a": "A-3, B-4, C-2, D-1",
+            "b": "A-4, B-3, C-1, D-2",
+            "c": "A-4, B-3, C-2, D-1",
+            "d": "A-3, B-4, C-1, D-2"
+        },
+        "correct_answer": "a",
+        "solution": "The detention period for a rapid mixing unit is 30 to 60 seconds. The detention period in a flocculator should be in the range of 10-40 min (normal value 30 min). For plain sedimentation, it is 3 to 4 h, and for coagulated sedimentation, it is 2 to 2.5 h.",
+        "has_diagram": false,
+        "page_index": 9
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "285",
+        "question_text": "The maximum flow occurs in an egg-shaped sewer when the ratio of depth of flow to vertical diameter is",
+        "options": {
+            "a": "0.33",
+            "b": "0.50",
+            "c": "0.95",
+            "d": "1.00"
+        },
+        "correct_answer": "c",
+        "solution": "The maximum flow occurs in an egg-shaped sewer when the ratio of depth of flow to vertical diameter is 0.95. The maximum velocity occurs when the ratio is 0.81.",
+        "has_diagram": false,
+        "page_index": 10
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "286",
+        "question_text": "The following three stages are known to occur in the biological action involved in the process of sludge digestion:\n1. Acid fermentation.\n2. Alkaline fermentation.\n3. Acid regression.\n\nThe correct sequence of these stages is",
+        "options": {
+            "a": "1, 2, 3",
+            "b": "2, 3, 1",
+            "c": "3, 1, 2",
+            "d": "1, 3, 2"
+        },
+        "correct_answer": "d",
+        "solution": "The process of sludge digestion involves: 1. Acid fermentation, 2. Acid regression, 3. Alkaline fermentation.",
+        "has_diagram": false,
+        "page_index": 10
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "287",
+        "question_text": "Fresh sludge has moisture content of 99% and, after thickening, its moisture content is reduced to 96%. The reduction in volume of sludge is",
+        "options": {
+            "a": "3%",
+            "b": "5%",
+            "c": "75%",
+            "d": "97.5%"
+        },
+        "correct_answer": "c",
+        "solution": "$V(100 - p) = V_1(100 - P_1)$\n$V(100 - 99) = V_1(100 - 96)$\n$V_1 = \\frac{V}{4} = 0.25V$\nSo the reduction in volume is 75%.",
+        "has_diagram": false,
+        "page_index": 10
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "288",
+        "question_text": "Match List I (Nature of the solids) with List II (Unit operation or process connected with its removal) and select the correct answer using the codes given below the lists:\n\nList I\nA. Dissolved solids\nB. Colloidal solids\nC. Volatile solids\nD. Settleable solids\n\nList II\n1. Sedimentation\n2. Reverse osmosis\n3. Coagulation\n4. Digestion",
+        "options": {
+            "a": "A-2, B-3, C-4, D-1",
+            "b": "A-3, B-2, C-4, D-1",
+            "c": "A-2, B-3, C-1, D-4",
+            "d": "A-3, B-2, C-1, D-4"
+        },
+        "correct_answer": "a",
+        "solution": "Reverse osmosis is a method for treating water and wastewater in order to reduce dissolved solids. The most common and practical method of removing colloidal particles is by chemical coagulation. Volatile solids removal is same as anaerobic digestion. Settleable solids are removed by sedimentation.",
+        "has_diagram": false,
+        "page_index": 11
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "289",
+        "question_text": "In the oxidation ditch, the excess sludge is taken to",
+        "options": {
+            "a": "anaerobic digester",
+            "b": "aerobic digester",
+            "c": "drying beds",
+            "d": "incinerator"
+        },
+        "correct_answer": "c",
+        "solution": "In the oxidation ditch, the excess sludge is taken to drying beds.",
+        "has_diagram": false,
+        "page_index": 11
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "290",
+        "question_text": "The liquid stream of a sewage treatment scheme consists of\n1. trickling filter\n2. primary settling tank\n3. grit chamber\n4. screen chamber\n5. secondary settling tank\n\nThe correct sequence of these units in the sewage treatment scheme of a liquid stream is",
+        "options": {
+            "a": "3, 4, 1, 2, 5",
+            "b": "3, 4, 2, 1, 5",
+            "c": "4, 3, 2, 1, 5",
+            "d": "4, 3, 1, 2, 5"
+        },
+        "correct_answer": "c",
+        "solution": "The correct sequence is: Screen chamber -> Grit chamber -> Primary settling tank -> Trickling filter -> Secondary settling tank.",
+        "has_diagram": false,
+        "page_index": 11
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "291",
+        "question_text": "Which one of the following pairs is not correctly matched?",
+        "options": {
+            "a": "Activated sludge process ...... anaerobic",
+            "b": "Trickling filters ...... attached growth system",
+            "c": "Oxidation pond ...... algae",
+            "d": "Channel grit chamber ...... proportional weir"
+        },
+        "correct_answer": "a",
+        "solution": "In the activated sludge process, wastewater containing organic matter is aerated in an aeration basin (aerobic process, not anaerobic).",
+        "has_diagram": false,
+        "page_index": 12
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "292",
+        "question_text": "The two main gases liberated from an anaerobic sludge digestion tank would include",
+        "options": {
+            "a": "ammonia and carbon dioxide",
+            "b": "carbon dioxide and methane",
+            "c": "methane and hydrogen sulphide",
+            "d": "ammonia and methane"
+        },
+        "correct_answer": "b",
+        "solution": "The biogas produced from anaerobic digestion is primarily composed of methane (66 to 70%) and carbon dioxide, with trace amounts of hydrogen sulphide.",
+        "has_diagram": false,
+        "page_index": 12
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "293",
+        "question_text": "Which one of the following sewage treatment units has a parshall flume?",
+        "options": {
+            "a": "trickling filter",
+            "b": "oxidation ditch",
+            "c": "grit chamber",
+            "d": "aerated lagoon"
+        },
+        "correct_answer": "c",
+        "solution": "Parshall flumes are proportioning weirs and they maintain constant flow velocity in a grit chamber for settling (Type-I) of inorganic particles.",
+        "has_diagram": false,
+        "page_index": 12
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "294",
+        "question_text": "Chlorides in water are removed by?",
+        "options": {
+            "a": "lime soda process",
+            "b": "reverse osmosis",
+            "c": "cation exchange process",
+            "d": "chemical coagulation"
+        },
+        "correct_answer": "b",
+        "solution": "Chlorides in water are removed by reverse osmosis.",
+        "has_diagram": false,
+        "page_index": 1
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "295",
+        "question_text": "The following zones are formed in a polluted river:\n1. zone of clear water\n2. zone of active decomposition\n3. zone of recovery\n4. zone of degradation\n\nThe correct sequence in which these zones occur progressively downstream in a polluted river is",
+        "options": {
+            "a": "4, 2, 1, 3",
+            "b": "4, 2, 3, 1",
+            "c": "2, 4, 3, 1",
+            "d": "2, 4, 1, 3"
+        },
+        "correct_answer": "b",
+        "solution": "The correct sequence in which these zones occur progressively downstream in a polluted river is:\n- zone of degradation\n- zone of active decomposition\n- zone of recovery\n- zone of clear water",
+        "has_diagram": false,
+        "page_index": 1
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "296",
+        "question_text": "Match List I (Pollutants) with List II (Sources) and select the correct answer using the codes given below the lists:\n\nList I\nA. Acid water\nB. $SO_2$\nC. CO\nD. Fly Ash\n\nList II\n1. Volcanoes\n2. Automobiles\n3. Thermal power station\n4. Mining",
+        "options": {
+            "a": "A-4, B-1, C-2, D-3",
+            "b": "A-4, B-1, C-3, D-2",
+            "c": "A-1, B-4, C-3, D-2",
+            "d": "A-1, B-4, C-2, D-3"
+        },
+        "correct_answer": "a",
+        "solution": "Acid mine drainage, acid and metalliferous drainage (AMD), or acid rock drainage (ARD) is the outflow of acidic water from metal mines or coal mines.\nVolcanic activity causes emission of sulfur dioxide ($SO_2$), a toxic gas that occurs naturally in magma.",
+        "has_diagram": false,
+        "page_index": 1
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "297",
+        "question_text": "Aerosol is",
+        "options": {
+            "a": "carbon particles of microscopic size",
+            "b": "dispersion of small solid or liquid particles in gaseous media",
+            "c": "finely divided particles of ash",
+            "d": "diffused liquid particles"
+        },
+        "correct_answer": "b",
+        "solution": "Aerosol is dispersion of small solid or liquid particles in gaseous media.",
+        "has_diagram": false,
+        "page_index": 2
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "298",
+        "question_text": "Water present in an artesian aquifer is usually.",
+        "options": {
+            "a": "at sub atmospheric pressure",
+            "b": "at atmospheric pressure",
+            "c": "at 0.5 times of the atmospheric pressure",
+            "d": "above atmospheric pressure"
+        },
+        "correct_answer": "d",
+        "solution": "An artesian aquifer is a confined aquifer containing groundwater under positive pressure. An artesian aquifer has trapped water, surrounded by layers of impermeable rock or clay which apply positive pressure to the water contained within the aquifer.",
+        "has_diagram": false,
+        "page_index": 2
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "299",
+        "question_text": "Consider the following statements:\n\nThe daily per capita consumption of water apparently increase with\n1. higher standard of living of people\n2. availability of sewerage in the city\n3. metered water supply\n4. wholesome and potable quality of water\n\nWhich of these statements are correct?",
+        "options": {
+            "a": "1, 2 and 3",
+            "b": "2, 3 and 4",
+            "c": "1, 3 and 4",
+            "d": "1, 2 and 4"
+        },
+        "correct_answer": "d",
+        "solution": "The daily per capita consumption of water increases with:\n- Higher standard of living of people\n- Availability of sewerage in the city\n- Wholesome and potable water\nand decreases with metered water supply.",
+        "has_diagram": false,
+        "page_index": 2
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "300",
+        "question_text": "Match List I (Operational problems in rapid gravity filter) with List II (Methods to overcome the problems) and select the correct answer using the codes given below the Lists:\n\nList I\nA. Incrustation of filter sand media\nB. Air binding & negative head\nC. Mud ball formation\nD. Slime growth on filter\n\nList II\n1. Compressed air scouring for about 4 minutes at the time of backwashing and manual surface raking\n2. Washing the filter with development of sodium hydroxide or bleaching powder occasionally\n3. Through backwashing salt solution after soaking the filter in it\n4. Increasing the depth of water during filter operation by about 15-20 cm as compared to the normal depth maintained during daily operation and more frequent backwashing",
+        "options": {
+            "a": "A-2, B-4, C-3, D-1",
+            "b": "A-4, B-2, C-1, D-3",
+            "c": "A-2, B-4, C-1, D-3",
+            "d": "A-4, B-2, C-3, D-1"
+        },
+        "correct_answer": "c",
+        "solution": "To avoid Incrustation of filter sand media - washing the filter with development of sodium hydroxide or bleaching powder occasionally.\nTo avoid air binding & negative head - Increasing the depth of water during filter operation by about 15-20 cm as compared to the normal depth maintained during daily operation and more frequent backwashing.\nTo avoid mud ball formation - Compressed air scouring for about 4 minutes at the time of backwashing and supported by manual surface raking.\nSlime growth on filter can be removed by backwashing salt solution after soaking the filter in it.",
+        "has_diagram": false,
+        "page_index": 2
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "301",
+        "question_text": "In the plot of residual chlorine versus chlorine dose applied shown in Fig. 6.1, the curve will not have any (0, 0) point because",
+        "options": {
+            "a": "of experimental error",
+            "b": "chlorine escapes into the atmosphere",
+            "c": "chlorine requires some contact time",
+            "d": "chlorine is consumed for disinfection"
+        },
+        "correct_answer": "c",
+        "solution": "The curve will not have any (0, 0) point because chlorine requires some contact time.",
+        "has_diagram": true,
+        "diagram_bbox": [
+            145,
+            590,
+            280,
+            925
+        ],
+        "page_index": 3,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1783155094/ocr_diagrams/h2vyd9psiefgqag8w2ig.png"
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "302",
+        "question_text": "If the methyl orange alkalinity of water equals or exceeds total hardness, all of the hardness is",
+        "options": {
+            "a": "non-carbonate hardness",
+            "b": "carbonate hardness",
+            "c": "pseudo hardness",
+            "d": "negative non-carbonate hardness"
+        },
+        "correct_answer": "b",
+        "solution": "Carbonate hardness = Minimum of both (Total hardness, Total alkalinity). Non Carbonate hardness = Total hardness - Total alkalinity. So if Total hardness $\\le$ Total alkalinity than Total hardness = Carbonate hardness. Because non carbonate hardness comes out to be negative or zero which is always reported as zero.",
+        "has_diagram": false,
+        "page_index": 3
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "303",
+        "question_text": "Consider the following statements:\nSome amount of chlorides is allowed in drinking water because\n1. it helps in killing bacteria.\n2. small quantity of chlorides adds to the taste\n3. it is not injurious to human health.\n4. it is not economical to remove it completely.\n\nWhich of these statements are correct?",
+        "options": {
+            "a": "1, 2 and 4",
+            "b": "1, 2 and 3",
+            "c": "2, 3 and 4",
+            "d": "1, 3 and 4"
+        },
+        "correct_answer": "d",
+        "solution": "Some amount of chlorides is allowed in drinking water because:\n1. It helps in killing bacteria\n2. It is not injurious to human health.\n3. It is not economical to remove it completely.",
+        "has_diagram": false,
+        "page_index": 4
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "304",
+        "question_text": "A commonly used handpump is the",
+        "options": {
+            "a": "centrifugal pump",
+            "b": "reciprocating pump",
+            "c": "rotary pump",
+            "d": "axial flow pump"
+        },
+        "correct_answer": "b",
+        "solution": "A commonly used handpump is the reciprocating pump.",
+        "has_diagram": false,
+        "page_index": 4
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "305",
+        "question_text": "Match List I with List II and select the correct answer using the codes given below the Lists:\n\nList I (pump)\nA. Multistage centrifugal pump of moderate sized impellers\nB. Archimedean screw type pump\nC. Simple reciprocating pump\nD. Axial flow propeller pump\n\nList-II (Requirement)\n1. High head and low discharge\n2. Low head and large discharge\n3. High head and moderate discharge\n4. Low head and low discharge",
+        "options": {
+            "a": "A-4, B-3, C-1, D-2",
+            "b": "A-3, B-4, C-1, D-2",
+            "c": "A-4, B-3, C-2, D-1",
+            "d": "A-3, B-4, C-2, D-1"
+        },
+        "correct_answer": "b",
+        "solution": "Multistage centrifugal pump of moderate sized impellers has High head and moderate discharge.\nArchimedean screw type pump has Low head and low discharge.\nSimple reciprocating pump has High head and low discharge.\nAxial flow propeller pump has Low head and large discharge.",
+        "has_diagram": false,
+        "page_index": 4
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "306",
+        "question_text": "Service connection consists of",
+        "options": {
+            "a": "ferrule, stopcock and gooseneck",
+            "b": "ferrule, check valve and gooseneck",
+            "c": "stopcock, meter and sluice valve",
+            "d": "sluice valve, check valve and meter"
+        },
+        "correct_answer": "a",
+        "solution": "Service connection consists of ferrule, stopcock and gooseneck.",
+        "has_diagram": false,
+        "page_index": 5
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "307",
+        "question_text": "The correct sequence of processes in a water treatment plant for rural water apply is",
+        "options": {
+            "a": "Chlorination, aeration, sedimentation, rapid sand filter",
+            "b": "Coagulation, sedimentation, slow sand filter, chlorination",
+            "c": "Coagulation, flocculation, clarification, pressure filter",
+            "d": "Aeration, plain sedimentation, slow sand filter, chlorination"
+        },
+        "correct_answer": "d",
+        "solution": "Disinfection is necessary part of water treatment for rural water supply therefore (a) and (c) cannot be answer and before coagulation, slow sand filter is not suitable therefore b is not possible.",
+        "has_diagram": false,
+        "page_index": 5
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "308",
+        "question_text": "Match List-I (Industry and unit of production) with List-II (Water need in kJ/unit/day) and select the correct answer:\n\nList-I\nA. Automobile (per vehicle)\nB. Leather (per 100 kg)\nC. Paper (per tonne)\nD. Crude petroleum refinery (per tonne)\n\nList-II\n1. 1 to 2\n2. 4\n3. 40\n4. 50 - 100\n5. 200 - 400",
+        "options": {
+            "a": "A-3, B-2, C-5, D-1",
+            "b": "A-1, B-3, C-5, D-4",
+            "c": "A-3, B-2, C-4, D-5",
+            "d": "A-5, B-4, C-2, D-1"
+        },
+        "correct_answer": "a",
+        "solution": "Automobile (per vehicle) - 40\nLeather (per 100 kg) - 4\nPaper (per tonne) - 200-400\nCrude petroleum refinery (per tonne) - 1-2\nSugar (per tonne) - 1-2",
+        "has_diagram": false,
+        "page_index": 5
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "309",
+        "question_text": "Consider the following statements:\n\nVentilation of sewer lines is necessary to\n1. avoid building up of sewer gases.\n2. ensure atmospheric pressure in the waste water surface\n3. ensure the safety of sewer maintenance people.\n4. provide oxidation facility to sewage.\n\nWhich of these statements are correct?",
+        "options": {
+            "a": "1, 2 and 4",
+            "b": "1, 3 and 4",
+            "c": "2, 3 and 4",
+            "d": "1, 2 and 3"
+        },
+        "correct_answer": "d",
+        "solution": "Ventilation of sewer lines is necessary to:\n1. Avoid building up of sewer gases.\n2. Ensure atmospheric pressure in the waste water surface.\n3. Ensure the safety of sewer maintenance people.",
+        "has_diagram": false,
+        "page_index": 5
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "310",
+        "question_text": "For a colony of 10,000 person having sewage flow rate of 200 litres/capita/day, BOD of applied sewage of 300 mg/litre and organic loading of 300 kg/day/hectare, the area of an oxidation pond required for treating the sewage of the colony is",
+        "options": {
+            "a": "0.2 hectares",
+            "b": "1 hectares",
+            "c": "2 hectares",
+            "d": "6 hectares"
+        },
+        "correct_answer": "c",
+        "solution": "Sewage flow in L/day = $200 \\times 10,000 = 2 \\times 10^6$ L/day\nBOD of applied sewage = $2 \\times 10^6 \\times 300 \\times 10^{-6}$ Kg/day = 600 Kg/day\nThe area of an oxidation pond Required = $\\frac{600\\text{ kg/day}}{300\\text{ kg/day/hectare}} = 2\\text{ hectares}$",
+        "has_diagram": false,
+        "page_index": 6
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "311",
+        "question_text": "The second stage BOD as shown in the above figure is due to",
+        "options": {
+            "a": "Experimental error",
+            "b": "Increased activity of bacteria",
+            "c": "Nitrification demand",
+            "d": "Interference by certain chemical reactions"
+        },
+        "correct_answer": "c",
+        "solution": "The second stage BOD demand is known as nitrogenous demand.\nThe first stage BOD demand is known as carbonaceous demand.",
+        "has_diagram": true,
+        "diagram_bbox": [
+            140,
+            580,
+            275,
+            895
+        ],
+        "page_index": 6,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1783155095/ocr_diagrams/d8fjjwvmciq94addixmb.png"
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "312",
+        "question_text": "The purpose of a proportional weir at the effluent end of a channel type grit removal unit is to",
+        "options": {
+            "a": "provide easy passage of solid particles",
+            "b": "measure the rate of flow in the channel",
+            "c": "keep the depth of flow in the channel above a certain value",
+            "d": "maintain constant mean velocity in the channel"
+        },
+        "correct_answer": "d",
+        "solution": "The purpose of a proportional weir at the effluent end of a channel type grit removal unit is to maintain constant mean velocity in the channel.",
+        "has_diagram": false,
+        "page_index": 6
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "313",
+        "question_text": "The trap used for a water closet is called",
+        "options": {
+            "a": "gully trap",
+            "b": "p-trap",
+            "c": "intercepting trap",
+            "d": "anti-siphon trap"
+        },
+        "correct_answer": "b",
+        "solution": "P Trap - This trap is used with Indian water closet. The traps are made from cast iron or UPV sheet. This trap also has water seal and prevents entry of foul gases to the house.",
+        "has_diagram": false,
+        "page_index": 7
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "314",
+        "question_text": "A circular sewer of diameter 1 m carries storm water to a depth of 0.75 m. The hydraulic radius is approximately",
+        "options": {
+            "a": "0.3 m",
+            "b": "0.4 m",
+            "c": "0.5 m",
+            "d": "0.6 m"
+        },
+        "correct_answer": "a",
+        "solution": "Hydraulic radius of sewer flowing full:\n$R = \\frac{D}{4} = \\frac{1}{4} = 0.25\\text{ m}$\nAt 0.75m depth of flow:\n$\\frac{r}{R} = 1.2 \\Rightarrow r = 1.2 \\times 0.25 = 0.3\\text{ m}$\nAt 0.5m depth of flow:\n$\\frac{r}{R} = 1.0 \\Rightarrow r = 0.25\\text{ m}$",
+        "has_diagram": false,
+        "page_index": 7
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "315",
+        "question_text": "Consider the following statements about waste stabilization ponds:\n1. The pond has a symbiotic behaviour of waste stabilization through algae on one hand and bacteria on the other.\n2. The oxygen in ponds is provided by algae through photosynthesis.\n3. The detention period for waste stabilization pond is of the order of two to three days.\n4. The bacteria, which develop in the pond, are aerobic bacteria.\n\nWhich of these statements are correct?",
+        "options": {
+            "a": "1, 2 and 3",
+            "b": "1, 3 and 4",
+            "c": "2 and 4",
+            "d": "1, and 2"
+        },
+        "correct_answer": "d",
+        "solution": "Waste stabilization ponds are mainly of three types:\n- Anaerobic ponds are built to a depth of 2 to 5 m and have a relatively short detention time of 1 to 7 days.\n- Facultative ponds should be constructed to a depth of 1 to 2.5 m and have a detention time between 5 to 30 days.\n- Aerobic ponds are usually between 0.5 to 1.5 m deep with a detention time of 15 to 20 days.",
+        "has_diagram": false,
+        "page_index": 7
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "316",
+        "question_text": "Match List I with List II and select the correct answer using the codes given below the Lists:\n\nList I (Air pollutant)\nA. Carbon monoxide\nB. Particular matter\nC. Nitrogen oxides\nD. Sulfurdioxide\n\nList II (Environmental effect)\n1. Respiratory distress for living beings\n2. Chemical reaction with haemoglobin in blood\n3. Reduction in visibility and aero allergens carrier\n4. Photochemical smog in atmosphere",
+        "options": {
+            "a": "A-2, B-3, C-1, D-4",
+            "b": "A-3, B-2, C-4, D-1",
+            "c": "A-2, B-3, C-4, D-1",
+            "d": "A-3, B-2, C-1, D-4"
+        },
+        "correct_answer": "c",
+        "solution": "Carbon monoxide binds to haemoglobin at the same sites as oxygen, but approximately 210 times more tightly.\nParticular matter causes Reduction in visibility and aero allergens carrier.\nPhotochemical smog is basically a mixture of bad chemicals. It consists of nitrogen oxides, ozone, volatile organic compounds and PAN.\nSulfur dioxide causes Respiratory distress for living beings.",
+        "has_diagram": false,
+        "page_index": 8
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "317",
+        "question_text": "Match List-I (Methods of solid waste disposal) with List-II (Terms pertaining to the methods) and select the correct answer:\n\nList-I\nA. Incineration\nB. Sanitary landfill\nC. Composting\nD. Salvage by sorting\n\nList-II\n1. Requires presorting, grinding and turning\n2. Limited to special wastes and selected materials\n3. High operational and maintenance cost\n4. Tractor\n5. Rate and fly breeding",
+        "options": {
+            "a": "A-2, B-5, C-4, D-3",
+            "b": "A-1, B-4, C-2, D-3",
+            "c": "A-3, B-4, C-1, D-2",
+            "d": "A-3, B-5, C-4, D-2"
+        },
+        "correct_answer": "c",
+        "solution": "Incineration have High operational and maintenance cost.\nSanitary landfill does not cause any public nuisance or hazard to public health and safety and tractor is effectively used in Sanitary landfilling.\nComposting requires presorting, grinding and turning.\nSalvage by sorting is limited to special wastes and selected material.",
+        "has_diagram": false,
+        "page_index": 8
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "318",
+        "question_text": "The sound pressure level for a jet plane on the ground with sound pressure of 2000 $\\mu$ bar should be",
+        "options": {
+            "a": "60 decibel",
+            "b": "100 decibel",
+            "c": "140 decibel",
+            "d": "180 decibel"
+        },
+        "correct_answer": "c",
+        "solution": "Sound pressure level (dB) = $20\\log_{10}\\left(\\frac{P}{P_0}\\right)$\n$P$ is sound pressure in $N/m^2$\n$P_0$ is reference pressure ($2 \\times 10^{-5} N/m^2$)\nFor given sound pressure:\n$P = 2000 \\mu\\text{bar} = 200 N/m^2$\n$\\therefore SPL = 20\\log\\left(\\frac{200}{2 \\times 10^{-5}}\\right) = 140\\text{dB}$",
+        "has_diagram": false,
+        "page_index": 9
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "319",
+        "question_text": "The controlling design parameter in the design of all settling tanks is:",
+        "options": {
+            "a": "detention time",
+            "b": "overflow rate",
+            "c": "percent removal of suspended solids",
+            "d": "depth"
+        },
+        "correct_answer": "b",
+        "solution": "The controlling design parameter in the design of all settling tanks is overflow rate because:\nEfficiency of settling tank = $\\frac{\\text{Settling velocity of particle}}{\\text{Overflow rate}}$ and\nOverflow rate = $\\frac{\\text{Flow rate}}{\\text{surface area of tank}}$",
+        "has_diagram": false,
+        "page_index": 9
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "320",
+        "question_text": "The F/M ratio is controlled in the activated sludge process by adjusting the",
+        "options": {
+            "a": "suspended solid concentration",
+            "b": "volume of aeration tank",
+            "c": "amount of sludge wasting",
+            "d": "COD"
+        },
+        "correct_answer": "c",
+        "solution": "Food to microorganisms (F/M) ratio:\nIn terms of active biomass: $\\frac{F}{M} = \\frac{Q S_i}{x_a V}$\nIn terms of MLVSS: $\\frac{F}{M} = \\frac{Q S_i}{\\text{MLVSS} \\cdot V}$\nWhere:\n$Q$ - flow rate\n$S_i$ - influent BOD\nMLVSS - mixed liquor volatile suspended solid\n$V$ - volume of aeration tank",
+        "has_diagram": false,
+        "page_index": 9
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "321",
+        "question_text": "Phosphorus can be removed from waste water by",
+        "options": {
+            "a": "rapid sand filtration",
+            "b": "chlorine addition",
+            "c": "carbon adsorption",
+            "d": "ferric chloride addition"
+        },
+        "correct_answer": "d",
+        "solution": "Ferric chloride or sulphate and ferrous sulphate also known as copperas, are all widely used for phosphorous removal, although the actual reactions are not fully understood. The basic reaction is:\n$Fe^{3+} + H_nPO_4^{3-n} \\leftrightarrow FePO_4 + nH^+$\nFerric ions combine to form ferric phosphate. They react slowly with the natural alkalinity and so a coagulant aid, such as lime, is normally added to raise the pH in order to enhance the coagulation.",
+        "has_diagram": false,
+        "page_index": 9
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "322",
+        "question_text": "Which of the following compounds does not provide free chlorine?",
+        "options": {
+            "a": "$CaCl_2$",
+            "b": "$NHCl_2$",
+            "c": "$HOCl$",
+            "d": "$NaOCl$"
+        },
+        "correct_answer": "b",
+        "solution": "When chlorine is added to water for disinfection, it reacts with ammonia if present forming chloramine-based residuals such as monochloramine ($NH_2Cl$), dichloramine ($NHCl_2$), and nitrogen trichloride ($NCl_3$). These residuals are collectively called combined available chlorine. Chlorine also forms residuals like $Cl^-$, $OCl^-$, and $HOCl$ where the total amount of these residuals ($Cl^-$, $OCl^-$, and $HOCl$) is called free available chlorine. The sum of the combined available chlorine and free available chlorine is called the total residual chlorine (TRC).",
+        "has_diagram": false,
+        "page_index": 10
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "323",
+        "question_text": "Assertion A: Alum or aluminium sulphate is widely used for the purpose of flocculation in water treatment.\nReason R: It is effective even in the absence of alkalinity in the raw water.",
+        "options": {
+            "a": "Both A and R are true and R is the correct explanation of A",
+            "b": "Both A and R are true but R is not the correct explanation of A",
+            "c": "A is true but R is false",
+            "d": "A is false but R is true"
+        },
+        "correct_answer": "c",
+        "solution": "Proper pH value must be maintained for best coagulation and since alkalinity must be present for hydroxide floc formation. If alkalinity is insufficient in water, lime or soda ash may be added in water.",
+        "has_diagram": false,
+        "page_index": 10
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "324",
+        "question_text": "Assertion A: Microbiological examinations of water samples are usually based on tests for the detection and enumeration of indicator bacteria rather than of pathogens.\nReason R: The identification of pathogens in water is both very expensive and impractical.",
+        "options": {
+            "a": "Both A and R are true and R is the correct explanation of A",
+            "b": "Both A and R are true but R is not the correct explanation of A",
+            "c": "A is true but R is false",
+            "d": "A is false but R is true"
+        },
+        "correct_answer": "a",
+        "solution": "Monitoring the microbiological quality of drinking water relies largely on examination of indicator bacteria such as coliforms, Escherichia coli, and Pseudomonas aeruginosa.\nDirect testing for pathogens is very expensive and impractical, because pathogens are rarely found in waterbodies. Instead, monitoring for pathogens uses \"indicator\" species—so called because their presence indicates that fecal contamination may have occurred.",
+        "has_diagram": false,
+        "page_index": 10
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "325",
+        "question_text": "Assertion A: Tapered flocculation is more efficient when compared to the conventional process of flocculation.\nReason R: In tapered flocculation, velocity gradient at the inlet is less than that at the outlet of the flocculation unit.",
+        "options": {
+            "a": "Both A and R are true and R is the correct explanation of A",
+            "b": "Both A and R are true but R is not the correct explanation of A",
+            "c": "A is true but R is false",
+            "d": "A is false but R is true"
+        },
+        "correct_answer": "c",
+        "solution": "Large G value with short time tend to produce small and dense flocs while low G values and long-time produce larger, lighter floc. Since large and dense flocs are easily removed in settling basin it will be advantageous to have high G values at inlet compared to the outlet end.",
+        "has_diagram": false,
+        "page_index": 10
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "326",
+        "question_text": "Assertion A: In wastewater treatment, waste stabilization ponds are more successful in sunny tropical regions.\nReason R: The bacterial action of purification is achieved through photosynthetic bacteria.",
+        "options": {
+            "a": "Both A and R are true and R is the correct explanation of A",
+            "b": "Both A and R are true but R is not the correct explanation of A",
+            "c": "A is true but R is false",
+            "d": "A is false but R is true"
+        },
+        "correct_answer": "c",
+        "solution": "In waste stabilization ponds, symbiotic relationship exists between algae and bacteria. In sunny tropical region, in presence of abundant sunlight, algae produce oxygen of photosynthesis.\nGenerally aerobic condition exists in shallow pond and algae growth is also considerable while in deep ponds the algae growth is negligible and anaerobic condition exists.\nIt is not mentioned in question whether the pond is shallow or deep, is hard to comment on bacterial action because shallow and deep both kind of ponds exists in tropical region.\nIf shallow pond is mentioned in the reason then option (a) will be correct.",
+        "has_diagram": false,
+        "page_index": 11
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "327",
+        "question_text": "Assertion A: Presence of E-coli bacteria in water indicates that the water is polluted with fecal discharge.\nReason R: E-coli is a pathogenic bacterium.",
+        "options": {
+            "a": "Both A and R are true and R is the correct explanation of A",
+            "b": "Both A and R are true but R is not the correct explanation of A",
+            "c": "A is true but R is false",
+            "d": "A is false but R is true"
+        },
+        "correct_answer": "c",
+        "solution": "The presence of E. coli in a drinking water sample almost always indicates recent fecal contamination, meaning there is a greater risk that pathogens are present.",
+        "has_diagram": false,
+        "page_index": 11
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "328",
+        "question_text": "Assertion A: Ozone is not widely used in community water supplies.\nReason R: It is not possible to maintain residual concentration of ozone in water after the disinfection process.",
+        "options": {
+            "a": "Both A and R are true and R is the correct explanation of A",
+            "b": "Both A and R are true but R is not the correct explanation of A",
+            "c": "A is true but R is false",
+            "d": "A is false but R is true"
+        },
+        "correct_answer": "a",
+        "solution": "Ozone is not widely used in community water supplies because no residual can be maintained as it is highly unstable and its use does not ensure safety against future contamination also it is 3 times as costlier than chlorination.",
+        "has_diagram": false,
+        "page_index": 11
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "329",
+        "question_text": "Assertion A: In the case of dual media filter, the rate of filtration is more than that of rapid sand filter.\nReason R: The direction of flow is from fine medium to coarse medium.",
+        "options": {
+            "a": "Both A and R are true and R is the correct explanation of A",
+            "b": "Both A and R are true but R is not the correct explanation of A",
+            "c": "A is true but R is false",
+            "d": "A is false but R is true"
+        },
+        "correct_answer": "c",
+        "solution": "The dual media filter have high filtration rate between 10 to 20 $m^3/hr/m^2$ it is approximately 4 times higher than rapid sand filter the dual media filter have anthracite coal and silica sand as medium the density of coal is less than sand so coal is on top and the flow occurs from coarse medium to fine medium.",
+        "has_diagram": false,
+        "page_index": 11
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "330",
+        "question_text": "Assertion A: Horizontal velocity of flow through grit chambers is maintained between 24 to 30 cm/sec.\nReason R: Removal of organic and inorganic particles larger than 0.2 mm direction is very essential.",
+        "options": {
+            "a": "Both A and R are true and R is the correct explanation of A",
+            "b": "Both A and R are true but R is not the correct explanation of A",
+            "c": "A is true but R is false",
+            "d": "A is false but R is true"
+        },
+        "correct_answer": "a",
+        "solution": "Horizontal velocity of flow 0.15 - 0.3 m/s (for particle $\\ge$ 0.2 mm)",
+        "has_diagram": false,
+        "page_index": 11
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "331",
+        "question_text": "Assertion A: At the ferrule point of a water supply distribution pipe network for Indian towns having a majority of two-storey buildings, the ideal minimum pressure head of water is 12 m.\nReason R: This magnitude of pressure head at ferrule is necessary to reach the highest floor of the two-storey buildings.",
+        "options": {
+            "a": "Both A and R are true and R is the correct explanation of A",
+            "b": "Both A and R are true but R is not the correct explanation of A",
+            "c": "A is true but R is false",
+            "d": "A is false but R is true"
+        },
+        "correct_answer": "a",
+        "solution": "At the ferrule point of a water supply distribution pipe network for Indian towns having a majority of two-storey buildings, the ideal minimum pressure head of water is 12 m because this magnitude of pressure head at ferrule is necessary to reach the highest floor of the two-storey buildings.",
+        "has_diagram": true,
+        "diagram_bbox": [
+            405,
+            100,
+            605,
+            455
+        ],
+        "page_index": 12,
+        "diagram_url": "https://res.cloudinary.com/lq7h3skc/image/upload/v1783155095/ocr_diagrams/weri90hgb0usezqkpekc.png"
+    },
+    {
+        "subject": "Environmental Engineering",
+        "question_number": "332",
+        "question_text": "Assertion A: Sanitary landfills can no longer be used for the disposal of solid wastes in India.\nReason R: The Leachates from sanitary landfills may pollute the ground water.",
+        "options": {
+            "a": "Both A and R are true and R is the correct explanation of A",
+            "b": "Both A and R are true but R is not the correct explanation of A",
+            "c": "A is true but R is false",
+            "d": "A is false but R is true"
+        },
+        "correct_answer": "b",
+        "solution": "Sanitary landfills cannot be used for the disposal of solid waste in India as rapid urbanization leads to an increase in rate of land and authorities frequently face land availability problems.\nLeachate is the liquid that drains or 'leaches' from a landfill. It varies widely in composition regarding the age of the landfill and the type of waste that it contains and it may pollute ground water but it can be prevented by taking adequate precautions.\nHence both statements are correct but statement 1 is not the correct explanation of statement 2.",
+        "has_diagram": false,
+        "page_index": 12
     }
 ]

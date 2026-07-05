@@ -131,6 +131,7 @@ const SUBJECT_ICONS = {
   'Economics': '📊',
   'Science & Technology': '🔬',
   'Current Affairs': '📰',
+  'Surveying': '🔭',
 };
 
 const SubjectCard = ({ subject, index, onClick, disabled }) => {
@@ -317,7 +318,7 @@ export default function Dashboard() {
     setIsSearching(true);
     setLastSubject(subject);
     searchTimeoutRef.current = setTimeout(() => setSearchFailed(true), 10000);
-    socket.emit('join_queue', { subject, mode, targetState }, () => {});
+    socket.emit('join_queue', { subject, mode, targetState }, () => { });
   };
 
   const cancelSearch = () => {
