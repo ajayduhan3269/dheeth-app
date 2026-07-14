@@ -104,10 +104,13 @@ const Profile = () => {
         {/* Quick Links */}
         <div className="flex gap-3 p-6 pb-0">
           <button onClick={() => navigate('/shop')} className="flex-1 py-3 bg-dh-purple border-b-4 border-purple-800 rounded-xl font-heading font-black text-sm text-white uppercase tracking-wide active:translate-y-[2px] active:border-b-0 transition-all">
-            🛒 Avatar Shop
+            🛒 Shop
+          </button>
+          <button onClick={() => navigate('/saved-questions')} className="flex-1 py-3 bg-dh-accent border-b-4 border-dh-accent-dark rounded-xl font-heading font-black text-sm text-white uppercase tracking-wide active:translate-y-[2px] active:border-b-0 transition-all">
+            📚 Saved Q's
           </button>
           <button onClick={() => navigate('/group-room')} className="flex-1 py-3 bg-dh-blue border-b-4 border-dh-blue-dark rounded-xl font-heading font-black text-sm text-white uppercase tracking-wide active:translate-y-[2px] active:border-b-0 transition-all">
-            👥 Group Quiz
+            👥 Group
           </button>
         </div>
 

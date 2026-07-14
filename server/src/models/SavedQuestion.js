@@ -2,9 +2,9 @@ const mongoose = require('mongoose');
 
 const savedQuestionSchema = new mongoose.Schema({
   userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
-  questionId: { type: mongoose.Schema.Types.ObjectId, ref: 'Question' },
+  questionId: { type: String },
   questionText: { type: String, required: true },
-  options: [{ type: String, required: true }],
+  options: { type: mongoose.Schema.Types.Mixed, required: true },
   correctOption: { type: String, required: true },
   explanation: { type: String },
   subject: { type: String, required: true },

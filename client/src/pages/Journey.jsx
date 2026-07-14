@@ -46,6 +46,7 @@ const Journey = () => {
   const [quizResult, setQuizResult] = useState(null);
   const [completing, setCompleting] = useState(false);
   const [celebrate, setCelebrate] = useState(false);
+  const [savedInSession, setSavedInSession] = useState(new Set());
 
   useEffect(() => {
     fetchData();
@@ -162,6 +163,26 @@ const Journey = () => {
     }
   };
 
+  const handleSaveJourneyQuestion = async (q) => {
+    try {
+      await api.post('/api/bookmarks', {
+        questionId: q._id,
+        questionText: q.questionText,
+        options: q.options,
+        correctOption: q.correctOption,
+        explanation: q.solution || q.explanation || '',
+        subject: selectedSubject?.subject || ''
+      });
+      setSavedInSession(prev => {
+        const s = new Set(prev);
+        s.add(q._id || q.questionText);
+        return s;
+      });
+    } catch (err) {
+      console.error('Failed to save question:', err);
+    }
+  };
+
   const handleBack = () => {
     if (quizActive) {
       setQuizActive(false);
@@ -206,8 +227,20 @@ const Journey = () => {
             <span className="text-sm font-heading font-bold text-dh-accent">Score: {quizScore}</span>
           </div>
           <div className="bg-dh-card rounded-2xl p-5 mb-4 border border-dh-border">
-            <div className="text-base font-semibold text-dh-text">
-              <Latex>{formatLatex(q.questionText)}</Latex>
+            <div className="flex justify-between items-start gap-2">
+              <div className="text-base font-semibold text-dh-text flex-1">
+                <Latex>{formatLatex(q.questionText)}</Latex>
+              </div>
+              {quizAnswered && (
+                <button
+                  onClick={() => handleSaveJourneyQuestion(q)}
+                  disabled={savedInSession.has(q._id || q.questionText)}
+                  className={`flex-shrink-0 text-2xl transition-all duration-200 ${savedInSession.has(q._id || q.questionText) ? 'text-dh-accent scale-110' : 'text-dh-text-muted hover:text-dh-accent hover:scale-110'}`}
+                  title="Bookmark Question"
+                >
+                  {savedInSession.has(q._id || q.questionText) ? '★' : '☆'}
+                </button>
+              )}
             </div>
             {q.hasDiagram && q.diagramUrl && (
               <img src={q.diagramUrl} alt="Diagram" className="mt-3 max-h-36 rounded-lg object-contain bg-dh-surface" />
@@ -216,10 +249,7 @@ const Journey = () => {
           <div className="space-y-2.5">
             {Object.entries(q.options).map(([key, opt]) => {
               const optLetter = key.toUpperCase();
-              console.log("[Journey opt debug] key:", key, "opt:", JSON.stringify(opt));
-              for (let i = 0; i < opt.length; i++) {
-                console.log(`  char[${i}]: ${JSON.stringify(opt[i])} code=${opt.charCodeAt(i)}`);
-              }
+
               let btnClass = 'border-dh-border bg-dh-card text-dh-text hover:border-dh-accent/60';
               if (quizAnswered) {
                 if (optLetter === correctLetter) {

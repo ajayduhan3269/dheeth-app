@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { socket } from '../socket';
 import Latex from 'react-latex-next';
 import MatchSummary from './MatchSummary';
-import { getAvatarUrl } from '../api';
+import api, { getAvatarUrl } from '../api';
 import { sounds } from '../utils/sound';
 import { formatLatex } from '../utils/latex';
 
@@ -26,6 +26,7 @@ const MatchScreen = ({ matchPayload }) => {
   const [vibrate, setVibrate] = useState(false);
   const [scoreDiff, setScoreDiff] = useState(null);
   const prevScoreRef = useRef(0);
+  const [savedMatchQuestions, setSavedMatchQuestions] = useState(new Set());
 
   useEffect(() => {
     const introTimer = setTimeout(() => {
@@ -129,6 +130,28 @@ const MatchScreen = ({ matchPayload }) => {
 
   const sendReaction = (emoji) => {
     socket.emit('send_reaction', { roomId: matchPayload.roomId, emoji });
+  };
+
+  const handleSaveMatchQuestion = async (q) => {
+    const key = q._id || q.questionId || q.questionText;
+    if (savedMatchQuestions.has(key)) return;
+    try {
+      await api.post('/api/bookmarks', {
+        questionId: q._id || q.questionId,
+        questionText: q.questionText,
+        options: q.options,
+        correctOption: q.correctOption,
+        explanation: q.explanation || q.solution || '',
+        subject: matchPayload.subject || ''
+      });
+      setSavedMatchQuestions(prev => {
+        const s = new Set(prev);
+        s.add(key);
+        return s;
+      });
+    } catch (err) {
+      console.error('Failed to save question:', err);
+    }
   };
 
   if (isMatchOver && summaryData) {
@@ -277,6 +300,21 @@ const MatchScreen = ({ matchPayload }) => {
               <h2 className="text-2xl md:text-4xl font-normal text-center text-white mb-6 leading-tight max-w-2xl px-2">
                 <Latex>{formatLatex(currentQ.questionText)}</Latex>
               </h2>
+
+              {/* Bookmark button — appears after answer reveal */}
+              {feedbackState && (
+                <button
+                  onClick={() => handleSaveMatchQuestion(currentQ)}
+                  disabled={savedMatchQuestions.has(currentQ._id || currentQ.questionId || currentQ.questionText)}
+                  className={`mb-4 px-4 py-1.5 rounded-full border-2 text-sm font-heading font-bold transition-all duration-200 ${
+                    savedMatchQuestions.has(currentQ._id || currentQ.questionId || currentQ.questionText)
+                      ? 'border-dh-accent text-dh-accent bg-dh-accent/10'
+                      : 'border-white/30 text-white/70 hover:border-dh-accent hover:text-dh-accent bg-white/5'
+                  }`}
+                >
+                  {savedMatchQuestions.has(currentQ._id || currentQ.questionId || currentQ.questionText) ? '★ Saved' : '☆ Save'}
+                </button>
+              )}
               
               {currentQ.hasDiagram && currentQ.diagramUrl && (
                 <div className="w-full max-w-sm mb-6 flex justify-center">
