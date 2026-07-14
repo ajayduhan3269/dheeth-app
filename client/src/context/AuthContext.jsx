@@ -1,4 +1,5 @@
 import React, { createContext, useState, useEffect } from 'react';
+import { socket } from '../socket';
 
 export const AuthContext = createContext();
 
@@ -13,6 +14,7 @@ export const AuthProvider = ({ children }) => {
     
     if (token && user) {
       setCurrentUser(JSON.parse(user));
+      socket.connect();
     }
     setLoading(false);
   }, []);
@@ -21,12 +23,14 @@ export const AuthProvider = ({ children }) => {
     localStorage.setItem('dheeth_token', token);
     localStorage.setItem('dheeth_user', JSON.stringify(user));
     setCurrentUser(user);
+    socket.connect();
   };
 
   const logout = () => {
     localStorage.removeItem('dheeth_token');
     localStorage.removeItem('dheeth_user');
     setCurrentUser(null);
+    socket.disconnect();
   };
 
   return (

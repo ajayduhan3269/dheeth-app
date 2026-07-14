@@ -174,7 +174,7 @@ async function processJoinQueue(io, socket, subject, category, targetState) {
       { socketId: "bot_socket_id", username: botName, userId: "bot", avatarSeed: "bot-ronin" }, 
       true);
     setTimeout(() => startQuestionTimer(io, roomId), 3500);
-  }, 5000);
+  }, 10000);
 }
 
 const handleMatchmaking = (io, socket) => {

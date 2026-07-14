@@ -8,7 +8,7 @@ import { formatLatex } from '../utils/latex';
 
 const MatchScreen = ({ matchPayload }) => {
   const [matchPhase, setMatchPhase] = useState('intro');
-  const [timeLeft, setTimeLeft] = useState(15);
+  const [timeLeft, setTimeLeft] = useState(60);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [playerScore, setPlayerScore] = useState(0);
   const [playerCorrectCount, setPlayerCorrectCount] = useState(0);
@@ -137,7 +137,7 @@ const MatchScreen = ({ matchPayload }) => {
 
   const totalQuestions = matchPayload.questions.length;
   const currentQ = matchPayload.questions[currentIndex];
-  const timerPercent = (timeLeft / 15) * 100;
+  const timerPercent = (timeLeft / 60) * 100;
   const playerAvatar = getAvatarUrl(matchPayload.player.avatarSeed || matchPayload.player.username);
   const opponentAvatar = getAvatarUrl(matchPayload.opponent.avatarSeed || matchPayload.opponent.username);
 

@@ -191,7 +191,7 @@ function revealAndNext(io, code) {
     if (rooms[code]) {
       sendQuestionToRoom(io, code);
     }
-  }, 5000);
+  }, 10000);
 }
 
 async function endGroupQuiz(io, code) {

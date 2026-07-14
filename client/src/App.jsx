@@ -85,7 +85,9 @@ const AppLayout = () => {
               <AdminUpload />
             </ProtectedRoute>
           } />
-          <Route path="/" element={<Navigate to="/dashboard" />} />
+          <Route path="/login" element={<Navigate to="/auth" replace />} />
+          <Route path="/" element={<Navigate to="/dashboard" replace />} />
+          <Route path="*" element={<Navigate to="/dashboard" replace />} />
         </Routes>
       </div>
       {!hideNav && <BottomNav />}

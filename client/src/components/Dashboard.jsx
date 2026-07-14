@@ -156,7 +156,7 @@ const SubjectCard = ({ subject, index, onClick, disabled }) => {
           <h4 className="text-sm font-heading font-bold text-dh-text group-hover:text-white transition-colors leading-tight">
             {subject}
           </h4>
-          <p className="text-dh-text-muted text-[11px] mt-0.5">15-second timer match</p>
+          <p className="text-dh-text-muted text-[11px] mt-0.5">60-second timer match</p>
         </div>
       </div>
     </button>

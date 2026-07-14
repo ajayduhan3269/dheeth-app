@@ -4,7 +4,7 @@ import { formatLatex } from '../utils/latex';
 
 const QuizEngine = ({ questions, onComplete }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [timeLeft, setTimeLeft] = useState(15);
+  const [timeLeft, setTimeLeft] = useState(60);
   const [selectedOption, setSelectedOption] = useState(null);
   const [isAnswered, setIsAnswered] = useState(false);
   const [score, setScore] = useState(0);
@@ -45,7 +45,7 @@ const QuizEngine = ({ questions, onComplete }) => {
   const handleNext = () => {
     if (currentIndex < questions.length - 1) {
       setCurrentIndex(prev => prev + 1);
-      setTimeLeft(15);
+      setTimeLeft(60);
       setSelectedOption(null);
       setIsAnswered(false);
     } else {
@@ -77,7 +77,7 @@ const QuizEngine = ({ questions, onComplete }) => {
       <div className="bg-dh-card p-6 border-b border-dh-border flex justify-between items-center relative overflow-hidden">
         <div 
           className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-dh-accent to-dh-accent-light transition-all duration-1000 linear"
-          style={{ width: `${(timeLeft / 15) * 100}%` }}
+          style={{ width: `${(timeLeft / 60) * 100}%` }}
         ></div>
         <span className="text-dh-text-muted font-heading font-semibold text-sm tracking-widest uppercase">
           Question {currentIndex + 1} of {questions.length}

@@ -189,7 +189,7 @@ const initializeMatch = (roomId, subject, questions, p1, p2, isBotMatch) => {
     questions,
     currentQuestionIndex: 0,
     isBotMatch,
-    timeLeft: 15,
+    timeLeft: 60,
     timerInterval: null,
     players: {
       [p1.socketId]: { ...p1, score: 0, hasAnswered: false, correctAnswers: 0, currentStreak: 0, multiplier: 1 },
@@ -202,7 +202,7 @@ const startQuestionTimer = (io, roomId) => {
   const match = activeMatches[roomId];
   if (!match) return;
 
-  match.timeLeft = 15;
+  match.timeLeft = 60;
   Object.values(match.players).forEach(p => p.hasAnswered = false);
 
   if (match.timerInterval) clearInterval(match.timerInterval);
