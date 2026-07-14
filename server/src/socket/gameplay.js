@@ -76,6 +76,12 @@ const updateSeenAndWrongQuestions = async (userId, questions, playerAnswers) => 
       user.seenQuestions.push(...newSeen);
     }
 
+    // Limit seen questions list to the last 50 questions (FIFO sliding window)
+    const MAX_SEEN_LIMIT = 50;
+    if (user.seenQuestions.length > MAX_SEEN_LIMIT) {
+      user.seenQuestions = user.seenQuestions.slice(-MAX_SEEN_LIMIT);
+    }
+
     // Update wrong questions: add new wrong ones, remove correctly answered ones
     const existingWrong = new Set((user.wrongQuestions || []).map(id => id.toString()));
     const wrongToAdd = wrongIds.filter(id => !existingWrong.has(id.toString()));

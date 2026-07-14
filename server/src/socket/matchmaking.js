@@ -63,23 +63,44 @@ async function processJoinQueue(io, socket, subject, category, targetState) {
     p2.socket.activeRoomId = roomId;
 
     const mergedSeenIds = [...new Set([...(p1.user.seenIds || []), ...(p2.user.seenIds || [])])];
-    
-    // Level 1: subject + category + unseen filter
-    let questions;
+    let questions = [];
+
+    // Stage 1: Try to fetch up to 5 unseen questions (subject + category + unseen filter)
     let matchFilter = { subject, category };
     if (mergedSeenIds.length > 0) {
       matchFilter._id = { $nin: mergedSeenIds };
     }
     questions = await Question.aggregate([{ $match: matchFilter }, { $sample: { size: 5 } }]);
 
-    // Level 2: subject + category
+    // Stage 2: Fill remaining slots with general pool questions (subject + category), excluding already selected
     if (questions.length < 5) {
-      questions = await Question.aggregate([{ $match: { subject, category } }, { $sample: { size: 5 } }]);
+      const selectedIds = questions.map(q => q._id);
+      const remainingCount = 5 - questions.length;
+      const additionalFilter = {
+        subject,
+        category,
+        _id: { $nin: selectedIds }
+      };
+      const additional = await Question.aggregate([
+        { $match: additionalFilter },
+        { $sample: { size: remainingCount } }
+      ]);
+      questions = [...questions, ...additional];
     }
 
-    // Level 3: subject only (in case category field is missing)
+    // Stage 3: Fill remaining slots with subject-only questions, excluding already selected
     if (questions.length < 5) {
-      questions = await Question.aggregate([{ $match: { subject } }, { $sample: { size: 5 } }]);
+      const selectedIds = questions.map(q => q._id);
+      const remainingCount = 5 - questions.length;
+      const additionalFilter = {
+        subject,
+        _id: { $nin: selectedIds }
+      };
+      const additional = await Question.aggregate([
+        { $match: additionalFilter },
+        { $sample: { size: remainingCount } }
+      ]);
+      questions = [...questions, ...additional];
     }
 
     if (questions.length === 0) {
@@ -127,10 +148,10 @@ async function processJoinQueue(io, socket, subject, category, targetState) {
     socket.join(roomId);
     socket.activeRoomId = roomId;
 
-    // Try 3 levels of fallback for question fetching
-    let questions;
+    // Try 3 levels of fallback for question fetching incrementally
+    let questions = [];
 
-    // Level 1: subject + category + unseen filter
+    // Stage 1: Try to fetch up to 5 unseen questions (subject + category + unseen filter)
     let matchFilter = { subject, category };
     const seenIds = player.user.seenIds || [];
     if (seenIds.length > 0) {
@@ -138,14 +159,35 @@ async function processJoinQueue(io, socket, subject, category, targetState) {
     }
     questions = await Question.aggregate([{ $match: matchFilter }, { $sample: { size: 5 } }]);
 
-    // Level 2: subject + category (ignore seen filter)
+    // Stage 2: Fill remaining slots with general pool questions (subject + category), excluding already selected
     if (questions.length < 5) {
-      questions = await Question.aggregate([{ $match: { subject, category } }, { $sample: { size: 5 } }]);
+      const selectedIds = questions.map(q => q._id);
+      const remainingCount = 5 - questions.length;
+      const additionalFilter = {
+        subject,
+        category,
+        _id: { $nin: selectedIds }
+      };
+      const additional = await Question.aggregate([
+        { $match: additionalFilter },
+        { $sample: { size: remainingCount } }
+      ]);
+      questions = [...questions, ...additional];
     }
 
-    // Level 3: subject only (in case category field is missing from seeded data)
+    // Stage 3: Fill remaining slots with subject-only questions, excluding already selected
     if (questions.length < 5) {
-      questions = await Question.aggregate([{ $match: { subject } }, { $sample: { size: 5 } }]);
+      const selectedIds = questions.map(q => q._id);
+      const remainingCount = 5 - questions.length;
+      const additionalFilter = {
+        subject,
+        _id: { $nin: selectedIds }
+      };
+      const additional = await Question.aggregate([
+        { $match: additionalFilter },
+        { $sample: { size: remainingCount } }
+      ]);
+      questions = [...questions, ...additional];
     }
 
     if (questions.length === 0) {

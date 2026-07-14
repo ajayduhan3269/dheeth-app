@@ -164,6 +164,17 @@ exports.completeNode = async (req, res) => {
         if (!user.seenQuestions.some(id => id.toString() === qIdStr)) {
           user.seenQuestions.push(ans.questionId);
         }
+      });
+
+      // Limit seen questions list to the last 50 questions (FIFO sliding window)
+      const MAX_SEEN_LIMIT = 50;
+      if (user.seenQuestions.length > MAX_SEEN_LIMIT) {
+        user.seenQuestions = user.seenQuestions.slice(-MAX_SEEN_LIMIT);
+      }
+
+      answers.forEach(ans => {
+        if (!ans.questionId) return;
+        const qIdStr = ans.questionId.toString();
 
         // Handle wrong/right for spaced repetition
         const isWrongListIdx = user.wrongQuestions.findIndex(id => id.toString() === qIdStr);

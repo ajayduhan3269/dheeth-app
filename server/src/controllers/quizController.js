@@ -118,6 +118,20 @@ exports.getSoloPracticeQuestions = async (req, res) => {
       questions = [...questions, ...additional];
     }
 
+    // Stage 3: Fill remaining slots with general pool questions (seen or unseen), excluding already selected
+    if (questions.length < 5) {
+      const selectedIds = questions.map(q => q._id);
+      const remainingFilter = {
+        ...matchStage,
+        _id: { $nin: selectedIds }
+      };
+      const additional = await Question.aggregate([
+        { $match: remainingFilter },
+        { $sample: { size: 5 - questions.length } }
+      ]);
+      questions = [...questions, ...additional];
+    }
+
     res.status(200).json({
       success: true,
       count: questions.length,
