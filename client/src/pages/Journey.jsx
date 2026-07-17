@@ -347,8 +347,9 @@ const Journey = () => {
           <div className="grid grid-cols-1 gap-4">
             {subjects.map((sub, idx) => {
               const meta = SUBJECT_META[sub.subject] || { icon: '📖', gradient: 'from-zinc-600 to-zinc-800' };
-              const total = (sub.nodes || []).length;
-              const completed = (sub.nodes || []).filter(n => progress[n.nodeId]?.status === 'completed').length;
+              const subNodes = sub.category === 'gs' && sub.chapters ? sub.chapters.flatMap(c => c.nodes) : (sub.nodes || []);
+              const total = subNodes.length;
+              const completed = subNodes.filter(n => progress[n.nodeId]?.status === 'completed').length;
               const pct = total > 0 ? (completed / total) * 100 : 0;
               const label = completed === 0 ? 'START' : completed === total ? 'MASTERED' : 'CONTINUE';
               return (
