@@ -6,7 +6,15 @@ const verifyToken = require('../middleware/auth');
 router.get('/', verifyToken, async (req, res) => {
   try {
     const user = await User.findById(req.user.id).select('friends');
-    res.json({ success: true, data: user.friends || [] });
+    if (!user) return res.status(404).json({ error: 'User not found' });
+    
+    const friendsWithStatus = (user.friends || []).map((f) => {
+      const friendObj = f.toObject();
+      friendObj.isOnline = global.connectedUsers?.has(f.userId.toString()) || false;
+      return friendObj;
+    });
+
+    res.json({ success: true, data: friendsWithStatus });
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
@@ -26,8 +34,8 @@ router.post('/request', verifyToken, async (req, res) => {
       return res.status(400).json({ message: 'Already friends or request pending' });
     }
 
-    sender.friends.push({ userId: target._id, username: target.username, status: 'pending' });
-    target.friends.push({ userId: sender._id, username: sender.username, status: 'pending' });
+    sender.friends.push({ userId: target._id, username: target.username, status: 'pending_sent' });
+    target.friends.push({ userId: sender._id, username: sender.username, status: 'pending_received' });
     await sender.save();
     await target.save();
 
@@ -47,6 +55,11 @@ router.post('/accept', verifyToken, async (req, res) => {
     const myReq = user.friends.find(f => f.userId.toString() === friend._id.toString());
     const theirReq = friend.friends.find(f => f.userId.toString() === user._id.toString());
     if (!myReq || !theirReq) return res.status(400).json({ message: 'No pending request' });
+    
+    // Strict validation: only allow accepting if WE received it (or fallback to legacy pending)
+    if (myReq.status !== 'pending_received' && myReq.status !== 'pending') {
+      return res.status(400).json({ message: 'No incoming request to accept' });
+    }
 
     myReq.status = 'accepted';
     theirReq.status = 'accepted';

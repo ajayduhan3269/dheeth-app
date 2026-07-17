@@ -20,6 +20,13 @@ const SUBJECT_META = {
   'Irrigation Engineering': { icon: '🌾', gradient: 'from-lime-500 to-green-700' },
   'Environmental Engineering': { icon: '🌿', gradient: 'from-teal-500 to-emerald-700' },
   'Surveying': { icon: '🔭', gradient: 'from-blue-500 to-indigo-700' },
+  'Ancient History': { icon: '🏺', gradient: 'from-amber-500 to-amber-700' },
+  'Medieval History': { icon: '🏰', gradient: 'from-rose-600 to-red-800' },
+  'Modern History': { icon: '📜', gradient: 'from-slate-500 to-slate-700' },
+  'Biology': { icon: '🧬', gradient: 'from-emerald-500 to-green-700' },
+  'Polity': { icon: '🏛️', gradient: 'from-blue-600 to-indigo-800' },
+  'World Core & Climate': { icon: '🌏', gradient: 'from-cyan-600 to-blue-800' },
+  'Indian Geography & Resources': { icon: '🗺️', gradient: 'from-amber-600 to-orange-800' },
 };
 
 // Winding horizontal offsets for the Duolingo-style path (in px)
@@ -73,16 +80,23 @@ const Journey = () => {
 
   const handleSubjectSelect = (subjectObj) => {
     setSelectedSubject(subjectObj);
-    setNodes(subjectObj.nodes || []);
+    if (subjectObj.category === 'gs' && subjectObj.chapters) {
+      const flatNodes = subjectObj.chapters.flatMap(c => c.nodes);
+      setNodes(flatNodes);
+    } else {
+      setNodes(subjectObj.nodes || []);
+    }
     window.__journeySubject = subjectObj.subject;
   };
 
   const handleNodeClick = async (node) => {
     try {
       // Journey mode: fetch deterministic batch by subject + nodeIndex
-      const res = await api.get(
-        `/api/questions/solo-practice?subject=${encodeURIComponent(selectedSubject.subject)}&nodeIndex=${node.nodeIndex}`
-      );
+      let url = `/api/questions/solo-practice?subject=${encodeURIComponent(selectedSubject.subject)}&nodeIndex=${node.nodeIndex}`;
+      if (node.chapterName) {
+        url += `&topic=${encodeURIComponent(node.chapterName)}`;
+      }
+      const res = await api.get(url);
       if (res.data.success && res.data.data.length > 0) {
         setActiveNode(node);
         setQuizQuestions(res.data.data);
@@ -413,73 +427,165 @@ const Journey = () => {
           <div className="text-4xl drop-shadow-lg">{meta.icon}</div>
         </div>
 
-        {/* Winding path */}
-        <div className="flex flex-col items-center gap-7 pt-12 pb-32">
-          {nodes.map((node, index) => {
-            const status = getNodeStatus(node, index);
-            const best = progress[node.nodeId]?.bestScore || 0;
-            const offset = PATH_OFFSETS[index % PATH_OFFSETS.length];
-
-            let btnClass = 'relative z-10 flex items-center justify-center w-[76px] h-[76px] rounded-full text-3xl font-extrabold transition-all duration-100 ';
-            if (status === 'completed') {
-              btnClass += 'bg-dh-yellow border-b-8 border-dh-yellow-dark text-white cursor-pointer hover:translate-y-[2px] hover:border-b-4 active:translate-y-[4px] active:border-b-0';
-            } else if (status === 'available') {
-              btnClass += 'bg-dh-accent border-b-8 border-dh-accent-dark text-white cursor-pointer hover:translate-y-[2px] hover:border-b-4 active:translate-y-[4px] active:border-b-0';
-            } else {
-              btnClass += 'bg-dh-card border-b-8 border-dh-border text-dh-muted cursor-not-allowed';
-            }
-
-            return (
-              <div key={node.nodeId} style={{ transform: `translateX(${offset}px)` }} className="flex flex-col items-center">
-                <div className="relative">
-                  {status === 'available' && (
-                    <>
-                      <div className="absolute -inset-2 rounded-full border-4 border-dh-accent/30 animate-pulse pointer-events-none" />
-                      <div className="absolute -top-9 left-1/2 -translate-x-1/2 z-20 bg-dh-card border-2 border-dh-border rounded-xl px-3 py-1 text-[10px] font-heading font-black text-dh-accent uppercase tracking-widest whitespace-nowrap animate-bounce-subtle shadow-dh-soft">
-                        Start
-                      </div>
-                    </>
-                  )}
-                  {status === 'completed' && (
-                    <div className="absolute -top-5 left-1/2 -translate-x-1/2 text-xl z-20 drop-shadow-md">👑</div>
-                  )}
-                  <button
-                    onClick={() => status !== 'locked' && handleNodeClick(node)}
-                    disabled={status === 'locked'}
-                    className={btnClass}
-                    aria-label={node.title}
-                  >
-                    {status === 'locked' ? '🔒' : status === 'completed' ? '⭐' : '▶'}
-                  </button>
-                  {status === 'completed' && best > 0 && (
-                    <div className="absolute -bottom-1 -right-2 z-20 bg-dh-card border-2 border-dh-yellow rounded-full px-1.5 py-0.5 text-[9px] font-heading font-black text-dh-yellow">
-                      {best}%
+        {selectedSubject.category === 'gs' && selectedSubject.chapters ? (
+          <div className="flex flex-col gap-10 pt-8 pb-32">
+            {selectedSubject.chapters.map((chapter, chapIdx) => {
+              const firstNodeOfChap = chapter.nodes[0];
+              const flatIndex = nodes.findIndex(n => n.nodeId === firstNodeOfChap?.nodeId);
+              const status = firstNodeOfChap ? getNodeStatus(firstNodeOfChap, flatIndex) : 'locked';
+              const isLocked = status === 'locked';
+              
+              const chapCompleted = chapter.nodes.filter(n => progress[n.nodeId]?.status === 'completed').length;
+              const allChapDone = chapter.nodes.length > 0 && chapCompleted === chapter.nodes.length;
+              
+              return (
+                <div key={chapIdx} className={`transition-opacity duration-300 ${isLocked ? 'opacity-50 grayscale pointer-events-none' : ''}`}>
+                  <div className={`relative rounded-xl border-2 mb-6 p-4 bg-dh-card overflow-hidden ${allChapDone ? 'border-dh-yellow shadow-[0_0_15px_rgba(250,204,21,0.5)]' : isLocked ? 'border-dh-border' : 'border-dh-accent/50'}`}>
+                    {allChapDone && <div className="absolute inset-0 bg-dh-yellow/10" />}
+                    <h2 className="relative z-10 text-sm font-heading font-black text-dh-text-muted uppercase tracking-widest mb-1">Chapter {chapIdx + 1}</h2>
+                    <h3 className="relative z-10 text-xl font-heading font-black text-dh-text">{chapter.chapterName}</h3>
+                    <div className="relative z-10 flex items-center justify-between mt-1">
+                      <p className="text-xs font-bold text-dh-text-muted">{chapCompleted}/{chapter.nodes.length} levels completed</p>
+                      {allChapDone && <span className="px-2 py-0.5 rounded-md bg-dh-yellow text-black text-[10px] font-black uppercase tracking-wider">Mastered</span>}
                     </div>
-                  )}
-                </div>
-                <span className={`mt-3 px-3 py-1 rounded-full border-2 text-xs font-heading font-bold ${status === 'locked'
-                    ? 'border-dh-border/60 text-dh-muted bg-transparent'
-                    : 'border-dh-border text-dh-text bg-dh-card shadow-dh-soft'
-                  }`}>
-                  {node.title}
-                </span>
-              </div>
-            );
-          })}
+                  </div>
+                  
+                  <div className="flex flex-col items-center gap-7">
+                    {chapter.nodes.map((node, nodeIdx) => {
+                      const overallIdx = nodes.findIndex(n => n.nodeId === node.nodeId);
+                      const nodeStatus = getNodeStatus(node, overallIdx);
+                      const best = progress[node.nodeId]?.bestScore || 0;
+                      const offset = PATH_OFFSETS[nodeIdx % PATH_OFFSETS.length];
 
-          {/* Trophy finish node */}
-          <div className="flex flex-col items-center mt-2">
-            <div className={`flex items-center justify-center w-[76px] h-[76px] rounded-full border-b-8 text-3xl ${allDone
-                ? 'bg-dh-yellow border-dh-yellow-dark animate-bounce-subtle'
-                : 'bg-dh-card border-dh-border grayscale opacity-60'
-              }`}>
-              🏆
-            </div>
-            <span className="mt-3 text-xs font-heading font-black uppercase tracking-widest text-dh-text-muted">
-              {allDone ? 'Subject Mastered!' : 'Finish all levels'}
-            </span>
+                      let btnClass = 'relative z-10 flex items-center justify-center w-[76px] h-[76px] rounded-full text-3xl font-extrabold transition-all duration-100 ';
+                      if (nodeStatus === 'completed') {
+                        btnClass += 'bg-dh-yellow border-b-8 border-dh-yellow-dark text-white cursor-pointer hover:translate-y-[2px] hover:border-b-4 active:translate-y-[4px] active:border-b-0';
+                      } else if (nodeStatus === 'available') {
+                        btnClass += 'bg-dh-accent border-b-8 border-dh-accent-dark text-white cursor-pointer hover:translate-y-[2px] hover:border-b-4 active:translate-y-[4px] active:border-b-0';
+                      } else {
+                        btnClass += 'bg-dh-card border-b-8 border-dh-border text-dh-muted cursor-not-allowed';
+                      }
+
+                      return (
+                        <div key={node.nodeId} style={{ transform: `translateX(${offset}px)` }} className="flex flex-col items-center">
+                          <div className="relative">
+                            {nodeStatus === 'available' && (
+                              <>
+                                <div className="absolute -inset-2 rounded-full border-4 border-dh-accent/30 animate-pulse pointer-events-none" />
+                                <div className="absolute -top-9 left-1/2 -translate-x-1/2 z-20 bg-dh-card border-2 border-dh-border rounded-xl px-3 py-1 text-[10px] font-heading font-black text-dh-accent uppercase tracking-widest whitespace-nowrap animate-bounce-subtle shadow-dh-soft">
+                                  Start
+                                </div>
+                              </>
+                            )}
+                            {nodeStatus === 'completed' && (
+                              <div className="absolute -top-5 left-1/2 -translate-x-1/2 text-xl z-20 drop-shadow-md">👑</div>
+                            )}
+                            <button
+                              onClick={() => nodeStatus !== 'locked' && handleNodeClick(node)}
+                              disabled={nodeStatus === 'locked'}
+                              className={btnClass}
+                              aria-label={node.title}
+                            >
+                              {nodeStatus === 'locked' ? '🔒' : nodeStatus === 'completed' ? '⭐' : '▶'}
+                            </button>
+                            {nodeStatus === 'completed' && best > 0 && (
+                              <div className="absolute -bottom-1 -right-2 z-20 bg-dh-card border-2 border-dh-yellow rounded-full px-1.5 py-0.5 text-[9px] font-heading font-black text-dh-yellow">
+                                {best}%
+                              </div>
+                            )}
+                          </div>
+                          <span className={`mt-3 px-3 py-1 rounded-full border-2 text-xs font-heading font-bold ${nodeStatus === 'locked'
+                              ? 'border-dh-border/60 text-dh-muted bg-transparent'
+                              : 'border-dh-border text-dh-text bg-dh-card shadow-dh-soft'
+                            }`}>
+                            {node.title}
+                          </span>
+                        </div>
+                      );
+                    })}
+                    
+                    {/* Chapter Trophy */}
+                    <div className="flex flex-col items-center mt-2">
+                      <div className={`flex items-center justify-center w-[60px] h-[60px] rounded-full border-b-4 text-2xl ${allChapDone
+                          ? 'bg-dh-yellow border-dh-yellow-dark animate-bounce-subtle'
+                          : 'bg-dh-card border-dh-border grayscale opacity-60'
+                        }`}>
+                        🏆
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
-        </div>
+        ) : (
+          <div className="flex flex-col items-center gap-7 pt-12 pb-32">
+            {nodes.map((node, index) => {
+              const status = getNodeStatus(node, index);
+              const best = progress[node.nodeId]?.bestScore || 0;
+              const offset = PATH_OFFSETS[index % PATH_OFFSETS.length];
+
+              let btnClass = 'relative z-10 flex items-center justify-center w-[76px] h-[76px] rounded-full text-3xl font-extrabold transition-all duration-100 ';
+              if (status === 'completed') {
+                btnClass += 'bg-dh-yellow border-b-8 border-dh-yellow-dark text-white cursor-pointer hover:translate-y-[2px] hover:border-b-4 active:translate-y-[4px] active:border-b-0';
+              } else if (status === 'available') {
+                btnClass += 'bg-dh-accent border-b-8 border-dh-accent-dark text-white cursor-pointer hover:translate-y-[2px] hover:border-b-4 active:translate-y-[4px] active:border-b-0';
+              } else {
+                btnClass += 'bg-dh-card border-b-8 border-dh-border text-dh-muted cursor-not-allowed';
+              }
+
+              return (
+                <div key={node.nodeId} style={{ transform: `translateX(${offset}px)` }} className="flex flex-col items-center">
+                  <div className="relative">
+                    {status === 'available' && (
+                      <>
+                        <div className="absolute -inset-2 rounded-full border-4 border-dh-accent/30 animate-pulse pointer-events-none" />
+                        <div className="absolute -top-9 left-1/2 -translate-x-1/2 z-20 bg-dh-card border-2 border-dh-border rounded-xl px-3 py-1 text-[10px] font-heading font-black text-dh-accent uppercase tracking-widest whitespace-nowrap animate-bounce-subtle shadow-dh-soft">
+                          Start
+                        </div>
+                      </>
+                    )}
+                    {status === 'completed' && (
+                      <div className="absolute -top-5 left-1/2 -translate-x-1/2 text-xl z-20 drop-shadow-md">👑</div>
+                    )}
+                    <button
+                      onClick={() => status !== 'locked' && handleNodeClick(node)}
+                      disabled={status === 'locked'}
+                      className={btnClass}
+                      aria-label={node.title}
+                    >
+                      {status === 'locked' ? '🔒' : status === 'completed' ? '⭐' : '▶'}
+                    </button>
+                    {status === 'completed' && best > 0 && (
+                      <div className="absolute -bottom-1 -right-2 z-20 bg-dh-card border-2 border-dh-yellow rounded-full px-1.5 py-0.5 text-[9px] font-heading font-black text-dh-yellow">
+                        {best}%
+                      </div>
+                    )}
+                  </div>
+                  <span className={`mt-3 px-3 py-1 rounded-full border-2 text-xs font-heading font-bold ${status === 'locked'
+                      ? 'border-dh-border/60 text-dh-muted bg-transparent'
+                      : 'border-dh-border text-dh-text bg-dh-card shadow-dh-soft'
+                    }`}>
+                    {node.title}
+                  </span>
+                </div>
+              );
+            })}
+
+            {/* Trophy finish node */}
+            <div className="flex flex-col items-center mt-2">
+              <div className={`flex items-center justify-center w-[76px] h-[76px] rounded-full border-b-8 text-3xl ${allDone
+                  ? 'bg-dh-yellow border-dh-yellow-dark animate-bounce-subtle'
+                  : 'bg-dh-card border-dh-border grayscale opacity-60'
+                }`}>
+                🏆
+              </div>
+              <span className="mt-3 text-xs font-heading font-black uppercase tracking-widest text-dh-text-muted">
+                {allDone ? 'Subject Mastered!' : 'Finish all levels'}
+              </span>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

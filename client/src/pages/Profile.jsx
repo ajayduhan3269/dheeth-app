@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import api, { getAvatarUrl } from '../api';
 import { useNavigate } from 'react-router-dom';
+import { socket } from '../socket';
+import { useAppMode } from '../context/AppModeContext';
+import ModeToggle from '../components/ModeToggle';
 
 const Profile = () => {
   const [profile, setProfile] = useState(null);
@@ -12,6 +15,12 @@ const Profile = () => {
   const [friends, setFriends] = useState([]);
   const [friendUsername, setFriendUsername] = useState('');
   const [friendMsg, setFriendMsg] = useState('');
+  const [incomingRequests, setIncomingRequests] = useState([]);
+  const [processingUser, setProcessingUser] = useState(null);
+  const [challengingFriendId, setChallengingFriendId] = useState(null);
+  const [waitingForFriendId, setWaitingForFriendId] = useState(null);
+  const [availableSubjects, setAvailableSubjects] = useState([]);
+  const { mode } = useAppMode();
   const navigate = useNavigate();
 
   const seedOptions = ['shadow-ninja', 'cyber-ronin', 'arcane-mage', 'blade-master', 'star-voyager', 'iron-sentinel', 'midnight-hero', 'solar-knight'];
@@ -31,12 +40,49 @@ const Profile = () => {
     };
     fetchProfile();
     fetchFriends();
+
+    const intervalId = setInterval(() => {
+      fetchFriends();
+    }, 15000);
+
+    return () => clearInterval(intervalId);
   }, []);
+
+  useEffect(() => {
+    const fetchSubjects = async () => {
+      try {
+        const res = await api.get(`/api/questions/subjects?category=${mode}`);
+        if (res.data.success) {
+          setAvailableSubjects(res.data.data);
+        }
+      } catch (err) {}
+    };
+    fetchSubjects();
+  }, [mode]);
+
+  useEffect(() => {
+    const handleMatchFound = () => setWaitingForFriendId(null);
+    const handleDeclined = (data) => {
+      // If we get a declined event, clear the waiting state
+      setWaitingForFriendId(null);
+      alert('Your challenge was declined.');
+    };
+
+    socket.on('match_found', handleMatchFound);
+    socket.on('match_request_declined', handleDeclined);
+
+    return () => {
+      socket.off('match_found', handleMatchFound);
+      socket.off('match_request_declined', handleDeclined);
+    };
+  }, [waitingForFriendId]);
 
   const fetchFriends = async () => {
     try {
       const res = await api.get('/api/friends');
-      setFriends(res.data.data.filter(f => f.status === 'accepted'));
+      const allFriends = res.data.data;
+      setFriends(allFriends.filter(f => f.status === 'accepted'));
+      setIncomingRequests(allFriends.filter(f => f.status === 'pending_received' || f.status === 'pending'));
     } catch (_) {}
   };
 
@@ -51,6 +97,30 @@ const Profile = () => {
       setFriendMsg(err.response?.data?.message || 'Failed');
     }
     setTimeout(() => setFriendMsg(''), 3000);
+  };
+
+  const handleAcceptRequest = async (username) => {
+    setProcessingUser(username);
+    try {
+      await api.post('/api/friends/accept', { username });
+      await fetchFriends();
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setProcessingUser(null);
+    }
+  };
+
+  const handleDeclineRequest = async (username) => {
+    setProcessingUser(username);
+    try {
+      await api.post('/api/friends/remove', { username });
+      await fetchFriends();
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setProcessingUser(null);
+    }
   };
 
   const handleSave = async () => {
@@ -101,6 +171,11 @@ const Profile = () => {
           </div>
         </div>
 
+        {/* Mode Toggle */}
+        <div className="px-6 pt-6 -mb-2">
+          <ModeToggle />
+        </div>
+
         {/* Quick Links */}
         <div className="flex gap-3 p-6 pb-0">
           <button onClick={() => navigate('/shop')} className="flex-1 py-3 bg-dh-purple border-b-4 border-purple-800 rounded-xl font-heading font-black text-sm text-white uppercase tracking-wide active:translate-y-[2px] active:border-b-0 transition-all">
@@ -133,10 +208,53 @@ const Profile = () => {
           {friends.length > 0 ? (
             <div className="space-y-2">
               {friends.map((f, i) => (
-                <div key={i} className="flex items-center gap-3 bg-dh-surface rounded-xl px-4 py-3 border border-dh-border">
-                  <img src={getAvatarUrl(f.username)} alt={f.username} className="w-10 h-10 rounded-full bg-dh-card" />
+                <div key={i} className="flex items-center gap-3 bg-dh-surface rounded-xl px-4 py-3 border border-dh-border relative">
+                  <div className="relative">
+                    <img src={getAvatarUrl(f.username)} alt={f.username} className="w-10 h-10 rounded-full bg-dh-card" />
+                    <span 
+                      className={`absolute bottom-0 right-0 w-3 h-3 rounded-full border-2 border-dh-surface ${f.isOnline ? 'bg-dh-green' : 'bg-dh-border'}`} 
+                      title={f.isOnline ? 'Online' : 'Offline'}
+                    />
+                  </div>
                   <span className="font-heading font-bold text-dh-text flex-1">{f.username}</span>
-                  <span className="text-dh-green text-xs font-heading font-bold">✓ Friends</span>
+                  
+                  {waitingForFriendId === f.userId ? (
+                    <span className="text-dh-text-muted text-xs font-heading font-bold animate-pulse">Waiting...</span>
+                  ) : (
+                    <button 
+                      disabled={!f.isOnline}
+                      onClick={() => setChallengingFriendId(challengingFriendId === f.userId ? null : f.userId)}
+                      className={`px-3 py-1.5 rounded-lg text-xs font-heading font-bold uppercase tracking-wide transition-colors ${
+                        f.isOnline 
+                          ? 'bg-dh-purple/10 text-dh-purple border border-dh-purple/20 hover:bg-dh-purple/20' 
+                          : 'bg-dh-surface text-dh-text-muted border border-dh-border opacity-50 cursor-not-allowed'
+                      }`}
+                      title={f.isOnline ? 'Challenge friend' : 'Friend is offline'}
+                    >
+                      ⚔️ Play
+                    </button>
+                  )}
+                  
+                  {challengingFriendId === f.userId && !waitingForFriendId && (
+                    <div className="absolute right-0 top-14 bg-dh-card border border-dh-border rounded-xl p-2 shadow-xl z-10 flex flex-col gap-1 w-48 max-h-60 overflow-y-auto">
+                      {availableSubjects.map(subj => (
+                        <button 
+                          key={subj}
+                          onClick={() => {
+                            socket.emit('send_match_request', { friendId: f.userId, subject: subj, mode });
+                            setChallengingFriendId(null);
+                            setWaitingForFriendId(f.userId);
+                          }}
+                          className="text-left text-xs font-heading font-bold text-dh-text hover:bg-dh-surface p-2 rounded-lg truncate"
+                        >
+                          {subj}
+                        </button>
+                      ))}
+                      {availableSubjects.length === 0 && (
+                        <div className="text-dh-text-muted text-xs p-2 text-center italic">No subjects available</div>
+                      )}
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
@@ -144,6 +262,35 @@ const Profile = () => {
             <p className="text-dh-text-muted text-sm">No friends yet. Add some opponents!</p>
           )}
         </div>
+
+        {/* Incoming Requests Section */}
+        {incomingRequests.length > 0 && (
+          <div className="p-6 pt-0">
+            <h2 className="text-xl font-heading font-bold text-dh-text mb-4">Incoming Requests</h2>
+            <div className="space-y-2">
+              {incomingRequests.map((req, i) => (
+                <div key={i} className="flex items-center gap-3 bg-dh-surface rounded-xl px-4 py-3 border border-dh-border">
+                  <img src={getAvatarUrl(req.username)} alt={req.username} className="w-10 h-10 rounded-full bg-dh-card" />
+                  <span className="font-heading font-bold text-dh-text flex-1">{req.username}</span>
+                  <button 
+                    disabled={processingUser === req.username}
+                    onClick={() => handleAcceptRequest(req.username)}
+                    className="px-3 py-1.5 bg-dh-green/10 text-dh-green border border-dh-green/20 rounded-lg text-xs font-heading font-bold uppercase tracking-wide hover:bg-dh-green/20 disabled:opacity-50 transition-colors"
+                  >
+                    {processingUser === req.username ? '...' : 'Accept'}
+                  </button>
+                  <button 
+                    disabled={processingUser === req.username}
+                    onClick={() => handleDeclineRequest(req.username)}
+                    className="px-3 py-1.5 bg-dh-red/10 text-dh-red border border-dh-red/20 rounded-lg text-xs font-heading font-bold uppercase tracking-wide hover:bg-dh-red/20 disabled:opacity-50 transition-colors"
+                  >
+                    Decline
+                  </button>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* Customize Section */}
         <div className="p-6 md:p-8 border-t border-dh-border">

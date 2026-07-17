@@ -86,4 +86,17 @@ export const sounds = {
     tone(98, 0.5, { type: 'sawtooth', delay: 0.1, volume: 0.12 });
     tone(65.4, 0.7, { type: 'sawtooth', delay: 0.22, volume: 0.1 });
   },
+  // Dramatic siege war drums
+  siege: () => {
+    tone(110, 0.15, { type: 'sawtooth', volume: 0.14 });
+    tone(82.4, 0.2, { type: 'sawtooth', delay: 0.12, volume: 0.12 });
+    tone(110, 0.12, { type: 'sawtooth', delay: 0.28, volume: 0.14 });
+    tone(65.4, 0.35, { type: 'sawtooth', delay: 0.38, volume: 0.1 });
+  },
+  // Maintenance wrench clink
+  maintain: () => {
+    tone(740, 0.06, { type: 'square', volume: 0.06 });
+    tone(880, 0.06, { type: 'square', delay: 0.08, volume: 0.06 });
+    tone(1175, 0.12, { type: 'triangle', delay: 0.16, volume: 0.08 });
+  },
 };

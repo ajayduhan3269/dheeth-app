@@ -71,8 +71,13 @@ exports.getSoloPracticeQuestions = async (req, res) => {
       const idx = parseInt(nodeIndex, 10);
       const skip = idx * batchSize;
 
+      const query = { subject };
+      if (req.query.topic) {
+        query.topic = req.query.topic;
+      }
+
       // Fetch a deterministic, ordered batch so each node always serves the same questions
-      const questions = await Question.find({ subject })
+      const questions = await Question.find(query)
         .sort({ _id: 1 })
         .skip(skip)
         .limit(batchSize)

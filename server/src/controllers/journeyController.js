@@ -11,6 +11,13 @@ const SUBJECT_ICONS = {
   'Soil Mechanics': '🪨',
   'Structural Analysis': '🏗️',
   'General Studies': '🌍',
+  'Ancient History': '🏺',
+  'Medieval History': '🏰',
+  'Modern History': '📜',
+  'Biology': '🧬',
+  'Polity': '🏛️',
+  'World Core & Climate': '🌏',
+  'Indian Geography & Resources': '🗺️',
 };
 
 const BATCH_SIZE = 10; // questions per journey node
@@ -26,30 +33,70 @@ exports.getJourneySubjects = async (req, res) => {
     // For each subject, count questions and auto-generate nodes
     const subjects = await Promise.all(
       subjectNames.map(async (subject) => {
-        const totalQuestions = await Question.countDocuments({ ...filter, subject });
-        const nodeCount = Math.ceil(totalQuestions / BATCH_SIZE);
+        if (category === 'gs') {
+          const chaptersData = await Question.aggregate([
+            { $match: { subject, category: 'gs' } },
+            { $group: { _id: "$topic", count: { $sum: 1 }, minId: { $min: "$_id" } } },
+            { $sort: { minId: 1 } }
+          ]);
 
-        const nodes = [];
-        for (let i = 0; i < nodeCount; i++) {
-          const isLast = i === nodeCount - 1;
-          const questionsInNode = isLast ? totalQuestions - i * BATCH_SIZE : BATCH_SIZE;
-          nodes.push({
-            nodeId: `${subject.toLowerCase().replace(/\s+/g, '_')}_level_${i + 1}`,
-            title: `Level ${i + 1}`,
-            nodeIndex: i,
-            coins: i < 5 ? 50 : i < 15 ? 75 : 100, // escalating rewards
-            questionsRequired: questionsInNode,
-            passScore: 70,
+          let totalQuestionsForSubject = 0;
+          const chapters = chaptersData.map((chap) => {
+            const chapterName = chap._id || 'General';
+            const totalQuestions = chap.count;
+            totalQuestionsForSubject += totalQuestions;
+            const nodeCount = Math.ceil(totalQuestions / BATCH_SIZE);
+
+            const nodes = [];
+            for (let i = 0; i < nodeCount; i++) {
+              const isLast = i === nodeCount - 1;
+              const questionsInNode = isLast ? totalQuestions - i * BATCH_SIZE : BATCH_SIZE;
+              nodes.push({
+                nodeId: `${subject.toLowerCase().replace(/\s+/g, '_')}_${chapterName.toLowerCase().replace(/[^a-z0-9]+/g, '_')}_level_${i + 1}`,
+                title: `Level ${i + 1}`,
+                chapterName,
+                nodeIndex: i,
+                coins: i < 5 ? 50 : i < 15 ? 75 : 100,
+                questionsRequired: questionsInNode,
+                passScore: 70,
+              });
+            }
+            return { chapterName, totalQuestions, nodes };
           });
-        }
 
-        return {
-          subject,
-          category: category || 'tech',
-          icon: SUBJECT_ICONS[subject] || '📖',
-          totalQuestions,
-          nodes,
-        };
+          return {
+            subject,
+            category: 'gs',
+            icon: SUBJECT_ICONS[subject] || '📖',
+            totalQuestions: totalQuestionsForSubject,
+            chapters
+          };
+        } else {
+          const totalQuestions = await Question.countDocuments({ ...filter, subject });
+          const nodeCount = Math.ceil(totalQuestions / BATCH_SIZE);
+
+          const nodes = [];
+          for (let i = 0; i < nodeCount; i++) {
+            const isLast = i === nodeCount - 1;
+            const questionsInNode = isLast ? totalQuestions - i * BATCH_SIZE : BATCH_SIZE;
+            nodes.push({
+              nodeId: `${subject.toLowerCase().replace(/\s+/g, '_')}_level_${i + 1}`,
+              title: `Level ${i + 1}`,
+              nodeIndex: i,
+              coins: i < 5 ? 50 : i < 15 ? 75 : 100, // escalating rewards
+              questionsRequired: questionsInNode,
+              passScore: 70,
+            });
+          }
+
+          return {
+            subject,
+            category: category || 'tech',
+            icon: SUBJECT_ICONS[subject] || '📖',
+            totalQuestions,
+            nodes,
+          };
+        }
       })
     );
 
@@ -87,25 +134,50 @@ exports.completeNode = async (req, res) => {
       return res.status(400).json({ success: false, message: 'subject, nodeId, and score are required' });
     }
 
-    // Dynamically regenerate the subject config to find the node
-    const filter = { subject };
-    const questionCount = await Question.countDocuments(filter);
-    if (questionCount === 0) {
+    // Determine category to regenerate nodes correctly
+    const sampleQuestion = await Question.findOne({ subject });
+    if (!sampleQuestion) {
       return res.status(404).json({ success: false, message: 'Subject not found or has no questions' });
     }
+    const category = sampleQuestion.category || 'tech';
 
-    const nodeCount = Math.ceil(questionCount / BATCH_SIZE);
-    const nodes = [];
-    for (let i = 0; i < nodeCount; i++) {
-      const isLast = i === nodeCount - 1;
-      const questionsInNode = isLast ? questionCount - i * BATCH_SIZE : BATCH_SIZE;
-      nodes.push({
-        nodeId: `${subject.toLowerCase().replace(/\s+/g, '_')}_level_${i + 1}`,
-        nodeIndex: i,
-        coins: i < 5 ? 50 : i < 15 ? 75 : 100,
-        questionsRequired: questionsInNode,
-        passScore: 70,
+    let nodes = [];
+    if (category === 'gs') {
+      const chaptersData = await Question.aggregate([
+        { $match: { subject, category: 'gs' } },
+        { $group: { _id: "$topic", count: { $sum: 1 }, minId: { $min: "$_id" } } },
+        { $sort: { minId: 1 } }
+      ]);
+      chaptersData.forEach((chap) => {
+        const chapterName = chap._id || 'General';
+        const qCount = chap.count;
+        const nodeCount = Math.ceil(qCount / BATCH_SIZE);
+        for (let i = 0; i < nodeCount; i++) {
+          const isLast = i === nodeCount - 1;
+          const questionsInNode = isLast ? qCount - i * BATCH_SIZE : BATCH_SIZE;
+          nodes.push({
+            nodeId: `${subject.toLowerCase().replace(/\s+/g, '_')}_${chapterName.toLowerCase().replace(/[^a-z0-9]+/g, '_')}_level_${i + 1}`,
+            nodeIndex: i,
+            coins: i < 5 ? 50 : i < 15 ? 75 : 100,
+            questionsRequired: questionsInNode,
+            passScore: 70,
+          });
+        }
       });
+    } else {
+      const questionCount = await Question.countDocuments({ subject });
+      const nodeCount = Math.ceil(questionCount / BATCH_SIZE);
+      for (let i = 0; i < nodeCount; i++) {
+        const isLast = i === nodeCount - 1;
+        const questionsInNode = isLast ? questionCount - i * BATCH_SIZE : BATCH_SIZE;
+        nodes.push({
+          nodeId: `${subject.toLowerCase().replace(/\s+/g, '_')}_level_${i + 1}`,
+          nodeIndex: i,
+          coins: i < 5 ? 50 : i < 15 ? 75 : 100,
+          questionsRequired: questionsInNode,
+          passScore: 70,
+        });
+      }
     }
 
     const node = nodes.find(n => n.nodeId === nodeId);

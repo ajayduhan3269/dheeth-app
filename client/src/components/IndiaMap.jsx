@@ -48,6 +48,7 @@ const H = 600;
 const PAD = 10;
 const MINE_COLOR = '#00e676';
 const ENEMY_COLOR = '#ff4b4b';
+const DECAY_COLOR = '#ff9800';
 const NEUTRAL_STROKE = '#52525b';
 const NEUTRAL_FILL = '#16162a';
 const SMALL_AREA = 140; // px² below which a state gets a tap-marker
@@ -73,6 +74,7 @@ const clamp = (v, min, max) => Math.min(Math.max(v, min), max);
 
 const MapOfIndia = ({ states, myConquests = [], onStateClick, selectedId = null }) => {
   const mySet = useMemo(() => new Set(myConquests.map(c => c.stateId)), [myConquests]);
+  const decaySet = useMemo(() => new Set(myConquests.filter(c => c.decayWarning).map(c => c.stateId)), [myConquests]);
   const byId = useMemo(() => Object.fromEntries(states.map(s => [s.id, s])), [states]);
 
   /* ── Pan & zoom ──────────────────────────────────────────── */
@@ -170,10 +172,11 @@ const MapOfIndia = ({ states, myConquests = [], onStateClick, selectedId = null 
     const mine = mySet.has(state.id);
     const conquered = state.conquered;
     const shieldActive = state.shieldUntil && new Date(state.shieldUntil) > now;
-    const color = mine ? MINE_COLOR : conquered ? ENEMY_COLOR : NEUTRAL_STROKE;
+    const decaying = mine && decaySet.has(state.id);
+    const color = decaying ? DECAY_COLOR : mine ? MINE_COLOR : conquered ? ENEMY_COLOR : NEUTRAL_STROKE;
     const small = shape.area < SMALL_AREA;
     const selected = selectedId === state.id;
-    return { shape, state, mine, conquered, shieldActive, color, small, selected };
+    return { shape, state, mine, conquered, shieldActive, decaying, color, small, selected };
   }).filter(Boolean);
 
   return (
@@ -209,7 +212,7 @@ const MapOfIndia = ({ states, myConquests = [], onStateClick, selectedId = null 
           ))}
 
           {/* ── Labels & badges for regular states ── */}
-          {rendered.filter(r => !r.small).map(({ shape, state, conquered, shieldActive, color }) => {
+          {rendered.filter(r => !r.small).map(({ shape, state, conquered, shieldActive, decaying, color }) => {
             const [cx, cy] = shape.centroid;
             return (
               <g key={`lbl-${shape.id}`} className="pointer-events-none">
@@ -221,12 +224,15 @@ const MapOfIndia = ({ states, myConquests = [], onStateClick, selectedId = null 
                 </text>
                 {conquered && (
                   <text x={cx} y={cy + 7} textAnchor="middle" dominantBaseline="central" fontSize="9">
-                    🏰
+                    {decaying ? '🏚️' : '🏰'}
                     <tspan fontSize="7" fontWeight="800" fill={color} dy="-1"> L{state.castleLevel}</tspan>
                   </text>
                 )}
                 {shieldActive && (
                   <text x={cx + 12} y={cy - 12} textAnchor="middle" dominantBaseline="central" fontSize="8">🛡️</text>
+                )}
+                {decaying && !shieldActive && (
+                  <text x={cx + 12} y={cy - 12} textAnchor="middle" dominantBaseline="central" fontSize="8">⚠️</text>
                 )}
               </g>
             );

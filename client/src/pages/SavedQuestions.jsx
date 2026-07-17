@@ -1,8 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import api from '../api';
 import Latex from 'react-latex-next';
 import { useNavigate } from 'react-router-dom';
 import { formatLatex } from '../utils/latex';
+
+const SUBJECT_CATEGORIES = {
+  'Soil Mechanics': 'Civil Engineering',
+  'Structural Analysis': 'Civil Engineering',
+  'Fluid Mechanics': 'Civil Engineering',
+  'Biology': 'GS',
+  'General Studies': 'GS',
+  'Polity': 'GS',
+  'World Core & Climate': 'GS',
+  'Indian Geography & Resources': 'GS',
+};
+
+const getCategory = (subject) => SUBJECT_CATEGORIES[subject] || 'Other';
 
 // Normalise options to a consistent array of { key, text } pairs
 const normaliseOptions = (opts) => {
@@ -25,6 +38,37 @@ const SavedQuestions = () => {
   const [practiceDone, setPracticeDone] = useState(false);
   const [shuffledQuestions, setShuffledQuestions] = useState([]);
   const navigate = useNavigate();
+
+  const [selectedCategory, setSelectedCategory] = useState('All');
+  const [selectedSubject, setSelectedSubject] = useState('All');
+
+  useEffect(() => {
+    setSelectedSubject('All');
+  }, [selectedCategory]);
+
+  const availableCategories = useMemo(() => {
+    const categories = new Set(bookmarks.map(b => getCategory(b.subject)));
+    return ['All', ...Array.from(categories).sort()];
+  }, [bookmarks]);
+
+  const availableSubjects = useMemo(() => {
+    if (selectedCategory === 'All') return ['All'];
+    const subjects = new Set(
+      bookmarks
+        .filter(b => getCategory(b.subject) === selectedCategory)
+        .map(b => b.subject)
+    );
+    return ['All', ...Array.from(subjects).sort()];
+  }, [bookmarks, selectedCategory]);
+
+  const filteredBookmarks = useMemo(() => {
+    return bookmarks.filter(b => {
+      const category = getCategory(b.subject);
+      const categoryMatch = selectedCategory === 'All' || category === selectedCategory;
+      const subjectMatch = selectedSubject === 'All' || b.subject === selectedSubject;
+      return categoryMatch && subjectMatch;
+    });
+  }, [bookmarks, selectedCategory, selectedSubject]);
 
   useEffect(() => {
     fetchBookmarks();
@@ -53,7 +97,7 @@ const SavedQuestions = () => {
 
   // Practice mode handlers
   const startPractice = () => {
-    const shuffled = [...bookmarks].sort(() => Math.random() - 0.5);
+    const shuffled = [...filteredBookmarks].sort(() => Math.random() - 0.5);
     setShuffledQuestions(shuffled);
     setPracticeMode(true);
     setPracticeIndex(0);
@@ -203,30 +247,71 @@ const SavedQuestions = () => {
           <span className="text-dh-text-muted text-sm font-heading font-bold">{bookmarks.length} saved</span>
         </div>
 
-        {/* Practice button */}
+        {/* Filter UI */}
         {bookmarks.length > 0 && (
+          <div className="mb-6 space-y-3">
+            {/* Primary Category Filter */}
+            <div className="flex flex-wrap gap-2">
+              {availableCategories.map(cat => (
+                <button
+                  key={cat}
+                  onClick={() => setSelectedCategory(cat)}
+                  className={`px-4 py-2 rounded-xl text-sm font-heading font-bold uppercase tracking-wide transition-all border-b-2 active:translate-y-[2px] active:border-b-0 ${
+                    selectedCategory === cat
+                      ? 'bg-dh-accent text-white border-dh-accent-dark'
+                      : 'bg-dh-card text-dh-text-muted border-dh-border hover:border-dh-accent/50 hover:text-dh-text'
+                  }`}
+                >
+                  {cat}
+                </button>
+              ))}
+            </div>
+
+            {/* Secondary Subject Filter */}
+            {selectedCategory !== 'All' && availableSubjects.length > 1 && (
+              <div className="flex flex-wrap gap-2 pl-4 border-l-4 border-dh-border py-1">
+                {availableSubjects.map(sub => (
+                  <button
+                    key={sub}
+                    onClick={() => setSelectedSubject(sub)}
+                    className={`px-3 py-1.5 rounded-lg text-xs font-heading font-bold uppercase tracking-wider transition-all border ${
+                      selectedSubject === sub
+                        ? 'bg-dh-surface text-dh-accent border-dh-accent'
+                        : 'bg-dh-card text-dh-text-muted border-dh-border hover:bg-dh-surface'
+                    }`}
+                  >
+                    {sub}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* Practice button */}
+        {filteredBookmarks.length > 0 && (
           <button
             onClick={startPractice}
             className="w-full mb-6 py-4 bg-gradient-to-r from-dh-accent to-dh-green text-black rounded-2xl font-heading font-black text-lg uppercase tracking-wide border-b-4 border-black/20 active:translate-y-[2px] active:border-b-0 transition-all shadow-lg shadow-dh-accent/20 hover:shadow-dh-accent/40"
           >
-            ⚡ Practice Saved Questions ({bookmarks.length})
+            ⚡ Practice Filtered Questions ({filteredBookmarks.length})
           </button>
         )}
 
         {loading ? (
           <div className="text-center py-20 text-dh-text-muted font-heading font-bold animate-pulse">Loading saved questions...</div>
-        ) : bookmarks.length === 0 ? (
+        ) : filteredBookmarks.length === 0 ? (
           <div className="text-center py-20 bg-dh-card rounded-2xl border-2 border-b-4 border-dh-border">
             <div className="text-4xl mb-3">📚</div>
-            <h2 className="text-xl font-heading font-bold text-dh-text-muted mb-2">No Saved Questions</h2>
-            <p className="text-dh-text-muted/70 mb-4">Bookmark questions during quizzes or matches — they'll appear here for revision.</p>
-            <button onClick={() => navigate('/journey')} className="px-6 py-2.5 bg-dh-accent text-white rounded-xl font-heading font-bold text-sm hover:bg-dh-accent-light transition-all">
-              Start a Journey →
+            <h2 className="text-xl font-heading font-bold text-dh-text-muted mb-2">No Questions Found</h2>
+            <p className="text-dh-text-muted/70 mb-4">Try changing your subject filters or save more questions.</p>
+            <button onClick={() => { setSelectedCategory('All'); setSelectedSubject('All'); }} className="px-6 py-2.5 bg-dh-accent text-white rounded-xl font-heading font-bold text-sm hover:bg-dh-accent-light transition-all">
+              Clear Filters
             </button>
           </div>
         ) : (
           <div className="space-y-5">
-            {bookmarks.map((b, idx) => {
+            {filteredBookmarks.map((b, idx) => {
               const opts = normaliseOptions(b.options);
               return (
                 <div 

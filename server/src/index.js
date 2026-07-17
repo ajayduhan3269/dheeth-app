@@ -25,6 +25,9 @@ const io = new Server(server, {
   }
 });
 
+// Initialize global map to track connected users
+global.connectedUsers = new Map();
+
 io.use(socketAuthMiddleware);
 
 app.use(cors());
@@ -61,13 +64,33 @@ mongoose.connect(MONGO_URI)
   .then(() => console.log('MongoDB Connected successfully'))
   .catch((err) => console.error('MongoDB connection error:', err));
 
+const { startDecayCron } = require('./cron/castleDecayCron');
+
 // Socket.io Connection Handler
 io.on('connection', (socket) => {
   console.log(`User Connected: ${socket.id}`);
+  
+  // Track the user globally upon connection
+  if (socket.user) {
+    global.connectedUsers.set(socket.user.id || socket.user.userId, socket.id);
+  }
+
   handleMatchmaking(io, socket);
   setupGameplaySockets(io, socket);
   setupGroupQuiz(io, socket);
+
+  socket.on('disconnect', () => {
+    if (socket.user) {
+      const uId = socket.user.id || socket.user.userId;
+      if (global.connectedUsers.get(uId) === socket.id) {
+        global.connectedUsers.delete(uId);
+      }
+    }
+  });
 });
+
+// Start Cron Jobs
+startDecayCron();
 
 const PORT = process.env.PORT || 5000;
 server.listen(PORT, () => {

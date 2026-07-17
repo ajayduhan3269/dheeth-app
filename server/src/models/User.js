@@ -73,11 +73,16 @@ const UserSchema = new mongoose.Schema({
     ownedSince: { type: Date, default: Date.now },
     shieldUntil: { type: Date, default: null },
     lastTributeAt: { type: Date, default: Date.now },
+    lastMaintainedAt: { type: Date, default: Date.now },
+  }],
+  siegeCooldowns: [{
+    stateId: String,
+    expiresAt: Date,
   }],
   friends: [{
     userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
     username: String,
-    status: { type: String, enum: ['pending', 'accepted'], default: 'pending' }
+    status: { type: String, enum: ['pending', 'pending_sent', 'pending_received', 'accepted'], default: 'pending' }
   }],
 }, { timestamps: true });
 

@@ -32,25 +32,56 @@ const seedDatabase = async () => {
       const filePath = path.join(seedsDir, file);
       const fileData = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
 
+      const isGsFile = file.includes('BIOLOGY') || file.includes('HISTORY') || file.includes('POLITY') || file.includes('GEOGRAPHY');
+
       const formattedQuestions = fileData.map(q => {
         let baseSubject = q.subject;
-        if (file.includes('fluid_mechanics')) baseSubject = 'Fluid Mechanics';
-        if (file.includes('highway_engineering')) baseSubject = 'Highway Engineering';
-        if (file.includes('soil_mechanics')) baseSubject = 'Soil Mechanics';
-        if (file.includes('building_materials')) baseSubject = 'Building Materials';
-        if (file.includes('environmental_engineering')) baseSubject = 'Environmental Engineering';
-        if (file.includes('irrigation_engineering')) baseSubject = 'Irrigation Engineering';
+        let finalTopic = q.topic || q.chapter_name || 'General';
+        let category = 'tech';
+        let qNum = q.question_number || '';
 
-        let finalTopic = q.topic || 'General';
-        if (q.subject && q.subject !== baseSubject) {
-          finalTopic = q.subject;
+        if (isGsFile) {
+          category = 'gs';
+          
+          // Clean topic/chapter name (e.g. CELL -> Cell, MUGHALS -> Mughals)
+          if (finalTopic && finalTopic === finalTopic.toUpperCase()) {
+            finalTopic = finalTopic
+              .toLowerCase()
+              .split(' ')
+              .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+              .join(' ')
+              .replace(/\/([a-z])/g, (m, p1) => '/' + p1.toUpperCase());
+          }
+
+          // Clean question number for Biology (e.g. Level I - 12 -> 12)
+          if (typeof qNum === 'string') {
+            const match = qNum.match(/Level\s+[IVXLCDM]+\s*-\s*(\d+)/i);
+            if (match) {
+              qNum = match[1];
+            } else if (qNum.includes('-')) {
+              const parts = qNum.split('-');
+              qNum = parts[parts.length - 1].trim();
+            }
+          }
+        } else {
+          // Technical subject resolving logic
+          if (file.includes('fluid_mechanics')) baseSubject = 'Fluid Mechanics';
+          if (file.includes('highway_engineering')) baseSubject = 'Highway Engineering';
+          if (file.includes('soil_mechanics')) baseSubject = 'Soil Mechanics';
+          if (file.includes('building_materials')) baseSubject = 'Building Materials';
+          if (file.includes('environmental_engineering')) baseSubject = 'Environmental Engineering';
+          if (file.includes('irrigation_engineering')) baseSubject = 'Irrigation Engineering';
+
+          if (q.subject && q.subject !== baseSubject) {
+            finalTopic = q.subject;
+          }
         }
 
         return {
           subject: baseSubject,
           topic: finalTopic,
-          category: 'tech',
-          questionNumber: q.question_number || '',
+          category: category,
+          questionNumber: qNum,
           questionText: q.question_text || q.questionText || 'No question text',
           options: {
             a: q.options?.a || 'N/A',

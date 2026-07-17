@@ -132,6 +132,13 @@ const SUBJECT_ICONS = {
   'Science & Technology': '🔬',
   'Current Affairs': '📰',
   'Surveying': '🔭',
+  'Ancient History': '🏺',
+  'Medieval History': '🏰',
+  'Modern History': '📜',
+  'Biology': '🧬',
+  'Polity': '🏛️',
+  'World Core & Climate': '🌏',
+  'Indian Geography & Resources': '🗺️',
 };
 
 const SubjectCard = ({ subject, index, onClick, disabled }) => {
