@@ -14,18 +14,20 @@ const QuizEngine = ({ questions, onComplete }) => {
 
   useEffect(() => {
     if (isAnswered) return;
-    
-    if (timeLeft === 0) {
-      handleTimeOut();
-      return;
-    }
 
     const timer = setInterval(() => {
-      setTimeLeft(prev => prev - 1);
+      setTimeLeft(prev => {
+        if (prev <= 1) {
+          clearInterval(timer);
+          handleTimeOut();
+          return 0;
+        }
+        return prev - 1;
+      });
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [timeLeft, isAnswered]);
+  }, [isAnswered]);
 
   const handleTimeOut = () => {
     setIsAnswered(true);
