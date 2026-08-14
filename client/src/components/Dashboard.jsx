@@ -285,6 +285,36 @@ export default function Dashboard() {
 
   /* ── Socket setup ──────────────────────────────────────── */
   useEffect(() => {
+    const checkOngoingMatch = () => {
+      socket.emit('match:sync', (response) => {
+        if (response && response.ok) {
+           const { matchId, currentQuestionIndex, questionEndsAt, players, subject, questions } = response;
+           
+           const playerIds = Object.keys(players);
+           const myId = currentUser?.id || currentUser?._id;
+           const opponentId = playerIds.find(id => id !== String(myId)) || playerIds[0];
+           
+           const payload = {
+             roomId: matchId,
+             subject,
+             questions,
+             currentQuestionIndex,
+             questionEndsAt,
+             players,
+             matchPhase: 'active',
+             player: { id: myId, username: players[myId]?.username, avatarSeed: players[myId]?.avatarSeed },
+             opponent: { id: opponentId, username: players[opponentId]?.username, avatarSeed: players[opponentId]?.avatarSeed }
+           };
+           navigate('/match', { state: { matchData: payload, remountKey: matchId + '_' + Date.now() } });
+        }
+      });
+    };
+
+    socket.on('connect', checkOngoingMatch);
+    if (socket.connected) {
+      checkOngoingMatch();
+    }
+
     socket.on('match_found', (payload) => {
       setIsSearching(false);
       setSearchFailed(false);
@@ -295,12 +325,13 @@ export default function Dashboard() {
     socket.on('error', () => { setIsSearching(false); setSearchFailed(true); });
 
     return () => {
+      socket.off('connect', checkOngoingMatch);
       socket.off('match_found');
       socket.off('disconnect');
       socket.off('error');
       if (searchTimeoutRef.current) clearTimeout(searchTimeoutRef.current);
     };
-  }, [navigate]);
+  }, [navigate, currentUser]);
 
   /* ── Auto-queue from map redirect ─────────────────────── */
   const autoQueuedRef = useRef(false);

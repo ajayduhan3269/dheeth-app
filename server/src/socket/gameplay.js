@@ -4,6 +4,8 @@ const statesData = require('../../data/statesData.json');
 
 const activeMatches = {};
 const rematchState = {};
+const activeMatchByUser = {}; // userId -> roomId
+const GRACE_PERIOD_MS = 30_000;
 
 const SHIELD_HOURS = 12;
 
@@ -190,52 +192,44 @@ const updatePlayerStats = async (userId, isWinner, isDraw, subject, correctAnswe
 };
 
 const initializeMatch = (roomId, subject, questions, p1, p2, isBotMatch) => {
-  activeMatches[roomId] = {
+  const match = {
+    roomId,
     subject,
     questions,
     currentQuestionIndex: 0,
     isBotMatch,
-    timeLeft: 60,
-    timerInterval: null,
+    timerTimeout: null,
+    botAnswerTimeout: null,
+    status: 'active',
+    questionEndsAt: 0,
     players: {
-      [p1.socketId]: { ...p1, score: 0, hasAnswered: false, correctAnswers: 0, currentStreak: 0, multiplier: 1 },
-      [p2.socketId]: { ...p2, score: 0, hasAnswered: false, correctAnswers: 0, currentStreak: 0, multiplier: 1 }
+      [p1.userId]: { ...p1, score: 0, hasAnswered: false, correctAnswers: 0, currentStreak: 0, multiplier: 1, connected: true, graceTimer: null },
+      [p2.userId]: { ...p2, score: 0, hasAnswered: false, correctAnswers: 0, currentStreak: 0, multiplier: 1, connected: true, graceTimer: null }
     }
   };
+  activeMatches[roomId] = match;
+  if (p1.userId !== 'bot') activeMatchByUser[p1.userId] = roomId;
+  if (p2.userId !== 'bot') activeMatchByUser[p2.userId] = roomId;
 };
 
 const startQuestionTimer = (io, roomId) => {
   const match = activeMatches[roomId];
   if (!match) return;
 
-  match.timeLeft = 60;
+  match.questionEndsAt = Date.now() + 60000; // 60 seconds
   Object.values(match.players).forEach(p => p.hasAnswered = false);
 
-  if (match.timerInterval) clearInterval(match.timerInterval);
+  if (match.timerTimeout) clearTimeout(match.timerTimeout);
   if (match.botAnswerTimeout) clearTimeout(match.botAnswerTimeout);
 
-  match.timerInterval = setInterval(() => {
-    match.timeLeft--;
-    io.to(roomId).emit('timer_tick', { timeLeft: match.timeLeft });
+  io.to(roomId).emit('timer_sync', { questionEndsAt: match.questionEndsAt });
 
-    if (match.timeLeft <= 0) {
-      clearInterval(match.timerInterval);
-      if (match.botAnswerTimeout) clearTimeout(match.botAnswerTimeout);
-      io.to(roomId).emit('time_up');
-      io.to(roomId).emit('reveal_answers', { 
-        players: match.players, 
-        questionIndex: match.currentQuestionIndex,
-        correctOption: match.questions[match.currentQuestionIndex].correctOption
-      });
-      
-      setTimeout(() => {
-        moveToNextQuestion(io, roomId);
-      }, 3000);
-    }
-  }, 1000);
+  match.timerTimeout = setTimeout(() => {
+    handleQuestionDeadline(io, roomId);
+  }, 60000);
 
   if (match.isBotMatch) {
-    const botPlayer = Object.values(match.players).find(p => p.socketId === 'bot_socket_id');
+    const botPlayer = Object.values(match.players).find(p => p.userId === 'bot');
     if (botPlayer) {
       const thinkingTime = Math.floor(Math.random() * (11 - 3 + 1) + 3) * 1000;
       
@@ -243,7 +237,7 @@ const startQuestionTimer = (io, roomId) => {
         const currentMatch = activeMatches[roomId];
         if (!currentMatch) return;
 
-        const bot = currentMatch.players['bot_socket_id'];
+        const bot = currentMatch.players['bot'];
         if (bot && !bot.hasAnswered) {
           bot.hasAnswered = true;
           
@@ -263,7 +257,8 @@ const startQuestionTimer = (io, roomId) => {
             const isFinalRound = currentMatch.currentQuestionIndex === currentMatch.questions.length - 1;
             const roundMultiplier = isFinalRound ? 2 : 1;
             
-            bot.score += Math.round(currentMatch.timeLeft * 10 * bot.multiplier * roundMultiplier);
+            const remainingSecs = Math.max(0, Math.round((currentMatch.questionEndsAt - Date.now()) / 1000));
+            bot.score += Math.round(remainingSecs * 10 * bot.multiplier * roundMultiplier);
           } else {
             bot.currentStreak = 0;
             bot.multiplier = 1;
@@ -275,7 +270,8 @@ const startQuestionTimer = (io, roomId) => {
 
           const allAnswered = Object.values(currentMatch.players).every(p => p.hasAnswered);
           if (allAnswered) {
-            clearInterval(currentMatch.timerInterval);
+            clearTimeout(currentMatch.timerTimeout);
+            if (currentMatch.botAnswerTimeout) clearTimeout(currentMatch.botAnswerTimeout);
             io.to(roomId).emit('reveal_answers', { 
               players: currentMatch.players, 
               questionIndex: currentMatch.currentQuestionIndex,
@@ -289,6 +285,22 @@ const startQuestionTimer = (io, roomId) => {
   }
 };
 
+const handleQuestionDeadline = (io, roomId) => {
+  const match = activeMatches[roomId];
+  if (!match || match.status !== 'active') return;
+
+  io.to(roomId).emit('time_up');
+  io.to(roomId).emit('reveal_answers', { 
+    players: match.players, 
+    questionIndex: match.currentQuestionIndex,
+    correctOption: match.questions[match.currentQuestionIndex].correctOption
+  });
+  
+  setTimeout(() => {
+    moveToNextQuestion(io, roomId);
+  }, 3000);
+};
+
 const moveToNextQuestion = (io, roomId) => {
    const match = activeMatches[roomId];
    if (!match) return;
@@ -297,9 +309,12 @@ const moveToNextQuestion = (io, roomId) => {
      clearTimeout(match.botAnswerTimeout);
      delete match.botAnswerTimeout;
    }
+   if (match.timerTimeout) clearTimeout(match.timerTimeout);
 
    match.currentQuestionIndex++;
    if (match.currentQuestionIndex >= match.questions.length) {
+       match.status = 'finishing';
+       
        const playersList = Object.values(match.players);
        const p1 = playersList[0];
        const p2 = playersList[1];
@@ -370,11 +385,13 @@ const moveToNextQuestion = (io, roomId) => {
            };
          };
 
-         if (p1 && !p1.socketId.startsWith('bot_')) {
+         if (p1 && p1.userId !== 'bot') {
            io.to(p1.socketId).emit('match_over', createSummary(true));
+           delete activeMatchByUser[p1.userId];
          }
-         if (p2 && !p2.socketId.startsWith('bot_')) {
+         if (p2 && p2.userId !== 'bot') {
            io.to(p2.socketId).emit('match_over', createSummary(false));
+           delete activeMatchByUser[p2.userId];
          }
 
          // Save to rematch state before deleting
@@ -387,23 +404,120 @@ const moveToNextQuestion = (io, roomId) => {
 
          delete activeMatches[roomId];
        }).catch(err => {
-         // Never let a match-end failure crash the whole server
          console.error(`[Match] Error finalizing ${roomId}:`, err);
+         if (p1) delete activeMatchByUser[p1.userId];
+         if (p2) delete activeMatchByUser[p2.userId];
          delete activeMatches[roomId];
        });
    } else {
-       io.to(roomId).emit('next_question', { questionIndex: match.currentQuestionIndex });
+       io.to(roomId).emit('next_question', { questionIndex: match.currentQuestionIndex, questionEndsAt: match.questionEndsAt });
        startQuestionTimer(io, roomId);
    }
 };
 
+const finishMatchForfeit = (io, roomId, loserId, winnerId) => {
+  const match = activeMatches[roomId];
+  if (!match || match.status !== 'active') return;
+  
+  match.status = 'finishing';
+  if (match.timerTimeout) clearTimeout(match.timerTimeout);
+  if (match.botAnswerTimeout) clearTimeout(match.botAnswerTimeout);
+
+  io.to(roomId).emit('opponent_disconnected', {
+    message: 'Opponent fled the arena. You win by forfeit!'
+  });
+
+  const remainingPlayer = match.players[winnerId];
+
+  Promise.all([
+    updatePlayerStats(loserId, false, false, match.subject, 0),
+    updatePlayerStats(winnerId, true, false, match.subject, remainingPlayer?.correctAnswers || 0),
+    updateDailyProgress(loserId, 5, false),
+    updateDailyProgress(winnerId, 5, true)
+  ]).then(() => console.log('Stats updated after forfeit.'))
+    .catch(err => console.error('[Match] Forfeit stats error:', err));
+
+  delete activeMatchByUser[loserId];
+  if (winnerId) delete activeMatchByUser[winnerId];
+  delete activeMatches[roomId];
+};
+
+const finishMatchAbandoned = (io, roomId) => {
+  const match = activeMatches[roomId];
+  if (!match || match.status !== 'active') return;
+  
+  match.status = 'finishing';
+  if (match.timerTimeout) clearTimeout(match.timerTimeout);
+  if (match.botAnswerTimeout) clearTimeout(match.botAnswerTimeout);
+
+  console.log(`[Match] Room ${roomId} abandoned. Both players disconnected.`);
+
+  Object.values(match.players).forEach(p => {
+    delete activeMatchByUser[p.userId];
+  });
+  delete activeMatches[roomId];
+};
+
 const setupGameplaySockets = (io, socket) => {
+  socket.on('match:sync', (ack) => {
+    const userId = socket.user?.id || socket.user?.userId;
+    if (!userId) {
+      if (typeof ack === 'function') ack({ ok: false, error: 'Unauthorized' });
+      return;
+    }
+
+    const roomId = activeMatchByUser[userId];
+    if (!roomId) {
+      if (typeof ack === 'function') ack({ ok: false, error: 'No active match' });
+      return;
+    }
+
+    const match = activeMatches[roomId];
+    if (!match || match.status !== 'active') {
+      if (typeof ack === 'function') ack({ ok: false, error: 'Match not active' });
+      return;
+    }
+
+    const player = match.players[userId];
+    if (!player) return;
+
+    if (player.graceTimer) {
+      clearTimeout(player.graceTimer);
+      player.graceTimer = null;
+    }
+    
+    // Disconnect stale socket if exists
+    if (player.socketId && player.socketId !== socket.id) {
+      const oldSocket = io.sockets.sockets.get(player.socketId);
+      if (oldSocket) oldSocket.disconnect(true);
+    }
+
+    player.socketId = socket.id;
+    player.connected = true;
+    socket.join(roomId);
+
+    io.to(roomId).emit('player:connection', { userId, connected: true });
+    
+    if (typeof ack === 'function') {
+      ack({ 
+        ok: true, 
+        matchId: roomId,
+        currentQuestionIndex: match.currentQuestionIndex,
+        questionEndsAt: match.questionEndsAt,
+        players: match.players,
+        subject: match.subject,
+        questions: match.questions
+      });
+    }
+  });
+
   socket.on('submit_answer', (data) => {
+    const userId = socket.user?.id || socket.user?.userId;
     const { roomId, selectedOption } = data;
     const match = activeMatches[roomId];
-    if (!match) return;
+    if (!match || match.status !== 'active') return;
 
-    const player = match.players[socket.id];
+    const player = match.players[userId];
     if (player && !player.hasAnswered) {
        player.hasAnswered = true;
        
@@ -423,7 +537,8 @@ const setupGameplaySockets = (io, socket) => {
            const isFinalRound = match.currentQuestionIndex === match.questions.length - 1;
            const roundMultiplier = isFinalRound ? 2 : 1;
 
-           player.score += Math.round(match.timeLeft * 10 * player.multiplier * roundMultiplier);
+           const remainingSecs = Math.max(0, Math.round((match.questionEndsAt - Date.now()) / 1000));
+           player.score += Math.round(remainingSecs * 10 * player.multiplier * roundMultiplier);
        } else {
            player.currentStreak = 0;
            player.multiplier = 1;
@@ -434,7 +549,7 @@ const setupGameplaySockets = (io, socket) => {
 
        const allAnswered = Object.values(match.players).every(p => p.hasAnswered);
        if (allAnswered) {
-           clearInterval(match.timerInterval);
+           clearTimeout(match.timerTimeout);
            if (match.botAnswerTimeout) clearTimeout(match.botAnswerTimeout);
            io.to(roomId).emit('reveal_answers', { 
              players: match.players, 
@@ -461,7 +576,7 @@ const setupGameplaySockets = (io, socket) => {
              const pId = socket.user.id || socket.user.userId;
              const dbUser = await User.findById(pId);
              const pAvatar = dbUser?.equippedAvatar || socket.user.avatarSeed || 'default-seed';
-             const botOpp = state.p2.socketId === 'bot_socket_id' ? state.p2 : state.p1;
+             const botOpp = state.p2.userId === 'bot' ? state.p2 : state.p1;
              
              const matchPayload = {
                roomId, subject: state.subject, questions, isBotMatch: true,
@@ -508,34 +623,34 @@ const setupGameplaySockets = (io, socket) => {
   });
   
   socket.on('disconnect', () => {
-      for (const roomId in activeMatches) {
-         const match = activeMatches[roomId];
-         if (match.players[socket.id]) {
-             clearInterval(match.timerInterval);
-             if (match.botAnswerTimeout) clearTimeout(match.botAnswerTimeout);
-             
-             io.to(roomId).emit('opponent_disconnected', {
-               message: 'Opponent fled the arena. You win by forfeit!'
-             });
-             
-             const playersList = Object.values(match.players);
-             const disconnectedPlayer = match.players[socket.id];
-             const remainingPlayer = playersList.find(p => p.socketId !== socket.id);
+    const userId = socket.user?.id || socket.user?.userId;
+    if (!userId) return;
+    
+    const roomId = activeMatchByUser[userId];
+    if (!roomId) return;
 
-             const loserId = disconnectedPlayer.userId;
-             const winnerId = remainingPlayer ? remainingPlayer.userId : null;
+    const match = activeMatches[roomId];
+    if (!match || match.status !== 'active') return;
 
-              Promise.all([
-                updatePlayerStats(loserId, false, false, match.subject, 0),
-                updatePlayerStats(winnerId, true, false, match.subject, remainingPlayer?.correctAnswers || 0),
-                updateDailyProgress(loserId, 5, false),
-                updateDailyProgress(winnerId, 5, true)
-              ]).then(() => console.log('Stats updated after forfeit.'))
-                .catch(err => console.error('[Match] Forfeit stats error:', err));
+    const player = match.players[userId];
+    if (!player || player.socketId !== socket.id) return;
 
-             delete activeMatches[roomId];
-         }
+    player.connected = false;
+    io.to(roomId).emit('player:connection', { userId, connected: false });
+
+    if (player.graceTimer) clearTimeout(player.graceTimer);
+    
+    player.graceTimer = setTimeout(() => {
+      if (!activeMatches[roomId] || activeMatches[roomId].status !== 'active') return;
+      
+      const opponent = Object.values(match.players).find(p => p.userId !== userId);
+      
+      if (!opponent || (!opponent.connected && opponent.graceTimer)) {
+        finishMatchAbandoned(io, roomId);
+      } else {
+        finishMatchForfeit(io, roomId, userId, opponent.userId);
       }
+    }, GRACE_PERIOD_MS);
   });
 };
 

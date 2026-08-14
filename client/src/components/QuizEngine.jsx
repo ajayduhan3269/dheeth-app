@@ -91,9 +91,20 @@ const QuizEngine = ({ questions, onComplete }) => {
       </div>
 
       <div className="p-8">
-        <h2 className="text-2xl font-heading font-bold text-dh-text mb-8 leading-relaxed">
+        <h2 className="whitespace-pre-wrap text-2xl font-heading font-bold text-dh-text mb-8 leading-relaxed">
           <Latex>{formatLatex(currentQuestion.questionText)}</Latex>
         </h2>
+
+        {currentQuestion.hasDiagram && currentQuestion.diagramUrl && (
+          <div className="w-full mb-8 flex justify-center">
+            <img 
+              src={currentQuestion.diagramUrl} 
+              alt="Diagram" 
+              className="w-full rounded-md object-contain border border-dh-border bg-dh-surface/60"
+              style={{ maxHeight: '350px' }}
+            />
+          </div>
+        )}
 
         <div className="space-y-4">
           {currentQuestion.options.map((option, index) => {
@@ -115,7 +126,7 @@ const QuizEngine = ({ questions, onComplete }) => {
         {isAnswered && (
           <div className="mt-8 pt-6 border-t border-dh-border animate-fade-in-up">
             <div className={`p-4 rounded-xl mb-6 flex items-start gap-4 ${selectedOption === currentQuestion.correctOption ? 'bg-dh-green/10 text-dh-green' : 'bg-dh-accent/5 text-dh-accent-light'}`}>
-              <div className="flex-1">
+              <div className="flex-1 whitespace-pre-wrap">
                 <span className="font-heading font-bold block mb-1">Explanation:</span>
                 <Latex>{formatLatex(currentQuestion.explanation)}</Latex>
               </div>

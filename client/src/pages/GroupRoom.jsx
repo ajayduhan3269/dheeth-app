@@ -253,11 +253,11 @@ const GroupRoom = () => {
 
           {/* Question */}
           <div className="bg-dh-card rounded-xl p-5 border border-dh-border mb-5">
-            <div className="text-base font-semibold text-dh-text">
+            <div className="whitespace-pre-wrap text-base font-semibold text-dh-text">
               <Latex>{formatLatex(currentQuestion.question)}</Latex>
             </div>
-            {currentQuestion.diagram && (
-              <img src={currentQuestion.diagram} alt="Diagram" className="mt-4 rounded-lg max-w-full" />
+            {currentQuestion.hasDiagram && currentQuestion.diagramUrl && (
+              <img src={currentQuestion.diagramUrl} alt="Diagram" className="mt-4 rounded-lg max-w-full" />
             )}
           </div>
 
@@ -297,7 +297,7 @@ const GroupRoom = () => {
           {revealed && correctOption && (
             <div className="mt-5 p-4 bg-dh-accent/5 border-l-4 border-dh-accent rounded-r-md">
               <h4 className="text-dh-accent-light font-heading font-bold mb-2 text-sm">Explanation:</h4>
-              <div className="text-dh-text text-sm">
+              <div className="whitespace-pre-wrap text-dh-text text-sm">
                 <Latex>{formatLatex(currentQuestion.explanation || 'No explanation available.')}</Latex>
               </div>
             </div>

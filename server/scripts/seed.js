@@ -92,7 +92,7 @@ const seedDatabase = async () => {
           correctOption: q.correct_answer || q.correctOption || 'a',
           explanation: q.solution || q.explanation || 'No explanation provided.',
           hasDiagram: q.has_diagram || false,
-          diagramUrl: q.diagram_link || null
+          diagramUrl: q.diagram_link || q.diagram_url || null
         };
       });
 

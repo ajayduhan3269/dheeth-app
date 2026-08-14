@@ -1,49 +1,129 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { socket } from '../socket';
-import Latex from 'react-latex-next';
+import LatexRenderer from './LatexRenderer';
 import MatchSummary from './MatchSummary';
 import api, { getAvatarUrl } from '../api';
 import { sounds } from '../utils/sound';
-import { formatLatex } from '../utils/latex';
 
 const MatchScreen = ({ matchPayload }) => {
-  const [matchPhase, setMatchPhase] = useState('intro');
+  const pId = matchPayload.player.id;
+  const oId = matchPayload.opponent.id;
+
+  const extractInitial = (payload) => {
+    const qIndex = payload.currentQuestionIndex || 0;
+    const pData = payload.players?.[pId];
+    const oData = payload.players?.[oId];
+    const myAnswer = pData?.answers?.[qIndex];
+    const oppAnswer = oData?.answers?.[qIndex];
+    const timeUp = payload.questionEndsAt && Date.now() >= payload.questionEndsAt;
+    const bothAnswered = pData?.hasAnswered && oData?.hasAnswered;
+    const isRevealed = timeUp || bothAnswered;
+    const correctOpt = payload.questions?.[qIndex]?.correctOption?.toUpperCase();
+    
+    return {
+      currentIndex: qIndex,
+      questionEndsAt: payload.questionEndsAt || 0,
+      playerScore: pData?.score || 0,
+      playerCorrectCount: pData?.correctAnswers || 0,
+      playerStreak: pData?.currentStreak || 0,
+      opponentScore: oData?.score || 0,
+      opponentCorrectCount: oData?.correctAnswers || 0,
+      opponentConnected: oData?.connected ?? true,
+      selectedOption: myAnswer ? myAnswer.toUpperCase() : null,
+      feedbackState: isRevealed ? (myAnswer?.toUpperCase() === correctOpt ? 'correct' : 'wrong') : null,
+      correctOption: isRevealed ? correctOpt : null,
+      opponentSelected: isRevealed ? (oppAnswer?.toUpperCase() || null) : null
+    };
+  };
+
+  const initial = extractInitial(matchPayload);
+
+  const [matchPhase, setMatchPhase] = useState(matchPayload.matchPhase || 'intro');
   const [timeLeft, setTimeLeft] = useState(60);
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [playerScore, setPlayerScore] = useState(0);
-  const [playerCorrectCount, setPlayerCorrectCount] = useState(0);
-  const [opponentScore, setOpponentScore] = useState(0);
-  const [opponentCorrectCount, setOpponentCorrectCount] = useState(0);
-  const [selectedOption, setSelectedOption] = useState(null);
+  const [questionEndsAt, setQuestionEndsAt] = useState(initial.questionEndsAt);
+  const [currentIndex, setCurrentIndex] = useState(initial.currentIndex);
+  
+  const [playerScore, setPlayerScore] = useState(initial.playerScore);
+  const [playerCorrectCount, setPlayerCorrectCount] = useState(initial.playerCorrectCount);
+  const [opponentScore, setOpponentScore] = useState(initial.opponentScore);
+  const [opponentCorrectCount, setOpponentCorrectCount] = useState(initial.opponentCorrectCount);
+  const [opponentConnected, setOpponentConnected] = useState(initial.opponentConnected);
+
+  const [selectedOption, setSelectedOption] = useState(initial.selectedOption);
   const [isMatchOver, setIsMatchOver] = useState(false);
   const [summaryData, setSummaryData] = useState(null);
   const [activeReactions, setActiveReactions] = useState([]);
-  const [playerStreak, setPlayerStreak] = useState(0);
-  const [feedbackState, setFeedbackState] = useState(null);
-  const [correctOption, setCorrectOption] = useState(null);
-  const [opponentSelected, setOpponentSelected] = useState(null);
+  const [playerStreak, setPlayerStreak] = useState(initial.playerStreak);
+  const [feedbackState, setFeedbackState] = useState(initial.feedbackState);
+  const [correctOption, setCorrectOption] = useState(initial.correctOption);
+  const [opponentSelected, setOpponentSelected] = useState(initial.opponentSelected);
   const [showLightning, setShowLightning] = useState(false);
   const [vibrate, setVibrate] = useState(false);
   const [scoreDiff, setScoreDiff] = useState(null);
-  const prevScoreRef = useRef(0);
+  const prevScoreRef = useRef(initial.playerScore);
   const [savedMatchQuestions, setSavedMatchQuestions] = useState(new Set());
 
   useEffect(() => {
-    const introTimer = setTimeout(() => {
-      setMatchPhase('active');
-    }, 2500);
-    return () => clearTimeout(introTimer);
-  }, []);
+    socket.emit('match:sync', (response) => {
+      if (response && response.ok) {
+        const updated = extractInitial(response);
+        setCurrentIndex(updated.currentIndex);
+        if (updated.questionEndsAt) setQuestionEndsAt(updated.questionEndsAt);
+        setPlayerScore(updated.playerScore);
+        setPlayerCorrectCount(updated.playerCorrectCount);
+        setPlayerStreak(updated.playerStreak);
+        setOpponentScore(updated.opponentScore);
+        setOpponentCorrectCount(updated.opponentCorrectCount);
+        setOpponentConnected(updated.opponentConnected);
+        setSelectedOption(updated.selectedOption);
+        setFeedbackState(updated.feedbackState);
+        setCorrectOption(updated.correctOption);
+        setOpponentSelected(updated.opponentSelected);
+      }
+    });
+  }, [matchPayload.roomId]);
 
   useEffect(() => {
-    socket.on('timer_tick', (data) => {
-      setTimeLeft(data.timeLeft);
-      if (data.timeLeft <= 5 && data.timeLeft > 0) sounds.tick();
+    if (matchPhase === 'intro') {
+      const introTimer = setTimeout(() => {
+        setMatchPhase('active');
+      }, 2500);
+      return () => clearTimeout(introTimer);
+    }
+  }, [matchPhase]);
+
+  // Local timer based on absolute end time
+  useEffect(() => {
+    if (matchPhase !== 'active' || !questionEndsAt) return;
+    
+    const tick = () => {
+      const now = Date.now();
+      const remaining = Math.max(0, Math.round((questionEndsAt - now) / 1000));
+      setTimeLeft(prev => {
+        if (prev > 5 && remaining <= 5 && remaining > 0) sounds.tick();
+        return remaining;
+      });
+    };
+    
+    tick(); // initial
+    const interval = setInterval(tick, 1000);
+    return () => clearInterval(interval);
+  }, [questionEndsAt, matchPhase]);
+
+  useEffect(() => {
+    socket.on('timer_sync', (data) => {
+      setQuestionEndsAt(data.questionEndsAt);
+    });
+
+    socket.on('player:connection', (data) => {
+      if (data.userId === matchPayload.opponent.id || data.userId === 'bot') {
+        setOpponentConnected(data.connected);
+      }
     });
 
     socket.on('score_update', (data) => {
-      const me = data.players[matchPayload.player.id] || data.players[socket.id];
-      const opp = data.players[matchPayload.opponent.id] || Object.values(data.players).find(p => p.socketId !== socket.id && p.socketId !== matchPayload.player.id);
+      const me = data.players[matchPayload.player.id];
+      const opp = data.players[matchPayload.opponent.id] || Object.values(data.players).find(p => p.userId !== matchPayload.player.id);
       if (me) {
         setPlayerScore(me.score);
         setPlayerCorrectCount(me.correctAnswers || 0);
@@ -89,6 +169,7 @@ const MatchScreen = ({ matchPayload }) => {
 
     socket.on('next_question', (data) => {
       setCurrentIndex(data.questionIndex);
+      if (data.questionEndsAt) setQuestionEndsAt(data.questionEndsAt);
       setSelectedOption(null);
       setFeedbackState(null);
       setCorrectOption(null);
@@ -102,7 +183,8 @@ const MatchScreen = ({ matchPayload }) => {
     });
 
     return () => {
-      socket.off('timer_tick');
+      socket.off('timer_sync');
+      socket.off('player:connection');
       socket.off('score_update');
       socket.off('answer_result');
       socket.off('reveal_answers');
@@ -268,7 +350,8 @@ const MatchScreen = ({ matchPayload }) => {
               {/* Opponent Section (Right) */}
               <div className="flex items-center gap-3 justify-end">
                 <div className="flex flex-col items-end">
-                  <span className="font-bold text-sm md:text-base text-white">
+                  <span className="font-bold text-sm md:text-base text-white flex items-center gap-2">
+                    {!opponentConnected && <span className="text-[10px] bg-dh-red/20 text-dh-red px-2 py-0.5 rounded-full animate-pulse border border-dh-red/40">Reconnecting...</span>}
                     {matchPayload.opponent.username}
                   </span>
                   <span className="font-black text-xl md:text-2xl text-dh-red tracking-wider">
@@ -276,11 +359,11 @@ const MatchScreen = ({ matchPayload }) => {
                   </span>
                 </div>
                 <div className="relative">
-                  <div className="absolute -inset-1 bg-dh-red rounded-full opacity-70 blur-[2px]"></div>
+                  <div className={`absolute -inset-1 ${opponentConnected ? 'bg-dh-red' : 'bg-dh-text-muted'} rounded-full opacity-70 blur-[2px]`}></div>
                   <img 
                     src={opponentAvatar}
                     alt="Opponent"
-                    className="w-12 h-12 md:w-16 md:h-16 rounded-full relative z-10 border-2 border-dh-red bg-dh-card"
+                    className={`w-12 h-12 md:w-16 md:h-16 rounded-full relative z-10 border-2 ${opponentConnected ? 'border-dh-red' : 'border-dh-text-muted opacity-50'} bg-dh-card`}
                   />
                 </div>
               </div>
@@ -298,7 +381,7 @@ const MatchScreen = ({ matchPayload }) => {
                 ========================================= */}
             <div className="w-full flex flex-col items-center flex-1 justify-center mb-6">
               <h2 className="text-2xl md:text-4xl font-normal text-center text-white mb-6 leading-tight max-w-2xl px-2">
-                <Latex>{formatLatex(currentQ.questionText)}</Latex>
+                <LatexRenderer text={currentQ.questionText} />
               </h2>
 
               {/* Bookmark button — appears after answer reveal */}
@@ -337,14 +420,6 @@ const MatchScreen = ({ matchPayload }) => {
                 const isCorrect = keyUpper === correctOption;
                 const isPlayerSelected = keyUpper === selectedOption;
                 const isOpponentSelected = keyUpper === opponentSelected;
-                
-                // Pure QuizUp logic: 
-                // Default: white background, black text.
-                // If I selected it (and not revealed yet): Green background.
-                // Upon reveal:
-                // Correct answer becomes Green.
-                // If I picked wrong, it stays Red.
-                // We add little pointer triangles if player or opponent selected it.
 
                 let bgClass = "bg-white text-black";
                 
@@ -383,7 +458,7 @@ const MatchScreen = ({ matchPayload }) => {
                       </div>
                     )}
                     
-                    <span className="relative z-10 w-full px-10"><Latex>{formatLatex(value)}</Latex></span>
+                    <span className="relative z-10 w-full px-10"><LatexRenderer text={value} /></span>
                   </button>
                 );
               })}

@@ -1,0 +1,43 @@
+.latex-renderer {
+  color: inherit;
+  font: inherit;
+  line-height: 1.6;
+}
+
+/* Preserve backend line breaks when requested. */
+.latex-renderer[data-preserve-newlines="true"] .latex-renderer__text {
+  white-space: pre-wrap;
+}
+
+/* Inline expressions should remain in the surrounding text flow. */
+.latex-renderer__math--inline {
+  display: inline;
+}
+
+/*
+ * Large arrays can be wider than mobile screens.
+ * Scroll horizontally instead of breaking the page layout.
+ */
+.latex-renderer__math--block {
+  display: block;
+  max-width: 100%;
+  margin: 1rem 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* KaTeX adds its own display wrapper. */
+.latex-renderer__math--block .katex-display {
+  width: max-content;
+  min-width: 100%;
+  margin: 0;
+  padding: 0.25rem 0;
+}
+
+/* Preserve a readable fallback if an unexpected error occurs. */
+.latex-renderer__error {
+  color: #b42318;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}

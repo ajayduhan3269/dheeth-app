@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Latex from 'react-latex-next';
+import LatexRenderer from './LatexRenderer';
 import { socket } from '../socket';
 import api, { getAvatarUrl } from '../api';
 import Confetti from './Confetti';
 import { sounds } from '../utils/sound';
-import { formatLatex } from '../utils/latex';
 const MatchSummary = ({ summaryData, subject, matchPayload }) => {
   const navigate = useNavigate();
   const [savedQuestions, setSavedQuestions] = useState(new Set());
@@ -260,7 +259,7 @@ const MatchSummary = ({ summaryData, subject, matchPayload }) => {
                 <div className="flex justify-between items-start gap-4 mb-4">
                   <div className="flex-1 text-base font-semibold text-dh-text">
                     <span className="text-dh-text-muted mr-2">{idx + 1}.</span>
-                    <Latex>{formatLatex(q.questionText)}</Latex>
+                    <LatexRenderer text={q.questionText} />
                   </div>
                   <button 
                     onClick={() => handleSaveQuestion(q)}
@@ -294,7 +293,7 @@ const MatchSummary = ({ summaryData, subject, matchPayload }) => {
                         <div className={`w-8 h-8 rounded-full flex items-center justify-center font-mono font-bold text-sm ${optLetter.toLowerCase() === q.correctOption?.toLowerCase() ? 'bg-dh-green text-black' : 'bg-dh-border text-dh-text-muted'}`}>
                           {key}
                         </div>
-                        <span className="flex-1"><Latex>{formatLatex(opt)}</Latex></span>
+                        <span className="flex-1"><LatexRenderer text={opt} /></span>
                       </div>
                     );
                   })}
@@ -318,7 +317,7 @@ const MatchSummary = ({ summaryData, subject, matchPayload }) => {
                 <div className="mt-5 p-4 bg-dh-accent/5 border-l-4 border-dh-accent rounded-r-md">
                   <h4 className="text-dh-accent-light font-heading font-bold mb-2 text-sm">Explanation:</h4>
                   <div className="text-dh-text text-sm">
-                    <Latex>{formatLatex(q.explanation || 'No explanation available.')}</Latex>
+                    <LatexRenderer text={q.explanation || 'No explanation available.'} />
                   </div>
                 </div>
               </div>
