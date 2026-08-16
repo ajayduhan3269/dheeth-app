@@ -111,10 +111,21 @@ router.get('/active/mine', verifyToken, async (req, res) => {
     }).sort({ createdAt: -1 });
 
     // Check for active live duel in progress involving user
-    const liveDuel = await Duel.findOne({
+    let liveDuel = await Duel.findOne({
       $or: [{ hostId: userId }, { guestId: userId }],
       status: 'live',
     }).sort({ updatedAt: -1 });
+
+    // Verify if the live duel actually has an ongoing in-memory match
+    if (liveDuel) {
+      const { activeMatches } = require('../socket/gameplay');
+      const inMemoryMatch = liveDuel.roomId ? activeMatches[liveDuel.roomId] : null;
+      if (!inMemoryMatch || (inMemoryMatch.status !== 'active' && !inMemoryMatch.waitingForHost)) {
+        // Match has concluded or expired; mark completed so banner is immediately removed
+        await Duel.updateOne({ _id: liveDuel._id }, { status: 'completed' });
+        liveDuel = null;
+      }
+    }
 
     return res.json({
       ok: true,

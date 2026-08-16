@@ -224,6 +224,7 @@ function setupDuelSockets(io, socket) {
                 message: 'Host did not connect in time. Challenge standby expired.',
               });
               match.status = 'cancelled';
+              Duel.updateOne({ roomId }, { status: 'expired' }).catch(() => {});
               delete activeMatches[roomId];
             }
           }, 60_000);

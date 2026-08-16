@@ -1,6 +1,7 @@
 const User = require('../models/User');
 const Question = require('../models/Question');
 const Rivalry = require('../models/Rivalry');
+const Duel = require('../models/Duel');
 const MistakeNotebook = require('../models/MistakeNotebook');
 const QuestionAttempt = require('../models/QuestionAttempt');
 const { evaluatePowerupGrants, applyEmp } = require('../services/powerupEngine');
@@ -794,11 +795,13 @@ const moveToNextQuestion = (io, roomId) => {
             requests: {}
           };
 
+          Duel.updateOne({ roomId }, { status: 'completed' }).catch(() => {});
           delete activeMatches[roomId];
         }).catch(err => {
           console.error(`[Match] Error finalizing ${roomId}:`, err);
           if (p1 && p1.userId) delete activeMatchByUser[p1.userId];
           if (p2 && p2.userId) delete activeMatchByUser[p2.userId];
+          Duel.updateOne({ roomId }, { status: 'completed' }).catch(() => {});
           delete activeMatches[roomId];
         });
     } else {
@@ -836,6 +839,7 @@ const finishMatchForfeit = (io, roomId, loserId, winnerId) => {
 
   if (loserId) delete activeMatchByUser[loserId];
   if (winnerId) delete activeMatchByUser[winnerId];
+  Duel.updateOne({ roomId }, { status: 'completed' }).catch(() => {});
   delete activeMatches[roomId];
 };
 
@@ -843,16 +847,19 @@ const finishMatchAbandoned = (io, roomId) => {
   const match = activeMatches[roomId];
   if (!match || match.status !== 'active') return;
   
-  match.status = 'finishing';
+  match.status = 'abandoned';
   clearMatchGraceTimers(roomId);
   if (match.timerTimeout) clearTimeout(match.timerTimeout);
   if (match.botAnswerTimeout) clearTimeout(match.botAnswerTimeout);
 
-  console.log(`[Match] Room ${roomId} abandoned. Both players disconnected.`);
-
-  Object.values(match.players).forEach(p => {
-    delete activeMatchByUser[p.userId];
+  io.to(roomId).emit('match_abandoned', {
+    message: 'Both players disconnected. Match cancelled.'
   });
+
+  Object.keys(match.players || {}).forEach(uid => {
+    if (uid && uid !== 'bot') delete activeMatchByUser[uid];
+  });
+  Duel.updateOne({ roomId }, { status: 'completed' }).catch(() => {});
   delete activeMatches[roomId];
 };
 

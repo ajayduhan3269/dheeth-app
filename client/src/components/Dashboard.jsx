@@ -151,12 +151,22 @@ const ActiveDuelBanner = ({ duel, onRefresh, onNavigate }) => {
         </div>
 
         {isLive ? (
-          <button
-            onClick={() => onNavigate(`/duel/${duel.code}`)}
-            className="px-4 py-2 rounded-xl bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-heading font-black text-xs uppercase tracking-wide shadow-md transition-all active:scale-95 flex items-center gap-1.5 flex-shrink-0"
-          >
-            <span>Enter Match</span> →
-          </button>
+          <div className="flex items-center gap-2 flex-shrink-0">
+            <button
+              onClick={() => onNavigate(`/duel/${duel.code}`)}
+              className="px-4 py-2 rounded-xl bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-heading font-black text-xs uppercase tracking-wide shadow-md transition-all active:scale-95 flex items-center gap-1.5"
+            >
+              <span>Enter Match</span> →
+            </button>
+            <button
+              onClick={handleCancel}
+              disabled={cancelling}
+              className="p-2 rounded-xl bg-slate-800/80 hover:bg-rose-500/20 text-slate-400 hover:text-rose-400 border border-slate-700/60 transition-all text-xs font-bold"
+              title="Dismiss challenge"
+            >
+              ✕
+            </button>
+          </div>
         ) : (
           <button
             onClick={handleCancel}
