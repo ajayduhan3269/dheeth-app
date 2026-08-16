@@ -97,6 +97,113 @@ router.post('/create', verifyToken, async (req, res) => {
   }
 });
 
+// GET /api/duel/active/mine — Fetch user's active pending or live duels for Dashboard management
+router.get('/active/mine', verifyToken, async (req, res) => {
+  try {
+    const userId = req.user.id || req.user._id || req.user.userId;
+    const now = new Date();
+
+    // Check for pending duel created by user that has not expired
+    const pendingDuel = await Duel.findOne({
+      hostId: userId,
+      status: 'pending',
+      expiresAt: { $gt: now },
+    }).sort({ createdAt: -1 });
+
+    // Check for active live duel in progress involving user
+    const liveDuel = await Duel.findOne({
+      $or: [{ hostId: userId }, { guestId: userId }],
+      status: 'live',
+    }).sort({ updatedAt: -1 });
+
+    return res.json({
+      ok: true,
+      pendingDuel: pendingDuel || null,
+      liveDuel: liveDuel || null,
+    });
+  } catch (err) {
+    console.error('Error fetching active duels for user:', err);
+    return res.status(500).json({ ok: false, error: 'Failed to fetch active challenges' });
+  }
+});
+
+// GET /api/duel/:code/match-payload — Fetch full matchData for a live duel (for notification/reconnect entry)
+router.get('/:code/match-payload', verifyToken, async (req, res) => {
+  try {
+    const rawCode = req.params.code ? req.params.code.trim().toUpperCase() : '';
+    const userId = (req.user.id || req.user._id || req.user.userId).toString();
+
+    const duel = await Duel.findOne({ code: rawCode });
+    if (!duel) {
+      return res.status(404).json({ ok: false, error: 'Duel not found' });
+    }
+
+    const isHost = duel.hostId.toString() === userId;
+    const isGuest = duel.guestId && duel.guestId.toString() === userId;
+
+    if (!isHost && !isGuest) {
+      return res.status(403).json({ ok: false, error: 'You are not a participant in this duel.' });
+    }
+
+    if (duel.status !== 'live' && duel.status !== 'accepted') {
+      return res.status(400).json({ ok: false, error: `Duel is not live (status: ${duel.status})` });
+    }
+
+    const { getMatchByRoomId } = require('../socket/gameplay');
+    const match = getMatchByRoomId(duel.roomId);
+
+    if (!match) {
+      return res.status(404).json({ ok: false, error: 'Match session is no longer active.' });
+    }
+
+    const rivalry = await Rivalry.getOrCreateRivalry(duel.hostId, duel.guestId);
+
+    const p1Data = {
+      id: duel.hostId.toString(),
+      username: duel.hostUsername,
+      avatarSeed: duel.hostAvatar,
+      title: duel.hostTitle,
+    };
+
+    const p2Data = {
+      id: duel.guestId.toString(),
+      username: duel.guestUsername,
+      avatarSeed: duel.guestAvatar,
+      title: duel.guestTitle,
+    };
+
+    const matchData = {
+      roomId: duel.roomId,
+      subject: match.subject || duel.config.subject,
+      questions: match.questions,
+      isBotMatch: false,
+      mode: 'duel',
+      isDuel: true,
+      duelCode: duel.code,
+      ratingMode: 'friendly',
+      secondsPerQ: match.secondsPerQ || duel.config.secondsPerQ || 20,
+      waitingForHost: Boolean(match.waitingForHost),
+      player: isHost ? p1Data : p2Data,
+      opponent: isHost ? p2Data : p1Data,
+      rivalry: {
+        scoreHost: duel.hostId.toString() === rivalry.players[0].toString() ? rivalry.scoreA : rivalry.scoreB,
+        scoreGuest: duel.guestId.toString() === rivalry.players[0].toString() ? rivalry.scoreA : rivalry.scoreB,
+        totalDuels: rivalry.totalDuels,
+        streak: rivalry.currentStreak,
+      },
+    };
+
+    return res.json({
+      ok: true,
+      matchData,
+      duel,
+    });
+  } catch (err) {
+    console.error('Error fetching duel match payload:', err);
+    return res.status(500).json({ ok: false, error: 'Failed to fetch match session' });
+  }
+});
+
 // GET /api/duel/:code — Fetch duel details + Head-to-Head rivalry stats
 router.get('/:code', optionalAuth, async (req, res) => {
   try {
@@ -158,3 +265,4 @@ router.post('/:code/cancel', verifyToken, async (req, res) => {
 });
 
 module.exports = router;
+

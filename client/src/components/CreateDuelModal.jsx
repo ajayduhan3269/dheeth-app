@@ -21,7 +21,7 @@ const SUBJECTS = [
   { name: 'Science & Technology', emoji: '🔬', color: 'from-cyan-500/20 to-blue-500/10 border-cyan-500/30 text-cyan-400' },
 ];
 
-const CreateDuelModal = ({ isOpen, onClose }) => {
+const CreateDuelModal = ({ isOpen, onClose, onDuelCreated }) => {
   const [selectedSubject, setSelectedSubject] = useState(SUBJECTS[0].name);
   const [questionCount, setQuestionCount] = useState(5);
   const [secondsPerQ, setSecondsPerQ] = useState(30);
@@ -94,6 +94,7 @@ const CreateDuelModal = ({ isOpen, onClose }) => {
       if (res.data?.ok) {
         setCreatedDuel(res.data.duel);
         sounds.success?.();
+        onDuelCreated?.(res.data.duel);
       }
     } catch (err) {
       console.error('Failed to create duel:', err);

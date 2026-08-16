@@ -130,6 +130,53 @@ const DuelLobbyPage = () => {
     }
   };
 
+  const currentUserId = currentUser ? String(currentUser.id || currentUser._id) : '';
+  const isHost = Boolean(duel && currentUserId && currentUserId === String(duel.hostId));
+  const isGuest = Boolean(duel && currentUserId && duel.guestId && currentUserId === String(duel.guestId));
+
+  // Automatically transition Host or Guest into active match if duel is already accepted/live
+  useEffect(() => {
+    if (!duel || (duel.status !== 'live' && duel.status !== 'accepted')) return;
+    if (!isHost && !isGuest) return;
+
+    let isCancelled = false;
+
+    const connectToMatch = async () => {
+      try {
+        const res = await api.get(`/api/duel/${code.toUpperCase()}/match-payload`);
+        if (isCancelled || !res.data?.ok || !res.data?.matchData) return;
+
+        sounds.capture?.();
+
+        // Join socket room
+        socket.emit('duel:join_live_match', {
+          code: code.toUpperCase(),
+          roomId: res.data.matchData.roomId,
+        });
+
+        // Navigate directly into active match
+        navigate('/match', {
+          state: {
+            matchData: res.data.matchData,
+            remountKey: `${res.data.matchData.roomId}_${Date.now()}`,
+          },
+          replace: true,
+        });
+      } catch (err) {
+        console.error('Failed to load live match payload:', err);
+        if (!isCancelled) {
+          setError(err.response?.data?.error || 'Could not connect to live match.');
+        }
+      }
+    };
+
+    connectToMatch();
+
+    return () => {
+      isCancelled = true;
+    };
+  }, [duel, isHost, isGuest, code, navigate]);
+
   if (authLoading || (loading && !error)) {
     return (
       <div className="min-h-screen bg-dh-bg flex flex-col items-center justify-center p-4">
@@ -164,7 +211,22 @@ const DuelLobbyPage = () => {
     );
   }
 
-  // Already Claimed
+  // Active / Live Match Connecting Splash for Participants
+  if ((duel.status === 'accepted' || duel.status === 'live') && (isHost || isGuest)) {
+    return (
+      <div className="min-h-screen bg-dh-bg flex flex-col items-center justify-center p-4 text-center">
+        <div className="w-20 h-20 rounded-full border-4 border-dh-accent border-t-transparent animate-spin mb-6 shadow-[0_0_25px_rgba(0,230,118,0.4)]" />
+        <h2 className="text-2xl font-heading font-black text-white mb-2 animate-pulse">
+          ⚔️ Entering 1v1 Battle Arena...
+        </h2>
+        <p className="text-dh-text-muted text-sm max-w-xs">
+          Connecting you with <span className="text-white font-bold">{isHost ? duel.guestUsername || 'Friend' : duel.hostUsername}</span> in {duel.config?.subject}...
+        </p>
+      </div>
+    );
+  }
+
+  // Already Claimed by another third-party user
   if (duel.status === 'accepted' || duel.status === 'live' || duel.status === 'completed') {
     return (
       <div className="min-h-screen bg-dh-bg flex items-center justify-center p-4">
@@ -187,9 +249,7 @@ const DuelLobbyPage = () => {
     );
   }
 
-  const isHost = currentUser && String(currentUser.id || currentUser._id) === String(duel.hostId);
-
-  // Host's waiting view if they open their own link
+  // Host's waiting view if they open their own link while pending
   if (isHost) {
     return (
       <div className="min-h-screen bg-dh-bg flex items-center justify-center p-4">
@@ -211,7 +271,7 @@ const DuelLobbyPage = () => {
               👑 You are the Creator ({currentUser?.username})
             </p>
             <p className="text-[11px] text-dh-text-muted leading-relaxed">
-              To test accepting this duel from your browser, open this link in a tab where you are logged in with a <strong>different test account</strong>, or send it to a friend!
+              When your friend accepts, you'll receive a push notification or start automatically right here!
             </p>
           </div>
 

@@ -356,6 +356,7 @@ const initializeMatch = (roomId, subject, questions, p1, p2, isBotMatch, config 
     questionCount: questions.length,
     roundNumber: Number(config?.roundNumber) || 1,
     sessionRivalry: config?.sessionRivalry || null,
+    waitingForHost: Boolean(config?.waitingForHost),
     mode: config?.mode || 'RANKED',
     timerTimeout: null,
     botAnswerTimeout: null,
@@ -1216,4 +1217,7 @@ const setupGameplaySockets = (io, socket) => {
   });
 };
 
-module.exports = { initializeMatch, startQuestionTimer, setupGameplaySockets };
+const getMatchByRoomId = (roomId) => activeMatches[roomId] || null;
+
+module.exports = { initializeMatch, startQuestionTimer, setupGameplaySockets, activeMatches, getMatchByRoomId };
+

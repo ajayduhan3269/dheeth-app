@@ -77,6 +77,124 @@ const WarAlert = ({ onGoToMap }) => (
   </button>
 );
 
+/* ─── Active 1v1 Duel Challenge Banner ────────────────────────── */
+const ActiveDuelBanner = ({ duel, onRefresh, onNavigate }) => {
+  const [copied, setCopied] = useState(false);
+  const [cancelling, setCancelling] = useState(false);
+
+  if (!duel) return null;
+
+  const duelUrl = `${window.location.origin}/duel/${duel.code}`;
+
+  const handleCopy = (e) => {
+    e.stopPropagation();
+    sounds.click?.();
+    navigator.clipboard.writeText(duelUrl);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  const handleShareWhatsApp = (e) => {
+    e.stopPropagation();
+    sounds.click?.();
+    const message = `🔥 *DHEETH 1v1 Quiz Duel!*\n\nI challenge you to a live quiz duel in *${duel.config?.subject || 'Civil Engineering'}* (${duel.config?.questionCount || 5} Qs · ${duel.config?.secondsPerQ || 20}s).\n\n👉 *Accept Challenge here:* ${duelUrl}\n\n⚔️ Or enter Code: *${duel.code}*`;
+    if (navigator.share) {
+      navigator.share({ title: 'DHEETH 1v1 Challenge', text: message, url: duelUrl }).catch(() => {
+        window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(message)}`, '_blank');
+      });
+    } else {
+      window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(message)}`, '_blank');
+    }
+  };
+
+  const handleCancel = async (e) => {
+    e.stopPropagation();
+    if (!window.confirm('Cancel this active challenge invite?')) return;
+    try {
+      setCancelling(true);
+      sounds.click?.();
+      await api.post(`/api/duel/${duel.code}/cancel`);
+      onRefresh?.();
+    } catch (err) {
+      console.error('Failed to cancel duel:', err);
+    } finally {
+      setCancelling(false);
+    }
+  };
+
+  const isLive = duel.status === 'live' || duel.status === 'accepted';
+
+  return (
+    <div className={`w-full rounded-2xl p-4 border-2 transition-all shadow-lg relative overflow-hidden ${
+      isLive 
+        ? 'bg-gradient-to-r from-emerald-950/60 via-dh-card to-emerald-950/40 border-emerald-500/70 animate-pulse' 
+        : 'bg-gradient-to-r from-dh-card via-dh-surface to-dh-card border-dh-accent/50'
+    }`}>
+      <div className="flex items-center justify-between gap-3 mb-2.5">
+        <div className="flex items-center gap-2.5 min-w-0">
+          <span className="text-xl animate-bounce-subtle">⚔️</span>
+          <div>
+            <div className="flex items-center gap-2">
+              <span className={`text-[10px] font-heading font-black uppercase px-2 py-0.5 rounded-full border ${
+                isLive ? 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40' : 'bg-dh-accent/15 text-dh-accent border-dh-accent/40'
+              }`}>
+                {isLive ? '⚡ Friend Accepted!' : 'Active Challenge Pending'}
+              </span>
+              <span className="font-mono font-bold text-xs text-white tracking-widest bg-dh-surface/80 px-2 py-0.5 rounded border border-dh-border">
+                {duel.code}
+              </span>
+            </div>
+            <p className="text-xs font-heading font-bold text-dh-text truncate mt-1">
+              {duel.config?.subject} • {duel.config?.questionCount || 5} Questions
+            </p>
+          </div>
+        </div>
+
+        {isLive ? (
+          <button
+            onClick={() => onNavigate(`/duel/${duel.code}`)}
+            className="px-4 py-2 rounded-xl bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-heading font-black text-xs uppercase tracking-wide shadow-md transition-all active:scale-95 flex items-center gap-1.5 flex-shrink-0"
+          >
+            <span>Enter Match</span> →
+          </button>
+        ) : (
+          <button
+            onClick={handleCancel}
+            disabled={cancelling}
+            className="text-[11px] font-heading font-bold text-dh-text-muted hover:text-dh-red transition-colors px-2 py-1"
+            title="Cancel Challenge"
+          >
+            ✕ Cancel
+          </button>
+        )}
+      </div>
+
+      {!isLive && (
+        <div className="flex items-center gap-2 pt-2 border-t border-dh-border/60">
+          <button
+            onClick={handleCopy}
+            className="flex-1 py-1.5 px-3 rounded-xl bg-dh-surface hover:bg-dh-card border border-dh-border hover:border-dh-accent text-xs font-heading font-bold text-white transition-all flex items-center justify-center gap-1.5 shadow-sm"
+          >
+            {copied ? '✓ Copied' : '📋 Copy Link'}
+          </button>
+          <button
+            onClick={handleShareWhatsApp}
+            className="flex-1 py-1.5 px-3 rounded-xl bg-[#25D366]/20 hover:bg-[#25D366]/30 border border-[#25D366]/50 text-[#25D366] text-xs font-heading font-bold transition-all flex items-center justify-center gap-1.5 shadow-sm"
+          >
+            <span>💬</span> WhatsApp
+          </button>
+          <button
+            onClick={() => onNavigate(`/duel/${duel.code}`)}
+            className="py-1.5 px-3 rounded-xl bg-dh-accent/15 hover:bg-dh-accent/25 border border-dh-accent/40 text-dh-accent text-xs font-heading font-bold transition-all flex items-center justify-center gap-1 flex-shrink-0"
+          >
+            👁️ Lobby
+          </button>
+        </div>
+      )}
+    </div>
+  );
+};
+
 /* ─── "Continue Journey" Hero Card ─────────────────────────── */
 const JourneyHeroCard = ({ journeyNext, onNavigate }) => {
   if (!journeyNext) return null;
@@ -254,6 +372,7 @@ export default function Dashboard() {
   const [daily, setDaily] = useState(null);
   const [mapOwned, setMapOwned] = useState(0);
   const [coins, setCoins] = useState(0);
+  const [activeDuel, setActiveDuel] = useState(null);
 
   const [isSearching, setIsSearching] = useState(false);
   const [searchFailed, setSearchFailed] = useState(false);
@@ -269,13 +388,14 @@ export default function Dashboard() {
   /* ── Data fetching ─────────────────────────────────────── */
   const fetchAll = useCallback(async () => {
     try {
-      const [userRes, dailyRes, subjectsRes, journeySubjectsRes, journeyProgressRes, mapRes] = await Promise.allSettled([
+      const [userRes, dailyRes, subjectsRes, journeySubjectsRes, journeyProgressRes, mapRes, duelRes] = await Promise.allSettled([
         api.get('/api/user/me'),
         api.get('/api/daily'),
         api.get(`/api/questions/subjects?category=${mode}`),
         api.get(`/api/journey/subjects?category=${mode}`),
         api.get('/api/journey/progress'),
         api.get('/api/map/states'),
+        api.get('/api/duel/active/mine'),
       ]);
 
       if (userRes.status === 'fulfilled') {
@@ -285,6 +405,13 @@ export default function Dashboard() {
       if (dailyRes.status === 'fulfilled') setDaily(dailyRes.value.data.data);
       if (subjectsRes.status === 'fulfilled' && subjectsRes.value.data.success) {
         setSubjects(subjectsRes.value.data.data);
+      }
+
+      if (duelRes.status === 'fulfilled' && duelRes.value.data?.ok) {
+        const { pendingDuel, liveDuel } = duelRes.value.data;
+        setActiveDuel(liveDuel || pendingDuel || null);
+      } else if (duelRes.status === 'fulfilled') {
+        setActiveDuel(null);
       }
 
       // Compute "next journey node" hint
@@ -623,6 +750,9 @@ export default function Dashboard() {
           <WarAlert onGoToMap={() => { sounds.click(); navigate('/map'); }} />
         ) : null}
 
+        {/* ⚔️ Persistent Active Duel Challenge Banner */}
+        <ActiveDuelBanner duel={activeDuel} onRefresh={fetchAll} onNavigate={navigate} />
+
         {/* Primary Hero: Continue Journey */}
         <JourneyHeroCard journeyNext={journeyNext} onNavigate={navigate} />
 
@@ -736,7 +866,11 @@ export default function Dashboard() {
       </div>
 
       {/* ── Modals ────────────────────────────────────────── */}
-      <CreateDuelModal isOpen={showCreateDuel} onClose={() => setShowCreateDuel(false)} />
+      <CreateDuelModal 
+        isOpen={showCreateDuel} 
+        onClose={() => { setShowCreateDuel(false); fetchAll(); }} 
+        onDuelCreated={() => fetchAll()}
+      />
       <JoinDuelModal isOpen={showJoinDuel} onClose={() => setShowJoinDuel(false)} />
     </div>
   );

@@ -46,7 +46,7 @@ const MatchScreen = ({ matchPayload }) => {
 
   const initial = extractInitial(matchPayload);
 
-  const [matchPhase, setMatchPhase] = useState(matchPayload.matchPhase || 'intro');
+  const [matchPhase, setMatchPhase] = useState(matchPayload.waitingForHost ? 'waiting_host' : (matchPayload.matchPhase || 'intro'));
   const [secondsPerQ, setSecondsPerQ] = useState(Number(matchPayload.secondsPerQ) || 20);
   const [timeLeft, setTimeLeft] = useState(Number(matchPayload.secondsPerQ) || 20);
   const [questionEndsAt, setQuestionEndsAt] = useState(initial.questionEndsAt);
@@ -219,6 +219,16 @@ const MatchScreen = ({ matchPayload }) => {
       }
     });
 
+    socket.on('duel:both_connected', () => {
+      sounds.success?.();
+      setMatchPhase('intro');
+    });
+
+    socket.on('duel:host_timeout', (data) => {
+      alert(data?.message || 'Challenge standby expired.');
+      navigate('/dashboard');
+    });
+
     return () => {
       socket.off('timer_sync');
       socket.off('player:connection');
@@ -230,6 +240,8 @@ const MatchScreen = ({ matchPayload }) => {
       socket.off('receive_reaction');
       socket.off('powerup:charge_update');
       socket.off('powerup:effect_applied');
+      socket.off('duel:both_connected');
+      socket.off('duel:host_timeout');
     };
   }, [matchPayload, pId]);
 
@@ -315,6 +327,23 @@ const MatchScreen = ({ matchPayload }) => {
             <span className="block text-sm font-heading font-bold text-white/80 uppercase tracking-[0.3em] mt-1">
               On Fire 🔥
             </span>
+          </div>
+        </div>
+      )}
+
+      {/* Standby Waiting for Host (When friend accepted while host was offline) */}
+      {matchPhase === 'waiting_host' && (
+        <div className="flex-1 flex flex-col items-center justify-center p-6 text-center animate-fade-in">
+          <div className="w-20 h-20 rounded-full border-4 border-dh-accent border-t-transparent animate-spin mb-6 shadow-[0_0_30px_rgba(0,230,118,0.3)]" />
+          <h2 className="text-2xl md:text-3xl font-heading font-black text-white mb-2">
+            Waiting for Host to Enter...
+          </h2>
+          <p className="text-dh-text-muted text-sm max-w-sm mb-6">
+            Push alert sent to <span className="text-white font-bold">{matchPayload.opponent?.username || 'Host'}</span>. The match will start the moment they open the notification!
+          </p>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-dh-accent/10 border border-dh-accent/30 text-dh-accent text-xs font-heading font-black animate-pulse shadow-md">
+            <span className="w-2 h-2 rounded-full bg-dh-accent animate-ping" />
+            <span>📱 Notification Dispatched • Standby Active</span>
           </div>
         </div>
       )}
