@@ -5,6 +5,9 @@ const Duel = require('../models/Duel');
 const MistakeNotebook = require('../models/MistakeNotebook');
 const QuestionAttempt = require('../models/QuestionAttempt');
 const { evaluatePowerupGrants, applyEmp } = require('../services/powerupEngine');
+const { botEngine } = require('../services/botEngine');
+const { botEmoteEngine } = require('../services/botEmoteEngine');
+const { emoteRateLimiter } = require('../services/emoteRateLimiter');
 const statesData = require('../../data/statesData.json');
 
 const activeMatches = {};
@@ -371,6 +374,8 @@ const initializeMatch = (roomId, subject, questions, p1, p2, isBotMatch, config 
         username: p1.username,
         userId: p1.userId,
         avatarSeed: p1.avatarSeed,
+        title: p1.title || 'Novice',
+        archetype: p1.archetype || null,
         targetState: p1.targetState,
         eloRating: p1.eloRating || 1200,
         score: 0,
@@ -395,6 +400,8 @@ const initializeMatch = (roomId, subject, questions, p1, p2, isBotMatch, config 
         username: p2.username,
         userId: p2.userId,
         avatarSeed: p2.avatarSeed,
+        title: p2.title || 'Novice',
+        archetype: p2.archetype || null,
         targetState: p2.targetState,
         eloRating: p2.eloRating || 1200,
         score: 0,
@@ -445,9 +452,30 @@ const startQuestionTimer = (io, roomId) => {
 
   if (match.isBotMatch) {
     const botPlayer = Object.values(match.players).find(p => p.userId === 'bot');
+    const humanPlayer = Object.values(match.players).find(p => p.userId !== 'bot');
     if (botPlayer) {
-      const thinkingTime = Math.floor(Math.random() * (11 - 3 + 1) + 3) * 1000;
-      
+      const currentQ = match.questions[match.currentQuestionIndex];
+      const decision = botEngine.determineBotAction({
+        question: currentQ,
+        botPlayer,
+        humanPlayer,
+        roundIndex: match.currentQuestionIndex,
+        totalRounds: match.questions.length,
+        secondsPerQ: seconds
+      });
+
+      // Emit dynamic emote if triggered (Formula dread or archetype decision)
+      const formulaEmote = botEmoteEngine.evaluateEvent('QUESTION_STARTED', match);
+      const chosenEmote = decision.emote || (formulaEmote ? formulaEmote.emoji : null);
+      if (chosenEmote) {
+        setTimeout(() => {
+          const currentMatch = activeMatches[roomId];
+          if (currentMatch && currentMatch.status === 'active' && !currentMatch.players['bot']?.hasAnswered) {
+            io.to(roomId).emit('receive_reaction', { emoji: chosenEmote, senderId: 'bot' });
+          }
+        }, Math.min(1200, Math.floor(decision.thinkingTime / 2)));
+      }
+
       match.botAnswerTimeout = setTimeout(() => {
         const currentMatch = activeMatches[roomId];
         if (!currentMatch || currentMatch.status !== 'active') return;
@@ -456,9 +484,9 @@ const startQuestionTimer = (io, roomId) => {
         if (bot && !bot.hasAnswered) {
           bot.hasAnswered = true;
           
-          const currentQ = currentMatch.questions[currentMatch.currentQuestionIndex];
-          const isCorrect = Math.random() < 0.75;
-          const timeSpentMs = thinkingTime;
+          const isCorrect = decision.isCorrect;
+          const selectedOption = decision.selectedOption;
+          const timeSpentMs = decision.thinkingTime;
           const timeSpentSec = timeSpentMs / 1000;
           const durationSec = currentMatch.secondsPerQ || 20;
           
@@ -484,7 +512,7 @@ const startQuestionTimer = (io, roomId) => {
             const grossEarned = Math.round(rawScore * roundMultiplier);
 
             bot.answers[currentMatch.currentQuestionIndex] = {
-              selectedOption: currentQ.correctOption?.toUpperCase(),
+              selectedOption,
               isCorrect: true,
               timeSpentMs,
               isTimeout: false
@@ -493,10 +521,8 @@ const startQuestionTimer = (io, roomId) => {
             bot.score += grossEarned;
           } else {
             bot.currentStreak = 0;
-            const incorrectOptions = ['A', 'B', 'C', 'D'].filter(opt => opt !== currentQ.correctOption?.toUpperCase());
-            const wrongOpt = incorrectOptions[Math.floor(Math.random() * incorrectOptions.length)];
             bot.answers[currentMatch.currentQuestionIndex] = {
-              selectedOption: wrongOpt,
+              selectedOption,
               isCorrect: false,
               timeSpentMs,
               isTimeout: false
@@ -518,7 +544,7 @@ const startQuestionTimer = (io, roomId) => {
             setTimeout(() => moveToNextQuestion(io, roomId), 3000);
           }
         }
-      }, thinkingTime);
+      }, decision.thinkingTime);
     }
   }
 };
@@ -781,6 +807,20 @@ const moveToNextQuestion = (io, roomId) => {
             delete activeMatchByUser[p2.userId];
           }
 
+          // Bot post-match GG / respect reaction
+          if (match.isBotMatch) {
+            const botScore = (p1.userId === 'bot' ? p1.score : p2.score) || 0;
+            const humanScore = (p1.userId !== 'bot' ? p1.score : p2.score) || 0;
+            const humanWon = humanScore > botScore;
+            const isDraw = humanScore === botScore;
+            const ggIntent = botEmoteEngine.evaluateEvent('MATCH_ENDED', match, { humanWon, isDraw });
+            if (ggIntent) {
+              setTimeout(() => {
+                io.to(roomId).emit('receive_reaction', { emoji: ggIntent.emoji, senderId: 'bot' });
+              }, ggIntent.delayMs);
+            }
+          }
+
           // Save session rivalry to rematch state before deleting
           rematchState[roomId] = {
             subject: match.subject || 'General',
@@ -1006,6 +1046,29 @@ const setupGameplaySockets = (io, socket) => {
         });
         io.to(roomId).emit('score_update', { players: match.players });
 
+        // Bot psychological reactions to human answer and streaks
+        if (match.isBotMatch) {
+          const shockIntent = botEmoteEngine.evaluateEvent('HUMAN_ANSWERED', match, { isCorrect, timeSpentMs });
+          if (shockIntent) {
+            setTimeout(() => {
+              const cur = activeMatches[roomId];
+              if (cur && cur.status === 'active' && cur.currentQuestionIndex === match.currentQuestionIndex) {
+                io.to(roomId).emit('receive_reaction', { emoji: shockIntent.emoji, senderId: 'bot' });
+              }
+            }, shockIntent.delayMs);
+          } else if (player.currentStreak >= 3) {
+            const streakIntent = botEmoteEngine.evaluateEvent('STREAK_MILESTONE', match, { streak: player.currentStreak, playerId: userId });
+            if (streakIntent) {
+              setTimeout(() => {
+                const cur = activeMatches[roomId];
+                if (cur && cur.status === 'active' && cur.currentQuestionIndex === match.currentQuestionIndex) {
+                  io.to(roomId).emit('receive_reaction', { emoji: streakIntent.emoji, senderId: 'bot' });
+                }
+              }, streakIntent.delayMs);
+            }
+          }
+        }
+
        const allAnswered = Object.values(match.players).every(p => p.hasAnswered);
        if (allAnswered) {
            clearTimeout(match.timerTimeout);
@@ -1015,6 +1078,20 @@ const setupGameplaySockets = (io, socket) => {
              questionIndex: match.currentQuestionIndex,
              correctOption: match.questions[match.currentQuestionIndex].correctOption
            });
+
+           // Clutch pressure check at round close
+           if (match.isBotMatch) {
+             const clutchIntent = botEmoteEngine.evaluateEvent('SCORE_UPDATED', match);
+             if (clutchIntent) {
+               setTimeout(() => {
+                 const cur = activeMatches[roomId];
+                 if (cur && cur.status === 'active') {
+                   io.to(roomId).emit('receive_reaction', { emoji: clutchIntent.emoji, senderId: 'bot' });
+                 }
+               }, clutchIntent.delayMs);
+             }
+           }
+
            setTimeout(() => moveToNextQuestion(io, roomId), 3000);
        }
     }
@@ -1110,11 +1187,23 @@ const setupGameplaySockets = (io, socket) => {
                 secondsPerQ: state.secondsPerQ || 20,
                 roundNumber: state.roundNumber || 2,
                 player: { id: pId, username: socket.user.username, avatarSeed: pAvatar },
-                opponent: { id: "bot", username: botOpp.username, avatarSeed: "bot-ronin" }
+                opponent: { 
+                  id: "bot", 
+                  username: botOpp.username, 
+                  avatarSeed: botOpp.avatarSeed || "bot-ronin",
+                  title: botOpp.title || "Novice",
+                  eloRating: botOpp.eloRating || 1200,
+                  archetype: botOpp.archetype || null,
+                  isBot: true 
+                }
               };
               
               socket.emit('rematch_accepted', matchPayload);
-              initializeMatch(newRoomId, state.subject, questions, { socketId: socket.id, username: socket.user.username, userId: pId, avatarSeed: pAvatar }, { socketId: "bot_socket_id", username: botOpp.username, userId: "bot", avatarSeed: "bot-ronin" }, true, { secondsPerQ: state.secondsPerQ, roundNumber: state.roundNumber, sessionRivalry: state.sessionRivalry, mode: state.mode });
+              initializeMatch(newRoomId, state.subject, questions, 
+                { socketId: socket.id, username: socket.user.username, userId: pId, avatarSeed: pAvatar, targetState: socket.user.targetState, eloRating: socket.user.eloRating || 1200 }, 
+                { socketId: "bot_socket_id", username: botOpp.username, userId: "bot", avatarSeed: botOpp.avatarSeed || "bot-ronin", title: botOpp.title, eloRating: botOpp.eloRating, archetype: botOpp.archetype }, 
+                true, 
+                { secondsPerQ: state.secondsPerQ, roundNumber: state.roundNumber, sessionRivalry: state.sessionRivalry, mode: state.mode });
               setTimeout(() => startQuestionTimer(io, newRoomId), 3500);
               
               delete rematchState[roomId];
@@ -1187,8 +1276,16 @@ const setupGameplaySockets = (io, socket) => {
   });
 
   socket.on('send_reaction', (data) => {
-    const { roomId, emoji } = data;
-    socket.to(roomId).emit('receive_reaction', { emoji });
+    const { roomId, emoji } = data || {};
+    if (!roomId || !emoji) return;
+
+    const match = activeMatches[roomId];
+    const currentRound = match ? (match.currentQuestionIndex || 0) : 0;
+    const limitKey = `${roomId}:${socket.id}`;
+    const limitResult = emoteRateLimiter.consume(limitKey, currentRound);
+    if (!limitResult.allowed) return;
+
+    socket.to(roomId).emit('receive_reaction', { emoji, senderId: socket.user?.userId || socket.id });
   });
   
   socket.on('disconnect', () => {

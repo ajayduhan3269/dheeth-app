@@ -1,6 +1,7 @@
 const Question = require('../models/Question');
 const User = require('../models/User');
 const { initializeMatch, startQuestionTimer } = require('./gameplay');
+const { botEngine } = require('../services/botEngine');
 
 const queues = {};
 
@@ -200,7 +201,7 @@ async function processJoinQueue(io, socket, subject, category, targetState) {
     }
 
     const pId = socket.user.userId || socket.user.id;
-    const botName = 'DHEETH Bot';
+    const botProfile = botEngine.generateBotProfile(player.user, subject, category);
 
     const matchPayload = {
       roomId,
@@ -210,15 +211,23 @@ async function processJoinQueue(io, socket, subject, category, targetState) {
       mode: category,
       targetState: player.targetState,
       player: { id: pId, username: socket.user.username, avatarSeed: player.user.avatarSeed, title: player.user.title },
-      opponent: { id: "bot", username: botName, avatarSeed: "bot-ronin", title: "Gatekeeper" } 
+      opponent: { 
+        id: "bot", 
+        username: botProfile.username, 
+        avatarSeed: botProfile.avatarSeed, 
+        title: botProfile.title,
+        eloRating: botProfile.eloRating,
+        archetype: botProfile.archetype,
+        isBot: true 
+      } 
     };
 
     io.to(roomId).emit('match_found', matchPayload);
-    console.log(`[Match] Human vs Bot started for ${socket.user.username} (${category})`);
+    console.log(`[Match] Human vs Bot started for ${socket.user.username} vs ${botProfile.username} (${category}, ELO: ${botProfile.eloRating}, Archetype: ${botProfile.archetype})`);
     
     initializeMatch(roomId, subject, questions, 
       { socketId: socket.id, username: socket.user.username, userId: pId, avatarSeed: player.user.avatarSeed, targetState: player.targetState, eloRating: player.user.eloRating || 1200 }, 
-      { socketId: "bot_socket_id", username: botName, userId: "bot", avatarSeed: "bot-ronin", eloRating: player.user.eloRating || 1200 }, 
+      { socketId: "bot_socket_id", username: botProfile.username, userId: "bot", avatarSeed: botProfile.avatarSeed, title: botProfile.title, eloRating: botProfile.eloRating, archetype: botProfile.archetype }, 
       true);
     setTimeout(() => startQuestionTimer(io, roomId), 3500);
   }, 10000);

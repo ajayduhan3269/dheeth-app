@@ -3,8 +3,10 @@ import { socket } from '../socket';
 import LatexRenderer from './LatexRenderer';
 import MatchSummary from './MatchSummary';
 import PowerUpDock from './PowerUpDock';
+import FloatingEmoteMenu from './FloatingEmoteMenu';
 import api, { getAvatarUrl } from '../api';
 import { sounds } from '../utils/sound';
+import { playReactionSound, getSoundTypeForEmoji } from '../utils/audioFx';
 
 const MatchScreen = ({ matchPayload }) => {
   const pId = matchPayload.player.id;
@@ -62,6 +64,14 @@ const MatchScreen = ({ matchPayload }) => {
   const [isMatchOver, setIsMatchOver] = useState(false);
   const [summaryData, setSummaryData] = useState(null);
   const [activeReactions, setActiveReactions] = useState([]);
+  const [mutedReactions, setMutedReactions] = useState(() => {
+    try {
+      return localStorage.getItem('dheeth_mute_reactions') === 'true';
+    } catch {
+      return false;
+    }
+  });
+  const lastReactionTimeRef = useRef(0);
   const [playerStreak, setPlayerStreak] = useState(initial.playerStreak);
   const [feedbackState, setFeedbackState] = useState(initial.feedbackState);
   const [correctOption, setCorrectOption] = useState(initial.correctOption);
@@ -201,9 +211,11 @@ const MatchScreen = ({ matchPayload }) => {
     });
 
     socket.on('receive_reaction', (data) => {
-      const id = Date.now();
-      setActiveReactions(prev => [...prev, { emoji: data.emoji, id }]);
-      setTimeout(() => setActiveReactions(prev => prev.filter(r => r.id !== id)), 2000);
+      if (mutedReactions || !data?.emoji) return;
+      const id = Date.now() + Math.random();
+      setActiveReactions(prev => [...prev.slice(-4), { emoji: data.emoji, id, isSelf: false }]);
+      playReactionSound(getSoundTypeForEmoji(data.emoji));
+      setTimeout(() => setActiveReactions(prev => prev.filter(r => r.id !== id)), 2200);
     });
 
     // EMP Power-up socket events
@@ -262,7 +274,25 @@ const MatchScreen = ({ matchPayload }) => {
   };
 
   const sendReaction = (emoji) => {
+    const now = Date.now();
+    if (now - lastReactionTimeRef.current < 1500) return; // 1.5s local cooldown
+    lastReactionTimeRef.current = now;
+
     socket.emit('send_reaction', { roomId: matchPayload.roomId, emoji });
+    const id = Date.now() + Math.random();
+    setActiveReactions(prev => [...prev.slice(-4), { emoji, id, isSelf: true }]);
+    playReactionSound(getSoundTypeForEmoji(emoji));
+    setTimeout(() => setActiveReactions(prev => prev.filter(r => r.id !== id)), 2200);
+  };
+
+  const toggleMuteReactions = () => {
+    setMutedReactions(prev => {
+      const next = !prev;
+      try {
+        localStorage.setItem('dheeth_mute_reactions', String(next));
+      } catch {}
+      return next;
+    });
   };
 
   const handleActivatePowerup = (slot) => {
@@ -413,6 +443,17 @@ const MatchScreen = ({ matchPayload }) => {
               {/* Player Section (Left) */}
               <div className="flex items-center gap-3">
                 <div className="relative">
+                  {/* Player Avatar Speech Bubble (Positioned below avatar to prevent top clipping) */}
+                  {activeReactions.filter(r => r.isSelf).slice(-1).map(r => (
+                    <div 
+                      key={r.id}
+                      className="absolute top-13 left-0 md:top-16 z-30 animate-bubble-self pointer-events-none flex items-center justify-center bg-slate-900/95 text-white px-2.5 py-1 rounded-2xl shadow-[0_8px_25px_rgba(0,0,0,0.6)] border-2 border-dh-accent font-black text-2xl filter drop-shadow-lg"
+                    >
+                      <span>{r.emoji}</span>
+                      <div className="absolute -top-1.5 left-4 w-2.5 h-2.5 bg-slate-900 border-t-2 border-l-2 border-dh-accent rotate-45" />
+                    </div>
+                  ))}
+
                   <div 
                     className={`absolute -inset-1 rounded-full opacity-75 blur-[2px] transition-all ${
                       playerScore >= opponentScore && playerScore > 0 
@@ -470,6 +511,17 @@ const MatchScreen = ({ matchPayload }) => {
                   </span>
                 </div>
                 <div className="relative">
+                  {/* Opponent Avatar Speech Bubble (Positioned below avatar to prevent top clipping) */}
+                  {activeReactions.filter(r => !r.isSelf).slice(-1).map(r => (
+                    <div 
+                      key={r.id}
+                      className="absolute top-13 right-0 md:top-16 z-30 animate-bubble-opp pointer-events-none flex items-center justify-center bg-slate-900/95 text-white px-2.5 py-1 rounded-2xl shadow-[0_8px_25px_rgba(0,0,0,0.6)] border-2 border-dh-red font-black text-2xl filter drop-shadow-lg"
+                    >
+                      <span>{r.emoji}</span>
+                      <div className="absolute -top-1.5 right-4 w-2.5 h-2.5 bg-slate-900 border-t-2 border-r-2 border-dh-red rotate-45" />
+                    </div>
+                  ))}
+
                   <div 
                     className={`absolute -inset-1 rounded-full opacity-75 blur-[2px] transition-all ${
                       opponentScore > playerScore 
@@ -655,26 +707,36 @@ const MatchScreen = ({ matchPayload }) => {
               isActivating={isActivatingPowerup}
             />
 
-            {/* Reaction Bar */}
-            <div className="w-full flex items-center justify-center gap-6 py-2">
-               {['😂', '🔥', '😢', '💀', '👀'].map((emoji, idx) => (
-                 <button
-                   key={idx}
-                   onClick={() => sendReaction(emoji)}
-                   className="text-2xl opacity-60 hover:opacity-100 hover:scale-125 hover:-translate-y-2 transition-all active:scale-90"
-                 >
-                   {emoji}
-                 </button>
-               ))}
-            </div>
           </div>
         </div>
       )}
 
-      {/* Floating Reactions */}
-      {activeReactions.map(r => (
-        <div key={r.id} className="floating-emoji animate-floatUp absolute text-4xl z-50 pointer-events-none" style={{ left: `${10 + Math.random() * 60}%`, bottom: '0' }}>{r.emoji}</div>
-      ))}
+      {/* Floating Action Button Emote Menu */}
+      {matchPhase === 'active' && (
+        <FloatingEmoteMenu
+          onSendReaction={sendReaction}
+          mutedOpponent={mutedReactions}
+          onToggleMute={toggleMuteReactions}
+          disabled={isMatchOver}
+        />
+      )}
+
+      {/* Floating Reaction Stream Particles */}
+      <div className="fixed inset-0 pointer-events-none z-50 overflow-hidden">
+        {activeReactions.map(r => (
+          <div 
+            key={r.id} 
+            className="absolute text-3xl sm:text-4xl animate-particle-stream select-none drop-shadow-[0_4px_14px_rgba(0,0,0,0.6)]"
+            style={{ 
+              left: r.isSelf ? 'calc(80% + 15px)' : 'calc(20% - 15px)', 
+              bottom: '15%',
+              '--rot': r.isSelf ? '12deg' : '-12deg'
+            }}
+          >
+            {r.emoji}
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
