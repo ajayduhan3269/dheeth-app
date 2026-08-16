@@ -18,6 +18,8 @@ import PWAInstallPrompt from './components/PWAInstallPrompt';
 import BottomNav from './components/BottomNav';
 import { AuthProvider, AuthContext } from './context/AuthContext';
 import { AppModeProvider } from './context/AppModeContext';
+import { ServerHealthProvider, useServerHealth } from './context/ServerHealthContext';
+import ServerWarmupSplash from './components/ServerWarmupSplash';
 import { socket } from './socket';
 
 const ProtectedRoute = ({ children }) => {
@@ -58,35 +60,31 @@ const MatchRequestOverlay = () => {
 
   const handleAccept = () => {
     if (!matchRequest) return;
-    socket.emit('accept_match_request', {
-      senderId: matchRequest.userId,
-      subject: matchRequest.subject,
-      mode: matchRequest.mode
-    });
+    socket.emit('match_request_accepted', { requesterId: matchRequest.requester.id });
     setMatchRequest(null);
   };
 
   const handleDecline = () => {
     if (!matchRequest) return;
-    socket.emit('decline_match_request', {
-      senderId: matchRequest.userId
-    });
+    socket.emit('match_request_declined', { requesterId: matchRequest.requester.id });
     setMatchRequest(null);
   };
 
   if (!matchRequest) return null;
 
   return (
-    <div className="fixed inset-0 z-[9999] bg-black/60 flex items-center justify-center p-4 backdrop-blur-sm">
-      <div className="bg-dh-card border-4 border-dh-border rounded-3xl p-8 max-w-sm w-full text-center shadow-2xl animate-[scaleIn_0.3s_ease-out]">
-        <div className="text-4xl mb-4">🔥</div>
-        <h2 className="text-xl font-heading font-black text-dh-text mb-2">
-          {matchRequest.username} challenged you!
-        </h2>
-        <p className="text-dh-text-muted font-heading font-bold mb-8">
-          Subject: {matchRequest.subject}
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 animate-fade-in">
+      <div className="bg-dh-card border-4 border-dh-border rounded-3xl p-6 max-w-sm w-full text-center shadow-2xl animate-pop-in">
+        <div className="w-16 h-16 rounded-full bg-dh-accent/20 border-2 border-dh-accent flex items-center justify-center text-3xl mx-auto mb-4 animate-bounce-subtle">
+          ⚔️
+        </div>
+        <h3 className="text-xl font-heading font-black text-white mb-1">
+          Challenge Received!
+        </h3>
+        <p className="text-dh-text-muted text-sm mb-6">
+          <strong className="text-dh-accent">{matchRequest.requester.username}</strong> wants to battle you in <strong className="text-white">{matchRequest.subject}</strong>!
         </p>
-        <div className="flex gap-4">
+        <div className="flex gap-3">
           <button 
             onClick={handleAccept} 
             className="flex-1 bg-dh-green border-b-4 border-dh-green-dark text-white font-heading font-black py-3 rounded-xl active:translate-y-[2px] active:border-b-0 transition-all uppercase tracking-wide"
@@ -107,7 +105,12 @@ const MatchRequestOverlay = () => {
 
 const AppLayout = () => {
   const location = useLocation();
+  const { isServerReady } = useServerHealth();
   const hideNav = location.pathname === '/auth' || location.pathname === '/match' || location.pathname === '/admin' || location.pathname.startsWith('/duel/') || location.pathname.startsWith('/d/');
+
+  if (!isServerReady) {
+    return <ServerWarmupSplash />;
+  }
 
   return (
     <div className="min-h-screen bg-dh-bg text-dh-text w-full font-sans">
@@ -193,13 +196,15 @@ const AppLayout = () => {
 
 function App() {
   return (
-    <AuthProvider>
-      <AppModeProvider>
-        <Router>
-          <AppLayout />
-        </Router>
-      </AppModeProvider>
-    </AuthProvider>
+    <ServerHealthProvider>
+      <AuthProvider>
+        <AppModeProvider>
+          <Router>
+            <AppLayout />
+          </Router>
+        </AppModeProvider>
+      </AuthProvider>
+    </ServerHealthProvider>
   );
 }
 

@@ -65,6 +65,16 @@ app.use('/api/mistakes', require('./routes/mistakes'));
 app.use('/share', require('./routes/share'));
 app.use('/d', require('./routes/share'));
 
+// Health check endpoint for fast frontend probe and cold-start detection
+app.get('/api/health', (req, res) => {
+  res.json({
+    ok: true,
+    status: 'online',
+    uptime: Math.round(process.uptime()),
+    timestamp: Date.now(),
+  });
+});
+
 // Basic route to test the server
 app.get('/', (req, res) => {
   res.json({ message: 'Server is running successfully with Socket.io!' });
