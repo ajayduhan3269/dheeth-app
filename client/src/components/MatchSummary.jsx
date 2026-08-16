@@ -452,7 +452,7 @@ const MatchSummary = ({ summaryData, subject, matchPayload }) => {
                   </div>
                 )}
                 <div className="flex justify-between items-start gap-4 mb-3">
-                  <div className="flex-1 text-sm md:text-base font-semibold text-dh-text">
+                  <div className="flex-1 min-w-0 text-sm md:text-base font-semibold text-dh-text">
                     <span className="text-dh-text-muted mr-2 font-bold">{idx + 1}.</span>
                     <LatexRenderer text={q.questionText} />
                   </div>

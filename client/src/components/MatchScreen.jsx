@@ -527,100 +527,125 @@ const MatchScreen = ({ matchPayload }) => {
             {/* =========================================
                 QUESTION AREA
                 ========================================= */}
-            {matchPayload.rivalry && (
-              <div className="flex items-center gap-2 px-3.5 py-1 rounded-full bg-dh-surface/90 border border-dh-border text-xs font-heading font-bold text-dh-text-muted mb-4 shadow-sm">
-                <span className="text-dh-accent font-black">Round #{matchPayload.roundNumber || 1}</span>
-                <span className="text-dh-border">•</span>
-                <span>Rivalry: <strong className="text-dh-green font-black">{matchPayload.rivalry.scoreHost}</strong> - <strong className="text-dh-red font-black">{matchPayload.rivalry.scoreGuest}</strong></span>
-              </div>
-            )}
-            <div className="w-full flex flex-col items-center flex-1 justify-center mb-6">
-              <h2 className="text-2xl md:text-4xl font-normal text-center text-white mb-6 leading-tight max-w-2xl px-2">
-                <LatexRenderer text={currentQ.questionText} />
-              </h2>
+            {(() => {
+              const qText = currentQ?.questionText || '';
+              const isTableOrLongQuestion = Boolean(
+                qText.includes('\\begin{array}') ||
+                qText.includes('\\begin{tabular}') ||
+                qText.includes('\\begin{matrix}') ||
+                qText.includes('List I') ||
+                qText.includes('List-I') ||
+                qText.includes('Match the following') ||
+                qText.includes('Match List') ||
+                qText.length > 100
+              );
 
-              {/* Bookmark button — appears after answer reveal */}
-              {feedbackState && (
-                <button
-                  onClick={() => handleSaveMatchQuestion(currentQ)}
-                  disabled={savedMatchQuestions.has(currentQ._id || currentQ.questionId || currentQ.questionText)}
-                  className={`mb-4 px-4 py-1.5 rounded-full border-2 text-sm font-heading font-bold transition-all duration-200 ${
-                    savedMatchQuestions.has(currentQ._id || currentQ.questionId || currentQ.questionText)
-                      ? 'border-dh-accent text-dh-accent bg-dh-accent/10'
-                      : 'border-white/30 text-white/70 hover:border-dh-accent hover:text-dh-accent bg-white/5'
-                  }`}
-                >
-                  {savedMatchQuestions.has(currentQ._id || currentQ.questionId || currentQ.questionText) ? '★ Saved' : '☆ Save'}
-                </button>
-              )}
-              
-              {currentQ.hasDiagram && currentQ.diagramUrl && (
-                <div className="w-full max-w-sm mb-6 flex justify-center">
-                  <img 
-                    src={currentQ.diagramUrl} 
-                    alt="Diagram" 
-                    className="w-full rounded-md object-contain border border-white/20 bg-dh-surface/60"
-                    style={{ maxHeight: '250px' }}
-                  />
-                </div>
-              )}
-            </div>
+              return (
+                <>
+                  {matchPayload.rivalry && (
+                    <div className="flex items-center gap-2 px-3.5 py-1 rounded-full bg-dh-surface/90 border border-dh-border text-xs font-heading font-bold text-dh-text-muted mb-3 shadow-sm">
+                      <span className="text-dh-accent font-black">Round #{matchPayload.roundNumber || 1}</span>
+                      <span className="text-dh-border">•</span>
+                      <span>Rivalry: <strong className="text-dh-green font-black">{matchPayload.rivalry.scoreHost}</strong> - <strong className="text-dh-red font-black">{matchPayload.rivalry.scoreGuest}</strong></span>
+                    </div>
+                  )}
 
-            {/* =========================================
-                OPTIONS GRID (2x2)
-                ========================================= */}
-            <div className="relative w-full grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 pb-2">
+                  <div className="w-full flex flex-col items-center flex-1 justify-center mb-4 max-w-2xl px-1">
+                    <div className={`w-full font-normal text-white leading-relaxed ${
+                      isTableOrLongQuestion 
+                        ? 'text-sm sm:text-base md:text-lg text-left bg-dh-surface/60 border border-slate-700/70 rounded-2xl p-3.5 sm:p-4 shadow-md' 
+                        : 'text-xl sm:text-2xl md:text-3xl text-center mb-2'
+                    }`}>
+                      <LatexRenderer text={currentQ.questionText} />
+                    </div>
 
-              {Object.entries(currentQ.options).map(([key, value]) => {
-                const keyUpper = key.toUpperCase();
-                const isCorrect = keyUpper === correctOption;
-                const isPlayerSelected = keyUpper === selectedOption;
-                const isOpponentSelected = keyUpper === opponentSelected;
-                const isEliminated = eliminatedOptions.includes(keyUpper);
-
-                let bgClass = "bg-white text-black";
-                
-                if (feedbackState) { // Revealed
-                  if (isCorrect) {
-                     bgClass = "bg-dh-accent text-white";
-                  } else if (isPlayerSelected) {
-                     bgClass = "bg-dh-red text-white";
-                  } else if (isOpponentSelected) {
-                     bgClass = "bg-[#444] text-white"; // Opponent picked wrong
-                  } else {
-                     bgClass = "bg-white text-black opacity-70";
-                  }
-                } else { // Not revealed
-                  if (isPlayerSelected) bgClass = "bg-dh-accent text-white";
-                  else if (isEliminated) bgClass = "bg-slate-900/60 text-slate-500 line-through border-2 border-dashed border-cyan-500/40 cursor-not-allowed opacity-30";
-                }
-
-                return (
-                  <button
-                    key={key}
-                    onClick={() => !feedbackState && !isEliminated && handleAnswer(keyUpper)}
-                    disabled={!!feedbackState || !!selectedOption || isEliminated}
-                    className={`relative w-full p-4 md:p-6 min-h-[80px] flex items-center justify-center text-center text-lg md:text-xl font-bold rounded-sm transition-all duration-150 ${bgClass} hover:opacity-90 active:scale-[0.98] overflow-hidden`}
-                  >
-                    {/* Player Avatar Indicator (Left) */}
-                    {(isPlayerSelected || (feedbackState && isPlayerSelected)) && (
-                      <div className="absolute left-3 top-1/2 -translate-y-1/2 flex items-center justify-center w-8 h-8 rounded-full border-2 border-white bg-dh-accent shadow-lg z-20">
-                         <img src={playerAvatar} alt="You" className="w-full h-full rounded-full" />
-                      </div>
+                    {/* Bookmark button — appears after answer reveal */}
+                    {feedbackState && (
+                      <button
+                        onClick={() => handleSaveMatchQuestion(currentQ)}
+                        disabled={savedMatchQuestions.has(currentQ._id || currentQ.questionId || currentQ.questionText)}
+                        className={`mt-2.5 mb-2 px-4 py-1 rounded-full border-2 text-xs font-heading font-bold transition-all duration-200 ${
+                          savedMatchQuestions.has(currentQ._id || currentQ.questionId || currentQ.questionText)
+                            ? 'border-dh-accent text-dh-accent bg-dh-accent/10'
+                            : 'border-white/30 text-white/70 hover:border-dh-accent hover:text-dh-accent bg-white/5'
+                        }`}
+                      >
+                        {savedMatchQuestions.has(currentQ._id || currentQ.questionId || currentQ.questionText) ? '★ Saved' : '☆ Save Question'}
+                      </button>
                     )}
                     
-                    {/* Opponent Avatar Indicator (Right) - ONLY SHOW AFTER REVEAL */}
-                    {(feedbackState && isOpponentSelected) && (
-                      <div className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center justify-center w-8 h-8 rounded-full border-2 border-white bg-dh-red shadow-lg z-20">
-                         <img src={opponentAvatar} alt="Opp" className="w-full h-full rounded-full" />
+                    {currentQ.hasDiagram && currentQ.diagramUrl && (
+                      <div className="w-full max-w-sm my-2 flex justify-center">
+                        <img 
+                          src={currentQ.diagramUrl} 
+                          alt="Diagram" 
+                          className="w-full rounded-xl object-contain border border-white/20 bg-dh-surface/60 max-h-48"
+                        />
                       </div>
                     )}
-                    
-                    <span className="relative z-10 w-full px-10"><LatexRenderer text={value} /></span>
-                  </button>
-                );
-              })}
-            </div>
+                  </div>
+
+                  {/* =========================================
+                      OPTIONS GRID (2x2)
+                      ========================================= */}
+                  <div className={`relative w-full grid grid-cols-1 md:grid-cols-2 gap-2.5 sm:gap-3.5 pb-2 ${isTableOrLongQuestion ? 'max-w-2xl' : ''}`}>
+                    {Object.entries(currentQ.options).map(([key, value]) => {
+                      const keyUpper = key.toUpperCase();
+                      const isCorrect = keyUpper === correctOption;
+                      const isPlayerSelected = keyUpper === selectedOption;
+                      const isOpponentSelected = keyUpper === opponentSelected;
+                      const isEliminated = eliminatedOptions.includes(keyUpper);
+
+                      let bgClass = "bg-white text-black";
+                      
+                      if (feedbackState) { // Revealed
+                        if (isCorrect) {
+                           bgClass = "bg-dh-accent text-white";
+                        } else if (isPlayerSelected) {
+                           bgClass = "bg-dh-red text-white";
+                        } else if (isOpponentSelected) {
+                           bgClass = "bg-[#444] text-white"; // Opponent picked wrong
+                        } else {
+                           bgClass = "bg-white text-black opacity-70";
+                        }
+                      } else { // Not revealed
+                        if (isPlayerSelected) bgClass = "bg-dh-accent text-white";
+                        else if (isEliminated) bgClass = "bg-slate-900/60 text-slate-500 line-through border-2 border-dashed border-cyan-500/40 cursor-not-allowed opacity-30";
+                      }
+
+                      return (
+                        <button
+                          key={key}
+                          onClick={() => !feedbackState && !isEliminated && handleAnswer(keyUpper)}
+                          disabled={!!feedbackState || !!selectedOption || isEliminated}
+                          className={`relative w-full ${
+                            isTableOrLongQuestion 
+                              ? 'p-3 sm:p-4 min-h-[52px] sm:min-h-[60px] text-xs sm:text-sm md:text-base' 
+                              : 'p-4 md:p-6 min-h-[70px] md:min-h-[80px] text-base sm:text-lg md:text-xl'
+                          } flex items-center justify-center text-center font-bold rounded-xl transition-all duration-150 ${bgClass} hover:opacity-90 active:scale-[0.98] overflow-hidden shadow-sm`}
+                        >
+                          {/* Player Avatar Indicator (Left) */}
+                          {(isPlayerSelected || (feedbackState && isPlayerSelected)) && (
+                            <div className="absolute left-2.5 top-1/2 -translate-y-1/2 flex items-center justify-center w-7 h-7 rounded-full border-2 border-white bg-dh-accent shadow-lg z-20">
+                               <img src={playerAvatar} alt="You" className="w-full h-full rounded-full" />
+                            </div>
+                          )}
+                          
+                          {/* Opponent Avatar Indicator (Right) - ONLY SHOW AFTER REVEAL */}
+                          {(feedbackState && isOpponentSelected) && (
+                            <div className="absolute right-2.5 top-1/2 -translate-y-1/2 flex items-center justify-center w-7 h-7 rounded-full border-2 border-white bg-dh-red shadow-lg z-20">
+                               <img src={opponentAvatar} alt="Opp" className="w-full h-full rounded-full" />
+                            </div>
+                          )}
+                          
+                          <span className="relative z-10 w-full px-8 leading-snug"><LatexRenderer text={value} /></span>
+                        </button>
+                      );
+                    })}
+                  </div>
+                </>
+              );
+            })()}
             
             {/* Tactical Power-Up Dock */}
             <PowerUpDock

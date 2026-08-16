@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import api from '../api';
-import Latex from 'react-latex-next';
+import LatexRenderer from '../components/LatexRenderer';
 import { useNavigate } from 'react-router-dom';
 import { formatLatex } from '../utils/latex';
 
@@ -158,7 +158,7 @@ const SavedQuestions = () => {
 
           <div className="bg-dh-card rounded-2xl p-5 mb-4 border border-dh-border">
             <div className="text-base font-semibold text-dh-text">
-              <Latex>{formatLatex(q.questionText)}</Latex>
+              <LatexRenderer text={q.questionText} />
             </div>
           </div>
 
@@ -185,7 +185,7 @@ const SavedQuestions = () => {
                   <span className={`w-8 h-8 rounded-lg flex items-center justify-center font-mono font-bold text-sm ${practiceAnswered && optLetter === correctLetter ? 'bg-dh-green text-black' : practiceAnswered && optLetter === practiceSelected ? 'bg-dh-red text-white' : 'bg-dh-surface text-dh-text-muted'}`}>
                     {key}
                   </span>
-                  <span className="flex-1"><Latex>{formatLatex(text)}</Latex></span>
+                  <span className="flex-1"><LatexRenderer text={text} /></span>
                 </button>
               );
             })}
@@ -195,7 +195,7 @@ const SavedQuestions = () => {
           {practiceAnswered && q.explanation && (
             <div className="mt-4 p-4 bg-dh-accent/5 border-l-4 border-dh-accent rounded-r-lg text-dh-text text-sm animate-fade-in">
               <span className="font-heading font-bold text-dh-accent-light">Explanation: </span>
-              <Latex>{formatLatex(q.explanation)}</Latex>
+              <LatexRenderer text={q.explanation} />
             </div>
           )}
 
@@ -332,7 +332,7 @@ const SavedQuestions = () => {
                   </div>
 
                   <div className="text-lg font-semibold text-dh-text mb-6">
-                    <Latex>{formatLatex(b.questionText)}</Latex>
+                    <LatexRenderer text={b.questionText} />
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -351,7 +351,7 @@ const SavedQuestions = () => {
                             {key}
                           </div>
                           <div className="flex-1 pt-1 overflow-hidden">
-                            <Latex>{formatLatex(text)}</Latex>
+                            <LatexRenderer text={text} />
                           </div>
                         </div>
                       );
@@ -361,7 +361,7 @@ const SavedQuestions = () => {
                   {b.explanation && (
                     <div className="mt-6 p-4 bg-dh-accent/5 border-l-4 border-dh-accent rounded-r-lg text-dh-text text-sm">
                       <span className="font-heading font-bold text-dh-accent-light">Explanation: </span> 
-                      <Latex>{formatLatex(b.explanation)}</Latex>
+                      <LatexRenderer text={b.explanation} />
                     </div>
                   )}
                   

@@ -15,24 +15,71 @@
 }
 
 /*
- * Large arrays can be wider than mobile screens.
- * Scroll horizontally instead of breaking the page layout.
+ * Large arrays, matrices, and tables can be wider than mobile screens.
+ * Responsive glassmorphic container with horizontal touch-scrolling.
  */
 .latex-renderer__math--block {
   display: block;
   max-width: 100%;
-  margin: 1rem 0;
+  margin: 0.6rem auto;
   overflow-x: auto;
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
+  border-radius: 0.75rem;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(51, 65, 85, 0.5);
+  padding: 0.5rem 0.75rem;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-/* KaTeX adds its own display wrapper. */
+/* KaTeX display wrapper adjustments */
 .latex-renderer__math--block .katex-display {
-  width: max-content;
-  min-width: 100%;
+  width: 100%;
+  max-width: 100%;
   margin: 0;
   padding: 0.25rem 0;
+  text-align: left;
+}
+
+.latex-renderer__math--block .katex {
+  font-size: 0.88em;
+  text-align: left;
+  line-height: 1.4;
+}
+
+/* Responsive KaTeX table/array rules */
+.latex-renderer__math--block .katex .mtable {
+  border-collapse: collapse;
+  margin: 0 auto;
+  width: auto;
+  max-width: 100%;
+}
+
+.latex-renderer__math--block .katex .mtable .col-align-l,
+.latex-renderer__math--block .katex .mtable .col-align-c,
+.latex-renderer__math--block .katex .mtable .col-align-r {
+  padding: 5px 10px;
+  white-space: normal;
+  word-break: break-word;
+  max-width: 290px;
+  vertical-align: middle;
+  line-height: 1.35;
+}
+
+/* Subtle sleek scrollbar for wide tables */
+.latex-renderer__math--block::-webkit-scrollbar {
+  height: 4px;
+}
+.latex-renderer__math--block::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.4);
+  border-radius: 4px;
+}
+.latex-renderer__math--block::-webkit-scrollbar-thumb {
+  background: rgba(0, 230, 118, 0.35);
+  border-radius: 4px;
+}
+.latex-renderer__math--block::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 230, 118, 0.7);
 }
 
 /* Preserve a readable fallback if an unexpected error occurs. */
@@ -41,3 +88,4 @@
   white-space: pre-wrap;
   overflow-wrap: anywhere;
 }
+
