@@ -55,6 +55,11 @@ const DuelSchema = new mongoose.Schema({
       type: String,
       default: 'Fluid Mechanics',
     },
+    category: {
+      type: String,
+      enum: ['tech', 'gs'],
+      default: 'tech',
+    },
     questionCount: {
       type: Number,
       default: 5,
@@ -75,7 +80,6 @@ const DuelSchema = new mongoose.Schema({
   expiresAt: {
     type: Date,
     required: true,
-    index: true,
   },
 }, { timestamps: true });
 

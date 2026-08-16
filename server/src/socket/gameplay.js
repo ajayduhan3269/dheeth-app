@@ -1086,11 +1086,15 @@ const setupGameplaySockets = (io, socket) => {
       lastRequesterUsername: username
     });
 
-     if (state.isBotMatch) {
+      if (state.isBotMatch) {
         if (!state.botTimeout) {
           state.botTimeout = setTimeout(async () => {
               const qCount = state.questionCount || 5;
-              const questions = await Question.aggregate([{ $match: { subject: state.subject } }, { $sample: { size: qCount } }]);
+              let questions = await Question.aggregate([{ $match: { subject: state.subject } }, { $sample: { size: qCount } }]);
+              if (questions.length === 0) {
+                const cat = state.mode === 'gs' ? 'gs' : 'tech';
+                questions = await Question.aggregate([{ $match: { category: cat } }, { $sample: { size: qCount } }]);
+              }
               const pId = socket.user.id || socket.user.userId;
               const dbUser = await User.findById(pId);
               const pAvatar = dbUser?.equippedAvatar || socket.user.avatarSeed || 'default-seed';
@@ -1110,7 +1114,7 @@ const setupGameplaySockets = (io, socket) => {
               };
               
               socket.emit('rematch_accepted', matchPayload);
-              initializeMatch(newRoomId, state.subject, questions, { socketId: socket.id, username: socket.user.username, userId: pId, avatarSeed: pAvatar }, { socketId: "bot_socket_id", username: botOpp.username, userId: "bot", avatarSeed: "bot-ronin" }, true, { secondsPerQ: state.secondsPerQ, roundNumber: state.roundNumber, sessionRivalry: state.sessionRivalry });
+              initializeMatch(newRoomId, state.subject, questions, { socketId: socket.id, username: socket.user.username, userId: pId, avatarSeed: pAvatar }, { socketId: "bot_socket_id", username: botOpp.username, userId: "bot", avatarSeed: "bot-ronin" }, true, { secondsPerQ: state.secondsPerQ, roundNumber: state.roundNumber, sessionRivalry: state.sessionRivalry, mode: state.mode });
               setTimeout(() => startQuestionTimer(io, newRoomId), 3500);
               
               delete rematchState[roomId];
@@ -1119,7 +1123,11 @@ const setupGameplaySockets = (io, socket) => {
      } else {
         if (Object.keys(state.requests).length === 2) {
            const qCount = state.questionCount || 5;
-           const questions = await Question.aggregate([{ $match: { subject: state.subject } }, { $sample: { size: qCount } }]);
+           let questions = await Question.aggregate([{ $match: { subject: state.subject } }, { $sample: { size: qCount } }]);
+           if (questions.length === 0) {
+             const cat = state.mode === 'gs' ? 'gs' : 'tech';
+             questions = await Question.aggregate([{ $match: { category: cat } }, { $sample: { size: qCount } }]);
+           }
            const newRoomId = `room_${Date.now()}`;
 
            if (state.p1.socketId && io.sockets.sockets.get(state.p1.socketId)) {

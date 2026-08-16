@@ -97,7 +97,8 @@ const ActiveDuelBanner = ({ duel, onRefresh, onNavigate }) => {
   const handleShareWhatsApp = (e) => {
     e.stopPropagation();
     sounds.click?.();
-    const message = `🔥 *DHEETH 1v1 Quiz Duel!*\n\nI challenge you to a live quiz duel in *${duel.config?.subject || 'Civil Engineering'}* (${duel.config?.questionCount || 5} Qs · ${duel.config?.secondsPerQ || 20}s).\n\n👉 *Accept Challenge here:* ${duelUrl}\n\n⚔️ Or enter Code: *${duel.code}*`;
+    const catLabel = duel.config?.category === 'gs' ? '🌍 GS' : '🏗️ Civil Eng';
+    const message = `🔥 *DHEETH 1v1 Quiz Duel!*\n\nI challenge you to a live quiz duel in *${duel.config?.subject || 'Quiz Duel'}* [${catLabel}] (${duel.config?.questionCount || 5} Qs · ${duel.config?.secondsPerQ || 20}s).\n\n👉 *Accept Challenge here:* ${duelUrl}\n\n⚔️ Or enter Code: *${duel.code}*`;
     if (navigator.share) {
       navigator.share({ title: 'DHEETH 1v1 Challenge', text: message, url: duelUrl }).catch(() => {
         window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(message)}`, '_blank');
@@ -145,7 +146,7 @@ const ActiveDuelBanner = ({ duel, onRefresh, onNavigate }) => {
               </span>
             </div>
             <p className="text-xs font-heading font-bold text-dh-text truncate mt-1">
-              {duel.config?.subject} • {duel.config?.questionCount || 5} Questions
+              {duel.config?.subject} <span className="text-[10px] text-dh-text-muted font-normal">({duel.config?.category === 'gs' ? '🌍 GS' : '🏗️ Civil Eng'})</span> • {duel.config?.questionCount || 5} Questions
             </p>
           </div>
         </div>

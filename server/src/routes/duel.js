@@ -41,7 +41,12 @@ router.post('/create', verifyToken, async (req, res) => {
       return res.status(404).json({ ok: false, error: 'User not found' });
     }
 
-    const { subject, questionCount, secondsPerQ } = req.body;
+    const { subject, category, questionCount, secondsPerQ } = req.body;
+    const GS_SUBJECTS = ['Ancient History', 'Medieval History', 'Modern History', 'Polity', 'Biology', 'Indian Geography & Resources', 'World Core & Climate'];
+    const chosenSubject = subject || 'Fluid Mechanics';
+    const resolvedCategory = (category === 'gs' || category === 'tech') 
+      ? category 
+      : (GS_SUBJECTS.includes(chosenSubject) ? 'gs' : 'tech');
 
     // Cancel any previous pending duels by this host to keep code space clean
     await Duel.updateMany(
@@ -65,7 +70,8 @@ router.post('/create', verifyToken, async (req, res) => {
           hostAvatar: user.equippedAvatar || user.avatarSeed || 'default-seed',
           hostTitle: user.title || 'Challenger',
           config: {
-            subject: subject || 'Fluid Mechanics',
+            subject: chosenSubject,
+            category: resolvedCategory,
             questionCount: Number(questionCount) || 5,
             secondsPerQ: Number(secondsPerQ) || 20,
           },

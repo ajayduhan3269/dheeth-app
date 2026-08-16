@@ -7,17 +7,23 @@ import { sounds } from '../utils/sound';
 
 const SUBJECT_EMOJIS = {
   'Fluid Mechanics': '💧',
-  'Soil Mechanics': '🪨',
-  'Structural Analysis': '🏗️',
-  'Environmental Engineering': '🌿',
   'Building Materials': '🧱',
+  'Environmental Engineering': '🌿',
+  'Highway Engineering': '🛣️',
   'Irrigation Engineering': '🌾',
   'Surveying': '🔭',
-  'Highway Engineering': '🛣️',
+  'Civil Engineering': '🏗️',
+  'Soil Mechanics': '🪨',
+  'Structural Analysis': '🏗️',
   'Polity': '🏛️',
+  'Ancient History': '🏺',
+  'Medieval History': '🏰',
+  'Modern History': '📜',
+  'Indian Geography & Resources': '🗺️',
+  'World Core & Climate': '🌏',
+  'Biology': '🧬',
   'History': '📜',
   'Geography': '🌍',
-  'Biology': '🧬',
   'Economics': '📊',
   'Science & Technology': '🔬',
 };
@@ -115,7 +121,8 @@ const DuelLobbyPage = () => {
     if (!duel) return;
     sounds.click();
     const shareUrl = window.location.href;
-    const message = `🔥 *DHEETH 1v1 Quiz Duel!*\n\nI challenge you to a live quiz duel in *${duel.config.subject}* (${duel.config.questionCount} Qs · ${duel.config.secondsPerQ}s).\n\n👉 *Accept Challenge here:* ${shareUrl}\n\n⚔️ Or enter Code: *${duel.code}*`;
+    const catLabel = duel.config?.category === 'gs' ? '🌍 GS' : '🏗️ Civil Eng';
+    const message = `🔥 *DHEETH 1v1 Quiz Duel!*\n\nI challenge you to a live quiz duel in *${duel.config.subject}* [${catLabel}] (${duel.config.questionCount} Qs · ${duel.config.secondsPerQ}s).\n\n👉 *Accept Challenge here:* ${shareUrl}\n\n⚔️ Or enter Code: *${duel.code}*`;
 
     if (navigator.share) {
       navigator.share({
@@ -263,7 +270,7 @@ const DuelLobbyPage = () => {
             Your Duel is Live!
           </h2>
           <p className="text-xs text-dh-text-muted mb-4">
-            Share this link with a friend so they can accept your challenge in <span className="text-dh-accent font-bold">{duel.config.subject}</span>.
+            Share this link with a friend so they can accept your challenge in <span className="text-dh-accent font-bold">{duel.config.subject}</span> ({duel.config?.category === 'gs' ? '🌍 GS' : '🏗️ Civil Eng'}).
           </p>
 
           <div className="bg-dh-accent/10 border border-dh-accent/30 rounded-2xl p-3 mb-5 text-left">
@@ -401,11 +408,18 @@ const DuelLobbyPage = () => {
         <div className="bg-dh-surface border-2 border-dh-border rounded-2xl p-4 mb-6 text-left">
           <div className="flex items-center gap-3 mb-3">
             <span className="text-2xl">{SUBJECT_EMOJIS[duel.config.subject] || '⚡'}</span>
-            <div>
-              <p className="text-[10px] font-heading font-bold text-dh-text-muted uppercase">
-                Subject
-              </p>
-              <h4 className="text-base font-heading font-black text-white">
+            <div className="flex-1 min-w-0">
+              <div className="flex items-center gap-2">
+                <p className="text-[10px] font-heading font-bold text-dh-text-muted uppercase">
+                  Subject
+                </p>
+                <span className={`text-[9px] font-heading font-black px-1.5 py-0.5 rounded-full border ${
+                  duel.config?.category === 'gs' ? 'bg-dh-orange/20 text-dh-orange border-dh-orange/40' : 'bg-dh-purple/20 text-dh-purple border-dh-purple/40'
+                }`}>
+                  {duel.config?.category === 'gs' ? '🌍 GS' : '🏗️ Civil Eng'}
+                </span>
+              </div>
+              <h4 className="text-base font-heading font-black text-white truncate">
                 {duel.config.subject}
               </h4>
             </div>

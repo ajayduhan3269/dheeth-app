@@ -95,8 +95,10 @@ function setupDuelSockets(io, socket) {
         return;
       }
 
-      // Fetch questions based on subject & configured question count
+      // Fetch questions based on subject & configured question count & category
+      const GS_SUBJECTS = ['Ancient History', 'Medieval History', 'Modern History', 'Polity', 'Biology', 'Indian Geography & Resources', 'World Core & Climate'];
       const subject = duel.config.subject;
+      const category = duel.config.category || (GS_SUBJECTS.includes(subject) ? 'gs' : 'tech');
       const count = duel.config.questionCount || 5;
 
       let questions = await Question.aggregate([
@@ -105,8 +107,14 @@ function setupDuelSockets(io, socket) {
       ]);
 
       if (questions.length === 0) {
-        // Fallback: any questions
-        questions = await Question.aggregate([{ $sample: { size: count } }]);
+        // Fallback: match category first so GS questions never pull Tech questions
+        questions = await Question.aggregate([
+          { $match: { category } },
+          { $sample: { size: count } }
+        ]);
+        if (questions.length === 0) {
+          questions = await Question.aggregate([{ $sample: { size: count } }]);
+        }
       }
 
       const roomId = `room_duel_${Date.now()}`;
@@ -134,7 +142,7 @@ function setupDuelSockets(io, socket) {
         subject: duel.config.subject,
         questions,
         isBotMatch: false,
-        mode: 'duel',
+        mode: category,
         isDuel: true,
         duelCode: duel.code,
         ratingMode: 'friendly',
@@ -207,7 +215,7 @@ function setupDuelSockets(io, socket) {
         { socketId: hostSocketId || '', username: duel.hostUsername, userId: duel.hostId.toString(), avatarSeed: duel.hostAvatar, eloRating: hostElo },
         { socketId: guestSocketId, username: fullUser.username, userId: fullUser._id.toString(), avatarSeed: guestAvatar, eloRating: guestElo },
         false,
-        { secondsPerQ: duel.config.secondsPerQ || 20, questionCount: count, roundNumber: 1, waitingForHost: !isHostOnline }
+        { secondsPerQ: duel.config.secondsPerQ || 20, questionCount: count, roundNumber: 1, waitingForHost: !isHostOnline, mode: category }
       );
 
       if (isHostOnline) {

@@ -2,27 +2,36 @@ import React, { useState, useEffect } from 'react';
 import api from '../api';
 import { socket } from '../socket';
 import { sounds } from '../utils/sound';
+import { useAppMode } from '../context/AppModeContext';
 import { isPushSupported, getNotificationPermission, subscribeToPush } from '../utils/pushNotifications';
 
-const SUBJECTS = [
-  { name: 'Fluid Mechanics', emoji: '💧', color: 'from-blue-500/20 to-cyan-500/10 border-blue-500/30 text-blue-400' },
-  { name: 'Soil Mechanics', emoji: '🪨', color: 'from-amber-600/20 to-yellow-600/10 border-amber-500/30 text-amber-400' },
-  { name: 'Structural Analysis', emoji: '🏗️', color: 'from-orange-500/20 to-red-500/10 border-orange-500/30 text-orange-400' },
-  { name: 'Environmental Engineering', emoji: '🌿', color: 'from-emerald-500/20 to-teal-500/10 border-emerald-500/30 text-emerald-400' },
-  { name: 'Building Materials', emoji: '🧱', color: 'from-rose-500/20 to-pink-500/10 border-rose-500/30 text-rose-400' },
-  { name: 'Irrigation Engineering', emoji: '🌾', color: 'from-lime-500/20 to-green-500/10 border-lime-500/30 text-lime-400' },
-  { name: 'Surveying', emoji: '🔭', color: 'from-indigo-500/20 to-purple-500/10 border-indigo-500/30 text-indigo-400' },
-  { name: 'Highway Engineering', emoji: '🛣️', color: 'from-slate-500/20 to-zinc-500/10 border-slate-500/30 text-slate-300' },
-  { name: 'Polity', emoji: '🏛️', color: 'from-sky-500/20 to-indigo-500/10 border-sky-500/30 text-sky-400' },
-  { name: 'History', emoji: '📜', color: 'from-amber-700/20 to-orange-700/10 border-amber-600/30 text-amber-300' },
-  { name: 'Geography', emoji: '🌍', color: 'from-teal-500/20 to-emerald-500/10 border-teal-500/30 text-teal-400' },
-  { name: 'Biology', emoji: '🧬', color: 'from-pink-500/20 to-rose-500/10 border-pink-500/30 text-pink-400' },
-  { name: 'Economics', emoji: '📊', color: 'from-violet-500/20 to-purple-500/10 border-violet-500/30 text-violet-400' },
-  { name: 'Science & Technology', emoji: '🔬', color: 'from-cyan-500/20 to-blue-500/10 border-cyan-500/30 text-cyan-400' },
-];
+const SUBJECTS_BY_CATEGORY = {
+  tech: [
+    { name: 'Fluid Mechanics', emoji: '💧', color: 'from-blue-500/20 to-cyan-500/10 border-blue-500/30 text-blue-400' },
+    { name: 'Building Materials', emoji: '🧱', color: 'from-rose-500/20 to-pink-500/10 border-rose-500/30 text-rose-400' },
+    { name: 'Environmental Engineering', emoji: '🌿', color: 'from-emerald-500/20 to-teal-500/10 border-emerald-500/30 text-emerald-400' },
+    { name: 'Highway Engineering', emoji: '🛣️', color: 'from-slate-500/20 to-zinc-500/10 border-slate-500/30 text-slate-300' },
+    { name: 'Irrigation Engineering', emoji: '🌾', color: 'from-lime-500/20 to-green-500/10 border-lime-500/30 text-lime-400' },
+    { name: 'Surveying', emoji: '🔭', color: 'from-indigo-500/20 to-purple-500/10 border-indigo-500/30 text-indigo-400' },
+    { name: 'Civil Engineering', emoji: '🏗️', color: 'from-orange-500/20 to-red-500/10 border-orange-500/30 text-orange-400' },
+  ],
+  gs: [
+    { name: 'Polity', emoji: '🏛️', color: 'from-sky-500/20 to-indigo-500/10 border-sky-500/30 text-sky-400' },
+    { name: 'Ancient History', emoji: '🏺', color: 'from-amber-700/20 to-orange-700/10 border-amber-600/30 text-amber-300' },
+    { name: 'Medieval History', emoji: '🏰', color: 'from-rose-600/20 to-red-600/10 border-rose-500/30 text-rose-400' },
+    { name: 'Modern History', emoji: '📜', color: 'from-slate-600/20 to-gray-600/10 border-slate-500/30 text-slate-300' },
+    { name: 'Indian Geography & Resources', emoji: '🗺️', color: 'from-amber-600/20 to-yellow-600/10 border-amber-500/30 text-amber-400' },
+    { name: 'World Core & Climate', emoji: '🌏', color: 'from-teal-500/20 to-emerald-500/10 border-teal-500/30 text-teal-400' },
+    { name: 'Biology', emoji: '🧬', color: 'from-emerald-500/20 to-green-500/10 border-emerald-500/30 text-emerald-400' },
+  ],
+};
 
 const CreateDuelModal = ({ isOpen, onClose, onDuelCreated }) => {
-  const [selectedSubject, setSelectedSubject] = useState(SUBJECTS[0].name);
+  const { mode: appMode } = useAppMode();
+  const [selectedCategory, setSelectedCategory] = useState(appMode === 'gs' ? 'gs' : 'tech');
+  const [selectedSubject, setSelectedSubject] = useState(
+    SUBJECTS_BY_CATEGORY[appMode === 'gs' ? 'gs' : 'tech'][0].name
+  );
   const [questionCount, setQuestionCount] = useState(5);
   const [secondsPerQ, setSecondsPerQ] = useState(30);
   const [loading, setLoading] = useState(false);
@@ -33,8 +42,20 @@ const CreateDuelModal = ({ isOpen, onClose, onDuelCreated }) => {
   const [enablingPush, setEnablingPush] = useState(false);
 
   useEffect(() => {
-    setPushStatus(getNotificationPermission());
-  }, [isOpen]);
+    if (isOpen) {
+      const initialCat = appMode === 'gs' ? 'gs' : 'tech';
+      setSelectedCategory(initialCat);
+      setSelectedSubject(SUBJECTS_BY_CATEGORY[initialCat][0].name);
+      setPushStatus(getNotificationPermission());
+    }
+  }, [isOpen, appMode]);
+
+  const handleCategoryChange = (cat) => {
+    sounds.click?.();
+    setSelectedCategory(cat);
+    const catSubjects = SUBJECTS_BY_CATEGORY[cat] || SUBJECTS_BY_CATEGORY.tech;
+    setSelectedSubject(catSubjects[0]?.name || 'Fluid Mechanics');
+  };
 
   const handleEnablePush = async () => {
     setEnablingPush(true);
@@ -87,6 +108,7 @@ const CreateDuelModal = ({ isOpen, onClose, onDuelCreated }) => {
     try {
       const res = await api.post('/api/duel/create', {
         subject: selectedSubject,
+        category: selectedCategory,
         questionCount,
         secondsPerQ,
       });
@@ -113,7 +135,8 @@ const CreateDuelModal = ({ isOpen, onClose, onDuelCreated }) => {
     if (!createdDuel) return;
     sounds.click();
     const shareUrl = getShareUrl();
-    const message = `🔥 *DHEETH 1v1 Quiz Duel!*\n\nI challenge you to a live quiz duel in *${createdDuel.config.subject}* (${createdDuel.config.questionCount} Questions · ${createdDuel.config.secondsPerQ}s).\n\n👉 *Accept Challenge here:* ${shareUrl}\n\n⚔️ Or enter Code: *${createdDuel.code}*`;
+    const catLabel = createdDuel.config?.category === 'gs' ? '🌍 GS' : '🏗️ Civil Eng';
+    const message = `🔥 *DHEETH 1v1 Quiz Duel!*\n\nI challenge you to a live quiz duel in *${createdDuel.config.subject}* [${catLabel}] (${createdDuel.config.questionCount} Questions · ${createdDuel.config.secondsPerQ}s).\n\n👉 *Accept Challenge here:* ${shareUrl}\n\n⚔️ Or enter Code: *${createdDuel.code}*`;
 
     // Try Web Share API first if on mobile
     if (navigator.share) {
@@ -144,6 +167,8 @@ const CreateDuelModal = ({ isOpen, onClose, onDuelCreated }) => {
     onClose();
   };
 
+  const currentSubjects = SUBJECTS_BY_CATEGORY[selectedCategory] || SUBJECTS_BY_CATEGORY.tech;
+
   return (
     <div className="fixed inset-0 z-[999] bg-black/75 backdrop-blur-md flex items-center justify-center p-4 animate-fade-in">
       <div className="bg-dh-card border-4 border-dh-border rounded-3xl p-6 sm:p-8 max-w-md w-full text-center shadow-2xl relative max-h-[90vh] overflow-y-auto">
@@ -165,17 +190,55 @@ const CreateDuelModal = ({ isOpen, onClose, onDuelCreated }) => {
             <h2 className="text-2xl font-heading font-black text-white mb-1">
               Challenge a Friend
             </h2>
-            <p className="text-xs text-dh-text-muted mb-6">
-              Create a custom 1v1 live quiz duel and share the link on WhatsApp!
+            <p className="text-xs text-dh-text-muted mb-5">
+              Create a custom 1v1 live quiz duel in Civil Engineering or GS!
             </p>
+
+            {/* Category Selector (Civil Eng vs General Studies) */}
+            <div className="mb-4 text-left">
+              <label className="block text-[11px] font-heading font-bold text-dh-text-muted uppercase tracking-wider mb-2">
+                Exam Stream
+              </label>
+              <div className="flex items-center justify-center p-1 bg-dh-surface rounded-2xl border border-dh-border">
+                <button
+                  type="button"
+                  onClick={() => handleCategoryChange('tech')}
+                  className={`flex-1 py-2 px-3 rounded-xl text-xs font-heading font-black flex items-center justify-center gap-1.5 transition-all ${
+                    selectedCategory === 'tech'
+                      ? 'bg-dh-purple text-white shadow-lg shadow-dh-purple/30 scale-[1.02]'
+                      : 'text-dh-text-muted hover:text-white'
+                  }`}
+                >
+                  <span className="text-sm">🏗️</span>
+                  <span>Civil Eng</span>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => handleCategoryChange('gs')}
+                  className={`flex-1 py-2 px-3 rounded-xl text-xs font-heading font-black flex items-center justify-center gap-1.5 transition-all ${
+                    selectedCategory === 'gs'
+                      ? 'bg-dh-orange text-white shadow-lg shadow-dh-orange/30 scale-[1.02]'
+                      : 'text-dh-text-muted hover:text-white'
+                  }`}
+                >
+                  <span className="text-sm">🌍</span>
+                  <span>General Studies (GS)</span>
+                </button>
+              </div>
+            </div>
 
             {/* Subject Picker */}
             <div className="text-left mb-5">
-              <label className="block text-[11px] font-heading font-bold text-dh-text-muted uppercase tracking-wider mb-2">
-                Choose Subject
-              </label>
+              <div className="flex items-center justify-between mb-2">
+                <label className="block text-[11px] font-heading font-bold text-dh-text-muted uppercase tracking-wider">
+                  Choose Subject
+                </label>
+                <span className="text-[10px] font-heading font-bold text-dh-text-muted uppercase">
+                  {currentSubjects.length} Available
+                </span>
+              </div>
               <div className="grid grid-cols-2 gap-2 max-h-44 overflow-y-auto pr-1">
-                {SUBJECTS.map((sub) => {
+                {currentSubjects.map((sub) => {
                   const isSelected = selectedSubject === sub.name;
                   return (
                     <button
@@ -284,7 +347,7 @@ const CreateDuelModal = ({ isOpen, onClose, onDuelCreated }) => {
               Your Duel is Ready!
             </h2>
             <p className="text-xs text-dh-text-muted mb-4">
-              Share this with your friend. As soon as they accept, the match starts!
+              Share this with your friend in <span className="text-dh-accent font-bold">{createdDuel.config.subject}</span> ({createdDuel.config?.category === 'gs' ? '🌍 GS' : '🏗️ Civil Eng'}). As soon as they accept, the match starts!
             </p>
 
             {/* Monospace Code Display */}
