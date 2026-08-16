@@ -4,3 +4,8 @@ node_modules/
 dist/
 dist-ssr/
 .DS_Store
+*.log
+crash.log
+.idea/
+.vscode/
+

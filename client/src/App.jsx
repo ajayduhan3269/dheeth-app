@@ -10,6 +10,11 @@ import Shop from './pages/Shop';
 import GroupRoom from './pages/GroupRoom';
 import MapOfIndiaPage from './pages/MapOfIndia';
 import AdminUpload from './pages/AdminUpload';
+import DuelLobbyPage from './pages/DuelLobbyPage';
+import MistakeNotebookPage from './pages/MistakeNotebookPage';
+import MistakeDrillPage from './pages/MistakeDrillPage';
+import RedeemChallengePage from './pages/RedeemChallengePage';
+import PWAInstallPrompt from './components/PWAInstallPrompt';
 import BottomNav from './components/BottomNav';
 import { AuthProvider, AuthContext } from './context/AuthContext';
 import { AppModeProvider } from './context/AppModeContext';
@@ -102,11 +107,12 @@ const MatchRequestOverlay = () => {
 
 const AppLayout = () => {
   const location = useLocation();
-  const hideNav = location.pathname === '/auth' || location.pathname === '/match' || location.pathname === '/admin';
+  const hideNav = location.pathname === '/auth' || location.pathname === '/match' || location.pathname === '/admin' || location.pathname.startsWith('/duel/') || location.pathname.startsWith('/d/');
 
   return (
     <div className="min-h-screen bg-dh-bg text-dh-text w-full font-sans">
       <MatchRequestOverlay />
+      <PWAInstallPrompt />
       {/* Bottom padding = nav height + raised play button + device safe area, so content never hides under the nav */}
       <div style={hideNav ? undefined : { paddingBottom: 'calc(96px + env(safe-area-inset-bottom))' }}>
         <Routes>
@@ -158,6 +164,23 @@ const AppLayout = () => {
               <AdminUpload />
             </ProtectedRoute>
           } />
+          <Route path="/notebook" element={
+            <ProtectedRoute>
+              <MistakeNotebookPage />
+            </ProtectedRoute>
+          } />
+          <Route path="/notebook/drill" element={
+            <ProtectedRoute>
+              <MistakeDrillPage />
+            </ProtectedRoute>
+          } />
+          <Route path="/notebook/redeem" element={
+            <ProtectedRoute>
+              <RedeemChallengePage />
+            </ProtectedRoute>
+          } />
+          <Route path="/duel/:code" element={<DuelLobbyPage />} />
+          <Route path="/d/:code" element={<DuelLobbyPage />} />
           <Route path="/login" element={<Navigate to="/auth" replace />} />
           <Route path="/" element={<Navigate to="/dashboard" replace />} />
           <Route path="*" element={<Navigate to="/dashboard" replace />} />

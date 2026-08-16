@@ -4,6 +4,19 @@ const { Server } = require('socket.io');
 const mongoose = require('mongoose');
 const cors = require('cors');
 require('dotenv').config();
+const fs = require('fs');
+
+process.on('uncaughtException', (err) => {
+  fs.writeFileSync('crash.log', 'UNCAUGHT EXCEPTION:\n' + (err.stack || err) + '\n');
+  console.error('UNCAUGHT EXCEPTION:', err);
+  process.exit(1);
+});
+
+process.on('unhandledRejection', (reason, promise) => {
+  fs.writeFileSync('crash.log', 'UNHANDLED REJECTION:\n' + (reason.stack || reason) + '\n');
+  console.error('UNHANDLED REJECTION:', reason);
+  process.exit(1);
+});
 
 const adminRoutes = require('./routes/adminRoutes');
 const quizRoutes = require('./routes/quizRoutes');
@@ -46,6 +59,11 @@ app.use('/api/daily', require('./routes/dailyProgress'));
 app.use('/api/friends', require('./routes/friends'));
 app.use('/api/shop', require('./routes/shop'));
 app.use('/api/map', require('./routes/mapGame'));
+app.use('/api/duel', require('./routes/duel'));
+app.use('/api/notifications', require('./routes/notifications'));
+app.use('/api/mistakes', require('./routes/mistakes'));
+app.use('/share', require('./routes/share'));
+app.use('/d', require('./routes/share'));
 
 // Basic route to test the server
 app.get('/', (req, res) => {
@@ -78,6 +96,7 @@ io.on('connection', (socket) => {
   handleMatchmaking(io, socket);
   setupGameplaySockets(io, socket);
   setupGroupQuiz(io, socket);
+  require('./socket/duel').setupDuelSockets(io, socket);
 
   socket.on('disconnect', () => {
     if (socket.user) {

@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { socket } from '../socket';
 import LatexRenderer from './LatexRenderer';
 import MatchSummary from './MatchSummary';
+import PowerUpDock from './PowerUpDock';
 import api, { getAvatarUrl } from '../api';
 import { sounds } from '../utils/sound';
 
@@ -9,15 +10,22 @@ const MatchScreen = ({ matchPayload }) => {
   const pId = matchPayload.player.id;
   const oId = matchPayload.opponent.id;
 
+  const getOptionLetter = (ans) => {
+    if (!ans) return null;
+    if (typeof ans === 'string') return ans.toUpperCase();
+    if (typeof ans === 'object' && ans.selectedOption) return String(ans.selectedOption).toUpperCase();
+    return null;
+  };
+
   const extractInitial = (payload) => {
     const qIndex = payload.currentQuestionIndex || 0;
     const pData = payload.players?.[pId];
     const oData = payload.players?.[oId];
-    const myAnswer = pData?.answers?.[qIndex];
-    const oppAnswer = oData?.answers?.[qIndex];
+    const myAnswer = pData?.hasAnswered ? getOptionLetter(pData?.answers?.[qIndex]) : null;
+    const oppAnswer = oData?.hasAnswered ? getOptionLetter(oData?.answers?.[qIndex]) : null;
     const timeUp = payload.questionEndsAt && Date.now() >= payload.questionEndsAt;
-    const bothAnswered = pData?.hasAnswered && oData?.hasAnswered;
-    const isRevealed = timeUp || bothAnswered;
+    const bothAnswered = Boolean(pData?.hasAnswered && oData?.hasAnswered);
+    const isRevealed = Boolean((timeUp && pData?.hasAnswered) || bothAnswered);
     const correctOpt = payload.questions?.[qIndex]?.correctOption?.toUpperCase();
     
     return {
@@ -29,17 +37,18 @@ const MatchScreen = ({ matchPayload }) => {
       opponentScore: oData?.score || 0,
       opponentCorrectCount: oData?.correctAnswers || 0,
       opponentConnected: oData?.connected ?? true,
-      selectedOption: myAnswer ? myAnswer.toUpperCase() : null,
-      feedbackState: isRevealed ? (myAnswer?.toUpperCase() === correctOpt ? 'correct' : 'wrong') : null,
+      selectedOption: myAnswer,
+      feedbackState: isRevealed ? (myAnswer === correctOpt ? 'correct' : 'wrong') : null,
       correctOption: isRevealed ? correctOpt : null,
-      opponentSelected: isRevealed ? (oppAnswer?.toUpperCase() || null) : null
+      opponentSelected: isRevealed ? oppAnswer : null
     };
   };
 
   const initial = extractInitial(matchPayload);
 
   const [matchPhase, setMatchPhase] = useState(matchPayload.matchPhase || 'intro');
-  const [timeLeft, setTimeLeft] = useState(60);
+  const [secondsPerQ, setSecondsPerQ] = useState(Number(matchPayload.secondsPerQ) || 20);
+  const [timeLeft, setTimeLeft] = useState(Number(matchPayload.secondsPerQ) || 20);
   const [questionEndsAt, setQuestionEndsAt] = useState(initial.questionEndsAt);
   const [currentIndex, setCurrentIndex] = useState(initial.currentIndex);
   
@@ -62,6 +71,11 @@ const MatchScreen = ({ matchPayload }) => {
   const [scoreDiff, setScoreDiff] = useState(null);
   const prevScoreRef = useRef(initial.playerScore);
   const [savedMatchQuestions, setSavedMatchQuestions] = useState(new Set());
+
+  // EMP Disruptor Power-Up States
+  const [powerupSlot, setPowerupSlot] = useState(matchPayload.myPowerupSlot || null);
+  const [isActivatingPowerup, setIsActivatingPowerup] = useState(false);
+  const [eliminatedOptions, setEliminatedOptions] = useState([]);
 
   useEffect(() => {
     socket.emit('match:sync', (response) => {
@@ -112,7 +126,18 @@ const MatchScreen = ({ matchPayload }) => {
 
   useEffect(() => {
     socket.on('timer_sync', (data) => {
+      if (data.secondsPerQ) setSecondsPerQ(Number(data.secondsPerQ));
       setQuestionEndsAt(data.questionEndsAt);
+      setCurrentIndex((prevIdx) => {
+        if (prevIdx === 0) {
+          setSelectedOption(null);
+          setFeedbackState(null);
+          setCorrectOption(null);
+          setOpponentSelected(null);
+          setEliminatedOptions([]);
+        }
+        return prevIdx;
+      });
     });
 
     socket.on('player:connection', (data) => {
@@ -127,14 +152,6 @@ const MatchScreen = ({ matchPayload }) => {
       if (me) {
         setPlayerScore(me.score);
         setPlayerCorrectCount(me.correctAnswers || 0);
-        const diff = me.score - prevScoreRef.current;
-        if (diff > 0) {
-          const newKey = Date.now();
-          setScoreDiff({ value: diff, key: newKey });
-          setTimeout(() => {
-            setScoreDiff(prev => (prev && prev.key === newKey ? null : prev));
-          }, 1500);
-        }
         prevScoreRef.current = me.score;
       }
       if (opp) {
@@ -149,6 +166,12 @@ const MatchScreen = ({ matchPayload }) => {
       setPlayerStreak(prev => (data.isCorrect ? prev + 1 : 0));
       if (data.isCorrect) {
         sounds.correct();
+        const newKey = Date.now();
+        const scoreVal = data.scoreGained || (data.breakdown ? data.breakdown.total : 100);
+        setScoreDiff({ value: scoreVal, breakdown: data.breakdown, key: newKey });
+        setTimeout(() => {
+          setScoreDiff(prev => (prev && prev.key === newKey ? null : prev));
+        }, 2200);
       } else {
         sounds.wrong();
         setVibrate(true);
@@ -159,7 +182,7 @@ const MatchScreen = ({ matchPayload }) => {
     socket.on('reveal_answers', (data) => {
       setCorrectOption(data.correctOption?.toUpperCase() || null);
       const opponentData = Object.values(data.players).find(p => p.userId === matchPayload.opponent.id);
-      setOpponentSelected(opponentData?.answers?.[data.questionIndex]?.toUpperCase() || null);
+      setOpponentSelected(getOptionLetter(opponentData?.answers?.[data.questionIndex]));
     });
 
     socket.on('match_over', (data) => {
@@ -174,12 +197,26 @@ const MatchScreen = ({ matchPayload }) => {
       setFeedbackState(null);
       setCorrectOption(null);
       setOpponentSelected(null);
+      setEliminatedOptions([]);
     });
 
     socket.on('receive_reaction', (data) => {
       const id = Date.now();
       setActiveReactions(prev => [...prev, { emoji: data.emoji, id }]);
       setTimeout(() => setActiveReactions(prev => prev.filter(r => r.id !== id)), 2000);
+    });
+
+    // EMP Power-up socket events
+    socket.on('powerup:charge_update', (data) => {
+      setPowerupSlot(data.slot || null);
+      if (data.slot) sounds.streak?.();
+    });
+
+    socket.on('powerup:effect_applied', (data) => {
+      if (data.type === 'EMP' && data.eliminatedOptionIds) {
+        setEliminatedOptions(data.eliminatedOptionIds.map(x => x.toUpperCase()));
+        sounds.capture?.();
+      }
     });
 
     return () => {
@@ -191,8 +228,10 @@ const MatchScreen = ({ matchPayload }) => {
       socket.off('match_over');
       socket.off('next_question');
       socket.off('receive_reaction');
+      socket.off('powerup:charge_update');
+      socket.off('powerup:effect_applied');
     };
-  }, [matchPayload]);
+  }, [matchPayload, pId]);
 
   useEffect(() => {
     // Lightning strike on every 3-answer streak (3, 6, 9...)
@@ -212,6 +251,17 @@ const MatchScreen = ({ matchPayload }) => {
 
   const sendReaction = (emoji) => {
     socket.emit('send_reaction', { roomId: matchPayload.roomId, emoji });
+  };
+
+  const handleActivatePowerup = (slot) => {
+    if (!slot || isActivatingPowerup) return;
+    setIsActivatingPowerup(true);
+    socket.emit('powerup:activate', { roomId: matchPayload.roomId, powerupInstanceId: slot.instanceId }, (ack) => {
+      setIsActivatingPowerup(false);
+      if (ack?.ok) {
+        setPowerupSlot(null);
+      }
+    });
   };
 
   const handleSaveMatchQuestion = async (q) => {
@@ -242,7 +292,7 @@ const MatchScreen = ({ matchPayload }) => {
 
   const totalQuestions = matchPayload.questions.length;
   const currentQ = matchPayload.questions[currentIndex];
-  const timerPercent = (timeLeft / 60) * 100;
+  const timerPercent = (timeLeft / (secondsPerQ || 20)) * 100;
   const playerAvatar = getAvatarUrl(matchPayload.player.avatarSeed || matchPayload.player.username);
   const opponentAvatar = getAvatarUrl(matchPayload.opponent.avatarSeed || matchPayload.opponent.username);
 
@@ -271,20 +321,37 @@ const MatchScreen = ({ matchPayload }) => {
 
       {/* Intro Animation */}
       {matchPhase === 'intro' && (
-        <div className="flex-1 flex flex-col items-center justify-center">
-          <div className="animate-match-found text-center">
-            <div className="flex items-center justify-center gap-8 mb-8">
+        <div className="flex-1 flex flex-col items-center justify-center p-4">
+          <div className="animate-match-found text-center max-w-sm w-full">
+            {matchPayload.isDuel && (
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-dh-accent/15 border border-dh-accent/40 text-dh-accent font-heading font-black text-xs uppercase tracking-widest mb-4">
+                <span>⚔️</span> Friend Duel • Round {matchPayload.roundNumber || 1}
+              </div>
+            )}
+            <div className="flex items-center justify-center gap-6 mb-6">
               <div className="flex flex-col items-center">
                 <img src={playerAvatar} alt="You" className="w-20 h-20 rounded-full border-3 border-dh-accent shadow-lg shadow-dh-accent/40 bg-dh-card" />
                 <p className="text-dh-text font-heading font-bold text-sm mt-2">{matchPayload.player.username}</p>
+                {matchPayload.rivalry && (
+                  <span className="text-[10px] font-heading font-black text-dh-accent bg-dh-accent/10 px-2 py-0.5 rounded-full mt-1">
+                    {matchPayload.rivalry.scoreHost} Wins
+                  </span>
+                )}
               </div>
               <div className="text-3xl font-heading font-black text-dh-secondary animate-pulse">VS</div>
               <div className="flex flex-col items-center">
                 <img src={opponentAvatar} alt="Opponent" className="w-20 h-20 rounded-full border-3 border-dh-red shadow-lg shadow-dh-red/40 bg-dh-card" />
                 <p className="text-dh-text font-heading font-bold text-sm mt-2">{matchPayload.opponent.username}</p>
+                {matchPayload.rivalry && (
+                  <span className="text-[10px] font-heading font-black text-dh-red bg-dh-red/10 px-2 py-0.5 rounded-full mt-1">
+                    {matchPayload.rivalry.scoreGuest} Wins
+                  </span>
+                )}
               </div>
             </div>
-            <div className="text-dh-accent text-lg font-heading font-bold animate-pulse">MATCH FOUND!</div>
+            <div className="text-dh-accent text-lg font-heading font-bold animate-pulse">
+              {matchPayload.isDuel ? '⚔️ DUEL COMMENCING!' : 'MATCH FOUND!'}
+            </div>
           </div>
         </div>
       )}
@@ -317,18 +384,29 @@ const MatchScreen = ({ matchPayload }) => {
               {/* Player Section (Left) */}
               <div className="flex items-center gap-3">
                 <div className="relative">
-                  <div className="absolute -inset-1 bg-dh-accent rounded-full opacity-70 blur-[2px]"></div>
+                  <div 
+                    className={`absolute -inset-1 rounded-full opacity-75 blur-[2px] transition-all ${
+                      playerScore >= opponentScore && playerScore > 0 
+                        ? 'bg-dh-accent animate-dh-pulse-ring' 
+                        : 'bg-dh-accent/40'
+                    }`}
+                  />
                   <img 
                     src={playerAvatar}
                     alt="You"
-                    className="w-12 h-12 md:w-16 md:h-16 rounded-full relative z-10 border-2 border-dh-accent bg-dh-card"
+                    className="w-12 h-12 md:w-16 md:h-16 rounded-full relative z-10 border-2 border-dh-accent bg-dh-card object-cover"
                   />
+                  {playerScore >= opponentScore && playerScore > 0 && (
+                    <span className="absolute -top-2 left-1/2 -translate-x-1/2 z-20 text-xs drop-shadow-[0_0_6px_#fbbf24]">
+                      👑
+                    </span>
+                  )}
                 </div>
                 <div className="flex flex-col">
                   <span className="font-bold text-sm md:text-base text-white">
                     {matchPayload.player.username}
                   </span>
-                  <span className="font-black text-xl md:text-2xl text-dh-accent tracking-wider">
+                  <span className="font-mono font-black text-xl md:text-2xl text-dh-accent tracking-wider tabular-nums">
                     {playerScore}
                   </span>
                 </div>
@@ -340,8 +418,12 @@ const MatchScreen = ({ matchPayload }) => {
                   Time Left
                 </span>
                 <span 
-                  className={`text-3xl md:text-5xl font-black text-[#1cb0f6] ${timeLeft <= 5 ? 'animate-pulse-fast !text-dh-red text-shadow-red' : ''}`}
-                  style={{ textShadow: timeLeft <= 5 ? '0 0 10px #ff4b4b' : 'none' }}
+                  className={`font-mono text-3xl md:text-5xl font-black tabular-nums transition-colors ${
+                    timeLeft <= 5 
+                      ? 'animate-dh-tick-flash text-dh-red' 
+                      : 'text-[#1cb0f6]'
+                  }`}
+                  style={{ textShadow: timeLeft <= 5 ? '0 0 14px #ff4b4b' : '0 0 8px rgba(28,176,246,0.4)' }}
                 >
                   {timeLeft}
                 </span>
@@ -354,31 +436,75 @@ const MatchScreen = ({ matchPayload }) => {
                     {!opponentConnected && <span className="text-[10px] bg-dh-red/20 text-dh-red px-2 py-0.5 rounded-full animate-pulse border border-dh-red/40">Reconnecting...</span>}
                     {matchPayload.opponent.username}
                   </span>
-                  <span className="font-black text-xl md:text-2xl text-dh-red tracking-wider">
+                  <span className="font-mono font-black text-xl md:text-2xl text-dh-red tracking-wider tabular-nums">
                     {opponentScore}
                   </span>
                 </div>
                 <div className="relative">
-                  <div className={`absolute -inset-1 ${opponentConnected ? 'bg-dh-red' : 'bg-dh-text-muted'} rounded-full opacity-70 blur-[2px]`}></div>
+                  <div 
+                    className={`absolute -inset-1 rounded-full opacity-75 blur-[2px] transition-all ${
+                      opponentScore > playerScore 
+                        ? 'bg-dh-red animate-dh-pulse-ring' 
+                        : opponentConnected ? 'bg-dh-red/40' : 'bg-dh-text-muted/20'
+                    }`}
+                  />
                   <img 
                     src={opponentAvatar}
                     alt="Opponent"
-                    className={`w-12 h-12 md:w-16 md:h-16 rounded-full relative z-10 border-2 ${opponentConnected ? 'border-dh-red' : 'border-dh-text-muted opacity-50'} bg-dh-card`}
+                    className={`w-12 h-12 md:w-16 md:h-16 rounded-full relative z-10 border-2 ${opponentConnected ? 'border-dh-red' : 'border-dh-text-muted opacity-50'} bg-dh-card object-cover`}
                   />
+                  {opponentScore > playerScore && (
+                    <span className="absolute -top-2 left-1/2 -translate-x-1/2 z-20 text-xs drop-shadow-[0_0_6px_#fbbf24]">
+                      👑
+                    </span>
+                  )}
                 </div>
               </div>
             </div>
 
-            {/* Score popup */}
+            {/* Score popup & Live Component Breakdown */}
             {scoreDiff && (
-              <div key={scoreDiff.key} className="absolute top-20 left-12 z-40 animate-slide-up pointer-events-none">
-                <span className="text-dh-accent text-2xl font-black drop-shadow-[0_0_8px_#00e676]">+{scoreDiff.value}</span>
+              <div key={scoreDiff.key} className="pointer-events-none absolute left-1/2 top-20 z-50 -translate-x-1/2 animate-dh-float-out">
+                <div className="animate-dh-pop flex flex-col items-center gap-2">
+                  <span className="text-3xl sm:text-4xl font-black font-heading tracking-tight text-emerald-400 drop-shadow-[0_0_18px_rgba(0,230,118,0.75)]">
+                    +{scoreDiff.value} pts
+                  </span>
+                  {scoreDiff.breakdown && (
+                    <div className="flex flex-wrap justify-center gap-1.5 max-w-xs">
+                      <span className="rounded-full border border-sky-400/40 bg-sky-400/15 px-2.5 py-0.5 text-[10px] font-heading font-black text-sky-300 backdrop-blur-md shadow-sm">
+                        🎯 +100 Base
+                      </span>
+                      {scoreDiff.breakdown.speed > 0 && (
+                        <span className="rounded-full border border-amber-300/40 bg-amber-300/15 px-2.5 py-0.5 text-[10px] font-heading font-black text-amber-300 backdrop-blur-md shadow-sm">
+                          ⚡ +{scoreDiff.breakdown.speed}s Speed
+                        </span>
+                      )}
+                      {scoreDiff.breakdown.streak > 0 && (
+                        <span className="rounded-full border border-orange-400/40 bg-orange-400/15 px-2.5 py-0.5 text-[10px] font-heading font-black text-orange-400 backdrop-blur-md shadow-sm">
+                          🔥 +{scoreDiff.breakdown.streak} Streak
+                        </span>
+                      )}
+                      {scoreDiff.breakdown.isFinalRound && (
+                        <span className="animate-dh-shimmer rounded-full border border-yellow-300/50 bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-400 px-3 py-0.5 text-[10px] font-heading font-black text-slate-950 backdrop-blur-md shadow-[0_0_12px_rgba(251,191,36,0.6)]">
+                          👑 1.5x CLUTCH
+                        </span>
+                      )}
+                    </div>
+                  )}
+                </div>
               </div>
             )}
 
             {/* =========================================
                 QUESTION AREA
                 ========================================= */}
+            {matchPayload.rivalry && (
+              <div className="flex items-center gap-2 px-3.5 py-1 rounded-full bg-dh-surface/90 border border-dh-border text-xs font-heading font-bold text-dh-text-muted mb-4 shadow-sm">
+                <span className="text-dh-accent font-black">Round #{matchPayload.roundNumber || 1}</span>
+                <span className="text-dh-border">•</span>
+                <span>Rivalry: <strong className="text-dh-green font-black">{matchPayload.rivalry.scoreHost}</strong> - <strong className="text-dh-red font-black">{matchPayload.rivalry.scoreGuest}</strong></span>
+              </div>
+            )}
             <div className="w-full flex flex-col items-center flex-1 justify-center mb-6">
               <h2 className="text-2xl md:text-4xl font-normal text-center text-white mb-6 leading-tight max-w-2xl px-2">
                 <LatexRenderer text={currentQ.questionText} />
@@ -414,12 +540,14 @@ const MatchScreen = ({ matchPayload }) => {
             {/* =========================================
                 OPTIONS GRID (2x2)
                 ========================================= */}
-            <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 pb-4">
+            <div className="relative w-full grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 pb-2">
+
               {Object.entries(currentQ.options).map(([key, value]) => {
                 const keyUpper = key.toUpperCase();
                 const isCorrect = keyUpper === correctOption;
                 const isPlayerSelected = keyUpper === selectedOption;
                 const isOpponentSelected = keyUpper === opponentSelected;
+                const isEliminated = eliminatedOptions.includes(keyUpper);
 
                 let bgClass = "bg-white text-black";
                 
@@ -435,13 +563,14 @@ const MatchScreen = ({ matchPayload }) => {
                   }
                 } else { // Not revealed
                   if (isPlayerSelected) bgClass = "bg-dh-accent text-white";
+                  else if (isEliminated) bgClass = "bg-slate-900/60 text-slate-500 line-through border-2 border-dashed border-cyan-500/40 cursor-not-allowed opacity-30";
                 }
 
                 return (
                   <button
                     key={key}
-                    onClick={() => !feedbackState && handleAnswer(keyUpper)}
-                    disabled={!!feedbackState || !!selectedOption}
+                    onClick={() => !feedbackState && !isEliminated && handleAnswer(keyUpper)}
+                    disabled={!!feedbackState || !!selectedOption || isEliminated}
                     className={`relative w-full p-4 md:p-6 min-h-[80px] flex items-center justify-center text-center text-lg md:text-xl font-bold rounded-sm transition-all duration-150 ${bgClass} hover:opacity-90 active:scale-[0.98] overflow-hidden`}
                   >
                     {/* Player Avatar Indicator (Left) */}
@@ -464,6 +593,14 @@ const MatchScreen = ({ matchPayload }) => {
               })}
             </div>
             
+            {/* Tactical Power-Up Dock */}
+            <PowerUpDock
+              powerupSlot={powerupSlot}
+              onActivate={handleActivatePowerup}
+              disabled={!!selectedOption || !!feedbackState}
+              isActivating={isActivatingPowerup}
+            />
+
             {/* Reaction Bar */}
             <div className="w-full flex items-center justify-center gap-6 py-2">
                {['😂', '🔥', '😢', '💀', '👀'].map((emoji, idx) => (

@@ -51,12 +51,14 @@ exports.getJourneySubjects = async (req, res) => {
             for (let i = 0; i < nodeCount; i++) {
               const isLast = i === nodeCount - 1;
               const questionsInNode = isLast ? totalQuestions - i * BATCH_SIZE : BATCH_SIZE;
+              const isMilestone = (i + 1) % 5 === 0;
               nodes.push({
                 nodeId: `${subject.toLowerCase().replace(/\s+/g, '_')}_${chapterName.toLowerCase().replace(/[^a-z0-9]+/g, '_')}_level_${i + 1}`,
                 title: `Level ${i + 1}`,
                 chapterName,
                 nodeIndex: i,
-                coins: i < 5 ? 50 : i < 15 ? 75 : 100,
+                isMilestone,
+                coins: isMilestone ? 150 : (i < 5 ? 50 : i < 15 ? 75 : 100),
                 questionsRequired: questionsInNode,
                 passScore: 70,
               });
@@ -79,11 +81,13 @@ exports.getJourneySubjects = async (req, res) => {
           for (let i = 0; i < nodeCount; i++) {
             const isLast = i === nodeCount - 1;
             const questionsInNode = isLast ? totalQuestions - i * BATCH_SIZE : BATCH_SIZE;
+            const isMilestone = (i + 1) % 5 === 0;
             nodes.push({
               nodeId: `${subject.toLowerCase().replace(/\s+/g, '_')}_level_${i + 1}`,
               title: `Level ${i + 1}`,
               nodeIndex: i,
-              coins: i < 5 ? 50 : i < 15 ? 75 : 100, // escalating rewards
+              isMilestone,
+              coins: isMilestone ? 150 : (i < 5 ? 50 : i < 15 ? 75 : 100), // Milestone bonus
               questionsRequired: questionsInNode,
               passScore: 70,
             });
@@ -121,7 +125,15 @@ exports.getJourneyProgress = async (req, res) => {
       });
     }
 
-    res.json({ success: true, data: { progress, coins: user.coins || 0 } });
+    res.json({
+      success: true,
+      data: {
+        progress,
+        coins: user.coins || 0,
+        streakFreeze: user.streakFreeze || 0,
+        streak: user.streak || 0
+      }
+    });
   } catch (err) {
     res.status(500).json({ success: false, message: err.message });
   }
@@ -155,10 +167,12 @@ exports.completeNode = async (req, res) => {
         for (let i = 0; i < nodeCount; i++) {
           const isLast = i === nodeCount - 1;
           const questionsInNode = isLast ? qCount - i * BATCH_SIZE : BATCH_SIZE;
+          const isMilestone = (i + 1) % 5 === 0;
           nodes.push({
             nodeId: `${subject.toLowerCase().replace(/\s+/g, '_')}_${chapterName.toLowerCase().replace(/[^a-z0-9]+/g, '_')}_level_${i + 1}`,
             nodeIndex: i,
-            coins: i < 5 ? 50 : i < 15 ? 75 : 100,
+            isMilestone,
+            coins: isMilestone ? 150 : (i < 5 ? 50 : i < 15 ? 75 : 100),
             questionsRequired: questionsInNode,
             passScore: 70,
           });
@@ -170,10 +184,12 @@ exports.completeNode = async (req, res) => {
       for (let i = 0; i < nodeCount; i++) {
         const isLast = i === nodeCount - 1;
         const questionsInNode = isLast ? questionCount - i * BATCH_SIZE : BATCH_SIZE;
+        const isMilestone = (i + 1) % 5 === 0;
         nodes.push({
           nodeId: `${subject.toLowerCase().replace(/\s+/g, '_')}_level_${i + 1}`,
           nodeIndex: i,
-          coins: i < 5 ? 50 : i < 15 ? 75 : 100,
+          isMilestone,
+          coins: isMilestone ? 150 : (i < 5 ? 50 : i < 15 ? 75 : 100),
           questionsRequired: questionsInNode,
           passScore: 70,
         });
@@ -195,6 +211,7 @@ exports.completeNode = async (req, res) => {
     const currentBest = existingProgress.bestScore || 0;
     const wasCompleted = existingProgress.status === 'completed';
     let coinsAwarded = 0;
+    let streakShieldAwarded = false;
 
     if (passed) {
       user.journeyProgress.set(nodeId, {
@@ -214,10 +231,16 @@ exports.completeNode = async (req, res) => {
         }
       }
 
-      // Award coins only on first completion
+      // Award coins and streak shield only on first completion
       if (!wasCompleted) {
         coinsAwarded = node.coins;
         user.coins = (user.coins || 0) + node.coins;
+
+        // Milestone bonus: every 5th node awards a Streak Shield!
+        if (node.isMilestone) {
+          user.streakFreeze = (user.streakFreeze || 0) + 1;
+          streakShieldAwarded = true;
+        }
       }
     } else if (percentage > currentBest) {
       user.journeyProgress.set(nodeId, { nodeId, status: 'available', bestScore: percentage });
@@ -278,6 +301,9 @@ exports.completeNode = async (req, res) => {
         percentage,
         coinsAwarded,
         totalCoins: user.coins,
+        isMilestone: !!node.isMilestone,
+        streakShieldAwarded,
+        streakFreeze: user.streakFreeze,
         progress: progressObj
       }
     });

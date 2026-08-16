@@ -82,8 +82,8 @@ async function startHumanMatch(io, p1, p2, subject, category) {
   console.log(`[Match] Human vs Human started in ${roomId} (${category})`);
   
   initializeMatch(roomId, subject, questions, 
-    { socketId: p1.socketId, username: p1.user.username, userId: p1Id, avatarSeed: p1.user.avatarSeed, targetState: p1.targetState }, 
-    { socketId: p2.socketId, username: p2.user.username, userId: p2Id, avatarSeed: p2.user.avatarSeed, targetState: p2.targetState }, 
+    { socketId: p1.socketId, username: p1.user.username, userId: p1Id, avatarSeed: p1.user.avatarSeed, targetState: p1.targetState, eloRating: p1.user.eloRating || 1200 }, 
+    { socketId: p2.socketId, username: p2.user.username, userId: p2Id, avatarSeed: p2.user.avatarSeed, targetState: p2.targetState, eloRating: p2.user.eloRating || 1200 }, 
     false);
   setTimeout(() => startQuestionTimer(io, roomId), 3500);
 }
@@ -105,13 +105,14 @@ async function processJoinQueue(io, socket, subject, category, targetState) {
   const dbUser = await User.findById(userId);
   const avatarSeed = dbUser?.equippedAvatar || dbUser?.avatarSeed || 'default-seed';
   const title = dbUser?.title || 'Novice';
+  const eloRating = dbUser?.eloRating || 1200;
   const seenIds = dbUser?.seenQuestions || [];
 
   const player = {
     socketId: socket.id,
     socket: socket,
     targetState: targetState,
-    user: { ...socket.user, avatarSeed, title, seenIds }
+    user: { ...socket.user, avatarSeed, title, eloRating, seenIds }
   };
 
   // Re-check AFTER the awaits above: two rapid join_queue emits (e.g. React
@@ -216,8 +217,8 @@ async function processJoinQueue(io, socket, subject, category, targetState) {
     console.log(`[Match] Human vs Bot started for ${socket.user.username} (${category})`);
     
     initializeMatch(roomId, subject, questions, 
-      { socketId: socket.id, username: socket.user.username, userId: pId, avatarSeed: player.user.avatarSeed, targetState: player.targetState }, 
-      { socketId: "bot_socket_id", username: botName, userId: "bot", avatarSeed: "bot-ronin" }, 
+      { socketId: socket.id, username: socket.user.username, userId: pId, avatarSeed: player.user.avatarSeed, targetState: player.targetState, eloRating: player.user.eloRating || 1200 }, 
+      { socketId: "bot_socket_id", username: botName, userId: "bot", avatarSeed: "bot-ronin", eloRating: player.user.eloRating || 1200 }, 
       true);
     setTimeout(() => startQuestionTimer(io, roomId), 3500);
   }, 10000);

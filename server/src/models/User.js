@@ -62,6 +62,7 @@ const UserSchema = new mongoose.Schema({
   dailyQuestionsAnswered: { type: Number, default: 0 },
   dailyWins: { type: Number, default: 0 },
   dailyGoal: { type: Number, default: 50 },
+  dailyTiersClaimed: [{ type: Number }],
   lastActiveDate: { type: String, default: '' },
   streak: { type: Number, default: 0 },
   streakFreeze: { type: Number, default: 0 },
@@ -83,6 +84,14 @@ const UserSchema = new mongoose.Schema({
     userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
     username: String,
     status: { type: String, enum: ['pending', 'pending_sent', 'pending_received', 'accepted'], default: 'pending' }
+  }],
+  pushSubscriptions: [{
+    endpoint: { type: String, required: true },
+    keys: {
+      p256dh: { type: String, required: true },
+      auth: { type: String, required: true }
+    },
+    createdAt: { type: Date, default: Date.now }
   }],
 }, { timestamps: true });
 

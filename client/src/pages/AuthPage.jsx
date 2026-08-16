@@ -22,7 +22,13 @@ export default function AuthPage() {
     try {
       const res = await api.post(`${endpoint}`, formData);
       login(res.data.token, res.data.user);
-      navigate('/dashboard');
+      
+      const searchRedirect = new URLSearchParams(window.location.search).get('redirect');
+      const savedRedirect = sessionStorage.getItem('auth_redirect');
+      const target = searchRedirect || savedRedirect || '/dashboard';
+      sessionStorage.removeItem('auth_redirect');
+      
+      navigate(target, { replace: true });
     } catch (err) {
       setError(err.response?.data?.message || 'Something went wrong. Try again.');
     } finally {
