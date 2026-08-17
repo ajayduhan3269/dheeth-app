@@ -623,67 +623,23 @@ const MatchScreen = ({ matchPayload }) => {
                 ========================================= */}
             {(() => {
               const qText = currentQ?.questionText || '';
-              const isMatchList = Boolean(
-                qText.includes('List I') ||
-                qText.includes('List-I') ||
-                qText.includes('Match the following') ||
-                qText.includes('Match List') ||
+              const hasTableOrLatexBlock = Boolean(
                 qText.includes('\\begin{array}') ||
-                qText.includes('\\begin{tabular}')
+                qText.includes('\\begin{tabular}') ||
+                qText.includes('\\begin{matrix}') ||
+                qText.includes('$$') ||
+                qText.length > 200
               );
 
-              // Smart List & Premise Parser for Match-type questions
-              const renderStructuredContent = () => {
-                if (!isMatchList) {
-                  const len = qText.length;
-                  let fontClass = 'text-2xl sm:text-3xl md:text-4xl';
-                  if (len > 150) fontClass = 'text-lg sm:text-xl md:text-2xl';
-                  else if (len > 75) fontClass = 'text-xl sm:text-2xl md:text-3xl';
-
-                  return (
-                    <div className={`w-full font-heading font-extrabold text-white text-center leading-snug tracking-tight ${fontClass} drop-shadow-md px-2 my-auto`}>
-                      <LatexRenderer text={qText} />
-                    </div>
-                  );
-                }
-
-                // Structured Layout for List I / List II Match Questions
-                const lines = qText.split('\n').map(l => l.trim()).filter(Boolean);
-                const headerLines = [];
-                const listItems = [];
-                let isParsingItems = false;
-
-                for (const line of lines) {
-                  if (/^[a-d]\.|\bList\s*I\b/i.test(line) || /^[1-4]\.|\bList\s*II\b/i.test(line)) {
-                    isParsingItems = true;
-                  }
-                  if (isParsingItems) {
-                    listItems.push(line);
-                  } else {
-                    headerLines.push(line);
-                  }
-                }
-
-                return (
-                  <div className="w-full bg-slate-900/80 border border-slate-800 rounded-3xl p-4 sm:p-6 shadow-2xl backdrop-blur-md">
-                    {headerLines.length > 0 && (
-                      <div className="text-base sm:text-lg md:text-xl font-heading font-bold text-sky-400 mb-3 text-center sm:text-left leading-snug">
-                        <LatexRenderer text={headerLines.join(' ')} />
-                      </div>
-                    )}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 text-sm sm:text-base md:text-lg text-slate-100 font-medium">
-                      {listItems.map((item, idx) => (
-                        <div key={idx} className="flex items-start gap-2.5 py-1.5 px-3 rounded-xl bg-slate-800/60 border border-slate-700/50">
-                          <span className="text-dh-accent font-bold font-mono text-xs sm:text-sm mt-0.5">●</span>
-                          <div className="flex-1 leading-relaxed">
-                            <LatexRenderer text={item} />
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                );
-              };
+              const len = qText.length;
+              let typographyClass = 'text-2xl sm:text-3xl md:text-4xl';
+              if (hasTableOrLatexBlock || len > 180) {
+                typographyClass = 'text-base sm:text-lg md:text-xl font-bold';
+              } else if (len > 80) {
+                typographyClass = 'text-xl sm:text-2xl md:text-3xl font-extrabold';
+              } else {
+                typographyClass = 'text-2xl sm:text-3xl md:text-4xl font-extrabold';
+              }
 
               return (
                 <>
@@ -697,7 +653,9 @@ const MatchScreen = ({ matchPayload }) => {
 
                   {/* Question Container - Full Arena Breadth */}
                   <div className="w-full flex flex-col items-center flex-1 justify-center mb-6 max-w-3xl md:max-w-4xl px-2">
-                    {renderStructuredContent()}
+                    <div className={`w-full font-heading text-white text-center leading-snug tracking-tight ${typographyClass} drop-shadow-md my-auto`}>
+                      <LatexRenderer text={qText} />
+                    </div>
 
                     {/* Bookmark button — appears after answer reveal */}
                     {feedbackState && (
