@@ -38,32 +38,12 @@
   max-width: 100%;
   margin: 0;
   padding: 0.25rem 0;
-  text-align: left;
+  text-align: center;
 }
 
 .latex-renderer__math--block .katex {
-  font-size: 0.88em;
-  text-align: left;
+  font-size: 1.05em;
   line-height: 1.4;
-}
-
-/* Responsive KaTeX table/array rules */
-.latex-renderer__math--block .katex .mtable {
-  border-collapse: collapse;
-  margin: 0 auto;
-  width: auto;
-  max-width: 100%;
-}
-
-.latex-renderer__math--block .katex .mtable .col-align-l,
-.latex-renderer__math--block .katex .mtable .col-align-c,
-.latex-renderer__math--block .katex .mtable .col-align-r {
-  padding: 5px 10px;
-  white-space: normal;
-  word-break: break-word;
-  max-width: 290px;
-  vertical-align: middle;
-  line-height: 1.35;
 }
 
 /* Subtle sleek scrollbar for wide tables */
