@@ -290,25 +290,29 @@ function setupDuelSockets(io, socket) {
         match.players[userId].connected = true;
       }
 
-      const allPlayersConnected = Object.values(match.players).every(p => p.connected);
+      // If match was waiting for host, only transition to live when HOST connects:
+      if (match.waitingForHost) {
+        const isHostConnecting = String(userId) === String(match.hostUserId || duel.hostId);
+        const guestPlayer = match.guestUserId ? match.players[match.guestUserId] : null;
+        const isGuestConnected = guestPlayer ? Boolean(guestPlayer.connected) : true;
 
-      // If match was waiting for host, and both players are now connected:
-      if (match.waitingForHost && allPlayersConnected) {
-        if (match.standbyTimeout) {
-          clearTimeout(match.standbyTimeout);
-          match.standbyTimeout = null;
+        if (isHostConnecting && isGuestConnected) {
+          if (match.standbyTimeout) {
+            clearTimeout(match.standbyTimeout);
+            match.standbyTimeout = null;
+          }
+          match.waitingForHost = false;
+
+          Duel.updateOne({ roomId: targetRoomId }, { status: 'live' }).catch(() => {});
+
+          io.to(targetRoomId).emit('duel:both_connected', {
+            roomId: targetRoomId,
+            message: 'Both contenders ready! Commencing match!',
+          });
+
+          // Launch synchronized 3.5s countdown timer
+          setTimeout(() => startQuestionTimer(io, targetRoomId), 3500);
         }
-        match.waitingForHost = false;
-
-        Duel.updateOne({ roomId: targetRoomId }, { status: 'live' }).catch(() => {});
-
-        io.to(targetRoomId).emit('duel:both_connected', {
-          roomId: targetRoomId,
-          message: 'Both contenders ready! Commencing match!',
-        });
-
-        // Launch synchronized 3.5s countdown timer
-        setTimeout(() => startQuestionTimer(io, targetRoomId), 3500);
       }
 
       if (typeof ack === 'function') ack({ ok: true, roomId: targetRoomId, waitingForHost: Boolean(match.waitingForHost) });

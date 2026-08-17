@@ -336,6 +336,7 @@ const updateUserMatchCompletion = async (userId, { isWinner = false, isDraw = fa
 
 const initializeMatch = (roomId, subject, questions, p1, p2, isBotMatch, config = {}) => {
   const secondsPerQ = Number(config?.secondsPerQ) || 60;
+  const isWaitingHost = Boolean(config?.waitingForHost);
   const match = {
     roomId,
     subject,
@@ -346,7 +347,9 @@ const initializeMatch = (roomId, subject, questions, p1, p2, isBotMatch, config 
     questionCount: questions.length,
     roundNumber: Number(config?.roundNumber) || 1,
     sessionRivalry: config?.sessionRivalry || null,
-    waitingForHost: Boolean(config?.waitingForHost),
+    waitingForHost: isWaitingHost,
+    hostUserId: p1.userId ? String(p1.userId) : null,
+    guestUserId: p2.userId ? String(p2.userId) : null,
     mode: config?.mode || 'RANKED',
     timerTimeout: null,
     botAnswerTimeout: null,
@@ -356,7 +359,7 @@ const initializeMatch = (roomId, subject, questions, p1, p2, isBotMatch, config 
     pendingEffects: {}, // effectId -> { type, sourceUserId, targetUserId, parryDeadlineAt, ... }
     players: {
       [p1.userId]: {
-        socketId: p1.socketId,
+        socketId: p1.socketId || '',
         username: p1.username,
         userId: p1.userId,
         avatarSeed: p1.avatarSeed,
@@ -371,7 +374,7 @@ const initializeMatch = (roomId, subject, questions, p1, p2, isBotMatch, config 
         correctAnswers: 0,
         currentStreak: 0,
         multiplier: 1,
-        connected: true,
+        connected: Boolean(p1.socketId && !isWaitingHost),
         activePowerupThisQuestion: null,
         powerupState: {
           slot: null,
@@ -382,7 +385,7 @@ const initializeMatch = (roomId, subject, questions, p1, p2, isBotMatch, config 
         }
       },
       [p2.userId]: {
-        socketId: p2.socketId,
+        socketId: p2.socketId || '',
         username: p2.username,
         userId: p2.userId,
         avatarSeed: p2.avatarSeed,
@@ -397,7 +400,7 @@ const initializeMatch = (roomId, subject, questions, p1, p2, isBotMatch, config 
         correctAnswers: 0,
         currentStreak: 0,
         multiplier: 1,
-        connected: true,
+        connected: Boolean(p2.socketId),
         activePowerupThisQuestion: null,
         powerupState: {
           slot: null,
@@ -963,23 +966,29 @@ const setupGameplaySockets = (io, socket) => {
 
     io.to(roomId).emit('player:connection', { userId, connected: true });
 
-    // If duel was waiting for host, and host is now joining:
+    // If duel was waiting for host, only transition to live when HOST connects
     if (match.waitingForHost) {
-      if (match.standbyTimeout) {
-        clearTimeout(match.standbyTimeout);
-        match.standbyTimeout = null;
+      const isHostConnecting = String(userId) === String(match.hostUserId);
+      const guestPlayer = match.guestUserId ? match.players[match.guestUserId] : null;
+      const isGuestConnected = guestPlayer ? Boolean(guestPlayer.connected) : true;
+
+      if (isHostConnecting && isGuestConnected) {
+        if (match.standbyTimeout) {
+          clearTimeout(match.standbyTimeout);
+          match.standbyTimeout = null;
+        }
+        match.waitingForHost = false;
+
+        Duel.updateOne({ roomId }, { status: 'live' }).catch(() => { });
+
+        io.to(roomId).emit('duel:both_connected', {
+          roomId,
+          message: 'Both contenders ready! Commencing match!',
+        });
+
+        // Synchronously launch question timer
+        setTimeout(() => startQuestionTimer(io, roomId), 3500);
       }
-      match.waitingForHost = false;
-
-      Duel.updateOne({ roomId }, { status: 'live' }).catch(() => { });
-
-      io.to(roomId).emit('duel:both_connected', {
-        roomId,
-        message: 'Both contenders ready! Commencing match!',
-      });
-
-      // Synchronously launch question timer
-      setTimeout(() => startQuestionTimer(io, roomId), 3500);
     }
 
     if (typeof ack === 'function') {
