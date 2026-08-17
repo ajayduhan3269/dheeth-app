@@ -619,70 +619,116 @@ const MatchScreen = ({ matchPayload }) => {
             )}
 
             {/* =========================================
-                QUESTION AREA
+                QUESTION & ARENA HERO (QuizUp Style)
                 ========================================= */}
             {(() => {
               const qText = currentQ?.questionText || '';
-              const isTableOrLongQuestion = Boolean(
-                qText.includes('\\begin{array}') ||
-                qText.includes('\\begin{tabular}') ||
-                qText.includes('\\begin{matrix}') ||
+              const isMatchList = Boolean(
                 qText.includes('List I') ||
                 qText.includes('List-I') ||
                 qText.includes('Match the following') ||
                 qText.includes('Match List') ||
-                qText.length > 100
+                qText.includes('\\begin{array}') ||
+                qText.includes('\\begin{tabular}')
               );
+
+              // Smart List & Premise Parser for Match-type questions
+              const renderStructuredContent = () => {
+                if (!isMatchList) {
+                  const len = qText.length;
+                  let fontClass = 'text-2xl sm:text-3xl md:text-4xl';
+                  if (len > 150) fontClass = 'text-lg sm:text-xl md:text-2xl';
+                  else if (len > 75) fontClass = 'text-xl sm:text-2xl md:text-3xl';
+
+                  return (
+                    <div className={`w-full font-heading font-extrabold text-white text-center leading-snug tracking-tight ${fontClass} drop-shadow-md px-2 my-auto`}>
+                      <LatexRenderer text={qText} />
+                    </div>
+                  );
+                }
+
+                // Structured Layout for List I / List II Match Questions
+                const lines = qText.split('\n').map(l => l.trim()).filter(Boolean);
+                const headerLines = [];
+                const listItems = [];
+                let isParsingItems = false;
+
+                for (const line of lines) {
+                  if (/^[a-d]\.|\bList\s*I\b/i.test(line) || /^[1-4]\.|\bList\s*II\b/i.test(line)) {
+                    isParsingItems = true;
+                  }
+                  if (isParsingItems) {
+                    listItems.push(line);
+                  } else {
+                    headerLines.push(line);
+                  }
+                }
+
+                return (
+                  <div className="w-full bg-slate-900/80 border border-slate-800 rounded-3xl p-4 sm:p-6 shadow-2xl backdrop-blur-md">
+                    {headerLines.length > 0 && (
+                      <div className="text-base sm:text-lg md:text-xl font-heading font-bold text-sky-400 mb-3 text-center sm:text-left leading-snug">
+                        <LatexRenderer text={headerLines.join(' ')} />
+                      </div>
+                    )}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 text-sm sm:text-base md:text-lg text-slate-100 font-medium">
+                      {listItems.map((item, idx) => (
+                        <div key={idx} className="flex items-start gap-2.5 py-1.5 px-3 rounded-xl bg-slate-800/60 border border-slate-700/50">
+                          <span className="text-dh-accent font-bold font-mono text-xs sm:text-sm mt-0.5">●</span>
+                          <div className="flex-1 leading-relaxed">
+                            <LatexRenderer text={item} />
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                );
+              };
 
               return (
                 <>
                   {matchPayload.rivalry && (
-                    <div className="flex items-center gap-2 px-3.5 py-1 rounded-full bg-dh-surface/90 border border-dh-border text-xs font-heading font-bold text-dh-text-muted mb-3 shadow-sm">
-                      <span className="text-dh-accent font-black">Round #{matchPayload.roundNumber || 1}</span>
+                    <div className="flex items-center gap-2 px-4 py-1 rounded-full bg-dh-surface/90 border border-dh-border text-xs sm:text-sm font-heading font-bold text-dh-text-muted mb-3 shadow-sm">
+                      <span className="text-dh-accent font-black tracking-wide">Round #{matchPayload.roundNumber || 1}</span>
                       <span className="text-dh-border">•</span>
                       <span>Rivalry: <strong className="text-dh-green font-black">{matchPayload.rivalry.scoreHost}</strong> - <strong className="text-dh-red font-black">{matchPayload.rivalry.scoreGuest}</strong></span>
                     </div>
                   )}
 
-                  <div className="w-full flex flex-col items-center flex-1 justify-center mb-4 max-w-2xl px-1">
-                    <div className={`w-full font-normal text-white leading-relaxed ${
-                      isTableOrLongQuestion 
-                        ? 'text-sm sm:text-base md:text-lg text-left bg-dh-surface/60 border border-slate-700/70 rounded-2xl p-3.5 sm:p-4 shadow-md' 
-                        : 'text-xl sm:text-2xl md:text-3xl text-center mb-2'
-                    }`}>
-                      <LatexRenderer text={currentQ.questionText} />
-                    </div>
+                  {/* Question Container - Full Arena Breadth */}
+                  <div className="w-full flex flex-col items-center flex-1 justify-center mb-6 max-w-3xl md:max-w-4xl px-2">
+                    {renderStructuredContent()}
 
                     {/* Bookmark button — appears after answer reveal */}
                     {feedbackState && (
                       <button
                         onClick={() => handleSaveMatchQuestion(currentQ)}
                         disabled={savedMatchQuestions.has(currentQ._id || currentQ.questionId || currentQ.questionText)}
-                        className={`mt-2.5 mb-2 px-4 py-1 rounded-full border-2 text-xs font-heading font-bold transition-all duration-200 ${
+                        className={`mt-3 mb-1 px-5 py-1.5 rounded-full border-2 text-xs font-heading font-bold transition-all duration-200 shadow-sm ${
                           savedMatchQuestions.has(currentQ._id || currentQ.questionId || currentQ.questionText)
-                            ? 'border-dh-accent text-dh-accent bg-dh-accent/10'
-                            : 'border-white/30 text-white/70 hover:border-dh-accent hover:text-dh-accent bg-white/5'
+                            ? 'border-dh-accent text-dh-accent bg-dh-accent/15'
+                            : 'border-white/30 text-white/80 hover:border-dh-accent hover:text-dh-accent bg-white/5 hover:bg-white/10'
                         }`}
                       >
-                        {savedMatchQuestions.has(currentQ._id || currentQ.questionId || currentQ.questionText) ? '★ Saved' : '☆ Save Question'}
+                        {savedMatchQuestions.has(currentQ._id || currentQ.questionId || currentQ.questionText) ? '★ Saved to Notebook' : '☆ Save Question'}
                       </button>
                     )}
                     
                     {currentQ.hasDiagram && currentQ.diagramUrl && (
-                      <div className="w-full max-w-sm my-2 flex justify-center">
+                      <div className="w-full max-w-md my-3 flex justify-center">
                         <img 
                           src={currentQ.diagramUrl} 
                           alt="Diagram" 
-                          className="w-full rounded-xl object-contain border border-white/20 bg-dh-surface/60 max-h-48"
+                          className="w-full rounded-2xl object-contain border border-white/20 bg-dh-surface/80 max-h-56 shadow-lg"
                         />
                       </div>
                     )}
                   </div>
 
                   {/* =========================================
-                      OPTIONS GRID (2x2)
+                      OPTIONS GRID (QuizUp Tactile 2x2 Layout)
                       ========================================= */}
-                  <div className={`relative w-full grid grid-cols-1 md:grid-cols-2 gap-2.5 sm:gap-3.5 pb-2 ${isTableOrLongQuestion ? 'max-w-2xl' : ''}`}>
+                  <div className="relative w-full max-w-3xl md:max-w-4xl grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 md:gap-4.5 pb-3">
                     {Object.entries(currentQ.options).map(([key, value]) => {
                       const keyUpper = key.toUpperCase();
                       const isCorrect = keyUpper === correctOption;
@@ -690,21 +736,24 @@ const MatchScreen = ({ matchPayload }) => {
                       const isOpponentSelected = keyUpper === opponentSelected;
                       const isEliminated = eliminatedOptions.includes(keyUpper);
 
-                      let bgClass = "bg-white text-black";
+                      let styleClasses = "bg-white text-slate-950 border-b-[5px] border-slate-300 hover:border-slate-400 hover:bg-slate-50";
                       
                       if (feedbackState) { // Revealed
                         if (isCorrect) {
-                           bgClass = "bg-dh-accent text-white";
+                           styleClasses = "bg-dh-accent text-slate-950 border-b-[5px] border-emerald-700 font-black shadow-[0_0_30px_rgba(0,230,118,0.7)] animate-pop-in";
                         } else if (isPlayerSelected) {
-                           bgClass = "bg-dh-red text-white";
+                           styleClasses = "bg-dh-red text-white border-b-[5px] border-rose-800 font-black shadow-[0_0_30px_rgba(255,75,75,0.7)] animate-vibration";
                         } else if (isOpponentSelected) {
-                           bgClass = "bg-[#444] text-white"; // Opponent picked wrong
+                           styleClasses = "bg-slate-800 text-slate-300 border-b-[5px] border-slate-950 opacity-80";
                         } else {
-                           bgClass = "bg-white text-black opacity-70";
+                           styleClasses = "bg-white/60 text-slate-600 border-b-[5px] border-slate-300/40 opacity-40";
                         }
                       } else { // Not revealed
-                        if (isPlayerSelected) bgClass = "bg-dh-accent text-white";
-                        else if (isEliminated) bgClass = "bg-slate-900/60 text-slate-500 line-through border-2 border-dashed border-cyan-500/40 cursor-not-allowed opacity-30";
+                        if (isPlayerSelected) {
+                          styleClasses = "bg-dh-accent text-slate-950 border-b-[5px] border-emerald-700 font-black shadow-[0_0_25px_rgba(0,230,118,0.5)]";
+                        } else if (isEliminated) {
+                          styleClasses = "bg-slate-900/60 text-slate-500 line-through border-2 border-dashed border-cyan-500/40 cursor-not-allowed opacity-30";
+                        }
                       }
 
                       return (
@@ -712,27 +761,23 @@ const MatchScreen = ({ matchPayload }) => {
                           key={key}
                           onClick={() => !feedbackState && !isEliminated && handleAnswer(keyUpper)}
                           disabled={!!feedbackState || !!selectedOption || isEliminated}
-                          className={`relative w-full ${
-                            isTableOrLongQuestion 
-                              ? 'p-3 sm:p-4 min-h-[52px] sm:min-h-[60px] text-xs sm:text-sm md:text-base' 
-                              : 'p-4 md:p-6 min-h-[70px] md:min-h-[80px] text-base sm:text-lg md:text-xl'
-                          } flex items-center justify-center text-center font-bold rounded-xl transition-all duration-150 ${bgClass} hover:opacity-90 active:scale-[0.98] overflow-hidden shadow-sm`}
+                          className={`relative w-full min-h-[64px] sm:min-h-[72px] md:min-h-[82px] p-3.5 sm:p-5 flex items-center justify-center text-center font-heading font-bold text-base sm:text-lg md:text-xl rounded-2xl transition-all duration-150 active:translate-y-1 active:border-b-[2px] overflow-hidden shadow-md select-none ${styleClasses}`}
                         >
                           {/* Player Avatar Indicator (Left) */}
                           {(isPlayerSelected || (feedbackState && isPlayerSelected)) && (
-                            <div className="absolute left-2.5 top-1/2 -translate-y-1/2 flex items-center justify-center w-7 h-7 rounded-full border-2 border-white bg-dh-accent shadow-lg z-20">
+                            <div className="absolute left-3 top-1/2 -translate-y-1/2 flex items-center justify-center w-8 h-8 rounded-full border-2 border-white bg-dh-accent shadow-lg z-20">
                                <img src={playerAvatar} alt="You" className="w-full h-full rounded-full" />
                             </div>
                           )}
                           
                           {/* Opponent Avatar Indicator (Right) - ONLY SHOW AFTER REVEAL */}
                           {(feedbackState && isOpponentSelected) && (
-                            <div className="absolute right-2.5 top-1/2 -translate-y-1/2 flex items-center justify-center w-7 h-7 rounded-full border-2 border-white bg-dh-red shadow-lg z-20">
+                            <div className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center justify-center w-8 h-8 rounded-full border-2 border-white bg-dh-red shadow-lg z-20">
                                <img src={opponentAvatar} alt="Opp" className="w-full h-full rounded-full" />
                             </div>
                           )}
                           
-                          <span className="relative z-10 w-full px-8 leading-snug"><LatexRenderer text={value} /></span>
+                          <span className="relative z-10 w-full px-6 leading-snug"><LatexRenderer text={value} /></span>
                         </button>
                       );
                     })}
