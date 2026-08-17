@@ -164,126 +164,6 @@ const extractAnswerOption = (ans) => {
   return null;
 };
 
-const updateSeenAndWrongQuestions = async (userId, questions, playerAnswers) => {
-  if (!userId || userId === 'bot' || userId === 'bot_user_id' || userId.startsWith('guest_') || !questions || !Array.isArray(questions)) return;
-  try {
-    const user = await User.findById(userId);
-    if (!user) return;
-
-    const questionIds = questions.map(q => q._id).filter(Boolean);
-    const wrongIds = [];
-
-    questions.forEach((q, idx) => {
-      const ansObj = playerAnswers ? playerAnswers[idx] : null;
-      const userOpt = extractAnswerOption(ansObj);
-      const correctOpt = String(q.correctOption || '').trim();
-
-      // If answered incorrectly or timed out with wrong/null answer
-      if (ansObj && (!userOpt || userOpt.toLowerCase() !== correctOpt.toLowerCase())) {
-        wrongIds.push(q._id);
-      }
-    });
-
-    // Add seen questions (avoid duplicates)
-    const existingSeen = new Set((user.seenQuestions || []).map(id => id.toString()));
-    const newSeen = questionIds.filter(id => !existingSeen.has(id.toString()));
-    if (newSeen.length > 0) {
-      if (!user.seenQuestions) user.seenQuestions = [];
-      user.seenQuestions.push(...newSeen);
-    }
-
-    // Limit seen questions list to the last 50 questions (FIFO sliding window)
-    const MAX_SEEN_LIMIT = 50;
-    if (user.seenQuestions && user.seenQuestions.length > MAX_SEEN_LIMIT) {
-      user.seenQuestions = user.seenQuestions.slice(-MAX_SEEN_LIMIT);
-    }
-
-    // Update wrong questions: add new wrong ones, remove correctly answered ones
-    const existingWrong = new Set((user.wrongQuestions || []).map(id => id.toString()));
-    const wrongToAdd = wrongIds.filter(id => !existingWrong.has(id.toString()));
-    const wrongToRemove = [];
-    questions.forEach((q, idx) => {
-      const ansObj = playerAnswers ? playerAnswers[idx] : null;
-      const userOpt = extractAnswerOption(ansObj);
-      const correctOpt = String(q.correctOption || '').trim();
-      if (userOpt && userOpt.toLowerCase() === correctOpt.toLowerCase() && existingWrong.has(q._id.toString())) {
-        wrongToRemove.push(q._id);
-      }
-    });
-
-    if (wrongToAdd.length > 0) {
-      if (!user.wrongQuestions) user.wrongQuestions = [];
-      user.wrongQuestions.push(...wrongToAdd);
-    }
-    if (wrongToRemove.length > 0) {
-      user.wrongQuestions = user.wrongQuestions.filter(
-        id => !wrongToRemove.some(removeId => removeId.toString() === id.toString())
-      );
-    }
-
-    await user.save();
-  } catch (err) {
-    console.error(`Failed to update seen/wrong questions for user ${userId}:`, err);
-  }
-};
-
-const updateDailyProgress = async (userId, questionsAnswered = 5, isWin = false) => {
-  if (!userId || userId === 'bot') return;
-  try {
-    const user = await User.findById(userId);
-    if (!user) return;
-
-    const today = new Date().toISOString().split('T')[0];
-    if (user.lastActiveDate !== today) {
-      const yesterday = new Date(Date.now() - 86400000).toISOString().split('T')[0];
-      if (user.lastActiveDate !== yesterday && user.streak > 0) {
-        if (user.streakFreeze > 0) user.streakFreeze -= 1;
-        else user.streak = 0;
-      }
-      user.dailyQuestionsAnswered = 0;
-      user.dailyWins = 0;
-      user.dailyTiersClaimed = [];
-      user.lastActiveDate = today;
-    }
-
-    const prevCount = user.dailyQuestionsAnswered || 0;
-    user.dailyQuestionsAnswered = prevCount + (questionsAnswered || 5);
-    if (isWin) user.dailyWins = (user.dailyWins || 0) + 1;
-
-    const tiersClaimed = new Set(user.dailyTiersClaimed || []);
-    let bonusCoins = 0;
-
-    // Tier 1 (10 Qs): +50 Coins + 1 Streak Day
-    if (user.dailyQuestionsAnswered >= 10 && !tiersClaimed.has(10)) {
-      tiersClaimed.add(10);
-      bonusCoins += 50;
-      user.streak = (user.streak || 0) + 1;
-    }
-
-    // Tier 2 (25 Qs): +100 Coins
-    if (user.dailyQuestionsAnswered >= 25 && !tiersClaimed.has(25)) {
-      tiersClaimed.add(25);
-      bonusCoins += 100;
-    }
-
-    // Tier 3 (50 Qs Stretch Goal): +200 Coins + 1 Streak Freeze (Max 2 capped)
-    if (user.dailyQuestionsAnswered >= 50 && !tiersClaimed.has(50)) {
-      tiersClaimed.add(50);
-      bonusCoins += 200;
-      if ((user.streakFreeze || 0) < 2) {
-        user.streakFreeze = (user.streakFreeze || 0) + 1;
-      }
-    }
-
-    user.dailyTiersClaimed = Array.from(tiersClaimed);
-    user.coins = (user.coins || 0) + bonusCoins;
-
-    await user.save();
-  } catch (err) {
-    console.error('Failed to update daily progress:', err);
-  }
-};
-
 /**
  * Calculates true zero-inflation Elo delta using expected probability (FIDE/Glicko standard)
  * @param {number} ratingA - Player A current Elo
@@ -293,40 +173,41 @@ const updateDailyProgress = async (userId, questionsAnswered = 5, isWin = false)
  */
 const calculateEloDelta = (ratingA = 1200, ratingB = 1200, scoreA = 1, matchesA = 0) => {
   const expectedA = 1 / (1 + Math.pow(10, (ratingB - ratingA) / 400));
-
+  
   // Dynamic K-factor: K=32 for beginners (<30 matches), K=16 for high-rated masters (>1800), K=24 standard
   let k = 24;
   if (matchesA < 30) k = 32;
   else if (ratingA >= 1800) k = 16;
-
+  
   const delta = Math.round(k * (scoreA - expectedA));
-
+  
   // Guaranteed minimal delta for decisive victories/defeats
   if (scoreA === 1 && delta <= 0) return 2;
   if (scoreA === 0 && delta >= 0) return -2;
   return delta;
 };
 
-const updatePlayerStats = async (userId, isWinner, isDraw, subject, correctAnswers, opponentRating = 1200) => {
-  if (!userId || userId === 'bot' || userId === 'bot_user_id' || userId.startsWith('guest_')) {
+/**
+ * Unified atomic post-match user update
+ * Eliminates Mongoose VersionError and duplicate document saves
+ */
+const updateUserMatchCompletion = async (userId, { isWinner = false, isDraw = false, subject = 'General', correctAnswers = 0, opponentRating = 1200, questions = null, playerAnswers = null, questionCount = 5 }) => {
+  if (!userId || userId === 'bot' || userId === 'bot_user_id' || String(userId).startsWith('guest_')) {
     return { xpGained: 0, newLevel: 0, eloChange: 0 };
   }
-
-  const winIncrement = isWinner ? 1 : 0;
-  const scoreResult = isWinner ? 1 : (isDraw ? 0.5 : 0);
-
-  // Knowledge XP: Base reward + 8 XP per correct answer + 30 for win
-  const xpGained = (isWinner ? 30 : (isDraw ? 15 : 10)) + (correctAnswers * 8);
-  const coinsGained = isWinner ? 40 : (isDraw ? 20 : 10);
 
   try {
     const user = await User.findById(userId);
     if (!user) return { xpGained: 0, newLevel: 0, eloChange: 0 };
 
-    // Dynamic True Elo Rating calculation
+    // 1. Elo, Coins & Subject XP
+    const winIncrement = isWinner ? 1 : 0;
+    const scoreResult = isWinner ? 1 : (isDraw ? 0.5 : 0);
+    const xpGained = (isWinner ? 30 : (isDraw ? 15 : 10)) + (correctAnswers * 8);
+    const coinsGained = isWinner ? 40 : (isDraw ? 20 : 10);
+
     const eloChange = calculateEloDelta(user.eloRating || 1200, opponentRating || 1200, scoreResult, user.matches || 0);
     user.eloRating = Math.max(100, (user.eloRating || 1200) + eloChange);
-
     user.coins = (user.coins || 0) + coinsGained;
 
     if (!user.subjectXP) user.subjectXP = new Map();
@@ -349,13 +230,106 @@ const updatePlayerStats = async (userId, isWinner, isDraw, subject, correctAnswe
     if (globalLevel >= 15) newTitle = 'Dheeth Legend';
     else if (globalLevel >= 10) newTitle = 'Master';
     else if (globalLevel >= 5) newTitle = 'Adept';
-
     user.title = newTitle;
+
+    // 2. Seen and Wrong Questions (if provided)
+    if (questions && Array.isArray(questions)) {
+      const questionIds = questions.map(q => q._id).filter(Boolean);
+      const wrongIds = [];
+
+      questions.forEach((q, idx) => {
+        const ansObj = playerAnswers ? playerAnswers[idx] : null;
+        const userOpt = extractAnswerOption(ansObj);
+        const correctOpt = String(q.correctOption || '').trim();
+        if (ansObj && (!userOpt || userOpt.toLowerCase() !== correctOpt.toLowerCase())) {
+          wrongIds.push(q._id);
+        }
+      });
+
+      const existingSeen = new Set((user.seenQuestions || []).map(id => id.toString()));
+      const newSeen = questionIds.filter(id => !existingSeen.has(id.toString()));
+      if (newSeen.length > 0) {
+        if (!user.seenQuestions) user.seenQuestions = [];
+        user.seenQuestions.push(...newSeen);
+      }
+
+      const MAX_SEEN_LIMIT = 50;
+      if (user.seenQuestions && user.seenQuestions.length > MAX_SEEN_LIMIT) {
+        user.seenQuestions = user.seenQuestions.slice(-MAX_SEEN_LIMIT);
+      }
+
+      const existingWrong = new Set((user.wrongQuestions || []).map(id => id.toString()));
+      const wrongToAdd = wrongIds.filter(id => !existingWrong.has(id.toString()));
+      const wrongToRemove = [];
+      questions.forEach((q, idx) => {
+        const ansObj = playerAnswers ? playerAnswers[idx] : null;
+        const userOpt = extractAnswerOption(ansObj);
+        const correctOpt = String(q.correctOption || '').trim();
+        if (userOpt && userOpt.toLowerCase() === correctOpt.toLowerCase() && existingWrong.has(q._id.toString())) {
+          wrongToRemove.push(q._id);
+        }
+      });
+
+      if (wrongToAdd.length > 0) {
+        if (!user.wrongQuestions) user.wrongQuestions = [];
+        user.wrongQuestions.push(...wrongToAdd);
+      }
+      if (wrongToRemove.length > 0) {
+        user.wrongQuestions = user.wrongQuestions.filter(
+          id => !wrongToRemove.some(removeId => removeId.toString() === id.toString())
+        );
+      }
+    }
+
+    // 3. Daily Progress & Streaks
+    const today = new Date().toISOString().split('T')[0];
+    if (user.lastActiveDate !== today) {
+      const yesterday = new Date(Date.now() - 86400000).toISOString().split('T')[0];
+      if (user.lastActiveDate !== yesterday && user.streak > 0) {
+        if (user.streakFreeze > 0) user.streakFreeze -= 1;
+        else user.streak = 0;
+      }
+      user.dailyQuestionsAnswered = 0;
+      user.dailyWins = 0;
+      user.dailyTiersClaimed = [];
+      user.lastActiveDate = today;
+    }
+
+    const prevCount = user.dailyQuestionsAnswered || 0;
+    user.dailyQuestionsAnswered = prevCount + (questionCount || 5);
+    if (isWinner) user.dailyWins = (user.dailyWins || 0) + 1;
+
+    const tiersClaimed = new Set(user.dailyTiersClaimed || []);
+    let bonusCoins = 0;
+
+    if (user.dailyQuestionsAnswered >= 10 && !tiersClaimed.has(10)) {
+      tiersClaimed.add(10);
+      bonusCoins += 50;
+      user.streak = (user.streak || 0) + 1;
+    }
+
+    if (user.dailyQuestionsAnswered >= 25 && !tiersClaimed.has(25)) {
+      tiersClaimed.add(25);
+      bonusCoins += 100;
+    }
+
+    if (user.dailyQuestionsAnswered >= 50 && !tiersClaimed.has(50)) {
+      tiersClaimed.add(50);
+      bonusCoins += 200;
+      if ((user.streakFreeze || 0) < 2) {
+        user.streakFreeze = (user.streakFreeze || 0) + 1;
+      }
+    }
+
+    user.dailyTiersClaimed = Array.from(tiersClaimed);
+    user.coins = (user.coins || 0) + bonusCoins;
+
+    // Single atomic save for the entire match outcome
     await user.save();
 
     return { xpGained, newTitle, newLevel: calculateLevel(newXP), eloChange };
   } catch (err) {
-    console.error(`Failed to update stats for user ${userId}:`, err);
+    console.error(`[Match] Error in updateUserMatchCompletion for user ${userId}:`, err.message || err);
     return { xpGained: 0, newLevel: 0, eloChange: 0 };
   }
 };

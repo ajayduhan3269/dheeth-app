@@ -130,14 +130,18 @@ function setupDuelSockets(io, socket) {
       const hostSocketId = global.connectedUsers.get(duel.hostId.toString());
       const guestSocketId = socket.id;
 
-      // Make both sockets join the game room
+      // Check if host is actively viewing the duel lobby screen
+      const hostSocket = hostSocketId ? io.sockets.sockets.get(hostSocketId) : null;
+      const isHostActiveInLobby = Boolean(hostSocket && hostSocket.rooms && hostSocket.rooms.has(`duel:${code}`));
+
+      // Make guest socket join the game room
       socket.join(roomId);
-      if (hostSocketId && io.sockets.sockets.get(hostSocketId)) {
-        const hostSocket = io.sockets.sockets.get(hostSocketId);
+      socket.activeRoomId = roomId;
+
+      if (isHostActiveInLobby && hostSocket) {
         hostSocket.join(roomId);
         hostSocket.activeRoomId = roomId;
       }
-      socket.activeRoomId = roomId;
 
       // Fetch rivalry record for VS splash
       const rivalry = await Rivalry.getOrCreateRivalry(duel.hostId, fullUser._id);
@@ -174,19 +178,17 @@ function setupDuelSockets(io, socket) {
         title: guestTitle,
       };
 
-      const isHostOnline = Boolean(hostSocketId && io.sockets.sockets.get(hostSocketId));
-
       // Notify guest (p2)
       socket.emit('match_found', {
         ...basePayload,
-        waitingForHost: !isHostOnline,
+        waitingForHost: !isHostActiveInLobby,
         player: p2Data,
         opponent: p1Data,
       });
 
-      // Notify host (p1) via WebSocket if connected
-      if (isHostOnline) {
-        io.to(hostSocketId).emit('match_found', {
+      // Notify host (p1) via WebSocket if actively in lobby
+      if (isHostActiveInLobby && hostSocket) {
+        hostSocket.emit('match_found', {
           ...basePayload,
           waitingForHost: false,
           player: p1Data,
@@ -217,13 +219,13 @@ function setupDuelSockets(io, socket) {
         roomId,
         subject,
         questions,
-        { socketId: hostSocketId || '', username: duel.hostUsername, userId: duel.hostId.toString(), avatarSeed: duel.hostAvatar, eloRating: hostElo },
+        { socketId: isHostActiveInLobby ? hostSocketId : '', username: duel.hostUsername, userId: duel.hostId.toString(), avatarSeed: duel.hostAvatar, eloRating: hostElo },
         { socketId: guestSocketId, username: fullUser.username, userId: fullUser._id.toString(), avatarSeed: guestAvatar, eloRating: guestElo },
         false,
-        { secondsPerQ: duel.config.secondsPerQ || 20, questionCount: count, roundNumber: 1, waitingForHost: !isHostOnline, mode: category }
+        { secondsPerQ: duel.config.secondsPerQ || 20, questionCount: count, roundNumber: 1, waitingForHost: !isHostActiveInLobby, mode: category }
       );
 
-      if (isHostOnline) {
+      if (isHostActiveInLobby) {
         // Start the countdown / first question timer immediately after 3.5s intro
         setTimeout(() => startQuestionTimer(io, roomId), 3500);
       } else {

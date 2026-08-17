@@ -43,7 +43,8 @@ self.addEventListener('notificationclick', function(event) {
   const fullTargetUrl = new URL(rawUrl, self.location.origin).href;
 
   event.waitUntil(
-    clients.matchAll({ type: 'window', includeUncontrolled: true }).then(async function(clientList) {
+    (async function() {
+      const clientList = await clients.matchAll({ type: 'window', includeUncontrolled: true });
       for (const client of clientList) {
         if (client.url === fullTargetUrl && 'focus' in client) {
           return client.focus();
@@ -53,13 +54,13 @@ self.addEventListener('notificationclick', function(event) {
         if ('navigate' in client && 'focus' in client) {
           try {
             await client.navigate(fullTargetUrl);
-            return client.focus();
+            return await client.focus();
           } catch (_) {}
         }
       }
       if (clients.openWindow) {
         return clients.openWindow(fullTargetUrl);
       }
-    })
+    })()
   );
 });
