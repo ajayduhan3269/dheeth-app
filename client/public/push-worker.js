@@ -39,24 +39,26 @@ self.addEventListener('notificationclick', function(event) {
 
   if (event.action === 'dismiss') return;
 
-  const targetUrl = event.notification.data?.url || '/';
+  const rawUrl = event.notification.data?.url || '/';
+  const fullTargetUrl = new URL(rawUrl, self.location.origin).href;
 
   event.waitUntil(
-    clients.matchAll({ type: 'window', includeUncontrolled: true }).then(function(clientList) {
-      // If an existing DHEETH tab/window is open, focus it and redirect
-      for (let i = 0; i < clientList.length; i++) {
-        let client = clientList[i];
-        if ('focus' in client) {
-          client.focus();
-          if ('navigate' in client && targetUrl) {
-            return client.navigate(targetUrl);
-          }
-          return;
+    clients.matchAll({ type: 'window', includeUncontrolled: true }).then(async function(clientList) {
+      for (const client of clientList) {
+        if (client.url === fullTargetUrl && 'focus' in client) {
+          return client.focus();
         }
       }
-      // If no window is open (e.g. mobile browser was closed), open a new window
+      for (const client of clientList) {
+        if ('navigate' in client && 'focus' in client) {
+          try {
+            await client.navigate(fullTargetUrl);
+            return client.focus();
+          } catch (_) {}
+        }
+      }
       if (clients.openWindow) {
-        return clients.openWindow(targetUrl);
+        return clients.openWindow(fullTargetUrl);
       }
     })
   );

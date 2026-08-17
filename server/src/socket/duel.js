@@ -87,7 +87,7 @@ function setupDuelSockets(io, socket) {
             status: 'accepted',
           },
         },
-        { new: true }
+        { returnDocument: 'after' }
       );
 
       if (!duel) {
@@ -115,6 +115,11 @@ function setupDuelSockets(io, socket) {
         if (questions.length === 0) {
           questions = await Question.aggregate([{ $sample: { size: count } }]);
         }
+      }
+
+      if (!questions || questions.length === 0) {
+        if (typeof callback === 'function') callback({ ok: false, error: 'No questions available for this duel subject in database.' });
+        return;
       }
 
       const roomId = `room_duel_${Date.now()}`;
@@ -222,7 +227,7 @@ function setupDuelSockets(io, socket) {
         // Start the countdown / first question timer immediately after 3.5s intro
         setTimeout(() => startQuestionTimer(io, roomId), 3500);
       } else {
-        // Standby window: wait up to 60s for host to tap notification and join
+        // Standby window: wait up to 150s (2.5 minutes) for host to receive push notification and join
         const { activeMatches } = require('./gameplay');
         const match = activeMatches[roomId];
         if (match) {
@@ -235,7 +240,7 @@ function setupDuelSockets(io, socket) {
               Duel.updateOne({ roomId }, { status: 'expired' }).catch(() => {});
               delete activeMatches[roomId];
             }
-          }, 60_000);
+          }, 150_000); // 150 seconds (2.5 mins)
         }
       }
 
@@ -283,10 +288,17 @@ function setupDuelSockets(io, socket) {
         match.players[userId].connected = true;
       }
 
-      // If match was waiting for host, and host has now connected:
-      if (match.waitingForHost && duel.hostId.toString() === userId) {
-        if (match.standbyTimeout) clearTimeout(match.standbyTimeout);
+      const allPlayersConnected = Object.values(match.players).every(p => p.connected);
+
+      // If match was waiting for host, and both players are now connected:
+      if (match.waitingForHost && allPlayersConnected) {
+        if (match.standbyTimeout) {
+          clearTimeout(match.standbyTimeout);
+          match.standbyTimeout = null;
+        }
         match.waitingForHost = false;
+
+        Duel.updateOne({ roomId: targetRoomId }, { status: 'live' }).catch(() => {});
 
         io.to(targetRoomId).emit('duel:both_connected', {
           roomId: targetRoomId,
@@ -315,7 +327,7 @@ function setupDuelSockets(io, socket) {
       const duel = await Duel.findOneAndUpdate(
         { code, hostId: userId, status: 'pending' },
         { $set: { status: 'cancelled' } },
-        { new: true }
+        { returnDocument: 'after' }
       );
 
       io.to(`duel:${code}`).emit('duel:cancelled', { code, reason: 'Host cancelled the challenge' });

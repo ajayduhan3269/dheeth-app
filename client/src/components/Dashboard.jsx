@@ -494,7 +494,8 @@ export default function Dashboard() {
             currentQuestionIndex,
             questionEndsAt,
             players,
-            matchPhase: 'active',
+            waitingForHost: Boolean(response.waitingForHost),
+            matchPhase: response.waitingForHost ? 'waiting_host' : (response.matchPhase || 'intro'),
             player: { id: myId, username: players[myId]?.username, avatarSeed: players[myId]?.avatarSeed },
             opponent: { id: opponentId, username: players[opponentId]?.username, avatarSeed: players[opponentId]?.avatarSeed },
           };

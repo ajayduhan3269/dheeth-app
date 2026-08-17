@@ -10,7 +10,10 @@ export const API_URL = import.meta.env.VITE_API_URL || `http://${window.location
 export const getAvatarUrl = (seed = 'default-seed') =>
   `https://api.dicebear.com/8.x/micah/svg?seed=${encodeURIComponent(seed)}`;
 
-const api = axios.create({ baseURL: API_URL });
+const api = axios.create({ 
+  baseURL: API_URL,
+  timeout: 30000,
+});
 
 // Attach the auth token to every request automatically.
 api.interceptors.request.use((config) => {
@@ -26,7 +29,7 @@ api.interceptors.response.use(
     if (error.response && error.response.status === 401) {
       localStorage.removeItem('dheeth_token');
       localStorage.removeItem('dheeth_user');
-      if (window.location.pathname !== '/auth' && window.location.pathname !== '/register') {
+      if (window.location.pathname !== '/auth' && window.location.pathname !== '/register' && !window.location.pathname.startsWith('/duel/') && !window.location.pathname.startsWith('/d/')) {
         window.location.href = '/auth';
       }
     }

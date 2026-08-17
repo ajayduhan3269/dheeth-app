@@ -7,15 +7,15 @@ require('dotenv').config();
 const fs = require('fs');
 
 process.on('uncaughtException', (err) => {
-  fs.writeFileSync('crash.log', 'UNCAUGHT EXCEPTION:\n' + (err.stack || err) + '\n');
-  console.error('UNCAUGHT EXCEPTION:', err);
-  process.exit(1);
+  const errMsg = `[${new Date().toISOString()}] UNCAUGHT EXCEPTION:\n${err.stack || err}\n`;
+  try { fs.appendFileSync('crash.log', errMsg); } catch (_) {}
+  console.error('UNCAUGHT EXCEPTION (Server kept alive):', err);
 });
 
 process.on('unhandledRejection', (reason, promise) => {
-  fs.writeFileSync('crash.log', 'UNHANDLED REJECTION:\n' + (reason.stack || reason) + '\n');
-  console.error('UNHANDLED REJECTION:', reason);
-  process.exit(1);
+  const errMsg = `[${new Date().toISOString()}] UNHANDLED REJECTION:\n${reason?.stack || reason}\n`;
+  try { fs.appendFileSync('crash.log', errMsg); } catch (_) {}
+  console.error('UNHANDLED REJECTION (Server kept alive):', reason);
 });
 
 const adminRoutes = require('./routes/adminRoutes');
@@ -67,9 +67,11 @@ app.use('/d', require('./routes/share'));
 
 // Health check endpoint for fast frontend probe and cold-start detection
 app.get('/api/health', (req, res) => {
+  const isDbReady = mongoose.connection.readyState === 1;
   res.json({
     ok: true,
     status: 'online',
+    db: isDbReady ? 'connected' : 'connecting',
     uptime: Math.round(process.uptime()),
     timestamp: Date.now(),
   });
@@ -88,7 +90,11 @@ if (!MONGO_URI) {
   process.exit(1);
 }
 
-mongoose.connect(MONGO_URI)
+mongoose.connect(MONGO_URI, {
+  serverSelectionTimeoutMS: 5000,
+  socketTimeoutMS: 45000,
+  maxPoolSize: 10,
+})
   .then(() => console.log('MongoDB Connected successfully'))
   .catch((err) => console.error('MongoDB connection error:', err));
 
@@ -98,9 +104,12 @@ const { startDecayCron } = require('./cron/castleDecayCron');
 io.on('connection', (socket) => {
   console.log(`User Connected: ${socket.id}`);
   
-  // Track the user globally upon connection
+  // Track the user globally upon connection with normalized string key
   if (socket.user) {
-    global.connectedUsers.set(socket.user.id || socket.user.userId, socket.id);
+    const uId = String(socket.user.id || socket.user._id || socket.user.userId || '');
+    if (uId) {
+      global.connectedUsers.set(uId, socket.id);
+    }
   }
 
   handleMatchmaking(io, socket);
@@ -110,8 +119,8 @@ io.on('connection', (socket) => {
 
   socket.on('disconnect', () => {
     if (socket.user) {
-      const uId = socket.user.id || socket.user.userId;
-      if (global.connectedUsers.get(uId) === socket.id) {
+      const uId = String(socket.user.id || socket.user._id || socket.user.userId || '');
+      if (uId && global.connectedUsers.get(uId) === socket.id) {
         global.connectedUsers.delete(uId);
       }
     }

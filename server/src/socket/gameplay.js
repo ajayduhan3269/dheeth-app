@@ -27,10 +27,22 @@ const clearMatchGraceTimers = (roomId) => {
 
 const SHIELD_HOURS = 12;
 
+const normalizeAttemptMode = (m) => {
+  if (!m) return 'RANKED';
+  const s = String(m).trim().toUpperCase();
+  if (s === 'GS' || s === 'TECH') return 'RANKED';
+  if (s === 'DUEL' || s === 'FRIEND' || s === 'FRIEND_DUEL') return 'FRIEND_DUEL';
+  if (s === 'BOT' || s === 'BOT_MATCH') return 'BOT';
+  if (s === 'DRILL') return 'DRILL';
+  if (s === 'REDEEM') return 'REDEEM';
+  return 'RANKED';
+};
+
 async function recordAttemptAndMistake({ userId, question, isCorrect, selectedOption, timeSpentMs, mode, matchId, usedPowerup, powerupType }) {
   if (!userId || userId === 'bot' || !question || !question._id) return;
   const attemptId = `att_${Date.now()}_${Math.random().toString(36).substring(2, 8)}`;
   const answeredAt = new Date();
+  const resolvedMode = normalizeAttemptMode(mode);
 
   try {
     // 1. Immutable Attempt Record
@@ -39,7 +51,7 @@ async function recordAttemptAndMistake({ userId, question, isCorrect, selectedOp
       userId,
       questionId: question._id,
       matchId: matchId || null,
-      mode: mode || 'RANKED',
+      mode: resolvedMode,
       subject: question.subject || 'General',
       topic: question.topic || 'General',
       correct: Boolean(isCorrect),
@@ -78,7 +90,7 @@ async function recordAttemptAndMistake({ userId, question, isCorrect, selectedOp
               $each: [{
                 attemptId,
                 matchId: matchId || null,
-                mode: mode || 'RANKED',
+                mode: resolvedMode,
                 selectedAnswer: selectedOption,
                 correctAnswer: question.correctOption,
                 timeSpentMs: timeSpentMs || 0,
@@ -88,7 +100,7 @@ async function recordAttemptAndMistake({ userId, question, isCorrect, selectedOp
             }
           }
         },
-        { upsert: true, new: true }
+        { upsert: true, returnDocument: 'after' }
       );
     }
   } catch (err) {
@@ -281,14 +293,14 @@ const updateDailyProgress = async (userId, questionsAnswered = 5, isWin = false)
  */
 const calculateEloDelta = (ratingA = 1200, ratingB = 1200, scoreA = 1, matchesA = 0) => {
   const expectedA = 1 / (1 + Math.pow(10, (ratingB - ratingA) / 400));
-  
+
   // Dynamic K-factor: K=32 for beginners (<30 matches), K=16 for high-rated masters (>1800), K=24 standard
   let k = 24;
   if (matchesA < 30) k = 32;
   else if (ratingA >= 1800) k = 16;
-  
+
   const delta = Math.round(k * (scoreA - expectedA));
-  
+
   // Guaranteed minimal delta for decisive victories/defeats
   if (scoreA === 1 && delta <= 0) return 2;
   if (scoreA === 0 && delta >= 0) return -2;
@@ -297,12 +309,12 @@ const calculateEloDelta = (ratingA = 1200, ratingB = 1200, scoreA = 1, matchesA 
 
 const updatePlayerStats = async (userId, isWinner, isDraw, subject, correctAnswers, opponentRating = 1200) => {
   if (!userId || userId === 'bot' || userId === 'bot_user_id' || userId.startsWith('guest_')) {
-    return { xpGained: 0, newLevel: 0, eloChange: 0 }; 
+    return { xpGained: 0, newLevel: 0, eloChange: 0 };
   }
 
   const winIncrement = isWinner ? 1 : 0;
   const scoreResult = isWinner ? 1 : (isDraw ? 0.5 : 0);
-  
+
   // Knowledge XP: Base reward + 8 XP per correct answer + 30 for win
   const xpGained = (isWinner ? 30 : (isDraw ? 15 : 10)) + (correctAnswers * 8);
   const coinsGained = isWinner ? 40 : (isDraw ? 20 : 10);
@@ -310,37 +322,37 @@ const updatePlayerStats = async (userId, isWinner, isDraw, subject, correctAnswe
   try {
     const user = await User.findById(userId);
     if (!user) return { xpGained: 0, newLevel: 0, eloChange: 0 };
-    
+
     // Dynamic True Elo Rating calculation
     const eloChange = calculateEloDelta(user.eloRating || 1200, opponentRating || 1200, scoreResult, user.matches || 0);
     user.eloRating = Math.max(100, (user.eloRating || 1200) + eloChange);
 
     user.coins = (user.coins || 0) + coinsGained;
-    
+
     if (!user.subjectXP) user.subjectXP = new Map();
     const currentXP = user.subjectXP.get(subject) || 0;
     const newXP = currentXP + xpGained;
     user.subjectXP.set(subject, newXP);
-    
+
     user.matches = (user.matches || 0) + 1;
     user.wins = (user.wins || 0) + winIncrement;
-    
+
     let maxXP = newXP;
     user.subjectXP.forEach((xp) => {
       if (xp > maxXP) maxXP = xp;
     });
-    
+
     const calculateLevel = (xp) => Math.floor(Math.sqrt(xp / 100));
     const globalLevel = calculateLevel(maxXP);
-    
+
     let newTitle = 'Novice';
     if (globalLevel >= 15) newTitle = 'Dheeth Legend';
     else if (globalLevel >= 10) newTitle = 'Master';
     else if (globalLevel >= 5) newTitle = 'Adept';
-    
+
     user.title = newTitle;
     await user.save();
-    
+
     return { xpGained, newTitle, newLevel: calculateLevel(newXP), eloChange };
   } catch (err) {
     console.error(`Failed to update stats for user ${userId}:`, err);
@@ -435,7 +447,7 @@ const startQuestionTimer = (io, roomId) => {
   const seconds = Number(match.secondsPerQ) || 60;
   match.questionStartedAt = Date.now();
   match.questionEndsAt = Date.now() + seconds * 1000;
-  
+
   Object.values(match.players).forEach(p => {
     p.hasAnswered = false;
     p.activePowerupThisQuestion = null;
@@ -483,13 +495,13 @@ const startQuestionTimer = (io, roomId) => {
         const bot = currentMatch.players['bot'];
         if (bot && !bot.hasAnswered) {
           bot.hasAnswered = true;
-          
+
           const isCorrect = decision.isCorrect;
           const selectedOption = decision.selectedOption;
           const timeSpentMs = decision.thinkingTime;
           const timeSpentSec = timeSpentMs / 1000;
           const durationSec = currentMatch.secondsPerQ || 20;
-          
+
           bot.answers = bot.answers || [];
           bot.correctAnswers = bot.correctAnswers || 0;
           bot.currentStreak = bot.currentStreak || 0;
@@ -497,7 +509,7 @@ const startQuestionTimer = (io, roomId) => {
           if (isCorrect) {
             bot.correctAnswers += 1;
             bot.currentStreak += 1;
-            
+
             // Base 100 + Speed (max 25 with 2s grace) + Additive Streak (+10 / +20)
             const basePoints = 100;
             const decayWindow = Math.max(1, durationSec - 2);
@@ -507,7 +519,7 @@ const startQuestionTimer = (io, roomId) => {
 
             const isFinalRound = currentMatch.currentQuestionIndex === currentMatch.questions.length - 1;
             const roundMultiplier = isFinalRound ? 1.5 : 1;
-            
+
             const rawScore = basePoints + speedBonus + streakBonus;
             const grossEarned = Math.round(rawScore * roundMultiplier);
 
@@ -529,15 +541,15 @@ const startQuestionTimer = (io, roomId) => {
             };
             // 0 points on wrong answer (no negative match score)
           }
-          
+
           io.to(roomId).emit('score_update', { players: currentMatch.players });
 
           const allAnswered = Object.values(currentMatch.players).every(p => p.hasAnswered);
           if (allAnswered) {
             clearTimeout(currentMatch.timerTimeout);
             if (currentMatch.botAnswerTimeout) clearTimeout(currentMatch.botAnswerTimeout);
-            io.to(roomId).emit('reveal_answers', { 
-              players: currentMatch.players, 
+            io.to(roomId).emit('reveal_answers', {
+              players: currentMatch.players,
               questionIndex: currentMatch.currentQuestionIndex,
               correctOption: currentMatch.questions[currentMatch.currentQuestionIndex].correctOption
             });
@@ -587,277 +599,292 @@ const handleQuestionDeadline = (io, roomId) => {
   });
 
   io.to(roomId).emit('time_up');
-  io.to(roomId).emit('reveal_answers', { 
-    players: match.players, 
+  io.to(roomId).emit('reveal_answers', {
+    players: match.players,
     questionIndex: match.currentQuestionIndex,
     correctOption: match.questions[match.currentQuestionIndex].correctOption
   });
-  
+
   setTimeout(() => {
     moveToNextQuestion(io, roomId);
   }, 3000);
 };
 
 const moveToNextQuestion = (io, roomId) => {
-   const match = activeMatches[roomId];
-   if (!match) return;
+  const match = activeMatches[roomId];
+  if (!match) return;
 
-   if (match.botAnswerTimeout) {
-     clearTimeout(match.botAnswerTimeout);
-     delete match.botAnswerTimeout;
-   }
-   if (match.timerTimeout) clearTimeout(match.timerTimeout);
+  if (match.botAnswerTimeout) {
+    clearTimeout(match.botAnswerTimeout);
+    delete match.botAnswerTimeout;
+  }
+  if (match.timerTimeout) clearTimeout(match.timerTimeout);
 
-    // Evaluate EMP Power-up grants for both players at end of round
-    const powerupUpdates = evaluatePowerupGrants(match, match.currentQuestionIndex + 1);
-   powerupUpdates.forEach(update => {
-     const playerObj = match.players[update.userId];
-     if (playerObj && playerObj.socketId) {
-       io.to(playerObj.socketId).emit('powerup:charge_update', {
-         reason: update.reason,
-         slot: update.slot
-       });
-     }
-   });
-
-    match.currentQuestionIndex++;
-    if (match.currentQuestionIndex >= match.questions.length) {
-        match.status = 'finishing';
-        clearMatchGraceTimers(roomId);
-       
-       const playersList = Object.values(match.players);
-       const p1 = playersList[0];
-       const p2 = playersList[1];
-
-       const p1Id = p1 ? p1.userId : null;
-       const p2Id = p2 ? p2.userId : null;
-
-        const p1Score = p1 ? p1.score : 0;
-        const p2Score = p2 ? p2.score : 0;
-
-        let isDraw = p1Score === p2Score;
-        let p1Wins = p1Score > p2Score;
-        let p2Wins = p2Score > p1Score;
-
-        if (isDraw) {
-            // Tiebreaker 1: Total correct answers
-            const p1Answers = p1?.correctAnswers || 0;
-            const p2Answers = p2?.correctAnswers || 0;
-            if (p1Answers > p2Answers) {
-                p1Wins = true;
-                isDraw = false;
-            } else if (p2Answers > p1Answers) {
-                p2Wins = true;
-                isDraw = false;
-            } else {
-                // Tiebreaker 2: Speed on correct answers (faster total correct recall wins)
-                const p1Time = (p1?.answers || []).filter(a => a.isCorrect).reduce((acc, a) => acc + (a.timeSpentMs || 0), 0);
-                const p2Time = (p2?.answers || []).filter(a => a.isCorrect).reduce((acc, a) => acc + (a.timeSpentMs || 0), 0);
-                if (p1Time > 0 && p2Time > 0) {
-                  if (p1Time < p2Time) {
-                    p1Wins = true;
-                    isDraw = false;
-                  } else if (p2Time < p1Time) {
-                    p2Wins = true;
-                    isDraw = false;
-                  }
-                }
-            }
-        }
-
-        const p1Rating = p1?.eloRating || 1200;
-        const p2Rating = p2?.eloRating || 1200;
-
-        // Session-based Rivalry (resets to 0-0 when leaving match arena to home)
-        const sessionRivalry = match.sessionRivalry || { [p1Id || 'p1']: 0, [p2Id || 'p2']: 0 };
-        if (p1Wins && p1Id) sessionRivalry[p1Id] = (sessionRivalry[p1Id] || 0) + 1;
-        if (p2Wins && p2Id) sessionRivalry[p2Id] = (sessionRivalry[p2Id] || 0) + 1;
-
-        const p1SessionWins = p1Id ? (sessionRivalry[p1Id] || 0) : 0;
-        const p2SessionWins = p2Id ? (sessionRivalry[p2Id] || 0) : 0;
-        const isDeciderGame = p1SessionWins === 1 && p2SessionWins === 1;
-
-        // Perfect Recall Mastery check (100% accuracy)
-        const p1Perfect = (p1?.correctAnswers || 0) === match.questions.length && match.questions.length > 0;
-        const p2Perfect = (p2?.correctAnswers || 0) === match.questions.length && match.questions.length > 0;
-
-        // Detect Swing Question: pivotal question where winner got it right and loser missed
-        let swingIndex = -1;
-        let maxSwing = -1;
-        match.questions.forEach((q, idx) => {
-          const a1 = p1?.answers?.[idx];
-          const a2 = p2?.answers?.[idx];
-          if (p1Wins && a1?.isCorrect && !a2?.isCorrect) {
-            const val = a1.timeSpentMs || 1;
-            if (val > maxSwing) { maxSwing = val; swingIndex = idx; }
-          } else if (p2Wins && a2?.isCorrect && !a1?.isCorrect) {
-            const val = a2.timeSpentMs || 1;
-            if (val > maxSwing) { maxSwing = val; swingIndex = idx; }
-          }
-        });
-
-        Promise.all([
-          updatePlayerStats(p1Id, p1Wins, isDraw, match.subject, p1?.correctAnswers || 0, p2Rating),
-          updatePlayerStats(p2Id, p2Wins, isDraw, match.subject, p2?.correctAnswers || 0, p1Rating),
-          updateSeenAndWrongQuestions(p1Id, match.questions, p1?.answers),
-          updateSeenAndWrongQuestions(p2Id, match.questions, p2?.answers),
-          updateDailyProgress(p1Id, match.questions.length, p1Wins),
-          updateDailyProgress(p2Id, match.questions.length, p2Wins)
-        ]).then(async ([p1Stats, p2Stats]) => {
-          console.log(`Stats updated for room. Match Over.`);
-
-           // Update persistent DB Rivalry record if both are human players
-           let rivalryRecord = null;
-           if (p1 && p2 && p1Id && p2Id && p1Id !== 'bot' && p2Id !== 'bot') {
-             try {
-               rivalryRecord = await Rivalry.getOrCreateRivalry(p1Id, p2Id);
-               rivalryRecord.totalDuels = (rivalryRecord.totalDuels || 0) + 1;
-               rivalryRecord.lastPlayedAt = new Date();
-
-               const isP1UserA = rivalryRecord.players[0]?.toString() === p1Id.toString();
-
-               if (p1Wins) {
-                 if (isP1UserA) rivalryRecord.scoreA = (rivalryRecord.scoreA || 0) + 1;
-                 else rivalryRecord.scoreB = (rivalryRecord.scoreB || 0) + 1;
-
-                 if (rivalryRecord.currentStreak?.holderId?.toString() === p1Id.toString()) {
-                   rivalryRecord.currentStreak.count = (rivalryRecord.currentStreak.count || 0) + 1;
-                 } else {
-                   rivalryRecord.currentStreak = { holderId: p1Id, count: 1 };
-                 }
-               } else if (p2Wins) {
-                 if (isP1UserA) rivalryRecord.scoreB = (rivalryRecord.scoreB || 0) + 1;
-                 else rivalryRecord.scoreA = (rivalryRecord.scoreA || 0) + 1;
-
-                 if (rivalryRecord.currentStreak?.holderId?.toString() === p2Id.toString()) {
-                   rivalryRecord.currentStreak.count = (rivalryRecord.currentStreak.count || 0) + 1;
-                 } else {
-                   rivalryRecord.currentStreak = { holderId: p2Id, count: 1 };
-                 }
-               } else if (isDraw) {
-                 rivalryRecord.draws = (rivalryRecord.draws || 0) + 1;
-               }
-               await rivalryRecord.save();
-             } catch (rErr) {
-               console.error('Error updating rivalry:', rErr);
-             }
-           }
-
-          // Conquer state for winners
-          const p1Conquest = p1Wins ? await handleConquest(p1Id, p1?.targetState) : null;
-          const p2Conquest = p2Wins ? await handleConquest(p2Id, p2?.targetState) : null;
-
-          const extractSelectedOption = (ans) => {
-             if (!ans) return null;
-             if (typeof ans === 'string') return ans;
-             if (typeof ans === 'object' && ans.selectedOption) return ans.selectedOption;
-             return null;
-          };
-
-          const createSummary = (isPlayer1) => {
-            const me = (isPlayer1 ? p1 : p2) || { score: 0, correctAnswers: 0, answers: [] };
-            const opp = (isPlayer1 ? p2 : p1) || { score: 0, correctAnswers: 0, answers: [] };
-            const meWins = isPlayer1 ? p1Wins : p2Wins;
-            const meEloChange = isPlayer1 ? (p1Stats.eloChange || 0) : (p2Stats.eloChange || 0);
-            const myStats = isPlayer1 ? p1Stats : p2Stats;
-            const isPerfect = isPlayer1 ? p1Perfect : p2Perfect;
-
-            const conquest = isPlayer1 ? p1Conquest : p2Conquest;
-            return {
-               winner: isDraw ? 'draw' : (meWins ? 'user' : 'opponent'),
-               userStats: { 
-                 score: me.score, 
-                 correctAnswers: me.correctAnswers || 0, 
-                 eloChange: meEloChange, 
-                 xpGained: myStats.xpGained || 0,
-                 isPerfectRecall: isPerfect
-               },
-               conquest,
-               botStats: { score: opp.score, correctAnswers: opp.correctAnswers || 0 },
-               rivalry: {
-                  myWins: isPlayer1 ? p1SessionWins : p2SessionWins,
-                  opponentWins: isPlayer1 ? p2SessionWins : p1SessionWins,
-                  totalDuels: (p1SessionWins + p2SessionWins),
-                  isDecider: isDeciderGame,
-                  roundNumber: match.roundNumber || 1,
-                  streak: rivalryRecord ? rivalryRecord.currentStreak : null,
-               },
-               roundNumber: match.roundNumber || 1,
-             questionsReview: match.questions.map((q, idx) => ({
-               questionId: q._id,
-               questionText: q.questionText,
-               options: q.options,
-               correctOption: q.correctOption,
-               explanation: q.explanation,
-               hasDiagram: q.hasDiagram,
-               diagramUrl: q.diagramUrl,
-               isSwingQuestion: idx === swingIndex,
-               userSelectedOption: extractSelectedOption(me.answers ? me.answers[idx] : null),
-               opponentSelectedOption: extractSelectedOption(opp.answers ? opp.answers[idx] : null)
-             }))
-           };
-         };
-
-          if (p1 && p1.userId && p1.userId !== 'bot' && p1.socketId) {
-            io.to(p1.socketId).emit('match_over', createSummary(true));
-            delete activeMatchByUser[p1.userId];
-          }
-          if (p2 && p2.userId && p2.userId !== 'bot' && p2.socketId) {
-            io.to(p2.socketId).emit('match_over', createSummary(false));
-            delete activeMatchByUser[p2.userId];
-          }
-
-          // Bot post-match GG / respect reaction
-          if (match.isBotMatch) {
-            const botScore = (p1.userId === 'bot' ? p1.score : p2.score) || 0;
-            const humanScore = (p1.userId !== 'bot' ? p1.score : p2.score) || 0;
-            const humanWon = humanScore > botScore;
-            const isDraw = humanScore === botScore;
-            const ggIntent = botEmoteEngine.evaluateEvent('MATCH_ENDED', match, { humanWon, isDraw });
-            if (ggIntent) {
-              setTimeout(() => {
-                io.to(roomId).emit('receive_reaction', { emoji: ggIntent.emoji, senderId: 'bot' });
-              }, ggIntent.delayMs);
-            }
-          }
-
-          // Save session rivalry to rematch state before deleting
-          rematchState[roomId] = {
-            subject: match.subject || 'General',
-            p1: p1 ? { socketId: p1.socketId || '', username: p1.username || '', userId: p1.userId || '', avatarSeed: p1.avatarSeed || '', targetState: p1.targetState || null } : null,
-            p2: p2 ? { socketId: p2.socketId || '', username: p2.username || '', userId: p2.userId || '', avatarSeed: p2.avatarSeed || '', targetState: p2.targetState || null } : null,
-            isBotMatch: Boolean(match.isBotMatch),
-            secondsPerQ: match.secondsPerQ || 20,
-            questionCount: match.questionCount || 5,
-            roundNumber: (match.roundNumber || 1) + 1,
-            sessionRivalry,
-            rivalryRecord,
-            requests: {}
-          };
-
-          Duel.updateOne({ roomId }, { status: 'completed' }).catch(() => {});
-          delete activeMatches[roomId];
-        }).catch(err => {
-          console.error(`[Match] Error finalizing ${roomId}:`, err);
-          if (p1 && p1.userId) delete activeMatchByUser[p1.userId];
-          if (p2 && p2.userId) delete activeMatchByUser[p2.userId];
-          Duel.updateOne({ roomId }, { status: 'completed' }).catch(() => {});
-          delete activeMatches[roomId];
-        });
-    } else {
-        io.to(roomId).emit('next_question', { questionIndex: match.currentQuestionIndex, questionEndsAt: match.questionEndsAt });
-        startQuestionTimer(io, roomId);
+  // Evaluate EMP Power-up grants for both players at end of round
+  const powerupUpdates = evaluatePowerupGrants(match, match.currentQuestionIndex + 1);
+  powerupUpdates.forEach(update => {
+    const playerObj = match.players[update.userId];
+    if (playerObj && playerObj.socketId) {
+      io.to(playerObj.socketId).emit('powerup:charge_update', {
+        reason: update.reason,
+        slot: update.slot
+      });
     }
+  });
+
+  match.currentQuestionIndex++;
+  if (match.currentQuestionIndex >= match.questions.length) {
+    match.status = 'finishing';
+    clearMatchGraceTimers(roomId);
+
+    const playersList = Object.values(match.players);
+    const p1 = playersList[0];
+    const p2 = playersList[1];
+
+    const p1Id = p1 ? p1.userId : null;
+    const p2Id = p2 ? p2.userId : null;
+
+    const p1Score = p1 ? p1.score : 0;
+    const p2Score = p2 ? p2.score : 0;
+
+    let isDraw = p1Score === p2Score;
+    let p1Wins = p1Score > p2Score;
+    let p2Wins = p2Score > p1Score;
+
+    if (isDraw) {
+      // Tiebreaker 1: Total correct answers
+      const p1Answers = p1?.correctAnswers || 0;
+      const p2Answers = p2?.correctAnswers || 0;
+      if (p1Answers > p2Answers) {
+        p1Wins = true;
+        isDraw = false;
+      } else if (p2Answers > p1Answers) {
+        p2Wins = true;
+        isDraw = false;
+      } else {
+        // Tiebreaker 2: Speed on correct answers (faster total correct recall wins)
+        const p1Time = (p1?.answers || []).filter(a => a.isCorrect).reduce((acc, a) => acc + (a.timeSpentMs || 0), 0);
+        const p2Time = (p2?.answers || []).filter(a => a.isCorrect).reduce((acc, a) => acc + (a.timeSpentMs || 0), 0);
+        if (p1Time > 0 && p2Time > 0) {
+          if (p1Time < p2Time) {
+            p1Wins = true;
+            isDraw = false;
+          } else if (p2Time < p1Time) {
+            p2Wins = true;
+            isDraw = false;
+          }
+        }
+      }
+    }
+
+    const p1Rating = p1?.eloRating || 1200;
+    const p2Rating = p2?.eloRating || 1200;
+
+    // Session-based Rivalry (resets to 0-0 when leaving match arena to home)
+    const sessionRivalry = match.sessionRivalry || { [p1Id || 'p1']: 0, [p2Id || 'p2']: 0 };
+    if (p1Wins && p1Id) sessionRivalry[p1Id] = (sessionRivalry[p1Id] || 0) + 1;
+    if (p2Wins && p2Id) sessionRivalry[p2Id] = (sessionRivalry[p2Id] || 0) + 1;
+
+    const p1SessionWins = p1Id ? (sessionRivalry[p1Id] || 0) : 0;
+    const p2SessionWins = p2Id ? (sessionRivalry[p2Id] || 0) : 0;
+    const isDeciderGame = p1SessionWins === 1 && p2SessionWins === 1;
+
+    // Perfect Recall Mastery check (100% accuracy)
+    const p1Perfect = (p1?.correctAnswers || 0) === match.questions.length && match.questions.length > 0;
+    const p2Perfect = (p2?.correctAnswers || 0) === match.questions.length && match.questions.length > 0;
+
+    // Detect Swing Question: pivotal question where winner got it right and loser missed
+    let swingIndex = -1;
+    let maxSwing = -1;
+    match.questions.forEach((q, idx) => {
+      const a1 = p1?.answers?.[idx];
+      const a2 = p2?.answers?.[idx];
+      if (p1Wins && a1?.isCorrect && !a2?.isCorrect) {
+        const val = a1.timeSpentMs || 1;
+        if (val > maxSwing) { maxSwing = val; swingIndex = idx; }
+      } else if (p2Wins && a2?.isCorrect && !a1?.isCorrect) {
+        const val = a2.timeSpentMs || 1;
+        if (val > maxSwing) { maxSwing = val; swingIndex = idx; }
+      }
+    });
+
+    Promise.all([
+      updateUserMatchCompletion(p1Id, {
+        isWinner: p1Wins,
+        isDraw,
+        subject: match.subject,
+        correctAnswers: p1?.correctAnswers || 0,
+        opponentRating: p2Rating,
+        questions: match.questions,
+        playerAnswers: p1?.answers,
+        questionCount: match.questions.length,
+      }),
+      updateUserMatchCompletion(p2Id, {
+        isWinner: p2Wins,
+        isDraw,
+        subject: match.subject,
+        correctAnswers: p2?.correctAnswers || 0,
+        opponentRating: p1Rating,
+        questions: match.questions,
+        playerAnswers: p2?.answers,
+        questionCount: match.questions.length,
+      }),
+    ]).then(async ([p1Stats, p2Stats]) => {
+      console.log(`Stats updated for room. Match Over.`);
+
+      // Update persistent DB Rivalry record if both are human players
+      let rivalryRecord = null;
+      if (p1 && p2 && p1Id && p2Id && p1Id !== 'bot' && p2Id !== 'bot') {
+        try {
+          rivalryRecord = await Rivalry.getOrCreateRivalry(p1Id, p2Id);
+          rivalryRecord.totalDuels = (rivalryRecord.totalDuels || 0) + 1;
+          rivalryRecord.lastPlayedAt = new Date();
+
+          const isP1UserA = rivalryRecord.players[0]?.toString() === p1Id.toString();
+
+          if (p1Wins) {
+            if (isP1UserA) rivalryRecord.scoreA = (rivalryRecord.scoreA || 0) + 1;
+            else rivalryRecord.scoreB = (rivalryRecord.scoreB || 0) + 1;
+
+            if (rivalryRecord.currentStreak?.holderId?.toString() === p1Id.toString()) {
+              rivalryRecord.currentStreak.count = (rivalryRecord.currentStreak.count || 0) + 1;
+            } else {
+              rivalryRecord.currentStreak = { holderId: p1Id, count: 1 };
+            }
+          } else if (p2Wins) {
+            if (isP1UserA) rivalryRecord.scoreB = (rivalryRecord.scoreB || 0) + 1;
+            else rivalryRecord.scoreA = (rivalryRecord.scoreA || 0) + 1;
+
+            if (rivalryRecord.currentStreak?.holderId?.toString() === p2Id.toString()) {
+              rivalryRecord.currentStreak.count = (rivalryRecord.currentStreak.count || 0) + 1;
+            } else {
+              rivalryRecord.currentStreak = { holderId: p2Id, count: 1 };
+            }
+          } else if (isDraw) {
+            rivalryRecord.draws = (rivalryRecord.draws || 0) + 1;
+          }
+          await rivalryRecord.save();
+        } catch (rErr) {
+          console.error('Error updating rivalry:', rErr);
+        }
+      }
+
+      // Conquer state for winners
+      const p1Conquest = p1Wins ? await handleConquest(p1Id, p1?.targetState) : null;
+      const p2Conquest = p2Wins ? await handleConquest(p2Id, p2?.targetState) : null;
+
+      const extractSelectedOption = (ans) => {
+        if (!ans) return null;
+        if (typeof ans === 'string') return ans;
+        if (typeof ans === 'object' && ans.selectedOption) return ans.selectedOption;
+        return null;
+      };
+
+      const createSummary = (isPlayer1) => {
+        const me = (isPlayer1 ? p1 : p2) || { score: 0, correctAnswers: 0, answers: [] };
+        const opp = (isPlayer1 ? p2 : p1) || { score: 0, correctAnswers: 0, answers: [] };
+        const meWins = isPlayer1 ? p1Wins : p2Wins;
+        const meEloChange = isPlayer1 ? (p1Stats.eloChange || 0) : (p2Stats.eloChange || 0);
+        const myStats = isPlayer1 ? p1Stats : p2Stats;
+        const isPerfect = isPlayer1 ? p1Perfect : p2Perfect;
+
+        const conquest = isPlayer1 ? p1Conquest : p2Conquest;
+        return {
+          winner: isDraw ? 'draw' : (meWins ? 'user' : 'opponent'),
+          userStats: {
+            score: me.score,
+            correctAnswers: me.correctAnswers || 0,
+            eloChange: meEloChange,
+            xpGained: myStats.xpGained || 0,
+            isPerfectRecall: isPerfect
+          },
+          conquest,
+          botStats: { score: opp.score, correctAnswers: opp.correctAnswers || 0 },
+          rivalry: {
+            myWins: isPlayer1 ? p1SessionWins : p2SessionWins,
+            opponentWins: isPlayer1 ? p2SessionWins : p1SessionWins,
+            totalDuels: (p1SessionWins + p2SessionWins),
+            isDecider: isDeciderGame,
+            roundNumber: match.roundNumber || 1,
+            streak: rivalryRecord ? rivalryRecord.currentStreak : null,
+          },
+          roundNumber: match.roundNumber || 1,
+          questionsReview: match.questions.map((q, idx) => ({
+            questionId: q._id,
+            questionText: q.questionText,
+            options: q.options,
+            correctOption: q.correctOption,
+            explanation: q.explanation,
+            hasDiagram: q.hasDiagram,
+            diagramUrl: q.diagramUrl,
+            isSwingQuestion: idx === swingIndex,
+            userSelectedOption: extractSelectedOption(me.answers ? me.answers[idx] : null),
+            opponentSelectedOption: extractSelectedOption(opp.answers ? opp.answers[idx] : null)
+          }))
+        };
+      };
+
+      if (p1 && p1.userId && p1.userId !== 'bot' && p1.socketId) {
+        io.to(p1.socketId).emit('match_over', createSummary(true));
+        delete activeMatchByUser[p1.userId];
+      }
+      if (p2 && p2.userId && p2.userId !== 'bot' && p2.socketId) {
+        io.to(p2.socketId).emit('match_over', createSummary(false));
+        delete activeMatchByUser[p2.userId];
+      }
+
+      // Bot post-match GG / respect reaction
+      if (match.isBotMatch) {
+        const botScore = (p1.userId === 'bot' ? p1.score : p2.score) || 0;
+        const humanScore = (p1.userId !== 'bot' ? p1.score : p2.score) || 0;
+        const humanWon = humanScore > botScore;
+        const isDraw = humanScore === botScore;
+        const ggIntent = botEmoteEngine.evaluateEvent('MATCH_ENDED', match, { humanWon, isDraw });
+        if (ggIntent) {
+          setTimeout(() => {
+            io.to(roomId).emit('receive_reaction', { emoji: ggIntent.emoji, senderId: 'bot' });
+          }, ggIntent.delayMs);
+        }
+      }
+
+      // Save session rivalry to rematch state before deleting
+      rematchState[roomId] = {
+        subject: match.subject || 'General',
+        p1: p1 ? { socketId: p1.socketId || '', username: p1.username || '', userId: p1.userId || '', avatarSeed: p1.avatarSeed || '', targetState: p1.targetState || null } : null,
+        p2: p2 ? { socketId: p2.socketId || '', username: p2.username || '', userId: p2.userId || '', avatarSeed: p2.avatarSeed || '', targetState: p2.targetState || null } : null,
+        isBotMatch: Boolean(match.isBotMatch),
+        secondsPerQ: match.secondsPerQ || 20,
+        questionCount: match.questionCount || 5,
+        roundNumber: (match.roundNumber || 1) + 1,
+        sessionRivalry,
+        rivalryRecord,
+        requests: {}
+      };
+
+      Duel.updateOne({ roomId }, { status: 'completed' }).catch(() => { });
+      delete activeMatches[roomId];
+    }).catch(err => {
+      console.error(`[Match] Error finalizing ${roomId}:`, err);
+      if (p1 && p1.userId) delete activeMatchByUser[p1.userId];
+      if (p2 && p2.userId) delete activeMatchByUser[p2.userId];
+      Duel.updateOne({ roomId }, { status: 'completed' }).catch(() => { });
+      delete activeMatches[roomId];
+    });
+  } else {
+    io.to(roomId).emit('next_question', { questionIndex: match.currentQuestionIndex, questionEndsAt: match.questionEndsAt });
+    startQuestionTimer(io, roomId);
+  }
 };
 
 const finishMatchForfeit = (io, roomId, loserId, winnerId) => {
   const match = activeMatches[roomId];
   if (!match || match.status !== 'active') return;
-  
+
   match.status = 'finishing';
   clearMatchGraceTimers(roomId);
   if (match.timerTimeout) clearTimeout(match.timerTimeout);
   if (match.botAnswerTimeout) clearTimeout(match.botAnswerTimeout);
+  if (match.standbyTimeout) clearTimeout(match.standbyTimeout);
 
   io.to(roomId).emit('opponent_disconnected', {
     message: 'Opponent fled the arena. You win by forfeit!'
@@ -870,27 +897,44 @@ const finishMatchForfeit = (io, roomId, loserId, winnerId) => {
   const loserRating = loserPlayer?.eloRating || 1200;
 
   Promise.all([
-    loserId && loserId !== 'bot' ? updatePlayerStats(loserId, false, false, match.subject, 0, winnerRating) : Promise.resolve(),
-    winnerId && winnerId !== 'bot' ? updatePlayerStats(winnerId, true, false, match.subject, remainingPlayer?.correctAnswers || 0, loserRating) : Promise.resolve(),
-    loserId && loserId !== 'bot' ? updateDailyProgress(loserId, 5, false) : Promise.resolve(),
-    winnerId && winnerId !== 'bot' ? updateDailyProgress(winnerId, 5, true) : Promise.resolve()
+    loserId && loserId !== 'bot'
+      ? updateUserMatchCompletion(loserId, {
+        isWinner: false,
+        isDraw: false,
+        subject: match.subject,
+        correctAnswers: 0,
+        opponentRating: winnerRating,
+        questionCount: 5,
+      })
+      : Promise.resolve({ xpGained: 0, newLevel: 0, eloChange: 0 }),
+    winnerId && winnerId !== 'bot'
+      ? updateUserMatchCompletion(winnerId, {
+        isWinner: true,
+        isDraw: false,
+        subject: match.subject,
+        correctAnswers: remainingPlayer?.correctAnswers || 0,
+        opponentRating: loserRating,
+        questionCount: 5,
+      })
+      : Promise.resolve({ xpGained: 0, newLevel: 0, eloChange: 0 })
   ]).then(() => console.log(`[Match] Stats updated after forfeit for room ${roomId}`))
     .catch(err => console.error('[Match] Forfeit stats error:', err));
 
   if (loserId) delete activeMatchByUser[loserId];
   if (winnerId) delete activeMatchByUser[winnerId];
-  Duel.updateOne({ roomId }, { status: 'completed' }).catch(() => {});
+  Duel.updateOne({ roomId }, { status: 'completed' }).catch(() => { });
   delete activeMatches[roomId];
 };
 
 const finishMatchAbandoned = (io, roomId) => {
   const match = activeMatches[roomId];
   if (!match || match.status !== 'active') return;
-  
+
   match.status = 'abandoned';
   clearMatchGraceTimers(roomId);
   if (match.timerTimeout) clearTimeout(match.timerTimeout);
   if (match.botAnswerTimeout) clearTimeout(match.botAnswerTimeout);
+  if (match.standbyTimeout) clearTimeout(match.standbyTimeout);
 
   io.to(roomId).emit('match_abandoned', {
     message: 'Both players disconnected. Match cancelled.'
@@ -899,7 +943,7 @@ const finishMatchAbandoned = (io, roomId) => {
   Object.keys(match.players || {}).forEach(uid => {
     if (uid && uid !== 'bot') delete activeMatchByUser[uid];
   });
-  Duel.updateOne({ roomId }, { status: 'completed' }).catch(() => {});
+  Duel.updateOne({ roomId }, { status: 'completed' }).catch(() => { });
   delete activeMatches[roomId];
 };
 
@@ -931,7 +975,7 @@ const setupGameplaySockets = (io, socket) => {
       clearTimeout(disconnectGraceTimers.get(timerKey));
       disconnectGraceTimers.delete(timerKey);
     }
-    
+
     // Disconnect stale socket if exists
     if (player.socketId && player.socketId !== socket.id) {
       const oldSocket = io.sockets.sockets.get(player.socketId);
@@ -941,18 +985,40 @@ const setupGameplaySockets = (io, socket) => {
     player.socketId = socket.id;
     player.connected = true;
     socket.join(roomId);
+    socket.activeRoomId = roomId;
 
     io.to(roomId).emit('player:connection', { userId, connected: true });
-    
+
+    // If duel was waiting for host, and host is now joining:
+    if (match.waitingForHost) {
+      if (match.standbyTimeout) {
+        clearTimeout(match.standbyTimeout);
+        match.standbyTimeout = null;
+      }
+      match.waitingForHost = false;
+
+      Duel.updateOne({ roomId }, { status: 'live' }).catch(() => { });
+
+      io.to(roomId).emit('duel:both_connected', {
+        roomId,
+        message: 'Both contenders ready! Commencing match!',
+      });
+
+      // Synchronously launch question timer
+      setTimeout(() => startQuestionTimer(io, roomId), 3500);
+    }
+
     if (typeof ack === 'function') {
-      ack({ 
-        ok: true, 
+      ack({
+        ok: true,
         matchId: roomId,
         currentQuestionIndex: match.currentQuestionIndex,
         questionEndsAt: match.questionEndsAt,
         players: match.players,
         subject: match.subject,
         questions: match.questions,
+        waitingForHost: Boolean(match.waitingForHost),
+        matchPhase: match.waitingForHost ? 'waiting_host' : 'intro',
         myPowerupSlot: player.powerupState?.slot || null
       });
     }
@@ -966,134 +1032,134 @@ const setupGameplaySockets = (io, socket) => {
 
     const player = match.players[userId];
     if (player && !player.hasAnswered) {
-       player.hasAnswered = true;
-       
-        const currentQ = match.questions[match.currentQuestionIndex];
-        const timeSpentMs = Math.max(0, Date.now() - match.questionStartedAt);
-        const timeSpentSec = timeSpentMs / 1000;
-        const durationSec = match.secondsPerQ || 20;
-        const isCorrect = String(selectedOption || '').trim().toLowerCase() === String(currentQ.correctOption || '').trim().toLowerCase();
+      player.hasAnswered = true;
 
-        player.answers = player.answers || [];
-        player.answers[match.currentQuestionIndex] = {
-          selectedOption,
-          isCorrect,
-          timeSpentMs,
-          isTimeout: false
+      const currentQ = match.questions[match.currentQuestionIndex];
+      const timeSpentMs = Math.max(0, Date.now() - match.questionStartedAt);
+      const timeSpentSec = timeSpentMs / 1000;
+      const durationSec = match.secondsPerQ || 20;
+      const isCorrect = String(selectedOption || '').trim().toLowerCase() === String(currentQ.correctOption || '').trim().toLowerCase();
+
+      player.answers = player.answers || [];
+      player.answers[match.currentQuestionIndex] = {
+        selectedOption,
+        isCorrect,
+        timeSpentMs,
+        isTimeout: false
+      };
+
+      let scoreGained = 0;
+      let scoreBreakdown = { base: 0, speed: 0, streak: 0, isFinalRound: false, multiplier: 1, total: 0 };
+
+      if (isCorrect) {
+        player.correctAnswers = (player.correctAnswers || 0) + 1;
+        player.currentStreak = (player.currentStreak || 0) + 1;
+
+        // 1. Accuracy Base Points (+100)
+        const basePoints = 100;
+
+        // 2. Speed Bonus with 2-second grace period (Max +25)
+        const decayWindow = Math.max(1, durationSec - 2);
+        const speedFraction = Math.max(0, Math.min(1, (durationSec - Math.max(2, timeSpentSec)) / decayWindow));
+        const speedBonus = Math.round(25 * speedFraction);
+
+        // 3. Additive Streak Bonus (+0 for 1-2, +10 for 3-4, +20 for 5+)
+        const streakBonus = player.currentStreak >= 5 ? 20 : (player.currentStreak >= 3 ? 10 : 0);
+
+        // 4. Final Round (1.5x clutch multiplier)
+        const isFinalRound = match.currentQuestionIndex === match.questions.length - 1;
+        const roundMultiplier = isFinalRound ? 1.5 : 1;
+
+        const rawQuestionScore = basePoints + speedBonus + streakBonus;
+        scoreGained = Math.round(rawQuestionScore * roundMultiplier);
+
+        player.grossBaseScore = (player.grossBaseScore || 0) + rawQuestionScore;
+        player.score += scoreGained;
+
+        scoreBreakdown = {
+          base: basePoints,
+          speed: speedBonus,
+          streak: streakBonus,
+          isFinalRound,
+          multiplier: roundMultiplier,
+          total: scoreGained
         };
+      } else {
+        // Wrong answer: 0 points (no negative match score), reset streak
+        player.currentStreak = 0;
+        scoreBreakdown = { base: 0, speed: 0, streak: 0, isFinalRound: false, multiplier: 1, total: 0 };
+      }
 
-        let scoreGained = 0;
-        let scoreBreakdown = { base: 0, speed: 0, streak: 0, isFinalRound: false, multiplier: 1, total: 0 };
+      // Record attempt and mistake telemetry
+      recordAttemptAndMistake({
+        userId,
+        question: currentQ,
+        isCorrect,
+        selectedOption,
+        timeSpentMs,
+        mode: match.mode || 'RANKED',
+        matchId: roomId,
+        usedPowerup: Boolean(player.activePowerupThisQuestion),
+        powerupType: player.activePowerupThisQuestion
+      });
 
-        if (isCorrect) {
-            player.correctAnswers = (player.correctAnswers || 0) + 1;
-            player.currentStreak = (player.currentStreak || 0) + 1;
+      socket.emit('answer_result', {
+        isCorrect,
+        selectedOption,
+        correctOption: currentQ.correctOption,
+        scoreGained,
+        breakdown: scoreBreakdown
+      });
+      io.to(roomId).emit('score_update', { players: match.players });
 
-            // 1. Accuracy Base Points (+100)
-            const basePoints = 100;
-
-            // 2. Speed Bonus with 2-second grace period (Max +25)
-            const decayWindow = Math.max(1, durationSec - 2);
-            const speedFraction = Math.max(0, Math.min(1, (durationSec - Math.max(2, timeSpentSec)) / decayWindow));
-            const speedBonus = Math.round(25 * speedFraction);
-
-            // 3. Additive Streak Bonus (+0 for 1-2, +10 for 3-4, +20 for 5+)
-            const streakBonus = player.currentStreak >= 5 ? 20 : (player.currentStreak >= 3 ? 10 : 0);
-
-            // 4. Final Round (1.5x clutch multiplier)
-            const isFinalRound = match.currentQuestionIndex === match.questions.length - 1;
-            const roundMultiplier = isFinalRound ? 1.5 : 1;
-
-            const rawQuestionScore = basePoints + speedBonus + streakBonus;
-            scoreGained = Math.round(rawQuestionScore * roundMultiplier);
-
-            player.grossBaseScore = (player.grossBaseScore || 0) + rawQuestionScore;
-            player.score += scoreGained;
-
-            scoreBreakdown = {
-              base: basePoints,
-              speed: speedBonus,
-              streak: streakBonus,
-              isFinalRound,
-              multiplier: roundMultiplier,
-              total: scoreGained
-            };
-        } else {
-            // Wrong answer: 0 points (no negative match score), reset streak
-            player.currentStreak = 0;
-            scoreBreakdown = { base: 0, speed: 0, streak: 0, isFinalRound: false, multiplier: 1, total: 0 };
-        }
-
-        // Record attempt and mistake telemetry
-        recordAttemptAndMistake({
-          userId,
-          question: currentQ,
-          isCorrect,
-          selectedOption,
-          timeSpentMs,
-          mode: match.mode || 'RANKED',
-          matchId: roomId,
-          usedPowerup: Boolean(player.activePowerupThisQuestion),
-          powerupType: player.activePowerupThisQuestion
-        });
-
-        socket.emit('answer_result', { 
-          isCorrect, 
-          selectedOption, 
-          correctOption: currentQ.correctOption,
-          scoreGained,
-          breakdown: scoreBreakdown
-        });
-        io.to(roomId).emit('score_update', { players: match.players });
-
-        // Bot psychological reactions to human answer and streaks
-        if (match.isBotMatch) {
-          const shockIntent = botEmoteEngine.evaluateEvent('HUMAN_ANSWERED', match, { isCorrect, timeSpentMs });
-          if (shockIntent) {
+      // Bot psychological reactions to human answer and streaks
+      if (match.isBotMatch) {
+        const shockIntent = botEmoteEngine.evaluateEvent('HUMAN_ANSWERED', match, { isCorrect, timeSpentMs });
+        if (shockIntent) {
+          setTimeout(() => {
+            const cur = activeMatches[roomId];
+            if (cur && cur.status === 'active' && cur.currentQuestionIndex === match.currentQuestionIndex) {
+              io.to(roomId).emit('receive_reaction', { emoji: shockIntent.emoji, senderId: 'bot' });
+            }
+          }, shockIntent.delayMs);
+        } else if (player.currentStreak >= 3) {
+          const streakIntent = botEmoteEngine.evaluateEvent('STREAK_MILESTONE', match, { streak: player.currentStreak, playerId: userId });
+          if (streakIntent) {
             setTimeout(() => {
               const cur = activeMatches[roomId];
               if (cur && cur.status === 'active' && cur.currentQuestionIndex === match.currentQuestionIndex) {
-                io.to(roomId).emit('receive_reaction', { emoji: shockIntent.emoji, senderId: 'bot' });
+                io.to(roomId).emit('receive_reaction', { emoji: streakIntent.emoji, senderId: 'bot' });
               }
-            }, shockIntent.delayMs);
-          } else if (player.currentStreak >= 3) {
-            const streakIntent = botEmoteEngine.evaluateEvent('STREAK_MILESTONE', match, { streak: player.currentStreak, playerId: userId });
-            if (streakIntent) {
-              setTimeout(() => {
-                const cur = activeMatches[roomId];
-                if (cur && cur.status === 'active' && cur.currentQuestionIndex === match.currentQuestionIndex) {
-                  io.to(roomId).emit('receive_reaction', { emoji: streakIntent.emoji, senderId: 'bot' });
-                }
-              }, streakIntent.delayMs);
-            }
+            }, streakIntent.delayMs);
+          }
+        }
+      }
+
+      const allAnswered = Object.values(match.players).every(p => p.hasAnswered);
+      if (allAnswered) {
+        clearTimeout(match.timerTimeout);
+        if (match.botAnswerTimeout) clearTimeout(match.botAnswerTimeout);
+        io.to(roomId).emit('reveal_answers', {
+          players: match.players,
+          questionIndex: match.currentQuestionIndex,
+          correctOption: match.questions[match.currentQuestionIndex].correctOption
+        });
+
+        // Clutch pressure check at round close
+        if (match.isBotMatch) {
+          const clutchIntent = botEmoteEngine.evaluateEvent('SCORE_UPDATED', match);
+          if (clutchIntent) {
+            setTimeout(() => {
+              const cur = activeMatches[roomId];
+              if (cur && cur.status === 'active') {
+                io.to(roomId).emit('receive_reaction', { emoji: clutchIntent.emoji, senderId: 'bot' });
+              }
+            }, clutchIntent.delayMs);
           }
         }
 
-       const allAnswered = Object.values(match.players).every(p => p.hasAnswered);
-       if (allAnswered) {
-           clearTimeout(match.timerTimeout);
-           if (match.botAnswerTimeout) clearTimeout(match.botAnswerTimeout);
-           io.to(roomId).emit('reveal_answers', { 
-             players: match.players, 
-             questionIndex: match.currentQuestionIndex,
-             correctOption: match.questions[match.currentQuestionIndex].correctOption
-           });
-
-           // Clutch pressure check at round close
-           if (match.isBotMatch) {
-             const clutchIntent = botEmoteEngine.evaluateEvent('SCORE_UPDATED', match);
-             if (clutchIntent) {
-               setTimeout(() => {
-                 const cur = activeMatches[roomId];
-                 if (cur && cur.status === 'active') {
-                   io.to(roomId).emit('receive_reaction', { emoji: clutchIntent.emoji, senderId: 'bot' });
-                 }
-               }, clutchIntent.delayMs);
-             }
-           }
-
-           setTimeout(() => moveToNextQuestion(io, roomId), 3000);
-       }
+        setTimeout(() => moveToNextQuestion(io, roomId), 3000);
+      }
     }
   });
 
@@ -1152,127 +1218,127 @@ const setupGameplaySockets = (io, socket) => {
     const { roomId } = data;
     const state = rematchState[roomId];
     if (!state) return;
-    
+
     const userId = (socket.user?.id || socket.user?.userId || '').toString();
     const username = socket.user?.username || 'Opponent';
 
     state.requests[socket.id] = { userId, username };
-    io.to(roomId).emit('rematch_status', { 
+    io.to(roomId).emit('rematch_status', {
       acceptedCount: Object.keys(state.requests).length,
       requestedByUserIds: Object.values(state.requests).map(r => r.userId),
       lastRequesterUsername: username
     });
 
-      if (state.isBotMatch) {
-        if (!state.botTimeout) {
-          state.botTimeout = setTimeout(async () => {
-              const qCount = state.questionCount || 5;
-              let questions = await Question.aggregate([{ $match: { subject: state.subject } }, { $sample: { size: qCount } }]);
-              if (questions.length === 0) {
-                const cat = state.mode === 'gs' ? 'gs' : 'tech';
-                questions = await Question.aggregate([{ $match: { category: cat } }, { $sample: { size: qCount } }]);
-              }
-              const pId = socket.user.id || socket.user.userId;
-              const dbUser = await User.findById(pId);
-              const pAvatar = dbUser?.equippedAvatar || socket.user.avatarSeed || 'default-seed';
-              const botOpp = state.p2.userId === 'bot' ? state.p2 : state.p1;
-              const newRoomId = `room_${Date.now()}`;
-              
-              socket.leave(roomId);
-              socket.join(newRoomId);
-              socket.activeRoomId = newRoomId;
+    if (state.isBotMatch) {
+      if (!state.botTimeout) {
+        state.botTimeout = setTimeout(async () => {
+          const qCount = state.questionCount || 5;
+          let questions = await Question.aggregate([{ $match: { subject: state.subject } }, { $sample: { size: qCount } }]);
+          if (questions.length === 0) {
+            const cat = state.mode === 'gs' ? 'gs' : 'tech';
+            questions = await Question.aggregate([{ $match: { category: cat } }, { $sample: { size: qCount } }]);
+          }
+          const pId = socket.user.id || socket.user.userId;
+          const dbUser = await User.findById(pId);
+          const pAvatar = dbUser?.equippedAvatar || socket.user.avatarSeed || 'default-seed';
+          const botOpp = state.p2.userId === 'bot' ? state.p2 : state.p1;
+          const newRoomId = `room_${Date.now()}`;
 
-              const matchPayload = {
-                roomId: newRoomId, subject: state.subject, questions, isBotMatch: true,
-                secondsPerQ: state.secondsPerQ || 20,
-                roundNumber: state.roundNumber || 2,
-                player: { id: pId, username: socket.user.username, avatarSeed: pAvatar },
-                opponent: { 
-                  id: "bot", 
-                  username: botOpp.username, 
-                  avatarSeed: botOpp.avatarSeed || "bot-ronin",
-                  title: botOpp.title || "Novice",
-                  eloRating: botOpp.eloRating || 1200,
-                  archetype: botOpp.archetype || null,
-                  isBot: true 
-                }
-              };
-              
-              socket.emit('rematch_accepted', matchPayload);
-              initializeMatch(newRoomId, state.subject, questions, 
-                { socketId: socket.id, username: socket.user.username, userId: pId, avatarSeed: pAvatar, targetState: socket.user.targetState, eloRating: socket.user.eloRating || 1200 }, 
-                { socketId: "bot_socket_id", username: botOpp.username, userId: "bot", avatarSeed: botOpp.avatarSeed || "bot-ronin", title: botOpp.title, eloRating: botOpp.eloRating, archetype: botOpp.archetype }, 
-                true, 
-                { secondsPerQ: state.secondsPerQ, roundNumber: state.roundNumber, sessionRivalry: state.sessionRivalry, mode: state.mode });
-              setTimeout(() => startQuestionTimer(io, newRoomId), 3500);
-              
-              delete rematchState[roomId];
-          }, Math.random() * 2000 + 1500);
+          socket.leave(roomId);
+          socket.join(newRoomId);
+          socket.activeRoomId = newRoomId;
+
+          const matchPayload = {
+            roomId: newRoomId, subject: state.subject, questions, isBotMatch: true,
+            secondsPerQ: state.secondsPerQ || 20,
+            roundNumber: state.roundNumber || 2,
+            player: { id: pId, username: socket.user.username, avatarSeed: pAvatar },
+            opponent: {
+              id: "bot",
+              username: botOpp.username,
+              avatarSeed: botOpp.avatarSeed || "bot-ronin",
+              title: botOpp.title || "Novice",
+              eloRating: botOpp.eloRating || 1200,
+              archetype: botOpp.archetype || null,
+              isBot: true
+            }
+          };
+
+          socket.emit('rematch_accepted', matchPayload);
+          initializeMatch(newRoomId, state.subject, questions,
+            { socketId: socket.id, username: socket.user.username, userId: pId, avatarSeed: pAvatar, targetState: socket.user.targetState, eloRating: socket.user.eloRating || 1200 },
+            { socketId: "bot_socket_id", username: botOpp.username, userId: "bot", avatarSeed: botOpp.avatarSeed || "bot-ronin", title: botOpp.title, eloRating: botOpp.eloRating, archetype: botOpp.archetype },
+            true,
+            { secondsPerQ: state.secondsPerQ, roundNumber: state.roundNumber, sessionRivalry: state.sessionRivalry, mode: state.mode });
+          setTimeout(() => startQuestionTimer(io, newRoomId), 3500);
+
+          delete rematchState[roomId];
+        }, Math.random() * 2000 + 1500);
+      }
+    } else {
+      if (Object.keys(state.requests).length === 2) {
+        const qCount = state.questionCount || 5;
+        let questions = await Question.aggregate([{ $match: { subject: state.subject } }, { $sample: { size: qCount } }]);
+        if (questions.length === 0) {
+          const cat = state.mode === 'gs' ? 'gs' : 'tech';
+          questions = await Question.aggregate([{ $match: { category: cat } }, { $sample: { size: qCount } }]);
         }
-     } else {
-        if (Object.keys(state.requests).length === 2) {
-           const qCount = state.questionCount || 5;
-           let questions = await Question.aggregate([{ $match: { subject: state.subject } }, { $sample: { size: qCount } }]);
-           if (questions.length === 0) {
-             const cat = state.mode === 'gs' ? 'gs' : 'tech';
-             questions = await Question.aggregate([{ $match: { category: cat } }, { $sample: { size: qCount } }]);
-           }
-           const newRoomId = `room_${Date.now()}`;
+        const newRoomId = `room_${Date.now()}`;
 
-           if (state.p1.socketId && io.sockets.sockets.get(state.p1.socketId)) {
-             const s1 = io.sockets.sockets.get(state.p1.socketId);
-             s1.leave(roomId);
-             s1.join(newRoomId);
-             s1.activeRoomId = newRoomId;
-           }
-           if (state.p2.socketId && io.sockets.sockets.get(state.p2.socketId)) {
-             const s2 = io.sockets.sockets.get(state.p2.socketId);
-             s2.leave(roomId);
-             s2.join(newRoomId);
-             s2.activeRoomId = newRoomId;
-           }
-
-           const p1WinsCount = state.rivalryRecord ? (state.rivalryRecord.players[0]?.toString() === state.p1.userId.toString() ? state.rivalryRecord.scoreA : state.rivalryRecord.scoreB) : 0;
-           const p2WinsCount = state.rivalryRecord ? (state.rivalryRecord.players[1]?.toString() === state.p2.userId.toString() ? state.rivalryRecord.scoreB : state.rivalryRecord.scoreA) : 0;
-
-           const p1Payload = {
-             roomId: newRoomId, subject: state.subject, questions, isBotMatch: false,
-             secondsPerQ: state.secondsPerQ || 20,
-             roundNumber: state.roundNumber || 2,
-             isDuel: true,
-             rivalry: state.rivalryRecord ? {
-               scoreHost: p1WinsCount,
-               scoreGuest: p2WinsCount,
-               totalDuels: state.rivalryRecord.totalDuels,
-               streak: state.rivalryRecord.currentStreak,
-             } : null,
-             player: { id: state.p1.userId, username: state.p1.username, avatarSeed: state.p1.avatarSeed },
-             opponent: { id: state.p2.userId, username: state.p2.username, avatarSeed: state.p2.avatarSeed }
-           };
-           const p2Payload = {
-             roomId: newRoomId, subject: state.subject, questions, isBotMatch: false,
-             secondsPerQ: state.secondsPerQ || 20,
-             roundNumber: state.roundNumber || 2,
-             isDuel: true,
-             rivalry: state.rivalryRecord ? {
-               scoreHost: p2WinsCount,
-               scoreGuest: p1WinsCount,
-               totalDuels: state.rivalryRecord.totalDuels,
-               streak: state.rivalryRecord.currentStreak,
-             } : null,
-             player: { id: state.p2.userId, username: state.p2.username, avatarSeed: state.p2.avatarSeed },
-             opponent: { id: state.p1.userId, username: state.p1.username, avatarSeed: state.p1.avatarSeed }
-           };
-
-           io.to(state.p1.socketId).emit('rematch_accepted', p1Payload);
-           io.to(state.p2.socketId).emit('rematch_accepted', p2Payload);
-           
-           initializeMatch(newRoomId, state.subject, questions, state.p1, state.p2, false, { secondsPerQ: state.secondsPerQ, roundNumber: state.roundNumber, sessionRivalry: state.sessionRivalry });
-           setTimeout(() => startQuestionTimer(io, newRoomId), 3500);
-           
-           delete rematchState[roomId];
+        if (state.p1.socketId && io.sockets.sockets.get(state.p1.socketId)) {
+          const s1 = io.sockets.sockets.get(state.p1.socketId);
+          s1.leave(roomId);
+          s1.join(newRoomId);
+          s1.activeRoomId = newRoomId;
         }
-     }
+        if (state.p2.socketId && io.sockets.sockets.get(state.p2.socketId)) {
+          const s2 = io.sockets.sockets.get(state.p2.socketId);
+          s2.leave(roomId);
+          s2.join(newRoomId);
+          s2.activeRoomId = newRoomId;
+        }
+
+        const p1WinsCount = state.rivalryRecord ? (state.rivalryRecord.players[0]?.toString() === state.p1.userId.toString() ? state.rivalryRecord.scoreA : state.rivalryRecord.scoreB) : 0;
+        const p2WinsCount = state.rivalryRecord ? (state.rivalryRecord.players[1]?.toString() === state.p2.userId.toString() ? state.rivalryRecord.scoreB : state.rivalryRecord.scoreA) : 0;
+
+        const p1Payload = {
+          roomId: newRoomId, subject: state.subject, questions, isBotMatch: false,
+          secondsPerQ: state.secondsPerQ || 20,
+          roundNumber: state.roundNumber || 2,
+          isDuel: true,
+          rivalry: state.rivalryRecord ? {
+            scoreHost: p1WinsCount,
+            scoreGuest: p2WinsCount,
+            totalDuels: state.rivalryRecord.totalDuels,
+            streak: state.rivalryRecord.currentStreak,
+          } : null,
+          player: { id: state.p1.userId, username: state.p1.username, avatarSeed: state.p1.avatarSeed },
+          opponent: { id: state.p2.userId, username: state.p2.username, avatarSeed: state.p2.avatarSeed }
+        };
+        const p2Payload = {
+          roomId: newRoomId, subject: state.subject, questions, isBotMatch: false,
+          secondsPerQ: state.secondsPerQ || 20,
+          roundNumber: state.roundNumber || 2,
+          isDuel: true,
+          rivalry: state.rivalryRecord ? {
+            scoreHost: p2WinsCount,
+            scoreGuest: p1WinsCount,
+            totalDuels: state.rivalryRecord.totalDuels,
+            streak: state.rivalryRecord.currentStreak,
+          } : null,
+          player: { id: state.p2.userId, username: state.p2.username, avatarSeed: state.p2.avatarSeed },
+          opponent: { id: state.p1.userId, username: state.p1.username, avatarSeed: state.p1.avatarSeed }
+        };
+
+        io.to(state.p1.socketId).emit('rematch_accepted', p1Payload);
+        io.to(state.p2.socketId).emit('rematch_accepted', p2Payload);
+
+        initializeMatch(newRoomId, state.subject, questions, state.p1, state.p2, false, { secondsPerQ: state.secondsPerQ, roundNumber: state.roundNumber, sessionRivalry: state.sessionRivalry });
+        setTimeout(() => startQuestionTimer(io, newRoomId), 3500);
+
+        delete rematchState[roomId];
+      }
+    }
   });
 
   socket.on('send_reaction', (data) => {
@@ -1287,11 +1353,11 @@ const setupGameplaySockets = (io, socket) => {
 
     socket.to(roomId).emit('receive_reaction', { emoji, senderId: socket.user?.userId || socket.id });
   });
-  
+
   socket.on('disconnect', () => {
     const userId = socket.user?.id || socket.user?.userId;
     if (!userId) return;
-    
+
     const roomId = activeMatchByUser[userId];
     if (!roomId) return;
 
@@ -1309,15 +1375,15 @@ const setupGameplaySockets = (io, socket) => {
       clearTimeout(disconnectGraceTimers.get(timerKey));
       disconnectGraceTimers.delete(timerKey);
     }
-    
+
     const timer = setTimeout(() => {
       disconnectGraceTimers.delete(timerKey);
       if (!activeMatches[roomId] || activeMatches[roomId].status !== 'active') return;
-      
+
       const opponent = Object.values(match.players).find(p => p.userId !== userId);
       const oppTimerKey = opponent ? `${roomId}:${opponent.userId}` : null;
       const oppHasGraceTimer = oppTimerKey ? disconnectGraceTimers.has(oppTimerKey) : false;
-      
+
       if (!opponent || (!opponent.connected && oppHasGraceTimer)) {
         finishMatchAbandoned(io, roomId);
       } else {

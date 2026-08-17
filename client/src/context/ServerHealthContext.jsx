@@ -34,9 +34,9 @@ export const ServerHealthProvider = ({ children }) => {
     setIsOffline(false);
 
     try {
-      // Direct fast probe without interceptors or heavy headers
+      // Resilient fast probe with 15s timeout so booting cloud instances are not prematurely aborted
       const res = await axios.get(`${API_URL}/api/health`, {
-        timeout: 4500,
+        timeout: 15000,
         headers: { 'Cache-Control': 'no-cache' },
       });
 
@@ -51,12 +51,12 @@ export const ServerHealthProvider = ({ children }) => {
         return true;
       }
     } catch (_) {
-      // Backend is either sleeping (cold start) or still spinning up
+      // Backend is either sleeping (cold start), booting up, or establishing DB connection
     }
 
     if (!isCancelledRef.current) {
-      // Schedule next probe in 2.5 seconds
-      pollTimerRef.current = setTimeout(checkHealth, 2500);
+      // Schedule next probe in 2 seconds to rapidly detect when server wakes up
+      pollTimerRef.current = setTimeout(checkHealth, 2000);
     }
     return false;
   }, []);

@@ -92,7 +92,7 @@ const sendPushToUser = async (userId, payload) => {
 
     const sendPromises = user.pushSubscriptions.map(async (sub) => {
       try {
-        await webPush.sendNotification(
+        const pushPromise = webPush.sendNotification(
           {
             endpoint: sub.endpoint,
             keys: {
@@ -106,12 +106,23 @@ const sendPushToUser = async (userId, payload) => {
             urgency: 'high',
           }
         );
+
+        // 3.5s timeout wrapper so slow push gateways never hang backend requests
+        const timeoutPromise = new Promise((_, reject) => 
+          setTimeout(() => reject(new Error('Push notification gateway timed out (3.5s)')), 3500)
+        );
+
+        await Promise.race([pushPromise, timeoutPromise]);
         return { success: true, endpoint: sub.endpoint };
       } catch (err) {
-        // If 404 or 410, subscription is no longer valid; prune it
+        // If 404 or 410, subscription is no longer valid; prune it safely
         if (err.statusCode === 404 || err.statusCode === 410) {
           console.log(`[PushService] Pruning expired push endpoint for ${user.username}`);
-          await removeSubscription(userId, sub.endpoint);
+          try {
+            await removeSubscription(userId, sub.endpoint);
+          } catch (rErr) {
+            console.error('[PushService] Error pruning subscription:', rErr.message);
+          }
         } else {
           console.error(`[PushService] Push error for ${user.username}:`, err.message);
         }
@@ -124,8 +135,8 @@ const sendPushToUser = async (userId, payload) => {
     console.log(`[PushService] Dispatched push to ${user.username}: ${deliveredCount}/${user.pushSubscriptions.length} delivered`);
     return { success: true, deliveredCount };
   } catch (err) {
-    console.error(`[PushService] Fatal error sending push to ${userId}:`, err);
-    return { success: false, error: err.message };
+    console.error(`[PushService] Safe catch error sending push to ${userId}:`, err.message || err);
+    return { success: false, error: err.message || 'Push dispatch failed' };
   }
 };
 

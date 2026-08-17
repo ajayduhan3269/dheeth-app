@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { socket } from '../socket';
 import LatexRenderer from './LatexRenderer';
 import MatchSummary from './MatchSummary';
@@ -9,6 +10,7 @@ import { sounds } from '../utils/sound';
 import { playReactionSound, getSoundTypeForEmoji } from '../utils/audioFx';
 
 const MatchScreen = ({ matchPayload }) => {
+  const navigate = useNavigate();
   const pId = matchPayload.player.id;
   const oId = matchPayload.opponent.id;
 
@@ -49,6 +51,7 @@ const MatchScreen = ({ matchPayload }) => {
   const initial = extractInitial(matchPayload);
 
   const [matchPhase, setMatchPhase] = useState(matchPayload.waitingForHost ? 'waiting_host' : (matchPayload.matchPhase || 'intro'));
+  const [standbySecondsLeft, setStandbySecondsLeft] = useState(150);
   const [secondsPerQ, setSecondsPerQ] = useState(Number(matchPayload.secondsPerQ) || 20);
   const [timeLeft, setTimeLeft] = useState(Number(matchPayload.secondsPerQ) || 20);
   const [questionEndsAt, setQuestionEndsAt] = useState(initial.questionEndsAt);
@@ -106,6 +109,15 @@ const MatchScreen = ({ matchPayload }) => {
       }
     });
   }, [matchPayload.roomId]);
+
+  useEffect(() => {
+    if (matchPhase === 'waiting_host') {
+      const timer = setInterval(() => {
+        setStandbySecondsLeft((prev) => Math.max(0, prev - 1));
+      }, 1000);
+      return () => clearInterval(timer);
+    }
+  }, [matchPhase]);
 
   useEffect(() => {
     if (matchPhase === 'intro') {
@@ -363,15 +375,45 @@ const MatchScreen = ({ matchPayload }) => {
 
       {/* Standby Waiting for Host (When friend accepted while host was offline) */}
       {matchPhase === 'waiting_host' && (
-        <div className="flex-1 flex flex-col items-center justify-center p-6 text-center animate-fade-in">
-          <div className="w-20 h-20 rounded-full border-4 border-dh-accent border-t-transparent animate-spin mb-6 shadow-[0_0_30px_rgba(0,230,118,0.3)]" />
+        <div className="flex-1 flex flex-col items-center justify-center p-6 text-center animate-fade-in max-w-md mx-auto">
+          <div className="w-20 h-20 rounded-full border-4 border-dh-accent border-t-transparent animate-spin mb-5 shadow-[0_0_30px_rgba(0,230,118,0.3)]" />
           <h2 className="text-2xl md:text-3xl font-heading font-black text-white mb-2">
-            Waiting for Host to Enter...
+            Waiting for {matchPayload.opponent?.username || 'Host'} to Enter...
           </h2>
-          <p className="text-dh-text-muted text-sm max-w-sm mb-6">
-            Push alert sent to <span className="text-white font-bold">{matchPayload.opponent?.username || 'Host'}</span>. The match will start the moment they open the notification!
+          <p className="text-dh-text-muted text-sm max-w-sm mb-4">
+            Push alert dispatched to <strong className="text-dh-accent">{matchPayload.opponent?.username || 'Host'}</strong>. The match starts instantly the moment they open it!
           </p>
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-dh-accent/10 border border-dh-accent/30 text-dh-accent text-xs font-heading font-black animate-pulse shadow-md">
+
+          {/* Standby Countdown Ticker */}
+          <div className="bg-slate-900/80 border border-slate-700/80 rounded-2xl py-2 px-4 mb-4 flex items-center justify-center gap-2">
+            <span className="text-xs font-mono font-bold text-amber-400">
+              ⏳ Standby Window: {Math.floor(standbySecondsLeft / 60)}m {String(standbySecondsLeft % 60).padStart(2, '0')}s remaining
+            </span>
+          </div>
+
+          <div className="flex flex-col sm:flex-row items-center gap-3 w-full max-w-xs mb-3">
+            {matchPayload.duelCode && (
+              <button
+                onClick={() => {
+                  sounds.click?.();
+                  const shareUrl = `${window.location.origin}/duel/${matchPayload.duelCode}`;
+                  const msg = `⚔️ *Match Ready!* I accepted your 1v1 challenge in *${matchPayload.subject || 'Quiz'}*. Tap here to join now: ${shareUrl}`;
+                  window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(msg)}`, '_blank');
+                }}
+                className="w-full py-3 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] font-heading font-black text-white text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg transition-all active:scale-95"
+              >
+                <span>💬</span> WhatsApp Ping
+              </button>
+            )}
+            <button
+              onClick={() => navigate('/dashboard')}
+              className="w-full py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 font-heading font-bold text-xs uppercase tracking-wider transition-all"
+            >
+              Cancel & Exit
+            </button>
+          </div>
+
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-dh-accent/10 border border-dh-accent/30 text-dh-accent text-[11px] font-heading font-bold animate-pulse shadow-md">
             <span className="w-2 h-2 rounded-full bg-dh-accent animate-ping" />
             <span>📱 Notification Dispatched • Standby Active</span>
           </div>

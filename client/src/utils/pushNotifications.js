@@ -53,9 +53,21 @@ export const subscribeToPush = async () => {
     try {
       registration = await navigator.serviceWorker.ready;
     } catch (_) {
-      // Fallback: register service worker if needed
-      registration = await navigator.serviceWorker.register('/sw.js');
-      await navigator.serviceWorker.ready;
+      // Fallback: register push service worker if not already active
+      try {
+        registration = await navigator.serviceWorker.register('/push-worker.js');
+        await navigator.serviceWorker.ready;
+      } catch (regErr) {
+        registration = await navigator.serviceWorker.register('/sw.js');
+        await navigator.serviceWorker.ready;
+      }
+    }
+
+    if (!registration) {
+      try {
+        registration = await navigator.serviceWorker.register('/push-worker.js');
+        await navigator.serviceWorker.ready;
+      } catch (_) {}
     }
 
     if (!registration || !registration.pushManager) {

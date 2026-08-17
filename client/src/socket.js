@@ -8,15 +8,17 @@ export const socket = io(API_URL, {
     cb({ token });
   },
   reconnection: true,
-  reconnectionAttempts: 10,
+  reconnectionAttempts: Infinity,
   reconnectionDelay: 1000,
+  reconnectionDelayMax: 5000,
+  timeout: 20000,
 });
 
 socket.on('connect_error', (err) => {
-  if (err.message.includes('Authentication error')) {
+  if (err.message && err.message.includes('Authentication error: Invalid token')) {
     localStorage.removeItem('dheeth_token');
     localStorage.removeItem('dheeth_user');
-    if (window.location.pathname !== '/auth' && window.location.pathname !== '/register') {
+    if (window.location.pathname !== '/auth' && window.location.pathname !== '/register' && !window.location.pathname.startsWith('/duel/') && !window.location.pathname.startsWith('/d/')) {
       window.location.href = '/auth';
     }
   }

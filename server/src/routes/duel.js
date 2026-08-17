@@ -170,7 +170,9 @@ router.get('/:code/match-payload', verifyToken, async (req, res) => {
     const match = getMatchByRoomId(duel.roomId);
 
     if (!match) {
-      return res.status(404).json({ ok: false, error: 'Match session is no longer active.' });
+      // Auto-expire/complete stale duel in MongoDB so frontend doesn't loop endlessly
+      await Duel.updateOne({ _id: duel._id }, { status: 'completed' });
+      return res.status(404).json({ ok: false, error: 'Match session is no longer active or has ended.' });
     }
 
     const rivalry = await Rivalry.getOrCreateRivalry(duel.hostId, duel.guestId);
@@ -267,7 +269,7 @@ router.post('/:code/cancel', verifyToken, async (req, res) => {
     const duel = await Duel.findOneAndUpdate(
       { code, hostId: userId, status: 'pending' },
       { $set: { status: 'cancelled' } },
-      { new: true }
+      { returnDocument: 'after' }
     );
 
     if (!duel) {

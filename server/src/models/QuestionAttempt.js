@@ -9,7 +9,8 @@ const questionAttemptSchema = new Schema(
     matchId: { type: String, default: null },
     mode: {
       type: String,
-      enum: ['FRIEND_DUEL', 'RANKED', 'BOT', 'DRILL', 'REDEEM'],
+      enum: ['FRIEND_DUEL', 'RANKED', 'BOT', 'DRILL', 'REDEEM', 'GS', 'TECH', 'gs', 'tech', 'duel', 'DUEL'],
+      default: 'RANKED',
       required: true
     },
     subject: { type: String, required: true, index: true },
