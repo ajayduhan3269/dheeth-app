@@ -9,7 +9,9 @@ import AnimatedNumber from './AnimatedNumber';
 import Confetti from './Confetti';
 import CreateDuelModal from './CreateDuelModal';
 import JoinDuelModal from './JoinDuelModal';
-import { useAppMode } from '../context/AppModeContext';
+import { useStream } from '../context/ExamStreamContext';
+import StreamBadgeDropdown from './StreamBadgeDropdown';
+import StreamSelectionModal from './StreamSelectionModal';
 import { sounds } from '../utils/sound';
 
 /* ─── Compact Top-Bar Target Mini-Ring ────────────────────── */
@@ -53,29 +55,7 @@ const TargetMiniRing = ({ current = 0, goal = 50, size = 34, strokeWidth = 3.5, 
   );
 };
 
-/* ─── War alert banner ─────────────────────────────────────── */
-const WarAlert = ({ onGoToMap }) => (
-  <button
-    onClick={onGoToMap}
-    className="w-full flex items-center gap-3.5 bg-gradient-to-r from-red-950/50 via-dh-card to-red-950/40 border-2 border-b-4 border-dh-red/60 rounded-2xl px-4 py-3.5 text-left hover:border-dh-red active:translate-y-[2px] transition-all group shadow-lg"
-  >
-    <div className="w-10 h-10 rounded-xl bg-dh-red/20 border border-dh-red/40 flex items-center justify-center text-xl flex-shrink-0 animate-bounce-subtle">
-      ⚔️
-    </div>
-    <div className="flex-1 min-w-0">
-      <div className="flex items-center gap-2">
-        <p className="font-heading font-black text-dh-red text-sm">War Map Under Attack!</p>
-        <span className="text-[9px] font-heading font-black px-1.5 py-0.2 rounded bg-dh-red/20 text-dh-red border border-dh-red/40 uppercase animate-pulse">
-          Alert
-        </span>
-      </div>
-      <p className="text-dh-text-muted text-xs truncate mt-0.5">Defend and reinforce your state castles now →</p>
-    </div>
-    <span className="text-dh-red font-heading font-bold text-xs group-hover:translate-x-1 transition-transform pr-1">
-      Defend →
-    </span>
-  </button>
-);
+
 
 /* ─── Active 1v1 Duel Challenge Banner ────────────────────────── */
 const ActiveDuelBanner = ({ duel, onRefresh, onNavigate }) => {
@@ -373,7 +353,14 @@ const SearchingCard = ({ failed, onCancel, onRetry, lastSubject }) => (
 /* ═══════════════════════════════════════════════════════════ */
 export default function Dashboard() {
   const { currentUser, logout } = useContext(AuthContext);
-  const { mode } = useAppMode();
+  const {
+    selectedStream,
+    needsStreamSelection,
+    meta,
+    subMode,
+    isCivil,
+    buildQuizParams,
+  } = useStream();
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -381,7 +368,6 @@ export default function Dashboard() {
   const [subjects, setSubjects] = useState([]);
   const [journeyNext, setJourneyNext] = useState(null);
   const [daily, setDaily] = useState(null);
-  const [mapOwned, setMapOwned] = useState(0);
   const [coins, setCoins] = useState(0);
   const [activeDuel, setActiveDuel] = useState(null);
 
@@ -399,13 +385,12 @@ export default function Dashboard() {
   /* ── Data fetching ─────────────────────────────────────── */
   const fetchAll = useCallback(async () => {
     try {
-      const [userRes, dailyRes, subjectsRes, journeySubjectsRes, journeyProgressRes, mapRes, duelRes] = await Promise.allSettled([
+      const [userRes, dailyRes, subjectsRes, journeySubjectsRes, journeyProgressRes, duelRes] = await Promise.allSettled([
         api.get('/api/user/me'),
         api.get('/api/daily'),
-        api.get(`/api/questions/subjects?category=${mode}`),
-        api.get(`/api/journey/subjects?category=${mode}`),
+        api.get(`/api/questions/subjects?${buildQuizParams()}`),
+        api.get(`/api/journey/subjects?${buildQuizParams()}`),
         api.get('/api/journey/progress'),
-        api.get('/api/map/states'),
         api.get('/api/duel/active/mine'),
       ]);
 
@@ -446,15 +431,13 @@ export default function Dashboard() {
           }
         }
         setJourneyNext(next);
-      }
-
-      if (mapRes.status === 'fulfilled') {
-        setMapOwned(mapRes.value.data.conqueredCount || 0);
+      } else {
+        setJourneyNext(null);
       }
     } catch (err) {
       console.error('Dashboard fetch error:', err);
     }
-  }, [mode]);
+  }, [buildQuizParams]);
 
   useEffect(() => {
     fetchAll();
@@ -551,9 +534,17 @@ export default function Dashboard() {
     sounds.click();
     setSearchFailed(false);
     setIsSearching(true);
-    setLastSubject(subject);
     searchTimeoutRef.current = setTimeout(() => setSearchFailed(true), 10000);
-    socket.emit('join_queue', { subject, mode, targetState }, () => {});
+    socket.emit(
+      'join_queue',
+      {
+        subject,
+        mode: isCivil ? subMode : undefined,
+        stream: selectedStream,
+        targetState,
+      },
+      () => {}
+    );
   };
 
   const cancelSearch = () => {
@@ -595,28 +586,33 @@ export default function Dashboard() {
       {/* ═══════════════════════════════════════════════════════ */}
       <header className="sticky top-0 z-40 bg-dh-bg/90 backdrop-blur-xl border-b border-dh-border/70 shadow-sm">
         <div className="max-w-2xl mx-auto px-4 py-2.5 flex items-center justify-between gap-2">
-          {/* Left: Player Identity Pill (Clickable -> Profile) */}
-          <button
-            onClick={() => { sounds.click(); navigate('/profile'); }}
-            className="flex items-center gap-2.5 bg-dh-card/90 hover:bg-dh-card px-2.5 py-1.5 rounded-2xl border border-dh-border hover:border-dh-accent/60 transition-all active:scale-95 group text-left min-w-0"
-            title="View Profile & Stats"
-          >
-            <div className={`relative w-8 h-8 rounded-full border-2 ${rankGlow.split(' ')[0]} bg-dh-surface overflow-hidden flex-shrink-0 shadow-sm`}>
-              <img
-                src={getAvatarUrl(stats?.equippedAvatar || stats?.avatarSeed || currentUser?.username || 'default')}
-                alt="Avatar"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="min-w-0 pr-1">
-              <p className="font-heading font-black text-white text-xs leading-none truncate max-w-[100px] sm:max-w-[130px]">
-                {stats?.username || currentUser?.username || 'Player'}
-              </p>
-              <p className={`text-[10px] font-heading font-black leading-none mt-1 ${rankGlow.split(' ')[2]}`}>
-                ⚡ {elo}
-              </p>
-            </div>
-          </button>
+          {/* Left: Player Identity Pill & Stream Switcher */}
+          <div className="flex items-center gap-2 min-w-0">
+            <button
+              onClick={() => { sounds.click(); navigate('/profile'); }}
+              className="flex items-center gap-2 bg-dh-card/90 hover:bg-dh-card px-2.5 py-1.5 rounded-2xl border border-dh-border hover:border-dh-accent/60 transition-all active:scale-95 group text-left min-w-0"
+              title="View Profile & Stats"
+            >
+              <div className={`relative w-8 h-8 rounded-full border-2 ${rankGlow.split(' ')[0]} bg-dh-surface overflow-hidden flex-shrink-0 shadow-sm`}>
+                <img
+                  src={getAvatarUrl(stats?.equippedAvatar || stats?.avatarSeed || currentUser?.username || 'default')}
+                  alt="Avatar"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="min-w-0 pr-1">
+                <p className="font-heading font-black text-white text-xs leading-none truncate max-w-[70px] sm:max-w-[120px]">
+                  {stats?.username || currentUser?.username || 'Player'}
+                </p>
+                <p className={`text-[10px] font-heading font-black leading-none mt-1 ${rankGlow.split(' ')[2]}`}>
+                  ⚡ {elo}
+                </p>
+              </div>
+            </button>
+
+            {/* Stream Badge Switcher */}
+            <StreamBadgeDropdown />
+          </div>
 
           {/* Right: Gamified Stats Cluster */}
           <div className="flex items-center gap-1.5 sm:gap-2">
@@ -757,16 +753,48 @@ export default function Dashboard() {
         {/* Mode Toggle (Civil Eng vs General Studies) */}
         <ModeToggle />
 
-        {/* Dynamic High-Priority Alert or Hero */}
-        {mapOwned > 0 ? (
-          <WarAlert onGoToMap={() => { sounds.click(); navigate('/map'); }} />
-        ) : null}
-
         {/* ⚔️ Persistent Active Duel Challenge Banner */}
         <ActiveDuelBanner duel={activeDuel} onRefresh={fetchAll} onNavigate={navigate} />
 
-        {/* Primary Hero: Continue Journey */}
-        <JourneyHeroCard journeyNext={journeyNext} onNavigate={navigate} />
+        {/* Primary Hero: Continue Journey (Civil) or Stream Arena Hero (SSC/Banking) */}
+        {journeyNext ? (
+          <JourneyHeroCard journeyNext={journeyNext} onNavigate={navigate} />
+        ) : !isCivil ? (
+          <div
+            className="w-full bg-gradient-to-br from-dh-card via-dh-surface to-dh-card border-2 border-b-4 rounded-3xl p-4 sm:p-5 text-left shadow-lg relative overflow-hidden transition-all"
+            style={{ borderColor: `${meta.accent}55` }}
+          >
+            <div className="flex items-center justify-between gap-3">
+              <div className="flex items-center gap-3.5 min-w-0">
+                <div
+                  className="w-12 h-12 rounded-2xl flex items-center justify-center text-2xl border flex-shrink-0 shadow-sm"
+                  style={{ borderColor: `${meta.accent}55`, background: `${meta.accent}15` }}
+                >
+                  {meta.icon}
+                </div>
+                <div className="min-w-0">
+                  <div className="flex items-center gap-2 mb-0.5">
+                    <span
+                      className="text-[10px] font-heading font-black uppercase tracking-widest px-2.5 py-0.5 rounded-full border"
+                      style={{ color: meta.accent, borderColor: `${meta.accent}44`, background: `${meta.accent}10` }}
+                    >
+                      Active Arena
+                    </span>
+                    <span className="text-[10px] font-heading font-bold text-dh-text-muted">
+                      {subjects.length} Subjects
+                    </span>
+                  </div>
+                  <h2 className="font-heading font-black text-white text-base sm:text-lg truncate">
+                    {meta.label}
+                  </h2>
+                  <p className="text-xs text-dh-text-muted truncate mt-0.5">
+                    {meta.exams.join(' • ')}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        ) : null}
 
         {/* ═════════════════════════════════════════════════════ */}
         {/* 3. QUICK ACTIONS 2-COLUMN HUB                        */}
@@ -878,6 +906,7 @@ export default function Dashboard() {
       </div>
 
       {/* ── Modals ────────────────────────────────────────── */}
+      <StreamSelectionModal onComplete={fetchAll} />
       <CreateDuelModal 
         isOpen={showCreateDuel} 
         onClose={() => { setShowCreateDuel(false); fetchAll(); }} 

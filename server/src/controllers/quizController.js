@@ -1,17 +1,26 @@
 const Question = require('../models/Question');
 const User = require('../models/User');
+const {
+  buildStreamFilter,
+  normalizeStream,
+  FALLBACK_SUBJECTS,
+} = require('../config/streams');
 
 exports.getRandomQuestions = async (req, res) => {
   try {
-    const { topic, category } = req.query;
-    
-    const matchStage = {};
+    const { topic, category, stream: rawStream, subject } = req.query;
+    const stream = normalizeStream(rawStream);
+
+    const extra = {};
     if (topic) {
-      matchStage.topic = { $regex: new RegExp(`^${topic}$`, 'i') };
+      extra.topic = { $regex: new RegExp(`^${topic}$`, 'i') };
     }
-    if (category) {
-      matchStage.category = category;
-    }
+
+    const matchStage = buildStreamFilter(stream, {
+      category: stream === 'civil' ? category : undefined,
+      subject,
+      extra,
+    });
 
     const selectedQuestions = await Question.aggregate([
       { $match: matchStage },
@@ -35,12 +44,31 @@ exports.getRandomQuestions = async (req, res) => {
 
 exports.getSubjects = async (req, res) => {
   try {
-    const { category } = req.query;
-    const filter = category ? { category } : {};
-    const subjects = await Question.distinct('subject', filter);
+    const { stream: rawStream, category } = req.query;
+    const stream = normalizeStream(rawStream);
+
+    const filter = buildStreamFilter(stream, {
+      category: stream === 'civil' ? category : undefined,
+    });
+
+    let subjects = await Question.distinct('subject', filter);
+
+    // If stream is not civil and subjects are empty or sparse, supplement with fallback subjects
+    const fallback = FALLBACK_SUBJECTS[stream] || [];
+    if (fallback.length > 0) {
+      const existingLower = new Set(subjects.map(s => s.toLowerCase()));
+      for (const f of fallback) {
+        if (!existingLower.has(f.subject.toLowerCase())) {
+          subjects.push(f.subject);
+        }
+      }
+    }
+
     res.status(200).json({
       success: true,
-      data: subjects
+      data: subjects,
+      stream,
+      category: category || null,
     });
   } catch (error) {
     console.error('Error fetching subjects:', error);
@@ -54,7 +82,8 @@ exports.getSubjects = async (req, res) => {
 
 exports.getSoloPracticeQuestions = async (req, res) => {
   try {
-    const { topic, category, subject, nodeIndex } = req.query;
+    const { topic, category, subject, nodeIndex, stream: rawStream } = req.query;
+    const stream = normalizeStream(rawStream);
     const userId = req.user?.id;
     if (!userId) {
       return res.status(401).json({ success: false, message: 'Authentication required' });
@@ -71,12 +100,17 @@ exports.getSoloPracticeQuestions = async (req, res) => {
       const idx = parseInt(nodeIndex, 10);
       const skip = idx * batchSize;
 
-      const query = { subject };
+      const extra = {};
       if (req.query.topic) {
-        query.topic = req.query.topic;
+        extra.topic = req.query.topic;
       }
 
-      // Fetch a deterministic, ordered batch so each node always serves the same questions
+      const query = buildStreamFilter(stream, {
+        subject,
+        category: stream === 'civil' ? category : undefined,
+        extra,
+      });
+
       const questions = await Question.find(query)
         .sort({ _id: 1 })
         .skip(skip)
@@ -90,17 +124,22 @@ exports.getSoloPracticeQuestions = async (req, res) => {
       });
     }
 
-    // ── Legacy topic-based random mode (for non-journey callers) ──
-    const matchStage = {};
-    if (topic) matchStage.topic = { $regex: new RegExp(`^${topic}$`, 'i') };
-    if (category) matchStage.category = category;
+    // ── Standard solo practice mode ──
+    const extra = {};
+    if (topic) extra.topic = { $regex: new RegExp(`^${topic}$`, 'i') };
+
+    const matchStage = buildStreamFilter(stream, {
+      category: stream === 'civil' ? category : undefined,
+      subject,
+      extra,
+    });
 
     const wrongIds = user.wrongQuestions || [];
 
     // Prioritize wrong questions first
     let questions = [];
     if (wrongIds.length > 0) {
-      const wrongMatch = { ...matchStage, _id: { $in: wrongIds } };
+      const wrongMatch = { $and: [matchStage, { _id: { $in: wrongIds } }] };
       questions = await Question.aggregate([
         { $match: wrongMatch },
         { $sample: { size: 5 } }
@@ -111,10 +150,14 @@ exports.getSoloPracticeQuestions = async (req, res) => {
     if (questions.length < 5) {
       const seenIds = user.seenQuestions || [];
       const remainingFilter = {
-        ...matchStage,
-        _id: {
-          $nin: [...new Set([...seenIds.map(id => id.toString()), ...questions.map(q => q._id.toString())])]
-        }
+        $and: [
+          matchStage,
+          {
+            _id: {
+              $nin: [...new Set([...seenIds.map(id => id.toString()), ...questions.map(q => q._id.toString())])]
+            }
+          }
+        ]
       };
       const additional = await Question.aggregate([
         { $match: remainingFilter },
@@ -127,8 +170,10 @@ exports.getSoloPracticeQuestions = async (req, res) => {
     if (questions.length < 5) {
       const selectedIds = questions.map(q => q._id);
       const remainingFilter = {
-        ...matchStage,
-        _id: { $nin: selectedIds }
+        $and: [
+          matchStage,
+          { _id: { $nin: selectedIds } }
+        ]
       };
       const additional = await Question.aggregate([
         { $match: remainingFilter },
@@ -151,4 +196,3 @@ exports.getSoloPracticeQuestions = async (req, res) => {
     });
   }
 };
-

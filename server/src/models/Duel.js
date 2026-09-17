@@ -51,6 +51,11 @@ const DuelSchema = new mongoose.Schema({
     index: true,
   },
   config: {
+    stream: {
+      type: String,
+      enum: ['civil', 'ssc_cgl', 'banking'],
+      default: 'civil',
+    },
     subject: {
       type: String,
       default: 'Fluid Mechanics',

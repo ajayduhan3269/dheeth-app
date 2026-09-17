@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const mongoose = require('mongoose');
 const User = require('../models/User');
 
 const JWT_SECRET = process.env.JWT_SECRET || 'fallback_secret_key_change_me';
@@ -13,6 +14,12 @@ router.post('/register', async (req, res) => {
     
     if (!username || !password) {
       return res.status(400).json({ message: 'Username and password are required' });
+    }
+
+    if (mongoose.connection.readyState !== 1) {
+      return res.status(503).json({ 
+        message: 'Database connection offline. Please start MongoDB or check MONGODB_URI in server/.env' 
+      });
     }
 
     const existingUser = await User.findOne({ username });
@@ -60,6 +67,12 @@ router.post('/login', async (req, res) => {
 
     if (!username || !password) {
       return res.status(400).json({ message: 'Username and password are required' });
+    }
+
+    if (mongoose.connection.readyState !== 1) {
+      return res.status(503).json({ 
+        message: 'Database connection offline. Please start MongoDB or check MONGODB_URI in server/.env' 
+      });
     }
 
     const user = await User.findOne({ username });

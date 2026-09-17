@@ -41,7 +41,9 @@ router.post('/create', verifyToken, async (req, res) => {
       return res.status(404).json({ ok: false, error: 'User not found' });
     }
 
-    const { subject, category, questionCount, secondsPerQ } = req.body;
+    const { subject, category, questionCount, secondsPerQ, stream: rawStream } = req.body;
+    const { normalizeStream } = require('../config/streams');
+    const stream = normalizeStream(rawStream);
     const GS_SUBJECTS = ['Ancient History', 'Medieval History', 'Modern History', 'Polity', 'Biology', 'Indian Geography & Resources', 'World Core & Climate'];
     const chosenSubject = subject || 'Fluid Mechanics';
     const resolvedCategory = (category === 'gs' || category === 'tech') 
@@ -70,6 +72,7 @@ router.post('/create', verifyToken, async (req, res) => {
           hostAvatar: user.equippedAvatar || user.avatarSeed || 'default-seed',
           hostTitle: user.title || 'Challenger',
           config: {
+            stream,
             subject: chosenSubject,
             category: resolvedCategory,
             questionCount: Number(questionCount) || 5,

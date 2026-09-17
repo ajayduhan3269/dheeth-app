@@ -8,7 +8,6 @@ import Profile from './pages/Profile';
 import Journey from './pages/Journey';
 import Shop from './pages/Shop';
 import GroupRoom from './pages/GroupRoom';
-import MapOfIndiaPage from './pages/MapOfIndia';
 import AdminUpload from './pages/AdminUpload';
 import DuelLobbyPage from './pages/DuelLobbyPage';
 import MistakeNotebookPage from './pages/MistakeNotebookPage';
@@ -158,9 +157,7 @@ const AppLayout = () => {
             </ProtectedRoute>
           } />
           <Route path="/map" element={
-            <ProtectedRoute>
-              <MapOfIndiaPage />
-            </ProtectedRoute>
+            <Navigate to="/dashboard" replace />
           } />
           <Route path="/admin" element={
             <ProtectedRoute>

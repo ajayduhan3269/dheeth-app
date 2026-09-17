@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import api from '../api';
 import { socket } from '../socket';
 import { sounds } from '../utils/sound';
-import { useAppMode } from '../context/AppModeContext';
+import { useStream } from '../context/ExamStreamContext';
 import { isPushSupported, getNotificationPermission, subscribeToPush } from '../utils/pushNotifications';
 
 const SUBJECTS_BY_CATEGORY = {
@@ -24,13 +24,30 @@ const SUBJECTS_BY_CATEGORY = {
     { name: 'World Core & Climate', emoji: '🌏', color: 'from-teal-500/20 to-emerald-500/10 border-teal-500/30 text-teal-400' },
     { name: 'Biology', emoji: '🧬', color: 'from-emerald-500/20 to-green-500/10 border-emerald-500/30 text-emerald-400' },
   ],
+  ssc_cgl: [
+    { name: 'Quantitative Aptitude', emoji: '📐', color: 'from-purple-500/20 to-indigo-500/10 border-purple-500/30 text-purple-400' },
+    { name: 'Reasoning Ability', emoji: '🧩', color: 'from-blue-500/20 to-cyan-500/10 border-blue-500/30 text-blue-400' },
+    { name: 'General English', emoji: '📖', color: 'from-emerald-500/20 to-teal-500/10 border-emerald-500/30 text-emerald-400' },
+    { name: 'General Studies (GS)', emoji: '🌍', color: 'from-amber-500/20 to-orange-500/10 border-amber-500/30 text-amber-400' },
+    { name: 'Current Affairs', emoji: '📰', color: 'from-rose-500/20 to-pink-500/10 border-rose-500/30 text-rose-400' },
+  ],
+  banking: [
+    { name: 'Quantitative Aptitude & DI', emoji: '📊', color: 'from-cyan-500/20 to-blue-500/10 border-cyan-500/30 text-cyan-400' },
+    { name: 'Reasoning Ability & Puzzles', emoji: '🧠', color: 'from-indigo-500/20 to-purple-500/10 border-indigo-500/30 text-indigo-400' },
+    { name: 'English Language', emoji: '✍️', color: 'from-teal-500/20 to-emerald-500/10 border-teal-500/30 text-teal-400' },
+    { name: 'Banking & Financial Awareness', emoji: '🏦', color: 'from-amber-500/20 to-yellow-500/10 border-amber-500/30 text-amber-400' },
+    { name: 'Computer Knowledge', emoji: '💻', color: 'from-slate-500/20 to-zinc-500/10 border-slate-500/30 text-slate-300' },
+  ],
 };
 
 const CreateDuelModal = ({ isOpen, onClose, onDuelCreated }) => {
-  const { mode: appMode } = useAppMode();
-  const [selectedCategory, setSelectedCategory] = useState(appMode === 'gs' ? 'gs' : 'tech');
+  const { selectedStream, isCivil, subMode } = useStream();
+  const activeBucket = isCivil ? subMode : selectedStream;
+  const currentSubjects = SUBJECTS_BY_CATEGORY[activeBucket] || SUBJECTS_BY_CATEGORY.tech;
+
+  const [selectedCategory, setSelectedCategory] = useState(subMode === 'gs' ? 'gs' : 'tech');
   const [selectedSubject, setSelectedSubject] = useState(
-    SUBJECTS_BY_CATEGORY[appMode === 'gs' ? 'gs' : 'tech'][0].name
+    currentSubjects[0]?.name || 'Fluid Mechanics'
   );
   const [questionCount, setQuestionCount] = useState(5);
   const [secondsPerQ, setSecondsPerQ] = useState(30);
@@ -43,12 +60,13 @@ const CreateDuelModal = ({ isOpen, onClose, onDuelCreated }) => {
 
   useEffect(() => {
     if (isOpen) {
-      const initialCat = appMode === 'gs' ? 'gs' : 'tech';
-      setSelectedCategory(initialCat);
-      setSelectedSubject(SUBJECTS_BY_CATEGORY[initialCat][0].name);
+      const bucket = isCivil ? subMode : selectedStream;
+      const subjects = SUBJECTS_BY_CATEGORY[bucket] || SUBJECTS_BY_CATEGORY.tech;
+      setSelectedCategory(subMode === 'gs' ? 'gs' : 'tech');
+      setSelectedSubject(subjects[0]?.name || 'Fluid Mechanics');
       setPushStatus(getNotificationPermission());
     }
-  }, [isOpen, appMode]);
+  }, [isOpen, isCivil, subMode, selectedStream]);
 
   const handleCategoryChange = (cat) => {
     sounds.click?.();
@@ -107,8 +125,9 @@ const CreateDuelModal = ({ isOpen, onClose, onDuelCreated }) => {
     sounds.click();
     try {
       const res = await api.post('/api/duel/create', {
+        stream: selectedStream,
         subject: selectedSubject,
-        category: selectedCategory,
+        category: isCivil ? selectedCategory : undefined,
         questionCount,
         secondsPerQ,
       });
@@ -167,8 +186,6 @@ const CreateDuelModal = ({ isOpen, onClose, onDuelCreated }) => {
     onClose();
   };
 
-  const currentSubjects = SUBJECTS_BY_CATEGORY[selectedCategory] || SUBJECTS_BY_CATEGORY.tech;
-
   return (
     <div className="fixed inset-0 z-[999] bg-black/75 backdrop-blur-md flex items-center justify-center p-4 animate-fade-in">
       <div className="bg-dh-card border-4 border-dh-border rounded-3xl p-6 sm:p-8 max-w-md w-full text-center shadow-2xl relative max-h-[90vh] overflow-y-auto">
@@ -191,41 +208,45 @@ const CreateDuelModal = ({ isOpen, onClose, onDuelCreated }) => {
               Challenge a Friend
             </h2>
             <p className="text-xs text-dh-text-muted mb-5">
-              Create a custom 1v1 live quiz duel in Civil Engineering or GS!
+              {isCivil
+                ? 'Create a custom 1v1 live quiz duel in Civil Engineering or GS!'
+                : 'Create a custom 1v1 live quiz duel with your friends!'}
             </p>
 
-            {/* Category Selector (Civil Eng vs General Studies) */}
-            <div className="mb-4 text-left">
-              <label className="block text-[11px] font-heading font-bold text-dh-text-muted uppercase tracking-wider mb-2">
-                Exam Stream
-              </label>
-              <div className="flex items-center justify-center p-1 bg-dh-surface rounded-2xl border border-dh-border">
-                <button
-                  type="button"
-                  onClick={() => handleCategoryChange('tech')}
-                  className={`flex-1 py-2 px-3 rounded-xl text-xs font-heading font-black flex items-center justify-center gap-1.5 transition-all ${
-                    selectedCategory === 'tech'
-                      ? 'bg-dh-purple text-white shadow-lg shadow-dh-purple/30 scale-[1.02]'
-                      : 'text-dh-text-muted hover:text-white'
-                  }`}
-                >
-                  <span className="text-sm">🏗️</span>
-                  <span>Civil Eng</span>
-                </button>
-                <button
-                  type="button"
-                  onClick={() => handleCategoryChange('gs')}
-                  className={`flex-1 py-2 px-3 rounded-xl text-xs font-heading font-black flex items-center justify-center gap-1.5 transition-all ${
-                    selectedCategory === 'gs'
-                      ? 'bg-dh-orange text-white shadow-lg shadow-dh-orange/30 scale-[1.02]'
-                      : 'text-dh-text-muted hover:text-white'
-                  }`}
-                >
-                  <span className="text-sm">🌍</span>
-                  <span>General Studies (GS)</span>
-                </button>
+            {/* Category Selector (Civil Eng vs General Studies - only for Civil) */}
+            {isCivil && (
+              <div className="mb-4 text-left">
+                <label className="block text-[11px] font-heading font-bold text-dh-text-muted uppercase tracking-wider mb-2">
+                  Exam Stream
+                </label>
+                <div className="flex items-center justify-center p-1 bg-dh-surface rounded-2xl border border-dh-border">
+                  <button
+                    type="button"
+                    onClick={() => handleCategoryChange('tech')}
+                    className={`flex-1 py-2 px-3 rounded-xl text-xs font-heading font-black flex items-center justify-center gap-1.5 transition-all ${
+                      selectedCategory === 'tech'
+                        ? 'bg-dh-purple text-white shadow-lg shadow-dh-purple/30 scale-[1.02]'
+                        : 'text-dh-text-muted hover:text-white'
+                    }`}
+                  >
+                    <span className="text-sm">🏗️</span>
+                    <span>Civil Eng</span>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => handleCategoryChange('gs')}
+                    className={`flex-1 py-2 px-3 rounded-xl text-xs font-heading font-black flex items-center justify-center gap-1.5 transition-all ${
+                      selectedCategory === 'gs'
+                        ? 'bg-dh-orange text-white shadow-lg shadow-dh-orange/30 scale-[1.02]'
+                        : 'text-dh-text-muted hover:text-white'
+                    }`}
+                  >
+                    <span className="text-sm">🌍</span>
+                    <span>General Studies (GS)</span>
+                  </button>
+                </div>
               </div>
-            </div>
+            )}
 
             {/* Subject Picker */}
             <div className="text-left mb-5">

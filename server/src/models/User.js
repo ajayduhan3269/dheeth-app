@@ -29,7 +29,13 @@ const UserSchema = new mongoose.Schema({
   },
   bio: {
     type: String,
-    default: 'Aspiring Civil Engineer',
+    default: 'Aspiring Government Officer',
+  },
+  targetExam: {
+    type: String,
+    enum: ['civil', 'ssc_cgl', 'banking'],
+    default: 'civil',
+    index: true,
   },
   title: {
     type: String,

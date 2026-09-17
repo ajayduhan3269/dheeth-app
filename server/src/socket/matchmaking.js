@@ -2,12 +2,66 @@ const Question = require('../models/Question');
 const User = require('../models/User');
 const { initializeMatch, startQuestionTimer } = require('./gameplay');
 const { botEngine } = require('../services/botEngine');
+const { buildStreamFilter, normalizeStream } = require('../config/streams');
 
 const queues = {};
 
-const getQueueKey = (subject, mode) => `${subject}::${mode}`;
+const getQueueKey = (subject, stream, mode) => {
+  const s = normalizeStream(stream);
+  return s === 'civil' ? `${subject}::${mode}` : `${subject}::${s}`;
+};
 
-async function startHumanMatch(io, p1, p2, subject, category) {
+async function fetchMatchQuestions(subject, stream, category, seenIds = []) {
+  const isCivil = stream === 'civil';
+  let matchFilter = buildStreamFilter(stream, {
+    subject,
+    category: isCivil ? category : undefined,
+  });
+
+  if (seenIds.length > 0) {
+    matchFilter = { $and: [matchFilter, { _id: { $nin: seenIds } }] };
+  }
+
+  let questions = await Question.aggregate([{ $match: matchFilter }, { $sample: { size: 5 } }]);
+
+  // Stage 2: Fill remaining slots with general pool questions (excluding already selected)
+  if (questions.length < 5) {
+    const selectedIds = questions.map(q => q._id);
+    const remainingCount = 5 - questions.length;
+    const additionalFilter = {
+      $and: [
+        buildStreamFilter(stream, { subject, category: isCivil ? category : undefined }),
+        { _id: { $nin: selectedIds } }
+      ]
+    };
+    const additional = await Question.aggregate([
+      { $match: additionalFilter },
+      { $sample: { size: remainingCount } }
+    ]);
+    questions = [...questions, ...additional];
+  }
+
+  // Stage 3: Fill remaining slots with subject-only questions within the stream
+  if (questions.length < 5) {
+    const selectedIds = questions.map(q => q._id);
+    const remainingCount = 5 - questions.length;
+    const additionalFilter = {
+      $and: [
+        buildStreamFilter(stream, { subject }),
+        { _id: { $nin: selectedIds } }
+      ]
+    };
+    const additional = await Question.aggregate([
+      { $match: additionalFilter },
+      { $sample: { size: remainingCount } }
+    ]);
+    questions = [...questions, ...additional];
+  }
+
+  return questions;
+}
+
+async function startHumanMatch(io, p1, p2, subject, category, stream = 'civil') {
   const roomId = `room_${Date.now()}`;
   p1.socket.join(roomId);
   p2.socket.join(roomId);
@@ -16,45 +70,7 @@ async function startHumanMatch(io, p1, p2, subject, category) {
   p2.socket.activeRoomId = roomId;
 
   const mergedSeenIds = [...new Set([...(p1.user.seenIds || []), ...(p2.user.seenIds || [])])];
-  let questions = [];
-
-  // Stage 1: Try to fetch up to 5 unseen questions (subject + category + unseen filter)
-  let matchFilter = { subject, category };
-  if (mergedSeenIds.length > 0) {
-    matchFilter._id = { $nin: mergedSeenIds };
-  }
-  questions = await Question.aggregate([{ $match: matchFilter }, { $sample: { size: 5 } }]);
-
-  // Stage 2: Fill remaining slots with general pool questions (subject + category), excluding already selected
-  if (questions.length < 5) {
-    const selectedIds = questions.map(q => q._id);
-    const remainingCount = 5 - questions.length;
-    const additionalFilter = {
-      subject,
-      category,
-      _id: { $nin: selectedIds }
-    };
-    const additional = await Question.aggregate([
-      { $match: additionalFilter },
-      { $sample: { size: remainingCount } }
-    ]);
-    questions = [...questions, ...additional];
-  }
-
-  // Stage 3: Fill remaining slots with subject-only questions, excluding already selected
-  if (questions.length < 5) {
-    const selectedIds = questions.map(q => q._id);
-    const remainingCount = 5 - questions.length;
-    const additionalFilter = {
-      subject,
-      _id: { $nin: selectedIds }
-    };
-    const additional = await Question.aggregate([
-      { $match: additionalFilter },
-      { $sample: { size: remainingCount } }
-    ]);
-    questions = [...questions, ...additional];
-  }
+  const questions = await fetchMatchQuestions(subject, stream, category, mergedSeenIds);
 
   if (questions.length === 0) {
     io.to(p1.socketId).emit('error', { message: `Not enough questions found for ${subject}.` });
@@ -62,7 +78,7 @@ async function startHumanMatch(io, p1, p2, subject, category) {
     return;
   }
 
-  const basePayload = { roomId, subject, questions, isBotMatch: false, mode: category };
+  const basePayload = { roomId, subject, questions, isBotMatch: false, mode: category, stream };
   const p1Id = p1.user.userId || p1.user.id;
   const p2Id = p2.user.userId || p2.user.id;
 
@@ -80,7 +96,7 @@ async function startHumanMatch(io, p1, p2, subject, category) {
     opponent: { id: p1Id, username: p1.user.username, avatarSeed: p1.user.avatarSeed, title: p1.user.title } 
   });
 
-  console.log(`[Match] Human vs Human started in ${roomId} (${category})`);
+  console.log(`[Match] Human vs Human started in ${roomId} (${category}, stream: ${stream})`);
   
   initializeMatch(roomId, subject, questions, 
     { socketId: p1.socketId, username: p1.user.username, userId: p1Id, avatarSeed: p1.user.avatarSeed, targetState: p1.targetState, eloRating: p1.user.eloRating || 1200 }, 
@@ -89,10 +105,11 @@ async function startHumanMatch(io, p1, p2, subject, category) {
   setTimeout(() => startQuestionTimer(io, roomId), 3500);
 }
 
-async function processJoinQueue(io, socket, subject, category, targetState) {
-  console.log(`\n--- DEBUG: join_queue triggered for subject: ${subject}, mode: ${category}, targetState: ${targetState} ---`);
+async function processJoinQueue(io, socket, subject, category, targetState, rawStream) {
+  const stream = normalizeStream(rawStream);
+  console.log(`\n--- DEBUG: join_queue triggered for subject: ${subject}, stream: ${stream}, mode: ${category}, targetState: ${targetState} ---`);
   
-  const queueKey = getQueueKey(subject, category);
+  const queueKey = getQueueKey(subject, stream, category);
   
   if (!queues[queueKey]) queues[queueKey] = [];
 
@@ -113,14 +130,10 @@ async function processJoinQueue(io, socket, subject, category, targetState) {
     socketId: socket.id,
     socket: socket,
     targetState: targetState,
+    stream: stream,
     user: { ...socket.user, avatarSeed, title, eloRating, seenIds }
   };
 
-  // Re-check AFTER the awaits above: two rapid join_queue emits (e.g. React
-  // StrictMode double-effect) can both pass the early check before either has
-  // pushed. Remove any stale entry for this socket OR this user so the queue
-  // can never contain the same person twice - which previously caused the
-  // server to match a player against themselves.
   queues[queueKey] = queues[queueKey].filter(p => {
     const pUid = p.user.userId || p.user.id;
     const duplicate = p.socketId === socket.id || String(pUid) === String(userId);
@@ -139,14 +152,12 @@ async function processJoinQueue(io, socket, subject, category, targetState) {
     if (p1.botTimeout) clearTimeout(p1.botTimeout);
     if (p2.botTimeout) clearTimeout(p2.botTimeout);
 
-    await startHumanMatch(io, p1, p2, subject, category);
+    await startHumanMatch(io, p1, p2, subject, category, stream);
     return;
   }
 
   // 2. SET UP BOT FALLBACK (5 Seconds)
   player.botTimeout = setTimeout(async () => {
-    // If this exact entry was already removed (matched, cancelled, or replaced
-    // by a newer join), don't start a duplicate bot match.
     if (!queues[queueKey].includes(player)) return;
     queues[queueKey] = queues[queueKey].filter(p => p.socketId !== socket.id);
     
@@ -154,47 +165,8 @@ async function processJoinQueue(io, socket, subject, category, targetState) {
     socket.join(roomId);
     socket.activeRoomId = roomId;
 
-    // Try 3 levels of fallback for question fetching incrementally
-    let questions = [];
-
-    // Stage 1: Try to fetch up to 5 unseen questions (subject + category + unseen filter)
-    let matchFilter = { subject, category };
     const seenIds = player.user.seenIds || [];
-    if (seenIds.length > 0) {
-      matchFilter._id = { $nin: seenIds };
-    }
-    questions = await Question.aggregate([{ $match: matchFilter }, { $sample: { size: 5 } }]);
-
-    // Stage 2: Fill remaining slots with general pool questions (subject + category), excluding already selected
-    if (questions.length < 5) {
-      const selectedIds = questions.map(q => q._id);
-      const remainingCount = 5 - questions.length;
-      const additionalFilter = {
-        subject,
-        category,
-        _id: { $nin: selectedIds }
-      };
-      const additional = await Question.aggregate([
-        { $match: additionalFilter },
-        { $sample: { size: remainingCount } }
-      ]);
-      questions = [...questions, ...additional];
-    }
-
-    // Stage 3: Fill remaining slots with subject-only questions, excluding already selected
-    if (questions.length < 5) {
-      const selectedIds = questions.map(q => q._id);
-      const remainingCount = 5 - questions.length;
-      const additionalFilter = {
-        subject,
-        _id: { $nin: selectedIds }
-      };
-      const additional = await Question.aggregate([
-        { $match: additionalFilter },
-        { $sample: { size: remainingCount } }
-      ]);
-      questions = [...questions, ...additional];
-    }
+    const questions = await fetchMatchQuestions(subject, stream, category, seenIds);
 
     if (questions.length === 0) {
       return socket.emit('error', { message: `Not enough questions found for ${subject}.` });
@@ -209,6 +181,7 @@ async function processJoinQueue(io, socket, subject, category, targetState) {
       questions,
       isBotMatch: true,
       mode: category,
+      stream,
       targetState: player.targetState,
       player: { id: pId, username: socket.user.username, avatarSeed: player.user.avatarSeed, title: player.user.title },
       opponent: { 
@@ -223,21 +196,21 @@ async function processJoinQueue(io, socket, subject, category, targetState) {
     };
 
     io.to(roomId).emit('match_found', matchPayload);
-    console.log(`[Match] Human vs Bot started for ${socket.user.username} vs ${botProfile.username} (${category}, ELO: ${botProfile.eloRating}, Archetype: ${botProfile.archetype})`);
+    console.log(`[Match] Human vs Bot started for ${socket.user.username} vs ${botProfile.username} (${category}, stream: ${stream}, ELO: ${botProfile.eloRating})`);
     
     initializeMatch(roomId, subject, questions, 
       { socketId: socket.id, username: socket.user.username, userId: pId, avatarSeed: player.user.avatarSeed, targetState: player.targetState, eloRating: player.user.eloRating || 1200 }, 
       { socketId: "bot_socket_id", username: botProfile.username, userId: "bot", avatarSeed: botProfile.avatarSeed, title: botProfile.title, eloRating: botProfile.eloRating, archetype: botProfile.archetype }, 
       true);
     setTimeout(() => startQuestionTimer(io, roomId), 3500);
-  }, 10000);
+  }, 5000);
 }
 
 const handleMatchmaking = (io, socket) => {
-  socket.on('join_queue', async ({ subject, mode, targetState }, ack) => {
-    console.log(`[Matchmaking] join_queue received: subject=${subject}, mode=${mode}, targetState=${targetState}, socket.id=${socket.id}`);
+  socket.on('join_queue', async ({ subject, mode, targetState, stream }, ack) => {
+    console.log(`[Matchmaking] join_queue received: subject=${subject}, stream=${stream}, mode=${mode}, targetState=${targetState}, socket.id=${socket.id}`);
     try {
-      await processJoinQueue(io, socket, subject, mode || 'tech', targetState);
+      await processJoinQueue(io, socket, subject, mode || 'tech', targetState, stream);
       if (typeof ack === 'function') ack({ ok: true });
     } catch (err) {
       console.error('Matchmaking error:', err);
@@ -246,10 +219,12 @@ const handleMatchmaking = (io, socket) => {
     }
   });
 
-  socket.on('quick_match', async ({ mode }) => {
+  socket.on('quick_match', async ({ mode, stream: rawStream }) => {
     try {
+      const stream = normalizeStream(rawStream);
       const category = mode || 'tech';
-      let subjects = await Question.distinct('subject', { category });
+      const filter = buildStreamFilter(stream, { category: stream === 'civil' ? category : undefined });
+      let subjects = await Question.distinct('subject', filter);
       if (subjects.length === 0) {
         subjects = await Question.distinct('subject');
       }
@@ -257,15 +232,15 @@ const handleMatchmaking = (io, socket) => {
         return socket.emit('error', { message: 'No subjects found.' });
       }
       const randomSubject = subjects[Math.floor(Math.random() * subjects.length)];
-      socket.emit('quick_match_redirect', { subject: randomSubject, mode: category });
-      await processJoinQueue(io, socket, randomSubject, category);
+      socket.emit('quick_match_redirect', { subject: randomSubject, mode: category, stream });
+      await processJoinQueue(io, socket, randomSubject, category, null, stream);
     } catch (err) {
       console.error('Quick match error:', err);
       socket.emit('error', { message: 'Quick match failed. Please try again.' });
     }
   });
 
-  socket.on('send_match_request', ({ friendId, subject, mode }) => {
+  socket.on('send_match_request', ({ friendId, subject, mode, stream }) => {
     const friendSocketId = global.connectedUsers?.get(friendId);
     
     if (friendSocketId) {
@@ -273,14 +248,15 @@ const handleMatchmaking = (io, socket) => {
         userId: socket.user.id || socket.user.userId,
         username: socket.user.username,
         subject,
-        mode
+        mode,
+        stream
       });
     } else {
       socket.emit('error', { message: 'User is offline' });
     }
   });
 
-  socket.on('accept_match_request', async ({ senderId, subject, mode }) => {
+  socket.on('accept_match_request', async ({ senderId, subject, mode, stream }) => {
     const senderSocketId = global.connectedUsers?.get(senderId);
     
     if (senderSocketId) {
@@ -305,7 +281,7 @@ const handleMatchmaking = (io, socket) => {
         const p1 = await fetchUserData(senderSocket);
         const p2 = await fetchUserData(socket);
         
-        await startHumanMatch(io, p1, p2, subject, mode);
+        await startHumanMatch(io, p1, p2, subject, mode, normalizeStream(stream));
       }
     } else {
       socket.emit('error', { message: 'Sender is offline or disconnected' });

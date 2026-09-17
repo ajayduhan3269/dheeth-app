@@ -40,4 +40,27 @@ router.put('/profile', verifyToken, async (req, res) => {
   }
 });
 
+const { STREAMS } = require('../config/streams');
+
+router.patch('/stream', verifyToken, async (req, res) => {
+  try {
+    const { targetExam } = req.body;
+    if (!STREAMS.includes(targetExam)) {
+      return res.status(400).json({
+        success: false,
+        message: `Invalid stream. Expected one of: ${STREAMS.join(', ')}`,
+      });
+    }
+    const user = await User.findByIdAndUpdate(
+      req.user.id,
+      { $set: { targetExam } },
+      { new: true }
+    ).select('-password');
+    if (!user) return res.status(404).json({ success: false, message: 'User not found' });
+    res.json({ success: true, targetExam: user.targetExam, user });
+  } catch (err) {
+    res.status(500).json({ success: false, message: 'Server error' });
+  }
+});
+
 module.exports = router;

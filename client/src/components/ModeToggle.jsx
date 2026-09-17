@@ -1,15 +1,28 @@
 import React from 'react';
-import { useAppMode } from '../context/AppModeContext';
+import { useStream } from '../context/ExamStreamContext';
+import { sounds } from '../utils/sound';
 
-const ModeToggle = () => {
-  const { mode, toggleMode } = useAppMode();
+const ModeToggle = ({ className = '' }) => {
+  const { subMode, toggleSubMode, showSubModeToggle } = useStream();
+
+  // Hidden entirely outside Civil Engineering stream
+  if (!showSubModeToggle) return null;
 
   return (
-    <div className="flex items-center justify-center gap-1 bg-dh-surface p-1 rounded-xl border border-dh-border w-fit mx-auto">
+    <div
+      role="tablist"
+      aria-label="Civil Engineering Stream Selector"
+      className={`flex items-center justify-center gap-1 bg-dh-surface p-1 rounded-xl border border-dh-border w-fit mx-auto ${className}`}
+    >
       <button
-        onClick={() => toggleMode('tech')}
-        className={`flex items-center gap-1.5 px-5 py-2 rounded-lg text-sm font-heading font-bold transition-all duration-300 ${
-          mode === 'tech'
+        role="tab"
+        aria-selected={subMode === 'tech'}
+        onClick={() => {
+          sounds.click?.();
+          toggleSubMode('tech');
+        }}
+        className={`flex items-center gap-1.5 px-5 py-2 rounded-lg text-xs sm:text-sm font-heading font-bold transition-all duration-300 ${
+          subMode === 'tech'
             ? 'bg-dh-purple text-white shadow-lg shadow-dh-purple/30 scale-105'
             : 'text-dh-text-muted hover:text-dh-text'
         }`}
@@ -18,9 +31,14 @@ const ModeToggle = () => {
         <span>Civil Eng</span>
       </button>
       <button
-        onClick={() => toggleMode('gs')}
-        className={`flex items-center gap-1.5 px-5 py-2 rounded-lg text-sm font-heading font-bold transition-all duration-300 ${
-          mode === 'gs'
+        role="tab"
+        aria-selected={subMode === 'gs'}
+        onClick={() => {
+          sounds.click?.();
+          toggleSubMode('gs');
+        }}
+        className={`flex items-center gap-1.5 px-5 py-2 rounded-lg text-xs sm:text-sm font-heading font-bold transition-all duration-300 ${
+          subMode === 'gs'
             ? 'bg-dh-orange text-white shadow-lg shadow-dh-orange/30 scale-105'
             : 'text-dh-text-muted hover:text-dh-text'
         }`}

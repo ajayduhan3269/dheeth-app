@@ -42,12 +42,12 @@ const navItems = [
       ),
     },
     {
-      id: 'map',
-      label: 'MAP',
-      path: '/map',
+      id: 'notebook',
+      label: 'NOTEBOOK',
+      path: '/notebook',
       icon: (active) => (
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill={active ? '#00e676' : '#4a4a5a'} className="w-5 h-5">
-          <path fillRule="evenodd" d="M8.161 2.58a1.875 1.875 0 011.678 0l4.993 2.498c.106.052.23.052.337 0l3.011-1.506a1.215 1.215 0 011.563.754 1.202 1.202 0 01-.065 1.27l-4.036 5.74a.75.75 0 01-1.06.19l-4.5-3.75a.75.75 0 00-.95 0l-4.5 3.75a.75.75 0 01-1.06-.19L2.754 4.597a1.202 1.202 0 01-.065-1.27 1.215 1.215 0 011.563-.754l3.01 1.506c.106.052.23.052.337 0L8.16 2.58zm-.903 5.831a.75.75 0 01.95 0l1.52 1.267a.75.75 0 01-.164 1.294l-.99.396a.75.75 0 01-.542 0l-.99-.396a.75.75 0 01-.163-1.294l1.22-1.017.18-.18zM5.75 12.5a.75.75 0 01.75.75v3.25c0 .414.336.75.75.75h1.5a.75.75 0 01.75.75v1.5a.75.75 0 01-.75.75h-4.5A.75.75 0 014 19v-5.75a.75.75 0 01.75-.75h1zm7.5 0a.75.75 0 01.75.75v2.5a.75.75 0 01-.75.75H12a.75.75 0 01-.75-.75v-2.5a.75.75 0 01.75-.75h1.25z" clipRule="evenodd" />
+          <path d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
         </svg>
       ),
     },
@@ -56,7 +56,7 @@ const navItems = [
 const BottomNav = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const { mode } = useAppMode();
+  const { mode, stream } = useAppMode();
 
   const isActive = (item) => {
     if (item.id === 'play') return false;
@@ -70,15 +70,14 @@ const BottomNav = () => {
   const handleQuickMatch = () => {
     const isOnJourney = location.pathname === '/journey';
     if (isOnJourney) {
-      // On Journey page — emit a subject search (frontend will pick)
       const journeySubject = window.__journeySubject;
       if (journeySubject) {
-        socket.emit('join_queue', { subject: journeySubject, mode });
+        socket.emit('join_queue', { subject: journeySubject, mode, stream });
       } else {
-        socket.emit('quick_match', { mode });
+        socket.emit('quick_match', { mode, stream });
       }
     } else {
-      socket.emit('quick_match', { mode });
+      socket.emit('quick_match', { mode, stream });
     }
     navigate('/dashboard');
   };
